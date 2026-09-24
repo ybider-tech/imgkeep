@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imgkeep options</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    body { padding: 32px 16px 64px; }
+    main { max-width: 680px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    header h1 { margin: 0; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 16px;
+    }
+    fieldset { border: 0; padding: 0; margin: 0; }
+    legend { font-weight: 600; margin-bottom: 6px; padding: 0; }
+    .choice { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
+    .choice input { margin-top: 5px; }
+    .choice small { display: block; color: var(--muted); }
+    .field { margin-top: 14px; }
+    .field > label { display: block; font-weight: 600; margin-bottom: 4px; }
+    .hint { color: var(--muted); font-size: 0.9em; margin-top: 4px; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .slider { display: grid; grid-template-columns: 1fr 3.5em; gap: 12px; align-items: center; }
+    .slider output { font-variant-numeric: tabular-nums; text-align: right; }
+    .preview {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      word-break: break-all;
+    }
+    #saved {
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    #saved.show { opacity: 1; }
+    #sites { list-style: none; padding: 0; margin: 0; }
+    #sites li {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 8px 0; border-top: 1px solid var(--border);
+    }
+    #sites li:first-child { border-top: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
+    .pro { border-color: var(--accent); }
+    ul.plain { margin: 0; padding-left: 1.2em; }
+    ul.plain li { margin-bottom: 0.4em; }
+    #folderStatus { margin-left: 4px; }
+  </style>
+  <script type="module" src="options.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand">
+        <img src="icons/icon48.png" alt="">
+        <h1>Imgkeep</h1>
+      </div>
+      <span id="saved" role="status" aria-live="polite">Saved</span>
+    </header>
+
+    <section aria-labelledby="h-where">
+      <h2 id="h-where">Where to save</h2>
+      <fieldset>
+        <legend class="sr-hidden">Save mode</legend>
+        <label class="choice">
+          <input type="radio" name="saveMode" value="downloads">
+          <span>Downloads folder<small>Saves to Chrome's download folder. No questions asked.</small></span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="saveMode" value="folder">
+          <span>A folder you choose<small>Writes straight into your folder. Chrome may ask you to reconnect after a restart.</small></span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="saveMode" value="ask">
+          <span>Ask every time<small>Shows Chrome's Save As dialog for each image.</small></span>
+        </label>
+      </fieldset>
+      <div class="row field">
+        <button type="button" id="chooseFolder">Choose folder…</button>
+        <span id="folderStatus" class="muted" aria-live="polite"></span>
+      </div>
+      <div class="field">
+        <label for="subfolder">Subfolder</label>
+        <input type="text" id="subfolder" name="subfolder" placeholder="e.g. Imgkeep/{host}" spellcheck="false" autocomplete="off">
+        <p class="hint">Optional. Use <code>/</code> for nested folders. Same tokens as file names.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-names">
+      <h2 id="h-names">File names</h2>
+      <div class="field">
+        <label for="filenameTemplate">Name template</label>
+        <input type="text" id="filenameTemplate" name="filenameTemplate" spellcheck="false" autocomplete="off">
+        <p class="hint">
+          Tokens: <code>{name}</code> original name, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>,
+          <code>{w}</code> and <code>{h}</code> size in pixels. Existing files are never overwritten.
+        </p>
+      </div>
+      <p class="field" style="margin-bottom:0"><span class="muted" id="previewLabel">Preview for summer-banner from shop.example.com, 1600×900, as PNG:</span></p>
+      <div class="preview mono" id="preview" aria-labelledby="previewLabel"></div>
+    </section>
+
+    <section aria-labelledby="h-quality">
+      <h2 id="h-quality">Quality</h2>
+      <div class="field">
+        <label for="jpgQuality">JPG quality</label>
+        <div class="slider">
+          <input type="range" id="jpgQuality" name="jpgQuality" min="50" max="100" step="1">
+          <output for="jpgQuality" id="jpgQualityOut"></output>
+        </div>
+      </div>
+      <div class="field">
+        <label for="webpQuality">WebP quality</label>
+        <div class="slider">
+          <input type="range" id="webpQuality" name="webpQuality" min="50" max="100" step="1">
+          <output for="webpQuality" id="webpQualityOut"></output>
+        </div>
+      </div>
+      <div class="field">
+        <label for="jpgBackground">JPG background colour</label>
+        <div class="row">
+          <input type="color" id="jpgBackground" name="jpgBackground">
+          <span class="hint" style="margin:0">JPG has no transparency, so see-through areas get this colour.</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-sites">
+      <h2 id="h-sites">Sites you've allowed</h2>
+      <p class="muted" id="sitesEmpty">None yet. Imgkeep asks only when a site blocks an image you want to convert.</p>
+      <ul id="sites"></ul>
+    </section>
+
+    <section class="pro" aria-labelledby="h-pro">
+      <h2 id="h-pro">Imgkeep Pro — coming soon</h2>
+      <p>Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.</p>
+      <p class="muted" style="margin-bottom:0">Everything you use today stays free.</p>
+      <p id="waitlist" hidden style="margin:12px 0 0"><a id="waitlistLink" target="_blank" rel="noopener">Get notified</a></p>
+    </section>
+
+    <section aria-labelledby="h-trust" id="trust">
+      <h2 id="h-trust">What Imgkeep can and can't do</h2>
+      <p class="muted" style="margin-bottom:4px">Permissions it asks for:</p>
+      <div class="tags" aria-label="Permissions">
+        <span class="tag">contextMenus</span>
+        <span class="tag">downloads</span>
+        <span class="tag">storage</span>
+        <span class="tag">offscreen</span>
+      </div>
+      <ul class="plain">
+        <li>Images are converted on your computer. Nothing is uploaded; there's no analytics.</li>
+        <li>No ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.</li>
+        <li>Every free feature stays free.</li>
+      </ul>
+      <p class="muted" style="margin:12px 0 0">Version <span id="version"></span> · <a href="https://imgkeep.app" target="_blank" rel="noopener">imgkeep.app</a></p>
+    </section>
+  </main>
+</body>
+</html>

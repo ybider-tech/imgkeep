@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imgkeep</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    body { padding: 18px 20px; font-size: 14px; }
+    .head { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+    .head img { width: 32px; height: 32px; flex: none; margin-top: 2px; }
+    .detail { word-break: break-all; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    #status { min-height: 1.5em; margin-top: 12px; font-weight: 600; }
+  </style>
+  <script type="module" src="ask.js"></script>
+</head>
+<body>
+  <main>
+    <div class="head">
+      <img src="icons/icon48.png" alt="">
+      <div>
+        <h1 id="title">Imgkeep</h1>
+        <div id="body"></div>
+      </div>
+    </div>
+    <div class="actions" id="actions"></div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

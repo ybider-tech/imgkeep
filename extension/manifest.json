@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Imgkeep — Save image as PNG, JPG, WebP",
+  "short_name": "Imgkeep",
+  "version": "0.3.0",
+  "description": "Right-click any image to save it as PNG, JPG or WebP, straight to your folder. No site access, no tracking, open source.",
+  "minimum_chrome_version": "116",
+  "homepage_url": "https://imgkeep.app",
+  "permissions": ["contextMenus", "downloads", "storage", "offscreen"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Imgkeep store scenes</title>
+  <!-- Rendered by store/render.mjs. Images in _capture/ are real screenshots of the extension. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <style>
+    :root { --accent: #0f6b5c; --ink: #15201d; --muted: #52605b; --soft: #eaf3f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #999; font-family: "Source Sans 3", system-ui, sans-serif; color: var(--ink); }
+    .scene {
+      width: 1280px; height: 800px; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, #f3f8f6 0%, #e3efeb 100%);
+      margin-bottom: 20px;
+    }
+    .head { position: absolute; left: 80px; top: 60px; right: 80px; }
+    h1 { font-family: "Schibsted Grotesk", sans-serif; font-size: 50px; line-height: 1.08; margin: 0 0 12px; letter-spacing: -0.015em; }
+    .sub { font-size: 24px; color: var(--muted); margin: 0; }
+    .logo { position: absolute; right: 80px; top: 64px; display: flex; gap: 10px; align-items: center;
+      font-family: "Schibsted Grotesk", sans-serif; font-size: 24px; }
+    .logo img { width: 40px; height: 40px; }
+
+    /* Browser window */
+    .browser {
+      position: absolute; background: #fff; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 30px 70px rgba(16, 45, 38, 0.22), 0 4px 14px rgba(16, 45, 38, 0.1);
+    }
+    .bar { height: 46px; background: #eef1f0; display: flex; align-items: center; gap: 14px; padding: 0 16px; }
+    .dots { display: flex; gap: 8px; }
+    .dots i { width: 12px; height: 12px; border-radius: 50%; background: #d5dad8; display: block; }
+    .url { flex: 1; background: #fff; border-radius: 999px; height: 30px; display: flex; align-items: center;
+      padding: 0 16px; font: 14px system-ui, sans-serif; color: #5f6663; }
+    .content { position: relative; }
+
+    /* Shop page */
+    .shop { display: grid; grid-template-columns: 540px 1fr; gap: 48px; padding: 36px 48px; font-family: system-ui, sans-serif; }
+    .shop .nav { grid-column: 1 / -1; display: flex; justify-content: space-between; color: #333; font-size: 15px; margin: -12px 0 0; }
+    .shop .nav b { font-size: 18px; letter-spacing: 0.08em; }
+    .product { width: 540px; height: 380px; border-radius: 10px; background: #efe7dc; display: grid; place-items: center; }
+    .shop h2 { font-size: 30px; margin: 20px 0 8px; font-weight: 600; }
+    .shop .price { font-size: 22px; margin-bottom: 18px; }
+    .shop .btn { display: inline-block; background: #222; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 600; }
+    .shop p { color: #555; line-height: 1.5; font-size: 16px; }
+
+    /* Chrome-style context menu */
+    .menu { position: absolute; background: #fff; border-radius: 8px; padding: 6px 0; min-width: 250px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.12); font: 15px/1 system-ui, sans-serif; color: #202124; }
+    .menu div { padding: 9px 18px; display: flex; justify-content: space-between; gap: 30px; white-space: nowrap; }
+    .menu hr { border: 0; border-top: 1px solid #e3e3e3; margin: 5px 0; }
+    .menu .on { background: #e8eaed; }
+    .menu img { width: 16px; height: 16px; vertical-align: -3px; margin-right: 10px; }
+    .cursor { position: absolute; width: 22px; height: 22px; }
+
+    /* Captures */
+    .shot { display: block; }
+    .window {
+      position: absolute; background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .window .title { height: 34px; background: #eef1f0; display: flex; align-items: center; gap: 8px; padding: 0 12px;
+      font: 13px system-ui, sans-serif; color: #5f6663; }
+    .window .title .dots i { width: 11px; height: 11px; }
+    .dim { position: absolute; inset: 46px 0 0 0; background: rgba(20, 30, 28, 0.35); }
+
+    .points { list-style: none; padding: 0; margin: 0; }
+    .points li { display: flex; gap: 16px; margin-bottom: 26px; font-size: 22px; line-height: 1.35; }
+    .points li b { display: block; font-family: "Schibsted Grotesk", sans-serif; font-size: 25px; margin-bottom: 2px; }
+    .check { flex: none; width: 36px; height: 36px; border-radius: 10px; background: var(--accent); color: #fff;
+      display: grid; place-items: center; font-weight: 700; font-size: 20px; margin-top: 2px; }
+
+    /* Promo tile */
+    .tile { width: 440px; height: 280px; position: relative; overflow: hidden; margin-bottom: 20px;
+      background: radial-gradient(circle at 85% 15%, #1b8a76 0%, #0f6b5c 45%, #0b5347 100%); color: #fff; }
+    .tile .brand { position: absolute; left: 36px; top: 40px; display: flex; align-items: center; gap: 14px;
+      font-family: "Schibsted Grotesk", sans-serif; font-size: 40px; }
+    .tile .brand img { width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 0 0 2px rgba(255,255,255,0.35); }
+    .tile .line { position: absolute; left: 36px; right: 30px; top: 134px; font-family: "Schibsted Grotesk", sans-serif;
+      font-size: 27px; line-height: 1.15; }
+    .tile .chips { position: absolute; left: 36px; bottom: 30px; display: flex; gap: 8px; }
+    .tile .chips span { border: 1.5px solid rgba(255,255,255,0.6); border-radius: 999px; padding: 4px 14px; font-weight: 600; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- 1. Right-click menu over a product page -->
+<section class="scene" id="scene-1">
+  <div class="head">
+    <h1>Right-click any image.<br>Save it as PNG, JPG or WebP.</h1>
+    <p class="sub">Converted on your computer, saved to your folder.</p>
+  </div>
+  <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <div class="browser" style="left:80px; top:230px; width:1120px; height:620px;">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">shop.example.com/products/stoneware-mug</div></div>
+    <div class="content">
+      <div class="shop">
+        <div class="nav"><b>FIELD &amp; KILN</b><span>Kitchen · Table · Home · Journal</span></div>
+        <div class="product">
+          <svg width="300" height="260" viewBox="0 0 300 260" aria-hidden="true">
+            <ellipse cx="140" cy="232" rx="110" ry="14" fill="#d9ccbb"/>
+            <path d="M210 95c42 0 52 58 8 72" fill="none" stroke="#7f9c8a" stroke-width="18" stroke-linecap="round"/>
+            <path d="M50 60h180v130c0 26-22 44-48 44H98c-26 0-48-18-48-44z" fill="#8fae9b"/>
+            <ellipse cx="140" cy="60" rx="90" ry="16" fill="#a9c4b2"/>
+            <ellipse cx="140" cy="62" rx="76" ry="11" fill="#6f8f7c"/>
+            <path d="M68 110c10 40 12 70 8 100" stroke="#a9c4b2" stroke-width="6" fill="none" opacity=".6"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Stoneware mug, sage</h2>
+          <div class="price">$28.00</div>
+          <div class="btn">Add to cart</div>
+          <p>Hand-glazed, 350 ml. Dishwasher safe. Each one is a little different.</p>
+        </div>
+      </div>
+      <div class="menu" style="left:330px; top:150px;">
+        <div>Open image in new tab</div>
+        <div>Save image as…</div>
+        <div>Copy image</div>
+        <div>Copy image address</div>
+        <hr>
+        <div class="on"><span><img src="../extension/icons/icon16.png" alt="">Imgkeep: Save image as</span><span>›</span></div>
+        <hr>
+        <div>Inspect</div>
+      </div>
+      <div class="menu" style="left:580px; top:290px; min-width:190px;">
+        <div class="on">PNG</div>
+        <div>JPG</div>
+        <div>WebP</div>
+        <hr>
+        <div>Original format</div>
+      </div>
+      <svg class="cursor" style="left:650px; top:318px;" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 2l14 8-6 1.5L8 18z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Options page -->
+<section class="scene" id="scene-2">
+  <div class="head">
+    <h1>Your folder. Your names.<br>Your quality.</h1>
+    <p class="sub">Pick a folder once, add subfolders like Imgkeep/{host}, name files your way.</p>
+  </div>
+  <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <div class="browser" style="left:140px; top:250px; width:1000px; height:620px;">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">Imgkeep · Options</div></div>
+    <img class="shot" src="_capture/options.png" alt="" style="width:1000px;">
+  </div>
+</section>
+
+<!-- 3. Trust list -->
+<section class="scene" id="scene-3">
+  <div class="head">
+    <h1>Four permissions.<br>No access to your pages.</h1>
+  </div>
+  <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <ul class="points" style="position:absolute; left:80px; top:250px; width:500px;">
+    <li><span class="check">✓</span><span><b>Sees only the image you click</b>No content scripts, no reading your pages.</span></li>
+    <li><span class="check">✓</span><span><b>Nothing leaves your computer</b>Converted locally. No uploads, no analytics.</span></li>
+    <li><span class="check">✓</span><span><b>Open source, no nags</b>No ads, no review requests, no welcome tabs.</span></li>
+    <li><span class="check">✓</span><span><b>Free stays free</b>Every free feature stays free.</span></li>
+  </ul>
+  <div class="window" style="left:640px; top:236px; width:560px;">
+    <img class="shot" src="_capture/trust.png" alt="" style="width:560px;">
+  </div>
+</section>
+
+<!-- 4. Site-permission window -->
+<section class="scene" id="scene-4">
+  <div class="head">
+    <h1>Site blocks the image?<br>You decide, one site at a time.</h1>
+  </div>
+  <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <div class="browser" style="left:80px; top:250px; width:1120px; height:620px;">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">images.example.net/gallery/autumn</div></div>
+    <div class="content" style="padding:36px 48px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#e8a86b,#b5533c);"></div>
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#c9b458,#6f7a3a);"></div>
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#d88d5f,#7b3f4f);"></div>
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#9fb07a,#4f6b4a);"></div>
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#e3c07e,#a0602f);"></div>
+      <div style="height:220px; border-radius:10px; background:linear-gradient(150deg,#b27a6e,#5a3a4a);"></div>
+    </div>
+    <div class="dim"></div>
+  </div>
+  <div class="window" style="left:410px; top:300px; width:460px;">
+    <div class="title"><div class="dots"><i></i><i></i><i></i></div>Imgkeep</div>
+    <img class="shot" src="_capture/ask.png" alt="" style="width:460px;">
+  </div>
+</section>
+
+<!-- Promo tile 440×280 -->
+<section class="tile" id="tile">
+  <div class="brand"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <div class="line">Right format. Right folder.<br>Nothing else.</div>
+  <div class="chips"><span>PNG</span><span>JPG</span><span>WebP</span></div>
+</section>
+
+</body>
+</html>
