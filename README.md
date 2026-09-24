@@ -151,5 +151,4 @@ Check with `dig +short imgkeep.app` and `dig +short www.imgkeep.app`.
 ### 5. After approval
 
 1. In `site/index.html`, replace `href="#"` on the **Add to Chrome — free** button (marked `STORE_URL`) with the listing URL.
-2. In `site/index.html` and `site/privacy.html`, replace `href="#"` on **Source code** (marked `REPO_URL`) with `https://github.com/<github-user>/imgkeep`.
-3. Commit and push; the Pages workflow redeploys.
+2. Commit and push; the Pages workflow redeploys.
