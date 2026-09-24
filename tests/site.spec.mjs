@@ -13,7 +13,7 @@ test.beforeAll(async () => {
 });
 test.afterAll(() => server?.close());
 
-for (const page of ["index.html", "privacy.html"]) {
+for (const page of ["index.html", "privacy.html", "support.html"]) {
   test(`${page} opens with no console errors`, async ({ page: tab }) => {
     const errors = [];
     tab.on("pageerror", (e) => errors.push(e.message));
@@ -36,7 +36,7 @@ test("privacy.html matches PRIVACY.md", async ({ page }) => {
 });
 
 test("no analytics or trackers on the site", async () => {
-  for (const file of ["index.html", "privacy.html"]) {
+  for (const file of ["index.html", "privacy.html", "support.html"]) {
     const html = await readFile(join(ROOT, "site", file), "utf8");
     expect(html).not.toMatch(/<script/i);
     expect(html).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);

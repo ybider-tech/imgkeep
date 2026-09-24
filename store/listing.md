@@ -8,7 +8,7 @@
 - **Category:** Tools
 - **Language:** English
 - **Homepage:** https://imgkeep.app
-- **Support:** helloimgkeep@gmail.com
+- **Support URL:** https://imgkeep.app/support.html (email: helloimgkeep@gmail.com)
 - **Privacy policy:** https://imgkeep.app/privacy.html
 
 ## Description
