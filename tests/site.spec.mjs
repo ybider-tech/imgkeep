@@ -37,9 +37,15 @@ test("privacy.html matches PRIVACY.md", async ({ page }) => {
 
 test("no analytics or trackers on the site", async () => {
   for (const file of ["index.html", "privacy.html", "support.html", "ideas.html", "404.html"]) {
-    const html = await readFile(join(ROOT, "site", file), "utf8");
+    const raw = await readFile(join(ROOT, "site", file), "utf8");
+    expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
+    // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
+    // data, not code. Browsers never execute it. It must parse as JSON; every other <script> still fails.
+    const html = raw.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (_, json) => {
+      expect(() => JSON.parse(json), `${file}: invalid JSON-LD`).not.toThrow();
+      return "";
+    });
     expect(html).not.toMatch(/<script/i);
-    expect(html).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
   }
 });
 
