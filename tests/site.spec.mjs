@@ -19,7 +19,12 @@ for (const page of ["index.html", "privacy.html", "support.html", "ideas.html", 
     tab.on("pageerror", (e) => errors.push(e.message));
     tab.on("console", (m) => m.type() === "error" && errors.push(m.text()));
     tab.on("requestfailed", (r) => errors.push(`${r.url()} ${r.failure()?.errorText}`));
+    // Everything, fonts included, must come from the site itself: no third-party requests.
+    const outside = [];
+    tab.on("request", (r) => !r.url().startsWith(server.url) && !r.url().startsWith("data:") && outside.push(r.url()));
     await tab.goto(`${server.url}/${page}`, { waitUntil: "networkidle" });
+    await tab.evaluate(() => document.fonts.ready);
+    expect(outside).toEqual([]);
     await expect(tab.locator("h1")).toBeVisible();
     expect(await tab.getAttribute("html", "lang")).toBe("en");
     expect(await tab.locator('meta[name="description"]').count()).toBe(1);
@@ -86,4 +91,13 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
   expect(titles.size).toBe(4);
   expect(descriptions.size).toBe(4);
   expect(await readFile(join(ROOT, "site", "404.html"), "utf8")).toContain('<meta name="robots" content="noindex">');
+});
+
+test("self-hosted fonts load, and the home page leads with what Imgkeep does", async ({ page }) => {
+  await page.goto(`${server.url}/index.html`, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  const loaded = await page.evaluate(() => [...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family.replace(/"/g, "")));
+  expect(loaded).toEqual(expect.arrayContaining(["Schibsted Grotesk", "Source Sans 3"]));
+  await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
+  await expect(page.locator(".kicker")).toHaveText("Right format. Right folder. Nothing else.");
 });

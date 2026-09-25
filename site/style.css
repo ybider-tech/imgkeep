@@ -1,3 +1,20 @@
+/* Fonts are served from this site, so visitors make no requests to anyone else.
+   Both are SIL Open Font License; licences in fonts/. Latin subset only. */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/schibsted-grotesk-700-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin.woff2") format("woff2");
+}
+
 :root {
   --accent: #0f6b5c;
   --accent-strong: #0b5347;
@@ -59,7 +76,7 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
   margin: 0 0 0.5em;
 }
-h1 { font-size: clamp(2.1rem, 6vw, 3.1rem); }
+h1 { font-size: clamp(2.1rem, 6vw, 3.1rem); text-wrap: balance; }
 h2 { font-size: 1.6rem; margin-top: 0; }
 h3 { font-size: 1.1rem; margin-bottom: 0.3em; }
 
@@ -82,6 +99,14 @@ a:focus-visible, .cta:focus-visible { outline: 3px solid var(--accent); outline-
 
 .hero { padding: 40px 0 24px; }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 36em; }
+.kicker {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.6em;
+}
 
 .cta {
   display: inline-block;
