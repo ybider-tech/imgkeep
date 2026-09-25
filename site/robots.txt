@@ -1,0 +1,5 @@
+# imgkeep.app: everything is public and may be crawled.
+User-agent: *
+Allow: /
+
+Sitemap: https://imgkeep.app/sitemap.xml
