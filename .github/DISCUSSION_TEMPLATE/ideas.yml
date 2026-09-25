@@ -1,0 +1,25 @@
+title: "Idea: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape Imgkeep. Before posting, please search the existing ideas and upvote one if it matches yours.
+  - type: textarea
+    id: want
+    attributes:
+      label: What would you like to do?
+      description: Describe the task, not the solution. For example, "Save every product photo from one shop into its own folder".
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter to you?
+      description: How often you'd use it, and what you do today instead.
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Example site (optional)
+      description: A page where you'd use this. Don't share private links.

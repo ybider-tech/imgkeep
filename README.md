@@ -7,7 +7,7 @@ Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on yo
 - No review prompts, welcome tabs, badges or upsells. A small window opens only when a save needs your decision.
 - Plain JavaScript ES modules, no build step, no dependencies in the extension.
 
-Website: [imgkeep.app](https://imgkeep.app) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
+Website: [imgkeep.app](https://imgkeep.app) · Ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
 
 ## What it does
 
