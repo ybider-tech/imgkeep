@@ -101,3 +101,15 @@ test("self-hosted fonts load, and the home page leads with what Imgkeep does", a
   await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
   await expect(page.locator(".kicker")).toHaveText("Right format. Right folder. Nothing else.");
 });
+
+test("Add to Chrome points to the live store listing", async ({ page }) => {
+  const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
+  await page.goto(`${server.url}/index.html`);
+  await expect(page.locator("#install")).toHaveAttribute("href", STORE);
+  const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(ld.installUrl).toBe(STORE);
+  // No page may link to "#" as a placeholder any more.
+  for (const file of ["index.html", "privacy.html", "support.html", "ideas.html", "404.html"]) {
+    expect(await readFile(join(ROOT, "site", file), "utf8")).not.toMatch(/href="#"/);
+  }
+});

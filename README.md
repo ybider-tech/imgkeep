@@ -7,7 +7,7 @@ Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on yo
 - No review prompts, welcome tabs, badges or upsells. A small window opens only when a save needs your decision.
 - Plain JavaScript ES modules, no build step, no dependencies in the extension.
 
-Website: [imgkeep.app](https://imgkeep.app) · Ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
+Website: [imgkeep.app](https://imgkeep.app) · Chrome Web Store: [Imgkeep](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · Ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
 
 ## What it does
 
@@ -148,7 +148,8 @@ Check with `dig +short imgkeep.app` and `dig +short www.imgkeep.app`.
 6. **Distribution**: Public, all regions, free.
 7. **Submit for review**.
 
-### 5. After approval
+### 5. After approval (done 2026-09-26)
 
-1. In `site/index.html`, replace `href="#"` on the **Add to Chrome — free** button (marked `STORE_URL`) with the listing URL.
-2. Commit and push; the Pages workflow redeploys.
+Imgkeep is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
+
+The site's **Add to Chrome — free** button and the structured data use this ID-based link, which keeps working if the listing name changes.
