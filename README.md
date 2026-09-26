@@ -148,7 +148,15 @@ Check with `dig +short imgkeep.app` and `dig +short www.imgkeep.app`.
 6. **Distribution**: Public, all regions, free.
 7. **Submit for review**.
 
-### 5. After approval (done 2026-09-26)
+### 5. Microsoft Edge Add-ons
+
+The same zip works in Edge. Everything to paste is in `store/edge-listing.md`, and the 300×300 store logo is `store/edge-logo-300.png` (made by `npm run icons`).
+
+1. Register (free) at https://partner.microsoft.com/dashboard/microsoftedge/overview with a Microsoft account.
+2. **Create new extension** → upload `dist/imgkeep-0.3.0.zip`.
+3. Fill in Availability (Public, all markets), Properties, Store listing and Submission notes from `store/edge-listing.md`, then **Publish**. Review takes up to 7 business days.
+
+### 6. After Chrome Web Store approval (done 2026-09-26)
 
 Imgkeep is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 

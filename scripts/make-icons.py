@@ -41,9 +41,9 @@ def glyph_segments():
 
 def render(size):
     # Small sizes get thicker strokes and less padding so they stay legible.
-    margin = {16: 0.0, 32: 0.03, 48: 0.05, 128: 0.0625}[size]
+    margin = {16: 0.0, 32: 0.03, 48: 0.05, 128: 0.0625, 300: 0.0625}[size]
     radius = 0.22
-    half = {16: 0.085, 32: 0.07, 48: 0.065, 128: 0.058}[size]
+    half = {16: 0.085, 32: 0.07, 48: 0.065, 128: 0.058, 300: 0.058}[size]
     segs = glyph_segments()
     ss = 5
     rows = []
@@ -99,4 +99,7 @@ if __name__ == "__main__":
         if size == 32:
             with open(os.path.join(ROOT, "site", "favicon.png"), "wb") as f:
                 f.write(data)
+    # Microsoft Edge Add-ons store logo (300x300).
+    with open(os.path.join(ROOT, "store", "edge-logo-300.png"), "wb") as f:
+        f.write(render(300))
     print("icons written")
