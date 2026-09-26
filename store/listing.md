@@ -1,5 +1,7 @@
 # Chrome Web Store listing: Imgkeep 0.3.0
 
+Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
+
 ## Basics
 
 - **Name:** Imgkeep — Save image as PNG, JPG, WebP
@@ -13,16 +15,19 @@
 
 ## Description
 
-Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on your computer and puts it where you want, every time.
+v2, submitted 2026-09-26 (v1 was live at launch on 2026-09-26). Paste as-is into the dashboard.
 
-Sites increasingly serve WebP and AVIF files that other apps won't open. Imgkeep adds one menu to Chrome's right-click menu:
+```text
+Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on your computer and saves it where you want, every time.
+
+Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click:
 
 Imgkeep: Save image as → PNG · JPG · WebP · Original format
 
 WHAT IT DOES
 
-• Remembers your folder: save to Chrome's Downloads, a folder you pick once, or ask every time. Add subfolders like Imgkeep/{host}.
-• Handles WebP and AVIF: convert them to PNG or JPG that every app opens. SVG, GIF (first frame) and data: images work too.
+• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG, GIF (first frame) and data: images work too.
+• Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
 • Never overwrites: if a file already exists, Imgkeep adds " (2)" instead of replacing it.
@@ -33,16 +38,14 @@ BUILT TO BE TRUSTED
 • Nothing leaves your computer: images are converted on your device. No uploads, no analytics, no account.
 • Four permissions only: contextMenus, downloads, storage, offscreen.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
-• Not for sale: no ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.
-• Every free feature stays free.
+• Free, with no limits: no ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.
 
 WHEN A SITE BLOCKS AN IMAGE
 
 A few sites stop other sites from reading their images. Only then, and only when you click "Allow and save", Imgkeep asks Chrome for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
 
-COMING LATER: IMGKEEP PRO
-
-Rules that send each site's images to the right folder, in the right format, with the right name, without choosing every time, plus a log of where every image came from. Everything in Imgkeep today stays free.
+Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.html
+```
 
 ## Privacy practices tab
 
