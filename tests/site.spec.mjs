@@ -156,3 +156,13 @@ test("guides have a visible way back to the home page", async ({ page }) => {
     await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
   }
 });
+
+test("every page loads the current stylesheet version (run npm run version-css after editing style.css)", async () => {
+  const { cssVersion, htmlFiles } = await import("../scripts/version-css.mjs");
+  const v = await cssVersion();
+  for (const file of await htmlFiles()) {
+    const html = await readFile(file, "utf8");
+    const refs = [...html.matchAll(/href="(?:\/|(?:\.\.\/)*)style\.css([^"]*)"/g)].map((m) => m[1]);
+    expect(refs, file).toEqual([`?v=${v}`]);
+  }
+});

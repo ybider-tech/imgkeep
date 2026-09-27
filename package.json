@@ -12,7 +12,8 @@
     "fixtures": "node tests/make-fixtures.mjs --force",
     "icons": "python3 scripts/make-icons.py",
     "store": "node store/render.mjs",
-    "package": "sh scripts/package.sh"
+    "package": "sh scripts/package.sh",
+    "version-css": "node scripts/version-css.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

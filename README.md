@@ -80,6 +80,7 @@ Other scripts:
 | `npm run check` | Static trust check only |
 | `npm run icons` | Redraws `extension/icons/*.png` and the site icons (Python 3, standard library) |
 | `npm run fixtures` | Regenerates test images (AVIF needs macOS `sips`; the file is checked in) |
+| `npm run version-css` | After editing `site/style.css`: stamps every page's stylesheet link (`style.css?v=…`) so visitors get the new styles at once. A test fails if you forget. |
 | `npm run store` | Renders `store/*.png` from `store/scenes.html`, with real captures of the options page and ask window |
 | `sh scripts/package.sh` | Runs the tests, then builds `dist/imgkeep-<version>.zip` |
 

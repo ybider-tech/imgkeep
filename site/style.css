@@ -260,6 +260,17 @@ footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 footer .guides { margin-top: 12px; }
 
 /* Breadcrumb on guide pages */
-.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); }
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
 .crumbs a { font-weight: 600; text-decoration: none; }
 .crumbs a:hover { text-decoration: underline; }
