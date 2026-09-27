@@ -166,3 +166,14 @@ test("every page loads the current stylesheet version (run npm run version-css a
     expect(refs, file).toEqual([`?v=${v}`]);
   }
 });
+
+test("the rating link lives only on Support and Ideas, never as a pop-up or on other pages", async () => {
+  const REVIEWS = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews";
+  for (const file of ["support.html", "ideas.html"]) {
+    const html = await readFile(join(ROOT, "site", file), "utf8");
+    expect(html.split(REVIEWS).length - 1, file).toBe(1);
+  }
+  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html"]) {
+    expect(await readFile(join(ROOT, "site", file), "utf8"), file).not.toContain("/reviews");
+  }
+});

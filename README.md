@@ -9,6 +9,8 @@ Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on yo
 
 Website: [imgkeep.app](https://imgkeep.app) · Chrome Web Store: [Imgkeep](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · Ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
 
+If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews) helps others find it. (The extension itself will never ask.)
+
 ## What it does
 
 Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, or **Original format**.
