@@ -100,6 +100,13 @@ store/       listing copy, scenes and rendered store images
 scripts/     package.sh, make-icons.py
 ```
 
+## Releasing a new version
+
+1. Bump `version` in `extension/manifest.json` (and `package.json`), and move the CHANGELOG's notes under the new version.
+2. `sh scripts/package.sh` runs every test, then builds `dist/imgkeep-<version>.zip`.
+3. Chrome Web Store dashboard → Imgkeep → **Package** → **Upload new package**. Update the **Store listing** from `store/listing.md` if it changed, then **Submit for review**.
+4. After approval, update the website if the release changes what Imgkeep does.
+
 ## Deployment
 
 Nothing here has been run yet. Do these in order.
@@ -147,9 +154,9 @@ Check with `dig +short imgkeep.app` and `dig +short www.imgkeep.app`.
 
 ### 4. Chrome Web Store
 
-1. `sh scripts/package.sh` → `dist/imgkeep-0.3.0.zip`.
+1. `sh scripts/package.sh` → `dist/imgkeep-<version>.zip`.
 2. Sign in to the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/devconsole) with helloimgkeep@gmail.com. Account type: **Non-trader**.
-3. **New item** → upload `dist/imgkeep-0.3.0.zip`.
+3. **New item** → upload `dist/imgkeep-<version>.zip`.
 4. **Store listing**: paste from `store/listing.md` (description, category Tools, language English). Upload `extension/icons/icon128.png`, the four `store/screenshot-*.png` files and `store/promo-tile-440x280.png`.
 5. **Privacy practices**: single purpose, each permission justification, remote code "No", data usage "none", tick all three certifications (all in `store/listing.md`). Privacy policy URL `https://imgkeep.app/privacy.html` (must be live first, see steps 2–3).
 6. **Distribution**: Public, all regions, free.
@@ -160,7 +167,7 @@ Check with `dig +short imgkeep.app` and `dig +short www.imgkeep.app`.
 The same zip works in Edge. Everything to paste is in `store/edge-listing.md`, and the 300×300 store logo is `store/edge-logo-300.png` (made by `npm run icons`).
 
 1. Register (free) at https://partner.microsoft.com/dashboard/microsoftedge/overview with a Microsoft account.
-2. **Create new extension** → upload `dist/imgkeep-0.3.0.zip`.
+2. **Create new extension** → upload `dist/imgkeep-<version>.zip`.
 3. Fill in Availability (Public, all markets), Properties, Store listing and Submission notes from `store/edge-listing.md`, then **Publish**. Review takes up to 7 business days.
 
 ### 6. After Chrome Web Store approval (done 2026-09-26)

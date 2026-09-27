@@ -1,6 +1,6 @@
-# Microsoft Edge Add-ons listing: Imgkeep 0.3.0
+# Microsoft Edge Add-ons listing: Imgkeep 0.4.0
 
-Same package as the Chrome Web Store (`dist/imgkeep-0.3.0.zip`). Submit through Microsoft Partner Center: https://partner.microsoft.com/dashboard/microsoftedge/overview
+Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through Microsoft Partner Center: https://partner.microsoft.com/dashboard/microsoftedge/overview
 
 ## Properties
 - **Category:** Photos (if it isn't offered, Productivity)
@@ -10,8 +10,8 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.3.0.zip`). Submit through 
 - **Mature content:** No
 
 ## Store listing (English)
-- **Display name:** comes from the manifest: Imgkeep — Save image as PNG, JPG, WebP
-- **Short description** (if asked): Right-click any image to save it as PNG, JPG or WebP, straight to your folder. No site access, no tracking, open source.
+- **Display name:** comes from the manifest: Imgkeep — Save image as PNG, JPG, WebP, GIF. WebP & AVIF converter
+- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP or GIF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
@@ -20,21 +20,22 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.3.0.zip`). Submit through 
   2. save image as jpg
   3. webp to jpg
   4. webp to png
-  5. avif to jpg
-  6. image converter
-  7. save webp
+  5. webp to gif
+  6. avif to jpg
+  7. converter
 
 ### Description
 ```text
-Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on your computer and saves it where you want, every time.
+Right-click any image and save it as PNG, JPG, WebP or GIF. Imgkeep converts it on your computer and saves it where you want, every time.
 
-Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click:
+Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click, and keeps animations as GIF:
 
-Imgkeep: Save image as → PNG · JPG · WebP · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · Original format
 
 WHAT IT DOES
 
-• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG, GIF (first frame) and data: images work too.
+• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
+• Keep the animation: save animated WebP, AVIF and APNG as GIF, frame by frame with their timing and transparency. Animated GIFs are saved exactly as they are.
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -57,12 +58,9 @@ Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.ht
 
 ## Notes for certification
 ```text
-Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, Original format). To test: right-click any image on any website and pick a format; the file is saved to Downloads.
+Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, Original format). To test: right-click any image on any website and pick a format; the file is saved to Downloads.
 
 Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code, no data collection. Source code: https://github.com/ybider-tech/imgkeep
 
 The same package is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 ```
-
-## Known wording issue
-A few messages inside the extension say "Chrome" (e.g. "Saves to Chrome's download folder"). They'll become browser-neutral in the next version, together with the planned name and summary update.

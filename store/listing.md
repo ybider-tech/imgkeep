@@ -1,12 +1,12 @@
-# Chrome Web Store listing: Imgkeep 0.3.0
+# Chrome Web Store listing: Imgkeep 0.4.0
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Basics
 
-- **Name:** Imgkeep — Save image as PNG, JPG, WebP
+- **Name** (from the manifest): Imgkeep — Save image as PNG, JPG, WebP, GIF. WebP & AVIF converter
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary (≤132 chars, from the manifest):** Right-click any image to save it as PNG, JPG or WebP, straight to your folder. No site access, no tracking, open source.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP or GIF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Category:** Tools
 - **Language:** English
 - **Homepage:** https://imgkeep.app
@@ -15,18 +15,19 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v2, submitted 2026-09-26 (v1 was live at launch on 2026-09-26). Paste as-is into the dashboard.
+v3, for 0.4.0 (adds GIF). Paste as-is into the dashboard together with the 0.4.0 package.
 
 ```text
-Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on your computer and saves it where you want, every time.
+Right-click any image and save it as PNG, JPG, WebP or GIF. Imgkeep converts it on your computer and saves it where you want, every time.
 
-Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click:
+Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click, and keeps animations as GIF:
 
-Imgkeep: Save image as → PNG · JPG · WebP · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · Original format
 
 WHAT IT DOES
 
-• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG, GIF (first frame) and data: images work too.
+• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
+• Keep the animation: save animated WebP, AVIF and APNG as GIF, frame by frame with their timing and transparency. Animated GIFs are saved exactly as they are.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -42,7 +43,7 @@ BUILT TO BE TRUSTED
 
 WHEN A SITE BLOCKS AN IMAGE
 
-A few sites stop other sites from reading their images. Only then, and only when you click "Allow and save", Imgkeep asks Chrome for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
+A few sites stop other sites from reading their images. Only then, and only when you click "Allow and save", Imgkeep asks your browser for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
 
 Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.html
 ```
@@ -55,7 +56,7 @@ Save the image you right-click in the format and folder you choose.
 
 ### Permission justifications
 
-- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, Original format) to the right-click menu on images. This menu is the only way to use the extension.
+- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, Original format) to the right-click menu on images. This menu is the only way to use the extension.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
 - **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour) in Chrome sync storage, and keeps a pending save in session storage while the small decision window is open.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.

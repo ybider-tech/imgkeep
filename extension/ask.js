@@ -15,12 +15,12 @@ let finished = false;
 const ERRORS = {
   blocked: "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
   http: "The site answered with an error instead of the image.",
-  decode: "Chrome couldn't read this file as an image.",
-  unsupported: "This version of Chrome can't create this format. Try PNG instead.",
+  decode: "Your browser couldn't read this file as an image.",
+  unsupported: "This browser version can't create this format. Try PNG instead.",
   blob: "This image only exists inside the page (a blob: link). Imgkeep can't read it because it has no access to your pages.",
   "too-large": "This image is too large to convert in the browser.",
   timeout: "Converting this image took too long, so Imgkeep stopped. Try PNG, or a shorter or smaller animation.",
-  download: "Chrome couldn't start the download.",
+  download: "Your browser couldn't start the download.",
   write: "Imgkeep couldn't write the file to your folder.",
   expired: "This save has expired. Right-click the image and try again.",
   unknown: "Something went wrong while saving this image.",
@@ -134,10 +134,10 @@ function render() {
     body.append(
       el("p", {
         textContent: reconnect
-          ? "Chrome needs your OK to save into this folder again."
+          ? "Your browser needs your OK to save into this folder again."
           : "Pick the folder where Imgkeep should save your images.",
       }),
-      el("p", { className: "muted" }, "When Chrome asks, choose ", el("strong", { textContent: "“Allow on every visit”" }), " so it won't ask again."),
+      el("p", { className: "muted" }, "When your browser asks, choose ", el("strong", { textContent: "“Allow on every visit”" }), " so it won't ask again."),
     );
     actions.append(button(reconnect ? "Reconnect and save" : "Choose folder and save", () => writeToFolder(reconnect), true), cancelBtn);
     return;
@@ -156,7 +156,7 @@ async function writeToFolder(reconnect) {
   // Both calls below need this click, so they come first.
   if (reconnect) {
     const permission = await folder.requestPermission({ mode: "readwrite" });
-    if (permission !== "granted") return status("Chrome didn't allow access to the folder. Nothing was saved.", true);
+    if (permission !== "granted") return status("Your browser didn't allow access to the folder. Nothing was saved.", true);
   } else {
     try {
       folder = await showDirectoryPicker({ mode: "readwrite", id: "imgkeep" });
