@@ -1,6 +1,7 @@
 // Service worker: context menu, save jobs, and the small ask window.
 
 import { FORMATS, getSettings, buildTarget, targetPath, extFromUrl } from "./lib/settings.js";
+import { JobError } from "./lib/job-error.js";
 
 const MENU = {
   "imgkeep-png": "png",
@@ -25,14 +26,6 @@ chrome.contextMenus.onClicked.addListener((info) => {
   const format = MENU[info.menuItemId];
   if (format && info.srcUrl) runJob({ url: info.srcUrl, format, pageUrl: info.pageUrl });
 });
-
-class JobError extends Error {
-  constructor(code, detail = "") {
-    super(code);
-    this.code = code;
-    this.detail = detail;
-  }
-}
 
 // ---- Offscreen document (created on demand) ----
 

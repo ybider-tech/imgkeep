@@ -2,18 +2,11 @@
 // and writes to the chosen folder. This is the only file that makes a network request.
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
+import { JobError } from "./lib/job-error.js";
 
 // Converted files waiting to be saved, by job id. Dropped after 10 minutes at most.
 const pending = new Map();
 const KEEP_MS = 10 * 60 * 1000;
-
-class JobError extends Error {
-  constructor(code, detail = "") {
-    super(code);
-    this.code = code;
-    this.detail = detail;
-  }
-}
 
 // Only the image the user clicked is ever requested.
 async function fetchImage(url) {
