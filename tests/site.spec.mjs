@@ -146,3 +146,13 @@ test("guide pages: one tagged store link each, linked to each other, from home a
     for (const guide of GUIDES) await expect(page.locator(`a[href="${guide}/"]`), `${file} links to ${guide}`).toHaveCount(1);
   }
 });
+
+test("guides have a visible way back to the home page", async ({ page }) => {
+  for (const slug of ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png"]) {
+    await page.goto(`${server.url}/${slug}/`);
+    const home = page.locator('nav.crumbs a', { hasText: "Home" });
+    await expect(home).toBeVisible();
+    await home.click();
+    await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
+  }
+});

@@ -258,3 +258,8 @@ footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .option .cta-note { margin-top: 10px; }
 .sources { font-size: 0.95rem; color: var(--muted); }
 footer .guides { margin-top: 12px; }
+
+/* Breadcrumb on guide pages */
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); }
+.crumbs a { font-weight: 600; text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
