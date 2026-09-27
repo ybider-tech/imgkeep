@@ -5,7 +5,7 @@ Right-click any image and save it as PNG, JPG or WebP. Imgkeep converts it on yo
 - Four permissions: `contextMenus`, `downloads`, `storage`, `offscreen`. No access to your pages. See [PERMISSIONS.md](PERMISSIONS.md).
 - No analytics, no remote code, no network use except fetching the image you clicked.
 - No review prompts, welcome tabs, badges or upsells. A small window opens only when a save needs your decision.
-- Plain JavaScript ES modules, no build step, no dependencies in the extension.
+- Plain JavaScript ES modules, no build step, no npm dependencies. One small library is vendored as a single readable file: [gifenc](https://github.com/mattdesl/gifenc) (MIT) in `extension/lib/gifenc.js`, for making GIFs.
 
 Website: [imgkeep.app](https://imgkeep.app) · Chrome Web Store: [Imgkeep](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · Ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas) · Privacy: [extension/PRIVACY.md](extension/PRIVACY.md) · License: [MIT](LICENSE)
 
@@ -13,9 +13,10 @@ If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.
 
 ## What it does
 
-Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, or **Original format**.
+Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, or **Original format**.
 
-- Reads WebP, AVIF, SVG, PNG, JPG, GIF (first frame) and `data:` images.
+- Reads WebP, AVIF, SVG, PNG, JPG, GIF and `data:` images.
+- **GIF keeps animation:** an animated GIF is saved exactly as it is; animated WebP, AVIF and APNG are converted frame by frame, keeping each frame's timing and transparency. A still image saved as GIF becomes a one-frame GIF. GIFs are made at most 800px wide (larger ones are scaled down, keeping their shape).
 - Converts at the image's natural size in an offscreen document (canvas). JPG gets your background colour behind transparent areas (default white).
 - Quality: JPG 92 and WebP 90 by default, adjustable from 50 to 100.
 - File names from a template, default `{name}`. Tokens: `{name}` (file name from the URL, `image` for `data:` URLs), `{host}` (without `www.`), `{date}` (YYYY-MM-DD), `{time}` (HHMMSS), `{w}`, `{h}`. The subfolder setting takes the same tokens, e.g. `Imgkeep/{host}`. Characters that are illegal on Windows or macOS are removed.
@@ -46,7 +47,10 @@ If a site blocks cross-site image reads, a small window asks whether to allow th
 - **Original format and Ask always use Downloads.** In folder mode, **Original format** still saves through Chrome's downloads (with your subfolder and name template). **Ask every time** uses Chrome's Save As dialog.
 - **Original format without a file extension** in the URL is named by Chrome from the server's answer, without your subfolder or template.
 - Very large images may exceed Chrome's canvas limit; you'll see "too large to convert".
-- Animated GIF and WebP are saved as their first frame.
+- PNG, JPG and WebP output is always a still image: animated images are saved as their first frame. Choose **GIF** to keep the animation.
+- GIF output is limited to 600 frames and about 150 million source pixels in total (width × height × frames), and stops after 90 seconds. Bigger animations show a "too large" or "took too long" message.
+- GIF has 256 colours per frame and on/off transparency, so photos and soft edges look coarser than in the original. Converting to GIF is a trade-off for compatibility.
+- Videos can't be saved as GIF yet.
 
 ## Imgkeep Pro waitlist link
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- **Save as GIF, keeping animation.** New menu item "GIF (keeps animation)". Animated GIFs are saved byte for byte; animated WebP, AVIF and APNG are converted frame by frame with their timing and transparency; still images become one-frame GIFs. GIFs are at most 800px wide. Converted locally, like everything else.
+- Limits for GIF output (600 frames, ~150M source pixels, 90 s), with clear "too large" and "took too long" messages.
+- Vendored gifenc 1.0.3 (MIT) as `extension/lib/gifenc.js`. No new permissions and no new network requests.
+
 ## 0.3.0 — 2026-09-24
 
 First public release.
