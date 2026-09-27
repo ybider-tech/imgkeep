@@ -1,12 +1,13 @@
 // Service worker: context menu, save jobs, and the small ask window.
 
-import { FORMATS, getSettings, buildTarget, targetPath, extFromUrl } from "./lib/settings.js";
+import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl } from "./lib/settings.js";
 import { JobError } from "./lib/job-error.js";
 
 const MENU = {
   "imgkeep-png": "png",
   "imgkeep-jpg": "jpg",
   "imgkeep-webp": "webp",
+  "imgkeep-gif": "gif",
   "imgkeep-original": "original",
 };
 
@@ -17,6 +18,7 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({ id: "imgkeep-png", parentId: "imgkeep", title: "PNG", contexts });
     chrome.contextMenus.create({ id: "imgkeep-jpg", parentId: "imgkeep", title: "JPG", contexts });
     chrome.contextMenus.create({ id: "imgkeep-webp", parentId: "imgkeep", title: "WebP", contexts });
+    chrome.contextMenus.create({ id: "imgkeep-gif", parentId: "imgkeep", title: "GIF (keeps animation)", contexts });
     chrome.contextMenus.create({ id: "imgkeep-sep", parentId: "imgkeep", type: "separator", contexts });
     chrome.contextMenus.create({ id: "imgkeep-original", parentId: "imgkeep", title: "Original format", contexts });
   });
@@ -41,10 +43,21 @@ async function ensureOffscreen() {
   await creating;
 }
 
+// The converter stops long GIF encodes itself; this is a backstop so a save can never wait forever.
+const OFFSCREEN_TIMEOUT_MS = GIF_LIMITS.timeoutMs + 30_000;
+
 async function toOffscreen(msg) {
   await ensureOffscreen();
-  const res = await chrome.runtime.sendMessage({ target: "offscreen", ...msg });
-  return res || { ok: false, code: "unknown", detail: "No answer from the converter" };
+  let timer;
+  const timeout = new Promise((resolve) => {
+    timer = setTimeout(() => resolve({ ok: false, code: "timeout" }), OFFSCREEN_TIMEOUT_MS);
+  });
+  try {
+    const res = await Promise.race([chrome.runtime.sendMessage({ target: "offscreen", ...msg }), timeout]);
+    return res || { ok: false, code: "unknown", detail: "No answer from the converter" };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 // Drop a converted file without starting the offscreen document just for that.

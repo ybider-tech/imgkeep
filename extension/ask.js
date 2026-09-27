@@ -19,6 +19,7 @@ const ERRORS = {
   unsupported: "This version of Chrome can't create this format. Try PNG instead.",
   blob: "This image only exists inside the page (a blob: link). Imgkeep can't read it because it has no access to your pages.",
   "too-large": "This image is too large to convert in the browser.",
+  timeout: "Converting this image took too long, so Imgkeep stopped. Try PNG, or a shorter or smaller animation.",
   download: "Chrome couldn't start the download.",
   write: "Imgkeep couldn't write the file to your folder.",
   expired: "This save has expired. Right-click the image and try again.",

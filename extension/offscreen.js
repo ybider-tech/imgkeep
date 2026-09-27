@@ -1,8 +1,10 @@
-// Offscreen document: fetches the clicked image, converts it on a canvas,
+// Offscreen document: fetches the clicked image, converts it on a canvas (or into a GIF),
 // and writes to the chosen folder. This is the only file that makes a network request.
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { JobError } from "./lib/job-error.js";
+import { GIF_LIMITS } from "./lib/settings.js";
+import { sniffImageType, gifSize, openAnimation, stillFrame, checkLimits, fitWidth, encodeGif } from "./lib/gif.js";
 
 // Converted files waiting to be saved, by job id. Dropped after 10 minutes at most.
 const pending = new Map();
@@ -82,6 +84,35 @@ async function convert({ url, mime, quality, background }) {
   }
 }
 
+// GIF output. A GIF stays exactly as it is; animated WebP/AVIF/APNG are re-encoded frame by frame;
+// a still image becomes a one-frame GIF.
+async function animate({ url }) {
+  const input = await fetchImage(url);
+  const type = await sniffImageType(input);
+  if (type === "image/gif") {
+    const { width, height } = await gifSize(input);
+    return { blob: new Blob([input], { type: "image/gif" }), width, height };
+  }
+  const deadline = Date.now() + GIF_LIMITS.timeoutMs;
+  const animation = await openAnimation(input, type);
+  if (animation) {
+    try {
+      checkLimits(animation);
+      const size = fitWidth(animation.width, animation.height);
+      return { blob: await encodeGif(animation.frames(), { ...size, deadline }), ...size };
+    } finally {
+      animation.close();
+    }
+  }
+  const image = await decode(input);
+  try {
+    const size = fitWidth(image.width, image.height);
+    return { blob: await encodeGif(stillFrame(image.source), { ...size, deadline }), ...size };
+  } finally {
+    image.done();
+  }
+}
+
 function toDataUrl(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -110,7 +141,7 @@ const DATA_URL_LIMIT = 1.5 * 1024 * 1024;
 
 const handlers = {
   async convert(msg) {
-    const { blob, width, height } = await convert(msg);
+    const { blob, width, height } = msg.mime === "image/gif" ? await animate(msg) : await convert(msg);
     const entry = { blob };
     keep(msg.jobId, entry);
     const result = { width, height, mime: blob.type, size: blob.size };

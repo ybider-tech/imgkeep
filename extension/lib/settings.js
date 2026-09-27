@@ -17,6 +17,16 @@ export const FORMATS = {
   png: { mime: "image/png", ext: "png", label: "PNG" },
   jpg: { mime: "image/jpeg", ext: "jpg", label: "JPG" },
   webp: { mime: "image/webp", ext: "webp", label: "WebP" },
+  // GIF keeps animation: animated WebP/AVIF/APNG are re-encoded frame by frame, GIFs are kept as they are.
+  gif: { mime: "image/gif", ext: "gif", label: "GIF", animated: true },
+};
+
+// Caps for making GIFs, so a huge animation can't hang the browser. Over a cap → "too-large".
+export const GIF_LIMITS = {
+  maxFrames: 600,
+  maxTotalPixels: 150_000_000, // source width × height × frames
+  maxWidth: 800, // wider animations are scaled down, keeping their shape
+  timeoutMs: 90_000, // stop an encode that takes longer than this → "timeout"
 };
 
 // Extensions we trust when saving the original file as-is.
