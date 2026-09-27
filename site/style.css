@@ -236,3 +236,25 @@ footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .actions .cta { margin-top: 0; }
 .doc ol { padding-left: 1.3em; }
 .doc li { margin-bottom: 0.5em; }
+
+/* Guide pages */
+.doc h3 { margin-top: 1.4em; }
+.doc ul { padding-left: 1.3em; }
+.option {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 20px 24px;
+  margin: 1.6em 0;
+}
+.option h2, .option h3 { margin-top: 0; }
+.option .label {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin: 0 0 0.4em;
+}
+.option .cta-note { margin-top: 10px; }
+.sources { font-size: 0.95rem; color: var(--muted); }
+footer .guides { margin-top: 12px; }

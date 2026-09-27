@@ -66,8 +66,10 @@ export function startServer({ cors, root = FIXTURES }) {
       let body;
       if (path === "/big.png") body = big();
       else if (path.includes("..")) throw new Error("bad path");
-      else body = await readFile(join(root, path.endsWith("/") ? `${path}index.html` : path));
-      res.writeHead(200, { ...headers, "Content-Type": TYPES[extname(path)] || "application/octet-stream", "Cache-Control": "no-store" });
+      // A folder URL ("/guide/") serves its index.html, like GitHub Pages; the type comes from the file served.
+      const file = path.endsWith("/") ? `${path}index.html` : path;
+      if (!body) body = await readFile(join(root, file));
+      res.writeHead(200, { ...headers, "Content-Type": TYPES[extname(file)] || "application/octet-stream", "Cache-Control": "no-store" });
       res.end(body);
     } catch {
       res.writeHead(404, { ...headers, "Content-Type": "text/plain" });

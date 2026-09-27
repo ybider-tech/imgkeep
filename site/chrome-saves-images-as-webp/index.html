@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Chrome saves images as WebP, and how to get JPG or PNG</title>
+  <meta name="description" content="Chrome saves the file the site sends, and many sites now send WebP. There's no setting to change it. Here are four ways to get a JPG or PNG instead.">
+  <link rel="canonical" href="https://imgkeep.app/chrome-saves-images-as-webp/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Why Chrome saves images as WebP (and how to get JPG or PNG)">
+  <meta property="og:description" content="Chrome saves the file the site sends, and many sites now send WebP. There's no setting to change it. Here are four ways to get a JPG or PNG instead.">
+  <meta property="og:url" content="https://imgkeep.app/chrome-saves-images-as-webp/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: save any image as PNG, JPG or WebP from Chrome's right-click menu">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I just rename the .webp file to .jpg?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Renaming changes the name, not the file. It's still WebP inside. Some apps look inside and open it anyway; many don't. Convert it instead." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is WebP bad?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It's a good format that makes pages load faster, and current browsers and operating systems can show it. The trouble is older apps, some upload forms and some print or design tools that still expect JPG or PNG." }
+      },
+      {
+        "@type": "Question",
+        "name": "JPG or PNG?",
+        "acceptedAnswer": { "@type": "Answer", "text": "PNG keeps every pixel and any transparency, but files are bigger. JPG is smaller and fine for photos, but it has no transparency." }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+    </header>
+
+    <main class="doc">
+      <h1>Why Chrome saves images as WebP (and how to get JPG or PNG)</h1>
+      <p class="lead">Chrome saves the file the website sent. Many sites now send WebP, so that's what lands in your Downloads folder. There's no Chrome setting that changes this, but there are easy ways to get a JPG or PNG.</p>
+
+      <h2>Why it happens</h2>
+      <p>Every time Chrome asks a site for an image, it also says which formats it can show. Current versions of Chrome list AVIF and WebP first. Many sites and image services use that to pick the smallest file for you, because WebP and AVIF are usually much smaller than JPG or PNG at the same quality. Pages load faster.</p>
+      <p>When you choose <strong>Save image as…</strong>, Chrome saves exactly the file it received. It doesn't convert anything. Two things follow from that:</p>
+      <ul>
+        <li>An image address can end in <code>.jpg</code> and still deliver WebP. The site decides by what the browser accepts, not by the name.</li>
+        <li>The same image can arrive as AVIF instead. See <a href="../save-avif-as-jpg-png/">how to save AVIF as JPG or PNG</a>.</li>
+      </ul>
+
+      <h2>Is there a Chrome setting to stop it?</h2>
+      <p>No. Chrome has no option for the format of saved images, and no setting that tells sites you don't want WebP. So the fixes below all work on the image itself: converting it as you save it, or afterwards.</p>
+
+      <h2>Four ways to get a JPG or PNG</h2>
+
+      <h3>1. Copy and paste into an image editor</h3>
+      <p>Right-click the image and choose <strong>Copy image</strong>. On Windows, paste it into Paint (Ctrl+V) and use <strong>File › Save as</strong>. On a Mac, open Preview, choose <strong>File › New from Clipboard</strong>, then <strong>File › Export</strong>. Nothing to install. The catch: several steps per image, and a transparent background may not survive.</p>
+
+      <h3>2. Save it, then convert it</h3>
+      <p>Save the WebP as usual, open it in Paint (Windows) or Preview (Mac), and save or export it as JPEG or PNG. Also nothing to install, but you end up with two files and a few extra clicks each time. Step by step: <a href="../save-webp-as-jpg-png/">how to save WebP as JPG or PNG</a>.</p>
+
+      <h3>3. Take a screenshot</h3>
+      <p>Press Win+Shift+S on Windows or Cmd+Shift+4 on a Mac and select the image. It works on anything you can see. The catch: you get what's on screen, not the original file, so it's often smaller and may include bits of the page.</p>
+
+      <h3>4. Use an extension that converts as it saves</h3>
+      <p>An extension can add a "save as PNG or JPG" option to the right-click menu and convert for you, at full size, in one step. The catch: you're trusting code that runs in your browser, so choose carefully (see the checklist below).</p>
+
+      <div class="option">
+        <p class="label">Our extension</p>
+        <h3>Imgkeep</h3>
+        <p>We make Imgkeep, a free Chrome extension for exactly this. Right-click any image, choose <strong>Imgkeep: Save image as</strong>, then <strong>PNG</strong>, <strong>JPG</strong>, <strong>WebP</strong> or <strong>Original format</strong>. It converts on your computer and saves to Downloads, a folder you pick, or wherever you choose each time. It can't read the pages you visit, and it's open source.</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=chrome-saves-images-as-webp">Add Imgkeep to Chrome — free</a>
+        <span class="cta-note">Four permissions. No uploads, no account.</span>
+      </div>
+
+      <h2>How to judge an image extension</h2>
+      <p>Older articles often recommend "Save image as Type". Google removed it from the Chrome Web Store in March 2026, after a change of owner, when it was found inserting affiliate links into shopping sites (<a href="https://9to5google.com/2026/03/16/image-saving-chrome-extension-removed-as-malware/">9to5Google</a>). If you still have it, remove it. Whatever you install, check:</p>
+      <ul>
+        <li><strong>Permissions.</strong> Does it ask to "read and change all your data" on every website? Saving the image you right-click doesn't need that.</li>
+        <li><strong>Data.</strong> Read the "Privacy" section of the store listing. Does it say it collects anything?</li>
+        <li><strong>Owner and updates.</strong> Is it still maintained? Has the developer changed recently?</li>
+        <li><strong>Source.</strong> Is the code public, so others can check what it does?</li>
+      </ul>
+
+      <h2>Questions</h2>
+      <h3>Can I just rename the .webp file to .jpg?</h3>
+      <p>Renaming changes the name, not the file. It's still WebP inside. Some apps look inside and open it anyway; many don't. Convert it instead.</p>
+      <h3>Is WebP bad?</h3>
+      <p>No. It's a good format that makes pages load faster, and current browsers and operating systems can show it. The trouble is older apps, some upload forms and some print or design tools that still expect JPG or PNG.</p>
+      <h3>JPG or PNG?</h3>
+      <p>PNG keeps every pixel and any transparency, but files are bigger. JPG is smaller and fine for photos, but it has no transparency. More in the <a href="../save-webp-as-jpg-png/">WebP guide</a>.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

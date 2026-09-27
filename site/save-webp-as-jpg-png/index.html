@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to save WebP as JPG or PNG in Chrome — Imgkeep</title>
+  <meta name="description" content="Save WebP images as JPG or PNG in Chrome: in one step with an extension, or free with Paint, Preview or copy and paste. Which format to pick, and why.">
+  <link rel="canonical" href="https://imgkeep.app/save-webp-as-jpg-png/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="How to save WebP as JPG or PNG in Chrome">
+  <meta property="og:description" content="Save WebP images as JPG or PNG in Chrome: in one step with an extension, or free with Paint, Preview or copy and paste. Which format to pick, and why.">
+  <meta property="og:url" content="https://imgkeep.app/save-webp-as-jpg-png/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: save any image as PNG, JPG or WebP from Chrome's right-click menu">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does converting WebP to JPG lose quality?",
+        "acceptedAnswer": { "@type": "Answer", "text": "PNG keeps the pixels exactly as they are. JPG compresses again, so there's a small loss, usually invisible at high quality settings." }
+      },
+      {
+        "@type": "Question",
+        "name": "What about animated WebP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "JPG and PNG can't hold animation, so a converted animated WebP becomes a still image of one frame. Imgkeep saves the first frame." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I make Chrome always save JPG?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Chrome has no setting for the format of saved images. It saves the file the site sent." }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+    </header>
+
+    <main class="doc">
+      <h1>How to save WebP as JPG or PNG in Chrome</h1>
+      <p class="lead">Chrome saves images in the format the site sent, and that's often WebP. To get a JPG or PNG, you convert the image: as you save it, with an extension, or afterwards, with an app you already have.</p>
+
+      <h2>First: JPG or PNG?</h2>
+      <ul>
+        <li><strong>PNG</strong> keeps every pixel and any transparent background. Files are bigger. Best for logos, screenshots and graphics.</li>
+        <li><strong>JPG</strong> is smaller and opens everywhere. Best for photos. It has no transparency, so transparent areas get a solid colour, usually white.</li>
+      </ul>
+      <p>Not sure? Pick PNG. It never loses anything.</p>
+
+      <h2>With an extension, in one step</h2>
+      <p>An extension can convert the image as you save it, straight from the right-click menu. Here's how it works with ours.</p>
+
+      <div class="option">
+        <p class="label">Our extension</p>
+        <h3>Imgkeep</h3>
+        <ol>
+          <li>Add Imgkeep to Chrome from the Chrome Web Store.</li>
+          <li>Right-click the image and choose <strong>Imgkeep: Save image as</strong>.</li>
+          <li>Pick <strong>PNG</strong> or <strong>JPG</strong>. The file is saved to your Downloads folder.</li>
+        </ol>
+        <p>In Options you can send images to a folder you pick instead, or choose where each time. You can also set the JPG quality, the background colour transparent images get as JPG (white by default), and file names like <code>{name}-{w}x{h}</code>. It never overwrites an existing file. Conversion happens on your computer; nothing is uploaded. Free and open source.</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-webp-as-jpg-png">Add Imgkeep to Chrome — free</a>
+        <span class="cta-note">Works in Chrome 116 and newer.</span>
+      </div>
+
+      <h2>Without an extension</h2>
+
+      <h3>Windows: Paint</h3>
+      <ol>
+        <li>Save the image as usual (right-click › <strong>Save image as…</strong>).</li>
+        <li>Right-click the saved file, choose <strong>Open with › Paint</strong>.</li>
+        <li><strong>File › Save as</strong>, then <strong>JPEG picture</strong> or <strong>PNG picture</strong>.</li>
+      </ol>
+      <p>If the image had a transparent background, check the result: Paint may not keep it.</p>
+
+      <h3>Mac: Preview</h3>
+      <ol>
+        <li>Save the image, then open it in Preview (on older macOS versions, Preview may not open WebP).</li>
+        <li><strong>File › Export</strong>, and set <strong>Format</strong> to JPEG or PNG.</li>
+      </ol>
+
+      <h3>Any computer: copy and paste</h3>
+      <p>Right-click the image, choose <strong>Copy image</strong>, and paste it into an image editor, then save as JPG or PNG. In Preview, use <strong>File › New from Clipboard</strong>. It skips the WebP file entirely, but transparency may be lost.</p>
+
+      <h3>Online converters</h3>
+      <p>They work, but you upload the image to someone else's server. Fine for public pictures; think twice for anything private.</p>
+
+      <h2>If it still won't open</h2>
+      <p>Renaming <code>photo.webp</code> to <code>photo.jpg</code> doesn't convert it. It's still WebP inside, and many apps will refuse it. The reverse also happens: a site can send WebP from an address ending in <code>.jpg</code>. <a href="../chrome-saves-images-as-webp/">Here's why Chrome saves images as WebP</a>.</p>
+      <p>If you can't save an image at all, it may exist only inside the page (a <code>blob:</code> address). Extensions without access to the page, Imgkeep included, can't read those. A screenshot works.</p>
+
+      <h2>Questions</h2>
+      <h3>Does converting WebP to JPG lose quality?</h3>
+      <p>PNG keeps the pixels exactly as they are. JPG compresses again, so there's a small loss, usually invisible at high quality settings.</p>
+      <h3>What about animated WebP?</h3>
+      <p>JPG and PNG can't hold animation, so a converted animated WebP becomes a still image of one frame. Imgkeep saves the first frame.</p>
+      <h3>Can I make Chrome always save JPG?</h3>
+      <p>No. Chrome has no setting for the format of saved images. It saves the file the site sent. The same goes for AVIF: see <a href="../save-avif-as-jpg-png/">how to save AVIF as JPG or PNG</a>.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

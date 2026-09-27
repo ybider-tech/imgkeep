@@ -13,7 +13,16 @@ test.beforeAll(async () => {
 });
 test.afterAll(() => server?.close());
 
-for (const page of ["index.html", "privacy.html", "support.html", "ideas.html", "404.html"]) {
+// Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
+const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png"];
+const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
+// Every page as [URL path, file under site/].
+const PAGES = [
+  ...["index.html", "privacy.html", "support.html", "ideas.html", "404.html"].map((f) => [f, f]),
+  ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
+];
+
+for (const [page] of PAGES) {
   test(`${page} opens with no console errors`, async ({ page: tab }) => {
     const errors = [];
     tab.on("pageerror", (e) => errors.push(e.message));
@@ -22,9 +31,12 @@ for (const page of ["index.html", "privacy.html", "support.html", "ideas.html", 
     // Everything, fonts included, must come from the site itself: no third-party requests.
     const outside = [];
     tab.on("request", (r) => !r.url().startsWith(server.url) && !r.url().startsWith("data:") && outside.push(r.url()));
-    await tab.goto(`${server.url}/${page}`, { waitUntil: "networkidle" });
+    const res = await tab.goto(`${server.url}/${page}`, { waitUntil: "networkidle" });
+    expect(res.status()).toBe(200);
+    expect(res.headers()["content-type"]).toContain("text/html");
     await tab.evaluate(() => document.fonts.ready);
     expect(outside).toEqual([]);
+    await expect(tab.locator("h1")).toHaveCount(1);
     await expect(tab.locator("h1")).toBeVisible();
     expect(await tab.getAttribute("html", "lang")).toBe("en");
     expect(await tab.locator('meta[name="description"]').count()).toBe(1);
@@ -41,7 +53,7 @@ test("privacy.html matches PRIVACY.md", async ({ page }) => {
 });
 
 test("no analytics or trackers on the site", async () => {
-  for (const file of ["index.html", "privacy.html", "support.html", "ideas.html", "404.html"]) {
+  for (const [, file] of PAGES) {
     const raw = await readFile(join(ROOT, "site", file), "utf8");
     expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
     // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
@@ -67,7 +79,8 @@ test("ideas page links to the GitHub Ideas board, and every page links to it", a
 // Open Graph tags, and is listed in sitemap.xml, which robots.txt points to.
 test("SEO tags, sitemap and robots.txt are consistent", async () => {
   const pages = { "index.html": "https://imgkeep.app/", "privacy.html": "https://imgkeep.app/privacy.html",
-    "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html" };
+    "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html",
+    ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])) };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
@@ -88,8 +101,9 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
     expect(html).not.toMatch(/name="robots" content="[^"]*noindex/);
     expect(sitemap, `${url} in sitemap`).toContain(`<loc>${url}</loc>`);
   }
-  expect(titles.size).toBe(4);
-  expect(descriptions.size).toBe(4);
+  expect(titles.size).toBe(Object.keys(pages).length);
+  expect(descriptions.size).toBe(Object.keys(pages).length);
+  expect(sitemap.match(/<loc>/g).length).toBe(Object.keys(pages).length);
   expect(await readFile(join(ROOT, "site", "404.html"), "utf8")).toContain('<meta name="robots" content="noindex">');
 });
 
@@ -103,13 +117,32 @@ test("self-hosted fonts load, and the home page leads with what Imgkeep does", a
 });
 
 test("Add to Chrome points to the live store listing", async ({ page }) => {
-  const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
   await page.goto(`${server.url}/index.html`);
   await expect(page.locator("#install")).toHaveAttribute("href", STORE);
   const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
   expect(ld.installUrl).toBe(STORE);
   // No page may link to "#" as a placeholder any more.
-  for (const file of ["index.html", "privacy.html", "support.html", "ideas.html", "404.html"]) {
+  for (const [, file] of PAGES) {
     expect(await readFile(join(ROOT, "site", file), "utf8")).not.toMatch(/href="#"/);
+  }
+});
+
+test("guide pages: one tagged store link each, linked to each other, from home and from support", async ({ page }) => {
+  for (const guide of GUIDES) {
+    await page.goto(`${server.url}/${guide}/`);
+    const store = page.locator(`a[href^="${STORE}"]`);
+    await expect(store, `${guide}: one store link`).toHaveCount(1);
+    await expect(store).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=landing&utm_campaign=${guide}`);
+    await expect(page.locator('main a[href="../"], header a[href="../"]').first()).toBeVisible();
+    for (const other of GUIDES.filter((g) => g !== guide)) {
+      expect(await page.locator(`main a[href="../${other}/"]`).count(), `${guide} links to ${other}`).toBeGreaterThan(0);
+    }
+    // Relative links must resolve: every same-site link on the page returns 200.
+    const hrefs = await page.$$eval("a[href]", (as) => as.map((a) => a.href).filter((h) => h.startsWith(location.origin)));
+    for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
+  }
+  for (const file of ["index.html", "support.html"]) {
+    await page.goto(`${server.url}/${file}`);
+    for (const guide of GUIDES) await expect(page.locator(`a[href="${guide}/"]`), `${file} links to ${guide}`).toHaveCount(1);
   }
 });
