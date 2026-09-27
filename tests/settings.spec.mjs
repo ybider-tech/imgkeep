@@ -39,3 +39,14 @@ test("building the target path", () => {
   const empty = buildTarget({ settings: { subfolder: "", filenameTemplate: "" }, url: "data:image/png;base64,AA", ext: "jpg", now });
   expect(targetPath(empty)).toBe("image.jpg");
 });
+
+test("GIF size and limits", async () => {
+  const { fitWidth, checkLimits } = await import("../extension/lib/gif.js");
+  const { GIF_LIMITS, FORMATS } = await import("../extension/lib/settings.js");
+  expect(FORMATS.gif).toMatchObject({ mime: "image/gif", ext: "gif", animated: true });
+  expect(fitWidth(1000, 100)).toEqual({ width: 800, height: 80 });
+  expect(fitWidth(320, 200)).toEqual({ width: 320, height: 200 }); // never scales up
+  expect(() => checkLimits({ width: 8, height: 8, frameCount: GIF_LIMITS.maxFrames })).not.toThrow();
+  expect(() => checkLimits({ width: 8, height: 8, frameCount: GIF_LIMITS.maxFrames + 1 })).toThrow("too-large");
+  expect(() => checkLimits({ width: 4000, height: 4000, frameCount: 10 })).toThrow("too-large");
+});

@@ -17,6 +17,8 @@ test.beforeAll(async () => {
   [cors, plain] = await Promise.all([startServer({ cors: true }), startServer({ cors: false })]);
   ctx = await launchWithExtension();
   blank = await ctx.context.newPage();
+  // A local http page is a secure context, which ImageDecoder (used to read GIFs back) needs.
+  await blank.goto(`${cors.url}/photo.svg`);
 });
 
 test.afterAll(async () => {
@@ -271,10 +273,90 @@ test("Options page loads without errors and shows the four permissions", async (
   await page.close();
 });
 
+// Reads a GIF back with ImageDecoder: frame count, size, each frame's duration and top-left pixel.
+const gifInfo = (bytes) =>
+  blank.evaluate(async (b64) => {
+    const data = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+    const decoder = new ImageDecoder({ data, type: "image/gif" });
+    await decoder.tracks.ready;
+    await decoder.completed;
+    const frames = [];
+    for (let i = 0; i < decoder.tracks.selectedTrack.frameCount; i++) {
+      const { image } = await decoder.decode({ frameIndex: i });
+      const c = new OffscreenCanvas(image.displayWidth, image.displayHeight);
+      const g = c.getContext("2d");
+      g.drawImage(image, 0, 0);
+      const px = (x, y) => [...g.getImageData(x, y, 1, 1).data];
+      frames.push({ ms: image.duration / 1000, corner: px(2, 2), center: px(image.displayWidth / 2, image.displayHeight / 2) });
+      image.close();
+    }
+    return { frames };
+  }, bytes.toString("base64"));
+
+async function saveGif(file) {
+  const out = await saveAndCheck(`${cors.url}/${file}`, "gif");
+  expect(out.dl.mime).toBe("image/gif");
+  expect(out.bytes.subarray(0, 6).toString()).toBe("GIF89a");
+  const img = await decode(out.bytes);
+  return { ...out, size: [img.width, img.height], info: await gifInfo(out.bytes) };
+}
+
+test("GIF: an animated GIF is saved byte for byte", async () => {
+  const out = await saveAndCheck(`${cors.url}/animated.gif`, "gif");
+  expect(out.rel).toBe("animated.gif");
+  expect(out.dl.mime).toBe("image/gif");
+  expect(out.bytes.equals(await readFile(join(FIXTURES, "animated.gif")))).toBe(true);
+});
+
+test("GIF: an animated WebP keeps its frames, timing and transparency", async () => {
+  const out = await saveGif("animated.webp");
+  expect(out.rel).toMatch(/^animated( \(\d+\))?\.gif$/); // the GIF test before saved animated.gif
+  expect(out.size).toEqual([64, 48]);
+  expect(out.info.frames.map((f) => f.ms)).toEqual([100, 200, 300]);
+  // Only the second frame has a transparent corner; the others stay opaque (no black box, no bleed-through).
+  expect(out.info.frames.map((f) => f.corner[3])).toEqual([255, 0, 255]);
+  // Frame 1 is red; its moving white square is elsewhere.
+  const [r, g, b] = out.info.frames[0].corner;
+  expect(r).toBeGreaterThan(200);
+  expect(g).toBeLessThan(80);
+  expect(b).toBeLessThan(80);
+});
+
+test("GIF: a still image becomes a valid one-frame GIF, transparency kept", async () => {
+  const out = await saveGif("photo.png");
+  expect(out.rel).toBe("photo.gif");
+  expect(out.size).toEqual([320, 200]);
+  expect(out.info.frames).toHaveLength(1);
+  expect(out.info.frames[0].corner[3]).toBe(0);
+  const [r, g, b, a] = out.info.frames[0].center;
+  expect([Math.abs(r - 0xf2) < 20, Math.abs(g - 0xb1) < 20, Math.abs(b - 0x34) < 24, a]).toEqual([true, true, true, 255]);
+});
+
+test("GIF: wide animations are scaled down to 800px, keeping their shape", async () => {
+  const out = await saveGif("wide.webp");
+  expect(out.size).toEqual([800, 80]);
+  expect(out.info.frames).toHaveLength(2);
+});
+
+test("GIF: an animation over the frame limit stops with too-large and explains why", async () => {
+  const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/ask.html") });
+  const result = await run(`${cors.url}/many-frames.webp`, "gif");
+  expect(result).toMatchObject({ ok: false, reason: "error", code: "too-large" });
+  expect(result.detail).toContain("601 frames");
+  const ask = await opened;
+  await expect(ask.locator("#title")).toHaveText("Couldn't save this image");
+  await expect(ask.getByText("601 frames")).toBeVisible();
+  await ask.close();
+});
+
 test("Context menu is registered for images", async () => {
   // contextMenus has no getter; recreating the parent id must fail because it already exists.
   const err = await ctx.sw.evaluate(
     () => new Promise((r) => chrome.contextMenus.create({ id: "imgkeep", title: "x", contexts: ["image"] }, () => r(chrome.runtime.lastError?.message || ""))),
   );
   expect(err).toMatch(/duplicate|exists/i);
+  const gifErr = await ctx.sw.evaluate(
+    () => new Promise((r) => chrome.contextMenus.create({ id: "imgkeep-gif", title: "x", contexts: ["image"] }, () => r(chrome.runtime.lastError?.message || ""))),
+  );
+  expect(gifErr).toMatch(/duplicate|exists/i);
 });
