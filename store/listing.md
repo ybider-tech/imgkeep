@@ -93,5 +93,6 @@ Certifications (tick all three):
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
 | `store/screenshot-4-site-access.png` | 1280×800 | Screenshot 4: the site-permission window |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
+| `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 
 Regenerate them with `npm run store` (renders `store/scenes.html` with Playwright).

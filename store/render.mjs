@@ -48,7 +48,7 @@ try {
 
 // ---- 2. Scenes ----
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 });
+const page = await browser.newPage({ viewport: { width: 1400, height: 800 }, deviceScaleFactor: 1 });
 await page.goto(pathToFileURL(join(STORE, "scenes.html")).href, { waitUntil: "networkidle" });
 await page.evaluate(() => document.fonts.ready);
 const shots = [
@@ -57,6 +57,7 @@ const shots = [
   ["#scene-3", "screenshot-3-trust.png"],
   ["#scene-4", "screenshot-4-site-access.png"],
   ["#tile", "promo-tile-440x280.png"],
+  ["#marquee", "marquee-1400x560.png"],
 ];
 for (const [selector, file] of shots) {
   await page.locator(selector).screenshot({ path: join(STORE, file) });

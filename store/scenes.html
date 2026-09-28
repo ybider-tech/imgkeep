@@ -79,6 +79,23 @@
       font-size: 27px; line-height: 1.15; }
     .tile .chips { position: absolute; left: 36px; bottom: 30px; display: flex; gap: 8px; }
     .tile .chips span { border: 1.5px solid rgba(255,255,255,0.6); border-radius: 999px; padding: 4px 14px; font-weight: 600; font-size: 16px; }
+
+    /* Marquee promo tile 1400×560 */
+    .marquee { width: 1400px; height: 560px; position: relative; overflow: hidden; margin-bottom: 20px;
+      background: radial-gradient(circle at 88% 10%, #1b8a76 0%, #0f6b5c 42%, #0b4f44 100%); color: #fff; }
+    .marquee .brand { position: absolute; left: 90px; top: 84px; display: flex; align-items: center; gap: 18px;
+      font-family: "Schibsted Grotesk", sans-serif; font-size: 44px; }
+    .marquee .brand img { width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 0 0 2px rgba(255,255,255,0.35); }
+    .marquee h1 { position: absolute; left: 90px; top: 206px; width: 640px; margin: 0; font-size: 58px; line-height: 1.06; color: #fff; }
+    .marquee .line { position: absolute; left: 90px; top: 356px; width: 600px; font-size: 25px; line-height: 1.35; color: rgba(255,255,255,0.86); }
+    .marquee .chips { position: absolute; left: 90px; bottom: 70px; display: flex; gap: 10px; }
+    .marquee .chips span { border: 2px solid rgba(255,255,255,0.6); border-radius: 999px; padding: 6px 18px; font-weight: 600; font-size: 19px; }
+    .marquee .pic { position: absolute; right: 250px; top: 110px; width: 380px; height: 300px; border-radius: 18px;
+      background: radial-gradient(circle at 32% 34%, #ffd9a8 0 17%, transparent 18%), linear-gradient(160deg, #f6b98a 0%, #e0766a 45%, #7a4d8c 100%);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35); overflow: hidden; }
+    .marquee .pic::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -34%; height: 72%; background: #2f2a4d; border-radius: 50% 50% 0 0; opacity: .88; }
+    .marquee .menu { font-size: 17px; }
+    .marquee .menu div { padding: 11px 22px; }
   </style>
 </head>
 <body>
@@ -194,6 +211,26 @@
   <div class="brand"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
   <div class="line">Right format. Right folder.<br>Nothing else.</div>
   <div class="chips"><span>PNG</span><span>JPG</span><span>WebP</span><span>GIF</span></div>
+</section>
+
+<!-- Marquee promo tile 1400×560 (homepage carousel, if Google picks it) -->
+<section class="marquee" id="marquee">
+  <div class="brand"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <h1>Save any image as PNG, JPG, WebP or GIF</h1>
+  <div class="line">Right-click, pick a format, done. Converted on your computer, saved to your folder.</div>
+  <div class="chips"><span>4 permissions</span><span>No tracking</span><span>Open source</span></div>
+  <div class="pic"></div>
+  <div class="menu" style="left:870px; top:250px; min-width:300px;">
+    <div class="on"><span><img src="../extension/icons/icon16.png" alt="">Imgkeep: Save image as</span><span>›</span></div>
+  </div>
+  <div class="menu" style="left:1110px; top:300px; min-width:230px;">
+    <div>PNG</div>
+    <div>JPG</div>
+    <div>WebP</div>
+    <div class="on">GIF (keeps animation)</div>
+    <hr>
+    <div>Original format</div>
+  </div>
 </section>
 
 </body>
