@@ -1,6 +1,6 @@
 # Featured badge nomination (Chrome Web Store)
 
-> **Status 2026-09-28: on hold.** Yaron found that the self-nomination program is closed. Keep this draft for if it reopens. Until then, the marquee tile is still worth uploading, because Google's team picks carousel items itself and a tile is required to be eligible.
+> **Status 2026-09-28: obsolete.** Chrome Web Store is discontinuing the Featured badge later in 2026; self-nominations closed on 20 Aug 2026 (developer.chrome.com/blog/cws-review-updates-2026). Kept only for reference. The marquee tile is separate and still worth uploading: Google's team picks carousel items itself, and a tile is required to be eligible.
 
 **When:** after 0.4.0 is approved and the marquee tile (`store/marquee-1400x560.png`) is uploaded, so Google reviews the best version of the listing.
 
