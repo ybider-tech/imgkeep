@@ -1,5 +1,7 @@
 # Featured badge nomination (Chrome Web Store)
 
+> **Status 2026-09-28: on hold.** Yaron found that the self-nomination program is closed. Keep this draft for if it reopens. Until then, the marquee tile is still worth uploading, because Google's team picks carousel items itself and a tile is required to be eligible.
+
 **When:** after 0.4.0 is approved and the marquee tile (`store/marquee-1400x560.png`) is uploaded, so Google reviews the best version of the listing.
 
 **Where:** Chrome Web Store developer support ("One Stop Support"), signed in as helloimgkeep@gmail.com: https://support.google.com/chrome_webstore/contact/one_stop_support. Choose the option to nominate your extension for a Featured badge and be eligible for merchandising (the exact wording may differ).
