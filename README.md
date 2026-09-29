@@ -99,6 +99,7 @@ Other scripts:
 | `npm run fixtures` | Regenerates test images (AVIF needs macOS `sips`; the file is checked in) |
 | `npm run version-css` | After editing `site/style.css`: stamps every page's stylesheet link (`style.css?v=…`) so visitors get the new styles at once. A test fails if you forget. |
 | `npm run store` | Renders `store/*.png` from `store/scenes.html`, with real captures of the options page and ask window |
+| `npm run video` | Renders the 28-second demo video `store/imgkeep-demo.webm` (1280×720) and its poster from `store/video/demo.html`, using the ffmpeg Playwright installs. `--stills` saves a few frames to check first. |
 | `sh scripts/package.sh` | Runs the tests, then builds `dist/imgkeep-<version>.zip` |
 
 ### Imgkeep Pro waitlist link

@@ -1,6 +1,7 @@
-node_modules/
+.DS_Store
 dist/
-test-results/
+node_modules/
 playwright-report/
 store/_capture/
-.DS_Store
+store/video/_stills/
+test-results/

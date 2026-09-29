@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Imgkeep demo video scene</title>
+  <!-- Rendered frame by frame by store/video/render.mjs. Every frame is a pure function of time: render(t). -->
+  <style>
+    @font-face { font-family: "Schibsted Grotesk"; font-weight: 700; src: url("../../site/fonts/schibsted-grotesk-700-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Source Sans 3"; font-weight: 400 700; src: url("../../site/fonts/source-sans-3-latin.woff2") format("woff2"); }
+    :root { --accent: #0f6b5c; --ink: #15201d; --muted: #52605b; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #000; }
+    #stage { position: relative; width: 1280px; height: 720px; overflow: hidden;
+      background: linear-gradient(180deg, #f3f8f6 0%, #e1eeea 100%); font-family: "Source Sans 3", system-ui, sans-serif; color: var(--ink); }
+    .abs { position: absolute; }
+    .layer { position: absolute; inset: 0; opacity: 0; }
+    h1, h2 { font-family: "Schibsted Grotesk", sans-serif; margin: 0; letter-spacing: -0.015em; }
+
+    /* Title and end cards */
+    .card { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 22px; }
+    .logo { display: flex; align-items: center; gap: 16px; font-family: "Schibsted Grotesk", sans-serif; font-size: 44px; }
+    .logo img { width: 72px; height: 72px; }
+    .card h1 { font-size: 62px; line-height: 1.05; max-width: 980px; }
+    .card p { font-size: 28px; color: var(--muted); margin: 0; }
+    .cta { background: var(--accent); color: #fff; font-weight: 700; font-size: 28px; padding: 16px 34px; border-radius: 14px; }
+
+    /* Browser window */
+    .browser { left: 60px; top: 70px; width: 760px; height: 540px; background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 30px 70px rgba(16,45,38,.22), 0 4px 14px rgba(16,45,38,.1); }
+    .bar { height: 46px; background: #eef1f0; display: flex; align-items: center; gap: 14px; padding: 0 16px; }
+    .dots { display: flex; gap: 8px; } .dots i { width: 12px; height: 12px; border-radius: 50%; background: #d5dad8; display: block; }
+    .url { flex: 1; background: #fff; border-radius: 999px; height: 30px; display: flex; align-items: center; padding: 0 16px; font: 15px system-ui, sans-serif; color: #5f6663; }
+    .pic { left: 60px; top: 90px; width: 420px; height: 300px; border-radius: 12px; overflow: hidden; }
+    .anim { background: #ffe9b8; }
+    .ball { width: 70px; height: 70px; border-radius: 50%; background: #e0566a; left: 175px; top: 60px; }
+    .shadow { width: 90px; height: 16px; border-radius: 50%; background: rgba(0,0,0,.15); left: 165px; top: 250px; }
+    .floor { left: 0; right: 0; top: 262px; height: 38px; background: #f6c77c; }
+    .photo { background: radial-gradient(circle at 30% 34%, #ffd9a8 0 17%, transparent 18%), linear-gradient(160deg, #f6b98a 0%, #e0766a 45%, #7a4d8c 100%); }
+    .photo::after { content: ""; position: absolute; left: -10%; right: -10%; bottom: -34%; height: 72%; background: #2f2a4d; border-radius: 50% 50% 0 0; opacity: .88; }
+    .chip { right: 12px; top: 12px; background: rgba(0,0,0,.6); color: #fff; font: 700 14px system-ui, sans-serif; padding: 5px 10px; border-radius: 8px; z-index: 2; }
+    .pagetext { left: 500px; top: 100px; width: 220px; font: 16px system-ui, sans-serif; color: #444; line-height: 1.5; }
+    .pagetext b { display: block; font-size: 22px; color: #222; margin-bottom: 8px; }
+
+    /* Context menus */
+    .menu { background: #fff; border-radius: 8px; padding: 6px 0; min-width: 250px; box-shadow: 0 8px 24px rgba(0,0,0,.18), 0 1px 4px rgba(0,0,0,.12);
+      font: 16px/1 system-ui, sans-serif; color: #202124; opacity: 0; z-index: 5; }
+    .menu div { padding: 10px 18px; display: flex; justify-content: space-between; gap: 30px; white-space: nowrap; }
+    .menu hr { border: 0; border-top: 1px solid #e3e3e3; margin: 5px 0; }
+    .menu .on { background: #e8eaed; }
+    .menu img { width: 16px; height: 16px; vertical-align: -3px; margin-right: 10px; }
+
+    /* Folder window */
+    .folder { left: 850px; top: 120px; width: 370px; height: 420px; background: #fff; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 30px 70px rgba(16,45,38,.22), 0 4px 14px rgba(16,45,38,.1); opacity: 0; }
+    .folder .bar { font: 600 15px system-ui, sans-serif; color: #444; }
+    .files { padding: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .file { text-align: center; font: 14px system-ui, sans-serif; color: #333; opacity: 0; }
+    .thumb { position: relative; width: 140px; height: 100px; border-radius: 8px; overflow: hidden; margin: 0 auto 8px; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+    .badge { display: inline-block; margin-top: 6px; background: #e3f1ee; color: var(--accent); font-weight: 700; font-size: 12px; padding: 3px 8px; border-radius: 999px; }
+
+    .caption { left: 0; right: 0; bottom: 38px; text-align: center; font-family: "Schibsted Grotesk", sans-serif; font-size: 34px; color: var(--ink); opacity: 0; }
+    .caption span { color: var(--accent); }
+
+    /* Trust card */
+    .trust { display: flex; flex-direction: column; justify-content: center; padding-left: 190px; gap: 26px; }
+    .trust h2 { font-size: 52px; margin-bottom: 10px; }
+    .point { display: flex; gap: 18px; align-items: center; font-size: 32px; opacity: 0; }
+    .check { width: 46px; height: 46px; border-radius: 12px; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 26px; flex: none; }
+    .point small { color: var(--muted); font-size: 26px; }
+
+    #cursor { width: 30px; height: 30px; z-index: 10; left: 0; top: 0; opacity: 0; }
+    #ripple { width: 44px; height: 44px; border-radius: 50%; border: 3px solid var(--accent); z-index: 9; opacity: 0; }
+  </style>
+</head>
+<body>
+<div id="stage">
+  <!-- 1. Title -->
+  <div class="layer card" id="title">
+    <div class="logo"><img src="../../extension/icons/icon128.png" alt="">Imgkeep</div>
+    <h1>Save any image as PNG, JPG, WebP or GIF</h1>
+    <p>Right-click. Pick a format. Done.</p>
+  </div>
+
+  <!-- 2–3. Browser, menus, folder -->
+  <div class="layer" id="desk">
+    <div class="abs browser">
+      <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url" id="url">gifs.example.com/bouncing-ball</div></div>
+      <div class="abs pic anim" id="picAnim">
+        <div class="abs floor"></div><div class="abs shadow" id="shadow"></div><div class="abs ball" id="ball"></div>
+        <div class="abs chip">animated WebP</div>
+      </div>
+      <div class="abs pic photo" id="picPhoto" style="opacity:0"><div class="abs chip">WebP</div></div>
+      <div class="abs pagetext" id="text1"><b>Bouncing ball</b>A short looping animation, served as animated WebP.</div>
+      <div class="abs pagetext" id="text2" style="opacity:0"><b>Summer banner</b>Served as WebP. Many apps won't open it.</div>
+    </div>
+
+    <div class="abs menu" id="menuMain" style="left:330px; top:300px;">
+      <div>Open image in new tab</div><div>Save image as…</div><div>Copy image</div><div>Copy image address</div>
+      <hr><div id="miImgkeep"><span><img src="../../extension/icons/icon16.png" alt="">Imgkeep: Save image as</span><span>›</span></div>
+      <hr><div>Inspect</div>
+    </div>
+    <div class="abs menu" id="menuSub" style="left:572px; top:462px; min-width:230px;">
+      <div id="miPng">PNG</div><div id="miJpg">JPG</div><div id="miWebp">WebP</div><div id="miGif">GIF (keeps animation)</div><hr><div>Original format</div>
+    </div>
+
+    <div class="abs folder" id="folder">
+      <div class="bar"><div class="dots"><i></i><i></i><i></i></div>📁 Imgkeep</div>
+      <div class="files">
+        <div class="file" id="file1">
+          <div class="thumb anim"><div class="abs floor" style="top:88px;height:12px"></div><div class="abs ball" id="ball2" style="width:24px;height:24px;left:58px"></div></div>
+          bouncing-ball.gif<br><span class="badge">GIF · still animated</span>
+        </div>
+        <div class="file" id="file2">
+          <div class="thumb photo"></div>
+          summer-banner.jpg<br><span class="badge">JPG · opens anywhere</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="abs caption" id="cap1">Right-click → Imgkeep → <span>GIF (keeps animation)</span></div>
+    <div class="abs caption" id="cap2">Saved to your folder. <span>Still animated.</span></div>
+    <div class="abs caption" id="cap3">WebP won't open? Save it as <span>JPG or PNG</span>.</div>
+  </div>
+
+  <!-- 4. Trust -->
+  <div class="layer trust" id="trust">
+    <h2>Built to be trusted</h2>
+    <div class="point" id="p1"><span class="check">✓</span><span>4 permissions <small>· no access to your pages</small></span></div>
+    <div class="point" id="p2"><span class="check">✓</span><span>Converted on your computer <small>· nothing uploaded</small></span></div>
+    <div class="point" id="p3"><span class="check">✓</span><span>Open source <small>· MIT licence</small></span></div>
+    <div class="point" id="p4"><span class="check">✓</span><span>Free <small>· no ads, no nags</small></span></div>
+  </div>
+
+  <!-- 5. End -->
+  <div class="layer card" id="end">
+    <div class="logo"><img src="../../extension/icons/icon128.png" alt="">Imgkeep</div>
+    <h1>Right format. Right folder.<br>Nothing else.</h1>
+    <div class="cta">Add to Chrome — free</div>
+    <p>imgkeep.app</p>
+  </div>
+
+  <svg class="abs" id="cursor" viewBox="0 0 22 22"><path d="M3 2l14 8-6 1.5L8 18z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg>
+  <div class="abs" id="ripple"></div>
+</div>
+
+<script>
+// The whole video as a function of time t (seconds). render.mjs calls render(t) for every frame.
+const DURATION = 28;
+const $ = (id) => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = (x) => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2);
+const prog = (t, a, b) => ease(clamp((t - a) / (b - a)));
+// Visible between a and b, fading in/out over f seconds.
+const vis = (t, a, b, f = 0.35) => Math.min(prog(t, a, a + f), 1 - prog(t, b - f, b));
+
+// Centre of an element in stage coordinates (menus measured once, at their resting place).
+const stage = $("stage");
+function centre(id, dx = 0) {
+  const r = $(id).getBoundingClientRect(), s = stage.getBoundingClientRect();
+  return { x: r.left - s.left + (dx || r.width / 2), y: r.top - s.top + r.height / 2 };
+}
+const P = {};
+function measure() {
+  P.pic = centre("picAnim");
+  // Like Chrome, the menu opens at the click point; the submenu opens beside its item.
+  P.click = { x: P.pic.x + 60, y: P.pic.y - 40 };
+  const main = $("menuMain"), sub = $("menuSub");
+  main.style.left = `${P.click.x}px`;
+  main.style.top = `${P.click.y}px`;
+  const item = $("miImgkeep").getBoundingClientRect(), s = stage.getBoundingClientRect();
+  sub.style.left = `${main.offsetLeft + main.offsetWidth - 4}px`;
+  sub.style.top = `${item.top - s.top - 6}px`;
+  P.imgkeep = centre("miImgkeep", 60);
+  P.gif = centre("miGif", 70);
+  P.jpg = centre("miJpg", 40);
+}
+
+// Cursor path: [time, x, y], eased between points.
+let path = [];
+function buildPath() {
+  const off = { x: 1300, y: 560 };
+  path = [
+    [3.6, off.x, off.y], [5.0, P.click.x, P.click.y], [5.9, P.click.x, P.click.y],
+    [6.6, P.imgkeep.x, P.imgkeep.y], [7.2, P.imgkeep.x + 150, P.imgkeep.y], [7.9, P.gif.x, P.gif.y], [8.8, P.gif.x, P.gif.y],
+    [9.6, 1300, 620], [13.8, 1300, 620],
+    [14.8, P.click.x, P.click.y], [15.3, P.click.x, P.click.y],
+    [15.9, P.imgkeep.x, P.imgkeep.y], [16.4, P.imgkeep.x + 150, P.imgkeep.y], [16.9, P.jpg.x, P.jpg.y], [17.6, P.jpg.x, P.jpg.y],
+    [18.4, 1300, 640],
+  ];
+}
+function cursorAt(t) {
+  if (t <= path[0][0]) return { x: path[0][1], y: path[0][2] };
+  for (let i = 1; i < path.length; i++) {
+    const [t1, x1, y1] = path[i], [t0, x0, y0] = path[i - 1];
+    if (t <= t1) { const k = ease((t - t0) / (t1 - t0 || 1)); return { x: x0 + (x1 - x0) * k, y: y0 + (y1 - y0) * k }; }
+  }
+  const last = path[path.length - 1];
+  return { x: last[1], y: last[2] };
+}
+
+// Clicks: [time, kind]
+const clicks = [5.6, 8.5, 15.1, 17.3];
+
+function set(id, opacity, transform = "") {
+  const el = $(id);
+  el.style.opacity = opacity;
+  el.style.transform = transform;
+}
+
+window.render = function (t) {
+  // Scenes
+  set("title", vis(t, 0, 3.4), `translateY(${(1 - prog(t, 0, 0.8)) * 20}px)`);
+  set("desk", vis(t, 3.2, 19.4));
+  set("trust", vis(t, 19.2, 24.8));
+  set("end", vis(t, 24.6, DURATION + 1));
+
+  // Page content: animation first, then the photo
+  const swap = prog(t, 12.4, 13.0);
+  $("picAnim").style.opacity = 1 - swap; $("text1").style.opacity = 1 - swap;
+  $("picPhoto").style.opacity = swap; $("text2").style.opacity = swap;
+  $("url").textContent = t < 12.7 ? "gifs.example.com/bouncing-ball" : "shop.example.com/summer-sale";
+
+  // The bouncing ball (and its copy in the saved GIF)
+  const h = Math.abs(Math.sin(t * Math.PI * 1.25));
+  $("ball").style.top = `${180 - h * 140}px`;
+  $("shadow").style.transform = `scale(${0.6 + 0.4 * (1 - h)})`;
+  $("ball2").style.top = `${64 - h * 48}px`;
+
+  // Menus, first save (GIF) then second save (JPG)
+  const m1 = vis(t, 5.65, 8.6, 0.15), s1 = vis(t, 6.9, 8.6, 0.15);
+  const m2 = vis(t, 15.15, 17.4, 0.15), s2 = vis(t, 16.2, 17.4, 0.15);
+  $("menuMain").style.opacity = Math.max(m1, m2);
+  $("menuSub").style.opacity = Math.max(s1, s2);
+  $("miImgkeep").classList.toggle("on", (t > 6.5 && t < 8.6) || (t > 15.8 && t < 17.4));
+  $("miGif").classList.toggle("on", t > 7.8 && t < 8.6);
+  $("miJpg").classList.toggle("on", t > 16.8 && t < 17.4);
+
+  // Folder window and files
+  set("folder", vis(t, 8.9, 19.4, 0.4), `translateX(${(1 - prog(t, 8.9, 9.5)) * 60}px)`);
+  set("file1", prog(t, 9.4, 9.8), `scale(${0.9 + 0.1 * prog(t, 9.4, 9.8)})`);
+  set("file2", prog(t, 17.8, 18.2), `scale(${0.9 + 0.1 * prog(t, 17.8, 18.2)})`);
+
+  // Captions
+  set("cap1", vis(t, 4.2, 9.0));
+  set("cap2", vis(t, 9.3, 12.6));
+  set("cap3", vis(t, 13.2, 19.0));
+
+  // Trust points one by one
+  ["p1", "p2", "p3", "p4"].forEach((id, i) => set(id, prog(t, 19.9 + i * 0.8, 20.4 + i * 0.8), `translateX(${(1 - prog(t, 19.9 + i * 0.8, 20.4 + i * 0.8)) * -24}px)`));
+
+  // Cursor and click ripples
+  const c = cursorAt(t);
+  const onDesk = vis(t, 3.4, 18.6, 0.2);
+  $("cursor").style.opacity = onDesk;
+  $("cursor").style.transform = `translate(${c.x}px, ${c.y}px)`;
+  let r = 0, rs = 1;
+  for (const ct of clicks) if (t >= ct && t < ct + 0.45) { const k = (t - ct) / 0.45; r = 1 - k; rs = 0.4 + k; }
+  $("ripple").style.opacity = r * onDesk;
+  $("ripple").style.transform = `translate(${c.x - 20}px, ${c.y - 20}px) scale(${rs})`;
+};
+
+window.ready = document.fonts.ready.then(() => { measure(); buildPath(); window.render(0); return DURATION; });
+</script>
+</body>
+</html>
