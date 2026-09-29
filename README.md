@@ -6,6 +6,8 @@ Right-click any image and save it as PNG, JPG, WebP or GIF (animation included).
 
 **Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
 
+▶ [Watch the 28-second demo](https://youtu.be/QZfq5xLYdmo)
+
 ## Why
 
 Chrome now often saves images as WebP or AVIF, which many apps still can't open. The most popular fix, "Save image as Type" (1M+ users), was sold in late 2025 and removed from the Chrome Web Store as malware in March 2026 after it started injecting affiliate links ([9to5Google](https://9to5google.com/2026/03/16/image-saving-chrome-extension-removed-as-malware/)). Imgkeep does the same everyday job, built so it can't do that.

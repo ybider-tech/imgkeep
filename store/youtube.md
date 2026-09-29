@@ -1,5 +1,7 @@
 # YouTube: Imgkeep demo video
 
+**Live:** https://youtu.be/QZfq5xLYdmo (uploaded 2026-09-29, channel "Imgkeep")
+
 - **Video file:** `store/imgkeep-demo.webm` (28 s, 1280×720). Regenerate with `npm run video`.
 - **Thumbnail:** `store/youtube-thumb-a.png` (what it does) or `store/youtube-thumb-b.png` (the problem it solves). Regenerate with `node store/video/render.mjs --thumbs`. Custom thumbnails need a phone-verified YouTube channel.
 - **Settings:** Visibility **Public**. Audience: **No, it's not made for kids**. Category **Science & Technology**. Comments on.
