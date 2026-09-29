@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Imgkeep YouTube thumbnails</title>
+  <!-- Rendered by `node store/video/render.mjs --thumbs` into store/youtube-thumb-a.png and -b.png (1280×720). -->
+  <style>
+    @font-face { font-family: "Schibsted Grotesk"; font-weight: 700; src: url("../../site/fonts/schibsted-grotesk-700-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Source Sans 3"; font-weight: 400 700; src: url("../../site/fonts/source-sans-3-latin.woff2") format("woff2"); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #999; }
+    .thumb { width: 1280px; height: 720px; position: relative; overflow: hidden; margin-bottom: 20px; font-family: "Schibsted Grotesk", sans-serif; }
+    .abs { position: absolute; }
+    .menu { background: #fff; border-radius: 14px; padding: 10px 0; box-shadow: 0 20px 60px rgba(0,0,0,.35); font: 30px/1 system-ui, sans-serif; color: #202124; }
+    .menu div { padding: 16px 30px; white-space: nowrap; }
+    .menu hr { border: 0; border-top: 2px solid #e3e3e3; margin: 8px 0; }
+    .menu .on { background: #e0f0ec; font-weight: 700; color: #0b5347; }
+
+    /* A: what it does */
+    #a { background: radial-gradient(circle at 85% 10%, #1b8a76 0%, #0f6b5c 45%, #0b4f44 100%); color: #fff; }
+    #a .logo { left: 70px; top: 64px; display: flex; align-items: center; gap: 18px; font-size: 48px; }
+    #a .logo img { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 0 0 3px rgba(255,255,255,.35); }
+    #a h1 { position: absolute; left: 70px; top: 200px; width: 640px; margin: 0; font-size: 96px; line-height: .98; letter-spacing: -0.02em; }
+    #a h1 em { font-style: normal; color: #ffd57a; }
+    #a .sub { left: 70px; bottom: 70px; font: 600 34px "Source Sans 3", sans-serif; color: rgba(255,255,255,.88); }
+
+    /* B: the problem it solves */
+    #b { background: linear-gradient(180deg, #f3f8f6 0%, #dfece8 100%); color: #15201d; }
+    #b .file { width: 300px; height: 330px; border-radius: 22px; background: #fff; box-shadow: 0 20px 50px rgba(16,45,38,.2);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 34px; font-size: 64px; }
+    #b .file .img { width: 230px; height: 170px; border-radius: 14px; margin-bottom: 26px;
+      background: radial-gradient(circle at 30% 34%, #ffd9a8 0 17%, transparent 18%), linear-gradient(160deg, #f6b98a 0%, #e0766a 45%, #7a4d8c 100%); }
+    #b .bad { left: 90px; top: 250px; color: #a4302a; }
+    #b .bad::after { content: "✕"; position: absolute; right: -26px; top: -26px; width: 70px; height: 70px; border-radius: 50%; background: #d64545; color: #fff;
+      display: grid; place-items: center; font-size: 40px; }
+    #b .good { left: 520px; top: 250px; color: #0f6b5c; }
+    #b .good::after { content: "✓"; position: absolute; right: -26px; top: -26px; width: 70px; height: 70px; border-radius: 50%; background: #0f6b5c; color: #fff;
+      display: grid; place-items: center; font-size: 40px; }
+    #b .arrow { left: 408px; top: 380px; font-size: 90px; color: #0f6b5c; }
+    #b h1 { position: absolute; left: 90px; top: 70px; margin: 0; font-size: 104px; line-height: 1; letter-spacing: -0.02em; }
+    #b .logo { right: 70px; bottom: 60px; display: flex; align-items: center; gap: 16px; font-size: 46px; }
+    #b .logo img { width: 78px; height: 78px; }
+    #b .tag { right: 70px; top: 290px; width: 360px; font: 700 40px/1.2 "Source Sans 3", sans-serif; color: #15201d; }
+    #b .tag span { color: #0f6b5c; }
+  </style>
+</head>
+<body>
+
+<section class="thumb" id="a">
+  <div class="abs logo"><img src="../../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <h1>Save any image as <em>JPG, PNG or GIF</em></h1>
+  <div class="abs sub">Free Chrome extension · no tracking</div>
+  <div class="abs menu" style="left:760px; top:150px; width:450px;">
+    <div>PNG</div>
+    <div>JPG</div>
+    <div>WebP</div>
+    <div class="on">GIF (keeps animation)</div>
+    <hr>
+    <div>Original format</div>
+  </div>
+</section>
+
+<section class="thumb" id="b">
+  <h1>WebP won't open?</h1>
+  <div class="abs file bad"><div class="img"></div>.webp</div>
+  <div class="abs arrow">→</div>
+  <div class="abs file good"><div class="img"></div>.jpg</div>
+  <div class="abs tag">One right-click.<br><span>JPG, PNG or GIF.</span></div>
+  <div class="abs logo"><img src="../../extension/icons/icon128.png" alt="">Imgkeep</div>
+</section>
+
+</body>
+</html>

@@ -24,6 +24,18 @@ function playwrightFfmpeg() {
 }
 
 const browser = await chromium.launch();
+
+// YouTube thumbnails (1280×720) from thumbs.html.
+if (process.argv.includes("--thumbs")) {
+  const tp = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+  await tp.goto(pathToFileURL(join(HERE, "thumbs.html")).href);
+  await tp.evaluate(() => document.fonts.ready);
+  for (const id of ["a", "b"]) await tp.locator(`#${id}`).screenshot({ path: join(STORE, `youtube-thumb-${id}.png`) });
+  console.log("store/youtube-thumb-a.png, store/youtube-thumb-b.png");
+  await browser.close();
+  process.exit(0);
+}
+
 const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
 await page.goto(pathToFileURL(join(HERE, "demo.html")).href);
 const duration = await page.evaluate(() => window.ready);
