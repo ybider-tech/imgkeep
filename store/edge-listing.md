@@ -1,5 +1,7 @@
 # Microsoft Edge Add-ons listing: Imgkeep 0.4.0
 
+Live: https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd (approved 2026-09-29, category Photos)
+
 Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through Microsoft Partner Center: https://partner.microsoft.com/dashboard/microsoftedge/overview
 
 ## Properties
@@ -15,7 +17,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
-- **YouTube video URL:** https://youtu.be/QZfq5xLYdmo (add after Edge approves 0.4.0, as a listing update)
+- **YouTube video URL:** https://youtu.be/QZfq5xLYdmo (add now as a listing update)
 - **Search terms** (7 max, ≤30 characters each, ≤21 words in total; these are 21):
   1. save image as png
   2. save image as jpg

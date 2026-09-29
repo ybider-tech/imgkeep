@@ -205,3 +205,8 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   expect(playable.t).toBeGreaterThan(0.2);
   expect([playable.w, playable.h]).toEqual([1280, 720]);
 });
+
+test("home page links the Microsoft Edge listing too", async ({ page }) => {
+  await page.goto(`${server.url}/index.html`);
+  await expect(page.locator("a.cta-alt")).toHaveAttribute("href", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd");
+});

@@ -119,6 +119,8 @@ a:focus-visible, .cta:focus-visible { outline: 3px solid var(--accent); outline-
   border-radius: 10px;
 }
 .cta:hover { background: var(--accent-strong); }
+.cta-alt { display: inline-block; margin: 8px 0 0 16px; font-weight: 600; }
+@media (max-width: 600px) { .cta-alt { display: block; margin: 12px 0 0; } }
 .cta-note { display: block; margin-top: 10px; font-size: 0.95rem; color: var(--muted); }
 
 /* Demo video. The poster (the right-click menu, GIF highlighted) is what shows until play,

@@ -4,7 +4,7 @@ Right-click any image and save it as PNG, JPG, WebP or GIF (animation included).
 
 ![The Imgkeep right-click menu: Save image as PNG, JPG, WebP, GIF or Original format](store/screenshot-1-menu.png)
 
-**Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
+**Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
 
 ▶ [Watch the 28-second demo](https://youtu.be/QZfq5xLYdmo)
 
@@ -57,7 +57,7 @@ If a site blocks cross-site image reads, **Allow and save** requests access to t
 2. Click **Load unpacked** and pick the `extension/` folder.
 3. Right-click any image. Settings: the extension's **Details → Extension options**, or the Extensions (puzzle) menu → ⋮ → **Options**.
 
-Needs Chrome 116 or newer. A Microsoft Edge Add-ons listing is on the way.
+Needs Chrome 116 or newer, or Microsoft Edge.
 
 ## Known limits
 
