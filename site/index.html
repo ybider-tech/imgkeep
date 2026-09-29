@@ -38,7 +38,20 @@
   <link rel="apple-touch-icon" href="icon128.png">
   <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=8adeed55df">
+  <link rel="stylesheet" href="style.css?v=5ae81bd98f">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Save WebP as JPG, PNG or GIF in Chrome with one right-click",
+    "description": "A 28-second demo of Imgkeep: an animated WebP saved as a GIF that keeps moving, and a WebP photo saved as JPG, from the right-click menu.",
+    "thumbnailUrl": "https://imgkeep.app/media/imgkeep-demo-poster.jpg",
+    "uploadDate": "2026-09-29",
+    "duration": "PT28S",
+    "contentUrl": "https://imgkeep.app/media/imgkeep-demo.webm",
+    "embedUrl": "https://www.youtube.com/embed/QZfq5xLYdmo"
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -56,27 +69,13 @@
         <span class="cta-note">Works in Chrome 116 and newer. Four permissions, no access to your pages.</span>
       </div>
 
-      <div class="demo" role="img" aria-label="A right-click menu over a picture, with Imgkeep: Save image as, and the options PNG, JPG, WebP and Original format">
-        <div class="photo"></div>
-        <div class="menu main" aria-hidden="true">
-          <div>Open image in new tab</div>
-          <div>Save image as…</div>
-          <div>Copy image</div>
-          <div>Copy image address</div>
-          <hr>
-          <div class="on"><span><img src="favicon.png" alt="">Imgkeep: Save image as</span><span>›</span></div>
-          <hr>
-          <div>Inspect</div>
-        </div>
-        <div class="menu sub" aria-hidden="true">
-          <div class="on">PNG</div>
-          <div>JPG</div>
-          <div>WebP</div>
-          <div>GIF (keeps animation)</div>
-          <hr>
-          <div>Original format</div>
-        </div>
-      </div>
+      <figure class="video">
+        <video controls preload="none" playsinline width="1280" height="720" poster="media/imgkeep-demo-poster.jpg" aria-describedby="video-desc">
+          <source src="media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">Watch the 28-second demo on YouTube</a>
+        </video>
+        <figcaption id="video-desc">See it in 28 seconds: right-click an animated image → Imgkeep → <strong>GIF (keeps animation)</strong>, then save a WebP photo as JPG. No sound. <a href="https://youtu.be/QZfq5xLYdmo">Can't play it? Watch on YouTube</a>.</figcaption>
+      </figure>
 
       <section aria-labelledby="features">
         <h2 id="features">What it does</h2>

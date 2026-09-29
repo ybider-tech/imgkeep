@@ -6,7 +6,7 @@
 //   node store/video/render.mjs --stills   a few stills in store/video/_stills/ to check the layout
 import { chromium } from "@playwright/test";
 import { spawn } from "node:child_process";
-import { readdirSync, mkdirSync, existsSync } from "node:fs";
+import { readdirSync, mkdirSync, existsSync, copyFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -68,6 +68,13 @@ if (process.argv.includes("--stills")) {
   // Poster: the moment "GIF (keeps animation)" is chosen.
   await page.evaluate((t) => window.render(t), 8.3);
   await page.screenshot({ path: join(STORE, "imgkeep-demo-poster.png") });
-  console.log(`${frames} frames → store/imgkeep-demo.webm, poster → store/imgkeep-demo-poster.png`);
+  // The website plays the same file; its poster is a smaller JPG. It's also what shows where WebM can't play.
+  const media = join(STORE, "..", "site", "media");
+  mkdirSync(media, { recursive: true });
+  copyFileSync(target, join(media, "imgkeep-demo.webm"));
+  // On the site the player's controls cover the bottom, and the page has its own caption: hide the scene's.
+  await page.evaluate(() => document.querySelectorAll(".caption").forEach((c) => (c.style.visibility = "hidden")));
+  await page.screenshot({ path: join(media, "imgkeep-demo-poster.jpg"), type: "jpeg", quality: 82 });
+  console.log(`${frames} frames → store/imgkeep-demo.webm (+ site/media/), poster → store/imgkeep-demo-poster.png, site/media/imgkeep-demo-poster.jpg`);
 }
 await browser.close();

@@ -119,7 +119,8 @@ test("self-hosted fonts load, and the home page leads with what Imgkeep does", a
 test("Add to Chrome points to the live store listing", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
   await expect(page.locator("#install")).toHaveAttribute("href", STORE);
-  const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+  const ld = blocks.map((b) => JSON.parse(b)).find((d) => d["@type"] === "SoftwareApplication");
   expect(ld.installUrl).toBe(STORE);
   // No page may link to "#" as a placeholder any more.
   for (const [, file] of PAGES) {
@@ -176,4 +177,31 @@ test("the rating link lives only on Support and Ideas, never as a pop-up or on o
   for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html"]) {
     expect(await readFile(join(ROOT, "site", file), "utf8"), file).not.toContain("/reviews");
   }
+});
+
+test("home page demo video: poster first, loads only on play, with a YouTube fallback", async ({ page }) => {
+  const requests = [];
+  page.on("request", (r) => requests.push(r.url()));
+  await page.goto(`${server.url}/index.html`, { waitUntil: "networkidle" });
+  const video = page.locator("figure.video video");
+  await expect(video).toHaveAttribute("preload", "none");
+  expect(await video.getAttribute("autoplay")).toBeNull();
+  // The poster is shown (and is the fallback where WebM can't play); the video file isn't fetched until play.
+  expect(requests.some((u) => u.endsWith("/media/imgkeep-demo-poster.jpg"))).toBe(true);
+  expect(requests.some((u) => u.endsWith("/media/imgkeep-demo.webm"))).toBe(false);
+  await expect(page.locator("figure.video video source")).toHaveAttribute("type", "video/webm");
+  for (const file of ["media/imgkeep-demo.webm", "media/imgkeep-demo-poster.jpg"]) {
+    const res = await page.request.get(`${server.url}/${file}`);
+    expect(res.status(), file).toBe(200);
+  }
+  await expect(page.locator("figure.video figcaption a")).toHaveAttribute("href", "https://youtu.be/QZfq5xLYdmo");
+  // It actually plays in Chromium.
+  const playable = await video.evaluate(async (v) => {
+    v.muted = true;
+    await v.play();
+    await new Promise((r) => setTimeout(r, 600));
+    return { t: v.currentTime, w: v.videoWidth, h: v.videoHeight };
+  });
+  expect(playable.t).toBeGreaterThan(0.2);
+  expect([playable.w, playable.h]).toEqual([1280, 720]);
 });

@@ -14,6 +14,7 @@ const TYPES = {
   ".avif": "image/avif",
   ".svg": "image/svg+xml",
   ".gif": "image/gif",
+  ".webm": "video/webm",
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
 };
