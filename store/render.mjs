@@ -46,6 +46,22 @@ try {
   await rm(ext.userDataDir, { recursive: true, force: true });
 }
 
+// The GIF scene from the demo video (store/video/demo.html): animated image saved as GIF, folder window open.
+{
+  const b = await chromium.launch();
+  const p = await b.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 2 });
+  await p.goto(pathToFileURL(join(STORE, "video", "demo.html")).href);
+  await p.evaluate(() => window.ready);
+  await p.evaluate(() => {
+    window.render(10.6);
+    document.querySelectorAll(".caption").forEach((c) => (c.style.visibility = "hidden"));
+    // Transparent backdrop, so the capture blends into the scene's own background.
+    for (const el of [document.documentElement, document.body, document.getElementById("stage")]) el.style.background = "transparent";
+  });
+  await p.screenshot({ path: join(CAPTURE, "gif.png"), omitBackground: true }); // whole stage, so window shadows fade out naturally
+  await b.close();
+}
+
 // ---- 2. Scenes ----
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1400, height: 800 }, deviceScaleFactor: 1 });
@@ -56,6 +72,7 @@ const shots = [
   ["#scene-2", "screenshot-2-options.png"],
   ["#scene-3", "screenshot-3-trust.png"],
   ["#scene-4", "screenshot-4-site-access.png"],
+  ["#scene-5", "screenshot-5-gif.png"],
   ["#tile", "promo-tile-440x280.png"],
   ["#marquee", "marquee-1400x560.png"],
 ];

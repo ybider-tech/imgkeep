@@ -15,19 +15,19 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v3, for 0.4.0 (adds GIF). Paste as-is into the dashboard together with the 0.4.0 package.
+v4 (2026-10-01): same as v3 without the repeated "WebP/AVIF as JPG or PNG" phrase (Google's listing guide warns against repeated keywords). Paste as-is into the dashboard.
 
 ```text
 Right-click any image and save it as PNG, JPG, WebP or GIF. Imgkeep converts it on your computer and saves it where you want, every time.
 
-Sites now serve WebP and AVIF images that many apps won't open. Imgkeep saves WebP as JPG or PNG, and AVIF as JPG or PNG, in one right-click, and keeps animations as GIF:
+Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
 Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · Original format
 
 WHAT IT DOES
 
-• Save WebP and AVIF as JPG or PNG: files every app opens. JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
-• Keep the animation: save animated WebP, AVIF and APNG as GIF, frame by frame with their timing and transparency. Animated GIFs are saved exactly as they are.
+• Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
+• Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -92,6 +92,7 @@ Certifications (tick all three):
 | `store/screenshot-2-options.png` | 1280×800 | Screenshot 2: the options page |
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
 | `store/screenshot-4-site-access.png` | 1280×800 | Screenshot 4: the site-permission window |
+| `store/screenshot-5-gif.png` | 1280×800 | Screenshot 5: GIF keeps animation |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 | Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |
