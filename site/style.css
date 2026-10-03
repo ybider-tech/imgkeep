@@ -96,6 +96,10 @@ a:focus-visible, .cta:focus-visible { outline: 3px solid var(--accent); outline-
   text-decoration: none;
 }
 .brand img { width: 36px; height: 36px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+/* .brand has 28px top / 8px bottom padding; the 20px offset centres the badge on the logo. */
+.ph-badge { margin-top: 20px; flex-shrink: 0; }
+.ph-badge img { display: block; }
 
 .hero { padding: 40px 0 24px; }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 36em; }
@@ -122,8 +126,6 @@ a:focus-visible, .cta:focus-visible { outline: 3px solid var(--accent); outline-
 .cta-alt { display: inline-block; margin: 8px 0 0 16px; font-weight: 600; }
 @media (max-width: 600px) { .cta-alt { display: block; margin: 12px 0 0; } }
 .cta-note { display: block; margin-top: 10px; font-size: 0.95rem; color: var(--muted); }
-.ph-badge { display: inline-block; margin-top: 16px; }
-.ph-badge img { display: block; }
 
 /* Demo video. The poster (the right-click menu, GIF highlighted) is what shows until play,
    and also in browsers that can't play WebM. */
