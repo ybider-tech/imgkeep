@@ -3,8 +3,9 @@
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { JobError } from "./lib/job-error.js";
-import { GIF_LIMITS } from "./lib/settings.js";
+import { GIF_LIMITS, nameFromUrl } from "./lib/settings.js";
 import { sniffImageType, gifSize, openAnimation, stillFrame, checkLimits, fitWidth, encodeGif } from "./lib/gif.js";
+import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
 
 // Converted files waiting to be saved, by job id. Dropped after 10 minutes at most.
 const pending = new Map();
@@ -113,6 +114,40 @@ async function animate({ url }) {
   }
 }
 
+// PDF output: one page, exactly the image. Opaque images are stored as JPEG (small), images with
+// transparency losslessly with an alpha mask. Animated images use their first frame, like PNG and JPG.
+async function toPdf({ url, quality }) {
+  const input = await fetchImage(url);
+  const image = await decode(input);
+  try {
+    const { width, height } = image;
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    ctx.drawImage(image.source, 0, 0, width, height);
+    let rgba;
+    try {
+      rgba = ctx.getImageData(0, 0, width, height).data;
+    } catch {
+      throw new JobError("too-large");
+    }
+    const { rgb, alpha } = splitAlpha(rgba);
+    let pdfImage;
+    if (alpha) {
+      pdfImage = { rgb: await deflate(rgb), alpha: await deflate(alpha) };
+    } else {
+      const jpeg = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", quality / 100));
+      if (!jpeg) throw new JobError("too-large");
+      pdfImage = { jpeg: new Uint8Array(await jpeg.arrayBuffer()) };
+    }
+    const title = nameFromUrl(url); // "image" for data: URLs
+    return { blob: buildPdf({ width, height, image: pdfImage, title }), width, height };
+  } finally {
+    image.done();
+  }
+}
+
 function toDataUrl(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -141,7 +176,8 @@ const DATA_URL_LIMIT = 1.5 * 1024 * 1024;
 
 const handlers = {
   async convert(msg) {
-    const { blob, width, height } = msg.mime === "image/gif" ? await animate(msg) : await convert(msg);
+    const make = msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : convert;
+    const { blob, width, height } = await make(msg);
     const entry = { blob };
     keep(msg.jobId, entry);
     const result = { width, height, mime: blob.type, size: blob.size };

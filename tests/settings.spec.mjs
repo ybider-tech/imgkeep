@@ -50,3 +50,11 @@ test("GIF size and limits", async () => {
   expect(() => checkLimits({ width: 8, height: 8, frameCount: GIF_LIMITS.maxFrames + 1 })).toThrow("too-large");
   expect(() => checkLimits({ width: 4000, height: 4000, frameCount: 10 })).toThrow("too-large");
 });
+
+test("PDF page size: 1 px = 1 pt, scaled down past the 14,400 pt limit", async () => {
+  const { pageSize } = await import("../extension/lib/pdf.js");
+  const { FORMATS } = await import("../extension/lib/settings.js");
+  expect(FORMATS.pdf).toMatchObject({ mime: "application/pdf", ext: "pdf" });
+  expect(pageSize(320, 200)).toEqual({ width: 320, height: 200 });
+  expect(pageSize(28800, 1000)).toEqual({ width: 14400, height: 500 });
+});

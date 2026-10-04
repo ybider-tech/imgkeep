@@ -19,6 +19,8 @@ export const FORMATS = {
   webp: { mime: "image/webp", ext: "webp", label: "WebP" },
   // GIF keeps animation: animated WebP/AVIF/APNG are re-encoded frame by frame, GIFs are kept as they are.
   gif: { mime: "image/gif", ext: "gif", label: "GIF", animated: true },
+  // PDF: one page, exactly the image. Uses the JPG quality setting for photos.
+  pdf: { mime: "application/pdf", ext: "pdf", label: "PDF" },
 };
 
 // Caps for making GIFs, so a huge animation can't hang the browser. Over a cap → "too-large".

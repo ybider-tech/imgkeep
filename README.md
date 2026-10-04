@@ -1,6 +1,6 @@
 # Imgkeep
 
-Right-click any image and save it as PNG, JPG, WebP or GIF (animation included). Imgkeep converts it on your computer and saves it where you want.
+Right-click any image and save it as PNG, JPG, WebP, GIF (animation included) or PDF. Imgkeep converts it on your computer and saves it where you want.
 
 ![The Imgkeep right-click menu: Save image as PNG, JPG, WebP, GIF or Original format](store/screenshot-1-menu.png)
 
@@ -32,10 +32,11 @@ If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.
 
 ## What it does
 
-Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, or **Original format**.
+Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, or **Original format**.
 
 - Reads WebP, AVIF, SVG, PNG, JPG, GIF and `data:` images.
 - **GIF keeps animation:** an animated GIF is saved exactly as it is; animated WebP, AVIF and APNG are converted frame by frame, keeping each frame's timing and transparency. A still image saved as GIF becomes a one-frame GIF. GIFs are made at most 800px wide (larger ones are scaled down, keeping their shape).
+- **PDF:** one page, exactly the image's size (1 pixel = 1 point). Photos are stored as JPEG at your JPG quality; images with transparency are stored losslessly and keep their transparency. Very large images keep every pixel, but their page is scaled to PDF's 14,400-point limit.
 - JPG gets your background colour behind transparent areas (default white).
 - Quality: JPG 92 and WebP 90 by default, adjustable from 50 to 100.
 - File names from a template, default `{name}`. Tokens: `{name}` (file name from the URL, `image` for `data:` URLs), `{host}` (without `www.`), `{date}` (YYYY-MM-DD), `{time}` (HHMMSS), `{w}`, `{h}`. The subfolder setting takes the same tokens, e.g. `Imgkeep/{host}`. Characters that are illegal on Windows or macOS are removed.
@@ -66,7 +67,7 @@ Needs Chrome 116 or newer, or Microsoft Edge.
 - **Original format and Ask always use Downloads.** In folder mode, **Original format** still saves through the browser's downloads (with your subfolder and name template). **Ask every time** uses the Save As dialog.
 - **Original format without a file extension** in the URL is named by the browser from the server's answer, without your subfolder or template.
 - Very large images may exceed the browser's canvas limit; you'll see "too large to convert".
-- PNG, JPG and WebP output is always a still image: animated images are saved as their first frame. Choose **GIF** to keep the animation.
+- PNG, JPG, WebP and PDF output is always a still image: animated images are saved as their first frame. Choose **GIF** to keep the animation.
 - GIF output is limited to 600 frames and about 150 million source pixels in total (width × height × frames), and stops after 90 seconds. Bigger animations show a "too large" or "took too long" message.
 - GIF has 256 colours per frame and on/off transparency, so photos and soft edges look coarser than in the original. Converting to GIF is a trade-off for compatibility.
 - Videos can't be saved as GIF yet.

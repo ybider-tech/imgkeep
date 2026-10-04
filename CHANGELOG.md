@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **Save as PDF.** New menu item "PDF": a one-page PDF exactly the size of the image. Photos are stored as JPEG (using the JPG quality setting); images with transparency are stored losslessly and stay transparent. Written by a small built-in PDF writer (`extension/lib/pdf.js`): no library, no new permissions, converted locally.
+
 ## 0.4.0 — 2026-09-27
 
 - **Save as GIF, keeping animation.** New menu item "GIF (keeps animation)". Animated GIFs are saved byte for byte; animated WebP, AVIF and APNG are converted frame by frame with their timing and transparency; still images become one-frame GIFs. GIFs are at most 800px wide. Converted locally, like everything else.

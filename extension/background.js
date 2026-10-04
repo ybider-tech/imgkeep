@@ -8,6 +8,7 @@ const MENU = {
   "imgkeep-jpg": "jpg",
   "imgkeep-webp": "webp",
   "imgkeep-gif": "gif",
+  "imgkeep-pdf": "pdf",
   "imgkeep-original": "original",
 };
 
@@ -19,6 +20,7 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({ id: "imgkeep-jpg", parentId: "imgkeep", title: "JPG", contexts });
     chrome.contextMenus.create({ id: "imgkeep-webp", parentId: "imgkeep", title: "WebP", contexts });
     chrome.contextMenus.create({ id: "imgkeep-gif", parentId: "imgkeep", title: "GIF (keeps animation)", contexts });
+    chrome.contextMenus.create({ id: "imgkeep-pdf", parentId: "imgkeep", title: "PDF", contexts });
     chrome.contextMenus.create({ id: "imgkeep-sep", parentId: "imgkeep", type: "separator", contexts });
     chrome.contextMenus.create({ id: "imgkeep-original", parentId: "imgkeep", title: "Original format", contexts });
   });
@@ -103,7 +105,7 @@ function convertJob(job, settings, want) {
     jobId: job.id,
     url: job.url,
     mime: fmt.mime,
-    quality: job.format === "jpg" ? settings.jpgQuality : settings.webpQuality,
+    quality: job.format === "webp" ? settings.webpQuality : settings.jpgQuality, // PDF photos use JPG quality
     background: settings.jpgBackground,
     want,
   });

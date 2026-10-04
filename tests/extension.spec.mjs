@@ -1,6 +1,7 @@
 // End-to-end tests: the real extension in Chromium, saving images from local servers.
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
+import { inflateSync } from "node:zlib";
 import { join, relative, sep, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { rm } from "node:fs/promises";
@@ -350,6 +351,80 @@ test("GIF: an animation over the frame limit stops with too-large and explains w
   await ask.close();
 });
 
+// Reads back a one-page image PDF: checks the structure and returns the page size and image streams.
+function readPdf(buf) {
+  const text = buf.toString("latin1");
+  expect(text.startsWith("%PDF-1.")).toBe(true);
+  const startxref = Number(/startxref\n(\d+)\n%%EOF\n?$/.exec(text)[1]);
+  expect(text.slice(startxref, startxref + 4)).toBe("xref");
+  const [, first, count] = /^xref\n(\d+) (\d+)\n/.exec(text.slice(startxref));
+  const table = text.slice(startxref).split("\n").slice(2, 2 + Number(count));
+  const objects = {};
+  table.forEach((line, i) => {
+    const n = Number(first) + i;
+    if (n === 0) return;
+    const offset = Number(line.slice(0, 10));
+    expect(text.slice(offset).startsWith(`${n} 0 obj`), `object ${n} offset`).toBe(true);
+    objects[n] = offset;
+  });
+  const object = (n) => {
+    const start = objects[n];
+    const dictEnd = text.indexOf("\nstream\n", start);
+    const end = text.indexOf("endobj", start);
+    const head = text.slice(start, dictEnd > 0 && dictEnd < end ? dictEnd : end);
+    if (!(dictEnd > 0 && dictEnd < end)) return { head };
+    const length = Number(/\/Length (\d+)/.exec(head)[1]);
+    const from = dictEnd + "\nstream\n".length;
+    return { head, stream: buf.subarray(from, from + length) };
+  };
+  const box = /\/MediaBox \[0 0 ([\d.]+) ([\d.]+)\]/.exec(object(3).head);
+  const img = object(4);
+  return {
+    page: [Number(box[1]), Number(box[2])],
+    head: img.head,
+    image: img.stream,
+    mask: / \/SMask 6 0 R/.test(img.head) ? object(6).stream : null,
+  };
+}
+
+test("PDF: a transparent PNG is stored losslessly, with its transparency", async () => {
+  const out = await saveAndCheck(`${cors.url}/photo.png`, "pdf");
+  expect(out.rel).toBe("photo.pdf");
+  expect(out.dl.mime).toBe("application/pdf");
+  const pdf = readPdf(out.bytes);
+  expect(pdf.page).toEqual([320, 200]);
+  expect(pdf.head).toContain("/Width 320 /Height 200");
+  expect(pdf.head).toContain("/FlateDecode");
+  const rgb = inflateSync(pdf.image);
+  const alpha = inflateSync(pdf.mask);
+  expect(rgb.length).toBe(320 * 200 * 3);
+  expect(alpha.length).toBe(320 * 200);
+  expect(alpha[2 * 320 + 2]).toBe(0); // transparent corner
+  const c = (100 * 320 + 160);
+  expect(alpha[c]).toBe(255);
+  expect([rgb[c * 3], rgb[c * 3 + 1], rgb[c * 3 + 2]]).toEqual([0xf2, 0xb1, 0x34]); // yellow centre, exact
+});
+
+test("PDF: a photo is stored as JPEG, page size = image size", async () => {
+  const out = await saveAndCheck(`${cors.url}/photo.jpg`, "pdf");
+  const pdf = readPdf(out.bytes);
+  expect(pdf.page).toEqual([320, 200]);
+  expect(pdf.head).toContain("/DCTDecode");
+  expect(pdf.mask).toBeNull();
+  expect(sniff(Buffer.from(pdf.image))).toBe("jpg");
+  const img = await decode(Buffer.from(pdf.image));
+  expect([img.width, img.height]).toEqual([320, 200]);
+  expectYellow(img.center);
+});
+
+test("PDF: data: URL input is named image.pdf", async () => {
+  const png = (await readFile(join(FIXTURES, "photo.png"))).toString("base64");
+  await ctx.sw.evaluate(() => chrome.storage.sync.set({ subfolder: "pdf-data" }));
+  const out = await saveAndCheck(`data:image/png;base64,${png}`, "pdf");
+  expect(out.rel).toBe("pdf-data/image.pdf");
+  expect(out.bytes.toString("latin1")).toContain("/Title (image)");
+});
+
 test("Context menu is registered for images", async () => {
   // contextMenus has no getter; recreating the parent id must fail because it already exists.
   const err = await ctx.sw.evaluate(
@@ -360,4 +435,8 @@ test("Context menu is registered for images", async () => {
     () => new Promise((r) => chrome.contextMenus.create({ id: "imgkeep-gif", title: "x", contexts: ["image"] }, () => r(chrome.runtime.lastError?.message || ""))),
   );
   expect(gifErr).toMatch(/duplicate|exists/i);
+  const pdfErr = await ctx.sw.evaluate(
+    () => new Promise((r) => chrome.contextMenus.create({ id: "imgkeep-pdf", title: "x", contexts: ["image"] }, () => r(chrome.runtime.lastError?.message || ""))),
+  );
+  expect(pdfErr).toMatch(/duplicate|exists/i);
 });

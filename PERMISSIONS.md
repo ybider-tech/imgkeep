@@ -5,7 +5,7 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 
 | Permission | Type | Why Imgkeep needs it | Since |
 |---|---|---|---|
-| `contextMenus` | Required | Adds "Imgkeep: Save image as" (PNG, JPG, WebP, GIF, Original format) to the right-click menu on images. | 0.3.0 |
+| `contextMenus` | Required | Adds "Imgkeep: Save image as" (PNG, JPG, WebP, GIF, PDF, Original format) to the right-click menu on images. | 0.3.0 |
 | `downloads` | Required | Saves files through Chrome's downloads with your subfolder and file name, never overwriting (`conflictAction: "uniquify"`). | 0.3.0 |
 | `storage` | Required | Keeps your settings in Chrome sync storage, and a pending save in session storage while the small decision window is open. | 0.3.0 |
 | `offscreen` | Required | A hidden extension page with a canvas, to decode and re-encode the image on your computer and write into your chosen folder. Service workers have no canvas. | 0.3.0 |
