@@ -9,7 +9,8 @@ import { fileURLToPath } from "node:url";
 const SITE = join(dirname(fileURLToPath(import.meta.url)), "..", "site");
 
 export async function cssVersion() {
-  const css = await readFile(join(SITE, "style.css"));
+  // Line endings don't count, so a Windows checkout (CRLF) gets the same version as everyone else.
+  const css = (await readFile(join(SITE, "style.css"), "utf8")).replace(/\r\n/g, "\n");
   return createHash("sha256").update(css).digest("hex").slice(0, 10);
 }
 
