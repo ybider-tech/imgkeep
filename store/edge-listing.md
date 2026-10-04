@@ -1,4 +1,4 @@
-# Microsoft Edge Add-ons listing: Imgkeep 0.4.0
+# Microsoft Edge Add-ons listing: Imgkeep 0.5.0
 
 Live: https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd (approved 2026-09-29, category Photos)
 
@@ -12,8 +12,8 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 - **Mature content:** No
 
 ## Store listing (English)
-- **Display name:** comes from the manifest: Imgkeep — Save image as PNG, JPG, WebP, GIF. WebP & AVIF converter
-- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP or GIF. Converts WebP and AVIF on your device, into your folder. No tracking.
+- **Display name:** comes from the manifest: Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF
+- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
@@ -29,16 +29,17 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ### Description
 ```text
-Right-click any image and save it as PNG, JPG, WebP or GIF. Imgkeep converts it on your computer and saves it where you want, every time.
+Right-click any image and save it as PNG, JPG, WebP, GIF or PDF. Imgkeep converts it on your computer and saves it where you want, every time.
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
-Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format
 
 WHAT IT DOES
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
+• Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.

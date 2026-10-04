@@ -1,12 +1,12 @@
-# Chrome Web Store listing: Imgkeep 0.4.0
+# Chrome Web Store listing: Imgkeep 0.5.0
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Basics
 
-- **Name** (from the manifest): Imgkeep — Save image as PNG, JPG, WebP, GIF. WebP & AVIF converter
+- **Name** (from the manifest): Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP or GIF. Converts WebP and AVIF on your device, into your folder. No tracking.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Category:** Tools
 - **Language:** English
 - **Homepage:** https://imgkeep.app
@@ -15,19 +15,20 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v4 (2026-10-01): same as v3 without the repeated "WebP/AVIF as JPG or PNG" phrase (Google's listing guide warns against repeated keywords). Paste as-is into the dashboard.
+v5 (2026-10-04, for 0.5.0): adds PDF. Paste as-is into the dashboard together with the 0.5.0 package.
 
 ```text
-Right-click any image and save it as PNG, JPG, WebP or GIF. Imgkeep converts it on your computer and saves it where you want, every time.
+Right-click any image and save it as PNG, JPG, WebP, GIF or PDF. Imgkeep converts it on your computer and saves it where you want, every time.
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
-Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format
 
 WHAT IT DOES
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
+• Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -56,7 +57,7 @@ Save the image you right-click in the format and folder you choose.
 
 ### Permission justifications
 
-- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, Original format) to the right-click menu on images. This menu is the only way to use the extension.
+- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, PDF, Original format) to the right-click menu on images. This menu is the only way to use the extension.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
 - **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour) in Chrome sync storage, and keeps a pending save in session storage while the small decision window is open.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.

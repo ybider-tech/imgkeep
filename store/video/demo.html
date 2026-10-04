@@ -77,7 +77,7 @@
   <!-- 1. Title -->
   <div class="layer card" id="title">
     <div class="logo"><img src="../../extension/icons/icon128.png" alt="">Imgkeep</div>
-    <h1>Save any image as PNG, JPG, WebP or GIF</h1>
+    <h1>Save any image as PNG, JPG, WebP, GIF or PDF</h1>
     <p>Right-click. Pick a format. Done.</p>
   </div>
 
@@ -100,7 +100,7 @@
       <hr><div>Inspect</div>
     </div>
     <div class="abs menu" id="menuSub" style="left:572px; top:462px; min-width:230px;">
-      <div id="miPng">PNG</div><div id="miJpg">JPG</div><div id="miWebp">WebP</div><div id="miGif">GIF (keeps animation)</div><hr><div>Original format</div>
+      <div id="miPng">PNG</div><div id="miJpg">JPG</div><div id="miWebp">WebP</div><div id="miGif">GIF (keeps animation)</div><div>PDF</div><hr><div>Original format</div>
     </div>
 
     <div class="abs folder" id="folder">
@@ -163,7 +163,7 @@ const P = {};
 function measure() {
   P.pic = centre("picAnim");
   // Like Chrome, the menu opens at the click point; the submenu opens beside its item.
-  P.click = { x: P.pic.x + 60, y: P.pic.y - 40 };
+  P.click = { x: P.pic.x + 60, y: P.pic.y - 85 }; // high enough that the submenu clears the caption
   const main = $("menuMain"), sub = $("menuSub");
   main.style.left = `${P.click.x}px`;
   main.style.top = `${P.click.y}px`;

@@ -1,8 +1,10 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 — 2026-10-04
 
 - **Save as PDF.** New menu item "PDF": a one-page PDF exactly the size of the image. Photos are stored as JPEG (using the JPG quality setting); images with transparency are stored losslessly and stay transparent. Written by a small built-in PDF writer (`extension/lib/pdf.js`): no library, no new permissions, converted locally.
+- **New icon:** a picture frame with a download arrow. 48 and 128 px from the designer's pack (`store/icon-pack/`); 16 and 32 px simplified so they stay readable in the right-click menu and toolbar.
+- New store name: "Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF" (cleaner, no repeated keywords), and the summary mentions PDF.
 
 ## 0.4.0 — 2026-09-27
 

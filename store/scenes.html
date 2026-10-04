@@ -74,7 +74,7 @@
       background: radial-gradient(circle at 85% 15%, #1b8a76 0%, #0f6b5c 45%, #0b5347 100%); color: #fff; }
     .tile .brand { position: absolute; left: 36px; top: 40px; display: flex; align-items: center; gap: 14px;
       font-family: "Schibsted Grotesk", sans-serif; font-size: 40px; }
-    .tile .brand img { width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 0 0 2px rgba(255,255,255,0.35); }
+    .tile .brand img { width: 78px; height: 78px; margin: -7px; } /* the icon has its own transparent margin */
     .tile .line { position: absolute; left: 36px; right: 30px; top: 134px; font-family: "Schibsted Grotesk", sans-serif;
       font-size: 27px; line-height: 1.15; }
     .tile .chips { position: absolute; left: 36px; bottom: 30px; display: flex; gap: 8px; }
@@ -85,7 +85,7 @@
       background: radial-gradient(circle at 88% 10%, #1b8a76 0%, #0f6b5c 42%, #0b4f44 100%); color: #fff; }
     .marquee .brand { position: absolute; left: 90px; top: 84px; display: flex; align-items: center; gap: 18px;
       font-family: "Schibsted Grotesk", sans-serif; font-size: 44px; }
-    .marquee .brand img { width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 0 0 2px rgba(255,255,255,0.35); }
+    .marquee .brand img { width: 88px; height: 88px; margin: -8px; } /* the icon has its own transparent margin */
     .marquee h1 { position: absolute; left: 90px; top: 206px; width: 640px; margin: 0; font-size: 58px; line-height: 1.06; color: #fff; }
     .marquee .line { position: absolute; left: 90px; top: 356px; width: 600px; font-size: 25px; line-height: 1.35; color: rgba(255,255,255,0.86); }
     .marquee .chips { position: absolute; left: 90px; bottom: 70px; display: flex; gap: 10px; }
@@ -103,7 +103,7 @@
 <!-- 1. Right-click menu over a product page -->
 <section class="scene" id="scene-1">
   <div class="head">
-    <h1>Right-click any image.<br>Save it as PNG, JPG, WebP or GIF.</h1>
+    <h1>Right-click any image.<br>Save it as PNG, JPG, WebP, GIF or PDF.</h1>
     <p class="sub">Converted on your computer, saved to your folder. Animations stay animated as GIF.</p>
   </div>
   <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
@@ -144,6 +144,7 @@
         <div>JPG</div>
         <div>WebP</div>
         <div>GIF (keeps animation)</div>
+        <div>PDF</div>
         <hr>
         <div>Original format</div>
       </div>
@@ -220,7 +221,7 @@
 <section class="tile" id="tile">
   <div class="brand"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
   <div class="line">Right format. Right folder.<br>Nothing else.</div>
-  <div class="chips"><span>PNG</span><span>JPG</span><span>WebP</span><span>GIF</span></div>
+  <div class="chips"><span>PNG</span><span>JPG</span><span>WebP</span><span>GIF</span><span>PDF</span></div>
 </section>
 
 <!-- Marquee promo tile 1400×560 (homepage carousel, if Google picks it) -->
@@ -238,6 +239,7 @@
     <div>JPG</div>
     <div>WebP</div>
     <div class="on">GIF (keeps animation)</div>
+    <div>PDF</div>
     <hr>
     <div>Original format</div>
   </div>
