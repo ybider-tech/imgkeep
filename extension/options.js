@@ -1,6 +1,7 @@
 // Options page. Every change saves instantly to chrome.storage.sync.
 
 import { DEFAULTS, PRO_WAITLIST_URL, getSettings, clampQuality, buildTarget, targetPath } from "./lib/settings.js";
+import { cleanMaxWidth } from "./lib/image.js";
 import { getFolder, setFolder, folderPermission } from "./lib/folder.js";
 import { t, localisePage } from "./lib/i18n.js";
 
@@ -102,6 +103,13 @@ async function init() {
 
   $("jpgBackground").value = s.jpgBackground;
   $("jpgBackground").addEventListener("change", (e) => save({ jpgBackground: e.target.value }));
+
+  $("maxWidth").value = s.maxWidth > 0 ? s.maxWidth : "";
+  $("maxWidth").addEventListener("change", (e) => {
+    const maxWidth = cleanMaxWidth(e.target.value);
+    e.target.value = maxWidth || "";
+    save({ maxWidth });
+  });
 
   $("chooseFolder").addEventListener("click", chooseFolder);
 

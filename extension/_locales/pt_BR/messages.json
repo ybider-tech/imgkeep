@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "Formato original"
   },
+  "menuCopyPng": {
+    "message": "Copiar como PNG"
+  },
+  "menuMoreOptions": {
+    "message": "Mais opções…"
+  },
   "askErrBlocked": {
     "message": "O site não entregou esta imagem, mesmo com o acesso permitido. O servidor pode estar fora do ar ou só exibir a imagem dentro das próprias páginas."
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "Fechar"
+  },
+  "askRetry": {
+    "message": "Tentar de novo"
+  },
+  "askOpenImage": {
+    "message": "Abrir imagem"
   },
   "askCancel": {
     "message": "Cancelar"
@@ -261,7 +273,7 @@
     "message": "Prévia para summer-banner de shop.example.com, 1600×900, como PNG:"
   },
   "optQualityTitle": {
-    "message": "Qualidade"
+    "message": "Qualidade e tamanho"
   },
   "optJpgQuality": {
     "message": "Qualidade do JPG"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "JPG não tem transparência, então as áreas transparentes recebem esta cor."
+  },
+  "optMaxWidth": {
+    "message": "Largura máxima"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Tamanho original"
+  },
+  "optMaxWidthHint": {
+    "message": "Opcional, em pixels. Imagens mais largas são reduzidas para caber, mantendo a proporção; as menores nunca são ampliadas. O formato original é sempre salvo como está."
   },
   "optSitesTitle": {
     "message": "Sites que você permitiu"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — em breve"
   },
   "optProBody": {
-    "message": "Regras: envie as imagens de cada site para a pasta certa, no formato certo e com o nome certo, sem escolher toda vez. Além de um registro de onde veio cada imagem."
+    "message": "Predefinições para os tamanhos e formatos que você mais usa, limites de tamanho de arquivo como \"até 200 KB\", regras que mandam as imagens de cada site para a pasta certa e um registro da origem de cada imagem."
   },
   "optProFree": {
     "message": "Tudo o que você usa hoje continua grátis."
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "Versão"
+  },
+  "copyWorking": {
+    "message": "Copiando a imagem…"
+  },
+  "copyDone": {
+    "message": "Copiada como PNG. Cole onde quiser."
+  },
+  "copyFailed": {
+    "message": "Não foi possível copiar a imagem"
+  },
+  "copyFailedNote": {
+    "message": "Sua área de transferência não foi alterada. Tente de novo ou salve a imagem como arquivo PNG."
+  },
+  "copySavePng": {
+    "message": "Salvar como PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Permitir e copiar"
+  },
+  "editTitle": {
+    "message": "Mais opções"
+  },
+  "editLoading": {
+    "message": "Carregando a imagem…"
+  },
+  "editUpdating": {
+    "message": "Atualizando a prévia…"
+  },
+  "editPreviewAlt": {
+    "message": "Prévia do resultado"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Resultado"
+  },
+  "editFormat": {
+    "message": "Formato"
+  },
+  "editPngHint": {
+    "message": "PNG mantém cada pixel. Para um arquivo menor, reduza a largura máxima ou escolha JPG ou WebP."
+  },
+  "editMaxWidthHint": {
+    "message": "Em pixels. Mantém a proporção e nunca amplia."
+  },
+  "editBackground": {
+    "message": "Fundo"
+  },
+  "editQuality": {
+    "message": "Qualidade"
+  },
+  "editFileName": {
+    "message": "Nome do arquivo"
+  },
+  "editSave": {
+    "message": "Salvar"
+  },
+  "editAllow": {
+    "message": "Permitir este site"
+  },
+  "editNeedsOk": {
+    "message": "Este salvamento precisa da sua confirmação: veja a janela do Imgkeep que acabou de abrir."
   }
 }

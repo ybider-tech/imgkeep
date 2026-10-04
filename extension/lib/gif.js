@@ -8,20 +8,9 @@
 import { GIFEncoder, quantize, applyPalette } from "./gifenc.js";
 import { JobError } from "./job-error.js";
 import { GIF_LIMITS } from "./settings.js";
+import { fitWidth } from "./image.js";
 
 const DEFAULT_DELAY_MS = 100; // when a frame has no duration
-
-// The type from the file's first bytes. Servers often send the wrong Content-Type.
-export async function sniffImageType(blob) {
-  const b = new Uint8Array(await blob.slice(0, 16).arrayBuffer());
-  const text = (from, to) => String.fromCharCode(...b.subarray(from, to));
-  if (text(0, 4) === "GIF8") return "image/gif";
-  if (text(0, 4) === "RIFF" && text(8, 12) === "WEBP") return "image/webp";
-  if (b[0] === 0x89 && text(1, 4) === "PNG") return "image/png";
-  if (text(4, 8) === "ftyp" && ["avif", "avis"].includes(text(8, 12))) return "image/avif";
-  if (b[0] === 0xff && b[1] === 0xd8) return "image/jpeg";
-  return blob.type || "";
-}
 
 // A GIF's width and height from its header (bytes 6–9, little-endian).
 export async function gifSize(blob) {
@@ -84,10 +73,10 @@ export function checkLimits({ width, height, frameCount }) {
   }
 }
 
-// Scale down to maxWidth, keeping the shape. Never scales up.
-export function fitWidth(width, height, maxWidth = GIF_LIMITS.maxWidth) {
-  if (width <= maxWidth) return { width, height };
-  return { width: maxWidth, height: Math.max(1, Math.round((height * maxWidth) / width)) };
+// GIF width: at most GIF_LIMITS.maxWidth, or the user's maximum width if that is smaller. Never scales up.
+export function fitGif(width, height, maxWidth) {
+  const max = maxWidth > 0 ? Math.min(maxWidth, GIF_LIMITS.maxWidth) : GIF_LIMITS.maxWidth;
+  return fitWidth(width, height, max);
 }
 
 // GIF has 1-bit transparency: pixels under half opacity become fully transparent, the rest opaque.

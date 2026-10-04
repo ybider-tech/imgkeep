@@ -53,6 +53,10 @@
     ul.plain { margin: 0; padding-inline-start: 1.2em; }
     ul.plain li { margin-bottom: 0.4em; }
     #folderStatus { margin-inline-start: 4px; }
+    input[type="number"] {
+      font: inherit; color: var(--text); background: var(--surface);
+      border: 1px solid var(--border); border-radius: 8px; padding: 0.45em 0.6em; width: 12em;
+    }
   </style>
   <script type="module" src="options.js"></script>
 </head>
@@ -109,7 +113,7 @@
     </section>
 
     <section aria-labelledby="h-quality">
-      <h2 id="h-quality" data-i18n="optQualityTitle">Quality</h2>
+      <h2 id="h-quality" data-i18n="optQualityTitle">Quality and size</h2>
       <div class="field">
         <label for="jpgQuality" data-i18n="optJpgQuality">JPG quality</label>
         <div class="slider">
@@ -131,6 +135,11 @@
           <span class="hint" style="margin:0" data-i18n="optJpgBackgroundHint">JPG has no transparency, so see-through areas get this colour.</span>
         </div>
       </div>
+      <div class="field">
+        <label for="maxWidth" data-i18n="optMaxWidth">Maximum width</label>
+        <input type="number" id="maxWidth" name="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Original size" data-i18n-placeholder="optMaxWidthPlaceholder" aria-describedby="maxWidthHint">
+        <p class="hint" id="maxWidthHint" data-i18n="optMaxWidthHint">Optional, in pixels. Wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Original format is always saved as it is.</p>
+      </div>
     </section>
 
     <section aria-labelledby="h-sites">
@@ -141,7 +150,7 @@
 
     <section class="pro" aria-labelledby="h-pro">
       <h2 id="h-pro" data-i18n="optProTitle">Imgkeep Pro — coming soon</h2>
-      <p data-i18n="optProBody">Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.</p>
+      <p data-i18n="optProBody">Presets for the sizes and formats you use most, file-size targets like "under 200 KB", rules that send each site's images to the right folder, and a log of where every image came from.</p>
       <p class="muted" style="margin-bottom:0" data-i18n="optProFree">Everything you use today stays free.</p>
       <p id="waitlist" hidden style="margin:12px 0 0"><a id="waitlistLink" target="_blank" rel="noopener" data-i18n="optGetNotified">Get notified</a></p>
     </section>

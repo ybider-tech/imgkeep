@@ -32,7 +32,7 @@ If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.
 
 ## What it does
 
-Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, or **Original format**.
+Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, **Original format**, **Copy as PNG** or **More options…**.
 
 - Reads WebP, AVIF, SVG, PNG, JPG, GIF and `data:` images.
 - **GIF keeps animation:** an animated GIF is saved exactly as it is; animated WebP, AVIF and APNG are converted frame by frame, keeping each frame's timing and transparency. A still image saved as GIF becomes a one-frame GIF. GIFs are made at most 800px wide (larger ones are scaled down, keeping their shape).
@@ -41,6 +41,10 @@ Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP
 - Quality: JPG 92 and WebP 90 by default, adjustable from 50 to 100.
 - File names from a template, default `{name}`. Tokens: `{name}` (file name from the URL, `image` for `data:` URLs), `{host}` (without `www.`), `{date}` (YYYY-MM-DD), `{time}` (HHMMSS), `{w}`, `{h}`. The subfolder setting takes the same tokens, e.g. `Imgkeep/{host}`. Characters that are illegal on Windows or macOS are removed.
 - Never overwrites a file.
+- **Maximum width** (Options → Quality and size, off by default): wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Applies to every format except Original format. GIFs also stay within their own 800px limit; a GIF that is already a GIF is saved as it is.
+- **Checked output:** each converted file's first bytes must match the chosen format, and the file extension comes from them. A mismatch is an error, never a mislabelled file.
+- **Copy as PNG:** puts a PNG (transparency kept) on the clipboard. It runs in a small Imgkeep window, because the browser only lets a focused page write images to the clipboard; that's why no clipboard permission is needed. The window closes itself after "Copied". If the clipboard refuses, nothing on it changes and you can save the PNG instead.
+- **More options…:** a window with a live preview and the result's real dimensions and file size (1 kB = 1,000 bytes), plus format (PNG, JPG, WebP), maximum width, quality (JPG and WebP), JPG background and file name. **Save** uses your save mode and folder like any other save; **Copy as PNG** copies at the chosen width.
 - **Nine languages:** English, Arabic, French, German, Hebrew, Hindi, Japanese, Portuguese (Brazil) and Spanish, following the browser's language. Arabic and Hebrew are laid out right to left.
 
 ## Save modes
@@ -59,7 +63,7 @@ If a site blocks cross-site image reads, **Allow and save** requests access to t
 2. Click **Load unpacked** and pick the `extension/` folder.
 3. Right-click any image. Settings: the extension's **Details → Extension options**, or the Extensions (puzzle) menu → ⋮ → **Options**.
 
-Needs Chrome 116 or newer, or Microsoft Edge.
+Needs Chrome 116 or newer, or Microsoft Edge. Tested automatically on the current Chromium (macOS locally, Linux and Windows in CI); 116 is the declared minimum (offscreen documents and the APIs used all exist there) but isn't tested automatically.
 
 ## Known limits
 
@@ -72,6 +76,9 @@ Needs Chrome 116 or newer, or Microsoft Edge.
 - GIF output is limited to 600 frames and about 150 million source pixels in total (width × height × frames), and stops after 90 seconds. Bigger animations show a "too large" or "took too long" message.
 - GIF has 256 colours per frame and on/off transparency, so photos and soft edges look coarser than in the original. Converting to GIF is a trade-off for compatibility.
 - Videos can't be saved as GIF yet.
+- **Unsupported sources:** `blob:` images that only exist inside a page, CSS background images and `<canvas>` drawings (the right-click menu doesn't offer them as images), and formats Chrome itself can't decode (HEIC, TIFF). Some hotlink-protected sites refuse requests that don't come from their own pages; then **Original format** or **Open image** is the way out.
+- **More options** converts to PNG, JPG and WebP. GIF and PDF are in the right-click menu.
+- Copy as PNG needs its window to keep focus until the copy is done. If you click away while it's converting, it offers **Try again**.
 
 ## Development
 
@@ -91,7 +98,8 @@ npm test
   - Saving: Original format, subfolder and name template, never overwriting, folder mode.
   - The ask window (site access, errors, folder), the options page and the context menu.
   - Outputs are decoded and checked for format, size and pixels.
-- `tests/settings.spec.mjs`: file-name templating and GIF size limits.
+- `tests/tools.spec.mjs`: 0.6.0 features. Checked output (MIME, bytes and extension agree), maximum width (2400 × 1200 → 1600 × 800, small images unchanged, PDF and Original format), transparency and JPG background, the size cap (at or under the cap, or a clear failure without a file), missing/corrupt/empty sources, Copy as PNG (read back from the clipboard, no download; a refused clipboard is left unchanged and offers a PNG download), More options (preview size equals the saved file, chosen width and name), concurrent saves, and that nothing is held in memory afterwards.
+- `tests/settings.spec.mjs`: file-name templating, GIF size limits, resizing, output type detection and the size-cap search.
 - `tests/site.spec.mjs`: every website page loads with no console errors and no third-party requests, has a unique title, description and canonical, and is in the sitemap. Also checks that `privacy.html` matches `PRIVACY.md` and that there are no trackers.
 
 Other scripts:
@@ -112,7 +120,7 @@ All text lives in `extension/_locales/<lang>/messages.json`; English (`en`) is t
 
 To add a language: copy `en/messages.json` to `_locales/<code>/` (Chrome's locale codes, e.g. `it`, `zh_CN`), translate each `message`, and keep `$PLACEHOLDERS$`, `{tokens}`, `<code>`/`<strong>` and the `placeholders` blocks as they are (`tests/i18n/build-locale.py` copies them for you). `npm run check` lists anything missing or broken, and checks the store limits: name ≤ 75 characters, summary ≤ 132. Then add the store description to `store/listing-translations.md`.
 
-`tests/i18n.spec.mjs` opens the extension in Hebrew and Japanese. Chromium only honours `--lang` on Linux, so these tests run in CI and are skipped on macOS.
+`tests/i18n.spec.mjs` opens the extension in Hebrew and Japanese (options, ask window, More options). Chromium follows the `LANGUAGE` variable on Linux and `--lang` on Windows, so these tests run in CI and are skipped on macOS, where the browser takes the system language.
 
 ### Imgkeep Pro waitlist link
 
@@ -126,7 +134,7 @@ site/        imgkeep.app (GitHub Pages)
 tests/       Playwright tests, fixtures, local servers, static check
 store/       listing copy, scenes and rendered store images
 scripts/     package.sh, make-icons.py, version-css.mjs
-docs/        DEPLOYMENT.md: how the site, domain and stores were set up
+docs/        DEPLOYMENT.md (site, domain and store setup), qa/ (release QA reports)
 ```
 
 ## Releasing a new version

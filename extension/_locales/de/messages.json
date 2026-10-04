@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "Originalformat"
   },
+  "menuCopyPng": {
+    "message": "Als PNG kopieren"
+  },
+  "menuMoreOptions": {
+    "message": "Weitere Optionen…"
+  },
   "askErrBlocked": {
     "message": "Die Website hat das Bild nicht herausgegeben, auch nicht mit erlaubtem Zugriff. Vielleicht ist der Server nicht erreichbar oder zeigt das Bild nur auf seinen eigenen Seiten."
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "Schließen"
+  },
+  "askRetry": {
+    "message": "Erneut versuchen"
+  },
+  "askOpenImage": {
+    "message": "Bild öffnen"
   },
   "askCancel": {
     "message": "Abbrechen"
@@ -261,7 +273,7 @@
     "message": "Vorschau für summer-banner von shop.example.com, 1600×900, als PNG:"
   },
   "optQualityTitle": {
-    "message": "Qualität"
+    "message": "Qualität und Größe"
   },
   "optJpgQuality": {
     "message": "JPG-Qualität"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "JPG unterstützt keine Transparenz, deshalb bekommen durchsichtige Bereiche diese Farbe."
+  },
+  "optMaxWidth": {
+    "message": "Maximale Breite"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Originalgröße"
+  },
+  "optMaxWidthHint": {
+    "message": "Optional, in Pixeln. Breitere Bilder werden passend verkleinert und behalten ihre Form; kleinere werden nie vergrößert. Das Originalformat wird immer unverändert gespeichert."
   },
   "optSitesTitle": {
     "message": "Erlaubte Websites"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro – demnächst"
   },
   "optProBody": {
-    "message": "Regeln: Bilder jeder Website im richtigen Format und mit dem richtigen Namen in den richtigen Ordner speichern, ohne jedes Mal zu wählen. Dazu ein Protokoll, woher jedes Bild stammt."
+    "message": "Voreinstellungen für deine häufigsten Größen und Formate, Dateigrößen-Ziele wie „unter 200 KB“, Regeln, die die Bilder jeder Website in den richtigen Ordner legen, und ein Protokoll, woher jedes Bild stammt."
   },
   "optProFree": {
     "message": "Alles, was du heute nutzt, bleibt kostenlos."
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "Version"
+  },
+  "copyWorking": {
+    "message": "Bild wird kopiert…"
+  },
+  "copyDone": {
+    "message": "Als PNG kopiert. Füge es überall ein."
+  },
+  "copyFailed": {
+    "message": "Bild konnte nicht kopiert werden"
+  },
+  "copyFailedNote": {
+    "message": "Deine Zwischenablage wurde nicht verändert. Versuche es erneut oder speichere das Bild stattdessen als PNG-Datei."
+  },
+  "copySavePng": {
+    "message": "Stattdessen als PNG speichern"
+  },
+  "copyAllowAndCopy": {
+    "message": "Erlauben und kopieren"
+  },
+  "editTitle": {
+    "message": "Weitere Optionen"
+  },
+  "editLoading": {
+    "message": "Bild wird geladen…"
+  },
+  "editUpdating": {
+    "message": "Vorschau wird aktualisiert…"
+  },
+  "editPreviewAlt": {
+    "message": "Vorschau des Ergebnisses"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Ergebnis"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG behält jedes Pixel. Für eine kleinere Datei verringere die maximale Breite oder wähle JPG oder WebP."
+  },
+  "editMaxWidthHint": {
+    "message": "In Pixeln. Behält die Form, vergrößert nie."
+  },
+  "editBackground": {
+    "message": "Hintergrund"
+  },
+  "editQuality": {
+    "message": "Qualität"
+  },
+  "editFileName": {
+    "message": "Dateiname"
+  },
+  "editSave": {
+    "message": "Speichern"
+  },
+  "editAllow": {
+    "message": "Diese Website erlauben"
+  },
+  "editNeedsOk": {
+    "message": "Dieser Speichervorgang braucht deine Zustimmung: Sieh dir das Imgkeep-Fenster an, das sich gerade geöffnet hat."
   }
 }

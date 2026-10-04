@@ -1,8 +1,8 @@
 # Imgkeep privacy policy
 
-Last updated: 29 September 2026
+Last updated: 4 October 2026
 
-Imgkeep is a browser extension for Chrome and Microsoft Edge that saves the image you right-click as PNG, JPG, WebP or GIF.
+Imgkeep is a browser extension for Chrome and Microsoft Edge that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
 ## What Imgkeep collects
 
@@ -14,7 +14,11 @@ Imgkeep reads only the image you right-click and choose to save. It converts tha
 
 ## Where your settings live
 
-Your settings (save mode, subfolder, file-name template, quality and background colour) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer.
+Your settings (save mode, subfolder, file-name template, quality, background colour and maximum width) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The format and width you last used in More options are kept in the extension's local storage on this computer.
+
+## The clipboard
+
+Imgkeep writes to your clipboard only when you choose "Copy as PNG", and only the image you picked. It never reads your clipboard.
 
 ## Access to sites
 

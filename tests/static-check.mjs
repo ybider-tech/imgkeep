@@ -91,7 +91,7 @@ for (const lang of await readdir(LOCALES)) {
 
 // Every message the code uses exists, and every message is used somewhere.
 // Quoted keys ("askSaving", "@detailGifFrames", data-i18n="optSaved") and manifest __MSG_key__ references.
-const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
+const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail|copy|edit)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
 const used = new Set();
 for await (const path of walk(EXT)) {
   if (!/\.(js|html|json)$/.test(path) || path.includes("_locales")) continue;

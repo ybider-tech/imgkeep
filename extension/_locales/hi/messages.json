@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "मूल फ़ॉर्मैट"
   },
+  "menuCopyPng": {
+    "message": "PNG के रूप में कॉपी करें"
+  },
+  "menuMoreOptions": {
+    "message": "और विकल्प…"
+  },
   "askErrBlocked": {
     "message": "एक्सेस की अनुमति होने पर भी साइट ने यह इमेज नहीं दी। हो सकता है सर्वर बंद हो, या वह इमेज सिर्फ़ अपने पेजों के अंदर दिखाता हो।"
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "बंद करें"
+  },
+  "askRetry": {
+    "message": "फिर से कोशिश करें"
+  },
+  "askOpenImage": {
+    "message": "इमेज खोलें"
   },
   "askCancel": {
     "message": "रद्द करें"
@@ -261,7 +273,7 @@
     "message": "shop.example.com की summer-banner, 1600×900, PNG के रूप में, का प्रीव्यू:"
   },
   "optQualityTitle": {
-    "message": "क्वालिटी"
+    "message": "क्वालिटी और साइज़"
   },
   "optJpgQuality": {
     "message": "JPG क्वालिटी"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "JPG में पारदर्शिता नहीं होती, इसलिए पारदर्शी हिस्सों को यह रंग मिलता है।"
+  },
+  "optMaxWidth": {
+    "message": "अधिकतम चौड़ाई"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "मूल साइज़"
+  },
+  "optMaxWidthHint": {
+    "message": "वैकल्पिक, पिक्सेल में। ज़्यादा चौड़ी इमेज आकार का अनुपात बनाए रखते हुए छोटी की जाती हैं; छोटी इमेज कभी बड़ी नहीं की जातीं। मूल फ़ॉर्मैट हमेशा जैसा है वैसा सेव होता है।"
   },
   "optSitesTitle": {
     "message": "जिन साइटों की आपने अनुमति दी"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — जल्द आ रहा है"
   },
   "optProBody": {
-    "message": "नियम: हर साइट की इमेज को सही फ़ोल्डर में, सही फ़ॉर्मैट और सही नाम से भेजें, हर बार चुने बिना। साथ ही हर इमेज कहाँ से आई, इसका रिकॉर्ड।"
+    "message": "आपके सबसे ज़्यादा इस्तेमाल होने वाले साइज़ और फ़ॉर्मैट के प्रीसेट, \"200 KB से कम\" जैसे फ़ाइल साइज़ लक्ष्य, हर साइट की इमेज को सही फ़ोल्डर में भेजने वाले नियम, और हर इमेज कहाँ से आई इसका लॉग।"
   },
   "optProFree": {
     "message": "आज आप जो भी इस्तेमाल करते हैं, वह मुफ़्त रहेगा।"
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "वर्शन"
+  },
+  "copyWorking": {
+    "message": "इमेज कॉपी हो रही है…"
+  },
+  "copyDone": {
+    "message": "PNG के रूप में कॉपी हो गई। इसे कहीं भी पेस्ट करें।"
+  },
+  "copyFailed": {
+    "message": "इमेज कॉपी नहीं हो सकी"
+  },
+  "copyFailedNote": {
+    "message": "आपका क्लिपबोर्ड नहीं बदला। फिर से कोशिश करें, या इसके बजाय इमेज को PNG फ़ाइल के रूप में सेव करें।"
+  },
+  "copySavePng": {
+    "message": "इसके बजाय PNG में सेव करें"
+  },
+  "copyAllowAndCopy": {
+    "message": "अनुमति दें और कॉपी करें"
+  },
+  "editTitle": {
+    "message": "और विकल्प"
+  },
+  "editLoading": {
+    "message": "इमेज लोड हो रही है…"
+  },
+  "editUpdating": {
+    "message": "प्रीव्यू अपडेट हो रहा है…"
+  },
+  "editPreviewAlt": {
+    "message": "नतीजे का प्रीव्यू"
+  },
+  "editOriginal": {
+    "message": "मूल"
+  },
+  "editResult": {
+    "message": "नतीजा"
+  },
+  "editFormat": {
+    "message": "फ़ॉर्मैट"
+  },
+  "editPngHint": {
+    "message": "PNG हर पिक्सेल रखता है। छोटी फ़ाइल के लिए अधिकतम चौड़ाई कम करें या JPG या WebP चुनें।"
+  },
+  "editMaxWidthHint": {
+    "message": "पिक्सेल में। आकार का अनुपात बना रहता है, कभी बड़ा नहीं करता।"
+  },
+  "editBackground": {
+    "message": "बैकग्राउंड"
+  },
+  "editQuality": {
+    "message": "क्वालिटी"
+  },
+  "editFileName": {
+    "message": "फ़ाइल का नाम"
+  },
+  "editSave": {
+    "message": "सेव करें"
+  },
+  "editAllow": {
+    "message": "इस साइट को अनुमति दें"
+  },
+  "editNeedsOk": {
+    "message": "इस सेव के लिए आपकी मंज़ूरी चाहिए: अभी खुली Imgkeep विंडो देखें।"
   }
 }

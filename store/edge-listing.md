@@ -33,13 +33,16 @@ Right-click any image and save it as PNG, JPG, WebP, GIF or PDF. Imgkeep convert
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
-Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
 
 WHAT IT DOES
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
+• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
+• Resize: set a maximum width and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
+• More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -62,7 +65,7 @@ Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.ht
 
 ## Notes for certification
 ```text
-Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, Original format). To test: right-click any image on any website and pick a format; the file is saved to Downloads.
+Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…). To test: right-click any image on any website and pick a format; the file is saved to Downloads. "Copy as PNG" opens a small window that copies the image to the clipboard and closes itself. "More options…" opens a window with a preview, where you can pick format, maximum width, quality and file name before saving.
 
 Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code, no data collection. Source code: https://github.com/ybider-tech/imgkeep
 

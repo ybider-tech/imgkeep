@@ -19,6 +19,14 @@
     "message": "Original format",
     "description": "Menu item: save the file unchanged."
   },
+  "menuCopyPng": {
+    "message": "Copy as PNG",
+    "description": "Right-click menu item: copies the image to the clipboard as PNG. Also the Copy window's title and button."
+  },
+  "menuMoreOptions": {
+    "message": "More options…",
+    "description": "Right-click menu item: opens the More options window"
+  },
   "askErrBlocked": {
     "message": "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
     "description": "Error"
@@ -134,6 +142,14 @@
   "askClose": {
     "message": "Close",
     "description": "Button"
+  },
+  "askRetry": {
+    "message": "Try again",
+    "description": "Button: try the same save or copy again"
+  },
+  "askOpenImage": {
+    "message": "Open image",
+    "description": "Button: opens the image's web address in a new tab"
   },
   "askCancel": {
     "message": "Cancel",
@@ -326,7 +342,7 @@
     "description": "Keep summer-banner and shop.example.com."
   },
   "optQualityTitle": {
-    "message": "Quality",
+    "message": "Quality and size",
     "description": "Section heading"
   },
   "optJpgQuality": {
@@ -344,6 +360,18 @@
   "optJpgBackgroundHint": {
     "message": "JPG has no transparency, so see-through areas get this colour.",
     "description": "Hint"
+  },
+  "optMaxWidth": {
+    "message": "Maximum width",
+    "description": "Label of the maximum width setting (Options and More options)"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Original size",
+    "description": "Placeholder of the empty maximum width field"
+  },
+  "optMaxWidthHint": {
+    "message": "Optional, in pixels. Wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Original format is always saved as it is.",
+    "description": "Hint under the maximum width setting"
   },
   "optSitesTitle": {
     "message": "Sites you've allowed",
@@ -372,7 +400,7 @@
     "description": "Section heading"
   },
   "optProBody": {
-    "message": "Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.",
+    "message": "Presets for the sizes and formats you use most, file-size targets like \"under 200 KB\", rules that send each site's images to the right folder, and a log of where every image came from.",
     "description": "Text"
   },
   "optProFree": {
@@ -410,5 +438,89 @@
   "optVersion": {
     "message": "Version",
     "description": "Label before the version number"
+  },
+  "copyWorking": {
+    "message": "Copying the image…",
+    "description": "Status while converting and copying"
+  },
+  "copyDone": {
+    "message": "Copied as PNG. Paste it anywhere.",
+    "description": "Status after a successful copy"
+  },
+  "copyFailed": {
+    "message": "Couldn't copy the image",
+    "description": "Title when copying failed"
+  },
+  "copyFailedNote": {
+    "message": "Your clipboard wasn't changed. Try again, or save the image as a PNG file instead.",
+    "description": "Text when the clipboard refused the image"
+  },
+  "copySavePng": {
+    "message": "Save as PNG instead",
+    "description": "Button: save the image as a PNG file instead of copying"
+  },
+  "copyAllowAndCopy": {
+    "message": "Allow and copy",
+    "description": "Button: allow access to the site, then copy"
+  },
+  "editTitle": {
+    "message": "More options",
+    "description": "More options window title"
+  },
+  "editLoading": {
+    "message": "Loading the image…",
+    "description": "Shown while the image loads"
+  },
+  "editUpdating": {
+    "message": "Updating preview…",
+    "description": "Shown while the preview is redone after a change"
+  },
+  "editPreviewAlt": {
+    "message": "Preview of the result",
+    "description": "Alt text of the preview image"
+  },
+  "editOriginal": {
+    "message": "Original",
+    "description": "Label before the original image's size"
+  },
+  "editResult": {
+    "message": "Result",
+    "description": "Label before the result's size, format and file size"
+  },
+  "editFormat": {
+    "message": "Format",
+    "description": "Label of the format choice"
+  },
+  "editPngHint": {
+    "message": "PNG keeps every pixel. For a smaller file, lower the maximum width or choose JPG or WebP.",
+    "description": "Hint under the format choice when PNG is chosen"
+  },
+  "editMaxWidthHint": {
+    "message": "In pixels. Keeps the shape, never enlarges.",
+    "description": "Hint under the maximum width field"
+  },
+  "editBackground": {
+    "message": "Background",
+    "description": "Label of the JPG background colour"
+  },
+  "editQuality": {
+    "message": "Quality",
+    "description": "Label of the quality slider"
+  },
+  "editFileName": {
+    "message": "File name",
+    "description": "Label of the file name field"
+  },
+  "editSave": {
+    "message": "Save",
+    "description": "Button: save with these options"
+  },
+  "editAllow": {
+    "message": "Allow this site",
+    "description": "Button: allow access to the site the image comes from"
+  },
+  "editNeedsOk": {
+    "message": "This save needs your OK: see the Imgkeep window that just opened.",
+    "description": "Status when the save opened the small ask window"
   }
 }

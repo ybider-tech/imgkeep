@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "元の形式"
   },
+  "menuCopyPng": {
+    "message": "PNGとしてコピー"
+  },
+  "menuMoreOptions": {
+    "message": "その他のオプション…"
+  },
   "askErrBlocked": {
     "message": "アクセスを許可しても、サイトがこの画像を渡しませんでした。サーバーが停止しているか、サイト内のページでしか画像を表示しない可能性があります。"
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "閉じる"
+  },
+  "askRetry": {
+    "message": "もう一度試す"
+  },
+  "askOpenImage": {
+    "message": "画像を開く"
   },
   "askCancel": {
     "message": "キャンセル"
@@ -261,7 +273,7 @@
     "message": "shop.example.com の summer-banner（1600×900）を PNG で保存した場合のプレビュー:"
   },
   "optQualityTitle": {
-    "message": "画質"
+    "message": "画質とサイズ"
   },
   "optJpgQuality": {
     "message": "JPG の画質"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "JPG は透明に対応していないため、透明な部分はこの色になります。"
+  },
+  "optMaxWidth": {
+    "message": "最大幅"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "元のサイズ"
+  },
+  "optMaxWidthHint": {
+    "message": "任意、ピクセル単位。これより幅の広い画像は縦横比を保って縮小され、小さい画像は拡大されません。元の形式はそのまま保存されます。"
   },
   "optSitesTitle": {
     "message": "許可したサイト"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — 近日公開"
   },
   "optProBody": {
-    "message": "ルール: サイトごとの画像を、正しいフォルダに、正しい形式と名前で、毎回選ばずに保存。さらに、すべての画像の入手元の記録も。"
+    "message": "よく使うサイズと形式のプリセット、「200 KB以下」のようなファイルサイズの目標、サイトごとに画像を正しいフォルダへ送るルール、そしてすべての画像の取得元の記録。"
   },
   "optProFree": {
     "message": "いま使っている機能はすべて無料のままです。"
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "バージョン"
+  },
+  "copyWorking": {
+    "message": "画像をコピーしています…"
+  },
+  "copyDone": {
+    "message": "PNGとしてコピーしました。どこにでも貼り付けられます。"
+  },
+  "copyFailed": {
+    "message": "画像をコピーできませんでした"
+  },
+  "copyFailedNote": {
+    "message": "クリップボードは変更されていません。もう一度試すか、代わりにPNGファイルとして保存してください。"
+  },
+  "copySavePng": {
+    "message": "代わりにPNGで保存"
+  },
+  "copyAllowAndCopy": {
+    "message": "許可してコピー"
+  },
+  "editTitle": {
+    "message": "その他のオプション"
+  },
+  "editLoading": {
+    "message": "画像を読み込んでいます…"
+  },
+  "editUpdating": {
+    "message": "プレビューを更新しています…"
+  },
+  "editPreviewAlt": {
+    "message": "仕上がりのプレビュー"
+  },
+  "editOriginal": {
+    "message": "元の画像"
+  },
+  "editResult": {
+    "message": "仕上がり"
+  },
+  "editFormat": {
+    "message": "形式"
+  },
+  "editPngHint": {
+    "message": "PNGはすべてのピクセルを保持します。ファイルを小さくするには、最大幅を下げるか、JPGかWebPを選んでください。"
+  },
+  "editMaxWidthHint": {
+    "message": "ピクセル単位。縦横比を保ち、拡大はしません。"
+  },
+  "editBackground": {
+    "message": "背景"
+  },
+  "editQuality": {
+    "message": "画質"
+  },
+  "editFileName": {
+    "message": "ファイル名"
+  },
+  "editSave": {
+    "message": "保存"
+  },
+  "editAllow": {
+    "message": "このサイトを許可"
+  },
+  "editNeedsOk": {
+    "message": "この保存には確認が必要です。開いたImgkeepのウィンドウをご覧ください。"
   }
 }

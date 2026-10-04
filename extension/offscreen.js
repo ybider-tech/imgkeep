@@ -1,13 +1,16 @@
-// Offscreen document: fetches the clicked image, converts it on a canvas (or into a GIF),
-// and writes to the chosen folder. This is the only file that makes a network request.
+// Offscreen document: fetches the clicked image, runs it through the pipeline (lib/image.js, or a GIF
+// or PDF writer), and writes to the chosen folder. This is the only file that makes a network request.
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { JobError } from "./lib/job-error.js";
 import { GIF_LIMITS, nameFromUrl } from "./lib/settings.js";
-import { sniffImageType, gifSize, openAnimation, stillFrame, checkLimits, fitWidth, encodeGif } from "./lib/gif.js";
+import { decode, draw, encodeCanvas, fitWidth, processImage, sniffImageType, verifyOutput } from "./lib/image.js";
+import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } from "./lib/gif.js";
 import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
 
-// Converted files waiting to be saved, by job id. Dropped after 10 minutes at most.
+// Per job: the fetched source (so More options can preview many times with one download)
+// and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
+const sources = new Map();
 const pending = new Map();
 const KEEP_MS = 10 * 60 * 1000;
 
@@ -24,62 +27,38 @@ async function fetchImage(url) {
     }
   }
   if (!res.ok) throw new JobError("http", String(res.status));
-  return res.blob();
+  const blob = await res.blob();
+  if (!blob.size) throw new JobError("decode"); // an empty answer is never saved as a file
+  return blob;
 }
 
-async function looksLikeSvg(blob) {
-  if (blob.type === "image/svg+xml") return true;
-  const head = await blob.slice(0, 512).text();
-  return /<svg[\s>]/i.test(head);
+function remember(map, jobId, entry) {
+  forget(map, jobId);
+  entry.timer = setTimeout(() => forget(map, jobId), KEEP_MS);
+  map.set(jobId, entry);
 }
 
-// Returns { source, width, height, done() } ready for drawImage.
-async function decode(blob) {
-  try {
-    const bmp = await createImageBitmap(blob);
-    return { source: bmp, width: bmp.width, height: bmp.height, done: () => bmp.close() };
-  } catch {
-    // SVG (and anything createImageBitmap refuses) goes through <img>.
-  }
-  if (await looksLikeSvg(blob)) blob = new Blob([blob], { type: "image/svg+xml" });
-  const src = URL.createObjectURL(blob);
-  const img = new Image();
-  img.src = src;
-  try {
-    await img.decode();
-  } catch {
-    URL.revokeObjectURL(src);
-    throw new JobError("decode");
-  }
-  let width = img.naturalWidth;
-  let height = img.naturalHeight;
-  if (!width || !height) {
-    // SVG without an intrinsic size: use its viewBox shape at 1024px wide.
-    const ratio = width && height ? height / width : 0.5;
-    width = 1024;
-    height = Math.round(1024 * ratio);
-  }
-  return { source: img, width, height, done: () => URL.revokeObjectURL(src) };
+function forget(map, jobId) {
+  const entry = map.get(jobId);
+  if (!entry) return;
+  clearTimeout(entry.timer);
+  if (entry.blobUrl) URL.revokeObjectURL(entry.blobUrl);
+  map.delete(jobId);
 }
 
-async function convert({ url, mime, quality, background }) {
-  const input = await fetchImage(url);
+async function sourceFor(jobId, url) {
+  const cached = sources.get(jobId);
+  if (cached?.url === url) return cached.blob;
+  const blob = await fetchImage(url);
+  remember(sources, jobId, { url, blob });
+  return blob;
+}
+
+// PNG, JPG and WebP.
+async function still(input, opts) {
   const image = await decode(input);
   try {
-    const canvas = document.createElement("canvas");
-    canvas.width = image.width;
-    canvas.height = image.height;
-    const ctx = canvas.getContext("2d");
-    if (mime === "image/jpeg") {
-      // JPG has no transparency: paint the chosen background first.
-      ctx.fillStyle = background || "#ffffff";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    }
-    ctx.drawImage(image.source, 0, 0, canvas.width, canvas.height);
-    const blob = await new Promise((resolve) => canvas.toBlob(resolve, mime, quality / 100));
-    if (!blob) throw new JobError("too-large");
-    if (blob.type !== mime) throw new JobError("unsupported");
-    return { blob, width: image.width, height: image.height };
+    return await processImage(image, { ...opts, type: opts.mime });
   } finally {
     image.done();
   }
@@ -87,28 +66,29 @@ async function convert({ url, mime, quality, background }) {
 
 // GIF output. A GIF stays exactly as it is; animated WebP/AVIF/APNG are re-encoded frame by frame;
 // a still image becomes a one-frame GIF.
-async function animate({ url }) {
-  const input = await fetchImage(url);
+async function animate(input, { maxWidth }) {
   const type = await sniffImageType(input);
   if (type === "image/gif") {
     const { width, height } = await gifSize(input);
-    return { blob: new Blob([input], { type: "image/gif" }), width, height };
+    return { blob: new Blob([input], { type: "image/gif" }), width, height, sourceWidth: width, sourceHeight: height };
   }
   const deadline = Date.now() + GIF_LIMITS.timeoutMs;
   const animation = await openAnimation(input, type);
   if (animation) {
     try {
       checkLimits(animation);
-      const size = fitWidth(animation.width, animation.height);
-      return { blob: await encodeGif(animation.frames(), { ...size, deadline }), ...size };
+      const size = fitGif(animation.width, animation.height, maxWidth);
+      const blob = await encodeGif(animation.frames(), { ...size, deadline });
+      return { blob, ...size, sourceWidth: animation.width, sourceHeight: animation.height };
     } finally {
       animation.close();
     }
   }
   const image = await decode(input);
   try {
-    const size = fitWidth(image.width, image.height);
-    return { blob: await encodeGif(stillFrame(image.source), { ...size, deadline }), ...size };
+    const size = fitGif(image.width, image.height, maxWidth);
+    const blob = await encodeGif(stillFrame(image.source), { ...size, deadline });
+    return { blob, ...size, sourceWidth: image.width, sourceHeight: image.height };
   } finally {
     image.done();
   }
@@ -116,34 +96,27 @@ async function animate({ url }) {
 
 // PDF output: one page, exactly the image. Opaque images are stored as JPEG (small), images with
 // transparency losslessly with an alpha mask. Animated images use their first frame, like PNG and JPG.
-async function toPdf({ url, quality }) {
-  const input = await fetchImage(url);
+async function toPdf(input, { url, quality, maxWidth }) {
   const image = await decode(input);
+  let canvas;
   try {
-    const { width, height } = image;
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
-    ctx.drawImage(image.source, 0, 0, width, height);
+    const { width, height } = fitWidth(image.width, image.height, maxWidth);
+    canvas = draw(image, { width, height });
     let rgba;
     try {
-      rgba = ctx.getImageData(0, 0, width, height).data;
+      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
     } catch {
       throw new JobError("too-large");
     }
     const { rgb, alpha } = splitAlpha(rgba);
-    let pdfImage;
-    if (alpha) {
-      pdfImage = { rgb: await deflate(rgb), alpha: await deflate(alpha) };
-    } else {
-      const jpeg = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", quality / 100));
-      if (!jpeg) throw new JobError("too-large");
-      pdfImage = { jpeg: new Uint8Array(await jpeg.arrayBuffer()) };
-    }
+    const pdfImage = alpha
+      ? { rgb: await deflate(rgb), alpha: await deflate(alpha) }
+      : { jpeg: new Uint8Array(await (await encodeCanvas(canvas, "image/jpeg", quality)).arrayBuffer()) };
     const title = nameFromUrl(url); // "image" for data: URLs
-    return { blob: buildPdf({ width, height, image: pdfImage, title }), width, height };
+    const blob = buildPdf({ width, height, image: pdfImage, title });
+    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height };
   } finally {
+    if (canvas) canvas.width = canvas.height = 0;
     image.done();
   }
 }
@@ -157,38 +130,39 @@ function toDataUrl(blob) {
   });
 }
 
-function keep(jobId, entry) {
-  release(jobId);
-  entry.timer = setTimeout(() => release(jobId), KEEP_MS);
-  pending.set(jobId, entry);
-}
-
-function release(jobId) {
-  const entry = pending.get(jobId);
-  if (!entry) return;
-  clearTimeout(entry.timer);
-  if (entry.blobUrl) URL.revokeObjectURL(entry.blobUrl);
-  pending.delete(jobId);
-}
-
 // Data URLs stay small enough for chrome.downloads; bigger files use a blob: URL kept alive here.
 const DATA_URL_LIMIT = 1.5 * 1024 * 1024;
 
 const handlers = {
+  // msg: { jobId, sourceId?, url, mime, quality, background, maxWidth, maxBytes, minQuality, want: "url" | "data" | "none" }
+  // sourceId: reuse the image a window already fetched (More options, Copy as PNG).
   async convert(msg) {
-    const make = msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : convert;
-    const { blob, width, height } = await make(msg);
-    const entry = { blob };
-    keep(msg.jobId, entry);
-    const result = { width, height, mime: blob.type, size: blob.size };
+    const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
+    const make = msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : still;
+    const out = await make(input, msg);
+    // Whatever made it, the file must really be the type it will be named as.
+    const ext = await verifyOutput(out.blob, msg.mime);
+    const entry = { blob: out.blob };
+    remember(pending, msg.jobId, entry);
+    const result = {
+      width: out.width,
+      height: out.height,
+      sourceWidth: out.sourceWidth,
+      sourceHeight: out.sourceHeight,
+      quality: out.quality ?? null,
+      mime: out.blob.type,
+      ext,
+      size: out.blob.size,
+    };
+    if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
     if (msg.want === "url") {
-      if (blob.size <= DATA_URL_LIMIT) result.url = await toDataUrl(blob);
-      else result.url = entry.blobUrl = URL.createObjectURL(blob);
+      if (out.blob.size <= DATA_URL_LIMIT) result.url = await toDataUrl(out.blob);
+      else result.url = entry.blobUrl = URL.createObjectURL(out.blob);
     }
     return result;
   },
 
-  // Write a converted file straight into the chosen folder, if Chrome still allows it.
+  // Write a converted file straight into the chosen folder, if the browser still allows it.
   async write({ jobId, dirs, name, ext }) {
     const entry = pending.get(jobId);
     if (!entry) throw new JobError("expired");
@@ -197,28 +171,35 @@ const handlers = {
     if ((await folderPermission(handle)) !== "granted") return { ok: false, code: "folder-permission", folderName: handle.name };
     try {
       const path = await writeUnique(handle, dirs, name, ext, entry.blob);
-      release(jobId);
+      forget(pending, jobId);
       return { path, folderName: handle.name };
     } catch (e) {
       throw new JobError("write", e.message);
     }
   },
 
-  // Hand a pending file to the ask window.
+  // Hand a pending file to an extension window (folder writes, the clipboard).
   async take({ jobId }) {
     const entry = pending.get(jobId);
     if (!entry) throw new JobError("expired");
-    return { dataUrl: await toDataUrl(entry.blob) };
+    return { dataUrl: await toDataUrl(entry.blob), mime: entry.blob.type };
   },
 
-  async release({ jobId }) {
-    release(jobId);
+  // The converted file (a download finished), and/or the fetched source (all: the job is over).
+  async release({ jobId, all, pending: file = true }) {
+    if (file) forget(pending, jobId);
+    if (all) forget(sources, jobId);
     return {};
+  },
+
+  // For tests: how many files and sources are held right now.
+  async count() {
+    return { pending: pending.size, sources: sources.size };
   },
 };
 
-chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
-  if (msg?.target !== "offscreen" || !handlers[msg.type]) return false;
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg?.target !== "offscreen" || !handlers[msg.type] || sender.id !== chrome.runtime.id) return false;
   handlers[msg.type](msg)
     .then((result) => sendResponse({ ok: true, ...result }))
     .catch((e) => sendResponse({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "", subs: e.subs }));

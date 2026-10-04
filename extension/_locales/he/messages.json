@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "הפורמט המקורי"
   },
+  "menuCopyPng": {
+    "message": "העתקה כ-PNG"
+  },
+  "menuMoreOptions": {
+    "message": "אפשרויות נוספות…"
+  },
   "askErrBlocked": {
     "message": "האתר לא מסר את התמונה, גם עם הרשאת גישה. ייתכן שהשרת לא זמין, או שהוא מציג את התמונה רק בתוך הדפים שלו."
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "סגירה"
+  },
+  "askRetry": {
+    "message": "לנסות שוב"
+  },
+  "askOpenImage": {
+    "message": "פתיחת התמונה"
   },
   "askCancel": {
     "message": "ביטול"
@@ -261,7 +273,7 @@
     "message": "תצוגה מקדימה עבור summer-banner מ-shop.example.com, ‏1600×900, כ-PNG:"
   },
   "optQualityTitle": {
-    "message": "איכות"
+    "message": "איכות וגודל"
   },
   "optJpgQuality": {
     "message": "איכות JPG"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "ב-JPG אין שקיפות, ולכן אזורים שקופים יקבלו את הצבע הזה."
+  },
+  "optMaxWidth": {
+    "message": "רוחב מרבי"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "גודל מקורי"
+  },
+  "optMaxWidthHint": {
+    "message": "לא חובה, בפיקסלים. תמונות רחבות יותר מוקטנות כדי להתאים, עם אותן פרופורציות; תמונות קטנות יותר אף פעם לא מוגדלות. הפורמט המקורי תמיד נשמר כמו שהוא."
   },
   "optSitesTitle": {
     "message": "אתרים שאישרת"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — בקרוב"
   },
   "optProBody": {
-    "message": "כללים: לשלוח את התמונות מכל אתר לתיקייה הנכונה, בפורמט הנכון ובשם הנכון, בלי לבחור בכל פעם. ובנוסף, יומן של המקור של כל תמונה."
+    "message": "הגדרות קבועות לגדלים ולפורמטים הנפוצים אצלך, יעדי גודל קובץ כמו „עד 200 KB”, כללים ששולחים את התמונות מכל אתר לתיקייה הנכונה, ויומן של המקור של כל תמונה."
   },
   "optProFree": {
     "message": "כל מה שיש לך היום נשאר בחינם."
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "גרסה"
+  },
+  "copyWorking": {
+    "message": "מעתיק את התמונה…"
+  },
+  "copyDone": {
+    "message": "הועתק כ-PNG. אפשר להדביק בכל מקום."
+  },
+  "copyFailed": {
+    "message": "לא ניתן היה להעתיק את התמונה"
+  },
+  "copyFailedNote": {
+    "message": "הלוח לא השתנה. אפשר לנסות שוב, או לשמור את התמונה כקובץ PNG במקום."
+  },
+  "copySavePng": {
+    "message": "לשמור כ-PNG במקום"
+  },
+  "copyAllowAndCopy": {
+    "message": "לאפשר ולהעתיק"
+  },
+  "editTitle": {
+    "message": "אפשרויות נוספות"
+  },
+  "editLoading": {
+    "message": "טוען את התמונה…"
+  },
+  "editUpdating": {
+    "message": "מעדכן את התצוגה המקדימה…"
+  },
+  "editPreviewAlt": {
+    "message": "תצוגה מקדימה של התוצאה"
+  },
+  "editOriginal": {
+    "message": "מקור"
+  },
+  "editResult": {
+    "message": "תוצאה"
+  },
+  "editFormat": {
+    "message": "פורמט"
+  },
+  "editPngHint": {
+    "message": "PNG שומר על כל פיקסל. לקובץ קטן יותר, אפשר להקטין את הרוחב המרבי או לבחור JPG או WebP."
+  },
+  "editMaxWidthHint": {
+    "message": "בפיקסלים. שומר על הפרופורציות, אף פעם לא מגדיל."
+  },
+  "editBackground": {
+    "message": "רקע"
+  },
+  "editQuality": {
+    "message": "איכות"
+  },
+  "editFileName": {
+    "message": "שם הקובץ"
+  },
+  "editSave": {
+    "message": "שמירה"
+  },
+  "editAllow": {
+    "message": "לאפשר את האתר הזה"
+  },
+  "editNeedsOk": {
+    "message": "השמירה הזו צריכה את האישור שלך: כדאי לבדוק את חלון Imgkeep שנפתח עכשיו."
   }
 }

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="editTitle">More options</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    body { padding: 16px 20px 20px; font-size: 14px; }
+    header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    header img { width: 28px; height: 28px; }
+    header h1 { margin: 0; font-size: 1.15rem; }
+    .stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      height: 220px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      /* A checkerboard shows which parts are transparent. */
+      background: repeating-conic-gradient(var(--border) 0 25%, var(--surface) 0 50%) 0 0 / 16px 16px;
+    }
+    .stage img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .stage .note {
+      position: absolute; inset: auto 8px 8px auto;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      padding: 2px 8px; font-size: 0.85em;
+    }
+    .facts { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 10px 0 4px; }
+    .facts dt { color: var(--muted); }
+    .facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+    form { margin-top: 12px; }
+    #controls { display: grid; gap: 12px; }
+    fieldset { border: 0; padding: 0; margin: 0; }
+    legend, .field > label { font-weight: 600; display: block; margin-bottom: 4px; padding: 0; }
+    .formats { display: flex; gap: 6px; }
+    .formats label {
+      border: 1px solid var(--border); border-radius: 8px; padding: 0.35em 0.9em; cursor: pointer;
+      background: var(--surface); font-weight: 600;
+    }
+    .formats input { position: absolute; opacity: 0; pointer-events: none; }
+    .formats label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .formats label:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    input[type="number"] {
+      font: inherit; color: var(--text); background: var(--surface);
+      border: 1px solid var(--border); border-radius: 8px; padding: 0.45em 0.6em; width: 100%;
+    }
+    .slider { display: grid; grid-template-columns: 1fr 3em; gap: 10px; align-items: center; }
+    .slider output { text-align: end; font-variant-numeric: tabular-nums; }
+    .hint { color: var(--muted); font-size: 0.9em; margin: 4px 0 0; }
+    .name { display: flex; align-items: center; gap: 6px; }
+    .name input { flex: 1; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    #status { min-height: 1.5em; margin: 10px 0 0; font-weight: 600; }
+    #problem { margin-top: 10px; }
+    .detail { word-break: break-all; }
+  </style>
+  <script type="module" src="editor.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/icon48.png" alt="">
+      <h1 data-i18n="editTitle">More options</h1>
+    </header>
+
+    <div class="stage" aria-busy="true" id="stage">
+      <img id="preview" alt="" data-i18n-alt="editPreviewAlt" hidden>
+      <span class="note" id="stageNote" data-i18n="editLoading">Loading the image…</span>
+    </div>
+    <dl class="facts">
+      <dt data-i18n="editOriginal">Original</dt><dd id="sourceFacts">–</dd>
+      <dt data-i18n="editResult">Result</dt><dd id="resultFacts">–</dd>
+    </dl>
+
+    <div id="problem" hidden></div>
+
+    <form id="form" novalidate>
+      <fieldset id="controls" disabled>
+      <fieldset>
+        <legend data-i18n="editFormat">Format</legend>
+        <div class="formats">
+          <label><input type="radio" name="format" value="png"> PNG</label>
+          <label><input type="radio" name="format" value="jpg"> JPG</label>
+          <label><input type="radio" name="format" value="webp"> WebP</label>
+        </div>
+        <p class="hint" id="pngHint" data-i18n="editPngHint" hidden>PNG keeps every pixel. For a smaller file, lower the maximum width or choose JPG or WebP.</p>
+      </fieldset>
+
+      <div class="two">
+        <div class="field">
+          <label for="maxWidth" data-i18n="optMaxWidth">Maximum width</label>
+          <input type="number" id="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Original size" data-i18n-placeholder="optMaxWidthPlaceholder" aria-describedby="maxWidthHint">
+          <p class="hint" id="maxWidthHint" data-i18n="editMaxWidthHint">In pixels. Keeps the shape, never enlarges.</p>
+        </div>
+        <div class="field" id="backgroundField">
+          <label for="background" data-i18n="editBackground">Background</label>
+          <input type="color" id="background" aria-describedby="backgroundHint">
+          <p class="hint" id="backgroundHint" data-i18n="optJpgBackgroundHint">JPG has no transparency, so see-through areas get this colour.</p>
+        </div>
+      </div>
+
+      <div class="field" id="qualityField">
+        <label for="quality" data-i18n="editQuality">Quality</label>
+        <div class="slider">
+          <input type="range" id="quality" min="50" max="100" step="1">
+          <output for="quality" id="qualityOut"></output>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="name" data-i18n="editFileName">File name</label>
+        <div class="name">
+          <input type="text" id="name" dir="auto" spellcheck="false" autocomplete="off" aria-describedby="ext">
+          <bdi class="mono" id="ext" dir="ltr">.png</bdi>
+        </div>
+      </div>
+      </fieldset>
+    </form>
+
+    <div class="actions">
+      <button type="button" class="primary" id="save" data-i18n="editSave">Save</button>
+      <button type="button" id="copy" data-i18n="menuCopyPng">Copy as PNG</button>
+      <button type="button" id="close" data-i18n="askClose">Close</button>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>

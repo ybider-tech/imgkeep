@@ -266,7 +266,7 @@ test("Options page loads without errors and shows the four permissions", async (
   await page.fill("#filenameTemplate", "{name}-{w}x{h}");
   await expect(page.locator("#preview")).toHaveText("Imgkeep/shop.example.com/summer-banner-1600x900.png");
   await expect(page.locator(".tag")).toHaveText(["contextMenus", "downloads", "storage", "offscreen"]);
-  await expect(page.locator("#waitlist")).toBeHidden();
+  await expect(page.getByRole("link", { name: "Get notified" })).toHaveAttribute("href", "https://imgkeep.app/pro.html");
   const { version } = JSON.parse(await readFile(join(dirname(FIXTURES), "..", "extension", "manifest.json"), "utf8"));
   await expect(page.locator("#version")).toHaveText(version);
   const saved = await ctx.sw.evaluate(() => chrome.storage.sync.get(["subfolder", "filenameTemplate"]));

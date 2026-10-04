@@ -18,7 +18,7 @@ const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avi
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 // Every page as [URL path, file under site/].
 const PAGES = [
-  ...["index.html", "privacy.html", "support.html", "ideas.html", "404.html"].map((f) => [f, f]),
+  ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "404.html"].map((f) => [f, f]),
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
 ];
 
@@ -80,6 +80,7 @@ test("ideas page links to the GitHub Ideas board, and every page links to it", a
 test("SEO tags, sitemap and robots.txt are consistent", async () => {
   const pages = { "index.html": "https://imgkeep.app/", "privacy.html": "https://imgkeep.app/privacy.html",
     "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html",
+    "pro.html": "https://imgkeep.app/pro.html",
     ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])) };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");

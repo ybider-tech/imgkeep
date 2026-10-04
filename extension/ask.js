@@ -3,6 +3,7 @@
 import { getFolder, setFolder, writeUnique, dataUrlToBlob } from "./lib/folder.js";
 import { FORMATS } from "./lib/settings.js";
 import { t, localisePage, richText } from "./lib/i18n.js";
+import { errorText, detailText, el, isHttp } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const key = `job:${jobId}`;
@@ -12,36 +13,6 @@ const toBackground = (type) => chrome.runtime.sendMessage({ target: "background"
 let job = null;
 let folder = null; // loaded up front so the click can go straight to requestPermission
 let finished = false;
-
-// Error codes → message keys in _locales/*/messages.json.
-const ERRORS = {
-  blocked: "askErrBlocked",
-  http: "askErrHttp",
-  decode: "askErrDecode",
-  unsupported: "askErrUnsupported",
-  blob: "askErrBlob",
-  "too-large": "askErrTooLarge",
-  timeout: "askErrTimeout",
-  download: "askErrDownload",
-  write: "askErrWrite",
-  expired: "askErrExpired",
-  unknown: "askErrUnknown",
-};
-const errorText = (code) => t(ERRORS[code] || ERRORS.unknown);
-
-// Extra detail under an error: a message key from the converter ("@key" plus values),
-// an HTTP status, or the browser's own error text.
-function detailText(job) {
-  if (!job.detail) return "";
-  if (job.detail.startsWith("@")) return t(job.detail.slice(1), job.detailSubs);
-  return job.code === "http" ? `HTTP ${job.detail}` : job.detail;
-}
-
-function el(tag, props = {}, ...children) {
-  const node = Object.assign(document.createElement(tag), props);
-  node.append(...children);
-  return node;
-}
 
 function button(label, onClick, primary = false) {
   const b = el("button", { type: "button", textContent: label, className: primary ? "primary" : "" });
@@ -65,10 +36,6 @@ function setBusy(busy) {
 function status(text, isError = false) {
   $("status").textContent = text;
   $("status").className = isError ? "error" : "";
-}
-
-function isHttp(url) {
-  return /^https?:/i.test(url || "");
 }
 
 async function finish(message) {
@@ -155,8 +122,18 @@ function render() {
   body.append(el("p", { textContent: errorText(job.code) }));
   const extra = detailText(job);
   if (extra) body.append(el("p", { className: "muted detail", textContent: extra }));
-  if (isHttp(job.url) && job.format !== "original") actions.append(button(t("askSaveOriginal"), saveOriginal, true));
-  actions.append(button(t("askClose"), cancel, !isHttp(job.url) || job.format === "original"));
+  // The first button is the main one.
+  const add = (label, onClick) => actions.append(button(label, onClick, !actions.children.length));
+  // Worth another go: the network, a server error, a slow converter. Not: a file that isn't an image.
+  if (["http", "blocked", "timeout", "download", "write", "unknown"].includes(job.code) && job.format) {
+    add(t("askRetry"), async () => {
+      status(t("askSaving"));
+      await afterRetry(await toBackground("retry"));
+    });
+  }
+  if (isHttp(job.url) && job.format !== "original") add(t("askSaveOriginal"), saveOriginal);
+  if (isHttp(job.url)) add(t("askOpenImage"), () => toBackground("openSource"));
+  add(t("askClose"), cancel);
 }
 
 async function writeToFolder(reconnect) {

@@ -1,4 +1,4 @@
-# Chrome Web Store listing: Imgkeep 0.5.0
+# Chrome Web Store listing: Imgkeep 0.6.0
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
@@ -15,20 +15,23 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v5 (2026-10-04, for 0.5.0): adds PDF. Paste as-is into the dashboard together with the 0.5.0 package.
+v6 (for 0.6.0): adds Copy as PNG, maximum width and More options. Paste as-is into the dashboard together with the 0.6.0 package. (v5, for 0.5.0, is the same without those three bullets and the last two menu items.)
 
 ```text
 Right-click any image and save it as PNG, JPG, WebP, GIF or PDF. Imgkeep converts it on your computer and saves it where you want, every time.
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
-Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format
+Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
 
 WHAT IT DOES
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
+• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
+• Resize: set a maximum width and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
+• More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -57,9 +60,9 @@ Save the image you right-click in the format and folder you choose.
 
 ### Permission justifications
 
-- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, PDF, Original format) to the right-click menu on images. This menu is the only way to use the extension.
+- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…) to the right-click menu on images. This menu is the only way to use the extension.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
-- **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour) in Chrome sync storage, and keeps a pending save in session storage while the small decision window is open.
+- **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour, maximum width) in Chrome sync storage, keeps a pending save in session storage while one of the extension's small windows is open, and remembers the last format and width used in More options in local storage.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.
 - **Optional host access (http://\*/\*, https://\*/\*):** Not granted at install. Some sites block cross-site reads of their images, so the conversion fails. Only then, and only after the user clicks "Allow and save", Imgkeep requests access to that one site (for example https://example.com/\*), to fetch the image the user right-clicked. Each site can be removed in Options. No content scripts are used and no page content is read.
 

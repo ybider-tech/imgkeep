@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.0 — unreleased
+
+- **Copy as PNG.** New menu item: the image goes on the clipboard as a real PNG, transparency kept, ready to paste. "Copied" shows only after the clipboard accepted it. If it refuses, your clipboard is left as it was and you can save the PNG instead. No new permission: the copy happens in Imgkeep's own small window, which has focus.
+- **Maximum width.** New setting in Options → Quality and size: wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Applies to PNG, JPG, WebP, PDF, GIF and Copy as PNG; Original format is never changed.
+- **More options…** New menu item: a window with a live preview of the result, its real size in pixels and kilobytes, and controls for format (PNG, JPG, WebP), maximum width, quality, JPG background and file name. Save, or Copy as PNG.
+- **Checked output.** Every converted file's first bytes are checked against the format you chose, and its extension comes from those bytes. A browser that can't make a format gives a clear error instead of a mislabelled file. Empty answers from a server never become files.
+- **Clearer errors.** The error window offers **Try again** where that can help, and **Open image** to see the source in a tab.
+- **One pipeline.** Quick saves, More options and Copy as PNG use the same code to fetch, decode, resize, encode and check (`extension/lib/image.js`). A fetched image is reused while its window is open and dropped as soon as the save, copy or window is done.
+- Windows can only ask about their own job: messages are checked, carry a job id rather than a URL, and only the image you right-clicked is ever fetched.
+- Imgkeep Pro waitlist: Options → Imgkeep Pro → **Get notified** opens imgkeep.app/pro.html. Pro is planned to add presets, file-size targets, rules per site and a log. The size-target code is already in the pipeline and tested, but not shown until then.
+- Tests also run on Windows in CI.
+
 ## 0.5.0 — 2026-10-04
 
 - **Save as PDF.** New menu item "PDF": a one-page PDF exactly the size of the image. Photos are stored as JPEG (using the JPG quality setting); images with transparency are stored losslessly and stay transparent. Written by a small built-in PDF writer (`extension/lib/pdf.js`): no library, no new permissions, converted locally.

@@ -8,6 +8,7 @@ export const t = (key, subs) => chrome.i18n.getMessage(key, subs) || key;
 //   data-i18n-html="key"               → innerHTML (our own packaged strings; only <code> and <strong>, checked by a test)
 //   data-i18n-placeholder="key"        → placeholder
 //   data-i18n-aria-label="key"         → aria-label
+//   data-i18n-alt="key"                → alt
 export function localisePage(root = document) {
   document.documentElement.lang = chrome.i18n.getUILanguage();
   document.documentElement.dir = chrome.i18n.getMessage("@@bidi_dir") || "ltr";
@@ -15,6 +16,7 @@ export function localisePage(root = document) {
   for (const el of root.querySelectorAll("[data-i18n-html]")) el.innerHTML = t(el.dataset.i18nHtml);
   for (const el of root.querySelectorAll("[data-i18n-placeholder]")) el.placeholder = t(el.dataset.i18nPlaceholder);
   for (const el of root.querySelectorAll("[data-i18n-aria-label]")) el.setAttribute("aria-label", t(el.dataset.i18nAriaLabel));
+  for (const el of root.querySelectorAll("[data-i18n-alt]")) el.alt = t(el.dataset.i18nAlt);
 }
 
 // A message with one part in bold (a site or folder name, a button label), as DOM nodes.

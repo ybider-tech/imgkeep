@@ -51,6 +51,16 @@ for (const [lang, dir] of [["he", "rtl"], ["ja", "ltr"]]) {
       await expect(ask.getByRole("button", { name: msg.askAllowAndSave.message })).toBeVisible();
       await expect(ask.locator("html")).toHaveAttribute("dir", dir);
       await ask.close();
+
+      // More options, with an image that loads (so the result line is filled in).
+      const editorOpened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/editor.html") });
+      await ctx.sw.evaluate((url) => globalThis.imgkeepOpenWindow("editor", { url }), `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="20"><rect width="40" height="20" fill="teal"/></svg>')}`);
+      const editor = await editorOpened;
+      await expect(editor.locator("html")).toHaveAttribute("dir", dir);
+      await expect(editor.locator("h1")).toHaveText(msg.editTitle.message);
+      await expect(editor.getByRole("button", { name: msg.editSave.message })).toBeEnabled();
+      await expect(editor.locator("#resultFacts bdi").first()).toHaveAttribute("dir", "ltr");
+      await editor.close();
     });
   });
 }

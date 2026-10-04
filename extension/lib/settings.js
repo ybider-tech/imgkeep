@@ -2,7 +2,7 @@
 // Pure helpers (no chrome.* at import time) so tests can import this file in Node.
 
 // Set to a waitlist URL to show "Get notified" on the Options page. Empty = hidden.
-export const PRO_WAITLIST_URL = "";
+export const PRO_WAITLIST_URL = "https://imgkeep.app/pro.html";
 
 export const DEFAULTS = {
   saveMode: "downloads", // "downloads" | "folder" | "ask"
@@ -11,6 +11,7 @@ export const DEFAULTS = {
   jpgQuality: 92,
   webpQuality: 90,
   jpgBackground: "#ffffff",
+  maxWidth: 0, // pixels; 0 keeps every image's own size
 };
 
 export const FORMATS = {
@@ -38,6 +39,11 @@ const MIME_EXTS = { "image/jpeg": "jpg", "image/svg+xml": "svg", "image/x-icon":
 export async function getSettings() {
   const stored = await chrome.storage.sync.get(DEFAULTS);
   return { ...DEFAULTS, ...stored };
+}
+
+// A colour from <input type="color">: "#rrggbb", anything else falls back.
+export function cleanColour(value, fallback = DEFAULTS.jpgBackground) {
+  return /^#[0-9a-f]{6}$/i.test(String(value ?? "")) ? String(value).toLowerCase() : fallback;
 }
 
 export function clampQuality(value, fallback) {
@@ -125,13 +131,18 @@ export function sanitizeSegment(text) {
 
 // Returns { dirs: ["Imgkeep", "example.com"], name: "photo-320x200", ext: "png" }.
 // `sample` overrides tokens (the Options preview uses it instead of a real URL).
-export function buildTarget({ settings, url, width, height, ext, now, sample }) {
+// `name` (typed in More options) replaces the name template; the subfolder still applies.
+export function buildTarget({ settings, url, width, height, ext, now, sample, name: typedName }) {
   const tokens = { ...tokensFor({ url, width, height, now }), ...sample };
   const dirs = String(settings.subfolder || "")
     .split("/")
     .map((part) => sanitizeSegment(fillTemplate(part, tokens)))
     .filter(Boolean);
-  const name = sanitizeSegment(fillTemplate(settings.filenameTemplate || "{name}", tokens)) || sanitizeSegment(tokens.name) || "image";
+  const name =
+    sanitizeSegment(String(typedName ?? "").replace(/\.(png|jpe?g|jfif|webp|gif|pdf|avif)$/i, "")) ||
+    sanitizeSegment(fillTemplate(settings.filenameTemplate || "{name}", tokens)) ||
+    sanitizeSegment(tokens.name) ||
+    "image";
   return { dirs, name, ext };
 }
 

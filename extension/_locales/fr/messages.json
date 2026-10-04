@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "Format d'origine"
   },
+  "menuCopyPng": {
+    "message": "Copier en PNG"
+  },
+  "menuMoreOptions": {
+    "message": "Plus d'options…"
+  },
   "askErrBlocked": {
     "message": "Le site n'a pas fourni cette image, même avec l'accès autorisé. Le serveur est peut-être indisponible, ou il n'affiche l'image que dans ses propres pages."
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "Fermer"
+  },
+  "askRetry": {
+    "message": "Réessayer"
+  },
+  "askOpenImage": {
+    "message": "Ouvrir l'image"
   },
   "askCancel": {
     "message": "Annuler"
@@ -261,7 +273,7 @@
     "message": "Aperçu pour summer-banner depuis shop.example.com, 1600×900, en PNG :"
   },
   "optQualityTitle": {
-    "message": "Qualité"
+    "message": "Qualité et taille"
   },
   "optJpgQuality": {
     "message": "Qualité JPG"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "Le JPG ne gère pas la transparence : les zones transparentes prennent cette couleur."
+  },
+  "optMaxWidth": {
+    "message": "Largeur maximale"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Taille d'origine"
+  },
+  "optMaxWidthHint": {
+    "message": "Facultatif, en pixels. Les images plus larges sont réduites pour tenir, en gardant leurs proportions ; les plus petites ne sont jamais agrandies. Le format d'origine est toujours enregistré tel quel."
   },
   "optSitesTitle": {
     "message": "Sites autorisés"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — bientôt disponible"
   },
   "optProBody": {
-    "message": "Des règles : envoyer les images de chaque site dans le bon dossier, au bon format et avec le bon nom, sans choisir à chaque fois. Avec un historique de la provenance de chaque image."
+    "message": "Des préréglages pour les tailles et formats que vous utilisez le plus, des tailles de fichier cibles comme « moins de 200 Ko », des règles qui rangent les images de chaque site dans le bon dossier, et un journal de la provenance de chaque image."
   },
   "optProFree": {
     "message": "Tout ce que vous utilisez aujourd'hui reste gratuit."
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "Version"
+  },
+  "copyWorking": {
+    "message": "Copie de l'image…"
+  },
+  "copyDone": {
+    "message": "Copiée en PNG. Collez-la où vous voulez."
+  },
+  "copyFailed": {
+    "message": "Impossible de copier l'image"
+  },
+  "copyFailedNote": {
+    "message": "Votre presse-papiers n'a pas été modifié. Réessayez, ou enregistrez plutôt l'image en fichier PNG."
+  },
+  "copySavePng": {
+    "message": "Enregistrer en PNG à la place"
+  },
+  "copyAllowAndCopy": {
+    "message": "Autoriser et copier"
+  },
+  "editTitle": {
+    "message": "Plus d'options"
+  },
+  "editLoading": {
+    "message": "Chargement de l'image…"
+  },
+  "editUpdating": {
+    "message": "Mise à jour de l'aperçu…"
+  },
+  "editPreviewAlt": {
+    "message": "Aperçu du résultat"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Résultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "Le PNG conserve chaque pixel. Pour un fichier plus léger, réduisez la largeur maximale ou choisissez JPG ou WebP."
+  },
+  "editMaxWidthHint": {
+    "message": "En pixels. Garde les proportions, n'agrandit jamais."
+  },
+  "editBackground": {
+    "message": "Arrière-plan"
+  },
+  "editQuality": {
+    "message": "Qualité"
+  },
+  "editFileName": {
+    "message": "Nom du fichier"
+  },
+  "editSave": {
+    "message": "Enregistrer"
+  },
+  "editAllow": {
+    "message": "Autoriser ce site"
+  },
+  "editNeedsOk": {
+    "message": "Cet enregistrement a besoin de votre accord : voyez la fenêtre Imgkeep qui vient de s'ouvrir."
   }
 }

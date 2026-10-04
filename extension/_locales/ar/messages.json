@@ -14,6 +14,12 @@
   "menuOriginal": {
     "message": "الصيغة الأصلية"
   },
+  "menuCopyPng": {
+    "message": "نسخ بصيغة PNG"
+  },
+  "menuMoreOptions": {
+    "message": "مزيد من الخيارات…"
+  },
   "askErrBlocked": {
     "message": "لم يُسلّم الموقع هذه الصورة حتى مع السماح بالوصول. ربما الخادم متوقف، أو أنه يعرض الصورة داخل صفحاته فقط."
   },
@@ -109,6 +115,12 @@
   },
   "askClose": {
     "message": "إغلاق"
+  },
+  "askRetry": {
+    "message": "إعادة المحاولة"
+  },
+  "askOpenImage": {
+    "message": "فتح الصورة"
   },
   "askCancel": {
     "message": "إلغاء"
@@ -261,7 +273,7 @@
     "message": "معاينة لـ summer-banner من shop.example.com، بحجم 1600×900، بصيغة PNG:"
   },
   "optQualityTitle": {
-    "message": "الجودة"
+    "message": "الجودة والحجم"
   },
   "optJpgQuality": {
     "message": "جودة JPG"
@@ -274,6 +286,15 @@
   },
   "optJpgBackgroundHint": {
     "message": "لا يدعم JPG الشفافية، لذا تأخذ المناطق الشفافة هذا اللون."
+  },
+  "optMaxWidth": {
+    "message": "العرض الأقصى"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "الحجم الأصلي"
+  },
+  "optMaxWidthHint": {
+    "message": "اختياري، بالبكسل. تُصغَّر الصور الأعرض لتناسبه مع الحفاظ على نسبها، ولا تُكبَّر الصور الأصغر أبدًا. تُحفظ الصيغة الأصلية دائمًا كما هي."
   },
   "optSitesTitle": {
     "message": "المواقع التي سمحت بها"
@@ -297,7 +318,7 @@
     "message": "Imgkeep Pro — قريبًا"
   },
   "optProBody": {
-    "message": "قواعد: إرسال صور كل موقع إلى المجلد الصحيح، بالصيغة الصحيحة والاسم الصحيح، دون الاختيار في كل مرة. بالإضافة إلى سجل لمصدر كل صورة."
+    "message": "إعدادات جاهزة للأحجام والصيغ التي تستخدمها أكثر، وأهداف لحجم الملف مثل \"أقل من 200 KB\"، وقواعد ترسل صور كل موقع إلى المجلد الصحيح، وسجل بمصدر كل صورة."
   },
   "optProFree": {
     "message": "كل ما تستخدمه اليوم يبقى مجانيًا."
@@ -325,5 +346,68 @@
   },
   "optVersion": {
     "message": "الإصدار"
+  },
+  "copyWorking": {
+    "message": "جارٍ نسخ الصورة…"
+  },
+  "copyDone": {
+    "message": "تم النسخ بصيغة PNG. الصقها في أي مكان."
+  },
+  "copyFailed": {
+    "message": "تعذّر نسخ الصورة"
+  },
+  "copyFailedNote": {
+    "message": "لم تتغير الحافظة. أعد المحاولة، أو احفظ الصورة كملف PNG بدلًا من ذلك."
+  },
+  "copySavePng": {
+    "message": "الحفظ بصيغة PNG بدلًا من ذلك"
+  },
+  "copyAllowAndCopy": {
+    "message": "السماح والنسخ"
+  },
+  "editTitle": {
+    "message": "مزيد من الخيارات"
+  },
+  "editLoading": {
+    "message": "جارٍ تحميل الصورة…"
+  },
+  "editUpdating": {
+    "message": "جارٍ تحديث المعاينة…"
+  },
+  "editPreviewAlt": {
+    "message": "معاينة النتيجة"
+  },
+  "editOriginal": {
+    "message": "الأصل"
+  },
+  "editResult": {
+    "message": "النتيجة"
+  },
+  "editFormat": {
+    "message": "الصيغة"
+  },
+  "editPngHint": {
+    "message": "تحتفظ PNG بكل بكسل. للحصول على ملف أصغر، قلّل العرض الأقصى أو اختر JPG أو WebP."
+  },
+  "editMaxWidthHint": {
+    "message": "بالبكسل. يحافظ على النسب ولا يكبّر الصورة أبدًا."
+  },
+  "editBackground": {
+    "message": "الخلفية"
+  },
+  "editQuality": {
+    "message": "الجودة"
+  },
+  "editFileName": {
+    "message": "اسم الملف"
+  },
+  "editSave": {
+    "message": "حفظ"
+  },
+  "editAllow": {
+    "message": "السماح لهذا الموقع"
+  },
+  "editNeedsOk": {
+    "message": "يحتاج هذا الحفظ إلى موافقتك: راجع نافذة Imgkeep التي فُتحت للتو."
   }
 }

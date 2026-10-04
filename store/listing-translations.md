@@ -1,6 +1,6 @@
-# Store listing translations: Imgkeep 0.5.0
+# Store listing translations: Imgkeep 0.6.0
 
-Translations of the v5 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
+Translations of the v6 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
 The name and summary come from the package (`extension/_locales/<lang>/messages.json`), so only the
 description is pasted here. Button and menu names match the extension's own translations.
 
@@ -26,13 +26,16 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 
 אתרים רבים מגישים היום תמונות WebP ו-AVIF שאפליקציות אחרות לא פותחות. ‏Imgkeep הופך אותן לקבצים שנפתחים בכל מקום, בלחיצה ימנית אחת:
 
-‏Imgkeep: שמירת התמונה בתור ← PNG · JPG · WebP · GIF (שומר על האנימציה) · PDF · הפורמט המקורי
+‏Imgkeep: שמירת התמונה בתור ← PNG · JPG · WebP · GIF (שומר על האנימציה) · PDF · הפורמט המקורי · העתקה כ-PNG · אפשרויות נוספות…
 
 מה הוא עושה
 
 • קבצים שנפתחים בכל מקום: JPG או PNG רגילים, וקובצי JPG נשמרים כ-‎.jpg ולא כ-‎.jfif. גם SVG ותמונות data:‎ עובדים.
 • האנימציה נשמרת: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF שממשיך לזוז, עם התזמון והשקיפות. קובצי GIF מונפשים נשמרים בדיוק כמו שהם.
 • שמירה כ-PDF: קובץ PDF של עמוד אחד בגודל התמונה בדיוק, לקבלות, למסמכים ולשיתוף. השקיפות נשמרת.
+• העתקה כ-PNG: התמונה נכנסת ללוח כקובץ PNG אמיתי, עם השקיפות, ומוכנה להדבקה בכל מקום.
+• שינוי גודל: מגדירים רוחב מרבי ותמונות גדולות יותר מוקטנות כדי להתאים, עם אותן פרופורציות. תמונות קטנות יותר אף פעם לא מוגדלות.
+• אפשרויות נוספות: תצוגה מקדימה של התוצאה עם הגודל האמיתי בפיקסלים ובקילובייטים, ובחירת פורמט, רוחב, איכות, רקע ושם קובץ לתמונה הזו בלבד.
 • שמירה לתיקייה שלך: בוחרים תיקייה פעם אחת וכל תמונה נכנסת אליה, או משתמשים בתיקיית ההורדות, או שואלים בכל פעם. אפשר להוסיף תתי-תיקיות כמו Imgkeep/{host}.
 • שמות קבצים משלך: מרכיבים שמות מ-{name},‏ {host},‏ {date},‏ {time},‏ {w} ו-{h}, למשל {name}-{w}x{h}.
 • איכות בשליטתך: מחוונים לאיכות JPG ו-WebP, וצבע רקע לתמונות שקופות שנשמרות כ-JPG.
@@ -60,13 +63,16 @@ Haz clic derecho en cualquier imagen y guárdala como PNG, JPG, WebP, GIF o PDF.
 
 Muchos sitios sirven ahora imágenes WebP y AVIF que otras aplicaciones no abren. Imgkeep las convierte en archivos que se abren en cualquier parte, con un clic derecho:
 
-Imgkeep: Guardar imagen como → PNG · JPG · WebP · GIF (conserva la animación) · PDF · Formato original
+Imgkeep: Guardar imagen como → PNG · JPG · WebP · GIF (conserva la animación) · PDF · Formato original · Copiar como PNG · Más opciones…
 
 QUÉ HACE
 
 • Archivos que se abren en cualquier sitio: JPG o PNG estándar, y los JPG se guardan como .jpg, no como .jfif. También funcionan las imágenes SVG y data:.
 • Conserva la animación: WebP, AVIF y APNG animados se convierten en un GIF que sigue moviéndose, con su ritmo y su transparencia. Los GIF animados se guardan tal cual.
 • Guardar como PDF: un PDF de una página del tamaño exacto de la imagen, para recibos, documentos y compartir. La transparencia se conserva.
+• Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, y pégala donde quieras.
+• Cambiar tamaño: fija un ancho máximo y las imágenes más grandes se reducen para caber, manteniendo su proporción. Las más pequeñas nunca se amplían.
+• Más opciones: mira una vista previa del resultado con su tamaño real en píxeles y kilobytes, y elige formato, ancho, calidad, fondo y nombre de archivo solo para esa imagen.
 • Guarda en tu carpeta: elige una carpeta una vez y todas las imágenes irán allí, o usa las Descargas de Chrome, o pregunta cada vez. Añade subcarpetas como Imgkeep/{host}.
 • Tus nombres de archivo: crea nombres con {name}, {host}, {date}, {time}, {w} y {h}, por ejemplo {name}-{w}x{h}.
 • Calidad a tu medida: controles de calidad para JPG y WebP, y el color de fondo para imágenes transparentes guardadas como JPG.
@@ -94,13 +100,16 @@ Clique com o botão direito em qualquer imagem e salve como PNG, JPG, WebP, GIF 
 
 Muitos sites agora usam imagens WebP e AVIF que outros apps não abrem. O Imgkeep transforma essas imagens em arquivos que abrem em qualquer lugar, com um clique direito:
 
-Imgkeep: Salvar imagem como → PNG · JPG · WebP · GIF (mantém a animação) · PDF · Formato original
+Imgkeep: Salvar imagem como → PNG · JPG · WebP · GIF (mantém a animação) · PDF · Formato original · Copiar como PNG · Mais opções…
 
 O QUE ELE FAZ
 
 • Arquivos que abrem em qualquer lugar: JPG ou PNG padrão, e JPGs são salvos como .jpg, não .jfif. Imagens SVG e data: também funcionam.
 • Mantém a animação: WebP, AVIF e APNG animados viram um GIF que continua se movendo, com o tempo e a transparência. GIFs animados são salvos exatamente como são.
 • Salvar como PDF: um PDF de uma página do tamanho exato da imagem, para recibos, documentos e compartilhamento. A transparência é mantida.
+• Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, e cole onde quiser.
+• Redimensionar: defina uma largura máxima e as imagens maiores são reduzidas para caber, mantendo a proporção. As menores nunca são ampliadas.
+• Mais opções: veja uma prévia do resultado com o tamanho real em pixels e kilobytes, e escolha formato, largura, qualidade, fundo e nome do arquivo só para essa imagem.
 • Salva na sua pasta: escolha uma pasta uma vez e toda imagem vai para lá, ou use os Downloads do Chrome, ou pergunte sempre. Adicione subpastas como Imgkeep/{host}.
 • Seus nomes de arquivo: monte nomes com {name}, {host}, {date}, {time}, {w} e {h}, por exemplo {name}-{w}x{h}.
 • Qualidade sob seu controle: controles de qualidade para JPG e WebP, e a cor de fundo para imagens transparentes salvas como JPG.
@@ -128,13 +137,16 @@ Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern. Imgkeep w
 
 Viele Websites liefern heute WebP- und AVIF-Bilder, die andere Programme nicht öffnen. Imgkeep macht daraus Dateien, die sich überall öffnen lassen, mit einem Rechtsklick:
 
-Imgkeep: Bild speichern als → PNG · JPG · WebP · GIF (behält Animation) · PDF · Originalformat
+Imgkeep: Bild speichern als → PNG · JPG · WebP · GIF (behält Animation) · PDF · Originalformat · Als PNG kopieren · Weitere Optionen…
 
 WAS ES MACHT
 
 • Dateien, die sich überall öffnen: normales JPG oder PNG, und JPGs werden als .jpg gespeichert, nicht als .jfif. SVG- und data:-Bilder funktionieren auch.
 • Animation bleibt erhalten: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF, das sich weiter bewegt, mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
 • Als PDF speichern: ein einseitiges PDF genau in der Größe des Bildes, für Belege, Dokumente und zum Teilen. Transparenz bleibt erhalten.
+• Als PNG kopieren: Das Bild landet als echtes PNG mit Transparenz in der Zwischenablage, bereit zum Einfügen.
+• Größe ändern: Lege eine maximale Breite fest, und größere Bilder werden passend verkleinert, ohne ihre Form zu verlieren. Kleinere werden nie vergrößert.
+• Weitere Optionen: Sieh dir eine Vorschau des Ergebnisses mit der echten Größe in Pixeln und Kilobyte an und wähle Format, Breite, Qualität, Hintergrund und Dateinamen nur für dieses Bild.
 • Speichert in deinen Ordner: einmal einen Ordner wählen und jedes Bild landet dort, oder den Download-Ordner von Chrome nutzen, oder jedes Mal fragen. Mit Unterordnern wie Imgkeep/{host}.
 • Deine Dateinamen: Namen aus {name}, {host}, {date}, {time}, {w} und {h} bauen, z. B. {name}-{w}x{h}.
 • Qualität nach Wunsch: Regler für die JPG- und WebP-Qualität und die Hintergrundfarbe für transparente Bilder, die als JPG gespeichert werden.
@@ -162,13 +174,16 @@ Faites un clic droit sur n'importe quelle image et enregistrez-la en PNG, JPG, W
 
 Beaucoup de sites servent désormais des images WebP et AVIF que d'autres applications n'ouvrent pas. Imgkeep les transforme en fichiers qui s'ouvrent partout, en un clic droit :
 
-Imgkeep : Enregistrer l'image en → PNG · JPG · WebP · GIF (garde l'animation) · PDF · Format d'origine
+Imgkeep : Enregistrer l'image en → PNG · JPG · WebP · GIF (garde l'animation) · PDF · Format d'origine · Copier en PNG · Plus d'options…
 
 CE QU'IL FAIT
 
 • Des fichiers qui s'ouvrent partout : JPG ou PNG standard, et les JPG sont enregistrés en .jpg, pas en .jfif. Les images SVG et data: fonctionnent aussi.
 • L'animation est conservée : les WebP, AVIF et APNG animés deviennent un GIF qui bouge toujours, avec son rythme et sa transparence. Les GIF animés sont enregistrés tels quels.
 • Enregistrer en PDF : un PDF d'une page à la taille exacte de l'image, pour les reçus, les documents et le partage. La transparence est conservée.
+• Copier en PNG : l'image va dans le presse-papiers en vrai PNG, transparence comprise, prête à être collée.
+• Redimensionner : fixez une largeur maximale et les images plus grandes sont réduites pour tenir, en gardant leurs proportions. Les plus petites ne sont jamais agrandies.
+• Plus d'options : un aperçu du résultat avec sa taille réelle en pixels et en kilo-octets, puis le choix du format, de la largeur, de la qualité, du fond et du nom de fichier pour cette image seulement.
 • Enregistre dans votre dossier : choisissez un dossier une fois et chaque image y va, ou utilisez les Téléchargements de Chrome, ou demandez à chaque fois. Ajoutez des sous-dossiers comme Imgkeep/{host}.
 • Vos noms de fichiers : composez des noms avec {name}, {host}, {date}, {time}, {w} et {h}, par exemple {name}-{w}x{h}.
 • La qualité que vous choisissez : curseurs de qualité JPG et WebP, et couleur de fond pour les images transparentes enregistrées en JPG.
@@ -196,13 +211,16 @@ Toutes les fonctions d'Imgkeep d'aujourd'hui restent gratuites. Idées et votes 
 
 最近は多くのサイトが、他のアプリでは開けない WebP や AVIF の画像を使っています。Imgkeep なら右クリック一回で、どこでも開けるファイルに変換できます。
 
-Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（アニメーションを保持） · PDF · 元の形式
+Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（アニメーションを保持） · PDF · 元の形式 · PNGとしてコピー · その他のオプション…
 
 できること
 
 • どこでも開けるファイル：標準的な JPG や PNG で保存。JPG は .jfif ではなく .jpg で保存されます。SVG や data: 画像にも対応。
 • アニメーションを保持：アニメーション WebP・AVIF・APNG は、タイミングと透過を保ったまま動く GIF になります。アニメーション GIF はそのまま保存されます。
 • PDF で保存：画像とまったく同じサイズの 1 ページの PDF。領収書や書類、共有に便利です。透過も保たれます。
+• PNGとしてコピー：透過を保った本物のPNGとしてクリップボードに入れ、どこにでも貼り付けられます。
+• サイズ変更：最大幅を設定すると、それより大きい画像は縦横比を保って縮小されます。小さい画像は拡大されません。
+• その他のオプション：仕上がりをプレビューし、実際のピクセル数とファイルサイズを確認してから、その画像だけの形式、幅、画質、背景、ファイル名を選べます。
 • 指定のフォルダへ保存：一度フォルダを選べば、すべての画像がそこに保存されます。Chrome のダウンロード フォルダを使うことも、毎回確認することもできます。Imgkeep/{host} のようなサブフォルダも追加できます。
 • ファイル名を自由に：{name}、{host}、{date}、{time}、{w}、{h} を組み合わせて名前を作れます。例：{name}-{w}x{h}
 • 画質を調整：JPG と WebP の画質スライダー、透過画像を JPG で保存するときの背景色を設定できます。
@@ -230,13 +248,16 @@ Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（ア�
 
 आजकल कई साइटें WebP और AVIF इमेज देती हैं जो दूसरे ऐप नहीं खोलते। Imgkeep एक राइट-क्लिक में उन्हें ऐसी फ़ाइलों में बदल देता है जो हर जगह खुलती हैं:
 
-Imgkeep: इमेज इस रूप में सेव करें → PNG · JPG · WebP · GIF (एनिमेशन बना रहता है) · PDF · मूल फ़ॉर्मैट
+Imgkeep: इमेज इस रूप में सेव करें → PNG · JPG · WebP · GIF (एनिमेशन बना रहता है) · PDF · मूल फ़ॉर्मैट · PNG के रूप में कॉपी करें · और विकल्प…
 
 यह क्या करता है
 
 • हर जगह खुलने वाली फ़ाइलें: सामान्य JPG या PNG, और JPG फ़ाइलें .jfif नहीं, .jpg के रूप में सेव होती हैं। SVG और data: इमेज भी चलती हैं।
 • एनिमेशन बना रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जो चलते रहते हैं, उनकी टाइमिंग और पारदर्शिता के साथ। एनिमेटेड GIF बिल्कुल वैसे ही सेव होते हैं।
 • PDF में सेव करें: इमेज के बिल्कुल बराबर आकार का एक पेज का PDF, रसीदों, दस्तावेज़ों और शेयर करने के लिए। पारदर्शिता बनी रहती है।
+• PNG के रूप में कॉपी करें: इमेज पारदर्शिता के साथ असली PNG के रूप में क्लिपबोर्ड पर जाती है, कहीं भी पेस्ट करने के लिए तैयार।
+• साइज़ बदलें: अधिकतम चौड़ाई तय करें और बड़ी इमेज आकार का अनुपात बनाए रखते हुए छोटी हो जाती हैं। छोटी इमेज कभी बड़ी नहीं की जातीं।
+• और विकल्प: नतीजे का प्रीव्यू उसके असली साइज़ (पिक्सेल और किलोबाइट) के साथ देखें, फिर सिर्फ़ उस इमेज के लिए फ़ॉर्मैट, चौड़ाई, क्वालिटी, बैकग्राउंड और फ़ाइल का नाम चुनें।
 • आपके फ़ोल्डर में सेव: एक बार फ़ोल्डर चुनें और हर इमेज वहीं जाएगी, या Chrome का डाउनलोड फ़ोल्डर इस्तेमाल करें, या हर बार पूछें। Imgkeep/{host} जैसे सब-फ़ोल्डर जोड़ें।
 • आपके फ़ाइल नाम: {name}, {host}, {date}, {time}, {w} और {h} से नाम बनाएँ, जैसे {name}-{w}x{h}।
 • क्वालिटी आपके हाथ में: JPG और WebP क्वालिटी के स्लाइडर, और JPG में सेव होने वाली पारदर्शी इमेज के लिए बैकग्राउंड रंग।
@@ -264,13 +285,16 @@ Imgkeep की आज की हर सुविधा मुफ़्त रह
 
 تقدّم مواقع كثيرة اليوم صور WebP وAVIF لا تفتحها التطبيقات الأخرى. يحوّلها Imgkeep إلى ملفات تُفتح في كل مكان، بنقرة يمنى واحدة:
 
-Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع الحفاظ على الحركة) · PDF · الصيغة الأصلية
+Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع الحفاظ على الحركة) · PDF · الصيغة الأصلية · نسخ بصيغة PNG · مزيد من الخيارات…
 
 ماذا يفعل
 
 • ملفات تُفتح في أي مكان: JPG أو PNG قياسية، وتُحفظ ملفات JPG بامتداد ‎.jpg وليس ‎.jfif. تعمل صور SVG وdata:‎ أيضًا.
 • الحفاظ على الحركة: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يظل متحركًا، بتوقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة كما هي تمامًا.
 • الحفظ بصيغة PDF: ملف PDF من صفحة واحدة بحجم الصورة تمامًا، للإيصالات والمستندات والمشاركة. وتبقى الشفافية كما هي.
+• النسخ بصيغة PNG: تُنسخ الصورة إلى الحافظة كملف PNG حقيقي مع شفافيتها، جاهزة للصق في أي مكان.
+• تغيير الحجم: حدّد عرضًا أقصى فتُصغَّر الصور الأكبر لتناسبه مع الحفاظ على نسبها. ولا تُكبَّر الصور الأصغر أبدًا.
+• مزيد من الخيارات: عاين النتيجة بحجمها الحقيقي بالبكسل والكيلوبايت، ثم اختر الصيغة والعرض والجودة والخلفية واسم الملف لهذه الصورة وحدها.
 • الحفظ في مجلدك: اختر مجلدًا مرة واحدة وستذهب إليه كل صورة، أو استخدم مجلد التنزيلات في Chrome، أو اطلب السؤال في كل مرة. أضف مجلدات فرعية مثل Imgkeep/{host}.
 • أسماء ملفاتك: كوّن الأسماء من {name} و{host} و{date} و{time} و{w} و{h}، مثل {name}-{w}x{h}.
 • جودة تتحكم بها: أشرطة لضبط جودة JPG وWebP، ولون الخلفية للصور الشفافة المحفوظة بصيغة JPG.
