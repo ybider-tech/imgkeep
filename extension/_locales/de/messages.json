@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — Bild speichern als PNG, JPG, WebP, GIF oder PDF"
+  },
+  "extDescription": {
+    "message": "Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern. WebP und AVIF werden lokal umgewandelt. Kein Tracking."
+  },
+  "menuParent": {
+    "message": "Imgkeep: Bild speichern als"
+  },
+  "menuGif": {
+    "message": "GIF (behält Animation)"
+  },
+  "menuOriginal": {
+    "message": "Originalformat"
+  },
+  "askErrBlocked": {
+    "message": "Die Website hat das Bild nicht herausgegeben, auch nicht mit erlaubtem Zugriff. Vielleicht ist der Server nicht erreichbar oder zeigt das Bild nur auf seinen eigenen Seiten."
+  },
+  "askErrHttp": {
+    "message": "Die Website hat statt des Bildes einen Fehler gemeldet."
+  },
+  "askErrDecode": {
+    "message": "Dein Browser konnte diese Datei nicht als Bild lesen."
+  },
+  "askErrUnsupported": {
+    "message": "Diese Browserversion kann dieses Format nicht erstellen. Versuch es mit PNG."
+  },
+  "askErrBlob": {
+    "message": "Dieses Bild existiert nur innerhalb der Seite (ein blob:-Link). Imgkeep kann es nicht lesen, weil es keinen Zugriff auf deine Seiten hat."
+  },
+  "askErrTooLarge": {
+    "message": "Dieses Bild ist zu groß, um es im Browser umzuwandeln."
+  },
+  "askErrTimeout": {
+    "message": "Die Umwandlung hat zu lange gedauert, deshalb hat Imgkeep abgebrochen. Versuch es mit PNG oder einer kürzeren oder kleineren Animation."
+  },
+  "askErrDownload": {
+    "message": "Dein Browser konnte den Download nicht starten."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep konnte die Datei nicht in deinen Ordner schreiben."
+  },
+  "askErrExpired": {
+    "message": "Dieser Speichervorgang ist abgelaufen. Klick mit der rechten Maustaste auf das Bild und versuch es erneut."
+  },
+  "askErrUnknown": {
+    "message": "Beim Speichern dieses Bildes ist etwas schiefgelaufen."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ Einzelbilder. GIFs sind auf $MAX$ begrenzt.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ Pixel × $COUNT$ Einzelbilder sind mehr, als ein GIF hier fassen kann.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Zu viele Dateien mit diesem Namen."
+  },
+  "askSaving": {
+    "message": "Wird gespeichert…"
+  },
+  "askSaved": {
+    "message": "Gespeichert."
+  },
+  "askSavedAs": {
+    "message": "Gespeichert als $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Gespeichert in $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nichts zu speichern"
+  },
+  "askClose": {
+    "message": "Schließen"
+  },
+  "askCancel": {
+    "message": "Abbrechen"
+  },
+  "askHostTitle": {
+    "message": "Bilder von dieser Website erlauben?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ hindert andere Websites daran, seine Bilder zu lesen, deshalb kann Imgkeep dieses noch nicht umwandeln.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Der Zugriff gilt nur für diese eine Website, um Bilder abzurufen, die du auswählst. Du kannst ihn jederzeit in den Optionen entfernen."
+  },
+  "askAllowAndSave": {
+    "message": "Erlauben und speichern"
+  },
+  "askNotAllowed": {
+    "message": "Der Zugriff wurde nicht erlaubt. Nichts wurde gespeichert."
+  },
+  "askSaveOriginal": {
+    "message": "Stattdessen im Originalformat speichern"
+  },
+  "askReconnectTitle": {
+    "message": "„$FOLDER$“ neu verbinden",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Ordner auswählen"
+  },
+  "askReconnectBody": {
+    "message": "Dein Browser braucht deine Zustimmung, um wieder in diesen Ordner zu speichern."
+  },
+  "askChooseBody": {
+    "message": "Wähle den Ordner, in dem Imgkeep deine Bilder speichern soll."
+  },
+  "askEveryVisit": {
+    "message": "Wenn dein Browser fragt, wähle $OPTION$, damit er nicht erneut fragt.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "die Option, bei jedem Besuch zu erlauben"
+  },
+  "askReconnectButton": {
+    "message": "Neu verbinden und speichern"
+  },
+  "askChooseButton": {
+    "message": "Ordner wählen und speichern"
+  },
+  "askErrorTitle": {
+    "message": "Bild konnte nicht gespeichert werden"
+  },
+  "askFolderDenied": {
+    "message": "Dein Browser hat den Zugriff auf den Ordner nicht erlaubt. Nichts wurde gespeichert."
+  },
+  "askNoFolder": {
+    "message": "Kein Ordner ausgewählt. Nichts wurde gespeichert."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep-Optionen"
+  },
+  "optSaved": {
+    "message": "Gespeichert"
+  },
+  "optWhereTitle": {
+    "message": "Speicherort"
+  },
+  "optSaveMode": {
+    "message": "Speichermodus"
+  },
+  "optModeDownloads": {
+    "message": "Download-Ordner"
+  },
+  "optModeDownloadsHint": {
+    "message": "Speichert im Download-Ordner deines Browsers. Ohne Rückfragen."
+  },
+  "optModeFolder": {
+    "message": "Ein Ordner deiner Wahl"
+  },
+  "optModeFolderHint": {
+    "message": "Schreibt direkt in deinen Ordner. Nach einem Neustart fragt dein Browser eventuell, ob er neu verbinden darf."
+  },
+  "optModeAsk": {
+    "message": "Jedes Mal fragen"
+  },
+  "optModeAskHint": {
+    "message": "Zeigt für jedes Bild den „Speichern unter“-Dialog des Browsers."
+  },
+  "optChooseFolder": {
+    "message": "Ordner auswählen…"
+  },
+  "optChangeFolder": {
+    "message": "Ordner ändern…"
+  },
+  "optNoFolder": {
+    "message": "Noch kein Ordner ausgewählt."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ – verbunden",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ – fragt nach Neuverbindung",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Unterordner"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "z. B. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Optional. Mit <code>/</code> legst du verschachtelte Ordner an. Dieselben Platzhalter wie bei Dateinamen."
+  },
+  "optNamesTitle": {
+    "message": "Dateinamen"
+  },
+  "optTemplate": {
+    "message": "Namensvorlage"
+  },
+  "optTokensHint": {
+    "message": "Platzhalter: <code>{name}</code> ursprünglicher Name, <code>{host}</code> Website, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> und <code>{h}</code> Größe in Pixeln. Vorhandene Dateien werden nie überschrieben."
+  },
+  "optPreviewLabel": {
+    "message": "Vorschau für summer-banner von shop.example.com, 1600×900, als PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Qualität"
+  },
+  "optJpgQuality": {
+    "message": "JPG-Qualität"
+  },
+  "optWebpQuality": {
+    "message": "WebP-Qualität"
+  },
+  "optJpgBackground": {
+    "message": "JPG-Hintergrundfarbe"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG unterstützt keine Transparenz, deshalb bekommen durchsichtige Bereiche diese Farbe."
+  },
+  "optSitesTitle": {
+    "message": "Erlaubte Websites"
+  },
+  "optSitesEmpty": {
+    "message": "Noch keine. Imgkeep fragt nur, wenn eine Website ein Bild blockiert, das du umwandeln möchtest."
+  },
+  "optRemove": {
+    "message": "Entfernen"
+  },
+  "optRemoveAccess": {
+    "message": "Zugriff auf $SITE$ entfernen",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro – demnächst"
+  },
+  "optProBody": {
+    "message": "Regeln: Bilder jeder Website im richtigen Format und mit dem richtigen Namen in den richtigen Ordner speichern, ohne jedes Mal zu wählen. Dazu ein Protokoll, woher jedes Bild stammt."
+  },
+  "optProFree": {
+    "message": "Alles, was du heute nutzt, bleibt kostenlos."
+  },
+  "optGetNotified": {
+    "message": "Benachrichtigen"
+  },
+  "optTrustTitle": {
+    "message": "Was Imgkeep kann und was nicht"
+  },
+  "optPermissions": {
+    "message": "Angeforderte Berechtigungen:"
+  },
+  "optPermissionsLabel": {
+    "message": "Berechtigungen"
+  },
+  "optTrust1": {
+    "message": "Bilder werden auf deinem Computer umgewandelt. Nichts wird hochgeladen, es gibt keine Analysen."
+  },
+  "optTrust2": {
+    "message": "Keine Werbung, keine Bitten um Bewertungen, keine Willkommens-Tabs. Ein kleines Fenster öffnet sich nur, wenn ein Speichervorgang deine Zustimmung braucht."
+  },
+  "optTrust3": {
+    "message": "Jede kostenlose Funktion bleibt kostenlos."
+  },
+  "optVersion": {
+    "message": "Version"
+  }
+}

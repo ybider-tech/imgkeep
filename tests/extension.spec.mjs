@@ -344,7 +344,7 @@ test("GIF: an animation over the frame limit stops with too-large and explains w
   const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/ask.html") });
   const result = await run(`${cors.url}/many-frames.webp`, "gif");
   expect(result).toMatchObject({ ok: false, reason: "error", code: "too-large" });
-  expect(result.detail).toContain("601 frames");
+  expect(result).toMatchObject({ detail: "@detailGifFrames", detailSubs: ["601", "600"] }); // translated in the ask window
   const ask = await opened;
   await expect(ask.locator("#title")).toHaveText("Couldn't save this image");
   await expect(ask.getByText("601 frames")).toBeVisible();

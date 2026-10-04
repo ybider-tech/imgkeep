@@ -221,6 +221,6 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   if (msg?.target !== "offscreen" || !handlers[msg.type]) return false;
   handlers[msg.type](msg)
     .then((result) => sendResponse({ ok: true, ...result }))
-    .catch((e) => sendResponse({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "" }));
+    .catch((e) => sendResponse({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "", subs: e.subs }));
   return true; // respond asynchronously
 });

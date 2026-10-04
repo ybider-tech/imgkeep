@@ -65,7 +65,7 @@ export async function writeUnique(root, dirs, name, ext, blob) {
     await out.close();
     return [...dirs, fileName].join("/");
   }
-  throw new Error("Too many files with this name");
+  throw new Error("@detailTooManyFiles"); // translated by the ask window
 }
 
 // data: URL -> Blob without a network call.

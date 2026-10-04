@@ -8,7 +8,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 - **Tagline:** Right format. Right folder. Nothing else.
 - **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Category:** Tools
-- **Language:** English
+- **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
 - **Support URL:** https://imgkeep.app/support.html (email: helloimgkeep@gmail.com)
 - **Privacy policy:** https://imgkeep.app/privacy.html

@@ -41,6 +41,7 @@ Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP
 - Quality: JPG 92 and WebP 90 by default, adjustable from 50 to 100.
 - File names from a template, default `{name}`. Tokens: `{name}` (file name from the URL, `image` for `data:` URLs), `{host}` (without `www.`), `{date}` (YYYY-MM-DD), `{time}` (HHMMSS), `{w}`, `{h}`. The subfolder setting takes the same tokens, e.g. `Imgkeep/{host}`. Characters that are illegal on Windows or macOS are removed.
 - Never overwrites a file.
+- **Nine languages:** English, Arabic, French, German, Hebrew, Hindi, Japanese, Portuguese (Brazil) and Spanish, following the browser's language. Arabic and Hebrew are laid out right to left.
 
 ## Save modes
 
@@ -104,6 +105,14 @@ Other scripts:
 | `npm run store` | Renders `store/*.png` from `store/scenes.html`, with real captures of the options page and ask window |
 | `npm run video` | Renders the 28-second demo video `store/imgkeep-demo.webm` (1280×720) and its poster from `store/video/demo.html`, using the ffmpeg Playwright installs. `--stills` saves a few frames to check first. |
 | `sh scripts/package.sh` | Runs the tests, then builds `dist/imgkeep-<version>.zip` |
+
+### Translations
+
+All text lives in `extension/_locales/<lang>/messages.json`; English (`en`) is the source and the fallback. Pages mark text with `data-i18n` attributes and scripts call `t(key)` from `extension/lib/i18n.js`. The offscreen document has no `chrome.i18n`, so it sends error details as `"@messageKey"` plus substitutions and the ask window translates them.
+
+To add a language: copy `en/messages.json` to `_locales/<code>/` (Chrome's locale codes, e.g. `it`, `zh_CN`), translate each `message`, and keep `$PLACEHOLDERS$`, `{tokens}`, `<code>`/`<strong>` and the `placeholders` blocks as they are (`tests/i18n/build-locale.py` copies them for you). `npm run check` lists anything missing or broken, and checks the store limits: name ≤ 75 characters, summary ≤ 132. Then add the store description to `store/listing-translations.md`.
+
+`tests/i18n.spec.mjs` opens the extension in Hebrew and Japanese. Chromium only honours `--lang` on Linux, so these tests run in CI and are skipped on macOS.
 
 ### Imgkeep Pro waitlist link
 

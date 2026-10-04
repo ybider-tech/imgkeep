@@ -2,6 +2,7 @@
 
 import { getFolder, setFolder, writeUnique, dataUrlToBlob } from "./lib/folder.js";
 import { FORMATS } from "./lib/settings.js";
+import { t, localisePage, richText } from "./lib/i18n.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const key = `job:${jobId}`;
@@ -12,19 +13,29 @@ let job = null;
 let folder = null; // loaded up front so the click can go straight to requestPermission
 let finished = false;
 
+// Error codes → message keys in _locales/*/messages.json.
 const ERRORS = {
-  blocked: "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
-  http: "The site answered with an error instead of the image.",
-  decode: "Your browser couldn't read this file as an image.",
-  unsupported: "This browser version can't create this format. Try PNG instead.",
-  blob: "This image only exists inside the page (a blob: link). Imgkeep can't read it because it has no access to your pages.",
-  "too-large": "This image is too large to convert in the browser.",
-  timeout: "Converting this image took too long, so Imgkeep stopped. Try PNG, or a shorter or smaller animation.",
-  download: "Your browser couldn't start the download.",
-  write: "Imgkeep couldn't write the file to your folder.",
-  expired: "This save has expired. Right-click the image and try again.",
-  unknown: "Something went wrong while saving this image.",
+  blocked: "askErrBlocked",
+  http: "askErrHttp",
+  decode: "askErrDecode",
+  unsupported: "askErrUnsupported",
+  blob: "askErrBlob",
+  "too-large": "askErrTooLarge",
+  timeout: "askErrTimeout",
+  download: "askErrDownload",
+  write: "askErrWrite",
+  expired: "askErrExpired",
+  unknown: "askErrUnknown",
 };
+const errorText = (code) => t(ERRORS[code] || ERRORS.unknown);
+
+// Extra detail under an error: a message key from the converter ("@key" plus values),
+// an HTTP status, or the browser's own error text.
+function detailText(job) {
+  if (!job.detail) return "";
+  if (job.detail.startsWith("@")) return t(job.detail.slice(1), job.detailSubs);
+  return job.code === "http" ? `HTTP ${job.detail}` : job.detail;
+}
 
 function el(tag, props = {}, ...children) {
   const node = Object.assign(document.createElement(tag), props);
@@ -76,7 +87,7 @@ async function cancel() {
 
 function savedMessage(result) {
   const where = result.path || result.filename;
-  return where ? `Saved as ${where}` : "Saved.";
+  return where ? t("askSavedAs", [where]) : t("askSaved");
 }
 
 // Handle the answer of a retry: done, or a new decision to show.
@@ -88,7 +99,7 @@ async function afterRetry(result) {
 }
 
 async function saveOriginal() {
-  status("Saving…");
+  status(t("askSaving"));
   await afterRetry(await toBackground("original"));
 }
 
@@ -100,29 +111,29 @@ function render() {
   status("");
 
   if (!job) {
-    $("title").textContent = "Nothing to save";
-    body.append(el("p", { textContent: ERRORS.expired }));
-    actions.append(button("Close", () => window.close(), true));
+    $("title").textContent = t("askNothingTitle");
+    body.append(el("p", { textContent: errorText("expired") }));
+    actions.append(button(t("askClose"), () => window.close(), true));
     return;
   }
 
   const reason = job.reason;
-  const cancelBtn = button("Cancel", cancel);
+  const cancelBtn = button(t("askCancel"), cancel);
 
   if (reason === "host") {
-    $("title").textContent = "Allow images from this site?";
+    $("title").textContent = t("askHostTitle");
     body.append(
-      el("p", {}, el("strong", { textContent: job.host }), " blocks other sites from reading its images, so Imgkeep can't convert this one yet."),
-      el("p", { className: "muted", textContent: "Access is for this one site only, to fetch images you pick. You can remove it any time in Options." }),
+      el("p", {}, ...richText("askHostBody", job.host)),
+      el("p", { className: "muted", textContent: t("askHostNote") }),
     );
     actions.append(
-      button("Allow and save", async () => {
+      button(t("askAllowAndSave"), async () => {
         const granted = await chrome.permissions.request({ origins: [job.origin] });
-        if (!granted) return status("Access wasn't allowed. Nothing was saved.", true);
-        status("Saving…");
+        if (!granted) return status(t("askNotAllowed"), true);
+        status(t("askSaving"));
         await afterRetry(await toBackground("retry"));
       }, true),
-      button("Save original format instead", saveOriginal),
+      button(t("askSaveOriginal"), saveOriginal),
       cancelBtn,
     );
     return;
@@ -130,52 +141,48 @@ function render() {
 
   if (reason === "folder-permission" || reason === "no-folder") {
     const reconnect = reason === "folder-permission" && folder;
-    $("title").textContent = reconnect ? `Reconnect “${folder.name}”` : "Choose a folder";
+    $("title").textContent = reconnect ? t("askReconnectTitle", [folder.name]) : t("askChooseTitle");
     body.append(
-      el("p", {
-        textContent: reconnect
-          ? "Your browser needs your OK to save into this folder again."
-          : "Pick the folder where Imgkeep should save your images.",
-      }),
-      el("p", { className: "muted" }, "When your browser asks, choose ", el("strong", { textContent: "“Allow on every visit”" }), " so it won't ask again."),
+      el("p", { textContent: reconnect ? t("askReconnectBody") : t("askChooseBody") }),
+      el("p", { className: "muted" }, ...richText("askEveryVisit", t("askEveryVisitOption"))),
     );
-    actions.append(button(reconnect ? "Reconnect and save" : "Choose folder and save", () => writeToFolder(reconnect), true), cancelBtn);
+    actions.append(button(reconnect ? t("askReconnectButton") : t("askChooseButton"), () => writeToFolder(reconnect), true), cancelBtn);
     return;
   }
 
   // Plain error.
-  $("title").textContent = "Couldn't save this image";
-  body.append(el("p", { textContent: ERRORS[job.code] || ERRORS.unknown }));
-  const extra = job.code === "http" && job.detail ? `HTTP ${job.detail}` : job.detail;
+  $("title").textContent = t("askErrorTitle");
+  body.append(el("p", { textContent: errorText(job.code) }));
+  const extra = detailText(job);
   if (extra) body.append(el("p", { className: "muted detail", textContent: extra }));
-  if (isHttp(job.url) && job.format !== "original") actions.append(button("Save original format instead", saveOriginal, true));
-  actions.append(button("Close", cancel, !isHttp(job.url) || job.format === "original"));
+  if (isHttp(job.url) && job.format !== "original") actions.append(button(t("askSaveOriginal"), saveOriginal, true));
+  actions.append(button(t("askClose"), cancel, !isHttp(job.url) || job.format === "original"));
 }
 
 async function writeToFolder(reconnect) {
   // Both calls below need this click, so they come first.
   if (reconnect) {
     const permission = await folder.requestPermission({ mode: "readwrite" });
-    if (permission !== "granted") return status("Your browser didn't allow access to the folder. Nothing was saved.", true);
+    if (permission !== "granted") return status(t("askFolderDenied"), true);
   } else {
     try {
       folder = await showDirectoryPicker({ mode: "readwrite", id: "imgkeep" });
     } catch {
-      return status("No folder chosen. Nothing was saved.", true);
+      return status(t("askNoFolder"), true);
     }
     await setFolder(folder);
   }
-  status("Saving…");
+  status(t("askSaving"));
   const res = await toBackground("blobFor");
   if (!res?.ok) {
-    job = { ...job, reason: "error", code: res?.code || "unknown", detail: res?.detail || "" };
+    job = { ...job, reason: "error", code: res?.code || "unknown", detail: res?.detail || "", detailSubs: res?.subs };
     return render();
   }
   const { dirs, name } = res.target;
   const ext = res.target.ext || FORMATS[job.format]?.ext;
   try {
     const path = await writeUnique(folder, dirs, name, ext, dataUrlToBlob(res.dataUrl));
-    await finish(`Saved to ${folder.name}/${path}`);
+    await finish(t("askSavedTo", [`${folder.name}/${path}`]));
   } catch (e) {
     job = { ...job, reason: "error", code: "write", detail: e.message };
     render();
@@ -192,6 +199,7 @@ async function init() {
   job = stored[key] || null;
   folder = await getFolder().catch(() => null);
   document.title = "Imgkeep";
+  localisePage();
   render();
 }
 

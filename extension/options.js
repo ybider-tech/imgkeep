@@ -2,6 +2,7 @@
 
 import { DEFAULTS, PRO_WAITLIST_URL, getSettings, clampQuality, buildTarget, targetPath } from "./lib/settings.js";
 import { getFolder, setFolder, folderPermission } from "./lib/folder.js";
+import { t, localisePage } from "./lib/i18n.js";
 
 const $ = (id) => document.getElementById(id);
 let savedTimer;
@@ -27,10 +28,10 @@ async function renderFolder() {
   const handle = await getFolder().catch(() => null);
   const permission = await folderPermission(handle);
   const text = !handle
-    ? "No folder chosen yet."
-    : `“${handle.name}” — ${permission === "granted" ? "connected" : "will ask to reconnect"}`;
+    ? t("optNoFolder")
+    : t(permission === "granted" ? "optFolderConnected" : "optFolderReconnect", [handle.name]);
   $("folderStatus").textContent = text;
-  $("chooseFolder").textContent = handle ? "Change folder…" : "Choose folder…";
+  $("chooseFolder").textContent = t(handle ? "optChangeFolder" : "optChooseFolder");
 }
 
 async function chooseFolder() {
@@ -53,8 +54,8 @@ async function renderSites() {
   list.replaceChildren();
   for (const origin of origins.sort()) {
     const label = origin.replace(/\/\*$/, "");
-    const remove = Object.assign(document.createElement("button"), { type: "button", textContent: "Remove" });
-    remove.setAttribute("aria-label", `Remove access to ${label}`);
+    const remove = Object.assign(document.createElement("button"), { type: "button", textContent: t("optRemove") });
+    remove.setAttribute("aria-label", t("optRemoveAccess", [label]));
     remove.addEventListener("click", async () => {
       await chrome.permissions.remove({ origins: [origin] });
       renderSites();
@@ -77,6 +78,7 @@ function bindSlider(id) {
 }
 
 async function init() {
+  localisePage();
   const s = await getSettings();
 
   for (const radio of document.querySelectorAll('input[name="saveMode"]')) {

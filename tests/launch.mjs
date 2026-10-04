@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 
 export const EXTENSION_DIR = resolve(dirname(fileURLToPath(import.meta.url)), "..", "extension");
 
-export async function launchWithExtension({ headless = true, ...options } = {}) {
+export async function launchWithExtension({ headless = true, args = [], ...options } = {}) {
   const userDataDir = await mkdtemp(join(tmpdir(), "imgkeep-profile-"));
   const downloadsDir = join(userDataDir, "Downloads");
   await mkdir(join(userDataDir, "Default"), { recursive: true });
@@ -22,7 +22,7 @@ export async function launchWithExtension({ headless = true, ...options } = {}) 
     headless,
     ...options,
     acceptDownloads: true,
-    args: [`--disable-extensions-except=${EXTENSION_DIR}`, `--load-extension=${EXTENSION_DIR}`],
+    args: [...args, `--disable-extensions-except=${EXTENSION_DIR}`, `--load-extension=${EXTENSION_DIR}`],
   });
   // Playwright saves downloads under GUID names by default. Hand them back to Chrome,
   // so the file lands where the extension asked, inside the profile's Downloads folder.

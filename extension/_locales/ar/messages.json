@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — حفظ الصورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF"
+  },
+  "extDescription": {
+    "message": "انقر بزر الماوس الأيمن لحفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF. تحويل WebP وAVIF على جهازك. بلا تتبع."
+  },
+  "menuParent": {
+    "message": "Imgkeep: حفظ الصورة بصيغة"
+  },
+  "menuGif": {
+    "message": "GIF (مع الحفاظ على الحركة)"
+  },
+  "menuOriginal": {
+    "message": "الصيغة الأصلية"
+  },
+  "askErrBlocked": {
+    "message": "لم يُسلّم الموقع هذه الصورة حتى مع السماح بالوصول. ربما الخادم متوقف، أو أنه يعرض الصورة داخل صفحاته فقط."
+  },
+  "askErrHttp": {
+    "message": "ردّ الموقع بخطأ بدلًا من الصورة."
+  },
+  "askErrDecode": {
+    "message": "تعذّر على متصفحك قراءة هذا الملف كصورة."
+  },
+  "askErrUnsupported": {
+    "message": "لا يستطيع هذا الإصدار من المتصفح إنشاء هذه الصيغة. جرّب PNG بدلًا منها."
+  },
+  "askErrBlob": {
+    "message": "هذه الصورة موجودة داخل الصفحة فقط (رابط blob:). لا يستطيع Imgkeep قراءتها لأنه لا يملك صلاحية الوصول إلى صفحاتك."
+  },
+  "askErrTooLarge": {
+    "message": "هذه الصورة أكبر من أن تُحوَّل داخل المتصفح."
+  },
+  "askErrTimeout": {
+    "message": "استغرق التحويل وقتًا طويلًا، لذا أوقفه Imgkeep. جرّب PNG، أو صورة متحركة أقصر أو أصغر."
+  },
+  "askErrDownload": {
+    "message": "تعذّر على متصفحك بدء التنزيل."
+  },
+  "askErrWrite": {
+    "message": "تعذّر على Imgkeep كتابة الملف في مجلدك."
+  },
+  "askErrExpired": {
+    "message": "انتهت صلاحية عملية الحفظ هذه. انقر بزر الماوس الأيمن على الصورة وحاول مرة أخرى."
+  },
+  "askErrUnknown": {
+    "message": "حدث خطأ أثناء حفظ هذه الصورة."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ إطارًا. الحد الأقصى في GIF هو $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ بكسل × $COUNT$ إطارًا أكثر مما يتسع له ملف GIF هنا.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "توجد ملفات كثيرة جدًا بهذا الاسم."
+  },
+  "askSaving": {
+    "message": "جارٍ الحفظ…"
+  },
+  "askSaved": {
+    "message": "تم الحفظ."
+  },
+  "askSavedAs": {
+    "message": "تم الحفظ باسم $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "تم الحفظ في $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "لا يوجد ما يُحفظ"
+  },
+  "askClose": {
+    "message": "إغلاق"
+  },
+  "askCancel": {
+    "message": "إلغاء"
+  },
+  "askHostTitle": {
+    "message": "هل تسمح بالصور من هذا الموقع؟"
+  },
+  "askHostBody": {
+    "message": "يمنع $HOST$ المواقع الأخرى من قراءة صوره، لذا لا يستطيع Imgkeep تحويل هذه الصورة بعد.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "الوصول لهذا الموقع وحده، لجلب الصور التي تختارها. يمكنك إزالته في أي وقت من الخيارات."
+  },
+  "askAllowAndSave": {
+    "message": "السماح والحفظ"
+  },
+  "askNotAllowed": {
+    "message": "لم يُسمح بالوصول. لم يُحفظ أي شيء."
+  },
+  "askSaveOriginal": {
+    "message": "الحفظ بالصيغة الأصلية بدلًا من ذلك"
+  },
+  "askReconnectTitle": {
+    "message": "إعادة ربط «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "اختر مجلدًا"
+  },
+  "askReconnectBody": {
+    "message": "يحتاج متصفحك إلى موافقتك للحفظ في هذا المجلد مرة أخرى."
+  },
+  "askChooseBody": {
+    "message": "اختر المجلد الذي سيحفظ فيه Imgkeep صورك."
+  },
+  "askEveryVisit": {
+    "message": "عندما يسألك المتصفح، اختر $OPTION$ حتى لا يسألك مرة أخرى.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "خيار السماح في كل زيارة"
+  },
+  "askReconnectButton": {
+    "message": "إعادة الربط والحفظ"
+  },
+  "askChooseButton": {
+    "message": "اختيار المجلد والحفظ"
+  },
+  "askErrorTitle": {
+    "message": "تعذّر حفظ هذه الصورة"
+  },
+  "askFolderDenied": {
+    "message": "لم يسمح متصفحك بالوصول إلى المجلد. لم يُحفظ أي شيء."
+  },
+  "askNoFolder": {
+    "message": "لم يتم اختيار مجلد. لم يُحفظ أي شيء."
+  },
+  "optPageTitle": {
+    "message": "خيارات Imgkeep"
+  },
+  "optSaved": {
+    "message": "تم الحفظ"
+  },
+  "optWhereTitle": {
+    "message": "مكان الحفظ"
+  },
+  "optSaveMode": {
+    "message": "طريقة الحفظ"
+  },
+  "optModeDownloads": {
+    "message": "مجلد التنزيلات"
+  },
+  "optModeDownloadsHint": {
+    "message": "يحفظ في مجلد التنزيلات في متصفحك. بلا أسئلة."
+  },
+  "optModeFolder": {
+    "message": "مجلد تختاره"
+  },
+  "optModeFolderHint": {
+    "message": "يكتب مباشرة في مجلدك. قد يطلب متصفحك إعادة الربط بعد إعادة التشغيل."
+  },
+  "optModeAsk": {
+    "message": "السؤال في كل مرة"
+  },
+  "optModeAskHint": {
+    "message": "يعرض نافذة «حفظ باسم» في المتصفح لكل صورة."
+  },
+  "optChooseFolder": {
+    "message": "اختيار مجلد…"
+  },
+  "optChangeFolder": {
+    "message": "تغيير المجلد…"
+  },
+  "optNoFolder": {
+    "message": "لم يتم اختيار مجلد بعد."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — متصل",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — سيطلب إعادة الربط",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "مجلد فرعي"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "مثال: Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "اختياري. استخدم <code>/</code> للمجلدات المتداخلة. الرموز نفسها المستخدمة في أسماء الملفات."
+  },
+  "optNamesTitle": {
+    "message": "أسماء الملفات"
+  },
+  "optTemplate": {
+    "message": "قالب الاسم"
+  },
+  "optTokensHint": {
+    "message": "الرموز: <code>{name}</code> الاسم الأصلي، <code>{host}</code> الموقع، <code>{date}</code>، <code>{time}</code>، <code>{w}</code> و<code>{h}</code> الحجم بالبكسل. لا يُستبدل أي ملف موجود أبدًا."
+  },
+  "optPreviewLabel": {
+    "message": "معاينة لـ summer-banner من shop.example.com، بحجم 1600×900، بصيغة PNG:"
+  },
+  "optQualityTitle": {
+    "message": "الجودة"
+  },
+  "optJpgQuality": {
+    "message": "جودة JPG"
+  },
+  "optWebpQuality": {
+    "message": "جودة WebP"
+  },
+  "optJpgBackground": {
+    "message": "لون خلفية JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "لا يدعم JPG الشفافية، لذا تأخذ المناطق الشفافة هذا اللون."
+  },
+  "optSitesTitle": {
+    "message": "المواقع التي سمحت بها"
+  },
+  "optSitesEmpty": {
+    "message": "لا شيء بعد. لا يسأل Imgkeep إلا عندما يحجب موقع صورة تريد تحويلها."
+  },
+  "optRemove": {
+    "message": "إزالة"
+  },
+  "optRemoveAccess": {
+    "message": "إزالة الوصول إلى $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — قريبًا"
+  },
+  "optProBody": {
+    "message": "قواعد: إرسال صور كل موقع إلى المجلد الصحيح، بالصيغة الصحيحة والاسم الصحيح، دون الاختيار في كل مرة. بالإضافة إلى سجل لمصدر كل صورة."
+  },
+  "optProFree": {
+    "message": "كل ما تستخدمه اليوم يبقى مجانيًا."
+  },
+  "optGetNotified": {
+    "message": "أعلِمني"
+  },
+  "optTrustTitle": {
+    "message": "ما يستطيع Imgkeep فعله وما لا يستطيع"
+  },
+  "optPermissions": {
+    "message": "الأذونات التي يطلبها:"
+  },
+  "optPermissionsLabel": {
+    "message": "الأذونات"
+  },
+  "optTrust1": {
+    "message": "تُحوَّل الصور على جهازك. لا يُرفع أي شيء، ولا توجد أي تحليلات."
+  },
+  "optTrust2": {
+    "message": "بلا إعلانات، بلا طلبات تقييم، بلا علامات تبويب ترحيبية. لا تُفتح نافذة صغيرة إلا عندما تحتاج عملية حفظ إلى موافقتك."
+  },
+  "optTrust3": {
+    "message": "كل ميزة مجانية تبقى مجانية."
+  },
+  "optVersion": {
+    "message": "الإصدار"
+  }
+}

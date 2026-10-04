@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें"
+  },
+  "extDescription": {
+    "message": "राइट-क्लिक करके किसी भी इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें। WebP और AVIF आपके डिवाइस पर बदलें। कोई ट्रैकिंग नहीं।"
+  },
+  "menuParent": {
+    "message": "Imgkeep: इमेज इस रूप में सेव करें"
+  },
+  "menuGif": {
+    "message": "GIF (एनिमेशन बना रहता है)"
+  },
+  "menuOriginal": {
+    "message": "मूल फ़ॉर्मैट"
+  },
+  "askErrBlocked": {
+    "message": "एक्सेस की अनुमति होने पर भी साइट ने यह इमेज नहीं दी। हो सकता है सर्वर बंद हो, या वह इमेज सिर्फ़ अपने पेजों के अंदर दिखाता हो।"
+  },
+  "askErrHttp": {
+    "message": "साइट ने इमेज की जगह एक गड़बड़ी लौटाई।"
+  },
+  "askErrDecode": {
+    "message": "आपका ब्राउज़र इस फ़ाइल को इमेज के रूप में नहीं पढ़ सका।"
+  },
+  "askErrUnsupported": {
+    "message": "ब्राउज़र का यह वर्शन यह फ़ॉर्मैट नहीं बना सकता। PNG आज़माएँ।"
+  },
+  "askErrBlob": {
+    "message": "यह इमेज सिर्फ़ पेज के अंदर मौजूद है (blob: लिंक)। Imgkeep इसे नहीं पढ़ सकता, क्योंकि उसके पास आपके पेजों का एक्सेस नहीं है।"
+  },
+  "askErrTooLarge": {
+    "message": "यह इमेज ब्राउज़र में बदलने के लिए बहुत बड़ी है।"
+  },
+  "askErrTimeout": {
+    "message": "बदलने में बहुत ज़्यादा समय लगा, इसलिए Imgkeep रुक गया। PNG आज़माएँ, या कोई छोटा एनिमेशन।"
+  },
+  "askErrDownload": {
+    "message": "आपका ब्राउज़र डाउनलोड शुरू नहीं कर सका।"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep आपके फ़ोल्डर में फ़ाइल नहीं लिख सका।"
+  },
+  "askErrExpired": {
+    "message": "यह सेव अब मान्य नहीं है। इमेज पर राइट-क्लिक करके फिर से कोशिश करें।"
+  },
+  "askErrUnknown": {
+    "message": "इमेज सेव करते समय कुछ गड़बड़ हो गई।"
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ फ़्रेम। GIF में ज़्यादा से ज़्यादा $MAX$ फ़्रेम हो सकते हैं।",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ पिक्सेल × $COUNT$ फ़्रेम, यहाँ GIF में समा सकने से ज़्यादा है।",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "इस नाम की बहुत ज़्यादा फ़ाइलें हैं।"
+  },
+  "askSaving": {
+    "message": "सेव हो रहा है…"
+  },
+  "askSaved": {
+    "message": "सेव हो गया।"
+  },
+  "askSavedAs": {
+    "message": "$PATH$ के रूप में सेव हुआ",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ में सेव हुआ",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "सेव करने के लिए कुछ नहीं"
+  },
+  "askClose": {
+    "message": "बंद करें"
+  },
+  "askCancel": {
+    "message": "रद्द करें"
+  },
+  "askHostTitle": {
+    "message": "इस साइट की इमेज की अनुमति दें?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ दूसरी साइटों को अपनी इमेज पढ़ने से रोकता है, इसलिए Imgkeep अभी इसे नहीं बदल सकता।",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "एक्सेस सिर्फ़ इसी साइट के लिए है, आपकी चुनी इमेज लाने के लिए। आप इसे कभी भी विकल्पों में हटा सकते हैं।"
+  },
+  "askAllowAndSave": {
+    "message": "अनुमति दें और सेव करें"
+  },
+  "askNotAllowed": {
+    "message": "एक्सेस की अनुमति नहीं मिली। कुछ भी सेव नहीं हुआ।"
+  },
+  "askSaveOriginal": {
+    "message": "इसके बजाय मूल फ़ॉर्मैट में सेव करें"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” को फिर से जोड़ें",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "फ़ोल्डर चुनें"
+  },
+  "askReconnectBody": {
+    "message": "इस फ़ोल्डर में फिर से सेव करने के लिए आपके ब्राउज़र को आपकी अनुमति चाहिए।"
+  },
+  "askChooseBody": {
+    "message": "वह फ़ोल्डर चुनें जहाँ Imgkeep आपकी इमेज सेव करे।"
+  },
+  "askEveryVisit": {
+    "message": "जब ब्राउज़र पूछे, तो $OPTION$ चुनें, ताकि वह दोबारा न पूछे।",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "हर विज़िट पर अनुमति देने वाला विकल्प"
+  },
+  "askReconnectButton": {
+    "message": "फिर से जोड़ें और सेव करें"
+  },
+  "askChooseButton": {
+    "message": "फ़ोल्डर चुनें और सेव करें"
+  },
+  "askErrorTitle": {
+    "message": "यह इमेज सेव नहीं हो सकी"
+  },
+  "askFolderDenied": {
+    "message": "आपके ब्राउज़र ने फ़ोल्डर का एक्सेस नहीं दिया। कुछ भी सेव नहीं हुआ।"
+  },
+  "askNoFolder": {
+    "message": "कोई फ़ोल्डर नहीं चुना गया। कुछ भी सेव नहीं हुआ।"
+  },
+  "optPageTitle": {
+    "message": "Imgkeep के विकल्प"
+  },
+  "optSaved": {
+    "message": "सेव हो गया"
+  },
+  "optWhereTitle": {
+    "message": "कहाँ सेव करें"
+  },
+  "optSaveMode": {
+    "message": "सेव करने का तरीका"
+  },
+  "optModeDownloads": {
+    "message": "डाउनलोड फ़ोल्डर"
+  },
+  "optModeDownloadsHint": {
+    "message": "ब्राउज़र के डाउनलोड फ़ोल्डर में सेव करता है। कोई सवाल नहीं।"
+  },
+  "optModeFolder": {
+    "message": "आपका चुना हुआ फ़ोल्डर"
+  },
+  "optModeFolderHint": {
+    "message": "सीधे आपके फ़ोल्डर में लिखता है। रीस्टार्ट के बाद ब्राउज़र फिर से जोड़ने को कह सकता है।"
+  },
+  "optModeAsk": {
+    "message": "हर बार पूछें"
+  },
+  "optModeAskHint": {
+    "message": "हर इमेज के लिए ब्राउज़र का “इस रूप में सेव करें” डायलॉग दिखाता है।"
+  },
+  "optChooseFolder": {
+    "message": "फ़ोल्डर चुनें…"
+  },
+  "optChangeFolder": {
+    "message": "फ़ोल्डर बदलें…"
+  },
+  "optNoFolder": {
+    "message": "अभी तक कोई फ़ोल्डर नहीं चुना गया।"
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — जुड़ा हुआ",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — फिर से जोड़ने को कहेगा",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "सबफ़ोल्डर"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "जैसे Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "वैकल्पिक। नेस्टेड फ़ोल्डर के लिए <code>/</code> इस्तेमाल करें। फ़ाइल नामों वाले ही टैग।"
+  },
+  "optNamesTitle": {
+    "message": "फ़ाइल के नाम"
+  },
+  "optTemplate": {
+    "message": "नाम का टेम्पलेट"
+  },
+  "optTokensHint": {
+    "message": "टैग: <code>{name}</code> मूल नाम, <code>{host}</code> साइट, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> और <code>{h}</code> पिक्सेल में आकार। मौजूदा फ़ाइलें कभी ओवरराइट नहीं होतीं।"
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com की summer-banner, 1600×900, PNG के रूप में, का प्रीव्यू:"
+  },
+  "optQualityTitle": {
+    "message": "क्वालिटी"
+  },
+  "optJpgQuality": {
+    "message": "JPG क्वालिटी"
+  },
+  "optWebpQuality": {
+    "message": "WebP क्वालिटी"
+  },
+  "optJpgBackground": {
+    "message": "JPG बैकग्राउंड रंग"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG में पारदर्शिता नहीं होती, इसलिए पारदर्शी हिस्सों को यह रंग मिलता है।"
+  },
+  "optSitesTitle": {
+    "message": "जिन साइटों की आपने अनुमति दी"
+  },
+  "optSitesEmpty": {
+    "message": "अभी कोई नहीं। Imgkeep सिर्फ़ तब पूछता है जब कोई साइट उस इमेज को रोकती है जिसे आप बदलना चाहते हैं।"
+  },
+  "optRemove": {
+    "message": "हटाएँ"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ का एक्सेस हटाएँ",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — जल्द आ रहा है"
+  },
+  "optProBody": {
+    "message": "नियम: हर साइट की इमेज को सही फ़ोल्डर में, सही फ़ॉर्मैट और सही नाम से भेजें, हर बार चुने बिना। साथ ही हर इमेज कहाँ से आई, इसका रिकॉर्ड।"
+  },
+  "optProFree": {
+    "message": "आज आप जो भी इस्तेमाल करते हैं, वह मुफ़्त रहेगा।"
+  },
+  "optGetNotified": {
+    "message": "सूचना पाएँ"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep क्या कर सकता है और क्या नहीं"
+  },
+  "optPermissions": {
+    "message": "यह जो अनुमतियाँ माँगता है:"
+  },
+  "optPermissionsLabel": {
+    "message": "अनुमतियाँ"
+  },
+  "optTrust1": {
+    "message": "इमेज आपके कंप्यूटर पर बदली जाती हैं। कुछ भी अपलोड नहीं होता, और कोई एनालिटिक्स नहीं।"
+  },
+  "optTrust2": {
+    "message": "कोई विज्ञापन नहीं, रिव्यू के लिए कोई अनुरोध नहीं, कोई वेलकम टैब नहीं। छोटी विंडो सिर्फ़ तब खुलती है जब किसी सेव को आपकी अनुमति चाहिए।"
+  },
+  "optTrust3": {
+    "message": "हर मुफ़्त सुविधा मुफ़्त ही रहेगी।"
+  },
+  "optVersion": {
+    "message": "वर्शन"
+  }
+}

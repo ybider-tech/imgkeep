@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF",
+  "name": "__MSG_extName__",
   "short_name": "Imgkeep",
   "version": "0.5.0",
-  "description": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
   "minimum_chrome_version": "116",
   "homepage_url": "https://imgkeep.app",
   "permissions": ["contextMenus", "downloads", "storage", "offscreen"],

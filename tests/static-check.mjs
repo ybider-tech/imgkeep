@@ -8,7 +8,7 @@ const EXT = join(dirname(fileURLToPath(import.meta.url)), "..", "extension");
 const ALLOWED_PERMISSIONS = ["contextMenus", "downloads", "offscreen", "storage"];
 const ALLOWED_OPTIONAL_HOSTS = ["http://*/*", "https://*/*"];
 const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore)(\/|$)/;
-const TEXT_FILES = /\.(js|mjs|html|css|json|md|txt)$/;
+const TEXT_FILES = /\.(js|mjs|html|css|json|md|txt)$/
 
 const problems = [];
 const fail = (msg) => problems.push(msg);
@@ -54,6 +54,51 @@ for await (const path of walk(EXT)) {
   if (/\b(eval|new Function)\s*\(/.test(text)) fail(`${rel}: eval/new Function is not allowed`);
   if (/\bimportScripts\s*\(|\bimport\s*\(\s*["'`]https?:/.test(text)) fail(`${rel}: remote code is not allowed`);
 }
+
+// Translations (_locales): same messages everywhere, placeholders and tokens kept, store limits respected.
+const LOCALES = join(EXT, "_locales");
+const en = JSON.parse(await readFile(join(LOCALES, "en", "messages.json"), "utf8"));
+const enKeys = Object.keys(en).sort();
+const tags = (s) => (s.match(/<\/?[a-z]+>/gi) || []).sort().join(" ");
+const tokens = (s) => (s.match(/\{(name|host|date|time|w|h)\}/g) || []).sort().join(" ");
+const placeholders = (s) => (s.match(/\$[A-Z_]+\$/gi) || []).map((p) => p.toUpperCase()).sort().join(" ");
+if (manifest.default_locale !== "en") fail("manifest default_locale must be en");
+for (const lang of await readdir(LOCALES)) {
+  const file = `_locales/${lang}/messages.json`;
+  let msgs;
+  try {
+    msgs = JSON.parse(await readFile(join(LOCALES, lang, "messages.json"), "utf8"));
+  } catch (e) {
+    fail(`${file}: not valid JSON (${e.message})`);
+    continue;
+  }
+  const keys = Object.keys(msgs).sort();
+  for (const k of enKeys.filter((k) => !keys.includes(k))) fail(`${file}: missing ${k}`);
+  for (const k of keys.filter((k) => !enKeys.includes(k))) fail(`${file}: unknown key ${k}`);
+  for (const k of keys.filter((k) => enKeys.includes(k))) {
+    const text = msgs[k].message || "";
+    const source = en[k].message;
+    if (!text.trim()) fail(`${file}: ${k} is empty`);
+    if (placeholders(text) !== placeholders(source)) fail(`${file}: ${k} placeholders ${placeholders(text) || "none"} ≠ ${placeholders(source) || "none"}`);
+    if (tags(text) !== tags(source)) fail(`${file}: ${k} HTML tags differ from English`);
+    if (tokens(text) !== tokens(source)) fail(`${file}: ${k} {tokens} differ from English`);
+    if (/<(?!\/?(code|strong)>)/i.test(text)) fail(`${file}: ${k} has HTML other than <code>/<strong>`);
+    if (/\$(?![A-Z_]+\$)/i.test(text.replace(/\$[A-Z_]+\$/gi, ""))) fail(`${file}: ${k} has a stray "$" (write "$$" for a literal dollar)`);
+  }
+  if ((msgs.extName?.message || "").length > 75) fail(`${file}: extName is longer than 75 characters`);
+  if ((msgs.extDescription?.message || "").length > 132) fail(`${file}: extDescription is longer than 132 characters (store limit)`);
+}
+
+// Every message the code uses exists, and every message is used somewhere.
+// Quoted keys ("askSaving", "@detailGifFrames", data-i18n="optSaved") and manifest __MSG_key__ references.
+const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
+const used = new Set();
+for await (const path of walk(EXT)) {
+  if (!/\.(js|html|json)$/.test(path) || path.includes("_locales")) continue;
+  for (const [, k] of (await readFile(path, "utf8")).matchAll(KEY)) used.add(k);
+}
+for (const k of [...used].filter((k) => !en[k])) fail(`code uses message "${k}", which isn't in _locales/en/messages.json`);
+for (const k of enKeys.filter((k) => !used.has(k))) fail(`_locales/en/messages.json: "${k}" is never used`);
 
 if (problems.length) {
   console.error(`Static check failed:\n- ${problems.join("\n- ")}`);

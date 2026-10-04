@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — Salvar imagem como PNG, JPG, WebP, GIF ou PDF"
+  },
+  "extDescription": {
+    "message": "Clique com o botão direito para salvar qualquer imagem como PNG, JPG, WebP, GIF ou PDF. Converte WebP e AVIF no PC. Sem rastreio."
+  },
+  "menuParent": {
+    "message": "Imgkeep: Salvar imagem como"
+  },
+  "menuGif": {
+    "message": "GIF (mantém a animação)"
+  },
+  "menuOriginal": {
+    "message": "Formato original"
+  },
+  "askErrBlocked": {
+    "message": "O site não entregou esta imagem, mesmo com o acesso permitido. O servidor pode estar fora do ar ou só exibir a imagem dentro das próprias páginas."
+  },
+  "askErrHttp": {
+    "message": "O site respondeu com um erro em vez da imagem."
+  },
+  "askErrDecode": {
+    "message": "Seu navegador não conseguiu ler este arquivo como imagem."
+  },
+  "askErrUnsupported": {
+    "message": "Esta versão do navegador não consegue criar este formato. Tente PNG."
+  },
+  "askErrBlob": {
+    "message": "Esta imagem só existe dentro da página (um link blob:). O Imgkeep não consegue lê-la porque não tem acesso às suas páginas."
+  },
+  "askErrTooLarge": {
+    "message": "Esta imagem é grande demais para converter no navegador."
+  },
+  "askErrTimeout": {
+    "message": "A conversão demorou demais, então o Imgkeep parou. Tente PNG ou uma animação mais curta ou menor."
+  },
+  "askErrDownload": {
+    "message": "Seu navegador não conseguiu iniciar o download."
+  },
+  "askErrWrite": {
+    "message": "O Imgkeep não conseguiu gravar o arquivo na sua pasta."
+  },
+  "askErrExpired": {
+    "message": "Este salvamento expirou. Clique com o botão direito na imagem e tente de novo."
+  },
+  "askErrUnknown": {
+    "message": "Algo deu errado ao salvar esta imagem."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ quadros. GIFs aceitam no máximo $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixels × $COUNT$ quadros é mais do que um GIF consegue conter aqui.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Arquivos demais com este nome."
+  },
+  "askSaving": {
+    "message": "Salvando…"
+  },
+  "askSaved": {
+    "message": "Salvo."
+  },
+  "askSavedAs": {
+    "message": "Salvo como $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Salvo em $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nada para salvar"
+  },
+  "askClose": {
+    "message": "Fechar"
+  },
+  "askCancel": {
+    "message": "Cancelar"
+  },
+  "askHostTitle": {
+    "message": "Permitir imagens deste site?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ impede que outros sites leiam suas imagens, então o Imgkeep ainda não consegue converter esta.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "O acesso vale só para este site, para buscar as imagens que você escolher. Você pode removê-lo quando quiser nas Opções."
+  },
+  "askAllowAndSave": {
+    "message": "Permitir e salvar"
+  },
+  "askNotAllowed": {
+    "message": "O acesso não foi permitido. Nada foi salvo."
+  },
+  "askSaveOriginal": {
+    "message": "Salvar no formato original"
+  },
+  "askReconnectTitle": {
+    "message": "Reconectar “$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Escolha uma pasta"
+  },
+  "askReconnectBody": {
+    "message": "Seu navegador precisa da sua permissão para salvar nesta pasta de novo."
+  },
+  "askChooseBody": {
+    "message": "Escolha a pasta onde o Imgkeep vai salvar suas imagens."
+  },
+  "askEveryVisit": {
+    "message": "Quando o navegador perguntar, escolha $OPTION$ para que ele não pergunte de novo.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "a opção de permitir em todas as visitas"
+  },
+  "askReconnectButton": {
+    "message": "Reconectar e salvar"
+  },
+  "askChooseButton": {
+    "message": "Escolher pasta e salvar"
+  },
+  "askErrorTitle": {
+    "message": "Não foi possível salvar esta imagem"
+  },
+  "askFolderDenied": {
+    "message": "Seu navegador não permitiu o acesso à pasta. Nada foi salvo."
+  },
+  "askNoFolder": {
+    "message": "Nenhuma pasta escolhida. Nada foi salvo."
+  },
+  "optPageTitle": {
+    "message": "Opções do Imgkeep"
+  },
+  "optSaved": {
+    "message": "Salvo"
+  },
+  "optWhereTitle": {
+    "message": "Onde salvar"
+  },
+  "optSaveMode": {
+    "message": "Modo de salvamento"
+  },
+  "optModeDownloads": {
+    "message": "Pasta de downloads"
+  },
+  "optModeDownloadsHint": {
+    "message": "Salva na pasta de downloads do navegador. Sem perguntas."
+  },
+  "optModeFolder": {
+    "message": "Uma pasta que você escolher"
+  },
+  "optModeFolderHint": {
+    "message": "Grava direto na sua pasta. Depois de reiniciar, o navegador pode pedir para reconectar."
+  },
+  "optModeAsk": {
+    "message": "Perguntar sempre"
+  },
+  "optModeAskHint": {
+    "message": "Mostra a janela “Salvar como” do navegador para cada imagem."
+  },
+  "optChooseFolder": {
+    "message": "Escolher pasta…"
+  },
+  "optChangeFolder": {
+    "message": "Trocar pasta…"
+  },
+  "optNoFolder": {
+    "message": "Nenhuma pasta escolhida ainda."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — conectada",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — vai pedir para reconectar",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subpasta"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "ex.: Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Opcional. Use <code>/</code> para pastas aninhadas. Os mesmos marcadores dos nomes de arquivo."
+  },
+  "optNamesTitle": {
+    "message": "Nomes de arquivo"
+  },
+  "optTemplate": {
+    "message": "Modelo de nome"
+  },
+  "optTokensHint": {
+    "message": "Marcadores: <code>{name}</code> nome original, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> e <code>{h}</code> tamanho em pixels. Arquivos existentes nunca são substituídos."
+  },
+  "optPreviewLabel": {
+    "message": "Prévia para summer-banner de shop.example.com, 1600×900, como PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Qualidade"
+  },
+  "optJpgQuality": {
+    "message": "Qualidade do JPG"
+  },
+  "optWebpQuality": {
+    "message": "Qualidade do WebP"
+  },
+  "optJpgBackground": {
+    "message": "Cor de fundo do JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG não tem transparência, então as áreas transparentes recebem esta cor."
+  },
+  "optSitesTitle": {
+    "message": "Sites que você permitiu"
+  },
+  "optSitesEmpty": {
+    "message": "Nenhum ainda. O Imgkeep só pergunta quando um site bloqueia uma imagem que você quer converter."
+  },
+  "optRemove": {
+    "message": "Remover"
+  },
+  "optRemoveAccess": {
+    "message": "Remover acesso a $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — em breve"
+  },
+  "optProBody": {
+    "message": "Regras: envie as imagens de cada site para a pasta certa, no formato certo e com o nome certo, sem escolher toda vez. Além de um registro de onde veio cada imagem."
+  },
+  "optProFree": {
+    "message": "Tudo o que você usa hoje continua grátis."
+  },
+  "optGetNotified": {
+    "message": "Quero ser avisado"
+  },
+  "optTrustTitle": {
+    "message": "O que o Imgkeep pode e não pode fazer"
+  },
+  "optPermissions": {
+    "message": "Permissões que ele pede:"
+  },
+  "optPermissionsLabel": {
+    "message": "Permissões"
+  },
+  "optTrust1": {
+    "message": "As imagens são convertidas no seu computador. Nada é enviado e não há análises."
+  },
+  "optTrust2": {
+    "message": "Sem anúncios, sem pedidos de avaliação, sem abas de boas-vindas. Uma janela pequena só abre quando um salvamento precisa da sua permissão."
+  },
+  "optTrust3": {
+    "message": "Todo recurso gratuito continua gratuito."
+  },
+  "optVersion": {
+    "message": "Versão"
+  }
+}

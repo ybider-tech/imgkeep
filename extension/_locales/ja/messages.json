@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — 画像をPNG・JPG・WebP・GIF・PDFで保存"
+  },
+  "extDescription": {
+    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存。WebPやAVIFをパソコン上で変換し、指定のフォルダへ。トラッキングなし。"
+  },
+  "menuParent": {
+    "message": "Imgkeep: 名前を付けて画像を保存"
+  },
+  "menuGif": {
+    "message": "GIF（アニメーションを保持）"
+  },
+  "menuOriginal": {
+    "message": "元の形式"
+  },
+  "askErrBlocked": {
+    "message": "アクセスを許可しても、サイトがこの画像を渡しませんでした。サーバーが停止しているか、サイト内のページでしか画像を表示しない可能性があります。"
+  },
+  "askErrHttp": {
+    "message": "サイトが画像の代わりにエラーを返しました。"
+  },
+  "askErrDecode": {
+    "message": "ブラウザがこのファイルを画像として読み込めませんでした。"
+  },
+  "askErrUnsupported": {
+    "message": "このバージョンのブラウザではこの形式を作成できません。PNG をお試しください。"
+  },
+  "askErrBlob": {
+    "message": "この画像はページ内にしか存在しません（blob: リンク）。Imgkeep はページへのアクセス権を持たないため、読み込めません。"
+  },
+  "askErrTooLarge": {
+    "message": "この画像は大きすぎて、ブラウザ内で変換できません。"
+  },
+  "askErrTimeout": {
+    "message": "変換に時間がかかりすぎたため、Imgkeep は処理を中止しました。PNG か、より短い・小さいアニメーションをお試しください。"
+  },
+  "askErrDownload": {
+    "message": "ブラウザがダウンロードを開始できませんでした。"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep はフォルダにファイルを書き込めませんでした。"
+  },
+  "askErrExpired": {
+    "message": "この保存は期限切れです。画像を右クリックして、もう一度お試しください。"
+  },
+  "askErrUnknown": {
+    "message": "画像の保存中に問題が発生しました。"
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ フレーム。GIF は最大 $MAX$ フレームまでです。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ ピクセル × $COUNT$ フレームは、ここで GIF に収められる量を超えています。",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "この名前のファイルが多すぎます。"
+  },
+  "askSaving": {
+    "message": "保存しています…"
+  },
+  "askSaved": {
+    "message": "保存しました。"
+  },
+  "askSavedAs": {
+    "message": "$PATH$ として保存しました",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ に保存しました",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "保存するものがありません"
+  },
+  "askClose": {
+    "message": "閉じる"
+  },
+  "askCancel": {
+    "message": "キャンセル"
+  },
+  "askHostTitle": {
+    "message": "このサイトの画像を許可しますか？"
+  },
+  "askHostBody": {
+    "message": "$HOST$ は他のサイトによる画像の読み込みをブロックしているため、Imgkeep はまだこの画像を変換できません。",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "アクセスはこのサイトだけで、選んだ画像の取得にのみ使われます。オプションからいつでも削除できます。"
+  },
+  "askAllowAndSave": {
+    "message": "許可して保存"
+  },
+  "askNotAllowed": {
+    "message": "アクセスが許可されませんでした。何も保存されていません。"
+  },
+  "askSaveOriginal": {
+    "message": "代わりに元の形式で保存"
+  },
+  "askReconnectTitle": {
+    "message": "「$FOLDER$」に再接続",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "フォルダを選択"
+  },
+  "askReconnectBody": {
+    "message": "このフォルダにもう一度保存するには、ブラウザであなたの許可が必要です。"
+  },
+  "askChooseBody": {
+    "message": "Imgkeep が画像を保存するフォルダを選んでください。"
+  },
+  "askEveryVisit": {
+    "message": "ブラウザに確認されたら、$OPTION$を選ぶと、次回から確認されません。",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "毎回のアクセスで許可するオプション"
+  },
+  "askReconnectButton": {
+    "message": "再接続して保存"
+  },
+  "askChooseButton": {
+    "message": "フォルダを選んで保存"
+  },
+  "askErrorTitle": {
+    "message": "画像を保存できませんでした"
+  },
+  "askFolderDenied": {
+    "message": "ブラウザがフォルダへのアクセスを許可しませんでした。何も保存されていません。"
+  },
+  "askNoFolder": {
+    "message": "フォルダが選択されていません。何も保存されていません。"
+  },
+  "optPageTitle": {
+    "message": "Imgkeep のオプション"
+  },
+  "optSaved": {
+    "message": "保存しました"
+  },
+  "optWhereTitle": {
+    "message": "保存先"
+  },
+  "optSaveMode": {
+    "message": "保存方法"
+  },
+  "optModeDownloads": {
+    "message": "ダウンロード フォルダ"
+  },
+  "optModeDownloadsHint": {
+    "message": "ブラウザのダウンロード フォルダに保存します。確認なし。"
+  },
+  "optModeFolder": {
+    "message": "選んだフォルダ"
+  },
+  "optModeFolderHint": {
+    "message": "フォルダに直接書き込みます。再起動後に、ブラウザから再接続を求められることがあります。"
+  },
+  "optModeAsk": {
+    "message": "毎回確認する"
+  },
+  "optModeAskHint": {
+    "message": "画像ごとにブラウザの「名前を付けて保存」ダイアログを表示します。"
+  },
+  "optChooseFolder": {
+    "message": "フォルダを選択…"
+  },
+  "optChangeFolder": {
+    "message": "フォルダを変更…"
+  },
+  "optNoFolder": {
+    "message": "まだフォルダが選択されていません。"
+  },
+  "optFolderConnected": {
+    "message": "「$FOLDER$」— 接続済み",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "「$FOLDER$」— 再接続を求めます",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "サブフォルダ"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "例: Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "任意。<code>/</code> で階層フォルダを作れます。ファイル名と同じタグが使えます。"
+  },
+  "optNamesTitle": {
+    "message": "ファイル名"
+  },
+  "optTemplate": {
+    "message": "名前のテンプレート"
+  },
+  "optTokensHint": {
+    "message": "タグ: <code>{name}</code> 元の名前、<code>{host}</code> サイト、<code>{date}</code>、<code>{time}</code>、<code>{w}</code> と <code>{h}</code> ピクセル単位のサイズ。既存のファイルが上書きされることはありません。"
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com の summer-banner（1600×900）を PNG で保存した場合のプレビュー:"
+  },
+  "optQualityTitle": {
+    "message": "画質"
+  },
+  "optJpgQuality": {
+    "message": "JPG の画質"
+  },
+  "optWebpQuality": {
+    "message": "WebP の画質"
+  },
+  "optJpgBackground": {
+    "message": "JPG の背景色"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG は透明に対応していないため、透明な部分はこの色になります。"
+  },
+  "optSitesTitle": {
+    "message": "許可したサイト"
+  },
+  "optSitesEmpty": {
+    "message": "まだありません。Imgkeep が確認するのは、変換したい画像をサイトがブロックしたときだけです。"
+  },
+  "optRemove": {
+    "message": "削除"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ へのアクセスを削除",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — 近日公開"
+  },
+  "optProBody": {
+    "message": "ルール: サイトごとの画像を、正しいフォルダに、正しい形式と名前で、毎回選ばずに保存。さらに、すべての画像の入手元の記録も。"
+  },
+  "optProFree": {
+    "message": "いま使っている機能はすべて無料のままです。"
+  },
+  "optGetNotified": {
+    "message": "お知らせを受け取る"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep にできること、できないこと"
+  },
+  "optPermissions": {
+    "message": "要求する権限:"
+  },
+  "optPermissionsLabel": {
+    "message": "権限"
+  },
+  "optTrust1": {
+    "message": "画像はあなたのパソコン上で変換されます。何もアップロードされず、アクセス解析もありません。"
+  },
+  "optTrust2": {
+    "message": "広告なし、レビューのお願いなし、ようこそタブなし。小さなウィンドウが開くのは、保存にあなたの許可が必要なときだけです。"
+  },
+  "optTrust3": {
+    "message": "無料の機能はずっと無料です。"
+  },
+  "optVersion": {
+    "message": "バージョン"
+  }
+}

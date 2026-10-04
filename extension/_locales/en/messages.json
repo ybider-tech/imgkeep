@@ -1,0 +1,414 @@
+{
+  "extName": {
+    "message": "Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF",
+    "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
+  },
+  "extDescription": {
+    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.",
+    "description": "Store summary. Max 132 characters."
+  },
+  "menuParent": {
+    "message": "Imgkeep: Save image as",
+    "description": "Right-click menu entry on images."
+  },
+  "menuGif": {
+    "message": "GIF (keeps animation)",
+    "description": "Menu item: save as GIF, keeping animation."
+  },
+  "menuOriginal": {
+    "message": "Original format",
+    "description": "Menu item: save the file unchanged."
+  },
+  "askErrBlocked": {
+    "message": "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
+    "description": "Error"
+  },
+  "askErrHttp": {
+    "message": "The site answered with an error instead of the image.",
+    "description": "Error"
+  },
+  "askErrDecode": {
+    "message": "Your browser couldn't read this file as an image.",
+    "description": "Error"
+  },
+  "askErrUnsupported": {
+    "message": "This browser version can't create this format. Try PNG instead.",
+    "description": "Error"
+  },
+  "askErrBlob": {
+    "message": "This image only exists inside the page (a blob: link). Imgkeep can't read it because it has no access to your pages.",
+    "description": "Error. Keep 'blob:' as is."
+  },
+  "askErrTooLarge": {
+    "message": "This image is too large to convert in the browser.",
+    "description": "Error"
+  },
+  "askErrTimeout": {
+    "message": "Converting this image took too long, so Imgkeep stopped. Try PNG, or a shorter or smaller animation.",
+    "description": "Error"
+  },
+  "askErrDownload": {
+    "message": "Your browser couldn't start the download.",
+    "description": "Error"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep couldn't write the file to your folder.",
+    "description": "Error"
+  },
+  "askErrExpired": {
+    "message": "This save has expired. Right-click the image and try again.",
+    "description": "Error"
+  },
+  "askErrUnknown": {
+    "message": "Something went wrong while saving this image.",
+    "description": "Error"
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ frames. GIFs are limited to $MAX$.",
+    "description": "Detail under the 'too large' error.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixels × $COUNT$ frames is more than a GIF can hold here.",
+    "description": "Detail under the 'too large' error.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Too many files with this name.",
+    "description": "Detail under the 'couldn't write' error."
+  },
+  "askSaving": {
+    "message": "Saving…",
+    "description": "Status"
+  },
+  "askSaved": {
+    "message": "Saved.",
+    "description": "Status"
+  },
+  "askSavedAs": {
+    "message": "Saved as $PATH$",
+    "description": "Status after saving.",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Saved to $PATH$",
+    "description": "Status after saving into a folder.",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nothing to save",
+    "description": "Window title"
+  },
+  "askClose": {
+    "message": "Close",
+    "description": "Button"
+  },
+  "askCancel": {
+    "message": "Cancel",
+    "description": "Button"
+  },
+  "askHostTitle": {
+    "message": "Allow images from this site?",
+    "description": "Window title"
+  },
+  "askHostBody": {
+    "message": "$HOST$ blocks other sites from reading its images, so Imgkeep can't convert this one yet.",
+    "description": "$HOST$ is shown in bold.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Access is for this one site only, to fetch images you pick. You can remove it any time in Options.",
+    "description": "Note"
+  },
+  "askAllowAndSave": {
+    "message": "Allow and save",
+    "description": "Button"
+  },
+  "askNotAllowed": {
+    "message": "Access wasn't allowed. Nothing was saved.",
+    "description": "Status"
+  },
+  "askSaveOriginal": {
+    "message": "Save original format instead",
+    "description": "Button"
+  },
+  "askReconnectTitle": {
+    "message": "Reconnect “$FOLDER$”",
+    "description": "Window title. Use your language's quotation marks.",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Choose a folder",
+    "description": "Window title"
+  },
+  "askReconnectBody": {
+    "message": "Your browser needs your OK to save into this folder again.",
+    "description": "Text"
+  },
+  "askChooseBody": {
+    "message": "Pick the folder where Imgkeep should save your images.",
+    "description": "Text"
+  },
+  "askEveryVisit": {
+    "message": "When your browser asks, choose $OPTION$ so it won't ask again.",
+    "description": "$OPTION$ is shown in bold.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Allow on every visit”",
+    "description": "The browser's permission option that lasts. Describe it if the exact wording in your language is unknown."
+  },
+  "askReconnectButton": {
+    "message": "Reconnect and save",
+    "description": "Button"
+  },
+  "askChooseButton": {
+    "message": "Choose folder and save",
+    "description": "Button"
+  },
+  "askErrorTitle": {
+    "message": "Couldn't save this image",
+    "description": "Window title"
+  },
+  "askFolderDenied": {
+    "message": "Your browser didn't allow access to the folder. Nothing was saved.",
+    "description": "Status"
+  },
+  "askNoFolder": {
+    "message": "No folder chosen. Nothing was saved.",
+    "description": "Status"
+  },
+  "optPageTitle": {
+    "message": "Imgkeep options",
+    "description": "Browser tab title of the options page"
+  },
+  "optSaved": {
+    "message": "Saved",
+    "description": "Brief confirmation after a setting changes"
+  },
+  "optWhereTitle": {
+    "message": "Where to save",
+    "description": "Section heading"
+  },
+  "optSaveMode": {
+    "message": "Save mode",
+    "description": "Hidden label for the three choices"
+  },
+  "optModeDownloads": {
+    "message": "Downloads folder",
+    "description": "Choice"
+  },
+  "optModeDownloadsHint": {
+    "message": "Saves to your browser's download folder. No questions asked.",
+    "description": "Hint"
+  },
+  "optModeFolder": {
+    "message": "A folder you choose",
+    "description": "Choice"
+  },
+  "optModeFolderHint": {
+    "message": "Writes straight into your folder. Your browser may ask you to reconnect after a restart.",
+    "description": "Hint"
+  },
+  "optModeAsk": {
+    "message": "Ask every time",
+    "description": "Choice"
+  },
+  "optModeAskHint": {
+    "message": "Shows the browser's Save As dialog for each image.",
+    "description": "Hint"
+  },
+  "optChooseFolder": {
+    "message": "Choose folder…",
+    "description": "Button"
+  },
+  "optChangeFolder": {
+    "message": "Change folder…",
+    "description": "Button"
+  },
+  "optNoFolder": {
+    "message": "No folder chosen yet.",
+    "description": "Status"
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — connected",
+    "description": "Status",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — will ask to reconnect",
+    "description": "Status",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subfolder",
+    "description": "Field label"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "e.g. Imgkeep/{host}",
+    "description": "Placeholder. Keep {host} as is."
+  },
+  "optSubfolderHint": {
+    "message": "Optional. Use <code>/</code> for nested folders. Same tokens as file names.",
+    "description": "May contain <code>. Keep it."
+  },
+  "optNamesTitle": {
+    "message": "File names",
+    "description": "Section heading"
+  },
+  "optTemplate": {
+    "message": "Name template",
+    "description": "Field label"
+  },
+  "optTokensHint": {
+    "message": "Tokens: <code>{name}</code> original name, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> and <code>{h}</code> size in pixels. Existing files are never overwritten.",
+    "description": "Keep the <code>{…}</code> tokens exactly."
+  },
+  "optPreviewLabel": {
+    "message": "Preview for summer-banner from shop.example.com, 1600×900, as PNG:",
+    "description": "Keep summer-banner and shop.example.com."
+  },
+  "optQualityTitle": {
+    "message": "Quality",
+    "description": "Section heading"
+  },
+  "optJpgQuality": {
+    "message": "JPG quality",
+    "description": "Field label"
+  },
+  "optWebpQuality": {
+    "message": "WebP quality",
+    "description": "Field label"
+  },
+  "optJpgBackground": {
+    "message": "JPG background colour",
+    "description": "Field label"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG has no transparency, so see-through areas get this colour.",
+    "description": "Hint"
+  },
+  "optSitesTitle": {
+    "message": "Sites you've allowed",
+    "description": "Section heading"
+  },
+  "optSitesEmpty": {
+    "message": "None yet. Imgkeep asks only when a site blocks an image you want to convert.",
+    "description": "Empty state"
+  },
+  "optRemove": {
+    "message": "Remove",
+    "description": "Button"
+  },
+  "optRemoveAccess": {
+    "message": "Remove access to $SITE$",
+    "description": "Accessible label for the Remove button",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — coming soon",
+    "description": "Section heading"
+  },
+  "optProBody": {
+    "message": "Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.",
+    "description": "Text"
+  },
+  "optProFree": {
+    "message": "Everything you use today stays free.",
+    "description": "Text"
+  },
+  "optGetNotified": {
+    "message": "Get notified",
+    "description": "Link"
+  },
+  "optTrustTitle": {
+    "message": "What Imgkeep can and can't do",
+    "description": "Section heading"
+  },
+  "optPermissions": {
+    "message": "Permissions it asks for:",
+    "description": "Text before the permission names"
+  },
+  "optPermissionsLabel": {
+    "message": "Permissions",
+    "description": "Accessible label"
+  },
+  "optTrust1": {
+    "message": "Images are converted on your computer. Nothing is uploaded; there's no analytics.",
+    "description": "Bullet"
+  },
+  "optTrust2": {
+    "message": "No ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.",
+    "description": "Bullet"
+  },
+  "optTrust3": {
+    "message": "Every free feature stays free.",
+    "description": "Bullet"
+  },
+  "optVersion": {
+    "message": "Version",
+    "description": "Label before the version number"
+  }
+}

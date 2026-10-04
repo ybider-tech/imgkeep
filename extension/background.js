@@ -3,6 +3,8 @@
 import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl } from "./lib/settings.js";
 import { JobError } from "./lib/job-error.js";
 
+const msg = (key) => chrome.i18n.getMessage(key);
+
 const MENU = {
   "imgkeep-png": "png",
   "imgkeep-jpg": "jpg",
@@ -15,14 +17,14 @@ const MENU = {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.removeAll(() => {
     const contexts = ["image"];
-    chrome.contextMenus.create({ id: "imgkeep", title: "Imgkeep: Save image as", contexts });
+    chrome.contextMenus.create({ id: "imgkeep", title: msg("menuParent"), contexts });
     chrome.contextMenus.create({ id: "imgkeep-png", parentId: "imgkeep", title: "PNG", contexts });
     chrome.contextMenus.create({ id: "imgkeep-jpg", parentId: "imgkeep", title: "JPG", contexts });
     chrome.contextMenus.create({ id: "imgkeep-webp", parentId: "imgkeep", title: "WebP", contexts });
-    chrome.contextMenus.create({ id: "imgkeep-gif", parentId: "imgkeep", title: "GIF (keeps animation)", contexts });
+    chrome.contextMenus.create({ id: "imgkeep-gif", parentId: "imgkeep", title: msg("menuGif"), contexts });
     chrome.contextMenus.create({ id: "imgkeep-pdf", parentId: "imgkeep", title: "PDF", contexts });
     chrome.contextMenus.create({ id: "imgkeep-sep", parentId: "imgkeep", type: "separator", contexts });
-    chrome.contextMenus.create({ id: "imgkeep-original", parentId: "imgkeep", title: "Original format", contexts });
+    chrome.contextMenus.create({ id: "imgkeep-original", parentId: "imgkeep", title: msg("menuOriginal"), contexts });
   });
 });
 
@@ -136,7 +138,7 @@ async function attempt(job) {
       const allowed = await chrome.permissions.contains({ origins: [origin] });
       if (!allowed) return { ok: false, reason: "host", origin, host: new URL(job.url).hostname };
     }
-    return { ok: false, reason: "error", code: conv.code, detail: conv.detail };
+    return { ok: false, reason: "error", code: conv.code, detail: conv.detail, detailSubs: conv.subs };
   }
 
   const target = buildTarget({ settings, url: job.url, width: conv.width, height: conv.height, ext: fmt.ext });
@@ -148,7 +150,7 @@ async function attempt(job) {
     if (w.code === "no-folder" || w.code === "folder-permission") {
       return { ok: false, reason: w.code, folderName: w.folderName || "", target };
     }
-    return { ok: false, reason: "error", code: w.code, detail: w.detail };
+    return { ok: false, reason: "error", code: w.code, detail: w.detail, detailSubs: w.subs };
   }
 
   const filename = targetPath(target);

@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — שמירת תמונה כ-PNG, JPG, WebP, GIF או PDF"
+  },
+  "extDescription": {
+    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF. ממיר WebP ו-AVIF במחשב שלך, ישר לתיקייה שלך. בלי מעקב."
+  },
+  "menuParent": {
+    "message": "Imgkeep: שמירת התמונה בתור"
+  },
+  "menuGif": {
+    "message": "GIF (שומר על האנימציה)"
+  },
+  "menuOriginal": {
+    "message": "הפורמט המקורי"
+  },
+  "askErrBlocked": {
+    "message": "האתר לא מסר את התמונה, גם עם הרשאת גישה. ייתכן שהשרת לא זמין, או שהוא מציג את התמונה רק בתוך הדפים שלו."
+  },
+  "askErrHttp": {
+    "message": "האתר החזיר שגיאה במקום התמונה."
+  },
+  "askErrDecode": {
+    "message": "הדפדפן לא הצליח לקרוא את הקובץ כתמונה."
+  },
+  "askErrUnsupported": {
+    "message": "גרסת הדפדפן הזו לא יכולה ליצור את הפורמט הזה. נסו PNG במקום."
+  },
+  "askErrBlob": {
+    "message": "התמונה הזו קיימת רק בתוך הדף (קישור blob:). ‏Imgkeep לא יכול לקרוא אותה כי אין לו גישה לדפים שלך."
+  },
+  "askErrTooLarge": {
+    "message": "התמונה גדולה מדי להמרה בדפדפן."
+  },
+  "askErrTimeout": {
+    "message": "ההמרה לקחה יותר מדי זמן, ולכן Imgkeep עצר. נסו PNG, או אנימציה קצרה או קטנה יותר."
+  },
+  "askErrDownload": {
+    "message": "הדפדפן לא הצליח להתחיל את ההורדה."
+  },
+  "askErrWrite": {
+    "message": "‏Imgkeep לא הצליח לכתוב את הקובץ לתיקייה שלך."
+  },
+  "askErrExpired": {
+    "message": "תוקף השמירה פג. לחצו לחיצה ימנית על התמונה ונסו שוב."
+  },
+  "askErrUnknown": {
+    "message": "משהו השתבש בשמירת התמונה."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ פריימים. ב-GIF אפשר עד $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ פיקסלים × $COUNT$ פריימים זה יותר ממה ש-GIF יכול להכיל כאן.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "יותר מדי קבצים בשם הזה."
+  },
+  "askSaving": {
+    "message": "שומר…"
+  },
+  "askSaved": {
+    "message": "נשמר."
+  },
+  "askSavedAs": {
+    "message": "נשמר בשם $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "נשמר אל $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "אין מה לשמור"
+  },
+  "askClose": {
+    "message": "סגירה"
+  },
+  "askCancel": {
+    "message": "ביטול"
+  },
+  "askHostTitle": {
+    "message": "לאפשר תמונות מהאתר הזה?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ חוסם אתרים אחרים מלקרוא את התמונות שלו, ולכן Imgkeep לא יכול להמיר את התמונה הזו עדיין.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "הגישה היא לאתר הזה בלבד, כדי להביא תמונות שבחרת. אפשר לבטל אותה בכל עת בהגדרות."
+  },
+  "askAllowAndSave": {
+    "message": "לאפשר ולשמור"
+  },
+  "askNotAllowed": {
+    "message": "הגישה לא אושרה. שום דבר לא נשמר."
+  },
+  "askSaveOriginal": {
+    "message": "לשמור בפורמט המקורי"
+  },
+  "askReconnectTitle": {
+    "message": "חיבור מחדש של „$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "בחירת תיקייה"
+  },
+  "askReconnectBody": {
+    "message": "הדפדפן צריך את האישור שלך כדי לשמור שוב בתיקייה הזו."
+  },
+  "askChooseBody": {
+    "message": "בחרו את התיקייה שבה Imgkeep ישמור את התמונות שלך."
+  },
+  "askEveryVisit": {
+    "message": "כשהדפדפן ישאל, בחרו $OPTION$ כדי שלא ישאל שוב.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "באפשרות לאשר בכל ביקור"
+  },
+  "askReconnectButton": {
+    "message": "לחבר מחדש ולשמור"
+  },
+  "askChooseButton": {
+    "message": "לבחור תיקייה ולשמור"
+  },
+  "askErrorTitle": {
+    "message": "לא הצלחנו לשמור את התמונה"
+  },
+  "askFolderDenied": {
+    "message": "הדפדפן לא אישר גישה לתיקייה. שום דבר לא נשמר."
+  },
+  "askNoFolder": {
+    "message": "לא נבחרה תיקייה. שום דבר לא נשמר."
+  },
+  "optPageTitle": {
+    "message": "הגדרות Imgkeep"
+  },
+  "optSaved": {
+    "message": "נשמר"
+  },
+  "optWhereTitle": {
+    "message": "איפה לשמור"
+  },
+  "optSaveMode": {
+    "message": "אופן השמירה"
+  },
+  "optModeDownloads": {
+    "message": "תיקיית ההורדות"
+  },
+  "optModeDownloadsHint": {
+    "message": "שומר לתיקיית ההורדות של הדפדפן. בלי שאלות."
+  },
+  "optModeFolder": {
+    "message": "תיקייה שבחרת"
+  },
+  "optModeFolderHint": {
+    "message": "כותב ישירות לתיקייה שלך. אחרי הפעלה מחדש הדפדפן עשוי לבקש חיבור מחדש."
+  },
+  "optModeAsk": {
+    "message": "לשאול בכל פעם"
+  },
+  "optModeAskHint": {
+    "message": "מציג את חלון „שמירה בשם” של הדפדפן לכל תמונה."
+  },
+  "optChooseFolder": {
+    "message": "בחירת תיקייה…"
+  },
+  "optChangeFolder": {
+    "message": "החלפת תיקייה…"
+  },
+  "optNoFolder": {
+    "message": "עדיין לא נבחרה תיקייה."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$” — מחוברת",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$” — תבקש חיבור מחדש",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "תת-תיקייה"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "למשל Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "לא חובה. אפשר להשתמש ב-<code>/</code> לתיקיות מקוננות. אותם תגים כמו בשמות הקבצים."
+  },
+  "optNamesTitle": {
+    "message": "שמות קבצים"
+  },
+  "optTemplate": {
+    "message": "תבנית שם"
+  },
+  "optTokensHint": {
+    "message": "תגים: <code>{name}</code> השם המקורי, <code>{host}</code> האתר, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ו-<code>{h}</code> הגודל בפיקסלים. קבצים קיימים לעולם לא נדרסים."
+  },
+  "optPreviewLabel": {
+    "message": "תצוגה מקדימה עבור summer-banner מ-shop.example.com, ‏1600×900, כ-PNG:"
+  },
+  "optQualityTitle": {
+    "message": "איכות"
+  },
+  "optJpgQuality": {
+    "message": "איכות JPG"
+  },
+  "optWebpQuality": {
+    "message": "איכות WebP"
+  },
+  "optJpgBackground": {
+    "message": "צבע רקע ל-JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "ב-JPG אין שקיפות, ולכן אזורים שקופים יקבלו את הצבע הזה."
+  },
+  "optSitesTitle": {
+    "message": "אתרים שאישרת"
+  },
+  "optSitesEmpty": {
+    "message": "עדיין אין. ‏Imgkeep שואל רק כשאתר חוסם תמונה שרצית להמיר."
+  },
+  "optRemove": {
+    "message": "הסרה"
+  },
+  "optRemoveAccess": {
+    "message": "הסרת הגישה אל $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — בקרוב"
+  },
+  "optProBody": {
+    "message": "כללים: לשלוח את התמונות מכל אתר לתיקייה הנכונה, בפורמט הנכון ובשם הנכון, בלי לבחור בכל פעם. ובנוסף, יומן של המקור של כל תמונה."
+  },
+  "optProFree": {
+    "message": "כל מה שיש לך היום נשאר בחינם."
+  },
+  "optGetNotified": {
+    "message": "לקבלת עדכון"
+  },
+  "optTrustTitle": {
+    "message": "מה Imgkeep יכול ומה לא"
+  },
+  "optPermissions": {
+    "message": "ההרשאות שהוא מבקש:"
+  },
+  "optPermissionsLabel": {
+    "message": "הרשאות"
+  },
+  "optTrust1": {
+    "message": "התמונות מומרות במחשב שלך. שום דבר לא מועלה, ואין אנליטיקה."
+  },
+  "optTrust2": {
+    "message": "בלי פרסומות, בלי בקשות לדירוג, בלי לשוניות ברוכים הבאים. חלון קטן נפתח רק כששמירה צריכה את האישור שלך."
+  },
+  "optTrust3": {
+    "message": "כל תכונה חינמית נשארת חינמית."
+  },
+  "optVersion": {
+    "message": "גרסה"
+  }
+}

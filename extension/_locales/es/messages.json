@@ -1,0 +1,329 @@
+{
+  "extName": {
+    "message": "Imgkeep — Guardar imagen como PNG, JPG, WebP, GIF o PDF"
+  },
+  "extDescription": {
+    "message": "Haz clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF. Convierte WebP y AVIF en tu equipo. Sin rastreo."
+  },
+  "menuParent": {
+    "message": "Imgkeep: Guardar imagen como"
+  },
+  "menuGif": {
+    "message": "GIF (conserva la animación)"
+  },
+  "menuOriginal": {
+    "message": "Formato original"
+  },
+  "askErrBlocked": {
+    "message": "El sitio no entregó esta imagen, ni siquiera con acceso permitido. Puede que el servidor no esté disponible o que solo muestre la imagen dentro de sus propias páginas."
+  },
+  "askErrHttp": {
+    "message": "El sitio respondió con un error en lugar de la imagen."
+  },
+  "askErrDecode": {
+    "message": "Tu navegador no pudo leer este archivo como imagen."
+  },
+  "askErrUnsupported": {
+    "message": "Esta versión del navegador no puede crear este formato. Prueba con PNG."
+  },
+  "askErrBlob": {
+    "message": "Esta imagen solo existe dentro de la página (un enlace blob:). Imgkeep no puede leerla porque no tiene acceso a tus páginas."
+  },
+  "askErrTooLarge": {
+    "message": "Esta imagen es demasiado grande para convertirla en el navegador."
+  },
+  "askErrTimeout": {
+    "message": "La conversión tardó demasiado, así que Imgkeep se detuvo. Prueba con PNG o con una animación más corta o más pequeña."
+  },
+  "askErrDownload": {
+    "message": "Tu navegador no pudo iniciar la descarga."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep no pudo escribir el archivo en tu carpeta."
+  },
+  "askErrExpired": {
+    "message": "Este guardado ha caducado. Haz clic derecho en la imagen y vuelve a intentarlo."
+  },
+  "askErrUnknown": {
+    "message": "Algo salió mal al guardar esta imagen."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ fotogramas. Los GIF admiten como máximo $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ píxeles × $COUNT$ fotogramas es más de lo que un GIF puede contener aquí.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Hay demasiados archivos con este nombre."
+  },
+  "askSaving": {
+    "message": "Guardando…"
+  },
+  "askSaved": {
+    "message": "Guardado."
+  },
+  "askSavedAs": {
+    "message": "Guardado como $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Guardado en $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nada que guardar"
+  },
+  "askClose": {
+    "message": "Cerrar"
+  },
+  "askCancel": {
+    "message": "Cancelar"
+  },
+  "askHostTitle": {
+    "message": "¿Permitir imágenes de este sitio?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ impide que otros sitios lean sus imágenes, así que Imgkeep todavía no puede convertir esta.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "El acceso es solo para este sitio, para obtener las imágenes que elijas. Puedes quitarlo cuando quieras en Opciones."
+  },
+  "askAllowAndSave": {
+    "message": "Permitir y guardar"
+  },
+  "askNotAllowed": {
+    "message": "No se permitió el acceso. No se guardó nada."
+  },
+  "askSaveOriginal": {
+    "message": "Guardar en el formato original"
+  },
+  "askReconnectTitle": {
+    "message": "Volver a conectar «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Elige una carpeta"
+  },
+  "askReconnectBody": {
+    "message": "Tu navegador necesita tu permiso para volver a guardar en esta carpeta."
+  },
+  "askChooseBody": {
+    "message": "Elige la carpeta donde Imgkeep guardará tus imágenes."
+  },
+  "askEveryVisit": {
+    "message": "Cuando el navegador pregunte, elige $OPTION$ para que no vuelva a preguntar.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "la opción de permitir en cada visita"
+  },
+  "askReconnectButton": {
+    "message": "Volver a conectar y guardar"
+  },
+  "askChooseButton": {
+    "message": "Elegir carpeta y guardar"
+  },
+  "askErrorTitle": {
+    "message": "No se pudo guardar esta imagen"
+  },
+  "askFolderDenied": {
+    "message": "Tu navegador no permitió el acceso a la carpeta. No se guardó nada."
+  },
+  "askNoFolder": {
+    "message": "No se eligió ninguna carpeta. No se guardó nada."
+  },
+  "optPageTitle": {
+    "message": "Opciones de Imgkeep"
+  },
+  "optSaved": {
+    "message": "Guardado"
+  },
+  "optWhereTitle": {
+    "message": "Dónde guardar"
+  },
+  "optSaveMode": {
+    "message": "Modo de guardado"
+  },
+  "optModeDownloads": {
+    "message": "Carpeta de descargas"
+  },
+  "optModeDownloadsHint": {
+    "message": "Guarda en la carpeta de descargas del navegador. Sin preguntas."
+  },
+  "optModeFolder": {
+    "message": "Una carpeta que elijas"
+  },
+  "optModeFolderHint": {
+    "message": "Escribe directamente en tu carpeta. Tras reiniciar, el navegador puede pedirte que vuelvas a conectarla."
+  },
+  "optModeAsk": {
+    "message": "Preguntar cada vez"
+  },
+  "optModeAskHint": {
+    "message": "Muestra el cuadro «Guardar como» del navegador para cada imagen."
+  },
+  "optChooseFolder": {
+    "message": "Elegir carpeta…"
+  },
+  "optChangeFolder": {
+    "message": "Cambiar carpeta…"
+  },
+  "optNoFolder": {
+    "message": "Todavía no has elegido una carpeta."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$»: conectada",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$»: pedirá volver a conectar",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subcarpeta"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "p. ej. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Opcional. Usa <code>/</code> para carpetas anidadas. Los mismos marcadores que en los nombres de archivo."
+  },
+  "optNamesTitle": {
+    "message": "Nombres de archivo"
+  },
+  "optTemplate": {
+    "message": "Plantilla de nombre"
+  },
+  "optTokensHint": {
+    "message": "Marcadores: <code>{name}</code> nombre original, <code>{host}</code> sitio, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> y <code>{h}</code> tamaño en píxeles. Los archivos existentes nunca se sobrescriben."
+  },
+  "optPreviewLabel": {
+    "message": "Vista previa de summer-banner de shop.example.com, 1600×900, como PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Calidad"
+  },
+  "optJpgQuality": {
+    "message": "Calidad JPG"
+  },
+  "optWebpQuality": {
+    "message": "Calidad WebP"
+  },
+  "optJpgBackground": {
+    "message": "Color de fondo para JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG no admite transparencia, así que las zonas transparentes toman este color."
+  },
+  "optSitesTitle": {
+    "message": "Sitios que has permitido"
+  },
+  "optSitesEmpty": {
+    "message": "Ninguno todavía. Imgkeep solo pregunta cuando un sitio bloquea una imagen que quieres convertir."
+  },
+  "optRemove": {
+    "message": "Quitar"
+  },
+  "optRemoveAccess": {
+    "message": "Quitar el acceso a $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro: próximamente"
+  },
+  "optProBody": {
+    "message": "Reglas: envía las imágenes de cada sitio a la carpeta correcta, en el formato correcto y con el nombre correcto, sin elegir cada vez. Además, un registro del origen de cada imagen."
+  },
+  "optProFree": {
+    "message": "Todo lo que usas hoy seguirá siendo gratis."
+  },
+  "optGetNotified": {
+    "message": "Recibir aviso"
+  },
+  "optTrustTitle": {
+    "message": "Qué puede y qué no puede hacer Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Permisos que solicita:"
+  },
+  "optPermissionsLabel": {
+    "message": "Permisos"
+  },
+  "optTrust1": {
+    "message": "Las imágenes se convierten en tu equipo. No se sube nada y no hay analíticas."
+  },
+  "optTrust2": {
+    "message": "Sin anuncios, sin peticiones de reseñas, sin pestañas de bienvenida. Solo se abre una ventana pequeña cuando un guardado necesita tu permiso."
+  },
+  "optTrust3": {
+    "message": "Todas las funciones gratuitas seguirán siendo gratuitas."
+  },
+  "optVersion": {
+    "message": "Versión"
+  }
+}

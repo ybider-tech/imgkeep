@@ -77,10 +77,10 @@ export async function* stillFrame(source) {
 
 export function checkLimits({ width, height, frameCount }) {
   if (frameCount > GIF_LIMITS.maxFrames) {
-    throw new JobError("too-large", `${frameCount} frames. GIFs are limited to ${GIF_LIMITS.maxFrames}.`);
+    throw new JobError("too-large", "@detailGifFrames", [String(frameCount), String(GIF_LIMITS.maxFrames)]);
   }
   if (width * height * frameCount > GIF_LIMITS.maxTotalPixels) {
-    throw new JobError("too-large", `${width}×${height} pixels × ${frameCount} frames is more than a GIF can hold here.`);
+    throw new JobError("too-large", "@detailGifPixels", [String(width), String(height), String(frameCount)]);
   }
 }
 

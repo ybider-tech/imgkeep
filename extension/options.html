@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imgkeep options</title>
+  <title data-i18n="optPageTitle">Imgkeep options</title>
   <link rel="stylesheet" href="ui.css">
   <style>
     body { padding: 32px 16px 64px; }
@@ -27,7 +27,7 @@
     .hint { color: var(--muted); font-size: 0.9em; margin-top: 4px; }
     .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .slider { display: grid; grid-template-columns: 1fr 3.5em; gap: 12px; align-items: center; }
-    .slider output { font-variant-numeric: tabular-nums; text-align: right; }
+    .slider output { font-variant-numeric: tabular-nums; text-align: end; }
     .preview {
       margin-top: 8px;
       padding: 8px 10px;
@@ -50,9 +50,9 @@
     #sites li:first-child { border-top: 0; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
     .pro { border-color: var(--accent); }
-    ul.plain { margin: 0; padding-left: 1.2em; }
+    ul.plain { margin: 0; padding-inline-start: 1.2em; }
     ul.plain li { margin-bottom: 0.4em; }
-    #folderStatus { margin-left: 4px; }
+    #folderStatus { margin-inline-start: 4px; }
   </style>
   <script type="module" src="options.js"></script>
 </head>
@@ -63,104 +63,104 @@
         <img src="icons/icon48.png" alt="">
         <h1>Imgkeep</h1>
       </div>
-      <span id="saved" role="status" aria-live="polite">Saved</span>
+      <span id="saved" role="status" aria-live="polite" data-i18n="optSaved">Saved</span>
     </header>
 
     <section aria-labelledby="h-where">
-      <h2 id="h-where">Where to save</h2>
+      <h2 id="h-where" data-i18n="optWhereTitle">Where to save</h2>
       <fieldset>
-        <legend class="sr-hidden">Save mode</legend>
+        <legend class="sr-hidden" data-i18n="optSaveMode">Save mode</legend>
         <label class="choice">
           <input type="radio" name="saveMode" value="downloads">
-          <span>Downloads folder<small>Saves to your browser's download folder. No questions asked.</small></span>
+          <span><span data-i18n="optModeDownloads">Downloads folder</span><small data-i18n="optModeDownloadsHint">Saves to your browser's download folder. No questions asked.</small></span>
         </label>
         <label class="choice">
           <input type="radio" name="saveMode" value="folder">
-          <span>A folder you choose<small>Writes straight into your folder. Your browser may ask you to reconnect after a restart.</small></span>
+          <span><span data-i18n="optModeFolder">A folder you choose</span><small data-i18n="optModeFolderHint">Writes straight into your folder. Your browser may ask you to reconnect after a restart.</small></span>
         </label>
         <label class="choice">
           <input type="radio" name="saveMode" value="ask">
-          <span>Ask every time<small>Shows the browser's Save As dialog for each image.</small></span>
+          <span><span data-i18n="optModeAsk">Ask every time</span><small data-i18n="optModeAskHint">Shows the browser's Save As dialog for each image.</small></span>
         </label>
       </fieldset>
       <div class="row field">
-        <button type="button" id="chooseFolder">Choose folder…</button>
+        <button type="button" id="chooseFolder" data-i18n="optChooseFolder">Choose folder…</button>
         <span id="folderStatus" class="muted" aria-live="polite"></span>
       </div>
       <div class="field">
-        <label for="subfolder">Subfolder</label>
-        <input type="text" id="subfolder" name="subfolder" placeholder="e.g. Imgkeep/{host}" spellcheck="false" autocomplete="off">
-        <p class="hint">Optional. Use <code>/</code> for nested folders. Same tokens as file names.</p>
+        <label for="subfolder" data-i18n="optSubfolder">Subfolder</label>
+        <input type="text" id="subfolder" name="subfolder" placeholder="e.g. Imgkeep/{host}" data-i18n-placeholder="optSubfolderPlaceholder" spellcheck="false" autocomplete="off">
+        <p class="hint" data-i18n-html="optSubfolderHint">Optional. Use <code>/</code> for nested folders. Same tokens as file names.</p>
       </div>
     </section>
 
     <section aria-labelledby="h-names">
-      <h2 id="h-names">File names</h2>
+      <h2 id="h-names" data-i18n="optNamesTitle">File names</h2>
       <div class="field">
-        <label for="filenameTemplate">Name template</label>
+        <label for="filenameTemplate" data-i18n="optTemplate">Name template</label>
         <input type="text" id="filenameTemplate" name="filenameTemplate" spellcheck="false" autocomplete="off">
-        <p class="hint">
+        <p class="hint" data-i18n-html="optTokensHint">
           Tokens: <code>{name}</code> original name, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>,
           <code>{w}</code> and <code>{h}</code> size in pixels. Existing files are never overwritten.
         </p>
       </div>
-      <p class="field" style="margin-bottom:0"><span class="muted" id="previewLabel">Preview for summer-banner from shop.example.com, 1600×900, as PNG:</span></p>
+      <p class="field" style="margin-bottom:0"><span class="muted" id="previewLabel" data-i18n="optPreviewLabel">Preview for summer-banner from shop.example.com, 1600×900, as PNG:</span></p>
       <div class="preview mono" id="preview" aria-labelledby="previewLabel"></div>
     </section>
 
     <section aria-labelledby="h-quality">
-      <h2 id="h-quality">Quality</h2>
+      <h2 id="h-quality" data-i18n="optQualityTitle">Quality</h2>
       <div class="field">
-        <label for="jpgQuality">JPG quality</label>
+        <label for="jpgQuality" data-i18n="optJpgQuality">JPG quality</label>
         <div class="slider">
           <input type="range" id="jpgQuality" name="jpgQuality" min="50" max="100" step="1">
           <output for="jpgQuality" id="jpgQualityOut"></output>
         </div>
       </div>
       <div class="field">
-        <label for="webpQuality">WebP quality</label>
+        <label for="webpQuality" data-i18n="optWebpQuality">WebP quality</label>
         <div class="slider">
           <input type="range" id="webpQuality" name="webpQuality" min="50" max="100" step="1">
           <output for="webpQuality" id="webpQualityOut"></output>
         </div>
       </div>
       <div class="field">
-        <label for="jpgBackground">JPG background colour</label>
+        <label for="jpgBackground" data-i18n="optJpgBackground">JPG background colour</label>
         <div class="row">
           <input type="color" id="jpgBackground" name="jpgBackground">
-          <span class="hint" style="margin:0">JPG has no transparency, so see-through areas get this colour.</span>
+          <span class="hint" style="margin:0" data-i18n="optJpgBackgroundHint">JPG has no transparency, so see-through areas get this colour.</span>
         </div>
       </div>
     </section>
 
     <section aria-labelledby="h-sites">
-      <h2 id="h-sites">Sites you've allowed</h2>
-      <p class="muted" id="sitesEmpty">None yet. Imgkeep asks only when a site blocks an image you want to convert.</p>
+      <h2 id="h-sites" data-i18n="optSitesTitle">Sites you've allowed</h2>
+      <p class="muted" id="sitesEmpty" data-i18n="optSitesEmpty">None yet. Imgkeep asks only when a site blocks an image you want to convert.</p>
       <ul id="sites"></ul>
     </section>
 
     <section class="pro" aria-labelledby="h-pro">
-      <h2 id="h-pro">Imgkeep Pro — coming soon</h2>
-      <p>Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.</p>
-      <p class="muted" style="margin-bottom:0">Everything you use today stays free.</p>
-      <p id="waitlist" hidden style="margin:12px 0 0"><a id="waitlistLink" target="_blank" rel="noopener">Get notified</a></p>
+      <h2 id="h-pro" data-i18n="optProTitle">Imgkeep Pro — coming soon</h2>
+      <p data-i18n="optProBody">Rules: send each site's images to the right folder, in the right format, with the right name, without choosing every time. Plus a log of where every image came from.</p>
+      <p class="muted" style="margin-bottom:0" data-i18n="optProFree">Everything you use today stays free.</p>
+      <p id="waitlist" hidden style="margin:12px 0 0"><a id="waitlistLink" target="_blank" rel="noopener" data-i18n="optGetNotified">Get notified</a></p>
     </section>
 
     <section aria-labelledby="h-trust" id="trust">
-      <h2 id="h-trust">What Imgkeep can and can't do</h2>
-      <p class="muted" style="margin-bottom:4px">Permissions it asks for:</p>
-      <div class="tags" aria-label="Permissions">
+      <h2 id="h-trust" data-i18n="optTrustTitle">What Imgkeep can and can't do</h2>
+      <p class="muted" style="margin-bottom:4px" data-i18n="optPermissions">Permissions it asks for:</p>
+      <div class="tags" aria-label="Permissions" data-i18n-aria-label="optPermissionsLabel">
         <span class="tag">contextMenus</span>
         <span class="tag">downloads</span>
         <span class="tag">storage</span>
         <span class="tag">offscreen</span>
       </div>
       <ul class="plain">
-        <li>Images are converted on your computer. Nothing is uploaded; there's no analytics.</li>
-        <li>No ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.</li>
-        <li>Every free feature stays free.</li>
+        <li data-i18n="optTrust1">Images are converted on your computer. Nothing is uploaded; there's no analytics.</li>
+        <li data-i18n="optTrust2">No ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.</li>
+        <li data-i18n="optTrust3">Every free feature stays free.</li>
       </ul>
-      <p class="muted" style="margin:12px 0 0">Version <span id="version"></span> · <a href="https://imgkeep.app" target="_blank" rel="noopener">imgkeep.app</a></p>
+      <p class="muted" style="margin:12px 0 0"><span data-i18n="optVersion">Version</span> <span id="version"></span> · <a href="https://imgkeep.app" target="_blank" rel="noopener">imgkeep.app</a></p>
     </section>
   </main>
 </body>
