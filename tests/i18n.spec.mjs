@@ -1,4 +1,4 @@
-// The extension in another language: Chromium started with --lang. Linux honours the flag; macOS takes
+// The extension in another language: Chromium started in that language (LANGUAGE on Linux). macOS takes
 // the language from the system, so there these tests skip themselves. On Linux (GitHub Actions) they must run.
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
@@ -17,7 +17,9 @@ for (const [lang, dir] of [["he", "rtl"], ["ja", "ltr"]]) {
     test.beforeAll(async () => {
       msg = await messages(lang);
       plain = await startServer({ cors: false });
-      ctx = await launchWithExtension({ args: [`--lang=${lang}`] });
+      // Linux Chromium takes its UI language from LANGUAGE; --lang covers Windows.
+      const env = { ...process.env, LANGUAGE: lang, LANG: `${lang}.UTF-8`, LC_ALL: `${lang}.UTF-8` };
+      ctx = await launchWithExtension({ args: [`--lang=${lang}`], env });
     });
     test.afterAll(async () => {
       await ctx?.context.close();
@@ -27,6 +29,7 @@ for (const [lang, dir] of [["he", "rtl"], ["ja", "ltr"]]) {
 
     test(`options page and ask window are in ${lang} (${dir})`, async () => {
       const ui = await ctx.sw.evaluate(() => chrome.i18n.getUILanguage());
+      if (process.env.GITHUB_ACTIONS) console.log(`::notice::i18n test ${lang}: browser UI language ${ui}`);
       // Only macOS may skip: on Linux (CI) a wrong language is a failure, so a green run proves these tests ran.
       test.skip(process.platform === "darwin" && !ui.startsWith(lang), `browser UI language is ${ui}: --lang isn't honoured on macOS`);
       expect(ui.startsWith(lang), `browser UI language is ${ui}, expected ${lang}`).toBe(true);
