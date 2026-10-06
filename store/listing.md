@@ -18,7 +18,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 v6 (for 0.6.0): adds Copy as PNG, maximum width and More options. Paste as-is into the dashboard together with the 0.6.0 package. (v5, for 0.5.0, is the same without those three bullets and the last two menu items.)
 
 ```text
-Right-click any image and save it as PNG, JPG, WebP, GIF or PDF. Imgkeep converts it on your computer and saves it where you want, every time.
+Right-click any image and save it as PNG, JPG, WebP, GIF or PDF, or copy it as PNG. Imgkeep converts it on your computer and saves it where you want, every time.
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
@@ -30,12 +30,12 @@ WHAT IT DOES
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
-• Resize: set a maximum width and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
+• Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
-• Never overwrites: if a file already exists, Imgkeep adds " (2)" instead of replacing it.
+• Never overwrites: if a file with the same name already exists, the new one gets a number like " (1)" instead of replacing it.
 
 BUILT TO BE TRUSTED
 
@@ -43,11 +43,11 @@ BUILT TO BE TRUSTED
 • Nothing leaves your computer: images are converted on your device. No uploads, no analytics, no account.
 • Four permissions only: contextMenus, downloads, storage, offscreen.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
-• Free, with no limits: no ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.
+• Free, with no limits: no ads, no review requests, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK.
 
 WHEN A SITE BLOCKS AN IMAGE
 
-A few sites stop other sites from reading their images. Only then, and only when you click "Allow and save", Imgkeep asks your browser for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
+A few sites stop other sites from reading their images. Only then, and only after you click to allow it, Imgkeep asks your browser for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
 
 Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.html
 ```
