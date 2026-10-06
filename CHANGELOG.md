@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.0 — unreleased
+## 0.6.0 — 2026-10-06
 
 - **Copy as PNG.** New menu item: the image goes on the clipboard as a real PNG, transparency kept, ready to paste. "Copied" shows only after the clipboard accepted it. If it refuses, your clipboard is left as it was and you can save the PNG instead. No new permission: the copy happens in Imgkeep's own small window, which has focus.
 - **Maximum width.** New setting in Options → Quality and size: wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Applies to PNG, JPG, WebP, PDF, GIF and Copy as PNG; Original format is never changed.
