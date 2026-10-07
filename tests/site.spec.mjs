@@ -14,7 +14,7 @@ test.beforeAll(async () => {
 test.afterAll(() => server?.close());
 
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
-const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png"];
+const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "save-image-as-type-alternative"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 // Every page as [URL path, file under site/].
 const PAGES = [
@@ -150,7 +150,7 @@ test("guide pages: one tagged store link each, linked to each other, from home a
 });
 
 test("guides have a visible way back to the home page", async ({ page }) => {
-  for (const slug of ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png"]) {
+  for (const slug of GUIDES) {
     await page.goto(`${server.url}/${slug}/`);
     const home = page.locator('nav.crumbs a', { hasText: "Home" });
     await expect(home).toBeVisible();
@@ -175,7 +175,7 @@ test("the rating link lives only on Support and Ideas, never as a pop-up or on o
     const html = await readFile(join(ROOT, "site", file), "utf8");
     expect(html.split(REVIEWS).length - 1, file).toBe(1);
   }
-  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html"]) {
+  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html", "save-image-as-type-alternative/index.html"]) {
     expect(await readFile(join(ROOT, "site", file), "utf8"), file).not.toContain("/reviews");
   }
 });
