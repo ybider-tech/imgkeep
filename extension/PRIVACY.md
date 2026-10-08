@@ -32,6 +32,8 @@ No analytics, no ads, no tracking, and your data is never sold.
 
 Any change to this policy will be announced before it ships.
 
+Announced change, coming in version 0.7.0: Imgkeep will send one anonymous summary a day of how its features were used (for example, saves per format and failed saves by type) to Aptabase, an open-source, privacy-first analytics service hosted in the EU. It will never include images, page addresses, file names or anything that identifies you. It will be on by default and can be turned off with one click in Options. This policy will list exactly what is sent before that version ships.
+
 ## Contact
 
 helloimgkeep@gmail.com · https://imgkeep.app
