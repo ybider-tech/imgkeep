@@ -20,6 +20,18 @@
   "menuMoreOptions": {
     "message": "Plus d'options…"
   },
+  "menuNew": {
+    "message": "$ITEM$ · Nouveau",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep vous plaît ? Notez-le…"
+  },
   "askErrBlocked": {
     "message": "Le site n'a pas fourni cette image, même avec l'accès autorisé. Le serveur est peut-être indisponible, ou il n'affiche l'image que dans ses propres pages."
   },
@@ -339,13 +351,16 @@
     "message": "Les images sont converties sur votre ordinateur. Rien n'est envoyé, et il n'y a aucune statistique."
   },
   "optTrust2": {
-    "message": "Pas de publicité, pas de demandes d'avis, pas d'onglet de bienvenue. Une petite fenêtre s'ouvre seulement quand un enregistrement a besoin de votre accord."
+    "message": "Pas de pub ni d'onglets de bienvenue. De petites fenêtres s'ouvrent seulement quand vous les demandez ou quand un enregistrement a besoin de votre accord. Imgkeep demande une note une seule fois, après que vous l'avez utilisé un moment."
   },
   "optTrust3": {
     "message": "Chaque fonction gratuite reste gratuite."
   },
   "optVersion": {
     "message": "Version"
+  },
+  "optWhatsNew": {
+    "message": "Nouveautés"
   },
   "copyWorking": {
     "message": "Copie de l'image…"
@@ -409,5 +424,23 @@
   },
   "editNeedsOk": {
     "message": "Cet enregistrement a besoin de votre accord : voyez la fenêtre Imgkeep qui vient de s'ouvrir."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep vous plaît ?"
+  },
+  "reviewBody": {
+    "message": "Une note dans la boutique aide d'autres personnes à le trouver. Cela prend quelques secondes, et nous ne le demanderons qu'une fois."
+  },
+  "reviewRate": {
+    "message": "Noter Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Non merci"
+  },
+  "reviewThanks": {
+    "message": "Merci !"
+  },
+  "reviewOk": {
+    "message": "C'est noté. Nous ne demanderons plus."
   }
 }

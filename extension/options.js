@@ -2,6 +2,7 @@
 
 import { DEFAULTS, PRO_WAITLIST_URL, getSettings, clampQuality, buildTarget, targetPath } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
+import { reviewUrl } from "./lib/review.js";
 import { getFolder, setFolder, folderPermission } from "./lib/folder.js";
 import { t, localisePage } from "./lib/i18n.js";
 
@@ -118,6 +119,7 @@ async function init() {
     $("waitlist").hidden = false;
   }
   $("version").textContent = chrome.runtime.getManifest().version;
+  $("rateLink").href = reviewUrl(navigator.userAgent); // the Chrome or Edge store, whichever this is
 
   chrome.permissions.onAdded.addListener(renderSites);
   chrome.permissions.onRemoved.addListener(renderSites);

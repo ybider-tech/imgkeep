@@ -3,7 +3,7 @@
 // which avoids asking for the clipboardWrite permission.
 
 import { t, localisePage } from "./lib/i18n.js";
-import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, hostExplanation, isHttp } from "./lib/ui.js";
+import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
@@ -70,6 +70,14 @@ async function writeClipboard() {
   finished = true;
   show({ status: t("copyDone") });
   await toBackground("done").catch(() => {});
+  await toBackground("copied").catch(() => {});
+  // The one rating ask, if it's due: the window then stays open until it's answered or closed.
+  if (await maybeReviewAsk()) {
+    $("body").append(reviewAsk(() => setTimeout(() => window.close(), 1200)));
+    // Make room for it.
+    chrome.windows.getCurrent().then((w) => chrome.windows.update(w.id, { height: w.height + 110 })).catch(() => {});
+    return;
+  }
   setTimeout(() => window.close(), 1200);
 }
 

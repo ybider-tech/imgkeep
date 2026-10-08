@@ -28,7 +28,7 @@ What it does
 Built to be trusted
 • Only 4 permissions and no access to the pages you visit
 • Images are converted on your computer; nothing is uploaded
-• No ads, no tracking, no account, no review nags
+• No ads, no tracking, no account, and just one request for a rating, ever
 • Open source, so anyone can check what it does
 
 Guides

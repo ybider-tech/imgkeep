@@ -5,7 +5,9 @@ import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, 
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
-const msg = (key) => chrome.i18n.getMessage(key);
+import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
+
+const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
 
 const MENU = {
   "imgkeep-png": "png",
@@ -16,25 +18,122 @@ const MENU = {
   "imgkeep-original": "original",
 };
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.removeAll(() => {
-    const contexts = ["image"];
-    const item = (id, title, type) => chrome.contextMenus.create({ id, parentId: "imgkeep", title, type, contexts });
-    chrome.contextMenus.create({ id: "imgkeep", title: msg("menuParent"), contexts });
-    item("imgkeep-png", "PNG");
-    item("imgkeep-jpg", "JPG");
-    item("imgkeep-webp", "WebP");
-    item("imgkeep-gif", msg("menuGif"));
-    item("imgkeep-pdf", "PDF");
-    item("imgkeep-sep", undefined, "separator");
-    item("imgkeep-original", msg("menuOriginal"));
-    item("imgkeep-sep2", undefined, "separator");
-    item("imgkeep-copy", msg("menuCopyPng"));
-    item("imgkeep-more", msg("menuMoreOptions"));
+const TITLES = {
+  "imgkeep-png": () => "PNG",
+  "imgkeep-jpg": () => "JPG",
+  "imgkeep-webp": () => "WebP",
+  "imgkeep-gif": () => msg("menuGif"),
+  "imgkeep-pdf": () => "PDF",
+  "imgkeep-original": () => msg("menuOriginal"),
+  "imgkeep-copy": () => msg("menuCopyPng"),
+  "imgkeep-more": () => msg("menuMoreOptions"),
+};
+
+// contextMenus has no getter, so the current titles are kept here (tests read them too).
+const menuTitles = new Map();
+globalThis.imgkeepMenuTitles = menuTitles;
+
+const contexts = ["image"];
+const ignoreError = () => void chrome.runtime.lastError;
+
+function createMenus() {
+  return new Promise((resolve) => {
+    chrome.contextMenus.removeAll(() => {
+      menuTitles.clear();
+      chrome.contextMenus.create({ id: "imgkeep", title: msg("menuParent"), contexts });
+      const item = (id, type) => {
+        chrome.contextMenus.create({ id, parentId: "imgkeep", title: TITLES[id]?.(), type, contexts });
+        if (TITLES[id]) menuTitles.set(id, TITLES[id]());
+      };
+      for (const id of ["imgkeep-png", "imgkeep-jpg", "imgkeep-webp", "imgkeep-gif", "imgkeep-pdf"]) item(id);
+      item("imgkeep-sep", "separator");
+      item("imgkeep-original");
+      item("imgkeep-sep2", "separator");
+      item("imgkeep-copy");
+      item("imgkeep-more");
+      resolve();
+    });
   });
-});
+}
+
+// ---- Usage counts (local only) for the one rating ask ----
+
+async function getUsage() {
+  const { usage } = await chrome.storage.local.get("usage");
+  return usage || newUsage(Date.now());
+}
+
+// One at a time, so saves finishing together don't overwrite each other's counts.
+let usageQueue = Promise.resolve();
+function countUse(ok) {
+  usageQueue = usageQueue.then(async () => {
+    await chrome.storage.local.set({ usage: recordUse(await getUsage(), ok) });
+    await refreshMenus();
+  });
+  return usageQueue;
+}
+
+// "New" labels for a while after an update, and the "Rate it" item while the one ask is open.
+async function refreshMenus() {
+  const now = Date.now();
+  const { menuNew } = await chrome.storage.local.get("menuNew");
+  const fresh = menuNew && now < menuNew.until ? menuNew.items : [];
+  if (menuNew && !fresh.length) await chrome.storage.local.remove("menuNew");
+  for (const id of Object.keys(MENU_SINCE)) {
+    const title = fresh.includes(id) ? msg("menuNew", [TITLES[id]()]) : TITLES[id]();
+    if (menuTitles.get(id) === title) continue;
+    chrome.contextMenus.update(id, { title }, ignoreError);
+    menuTitles.set(id, title);
+  }
+
+  let usage = await getUsage();
+  if (askExpired(usage, now)) {
+    usage = finishAsk(usage); // left unanswered: it was the one ask
+    await chrome.storage.local.set({ usage });
+  }
+  const showRate = menuAskVisible(usage, now);
+  if (showRate && usage.ask === "waiting") await chrome.storage.local.set({ usage: markAsked(usage, now) });
+  // Decided from storage every time, not from menuTitles: the worker may have restarted since the menu was built.
+  // Creating an item that exists, or removing one that doesn't, is a harmless error.
+  if (showRate) {
+    chrome.contextMenus.create({ id: "imgkeep-sep3", parentId: "imgkeep", type: "separator", contexts }, ignoreError);
+    chrome.contextMenus.create({ id: "imgkeep-rate", parentId: "imgkeep", title: msg("menuRate"), contexts }, ignoreError);
+    menuTitles.set("imgkeep-rate", msg("menuRate"));
+  } else {
+    chrome.contextMenus.remove("imgkeep-rate", ignoreError);
+    chrome.contextMenus.remove("imgkeep-sep3", ignoreError);
+    menuTitles.delete("imgkeep-rate");
+  }
+}
+
+async function onInstalled({ reason, previousVersion }) {
+  await createMenus();
+  const now = Date.now();
+  const { usage } = await chrome.storage.local.get("usage");
+  // Existing users start their 7 days from the update that added the ask.
+  if (!usage) await chrome.storage.local.set({ usage: newUsage(now) });
+  if (reason === "update" && previousVersion) {
+    const items = newItemsSince(previousVersion);
+    if (items.length) await chrome.storage.local.set({ menuNew: { items, until: now + NEW_DAYS * DAY } });
+  }
+  await refreshMenus();
+}
+
+chrome.runtime.onInstalled.addListener(onInstalled);
+// Menus survive restarts, but this module's record of their titles doesn't: rebuild both.
+chrome.runtime.onStartup.addListener(() => createMenus().then(refreshMenus));
+
+// For automated tests only.
+globalThis.imgkeepOnInstalled = onInstalled;
+globalThis.imgkeepRefreshMenus = refreshMenus;
+globalThis.imgkeepOpenRateWindow = () => openRateWindow();
+
+function openRateWindow() {
+  return chrome.windows.create({ url: chrome.runtime.getURL("rate.html"), type: "popup", width: 440, height: 240, focused: true });
+}
 
 chrome.contextMenus.onClicked.addListener((info) => {
+  if (info.menuItemId === "imgkeep-rate") return openRateWindow();
   if (!info.srcUrl) return;
   const input = { url: info.srcUrl, pageUrl: info.pageUrl };
   if (info.menuItemId === "imgkeep-copy") return openWindow("copy", input);
@@ -215,6 +314,8 @@ async function runJob(input, { interactive = true } = {}) {
   // Once a save has its answer, the fetched image isn't needed (a retry fetches again). A window's image
   // stays until the window closes. A converted file waiting for a download or a folder stays too.
   if (!job.sourceId) await dropSource(job.id);
+  // Successes and real failures count towards the rating ask (site access and folder questions don't).
+  if (result.ok || result.reason === "error") await countUse(result.ok).catch(() => {});
   if (!result.ok && interactive) await openAsk({ ...job, ...result });
   return result;
 }
@@ -357,10 +458,42 @@ const windowHandlers = {
 // a message names a job id, never a URL to fetch.
 const fromOwnPage = (sender) => sender.id === chrome.runtime.id && sender.url?.startsWith(chrome.runtime.getURL(""));
 
+// The rating ask, from any of the extension's windows (no job needed).
+const reviewHandlers = {
+  // Show the ask in this window? Only once, the first time it's ready.
+  async shouldAskRating() {
+    await usageQueue; // a use counted just now may be what makes it due
+    const usage = await getUsage();
+    if (!windowCanAsk(usage, Date.now())) return { ok: true, show: false };
+    await chrome.storage.local.set({ usage: markWindowAsked(usage, Date.now()) });
+    await refreshMenus();
+    return { ok: true, show: true };
+  },
+
+  // "rate" opens the store's review page for this browser; "no" just closes the ask. Either way it's done.
+  async review({ action }) {
+    await chrome.storage.local.set({ usage: finishAsk(await getUsage()) });
+    await refreshMenus();
+    if (action === "rate") await chrome.tabs.create({ url: reviewUrl(navigator.userAgent) });
+    return { ok: true };
+  },
+
+  // A copy reached the clipboard (copies happen in the windows, not here).
+  async copied() {
+    await countUse(true);
+    return { ok: true };
+  },
+};
+
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg?.target !== "background" || !Object.hasOwn(windowHandlers, msg.type) || !fromOwnPage(sender)) return false;
-  if (typeof msg.jobId !== "string") return false;
-  windowHandlers[msg.type](msg)
+  if (msg?.target !== "background" || !fromOwnPage(sender)) return false;
+  const handler = Object.hasOwn(reviewHandlers, msg.type)
+    ? reviewHandlers[msg.type]
+    : Object.hasOwn(windowHandlers, msg.type) && typeof msg.jobId === "string"
+      ? windowHandlers[msg.type]
+      : null;
+  if (!handler) return false;
+  handler(msg)
     .then(sendResponse)
     .catch((e) => sendResponse({ ok: false, reason: "error", code: e.code || "unknown", detail: e.detail || e.message || "" }));
   return true;

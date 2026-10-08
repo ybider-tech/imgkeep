@@ -20,6 +20,18 @@
   "menuMoreOptions": {
     "message": "その他のオプション…"
   },
+  "menuNew": {
+    "message": "$ITEM$ · 新機能",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep を気に入りましたか？評価する…"
+  },
   "askErrBlocked": {
     "message": "アクセスを許可しても、サイトがこの画像を渡しませんでした。サーバーが停止しているか、サイト内のページでしか画像を表示しない可能性があります。"
   },
@@ -339,13 +351,16 @@
     "message": "画像はあなたのパソコン上で変換されます。何もアップロードされず、アクセス解析もありません。"
   },
   "optTrust2": {
-    "message": "広告なし、レビューのお願いなし、ようこそタブなし。小さなウィンドウが開くのは、保存にあなたの許可が必要なときだけです。"
+    "message": "広告なし、ようこそタブなし。小さなウィンドウが開くのは、あなたが呼び出したときか、保存に確認が必要なときだけです。評価のお願いは、しばらく使っていただいた後に一度だけです。"
   },
   "optTrust3": {
     "message": "無料の機能はずっと無料です。"
   },
   "optVersion": {
     "message": "バージョン"
+  },
+  "optWhatsNew": {
+    "message": "新機能"
   },
   "copyWorking": {
     "message": "画像をコピーしています…"
@@ -409,5 +424,23 @@
   },
   "editNeedsOk": {
     "message": "この保存には確認が必要です。開いたImgkeepのウィンドウをご覧ください。"
+  },
+  "reviewTitle": {
+    "message": "Imgkeep を気に入りましたか？"
+  },
+  "reviewBody": {
+    "message": "ストアでの評価は、ほかの人が見つけるきっかけになります。数秒で終わります。このお願いは一度だけです。"
+  },
+  "reviewRate": {
+    "message": "Imgkeep を評価"
+  },
+  "reviewNo": {
+    "message": "結構です"
+  },
+  "reviewThanks": {
+    "message": "ありがとうございます！"
+  },
+  "reviewOk": {
+    "message": "わかりました。もうお聞きしません。"
   }
 }

@@ -5,7 +5,7 @@
 import { t, localisePage } from "./lib/i18n.js";
 import { buildTarget, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
-import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp } from "./lib/ui.js";
+import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
@@ -134,7 +134,10 @@ async function save() {
   chrome.storage.local.set({ [LAST]: choice }).catch(() => {});
   const res = await toBackground("save", { format: format(), options: options() }).catch((e) => ({ ok: false, code: "unknown", detail: e.message }));
   setBusy(false);
-  if (res?.ok) return status(res.path || res.filename ? t("askSavedAs", [res.path || res.filename]) : t("askSaved"));
+  if (res?.ok) {
+    status(res.path || res.filename ? t("askSavedAs", [res.path || res.filename]) : t("askSaved"));
+    return offerReview();
+  }
   // The ask window opened to sort it out (site access, folder, or an error).
   status(t("editNeedsOk"));
 }
@@ -150,11 +153,18 @@ async function copy() {
     }
     await copyPng(dataUrlToBlob(res.dataUrl));
     status(t("copyDone"));
+    await toBackground("copied").catch(() => {});
+    offerReview();
   } catch (e) {
     status(`${t("copyFailed")} ${t("copyFailedNote")}`, true);
   } finally {
     setBusy(false);
   }
+}
+
+// The one rating ask, under the status line, if it's due.
+async function offerReview() {
+  if (!$("review").childElementCount && (await maybeReviewAsk())) $("review").append(reviewAsk());
 }
 
 async function close() {

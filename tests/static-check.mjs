@@ -7,7 +7,8 @@ import { fileURLToPath } from "node:url";
 const EXT = join(dirname(fileURLToPath(import.meta.url)), "..", "extension");
 const ALLOWED_PERMISSIONS = ["contextMenus", "downloads", "offscreen", "storage"];
 const ALLOWED_OPTIONAL_HOSTS = ["http://*/*", "https://*/*"];
-const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore)(\/|$)/;
+// imgkeep.app and the two stores (for "Rate Imgkeep"). These are links people click, never requests the extension makes.
+const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore|microsoftedge\.microsoft\.com\/addons)(\/|$)/;
 const TEXT_FILES = /\.(js|mjs|html|css|json|md|txt)$/
 
 const problems = [];
@@ -91,7 +92,7 @@ for (const lang of await readdir(LOCALES)) {
 
 // Every message the code uses exists, and every message is used somewhere.
 // Quoted keys ("askSaving", "@detailGifFrames", data-i18n="optSaved") and manifest __MSG_key__ references.
-const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail|copy|edit)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
+const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail|copy|edit|review)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
 const used = new Set();
 for await (const path of walk(EXT)) {
   if (!/\.(js|html|json)$/.test(path) || path.includes("_locales")) continue;

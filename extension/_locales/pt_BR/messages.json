@@ -20,6 +20,18 @@
   "menuMoreOptions": {
     "message": "Mais opções…"
   },
+  "menuNew": {
+    "message": "$ITEM$ · Novo",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Gostando do Imgkeep? Avalie…"
+  },
   "askErrBlocked": {
     "message": "O site não entregou esta imagem, mesmo com o acesso permitido. O servidor pode estar fora do ar ou só exibir a imagem dentro das próprias páginas."
   },
@@ -339,13 +351,16 @@
     "message": "As imagens são convertidas no seu computador. Nada é enviado e não há análises."
   },
   "optTrust2": {
-    "message": "Sem anúncios, sem pedidos de avaliação, sem abas de boas-vindas. Uma janela pequena só abre quando um salvamento precisa da sua permissão."
+    "message": "Sem anúncios e sem abas de boas-vindas. Janelas pequenas só abrem quando você pede ou quando um salvamento precisa da sua confirmação. O Imgkeep pede uma avaliação só uma vez, depois que você já o usou por um tempo."
   },
   "optTrust3": {
     "message": "Todo recurso gratuito continua gratuito."
   },
   "optVersion": {
     "message": "Versão"
+  },
+  "optWhatsNew": {
+    "message": "Novidades"
   },
   "copyWorking": {
     "message": "Copiando a imagem…"
@@ -409,5 +424,23 @@
   },
   "editNeedsOk": {
     "message": "Este salvamento precisa da sua confirmação: veja a janela do Imgkeep que acabou de abrir."
+  },
+  "reviewTitle": {
+    "message": "Gostando do Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Uma avaliação na loja ajuda outras pessoas a encontrá-lo. Leva alguns segundos, e só vamos pedir isso uma vez."
+  },
+  "reviewRate": {
+    "message": "Avaliar o Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Não, obrigado"
+  },
+  "reviewThanks": {
+    "message": "Obrigado!"
+  },
+  "reviewOk": {
+    "message": "Tudo bem. Não vamos perguntar de novo."
   }
 }

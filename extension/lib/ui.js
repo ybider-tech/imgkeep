@@ -64,3 +64,29 @@ export { dataUrlToBlob } from "./folder.js";
 export async function copyPng(blob) {
   await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
 }
+
+// The one rating ask: a short note with "Rate Imgkeep" and "No thanks". Either answer ends it for good.
+// onAnswer(action) runs after the answer is recorded ("rate" also opened the store's review page).
+export function reviewAsk(onAnswer) {
+  const box = el("div", { className: "review" });
+  box.setAttribute("role", "group");
+  box.setAttribute("aria-label", t("reviewTitle"));
+  const answer = (action) => async () => {
+    for (const b of box.querySelectorAll("button")) b.disabled = true;
+    await chrome.runtime.sendMessage({ target: "background", type: "review", action });
+    box.replaceChildren(el("p", { textContent: action === "rate" ? t("reviewThanks") : t("reviewOk") }));
+    onAnswer?.(action);
+  };
+  const rate = el("button", { type: "button", className: "primary", textContent: t("reviewRate") });
+  const no = el("button", { type: "button", textContent: t("reviewNo") });
+  rate.addEventListener("click", answer("rate"));
+  no.addEventListener("click", answer("no"));
+  box.append(el("p", {}, el("strong", { textContent: t("reviewTitle") }), " ", t("reviewBody")), el("div", { className: "actions" }, rate, no));
+  return box;
+}
+
+// Asks the service worker whether this is the moment for the one rating ask.
+export async function maybeReviewAsk() {
+  const res = await chrome.runtime.sendMessage({ target: "background", type: "shouldAskRating" }).catch(() => null);
+  return Boolean(res?.show);
+}

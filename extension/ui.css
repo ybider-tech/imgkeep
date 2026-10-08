@@ -126,3 +126,14 @@ code, .mono {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* The one rating ask, inside a window that is already open. */
+.review {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+.review p { margin: 0 0 8px; }
+.review .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }

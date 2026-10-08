@@ -27,6 +27,20 @@
     "message": "More options…",
     "description": "Right-click menu item: opens the More options window"
   },
+  "menuNew": {
+    "message": "$ITEM$ · New",
+    "description": "A right-click menu item that is new in this version, for 30 days after an update. $ITEM$ is the item's own name.",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Enjoying Imgkeep? Rate it…",
+    "description": "Right-click menu item shown once, for up to 14 days, after someone has used Imgkeep for a while. Opens the rating ask."
+  },
   "askErrBlocked": {
     "message": "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
     "description": "Error"
@@ -428,7 +442,7 @@
     "description": "Bullet"
   },
   "optTrust2": {
-    "message": "No ads, no review requests, no welcome tabs. A small window opens only when a save needs your OK.",
+    "message": "No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating once, after you've used it for a while.",
     "description": "Bullet"
   },
   "optTrust3": {
@@ -438,6 +452,10 @@
   "optVersion": {
     "message": "Version",
     "description": "Label before the version number"
+  },
+  "optWhatsNew": {
+    "message": "What's new",
+    "description": "Options link to the What's new page on imgkeep.app"
   },
   "copyWorking": {
     "message": "Copying the image…",
@@ -522,5 +540,29 @@
   "editNeedsOk": {
     "message": "This save needs your OK: see the Imgkeep window that just opened.",
     "description": "Status when the save opened the small ask window"
+  },
+  "reviewTitle": {
+    "message": "Enjoying Imgkeep?",
+    "description": "Heading of the one rating ask"
+  },
+  "reviewBody": {
+    "message": "A rating in the store helps other people find it. It takes a few seconds, and we'll only ask this once.",
+    "description": "Text of the one rating ask"
+  },
+  "reviewRate": {
+    "message": "Rate Imgkeep",
+    "description": "Button and Options link: opens the store's review page"
+  },
+  "reviewNo": {
+    "message": "No thanks",
+    "description": "Button: decline the rating ask (it won't be asked again)"
+  },
+  "reviewThanks": {
+    "message": "Thank you!",
+    "description": "Shown after choosing Rate Imgkeep"
+  },
+  "reviewOk": {
+    "message": "Got it. We won't ask again.",
+    "description": "Shown after choosing No thanks"
   }
 }

@@ -20,6 +20,18 @@
   "menuMoreOptions": {
     "message": "Weitere Optionen…"
   },
+  "menuNew": {
+    "message": "$ITEM$ · Neu",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Gefällt dir Imgkeep? Bewerte es…"
+  },
   "askErrBlocked": {
     "message": "Die Website hat das Bild nicht herausgegeben, auch nicht mit erlaubtem Zugriff. Vielleicht ist der Server nicht erreichbar oder zeigt das Bild nur auf seinen eigenen Seiten."
   },
@@ -339,13 +351,16 @@
     "message": "Bilder werden auf deinem Computer umgewandelt. Nichts wird hochgeladen, es gibt keine Analysen."
   },
   "optTrust2": {
-    "message": "Keine Werbung, keine Bitten um Bewertungen, keine Willkommens-Tabs. Ein kleines Fenster öffnet sich nur, wenn ein Speichervorgang deine Zustimmung braucht."
+    "message": "Keine Werbung und keine Willkommens-Tabs. Kleine Fenster öffnen sich nur, wenn du sie aufrufst oder ein Speichervorgang deine Zustimmung braucht. Imgkeep bittet einmal um eine Bewertung, nachdem du es eine Weile genutzt hast."
   },
   "optTrust3": {
     "message": "Jede kostenlose Funktion bleibt kostenlos."
   },
   "optVersion": {
     "message": "Version"
+  },
+  "optWhatsNew": {
+    "message": "Neuigkeiten"
   },
   "copyWorking": {
     "message": "Bild wird kopiert…"
@@ -409,5 +424,23 @@
   },
   "editNeedsOk": {
     "message": "Dieser Speichervorgang braucht deine Zustimmung: Sieh dir das Imgkeep-Fenster an, das sich gerade geöffnet hat."
+  },
+  "reviewTitle": {
+    "message": "Gefällt dir Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Eine Bewertung im Store hilft anderen, es zu finden. Das dauert ein paar Sekunden, und wir fragen nur dieses eine Mal."
+  },
+  "reviewRate": {
+    "message": "Imgkeep bewerten"
+  },
+  "reviewNo": {
+    "message": "Nein, danke"
+  },
+  "reviewThanks": {
+    "message": "Danke!"
+  },
+  "reviewOk": {
+    "message": "Alles klar. Wir fragen nicht noch einmal."
   }
 }

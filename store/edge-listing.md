@@ -54,7 +54,7 @@ BUILT TO BE TRUSTED
 • Nothing leaves your computer: images are converted on your device. No uploads, no analytics, no account.
 • Four permissions only: contextMenus, downloads, storage, offscreen.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
-• Free, with no limits: no ads, no review requests, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK.
+• Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
 
 WHEN A SITE BLOCKS AN IMAGE
 
