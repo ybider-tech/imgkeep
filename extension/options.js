@@ -79,6 +79,15 @@ function bindSlider(id) {
   show();
 }
 
+// The anonymous daily summary: today's counts so far, and the last summary that was sent, exactly as stored.
+async function renderCounts() {
+  const on = $("usageCounts").checked;
+  const { counts, countsLastSent } = await chrome.storage.local.get(["counts", "countsLastSent"]);
+  const show = (value) => (value && Object.keys(value).length ? JSON.stringify(value, null, 2) : t("optCountsNone"));
+  $("countsToday").textContent = on ? show(counts?.c) : t("optCountsOff");
+  $("countsLast").textContent = countsLastSent ? `${countsLastSent.day}\n${show(countsLastSent.props)}` : t("optCountsNone");
+}
+
 async function init() {
   localisePage();
   const s = await getSettings();
@@ -111,6 +120,13 @@ async function init() {
     e.target.value = maxWidth || "";
     save({ maxWidth });
   });
+
+  $("usageCounts").checked = s.usageCounts !== false;
+  $("usageCounts").addEventListener("change", async (e) => {
+    await save({ usageCounts: e.target.checked });
+    renderCounts();
+  });
+  $("countsDetails").addEventListener("toggle", renderCounts);
 
   $("chooseFolder").addEventListener("click", chooseFolder);
 

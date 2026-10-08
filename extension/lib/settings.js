@@ -12,6 +12,7 @@ export const DEFAULTS = {
   webpQuality: 90,
   jpgBackground: "#ffffff",
   maxWidth: 0, // pixels; 0 keeps every image's own size
+  usageCounts: true, // the anonymous daily summary (lib/telemetry.js); one click off in Options
 };
 
 export const FORMATS = {

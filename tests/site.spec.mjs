@@ -48,7 +48,7 @@ test("privacy.html matches PRIVACY.md", async ({ page }) => {
   const md = await readFile(join(ROOT, "extension", "PRIVACY.md"), "utf8");
   await page.goto(`${server.url}/privacy.html`);
   const html = (await page.locator("main").innerText()).replace(/\s+/g, " ");
-  const lines = md.split("\n").map((l) => l.replace(/^#+\s*/, "").trim()).filter(Boolean);
+  const lines = md.split("\n").map((l) => l.replace(/^(#+|-)\s*/, "").trim()).filter(Boolean);
   for (const line of lines) expect(html, `missing: ${line}`).toContain(line.replace(/\s+/g, " "));
 });
 

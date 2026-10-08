@@ -44,7 +44,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 נבנה כדי שאפשר יהיה לסמוך עליו
 
 • אין גישה לדפים שלך: ‏Imgkeep לא יכול לקרוא או לשנות את האתרים שאתה מבקר בהם. הוא רואה רק את התמונה שלחצת עליה.
-• שום דבר לא יוצא מהמחשב: התמונות מומרות במכשיר שלך. בלי העלאות, בלי אנליטיקה, בלי חשבון.
+• התמונות שלך לא יוצאות מהמחשב: הן מומרות במכשיר שלך. בלי העלאות, בלי חשבון. הדבר היחיד ש-Imgkeep שולח הוא סיכום יומי אנונימי, כמו „12 שמירות כ-JPG, אחת נכשלה”, כדי שנדע מה לשפר. אף פעם לא כתובות או שמות קבצים. לחיצה אחת באפשרויות מכבה אותו.
 • ארבע הרשאות בלבד: contextMenus,‏ downloads,‏ storage,‏ offscreen.
 • קוד פתוח ברישיון MIT, בלי שלב בנייה, כך שמה שקוראים זה מה שרץ.
 • חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים. ‏Imgkeep פותח חלון קטן רק כשמבקשים (העתקה כ-PNG, אפשרויות נוספות) או כששמירה צריכה את האישור שלך, ומבקש דירוג פעם אחת בלבד, אחרי שהשתמשת בו זמן מה.
@@ -81,7 +81,7 @@ QUÉ HACE
 HECHO PARA SER DE CONFIANZA
 
 • Sin acceso a tus páginas: Imgkeep no puede leer ni cambiar los sitios que visitas. Solo ve la imagen en la que haces clic derecho.
-• Nada sale de tu equipo: las imágenes se convierten en tu dispositivo. Sin subidas, sin analíticas, sin cuenta.
+• Tus imágenes nunca salen de tu equipo: se convierten en tu dispositivo. Sin subidas, sin cuenta. Lo único que envía Imgkeep es un resumen diario anónimo, como «12 guardados como JPG, 1 fallido», para saber qué mejorar. Nunca direcciones ni nombres de archivo. Un clic en Opciones lo desactiva.
 • Solo cuatro permisos: contextMenus, downloads, storage, offscreen.
 • Código abierto con licencia MIT y sin paso de compilación: lo que lees es lo que se ejecuta.
 • Gratis y sin límites: sin anuncios ni pestañas de bienvenida. Imgkeep solo abre una pequeña ventana cuando tú la pides (Copiar como PNG, Más opciones) o cuando un guardado necesita tu aprobación, y pide una valoración una sola vez, después de que lo hayas usado un tiempo.
@@ -118,7 +118,7 @@ O QUE ELE FAZ
 FEITO PARA SER CONFIÁVEL
 
 • Sem acesso às suas páginas: o Imgkeep não pode ler nem alterar os sites que você visita. Ele só vê a imagem em que você clica com o botão direito.
-• Nada sai do seu computador: as imagens são convertidas no seu dispositivo. Sem uploads, sem análises, sem conta.
+• Suas imagens nunca saem do seu computador: são convertidas no seu dispositivo. Sem uploads, sem conta. A única coisa que o Imgkeep envia é um resumo diário anônimo, como "12 salvamentos como JPG, 1 falhou", para sabermos o que melhorar. Nunca endereços ou nomes de arquivos. Um clique nas Opções desativa.
 • Só quatro permissões: contextMenus, downloads, storage, offscreen.
 • Código aberto com licença MIT e sem etapa de build: o que você lê é o que roda.
 • Grátis e sem limites: sem anúncios e sem abas de boas-vindas. O Imgkeep só abre uma janela pequena quando você pede (Copiar como PNG, Mais opções) ou quando um salvamento precisa da sua confirmação, e pede uma avaliação só uma vez, depois que você já o usou por um tempo.
@@ -155,7 +155,7 @@ WAS ES MACHT
 GEBAUT, UM VERTRAUEN ZU VERDIENEN
 
 • Kein Zugriff auf deine Seiten: Imgkeep kann die Websites, die du besuchst, weder lesen noch verändern. Es sieht nur das Bild, das du rechtsklickst.
-• Nichts verlässt deinen Computer: Bilder werden auf deinem Gerät umgewandelt. Keine Uploads, keine Analysen, kein Konto.
+• Deine Bilder verlassen nie deinen Computer: Sie werden auf deinem Gerät umgewandelt. Keine Uploads, kein Konto. Das Einzige, was Imgkeep sendet, ist eine anonyme tägliche Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“, damit wir wissen, was wir verbessern sollten. Niemals Adressen oder Dateinamen. Ein Klick in den Optionen schaltet sie aus.
 • Nur vier Berechtigungen: contextMenus, downloads, storage, offscreen.
 • Open Source unter der MIT-Lizenz, ohne Build-Schritt: Was du liest, ist das, was läuft.
 • Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs. Imgkeep öffnet nur dann ein kleines Fenster, wenn du es aufrufst (Als PNG kopieren, Weitere Optionen) oder wenn ein Speichervorgang deine Zustimmung braucht, und bittet nur ein einziges Mal um eine Bewertung, nachdem du es eine Weile genutzt hast.
@@ -192,7 +192,7 @@ CE QU'IL FAIT
 CONÇU POUR MÉRITER VOTRE CONFIANCE
 
 • Aucun accès à vos pages : Imgkeep ne peut ni lire ni modifier les sites que vous visitez. Il ne voit que l'image sur laquelle vous faites un clic droit.
-• Rien ne quitte votre ordinateur : les images sont converties sur votre appareil. Pas d'envoi, pas de statistiques, pas de compte.
+• Vos images ne quittent jamais votre ordinateur : elles sont converties sur votre appareil. Pas d'envoi, pas de compte. La seule chose qu'Imgkeep envoie est un résumé quotidien anonyme, comme « 12 enregistrements en JPG, 1 échec », pour savoir quoi améliorer. Jamais d'adresses ni de noms de fichiers. Un clic dans les Options le désactive.
 • Seulement quatre autorisations : contextMenus, downloads, storage, offscreen.
 • Open source sous licence MIT, sans étape de compilation : ce que vous lisez est ce qui s'exécute.
 • Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue. Imgkeep n'ouvre une petite fenêtre que si vous la demandez (Copier en PNG, Plus d'options) ou quand un enregistrement a besoin de votre accord, et ne demande une note qu'une seule fois, après que vous l'avez utilisé un moment.
@@ -229,7 +229,7 @@ Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（ア�
 安心して使えるように
 
 • ページへのアクセスなし：Imgkeep は閲覧中のサイトを読むことも変更することもできません。見えるのは右クリックした画像だけです。
-• データはパソコンの外に出ません：画像はお使いのデバイス上で変換されます。アップロードも解析もアカウントもありません。
+• 画像がパソコンの外に出ることはありません：お使いのデバイス上で変換されます。アップロードもアカウントもなし。Imgkeep が送るのは「JPGで12回保存、1回失敗」のような匿名の1日分のまとめだけで、改善に役立てます。アドレスやファイル名は一切含みません。オプションでワンクリックでオフにできます。
 • 権限は 4 つだけ：contextMenus、downloads、storage、offscreen。
 • MIT ライセンスのオープンソースで、ビルド工程なし。読めるコードがそのまま動きます。
 • 無料で制限なし：広告なし、ようこそタブなし。小さなウィンドウが開くのは、あなたが呼び出したとき（PNGとしてコピー、その他のオプション）か、保存に確認が必要なときだけ。評価のお願いは、しばらく使っていただいた後に一度だけです。
@@ -266,7 +266,7 @@ Imgkeep: इमेज इस रूप में सेव करें → PNG 
 भरोसे के लिए बनाया गया
 
 • आपके पेजों तक कोई पहुँच नहीं: Imgkeep आपकी देखी गई साइटों को न पढ़ सकता है, न बदल सकता है। वह सिर्फ़ वही इमेज देखता है जिस पर आप राइट-क्लिक करते हैं।
-• कुछ भी आपके कंप्यूटर से बाहर नहीं जाता: इमेज आपके डिवाइस पर ही बदली जाती हैं। न अपलोड, न एनालिटिक्स, न अकाउंट।
+• आपकी इमेज कभी आपके कंप्यूटर से बाहर नहीं जातीं: वे आपके डिवाइस पर ही बदली जाती हैं। न अपलोड, न अकाउंट। Imgkeep सिर्फ़ एक गुमनाम रोज़ का सारांश भेजता है, जैसे "JPG में 12 सेव, 1 विफल", ताकि हम जानें कि क्या बेहतर करना है। कभी भी पते या फ़ाइल के नाम नहीं। विकल्पों में एक क्लिक से इसे बंद करें।
 • सिर्फ़ चार अनुमतियाँ: contextMenus, downloads, storage, offscreen।
 • MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो आप पढ़ते हैं वही चलता है।
 • मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब। Imgkeep छोटी विंडो तभी खोलता है जब आप खुद कहें (PNG के रूप में कॉपी करें, और विकल्प) या जब किसी सेव के लिए आपकी मंज़ूरी चाहिए, और कुछ समय इस्तेमाल के बाद सिर्फ़ एक बार रेटिंग माँगता है।
@@ -303,7 +303,7 @@ Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع ال
 مصمَّم ليكون جديرًا بالثقة
 
 • لا وصول إلى صفحاتك: لا يستطيع Imgkeep قراءة المواقع التي تزورها أو تغييرها. لا يرى إلا الصورة التي تنقر عليها بالزر الأيمن.
-• لا شيء يغادر جهازك: تُحوَّل الصور على جهازك. بلا رفع ملفات، بلا تحليلات، بلا حساب.
+• صورك لا تغادر جهازك أبدًا: تُحوَّل على جهازك. بلا رفع ملفات، بلا حساب. الشيء الوحيد الذي يرسله Imgkeep هو ملخص يومي مجهول، مثل "12 حفظًا بصيغة JPG، فشل 1"، لنعرف ما الذي نحسّنه. لا عناوين ولا أسماء ملفات أبدًا. نقرة واحدة في الخيارات توقفه.
 • أربعة أذونات فقط: contextMenus وdownloads وstorage وoffscreen.
 • مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فما تقرؤه هو ما يعمل.
 • مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية. لا يفتح Imgkeep نافذة صغيرة إلا عندما تطلبها (نسخ بصيغة PNG، مزيد من الخيارات) أو عندما يحتاج الحفظ إلى موافقتك، ويطلب تقييمًا مرة واحدة فقط بعد أن تستخدمه لفترة.

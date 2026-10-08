@@ -5,6 +5,8 @@ import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, 
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
+import { APTABASE, addCount, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
+import { storeFor } from "./lib/review.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
@@ -92,7 +94,10 @@ async function refreshMenus() {
     await chrome.storage.local.set({ usage });
   }
   const showRate = menuAskVisible(usage, now);
-  if (showRate && usage.ask === "waiting") await chrome.storage.local.set({ usage: markAsked(usage, now) });
+  if (showRate && usage.ask === "waiting") {
+    await chrome.storage.local.set({ usage: markAsked(usage, now) });
+    count("rating_asked");
+  }
   // Decided from storage every time, not from menuTitles: the worker may have restarted since the menu was built.
   // Creating an item that exists, or removing one that doesn't, is a harmless error.
   if (showRate) {
@@ -119,9 +124,9 @@ async function onInstalled({ reason, previousVersion }) {
   await refreshMenus();
 }
 
-chrome.runtime.onInstalled.addListener(onInstalled);
+chrome.runtime.onInstalled.addListener((details) => onInstalled(details).then(() => checkCounts()));
 // Menus survive restarts, but this module's record of their titles doesn't: rebuild both.
-chrome.runtime.onStartup.addListener(() => createMenus().then(refreshMenus));
+chrome.runtime.onStartup.addListener(() => createMenus().then(refreshMenus).then(() => checkCounts()));
 
 // For automated tests only.
 globalThis.imgkeepOnInstalled = onInstalled;
@@ -276,7 +281,7 @@ async function attempt(job) {
 
   // The extension comes from the checked output bytes, never from the menu item alone.
   const target = buildTarget({ settings, url: job.url, width: conv.width, height: conv.height, ext: conv.ext, name: job.options?.name });
-  const size = { width: conv.width, height: conv.height, mime: conv.mime, bytes: conv.size };
+  const size = { width: conv.width, height: conv.height, mime: conv.mime, bytes: conv.size, resized: conv.width < conv.sourceWidth };
 
   if (mode === "folder") {
     const w = await toOffscreen({ type: "write", jobId: job.id, ...target });
@@ -303,6 +308,7 @@ async function runJob(input, { interactive = true } = {}) {
     pageUrl: input.pageUrl || "",
     options: input.options,
     sourceId: input.sourceId,
+    origin: input.origin, // "editor" for saves from More options (only for counting)
   };
   let result;
   try {
@@ -316,12 +322,80 @@ async function runJob(input, { interactive = true } = {}) {
   if (!job.sourceId) await dropSource(job.id);
   // Successes and real failures count towards the rating ask (site access and folder questions don't).
   if (result.ok || result.reason === "error") await countUse(result.ok).catch(() => {});
+  countJob(job, result);
   if (!result.ok && interactive) await openAsk({ ...job, ...result });
   return result;
 }
 
 // For automated tests only.
 globalThis.imgkeepRunJob = runJob;
+
+// ---- Anonymous daily counts (lib/telemetry.js; on by default, off in Options) ----
+
+let appKey = APTABASE.appKey;
+let countsQueue = Promise.resolve();
+
+const countsOn = async () => (await getSettings()).usageCounts !== false;
+
+// Adds to today's counts. When a new day starts, yesterday's counts become one summary to send.
+function count(...keys) {
+  countsQueue = countsQueue
+    .then(async () => {
+      if (!(await countsOn())) return;
+      const today = dayOf();
+      let { counts } = await chrome.storage.local.get("counts");
+      if (dayIsOver(counts, today)) {
+        await chrome.storage.local.set({ countsOutbox: { day: counts.day, props: summaryProps(counts.c, storeFor(navigator.userAgent)) } });
+        counts = null;
+      }
+      for (const key of keys) counts = addCount(counts, key, today);
+      if (counts) await chrome.storage.local.set({ counts });
+      await sendOutbox();
+    })
+    .catch(() => {});
+  return countsQueue;
+}
+
+// Sends the waiting summary, if any. Kept for another try if it fails (offline); dropped after 7 days.
+async function sendOutbox() {
+  const { countsOutbox: box } = await chrome.storage.local.get("countsOutbox");
+  if (!box) return;
+  const event = summaryEvent(box.props, {
+    appVersion: chrome.runtime.getManifest().version,
+    locale: chrome.i18n.getUILanguage(),
+    isDebug: Boolean(globalThis.imgkeepCountsDebug),
+  });
+  if (await sendSummary(event, appKey)) {
+    await chrome.storage.local.set({ countsLastSent: { day: box.day, props: box.props, sentAt: Date.now() } });
+    await chrome.storage.local.remove("countsOutbox");
+  } else if (Date.now() - new Date(`${box.day}T12:00:00`).getTime() > 7 * DAY) {
+    await chrome.storage.local.remove("countsOutbox");
+  }
+}
+
+// A day may have ended while the browser was closed: check when Imgkeep starts.
+const checkCounts = () => count();
+
+function countJob(job, result) {
+  if (result.ok) {
+    const keys = [`save_${job.format}`, `mode_${result.mode}`];
+    if (result.resized) keys.push("resized");
+    if (job.origin === "editor") keys.push("more_options_save");
+    return count(...keys);
+  }
+  if (result.reason === "host") return count("site_access_asked");
+  if (result.reason === "no-folder" || result.reason === "folder-permission") return count("folder_asked");
+  return count(failureKey(result.code));
+}
+
+// Turning counts off drops whatever was counted and not yet sent.
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === "sync" && changes.usageCounts?.newValue === false) chrome.storage.local.remove(["counts", "countsOutbox"]);
+});
+
+// For automated tests only.
+globalThis.imgkeepCount = count;
+globalThis.imgkeepSetAppKey = (key) => (appKey = key);
 
 // ---- Windows ----
 
@@ -335,6 +409,7 @@ const WINDOWS = {
 
 async function openWindow(page, input) {
   const job = { id: crypto.randomUUID(), pageUrl: "", ...input };
+  if (page === "editor") count("more_options");
   await chrome.storage.session.set({ [jobKey(job.id)]: job });
   await chrome.windows.create({
     url: chrome.runtime.getURL(`${page}.html?job=${encodeURIComponent(job.id)}`),
@@ -425,7 +500,7 @@ const windowHandlers = {
   async save({ jobId, format, options }) {
     if (!WINDOW_FORMATS.includes(format)) throw new JobError("unknown", `Unknown format ${format}`);
     const job = await loadJob(jobId);
-    return runJob({ url: job.url, pageUrl: job.pageUrl, format, options: cleanOptions(options), sourceId: jobId });
+    return runJob({ url: job.url, pageUrl: job.pageUrl, format, options: cleanOptions(options), sourceId: jobId, origin: "editor" });
   },
 
   // Copy failed: save the same image as PNG the usual way instead.
@@ -465,6 +540,7 @@ const reviewHandlers = {
     await usageQueue; // a use counted just now may be what makes it due
     const usage = await getUsage();
     if (!windowCanAsk(usage, Date.now())) return { ok: true, show: false };
+    if (usage.ask === "waiting") count("rating_asked");
     await chrome.storage.local.set({ usage: markWindowAsked(usage, Date.now()) });
     await refreshMenus();
     return { ok: true, show: true };
@@ -474,12 +550,20 @@ const reviewHandlers = {
   async review({ action }) {
     await chrome.storage.local.set({ usage: finishAsk(await getUsage()) });
     await refreshMenus();
+    count(action === "rate" ? "rating_rate" : "rating_no");
     if (action === "rate") await chrome.tabs.create({ url: reviewUrl(navigator.userAgent) });
+    return { ok: true };
+  },
+
+  // Counts only the windows know about: a site allowed from a window, a copy the clipboard refused.
+  async count({ key }) {
+    if (["site_access_allowed", "fail_copy"].includes(key)) count(key);
     return { ok: true };
   },
 
   // A copy reached the clipboard (copies happen in the windows, not here).
   async copied() {
+    count("copy");
     await countUse(true);
     return { ok: true };
   },

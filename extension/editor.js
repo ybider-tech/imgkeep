@@ -61,6 +61,7 @@ function problemFor(res) {
     const allow = el("button", { type: "button", className: "primary", textContent: t("editAllow") });
     allow.addEventListener("click", async () => {
       const granted = await chrome.permissions.request({ origins: [res.origin] });
+      if (granted) toBackground("count", { key: "site_access_allowed" }).catch(() => {});
       if (!granted) return status(t("askNotAllowed"), true);
       showProblem([]);
       preview();
@@ -156,6 +157,7 @@ async function copy() {
     await toBackground("copied").catch(() => {});
     offerReview();
   } catch (e) {
+    toBackground("count", { key: "fail_copy" }).catch(() => {});
     status(`${t("copyFailed")} ${t("copyFailedNote")}`, true);
   } finally {
     setBusy(false);

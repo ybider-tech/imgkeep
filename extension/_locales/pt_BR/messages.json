@@ -3,7 +3,7 @@
     "message": "Salvar imagem como PNG, JPG, WebP, GIF ou PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Clique com o botão direito para salvar qualquer imagem como PNG, JPG, WebP, GIF ou PDF. Converte WebP e AVIF no PC. Sem rastreio."
+    "message": "Botão direito para salvar qualquer imagem como PNG, JPG, WebP, GIF ou PDF. Converte WebP e AVIF no PC. Sem dados pessoais."
   },
   "menuParent": {
     "message": "Imgkeep: Salvar imagem como"
@@ -314,6 +314,30 @@
   "optSitesEmpty": {
     "message": "Nenhum ainda. O Imgkeep só pergunta quando um site bloqueia uma imagem que você quer converter."
   },
+  "optCountsTitle": {
+    "message": "Contagens de uso anônimas"
+  },
+  "optCountsLabel": {
+    "message": "Enviar um resumo diário anônimo"
+  },
+  "optCountsHint": {
+    "message": "Uma vez por dia, o Imgkeep envia um resumo como \"12 salvamentos como JPG, 1 falhou\" para o Aptabase, um serviço de análise de código aberto hospedado na UE, para sabermos quais recursos melhorar e quais salvamentos falham. Nunca imagens, endereços de páginas, nomes de arquivos ou qualquer coisa que identifique você."
+  },
+  "optCountsShow": {
+    "message": "Ver exatamente o que é enviado"
+  },
+  "optCountsToday": {
+    "message": "Contado hoje (enviado depois de hoje):"
+  },
+  "optCountsLast": {
+    "message": "Último resumo enviado:"
+  },
+  "optCountsNone": {
+    "message": "Nada ainda."
+  },
+  "optCountsOff": {
+    "message": "Desativado. Nada é contado nem enviado."
+  },
   "optRemove": {
     "message": "Remover"
   },
@@ -348,7 +372,7 @@
     "message": "Permissões"
   },
   "optTrust1": {
-    "message": "As imagens são convertidas no seu computador. Nada é enviado e não há análises."
+    "message": "As imagens são convertidas no seu computador e nunca são enviadas. A única outra coisa que o Imgkeep envia é o resumo diário anônimo acima, que você pode desativar."
   },
   "optTrust2": {
     "message": "Sem anúncios e sem abas de boas-vindas. Janelas pequenas só abrem quando você pede ou quando um salvamento precisa da sua confirmação. O Imgkeep pede uma avaliação só uma vez, depois que você já o usou por um tempo."

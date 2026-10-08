@@ -20,6 +20,9 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 
 ## Network use
 
-The only network request is `fetch()` of the image you clicked, in `extension/offscreen.js`.
-The static check (`tests/static-check.mjs`) fails the build if `fetch(` appears in any other file,
-or if any file references a URL other than imgkeep.app or the Chrome Web Store.
+Two network requests, and only these:
+
+- `fetch()` of the image you clicked, in `extension/offscreen.js`.
+- Since 0.7.0, one anonymous daily summary of feature use, in `extension/lib/telemetry.js`, to exactly `https://eu.aptabase.com/api/v0/event`. On by default, off in Options. What it contains is listed in the privacy policy, and Options shows it.
+
+Neither needs a permission: the image request uses the optional per-site access when needed, and Aptabase allows cross-origin requests. The static check (`tests/static-check.mjs`) fails the build if `fetch(` appears in any other file, if `lib/telemetry.js` makes more than one request or to any other address, or if any file references a URL other than imgkeep.app, the two stores or Aptabase.

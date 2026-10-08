@@ -3,7 +3,7 @@
     "message": "画像をPNG・JPG・WebP・GIF・PDFで保存 — Imgkeep"
   },
   "extDescription": {
-    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存。WebPやAVIFをパソコン上で変換し、指定のフォルダへ。トラッキングなし。"
+    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存。WebPやAVIFをパソコン上で変換し、指定のフォルダへ。個人データの収集なし。"
   },
   "menuParent": {
     "message": "Imgkeep: 名前を付けて画像を保存"
@@ -314,6 +314,30 @@
   "optSitesEmpty": {
     "message": "まだありません。Imgkeep が確認するのは、変換したい画像をサイトがブロックしたときだけです。"
   },
+  "optCountsTitle": {
+    "message": "匿名の利用回数"
+  },
+  "optCountsLabel": {
+    "message": "匿名の1日分のまとめを送信する"
+  },
+  "optCountsHint": {
+    "message": "1日1回、「JPGで12回保存、1回失敗」のようなまとめを、EUでホストされているオープンソースの分析サービス Aptabase に送信します。改善すべき機能や失敗する保存を知るためです。画像、ページのアドレス、ファイル名、あなたを特定できる情報は一切送りません。"
+  },
+  "optCountsShow": {
+    "message": "送信内容をそのまま見る"
+  },
+  "optCountsToday": {
+    "message": "今日の集計（翌日以降に送信）："
+  },
+  "optCountsLast": {
+    "message": "最後に送信したまとめ："
+  },
+  "optCountsNone": {
+    "message": "まだありません。"
+  },
+  "optCountsOff": {
+    "message": "オフ。何も集計・送信されません。"
+  },
   "optRemove": {
     "message": "削除"
   },
@@ -348,7 +372,7 @@
     "message": "権限"
   },
   "optTrust1": {
-    "message": "画像はあなたのパソコン上で変換されます。何もアップロードされず、アクセス解析もありません。"
+    "message": "画像はパソコン上で変換され、アップロードされることはありません。それ以外に Imgkeep が送るのは上の匿名の1日分のまとめだけで、オフにできます。"
   },
   "optTrust2": {
     "message": "広告なし、ようこそタブなし。小さなウィンドウが開くのは、あなたが呼び出したときか、保存に確認が必要なときだけです。評価のお願いは、しばらく使っていただいた後に一度だけです。"

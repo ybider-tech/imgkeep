@@ -53,6 +53,8 @@
     ul.plain { margin: 0; padding-inline-start: 1.2em; }
     ul.plain li { margin-bottom: 0.4em; }
     #folderStatus { margin-inline-start: 4px; }
+    pre.preview { white-space: pre-wrap; margin: 4px 0 10px; }
+    #countsDetails summary { cursor: pointer; color: var(--accent); }
     input[type="number"] {
       font: inherit; color: var(--text); background: var(--surface);
       border: 1px solid var(--border); border-radius: 8px; padding: 0.45em 0.6em; width: 12em;
@@ -148,6 +150,21 @@
       <ul id="sites"></ul>
     </section>
 
+    <section aria-labelledby="h-counts">
+      <h2 id="h-counts" data-i18n="optCountsTitle">Anonymous usage counts</h2>
+      <label class="choice">
+        <input type="checkbox" id="usageCounts">
+        <span><span data-i18n="optCountsLabel">Send an anonymous daily summary</span><small data-i18n="optCountsHint">Once a day, Imgkeep sends a summary like "12 saves as JPG, 1 failed" to Aptabase, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.</small></span>
+      </label>
+      <details class="field" id="countsDetails">
+        <summary data-i18n="optCountsShow">See exactly what's sent</summary>
+        <p class="hint" data-i18n="optCountsToday">Counted today, sent tomorrow:</p>
+        <pre class="preview mono" id="countsToday" dir="ltr"></pre>
+        <p class="hint" data-i18n="optCountsLast">Last summary sent:</p>
+        <pre class="preview mono" id="countsLast" dir="ltr"></pre>
+      </details>
+    </section>
+
     <section class="pro" aria-labelledby="h-pro">
       <h2 id="h-pro" data-i18n="optProTitle">Imgkeep Pro — coming soon</h2>
       <p data-i18n="optProBody">Presets for the sizes and formats you use most, file-size targets like "under 200 KB", rules that send each site's images to the right folder, and a log of where every image came from.</p>
@@ -165,7 +182,7 @@
         <span class="tag">offscreen</span>
       </div>
       <ul class="plain">
-        <li data-i18n="optTrust1">Images are converted on your computer. Nothing is uploaded; there's no analytics.</li>
+        <li data-i18n="optTrust1">Images are converted on your computer and never uploaded. The only other thing Imgkeep sends is the anonymous daily summary above, which you can turn off.</li>
         <li data-i18n="optTrust2">No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating once, after you've used it for a while.</li>
         <li data-i18n="optTrust3">Every free feature stays free.</li>
       </ul>

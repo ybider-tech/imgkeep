@@ -3,7 +3,7 @@
     "message": "Bild speichern als PNG, JPG, WebP, GIF oder PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern. WebP und AVIF werden lokal umgewandelt. Kein Tracking."
+    "message": "Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern. WebP und AVIF lokal umwandeln. Keine persönlichen Daten."
   },
   "menuParent": {
     "message": "Imgkeep: Bild speichern als"
@@ -314,6 +314,30 @@
   "optSitesEmpty": {
     "message": "Noch keine. Imgkeep fragt nur, wenn eine Website ein Bild blockiert, das du umwandeln möchtest."
   },
+  "optCountsTitle": {
+    "message": "Anonyme Nutzungszahlen"
+  },
+  "optCountsLabel": {
+    "message": "Eine anonyme tägliche Zusammenfassung senden"
+  },
+  "optCountsHint": {
+    "message": "Einmal am Tag sendet Imgkeep eine Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“ an Aptabase, einen Open-Source-Analysedienst mit Servern in der EU, damit wir wissen, welche Funktionen wir verbessern sollten und welche Speichervorgänge scheitern. Niemals Bilder, Seitenadressen, Dateinamen oder etwas, das dich identifiziert."
+  },
+  "optCountsShow": {
+    "message": "Genau sehen, was gesendet wird"
+  },
+  "optCountsToday": {
+    "message": "Heute gezählt (wird nach heute gesendet):"
+  },
+  "optCountsLast": {
+    "message": "Zuletzt gesendete Zusammenfassung:"
+  },
+  "optCountsNone": {
+    "message": "Noch nichts."
+  },
+  "optCountsOff": {
+    "message": "Aus. Es wird nichts gezählt oder gesendet."
+  },
   "optRemove": {
     "message": "Entfernen"
   },
@@ -348,7 +372,7 @@
     "message": "Berechtigungen"
   },
   "optTrust1": {
-    "message": "Bilder werden auf deinem Computer umgewandelt. Nichts wird hochgeladen, es gibt keine Analysen."
+    "message": "Bilder werden auf deinem Computer umgewandelt und nie hochgeladen. Das Einzige, was Imgkeep sonst sendet, ist die anonyme tägliche Zusammenfassung oben, die du ausschalten kannst."
   },
   "optTrust2": {
     "message": "Keine Werbung und keine Willkommens-Tabs. Kleine Fenster öffnen sich nur, wenn du sie aufrufst oder ein Speichervorgang deine Zustimmung braucht. Imgkeep bittet einmal um eine Bewertung, nachdem du es eine Weile genutzt hast."

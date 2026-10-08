@@ -56,6 +56,7 @@ async function writeClipboard() {
     await copyPng(png);
   } catch (e) {
     // Most often the window lost focus while converting. The clipboard was not changed.
+    toBackground("count", { key: "fail_copy" }).catch(() => {});
     return show({
       title: t("copyFailed"),
       error: true,
@@ -103,6 +104,7 @@ function showFailure(res) {
       actions: [
         [t("copyAllowAndCopy"), async () => {
           const granted = await chrome.permissions.request({ origins: [res.origin] });
+          if (granted) toBackground("count", { key: "site_access_allowed" }).catch(() => {});
           if (!granted) {
             showFailure(res);
             $("status").textContent = t("askNotAllowed");

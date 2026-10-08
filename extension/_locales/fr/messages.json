@@ -3,7 +3,7 @@
     "message": "Enregistrer l'image en PNG, JPG, WebP, GIF ou PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic droit pour enregistrer n'importe quelle image en PNG, JPG, WebP, GIF ou PDF. Convertit WebP et AVIF en local. Sans pistage."
+    "message": "Clic droit : enregistrez toute image en PNG, JPG, WebP, GIF ou PDF. Convertit WebP et AVIF en local. Aucune donnée personnelle."
   },
   "menuParent": {
     "message": "Imgkeep : Enregistrer l'image en"
@@ -314,6 +314,30 @@
   "optSitesEmpty": {
     "message": "Aucun pour l'instant. Imgkeep ne demande que lorsqu'un site bloque une image que vous voulez convertir."
   },
+  "optCountsTitle": {
+    "message": "Statistiques d'utilisation anonymes"
+  },
+  "optCountsLabel": {
+    "message": "Envoyer un résumé quotidien anonyme"
+  },
+  "optCountsHint": {
+    "message": "Une fois par jour, Imgkeep envoie un résumé comme « 12 enregistrements en JPG, 1 échec » à Aptabase, un service d'analyse open source hébergé dans l'UE, pour savoir quelles fonctions améliorer et quels enregistrements échouent. Jamais d'images, d'adresses de pages, de noms de fichiers ni rien qui vous identifie."
+  },
+  "optCountsShow": {
+    "message": "Voir exactement ce qui est envoyé"
+  },
+  "optCountsToday": {
+    "message": "Compté aujourd'hui (envoyé après aujourd'hui) :"
+  },
+  "optCountsLast": {
+    "message": "Dernier résumé envoyé :"
+  },
+  "optCountsNone": {
+    "message": "Rien pour l'instant."
+  },
+  "optCountsOff": {
+    "message": "Désactivé. Rien n'est compté ni envoyé."
+  },
   "optRemove": {
     "message": "Retirer"
   },
@@ -348,7 +372,7 @@
     "message": "Autorisations"
   },
   "optTrust1": {
-    "message": "Les images sont converties sur votre ordinateur. Rien n'est envoyé, et il n'y a aucune statistique."
+    "message": "Les images sont converties sur votre ordinateur et jamais envoyées. La seule autre chose qu'Imgkeep envoie est le résumé quotidien anonyme ci-dessus, que vous pouvez désactiver."
   },
   "optTrust2": {
     "message": "Pas de pub ni d'onglets de bienvenue. De petites fenêtres s'ouvrent seulement quand vous les demandez ou quand un enregistrement a besoin de votre accord. Imgkeep demande une note une seule fois, après que vous l'avez utilisé un moment."

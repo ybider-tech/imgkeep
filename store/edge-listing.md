@@ -13,7 +13,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ## Store listing (English)
 - **Display name:** comes from the manifest: Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
-- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
+- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
@@ -51,7 +51,7 @@ WHAT IT DOES
 BUILT TO BE TRUSTED
 
 • No access to your pages: Imgkeep can't read or change the sites you visit. It sees only the image you right-click.
-• Nothing leaves your computer: images are converted on your device. No uploads, no analytics, no account.
+• Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
 • Four permissions only: contextMenus, downloads, storage, offscreen.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
 • Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
@@ -67,7 +67,7 @@ Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.ht
 ```text
 Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…). To test: right-click any image on any website and pick a format; the file is saved to Downloads. "Copy as PNG" opens a small window that copies the image to the clipboard and closes itself. "More options…" opens a window with a preview, where you can pick format, maximum width, quality and file name before saving.
 
-Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code, no data collection. Source code: https://github.com/ybider-tech/imgkeep
+Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code. Since 0.7.0, one anonymous daily summary of feature use (counts only, no URLs or file names) is sent to Aptabase (eu.aptabase.com); it can be turned off in Options. Source code: https://github.com/ybider-tech/imgkeep
 
 New in 0.6.1: the extension name now starts with what it does ("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"). Menu items added since a user's previous version show "✨ New" for 30 days after an update. After at least 15 successful saves over 7 days, Imgkeep asks once for a rating (in its own window after a copy or save, and as a menu item for up to 14 days); "No thanks" ends it for good. No incentives. These counts stay in the extension's local storage and are never sent anywhere. Options has "What's new" and "Rate Imgkeep" links.
 

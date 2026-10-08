@@ -6,7 +6,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 - **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.
 - **Category:** Tools
 - **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
@@ -40,7 +40,7 @@ WHAT IT DOES
 BUILT TO BE TRUSTED
 
 • No access to your pages: Imgkeep can't read or change the sites you visit. It sees only the image you right-click.
-• Nothing leaves your computer: images are converted on your device. No uploads, no analytics, no account.
+• Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
 • Four permissions only: contextMenus, downloads, storage, offscreen.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
 • Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
@@ -72,12 +72,16 @@ No, I am not using remote code. All code is packaged in the extension. There are
 
 ### Data usage
 
-What user data do you plan to collect from users now or in the future? **None.** (Leave every category unticked: personally identifiable information, health, financial and payment, authentication, personal communications, location, web history, user activity, website content.)
+What user data do you plan to collect from users now or in the future? Since 0.7.0: **User activity** only (tick it; leave every other category unticked).
+
+Why: 0.7.0 sends one anonymous daily summary of feature use (counts of saves per format and mode, failures by error type, copies, More options, site-access and rating answers, version, browser, language) to Aptabase. No images, URLs, site or file names, or identifiers. Aptabase derives the country from the request's IP address and doesn't store the IP. If the form's "Location" definition (region, IP address) seems to cover a country derived by the analytics service, tick Location too: over-disclosing is safe, under-disclosing is not.
+
+Justification text, if asked: "Anonymous daily counts of which features were used and which saves failed (for example: 12 saves as JPG, 1 failed), sent to Aptabase (EU) to decide what to improve. No personal data, URLs or file names. On by default, one click off in Options."
 
 Certifications (tick all three):
 
 - [x] I do not sell or transfer user data to third parties, outside of the approved use cases.
-- [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose.
+- [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose. (The counts are used only to improve saving images, which is the single purpose.)
 - [x] I do not use or transfer user data to determine creditworthiness or for lending purposes.
 
 ## Distribution

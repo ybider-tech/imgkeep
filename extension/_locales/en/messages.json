@@ -4,7 +4,7 @@
     "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
   },
   "extDescription": {
-    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.",
+    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.",
     "description": "Store summary. Max 132 characters."
   },
   "menuParent": {
@@ -395,6 +395,38 @@
     "message": "None yet. Imgkeep asks only when a site blocks an image you want to convert.",
     "description": "Empty state"
   },
+  "optCountsTitle": {
+    "message": "Anonymous usage counts",
+    "description": "Options section heading: the anonymous daily summary"
+  },
+  "optCountsLabel": {
+    "message": "Send an anonymous daily summary",
+    "description": "Checkbox label (on by default)"
+  },
+  "optCountsHint": {
+    "message": "Once a day, Imgkeep sends a summary like \"12 saves as JPG, 1 failed\" to Aptabase, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.",
+    "description": "What the summary is, where it goes, and what is never in it"
+  },
+  "optCountsShow": {
+    "message": "See exactly what's sent",
+    "description": "Expandable: shows the counts exactly as stored and sent"
+  },
+  "optCountsToday": {
+    "message": "Counted today (sent after today):",
+    "description": "Label above today's counts"
+  },
+  "optCountsLast": {
+    "message": "Last summary sent:",
+    "description": "Label above the last summary sent"
+  },
+  "optCountsNone": {
+    "message": "Nothing yet.",
+    "description": "Shown when there are no counts yet"
+  },
+  "optCountsOff": {
+    "message": "Off. Nothing is counted or sent.",
+    "description": "Shown instead of today's counts when the summary is turned off"
+  },
   "optRemove": {
     "message": "Remove",
     "description": "Button"
@@ -438,7 +470,7 @@
     "description": "Accessible label"
   },
   "optTrust1": {
-    "message": "Images are converted on your computer. Nothing is uploaded; there's no analytics.",
+    "message": "Images are converted on your computer and never uploaded. The only other thing Imgkeep sends is the anonymous daily summary above, which you can turn off.",
     "description": "Bullet"
   },
   "optTrust2": {

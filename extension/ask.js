@@ -96,6 +96,7 @@ function render() {
     actions.append(
       button(t("askAllowAndSave"), async () => {
         const granted = await chrome.permissions.request({ origins: [job.origin] });
+        if (granted) chrome.runtime.sendMessage({ target: "background", type: "count", jobId, key: "site_access_allowed" }).catch(() => {});
         if (!granted) return status(t("askNotAllowed"), true);
         status(t("askSaving"));
         await afterRetry(await toBackground("retry"));

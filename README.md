@@ -15,7 +15,7 @@ Chrome now often saves images as WebP or AVIF, which many apps still can't open.
 ## Built to be trusted
 
 - Four permissions: `contextMenus`, `downloads`, `storage`, `offscreen`. No access to your pages. See [PERMISSIONS.md](PERMISSIONS.md).
-- No analytics, no remote code, no network use except fetching the image you clicked.
+- No remote code. Network use: fetching the image you clicked, and (since 0.7.0) one anonymous daily summary of feature use to Aptabase, on by default and off in Options. Never images, addresses, file names or identifiers.
 - No review prompts, welcome tabs, badges or upsells. A small window opens only when a save needs your decision.
 - Plain JavaScript ES modules, no build step, no npm dependencies. One small library is vendored as a single readable file: [gifenc](https://github.com/mattdesl/gifenc) (MIT) in `extension/lib/gifenc.js`, for making GIFs.
 

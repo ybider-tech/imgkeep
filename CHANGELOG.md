@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.0 — unreleased
+
+- **Anonymous daily summary** (announced with 0.6.1). Imgkeep counts on your computer how its features are used, and once a day sends the previous active day's totals to Aptabase (open source, EU-hosted) as one event: successful saves per format and save mode, saves made smaller by the maximum width, failures by error type, copies, More options use, site-access and rating answers, plus version, browser and language. Never images, addresses, site or file names, settings text or identifiers; each summary gets a new random session id. On by default; Options → Anonymous usage counts shows exactly what's counted and sent, and turns it off (which also deletes what wasn't sent yet). A summary that can't be sent is retried, and dropped after 7 days.
+- One direct request from `extension/lib/telemetry.js` (no SDK, no new permission). The static check allows exactly that file to fetch, exactly once, to `https://eu.aptabase.com/api/v0/event`.
+- Wording: "No tracking" becomes "No personal data" in the store summary (9 languages); store descriptions, Options, website and privacy policy describe the summary. The store's data-use answers change (see `store/listing.md`).
+
 ## 0.6.1 — 2026-10-09
 
 - **New store name, keywords first:** "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep", in all 9 languages.

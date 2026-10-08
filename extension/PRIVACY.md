@@ -6,15 +6,31 @@ Imgkeep is a browser extension for Chrome and Microsoft Edge that saves the imag
 
 ## What Imgkeep collects
 
-Nothing. Imgkeep collects no personal data.
+No personal data. Your images never leave your computer. The only thing Imgkeep sends is one anonymous daily summary of how its features were used, described below, and you can turn it off.
 
 ## What Imgkeep reads
 
 Imgkeep reads only the image you right-click and choose to save. It converts that image on your computer and uploads nothing. It has no access to the pages you visit.
 
+## The anonymous daily summary
+
+Since version 0.7.0, Imgkeep counts on your computer how often its features are used. Once a day it sends the totals of the previous day it was used to Aptabase, an open-source analytics service hosted in the EU (eu.aptabase.com), to learn which features to improve and whether saves fail. It is on by default. Turn it off in Imgkeep's Options, under "Anonymous usage counts"; anything counted and not yet sent is then deleted. The same section shows exactly what has been counted and the last summary sent.
+
+A summary contains only:
+
+- successful saves per format (PNG, JPG, WebP, GIF, PDF, original) and per save mode (Downloads, a folder you chose, ask every time), and how many were made smaller by the maximum width;
+- failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
+- how many images were copied, how often More options was opened and used to save;
+- how often a site-access or folder question was shown and a site was allowed, and how the one rating question was answered;
+- the extension's version, the browser (Chrome or Edge) and its language.
+
+It never contains images, image or page addresses, site names, file or folder names, the text of your settings, or any identifier for you or your device. Each summary carries a new random number, so summaries can't be linked to each other.
+
+Like any service your browser connects to, Aptabase receives your IP address when a summary arrives (through its content delivery network). Aptabase doesn't store it: it uses it to work out the country, and combines it with your browser's user agent and a code it throws away every 24 hours to count daily users. Aptabase keeps summaries for up to 5 years. Its privacy policy: https://aptabase.com/legal/privacy
+
 ## Where your settings live
 
-Your settings (save mode, subfolder, file-name template, quality, background colour and maximum width) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The format and width you last used in More options are kept in the extension's local storage on this computer. So does a simple count of saves and copies that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update. It is never sent anywhere.
+Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update.
 
 ## The clipboard
 
@@ -26,13 +42,11 @@ Some sites block other sites from reading their images. Only then, and only afte
 
 ## What Imgkeep never does
 
-No analytics, no ads, no tracking, and your data is never sold.
+No ads, no tracking across sites, no personal data, and your data is never sold.
 
 ## Changes
 
 Any change to this policy will be announced before it ships.
-
-Announced change, coming in version 0.7.0: Imgkeep will send one anonymous summary a day of how its features were used (for example, saves per format and failed saves by type) to Aptabase, an open-source, privacy-first analytics service hosted in the EU. It will never include images, page addresses, file names or anything that identifies you. It will be on by default and can be turned off with one click in Options. This policy will list exactly what is sent before that version ships.
 
 ## Contact
 

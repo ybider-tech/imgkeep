@@ -3,7 +3,7 @@
     "message": "Guardar imagen como PNG, JPG, WebP, GIF o PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Haz clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF. Convierte WebP y AVIF en tu equipo. Sin rastreo."
+    "message": "Clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF. Convierte WebP y AVIF en tu equipo. Sin datos personales."
   },
   "menuParent": {
     "message": "Imgkeep: Guardar imagen como"
@@ -314,6 +314,30 @@
   "optSitesEmpty": {
     "message": "Ninguno todavía. Imgkeep solo pregunta cuando un sitio bloquea una imagen que quieres convertir."
   },
+  "optCountsTitle": {
+    "message": "Recuentos de uso anónimos"
+  },
+  "optCountsLabel": {
+    "message": "Enviar un resumen diario anónimo"
+  },
+  "optCountsHint": {
+    "message": "Una vez al día, Imgkeep envía un resumen como «12 guardados como JPG, 1 fallido» a Aptabase, un servicio de analítica de código abierto alojado en la UE, para saber qué funciones mejorar y qué guardados fallan. Nunca imágenes, direcciones de páginas, nombres de archivo ni nada que te identifique."
+  },
+  "optCountsShow": {
+    "message": "Ver exactamente qué se envía"
+  },
+  "optCountsToday": {
+    "message": "Contado hoy (se envía después de hoy):"
+  },
+  "optCountsLast": {
+    "message": "Último resumen enviado:"
+  },
+  "optCountsNone": {
+    "message": "Nada todavía."
+  },
+  "optCountsOff": {
+    "message": "Desactivado. No se cuenta ni se envía nada."
+  },
   "optRemove": {
     "message": "Quitar"
   },
@@ -348,7 +372,7 @@
     "message": "Permisos"
   },
   "optTrust1": {
-    "message": "Las imágenes se convierten en tu equipo. No se sube nada y no hay analíticas."
+    "message": "Las imágenes se convierten en tu equipo y nunca se suben. Lo único más que envía Imgkeep es el resumen diario anónimo de arriba, que puedes desactivar."
   },
   "optTrust2": {
     "message": "Sin anuncios ni pestañas de bienvenida. Las ventanas pequeñas solo se abren cuando tú las pides o cuando un guardado necesita tu aprobación. Imgkeep pide una valoración una sola vez, después de que lo hayas usado un tiempo."
