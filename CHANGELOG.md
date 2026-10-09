@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.6.1 — unreleased
+## 0.6.1 — 2026-10-09
 
 - **"New" in the right-click menu.** After an update, items added since your previous version say "New" for 30 days (for example "Copy as PNG ✨ New" when updating from 0.4.0). A fresh install labels nothing.
 - **One rating ask.** After at least 15 successful saves or copies, 7 days after install (or after updating to 0.6.1), and only if the last 3 saves worked, Imgkeep asks once: a short note after a copy or a save in More options, and an "Enjoying Imgkeep? Rate it…" menu item for up to 14 days. "Rate Imgkeep" opens the Chrome Web Store or Edge Add-ons review page for the browser you're using; "No thanks" or no answer within 14 days ends it for good. The counting happens in the extension's local storage and is never sent anywhere.
