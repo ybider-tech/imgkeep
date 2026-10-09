@@ -11,6 +11,16 @@
     "message": "Imgkeep: Save image as",
     "description": "Right-click menu entry on images."
   },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (last used)",
+    "description": "Top item of the right-click submenu: saves again in the format used last time. $FORMAT$ is PNG, JPG, WebP, GIF, PDF or Original format.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "menuGif": {
     "message": "GIF (keeps animation)",
     "description": "Menu item: save as GIF, keeping animation."

@@ -38,7 +38,12 @@ globalThis.imgkeepMenuTitles = menuTitles;
 const contexts = ["image"];
 const ignoreError = () => void chrome.runtime.lastError;
 
-function createMenus() {
+// The format of the last save made from the menu, offered again at the top. Short names: "GIF", not "GIF (keeps animation)".
+const SHORT = { png: "PNG", jpg: "JPG", webp: "WebP", gif: "GIF", pdf: "PDF", original: () => msg("menuOriginal") };
+const lastUsedTitle = (format) => msg("menuLastUsed", [typeof SHORT[format] === "function" ? SHORT[format]() : SHORT[format]]);
+
+async function createMenus() {
+  const { lastFormat } = await chrome.storage.local.get("lastFormat");
   return new Promise((resolve) => {
     chrome.contextMenus.removeAll(() => {
       menuTitles.clear();
@@ -47,6 +52,12 @@ function createMenus() {
         chrome.contextMenus.create({ id, parentId: "imgkeep", title: TITLES[id]?.(), type, contexts });
         if (TITLES[id]) menuTitles.set(id, TITLES[id]());
       };
+      // Menus keep the order they were created in, so "last used" comes first, in the same spot every time.
+      if (SHORT[lastFormat]) {
+        chrome.contextMenus.create({ id: "imgkeep-last", parentId: "imgkeep", title: lastUsedTitle(lastFormat), contexts });
+        menuTitles.set("imgkeep-last", lastUsedTitle(lastFormat));
+        item("imgkeep-sep0", "separator");
+      }
       for (const id of ["imgkeep-png", "imgkeep-jpg", "imgkeep-webp", "imgkeep-gif", "imgkeep-pdf"]) item(id);
       item("imgkeep-sep", "separator");
       item("imgkeep-original");
@@ -137,15 +148,42 @@ function openRateWindow() {
   return chrome.windows.create({ url: chrome.runtime.getURL("rate.html"), type: "popup", width: 440, height: 240, focused: true });
 }
 
-chrome.contextMenus.onClicked.addListener((info) => {
+// Remembers the format of a save made from the menu, and puts it at the top of the menu.
+async function rememberFormat(format) {
+  const { lastFormat } = await chrome.storage.local.get("lastFormat");
+  if (lastFormat === format) return;
+  await chrome.storage.local.set({ lastFormat: format });
+  if (menuTitles.has("imgkeep-last")) {
+    chrome.contextMenus.update("imgkeep-last", { title: lastUsedTitle(format) }, ignoreError);
+    menuTitles.set("imgkeep-last", lastUsedTitle(format));
+  } else {
+    // The first time (or after the worker restarted): rebuild, since new items can only go at the end.
+    await createMenus();
+    await refreshMenus();
+  }
+}
+
+async function menuClicked(info) {
   if (info.menuItemId === "imgkeep-rate") return openRateWindow();
   if (!info.srcUrl) return;
   const input = { url: info.srcUrl, pageUrl: info.pageUrl };
   if (info.menuItemId === "imgkeep-copy") return openWindow("copy", input);
   if (info.menuItemId === "imgkeep-more") return openWindow("editor", input);
-  const format = MENU[info.menuItemId];
-  if (format) runJob({ ...input, format });
-});
+  let format = MENU[info.menuItemId];
+  if (info.menuItemId === "imgkeep-last") {
+    ({ lastFormat: format } = await chrome.storage.local.get("lastFormat"));
+    count("last_used");
+  }
+  if (!MENU_FORMATS.includes(format)) return;
+  rememberFormat(format).catch(() => {});
+  return runJob({ ...input, format });
+}
+
+const MENU_FORMATS = Object.values(MENU);
+chrome.contextMenus.onClicked.addListener((info) => void menuClicked(info));
+
+// For automated tests only.
+globalThis.imgkeepMenuClicked = menuClicked;
 
 // ---- Offscreen document (created on demand) ----
 

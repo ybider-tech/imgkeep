@@ -8,6 +8,15 @@
   "menuParent": {
     "message": "Imgkeep: Guardar imagen como"
   },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (último usado)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "menuGif": {
     "message": "GIF (conserva la animación)"
   },

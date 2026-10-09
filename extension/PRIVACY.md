@@ -18,7 +18,7 @@ Since version 0.7.0, Imgkeep counts on your computer how often its features are 
 
 A summary contains only:
 
-- successful saves per format (PNG, JPG, WebP, GIF, PDF, original) and per save mode (Downloads, a folder you chose, ask every time), and how many were made smaller by the maximum width;
+- successful saves per format (PNG, JPG, WebP, GIF, PDF, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;
 - how often a site-access or folder question was shown and a site was allowed, and how the one rating question was answered;

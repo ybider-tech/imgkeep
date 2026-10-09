@@ -24,6 +24,7 @@ export const COUNT_KEYS = [
   ...MODES.map((m) => `mode_${m}`),
   ...FAILURES.map((f) => `fail_${f}`),
   "resized", // a save made smaller by the maximum width
+  "last_used", // a save from the "last used" item at the top of the menu
   "copy",
   "more_options",
   "more_options_save",

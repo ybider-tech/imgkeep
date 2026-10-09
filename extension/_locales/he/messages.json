@@ -8,6 +8,15 @@
   "menuParent": {
     "message": "Imgkeep: שמירת התמונה בתור"
   },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (בפעם הקודמת)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "menuGif": {
     "message": "GIF (שומר על האנימציה)"
   },

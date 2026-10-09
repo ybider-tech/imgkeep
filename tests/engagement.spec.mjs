@@ -99,6 +99,31 @@ test.describe("in the extension", () => {
     expect(await ctx.sw.evaluate(() => chrome.storage.local.get("menuNew"))).toEqual({});
   });
 
+  test("the format used last is offered again at the top of the menu", async () => {
+    await installed({ reason: "install" });
+    expect(await titles()).not.toHaveProperty("imgkeep-last");
+    const click = (menuItemId) =>
+      ctx.sw.evaluate(([id, url]) => globalThis.imgkeepMenuClicked({ menuItemId: id, srcUrl: url, pageUrl: url }), [menuItemId, `${cors.url}/photo.png`]);
+    await click("imgkeep-png");
+    await expect.poll(titles).toHaveProperty("imgkeep-last", "PNG (last used)");
+    await click("imgkeep-gif");
+    await expect.poll(titles).toHaveProperty("imgkeep-last", "GIF (last used)"); // the short name
+    // Clicking it saves in that format again, and is counted (anonymously) as a "last used" save.
+    const before = await ctx.sw.evaluate(() => chrome.downloads.search({}).then((d) => d.length));
+    const result = await click("imgkeep-last");
+    expect(result).toMatchObject({ ok: true });
+    expect(result.filename).toMatch(/\.gif$/);
+    expect(await ctx.sw.evaluate(() => chrome.downloads.search({}).then((d) => d.length))).toBe(before + 1);
+    expect((await ctx.sw.evaluate(() => chrome.storage.local.get("counts"))).counts.c).toMatchObject({ last_used: 1, save_gif: 2 });
+    // Copy as PNG and More options aren't formats, so they don't change it.
+    const win = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/copy.html") });
+    await click("imgkeep-copy");
+    await (await win).close();
+    expect(await titles()).toHaveProperty("imgkeep-last", "GIF (last used)");
+    await click("imgkeep-original");
+    await expect.poll(titles).toHaveProperty("imgkeep-last", "Original format (last used)");
+  });
+
   test("a fresh install, or an update with no new items, labels nothing", async () => {
     for (const details of [{ reason: "install" }, { reason: "update", previousVersion: "0.6.0" }]) {
       await installed(details);

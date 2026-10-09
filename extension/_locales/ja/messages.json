@@ -8,6 +8,15 @@
   "menuParent": {
     "message": "Imgkeep: 名前を付けて画像を保存"
   },
+  "menuLastUsed": {
+    "message": "$FORMAT$（前回と同じ）",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "menuGif": {
     "message": "GIF（アニメーションを保持）"
   },

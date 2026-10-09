@@ -8,6 +8,15 @@
   "menuParent": {
     "message": "Imgkeep: इमेज इस रूप में सेव करें"
   },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (पिछली बार वाला)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "menuGif": {
     "message": "GIF (एनिमेशन बना रहता है)"
   },
