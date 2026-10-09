@@ -69,5 +69,7 @@ Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG
 
 Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code, no data collection. Source code: https://github.com/ybider-tech/imgkeep
 
+New in 0.6.1: the extension name now starts with what it does ("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"). Menu items added since a user's previous version show "✨ New" for 30 days after an update. After at least 15 successful saves over 7 days, Imgkeep asks once for a rating (in its own window after a copy or save, and as a menu item for up to 14 days); "No thanks" ends it for good. No incentives. These counts stay in the extension's local storage and are never sent anywhere. Options has "What's new" and "Rate Imgkeep" links.
+
 The same package is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 ```
