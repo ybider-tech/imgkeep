@@ -33,5 +33,7 @@ export async function launchWithExtension({ headless = true, args = [], ...optio
   let [sw] = context.serviceWorkers();
   sw ??= await context.waitForEvent("serviceworker");
   const extensionId = new URL(sw.url()).host;
+  // Tests never send the anonymous daily summary (tests/telemetry.spec.mjs sets a key and replaces fetch).
+  await sw.evaluate(() => globalThis.imgkeepSetAppKey?.(""));
   return { context, sw, extensionId, userDataDir, downloadsDir };
 }

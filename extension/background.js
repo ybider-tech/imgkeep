@@ -363,7 +363,9 @@ async function sendOutbox() {
   const event = summaryEvent(box.props, {
     appVersion: chrome.runtime.getManifest().version,
     locale: chrome.i18n.getUILanguage(),
-    isDebug: Boolean(globalThis.imgkeepCountsDebug),
+    // Store installs have an update_url; an unpacked copy (development, testing) doesn't. Aptabase keeps
+    // debug events apart from real ones.
+    isDebug: !("update_url" in chrome.runtime.getManifest()),
   });
   if (await sendSummary(event, appKey)) {
     await chrome.storage.local.set({ countsLastSent: { day: box.day, props: box.props, sentAt: Date.now() } });

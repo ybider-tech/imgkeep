@@ -11,8 +11,8 @@
 
 export const APTABASE = {
   url: "https://eu.aptabase.com/api/v0/event",
-  // The Imgkeep app's key in Aptabase (EU region). Empty: nothing is ever sent.
-  appKey: "",
+  // The Imgkeep app's key in Aptabase (EU region). Not a secret: it only allows sending events.
+  appKey: "A-EU-2150018612",
 };
 
 // Every count that can be sent. Anything else is dropped before sending.

@@ -108,7 +108,8 @@ test.describe("in the extension", () => {
     expect(req).toMatchObject({ method: "POST", credentials: "omit", headers: { "Content-Type": "application/json", "App-Key": "A-EU-1234567890" } });
     expect(req.body.eventName).toBe("daily_counts");
     expect(req.body.props).toEqual({ save_png: 1, mode_downloads: 1, fail_http: 1, browser: "chrome" });
-    expect(req.body.systemProps).toMatchObject({ appVersion: "0.7.0", sdkVersion: "imgkeep-direct@1" });
+    // Loaded unpacked (no update_url), so Aptabase files it as a debug event.
+    expect(req.body.systemProps).toMatchObject({ appVersion: "0.7.0", sdkVersion: "imgkeep-direct@1", isDebug: true });
     // No address, file or site name anywhere in what's sent.
     expect(JSON.stringify(req.body)).not.toMatch(/127\.0\.0\.1|photo|missing|http:/);
     expect(await local("countsLastSent")).toMatchObject({ props: req.body.props });
