@@ -21,7 +21,7 @@
     "message": "Más opciones…"
   },
   "menuNew": {
-    "message": "$ITEM$ · Nuevo",
+    "message": "$ITEM$ ✨ Nuevo",
     "placeholders": {
       "item": {
         "content": "$1",

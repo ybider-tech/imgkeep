@@ -12,7 +12,7 @@ LANGS = ["en", "he", "es", "pt_BR", "de", "fr", "ja", "hi", "ar"]
 M = {
  "menuNew": ("A right-click menu item that is new in this version, for 30 days after an update. $ITEM$ is the item's own name.",
   {"item": {"content": "$1", "example": "Copy as PNG"}}, "menuMoreOptions",
-  ["$ITEM$ · New", "$ITEM$ · חדש", "$ITEM$ · Nuevo", "$ITEM$ · Novo", "$ITEM$ · Neu", "$ITEM$ · Nouveau", "$ITEM$ · 新機能", "$ITEM$ · नया", "$ITEM$ · جديد"]),
+  ["$ITEM$ ✨ New", "$ITEM$ ✨ חדש", "$ITEM$ ✨ Nuevo", "$ITEM$ ✨ Novo", "$ITEM$ ✨ Neu", "$ITEM$ ✨ Nouveau", "$ITEM$ ✨ 新機能", "$ITEM$ ✨ नया", "$ITEM$ ✨ جديد"]),
  "menuRate": ("Right-click menu item shown once, for up to 14 days, after someone has used Imgkeep for a while. Opens the rating ask.", None, "menuNew",
   ["Enjoying Imgkeep? Rate it…", "נהנים מ-Imgkeep? דרגו אותו…", "¿Te gusta Imgkeep? Valóralo…", "Gostando do Imgkeep? Avalie…", "Gefällt dir Imgkeep? Bewerte es…", "Imgkeep vous plaît ? Notez-le…", "Imgkeep を気に入りましたか？評価する…", "Imgkeep पसंद आ रहा है? रेटिंग दें…", "هل يعجبك Imgkeep؟ قيّمه…"]),
  "reviewTitle": ("Heading of the one rating ask", None, None,

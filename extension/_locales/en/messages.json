@@ -28,7 +28,7 @@
     "description": "Right-click menu item: opens the More options window"
   },
   "menuNew": {
-    "message": "$ITEM$ · New",
+    "message": "$ITEM$ ✨ New",
     "description": "A right-click menu item that is new in this version, for 30 days after an update. $ITEM$ is the item's own name.",
     "placeholders": {
       "item": {

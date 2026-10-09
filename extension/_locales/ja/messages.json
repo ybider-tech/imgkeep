@@ -21,7 +21,7 @@
     "message": "その他のオプション…"
   },
   "menuNew": {
-    "message": "$ITEM$ · 新機能",
+    "message": "$ITEM$ ✨ 新機能",
     "placeholders": {
       "item": {
         "content": "$1",

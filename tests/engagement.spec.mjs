@@ -87,9 +87,9 @@ test.describe("in the extension", () => {
     await installed({ reason: "update", previousVersion: "0.4.0" });
     expect(await titles()).toMatchObject({
       "imgkeep-png": "PNG",
-      "imgkeep-pdf": "PDF · New",
-      "imgkeep-copy": "Copy as PNG · New",
-      "imgkeep-more": "More options… · New",
+      "imgkeep-pdf": "PDF ✨ New",
+      "imgkeep-copy": "Copy as PNG ✨ New",
+      "imgkeep-more": "More options… ✨ New",
     });
     await ctx.sw.evaluate(() =>
       chrome.storage.local.get("menuNew").then(({ menuNew }) => chrome.storage.local.set({ menuNew: { ...menuNew, until: Date.now() - 1 } })),
