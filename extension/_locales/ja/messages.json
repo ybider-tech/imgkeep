@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Imgkeep — 画像をPNG・JPG・WebP・GIF・PDFで保存"
+    "message": "画像をPNG・JPG・WebP・GIF・PDFで保存 — Imgkeep"
   },
   "extDescription": {
     "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存。WebPやAVIFをパソコン上で変換し、指定のフォルダへ。トラッキングなし。"

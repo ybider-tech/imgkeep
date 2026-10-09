@@ -12,7 +12,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 - **Mature content:** No
 
 ## Store listing (English)
-- **Display name:** comes from the manifest: Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF
+- **Display name:** comes from the manifest: Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`

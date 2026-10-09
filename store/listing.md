@@ -4,7 +4,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Basics
 
-- **Name** (from the manifest): Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF
+- **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Tagline:** Right format. Right folder. Nothing else.
 - **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device, into your folder. No tracking.
 - **Category:** Tools

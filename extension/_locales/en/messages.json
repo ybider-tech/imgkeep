@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Imgkeep — Save image as PNG, JPG, WebP, GIF or PDF",
+    "message": "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep",
     "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
   },
   "extDescription": {
