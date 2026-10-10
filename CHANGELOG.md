@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.7.0 — unreleased
+## 0.7.0 — 2026-10-10
 
 - **"Last used" at the top of the menu.** After your first save from the right-click menu, its format is offered again as the first item, for example "JPG (last used)", always in the same spot. The format list below doesn't move. Copy as PNG and More options don't change it. (From GitHub Ideas #1.)
 - **Anonymous daily summary** (announced with 0.6.1). Imgkeep counts on your computer how its features are used, and once a day sends the previous active day's totals to Aptabase (open source, EU-hosted) as one event: successful saves per format and save mode, saves made smaller by the maximum width, failures by error type, copies, More options use, site-access and rating answers, plus version, browser and language. Never images, addresses, site or file names, settings text or identifiers; each summary gets a new random session id. On by default; Options → Anonymous usage counts shows exactly what's counted and sent, and turns it off (which also deletes what wasn't sent yet). A summary that can't be sent is retried, and dropped after 7 days.
