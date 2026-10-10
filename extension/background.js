@@ -360,7 +360,7 @@ async function runJob(input, { interactive = true } = {}) {
   if (!job.sourceId) await dropSource(job.id);
   // Successes and real failures count towards the rating ask (site access and folder questions don't).
   if (result.ok || result.reason === "error") await countUse(result.ok).catch(() => {});
-  countJob(job, result);
+  await countJob(job, result); // counted before the result is returned, so the order is always the same
   if (!result.ok && interactive) await openAsk({ ...job, ...result });
   return result;
 }
@@ -372,6 +372,7 @@ globalThis.imgkeepRunJob = runJob;
 
 let appKey = APTABASE.appKey;
 let countsQueue = Promise.resolve();
+let sendQueue = Promise.resolve();
 
 const countsOn = async () => (await getSettings()).usageCounts !== false;
 
@@ -388,7 +389,8 @@ function count(...keys) {
       }
       for (const key of keys) counts = addCount(counts, key, today);
       if (counts) await chrome.storage.local.set({ counts });
-      await sendOutbox();
+      // Sending happens on its own queue: a save waits for its count to be stored, never for the network.
+      sendQueue = sendQueue.then(sendOutbox).catch(() => {});
     })
     .catch(() => {});
   return countsQueue;
@@ -434,7 +436,10 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 // For automated tests only.
-globalThis.imgkeepCount = count;
+globalThis.imgkeepCount = async (...keys) => {
+  await count(...keys);
+  await sendQueue;
+};
 globalThis.imgkeepSetAppKey = (key) => (appKey = key);
 
 // ---- Windows ----
