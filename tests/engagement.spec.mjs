@@ -48,6 +48,13 @@ test.describe("rules", () => {
   });
 });
 
+test("the uninstall form address carries only the version", async () => {
+  const { uninstallUrl, UNINSTALL_FORM } = await import("../extension/lib/uninstall.js");
+  expect(uninstallUrl("0.7.1")).toBe(`${UNINSTALL_FORM}?usp=pp_url&hl=en&entry.1734858481=0.7.1`);
+  expect(uninstallUrl("0.7.1&entry.1=hi")).toBe(`${UNINSTALL_FORM}?usp=pp_url&hl=en&entry.1734858481=`); // nothing but a version gets in
+  expect(uninstallUrl("0.7.1").length).toBeLessThanOrEqual(1023); // Chrome's limit for uninstall URLs
+});
+
 test.describe("in the extension", () => {
   let ctx, cors;
   test.describe.configure({ mode: "serial" });
@@ -216,6 +223,13 @@ test.describe("in the extension", () => {
     await expect(win.locator("#status")).toContainText("Saved as");
     await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
     await win.close();
+  });
+
+  test("the uninstall form is registered, with this version", async () => {
+    const { version } = await ctx.sw.evaluate(() => chrome.runtime.getManifest());
+    await expect
+      .poll(() => ctx.sw.evaluate(() => globalThis.imgkeepUninstallUrl))
+      .toBe(`https://docs.google.com/forms/d/e/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w/viewform?usp=pp_url&hl=en&entry.1734858481=${version}`);
   });
 
   test("Options always has a quiet Rate Imgkeep link and What's new", async () => {

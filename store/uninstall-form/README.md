@@ -5,6 +5,8 @@
   `https://docs.google.com/forms/d/e/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w/viewform?usp=pp_url&entry.1734858481=0.7.1`
 - Entry ids: reason `entry.1021747388`, keep-it `entry.956757514`, version `entry.1734858481`.
 - Header image served from this repo (raw.githubusercontent.com), set through "By URL".
+- The extension adds `hl=en` so Google's own interface is English and left to right for everyone (it switched to Hebrew/RTL around the English questions when tested from Israel).
+- **Disable autosave for all respondents: on.** Otherwise Google shows "Sign in to Google to save your progress" at the top, which doesn't fit an anonymous form.
 
 Opened by the browser right after someone removes Imgkeep (`chrome.runtime.setUninstallURL`, from 0.7.1).
 Owner: helloimgkeep@gmail.com. Answers go to the form's Google Sheet. English only.
@@ -43,7 +45,7 @@ Description: "Even one sentence helps."
 - Responses → **Collect email addresses: Do not collect.**
 - Responses → **Limit to 1 response: off** (on would force people to sign in to Google).
 - **Allow response editing: off.** No sign-in required anywhere.
-- Presentation → **Show progress bar: off**, **Shuffle question order: off**.
+- Presentation → **Show progress bar: off**, **Shuffle question order: off**, **Show link to submit another response: off**, **Disable autosave: on**.
 
 ## Link for the extension
 ⋮ menu → **Get pre-filled link** → type `0.7.1` in **Version** → **Get link** → copy.

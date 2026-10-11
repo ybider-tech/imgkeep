@@ -7,6 +7,7 @@ import { JobError } from "./lib/job-error.js";
 
 import { APTABASE, addCount, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
+import { uninstallUrl } from "./lib/uninstall.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
@@ -136,6 +137,14 @@ async function onInstalled({ reason, previousVersion }) {
 }
 
 chrome.runtime.onInstalled.addListener((details) => onInstalled(details).then(() => checkCounts()));
+
+// After an uninstall the browser opens the short, optional uninstall form (lib/uninstall.js). Set on every
+// start, so it always carries the current version. Needs no permission.
+const uninstallPage = uninstallUrl(chrome.runtime.getManifest().version);
+chrome.runtime.setUninstallURL(uninstallPage).then(
+  () => (globalThis.imgkeepUninstallUrl = uninstallPage), // for automated tests only
+  () => {},
+);
 // Menus survive restarts, but this module's record of their titles doesn't: rebuild both.
 chrome.runtime.onStartup.addListener(() => createMenus().then(refreshMenus).then(() => checkCounts()));
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1 — unreleased
+
+- **Uninstall form.** After someone removes Imgkeep, the browser opens a short, optional Google Form: why they removed it (5 reasons or "Other") and what would have made them keep it. The address carries only the version (`lib/uninstall.js`); the form collects no email addresses. Registered with `chrome.runtime.setUninstallURL`, which needs no permission. The static check allows exactly that one form address. The privacy policy has a new "When you remove Imgkeep" section.
+
 ## 0.7.0 — 2026-10-10
 
 - **"Last used" at the top of the menu.** After your first save from the right-click menu, its format is offered again as the first item, for example "JPG (last used)", always in the same spot. The format list below doesn't move. Copy as PNG and More options don't change it. (From GitHub Ideas #1.)
