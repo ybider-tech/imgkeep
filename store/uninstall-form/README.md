@@ -1,5 +1,11 @@
 # Uninstall form (Google Forms)
 
+**Live:** created and published 2026-10-11 in helloimgkeep@gmail.com's Google Forms, named "Imgkeep uninstall feedback".
+- Pre-filled link (the extension uses this, with its own version in place of `0.7.1`):
+  `https://docs.google.com/forms/d/e/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w/viewform?usp=pp_url&entry.1734858481=0.7.1`
+- Entry ids: reason `entry.1021747388`, keep-it `entry.956757514`, version `entry.1734858481`.
+- Header image served from this repo (raw.githubusercontent.com), set through "By URL".
+
 Opened by the browser right after someone removes Imgkeep (`chrome.runtime.setUninstallURL`, from 0.7.1).
 Owner: helloimgkeep@gmail.com. Answers go to the form's Google Sheet. English only.
 
@@ -10,7 +16,7 @@ Owner: helloimgkeep@gmail.com. Answers go to the form's Google Sheet. English on
 
 ## Content
 
-**Title:** Sorry to see you go
+**Title:** Imgkeep uninstall feedback (the header image already says "Sorry to see you go")
 
 **Description:**
 > Two quick questions, both optional. Answers are anonymous: we don't ask for your name or email.
