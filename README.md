@@ -144,7 +144,10 @@ docs/        DEPLOYMENT.md (site, domain and store setup), qa/ (release QA repor
 
 1. Bump `version` in `extension/manifest.json` (and `package.json`), and move the CHANGELOG's notes under the new version.
 2. `sh scripts/package.sh` runs every test, then builds `dist/imgkeep-<version>.zip`.
-3. Chrome Web Store dashboard → Imgkeep → **Package** → **Upload new package**. Update the **Store listing** from `store/listing.md` if it changed, then **Submit for review**.
+3. Upload and submit, with the store scripts (credentials live outside the repo in `~/.config/imgkeep/`):
+   - `node scripts/cws-publish.mjs` shows Chrome's published and in-review versions (the default; it changes nothing). `--submit` uploads and submits for review, and the store publishes after approval; `--staged` waits for a manual Publish; `--upload-only` stops before submitting.
+   - `sh scripts/edge-publish.sh --submit` uploads to Edge Add-ons and submits for certification, with the notes from `store/edge-listing.md` (or pass them as an argument). `--upload-only` only replaces the draft. With no option it just prints its usage.
+   - The scripts upload the package only. If the store listing changed (descriptions in `store/listing.md`, `store/edge-listing.md`, `store/listing-translations.md`, or the privacy answers), edit it in the dashboards first. Don't submit while the previous version is still in review: a new submission replaces it.
 4. After approval, update the website if the release changes what Imgkeep does.
 
 First-time setup (GitHub Pages, domain, store accounts) is in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
