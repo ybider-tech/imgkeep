@@ -73,5 +73,7 @@ New in 0.6.1: the extension name now starts with what it does ("Save image as PN
 
 New in 0.7.0: an anonymous daily usage summary, on by default and switched off with one click in Options ("Anonymous usage counts", which also shows exactly what was counted and sent). Once a day the extension sends one event to Aptabase (https://eu.aptabase.com/api/v0/event, an open-source analytics service hosted in the EU) with the previous day's totals: saves per format and save mode, failures by error type, copies, and similar counts, plus version, browser and language. It never contains image or page URLs, site or file names, or any identifier; each summary has a new random session id. This was announced on imgkeep.app and in the privacy policy before this version. The code is in extension/lib/telemetry.js (one fetch, to that one address). Also new: the format used last appears at the top of the right-click submenu, e.g. "JPG (last used)".
 
+New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
+
 The same package is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 ```
