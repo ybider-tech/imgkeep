@@ -117,7 +117,7 @@ Certifications (tick all three):
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
 | `store/screenshot-4-site-access.png` | 1280×800 | Not on the Chrome Web Store since 0.8.0 (the store allows 5 screenshots; this rare case is covered in the description). Edge keeps it (up to 10). |
 | `store/screenshot-5-gif.png` | 1280×800 | Screenshot 5: GIF keeps animation |
-| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Chrome order: menu, find, options, trust, GIF. Uses a made-up site, not Instagram's interface (trademarks). |
+| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Chrome order (Yaron 2026-10-12): menu, find, GIF, options, trust (features first, trust last). Uses a made-up site, not Instagram's interface (trademarks). |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 | Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |
