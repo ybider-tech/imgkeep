@@ -88,6 +88,13 @@ async function renderCounts() {
   $("countsLast").textContent = countsLastSent ? `${countsLastSent.day}\n${show(countsLastSent.props)}` : t("optCountsNone");
 }
 
+// Find image here: on only while the browser has granted its two optional permissions.
+const FIND_PERMISSIONS = { permissions: ["activeTab", "scripting"] };
+
+async function renderFind() {
+  $("imageFinder").checked = await chrome.permissions.contains(FIND_PERMISSIONS);
+}
+
 async function init() {
   localisePage();
   const s = await getSettings();
@@ -128,6 +135,15 @@ async function init() {
   });
   $("countsDetails").addEventListener("toggle", renderCounts);
 
+  $("imageFinder").addEventListener("change", async (e) => {
+    // Turning on needs this click: the browser grants optional permissions only from a user action.
+    const ok = e.target.checked
+      ? await chrome.permissions.request(FIND_PERMISSIONS).catch(() => false)
+      : await chrome.permissions.remove(FIND_PERMISSIONS).catch(() => false);
+    $("imageFinderStatus").textContent = ok ? t(e.target.checked ? "optFindOn" : "optFindOff") : "";
+    await renderFind();
+  });
+
   $("chooseFolder").addEventListener("click", chooseFolder);
 
   if (PRO_WAITLIST_URL) {
@@ -142,7 +158,7 @@ async function init() {
   addEventListener("focus", renderFolder);
 
   renderPreview();
-  await Promise.all([renderFolder(), renderSites()]);
+  await Promise.all([renderFolder(), renderSites(), renderFind()]);
 }
 
 init();

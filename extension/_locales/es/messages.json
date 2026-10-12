@@ -3,7 +3,7 @@
     "message": "Guardar imagen como PNG, JPG, WebP, GIF o PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF. Convierte WebP y AVIF en tu equipo. Sin datos personales."
+    "message": "Clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF, incluso las que los sitios ocultan. Sin datos personales."
   },
   "menuParent": {
     "message": "Imgkeep: Guardar imagen como"
@@ -28,6 +28,9 @@
   },
   "menuMoreOptions": {
     "message": "Más opciones…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Buscar imagen aquí…"
   },
   "menuNew": {
     "message": "$ITEM$ ✨ Nuevo",
@@ -54,7 +57,7 @@
     "message": "Esta versión del navegador no puede crear este formato. Prueba con PNG."
   },
   "askErrBlob": {
-    "message": "Esta imagen solo existe dentro de la página (un enlace blob:). Imgkeep no puede leerla porque no tiene acceso a tus páginas."
+    "message": "Esta imagen solo existe dentro de la página (un enlace blob:), así que Imgkeep todavía no puede guardarla. Una captura de pantalla sirve."
   },
   "askErrTooLarge": {
     "message": "Esta imagen es demasiado grande para convertirla en el navegador."
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "Ninguno todavía. Imgkeep solo pregunta cuando un sitio bloquea una imagen que quieres convertir."
   },
+  "optFindTitle": {
+    "message": "Imágenes que los sitios tapan"
+  },
+  "optFindLabel": {
+    "message": "Buscar imágenes bajo capas que las tapan"
+  },
+  "optFindHint": {
+    "message": "En sitios como Instagram y Pinterest, haz clic derecho y elige Imgkeep: Buscar imagen aquí. Imgkeep solo mira una página cuando le pides que busque una imagen en ella, solo esa página y solo en ese momento. Nunca cambia una página."
+  },
+  "optFindOn": {
+    "message": "Activado."
+  },
+  "optFindOff": {
+    "message": "Desactivado."
+  },
   "optCountsTitle": {
     "message": "Recuentos de uso anónimos"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "Permisos que solicita:"
   },
+  "optOptionalPermissions": {
+    "message": "Solo si activas Buscar imágenes:"
+  },
   "optPermissionsLabel": {
     "message": "Permisos"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "Sin anuncios ni pestañas de bienvenida. Las ventanas pequeñas solo se abren cuando tú las pides o cuando un guardado necesita tu aprobación. Imgkeep pide una valoración una sola vez, después de que lo hayas usado un tiempo."
+  },
+  "optTrust4": {
+    "message": "Imgkeep solo mira una página cuando le pides que busque una imagen en ella, solo esa página y solo en ese momento. Nunca cambia una página."
   },
   "optTrust3": {
     "message": "Todas las funciones gratuitas seguirán siendo gratuitas."
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "Entendido. No volveremos a preguntar."
+  },
+  "findWindowTitle": {
+    "message": "Buscar imagen"
+  },
+  "findEnableTitle": {
+    "message": "Buscar imágenes que los sitios tapan"
+  },
+  "findEnableBody": {
+    "message": "Algunos sitios, como Instagram y Pinterest, tapan sus imágenes con otra capa, así que el clic derecho no llega a ellas. Imgkeep puede encontrar la imagen que hay debajo por ti."
+  },
+  "findPromise": {
+    "message": "Imgkeep solo mira una página cuando le pides que busque una imagen en ella, solo esa página y solo en ese momento. Nunca cambia una página."
+  },
+  "findTurnOn": {
+    "message": "Activar"
+  },
+  "findDenied": {
+    "message": "No se activó. Puedes activarlo cuando quieras en Opciones."
+  },
+  "findOnTitle": {
+    "message": "Activado"
+  },
+  "findOnBody": {
+    "message": "Haz clic derecho de nuevo en la imagen y elige Imgkeep: Buscar imagen aquí."
+  },
+  "findPickTitle": {
+    "message": "¿Qué imagen?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep no pudo saber qué imagen querías. Elige una:"
+  },
+  "findPickOne": {
+    "message": "Imagen $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "No se encontró ninguna imagen aquí"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep no encontró ninguna imagen en esta parte de la página. Haz clic derecho justo sobre la foto, o abre la foto en su propia página e inténtalo de nuevo."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep no pudo mirar esta página"
+  },
+  "findErrorBody": {
+    "message": "Recarga la página, haz clic derecho en la imagen y elige de nuevo Buscar imagen aquí."
   }
 }

@@ -265,7 +265,8 @@ test("Options page loads without errors and shows the four permissions", async (
   await page.fill("#subfolder", "Imgkeep/{host}");
   await page.fill("#filenameTemplate", "{name}-{w}x{h}");
   await expect(page.locator("#preview")).toHaveText("Imgkeep/shop.example.com/summer-banner-1600x900.png");
-  await expect(page.locator(".tag")).toHaveText(["contextMenus", "downloads", "storage", "offscreen"]);
+  await expect(page.locator(".tags").first().locator(".tag")).toHaveText(["contextMenus", "downloads", "storage", "offscreen"]);
+  await expect(page.locator(".tags").nth(1).locator(".tag")).toHaveText(["activeTab", "scripting"]); // optional, for Find image
   await expect(page.getByRole("link", { name: "Get notified" })).toHaveAttribute("href", "https://imgkeep.app/pro.html");
   const { version } = JSON.parse(await readFile(join(dirname(FIXTURES), "..", "extension", "manifest.json"), "utf8"));
   await expect(page.locator("#version")).toHaveText(version);

@@ -41,7 +41,11 @@ const optional = [...(manifest.optional_host_permissions || [])].sort();
 if (JSON.stringify(optional) !== JSON.stringify(ALLOWED_OPTIONAL_HOSTS)) {
   fail(`optional_host_permissions must be exactly ${ALLOWED_OPTIONAL_HOSTS.join(", ")}`);
 }
-if ((manifest.optional_permissions || []).length) fail("manifest must not declare optional_permissions");
+// "Find image here" only: off until the user turns it on, and neither comes with an install warning.
+const ALLOWED_OPTIONAL = ["activeTab", "scripting"];
+if (JSON.stringify([...(manifest.optional_permissions || [])].sort()) !== JSON.stringify(ALLOWED_OPTIONAL)) {
+  fail(`optional_permissions must be exactly ${ALLOWED_OPTIONAL.join(", ")}`);
+}
 if (manifest.manifest_version !== 3) fail("manifest_version must be 3");
 if (JSON.stringify(manifest).includes("<all_urls>")) fail("manifest must not mention <all_urls>");
 if (manifest.description.length > 132) fail("description is longer than 132 characters");
@@ -63,6 +67,7 @@ for await (const path of walk(EXT)) {
     if (!ALLOWED_URL.test(url)) fail(`${rel}: outside URL ${url}`);
   }
   if (/\b(eval|new Function)\s*\(/.test(text)) fail(`${rel}: eval/new Function is not allowed`);
+  if (/chrome\.scripting\./.test(text) && relPosix !== "background.js") fail(`${rel}: only background.js may use chrome.scripting`);
   if (/\bimportScripts\s*\(|\bimport\s*\(\s*["'`]https?:/.test(text)) fail(`${rel}: remote code is not allowed`);
 }
 
@@ -108,7 +113,7 @@ for (const lang of await readdir(LOCALES)) {
 
 // Every message the code uses exists, and every message is used somewhere.
 // Quoted keys ("askSaving", "@detailGifFrames", data-i18n="optSaved") and manifest __MSG_key__ references.
-const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail|copy|edit|review)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
+const KEY = /(?:["'`]@?|__MSG_)((?:ext|menu|ask|opt|detail|copy|edit|review|find)[A-Z][A-Za-z0-9]*)(?=["'`]|__)/g;
 const used = new Set();
 for await (const path of walk(EXT)) {
   if (!/\.(js|html|json)$/.test(path) || path.includes("_locales")) continue;
@@ -121,4 +126,4 @@ if (problems.length) {
   console.error(`Static check failed:\n- ${problems.join("\n- ")}`);
   process.exit(1);
 }
-console.log("Static check passed: 4 permissions, no host access, network only in offscreen.js (your image) and lib/telemetry.js (one Aptabase URL), no other outside URLs.");
+console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one Aptabase URL), no other outside URLs.");

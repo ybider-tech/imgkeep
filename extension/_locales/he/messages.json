@@ -3,7 +3,7 @@
     "message": "שמירת תמונה כ-PNG, JPG, WebP, GIF או PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF. ממיר WebP ו-AVIF במחשב שלך, ישר לתיקייה שלך. בלי מידע אישי."
+    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF, גם כאלה שאתרים מסתירים. מומר במחשב שלך. בלי מידע אישי."
   },
   "menuParent": {
     "message": "Imgkeep: שמירת התמונה בתור"
@@ -28,6 +28,9 @@
   },
   "menuMoreOptions": {
     "message": "אפשרויות נוספות…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: מציאת תמונה כאן…"
   },
   "menuNew": {
     "message": "$ITEM$ ✨ חדש",
@@ -54,7 +57,7 @@
     "message": "גרסת הדפדפן הזו לא יכולה ליצור את הפורמט הזה. נסו PNG במקום."
   },
   "askErrBlob": {
-    "message": "התמונה הזו קיימת רק בתוך הדף (קישור blob:). ‏Imgkeep לא יכול לקרוא אותה כי אין לו גישה לדפים שלך."
+    "message": "התמונה הזו קיימת רק בתוך הדף (קישור blob:), ולכן ‏Imgkeep עדיין לא יכול לשמור אותה. צילום מסך יעבוד."
   },
   "askErrTooLarge": {
     "message": "התמונה גדולה מדי להמרה בדפדפן."
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "עדיין אין. ‏Imgkeep שואל רק כשאתר חוסם תמונה שרצית להמיר."
   },
+  "optFindTitle": {
+    "message": "תמונות שאתרים מסתירים"
+  },
+  "optFindLabel": {
+    "message": "מציאת תמונות מתחת לשכבות כיסוי"
+  },
+  "optFindHint": {
+    "message": "באתרים כמו Instagram ו-Pinterest, לוחצים לחיצה ימנית ובוחרים Imgkeep: מציאת תמונה כאן. ‏Imgkeep מסתכל על דף רק כשמבקשים ממנו למצוא בו תמונה, רק על הדף הזה, רק באותו רגע. הוא אף פעם לא משנה דף."
+  },
+  "optFindOn": {
+    "message": "הופעל."
+  },
+  "optFindOff": {
+    "message": "כובה."
+  },
   "optCountsTitle": {
     "message": "ספירות שימוש אנונימיות"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "ההרשאות שהוא מבקש:"
   },
+  "optOptionalPermissions": {
+    "message": "רק אם מפעילים את מציאת התמונות:"
+  },
   "optPermissionsLabel": {
     "message": "הרשאות"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "בלי פרסומות ובלי לשוניות ברוכים הבאים. חלונות קטנים נפתחים רק כשמבקשים או כששמירה צריכה את האישור שלך. ‏Imgkeep מבקש דירוג פעם אחת, אחרי שהשתמשת בו זמן מה."
+  },
+  "optTrust4": {
+    "message": "‏Imgkeep מסתכל על דף רק כשמבקשים ממנו למצוא בו תמונה, רק על הדף הזה, רק באותו רגע. הוא אף פעם לא משנה דף."
   },
   "optTrust3": {
     "message": "כל תכונה חינמית נשארת חינמית."
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "הבנו. לא נשאל שוב."
+  },
+  "findWindowTitle": {
+    "message": "מציאת תמונה"
+  },
+  "findEnableTitle": {
+    "message": "מציאת תמונות שאתרים מסתירים"
+  },
+  "findEnableBody": {
+    "message": "אתרים מסוימים, כמו Instagram ו-Pinterest, מכסים את התמונות שלהם בשכבה נוספת, כך שלחיצה ימנית לא מגיעה אליהן. ‏Imgkeep יכול למצוא בשבילך את התמונה שמתחת לשכבה הזו."
+  },
+  "findPromise": {
+    "message": "‏Imgkeep מסתכל על דף רק כשמבקשים ממנו למצוא בו תמונה, רק על הדף הזה, רק באותו רגע. הוא אף פעם לא משנה דף."
+  },
+  "findTurnOn": {
+    "message": "הפעלה"
+  },
+  "findDenied": {
+    "message": "לא הופעל. אפשר להפעיל בכל עת באפשרויות."
+  },
+  "findOnTitle": {
+    "message": "הופעל"
+  },
+  "findOnBody": {
+    "message": "לוחצים שוב לחיצה ימנית על התמונה ובוחרים Imgkeep: מציאת תמונה כאן."
+  },
+  "findPickTitle": {
+    "message": "איזו תמונה?"
+  },
+  "findPickBody": {
+    "message": "‏Imgkeep לא הצליח לזהות לאיזו תמונה התכוונת. בחרו אחת:"
+  },
+  "findPickOne": {
+    "message": "תמונה $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "לא נמצאה כאן תמונה"
+  },
+  "findNothingBody": {
+    "message": "‏Imgkeep לא מצא תמונה בחלק הזה של הדף. לוחצים לחיצה ימנית בדיוק על התמונה, או פותחים את התמונה בדף משלה ומנסים שוב."
+  },
+  "findErrorTitle": {
+    "message": "‏Imgkeep לא הצליח להסתכל על הדף הזה"
+  },
+  "findErrorBody": {
+    "message": "טוענים מחדש את הדף, ואז לוחצים לחיצה ימנית על התמונה ובוחרים שוב מציאת תמונה כאן."
   }
 }

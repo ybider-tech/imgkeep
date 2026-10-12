@@ -7,7 +7,8 @@ Key facts:
 - Use: right-click an image, choose "Imgkeep: Save image as", then PNG, JPG, WebP, GIF (keeps animation), PDF or Original format. "Copy as PNG" puts the image on the clipboard.
 - Converts the WebP and AVIF images many sites now serve into PNG or JPG files that every app opens. Animated WebP can be saved as an animated GIF.
 - Privacy: images are converted on the device and never uploaded. No account. One anonymous daily count of which features were used and which saves failed is sent (never images, addresses or file names), and it can be turned off in Options.
-- Permissions: contextMenus, downloads, storage, offscreen. It cannot read or change the sites the user visits. If a site blocks an image, Imgkeep asks for access to that one site, only after the user clicks to allow it.
+- Find image here: on sites that cover their photos with another layer (like Instagram and Pinterest), a right-click can't reach the image. "Imgkeep: Find image here" looks at that page once, finds the photo under the click at its largest size, and opens it ready to save. Off until the user turns it on.
+- Permissions: contextMenus, downloads, storage, offscreen. Two optional ones, activeTab and scripting, only if the user turns on Find image here. Imgkeep doesn't read the sites the user visits, except that one page when asked to find an image there, and it never changes a page. If a site blocks an image, Imgkeep asks for access to that one site, only after the user clicks to allow it.
 - Price: free, no ads. A paid Imgkeep Pro with extra features is planned; current features stay free.
 - Saves one image at a time (the one right-clicked), not every image on a page.
 - Works in Chrome 116 and newer and in Microsoft Edge, in 9 languages.

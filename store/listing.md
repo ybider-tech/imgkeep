@@ -1,4 +1,4 @@
-# Chrome Web Store listing: Imgkeep 0.6.1
+# Chrome Web Store listing: Imgkeep 0.8.0
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
@@ -6,7 +6,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 - **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, even ones sites hide. Converted on your device. No personal data.
 - **Category:** Tools
 - **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
@@ -15,33 +15,41 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v7 (for 0.6.1): the "Free, with no limits" bullet now says Imgkeep asks for a rating once. v6 (for 0.6.0) added Copy as PNG, maximum width and More options. Paste as-is into the dashboard together with the 0.6.0 package. (v5, for 0.5.0, is the same without those three bullets and the last two menu items.)
+v8 (for 0.8.0): leads with Find image here ("Works where right-click doesn't"), a distinct opening paragraph, features grouped under Formats / Size and quality / Folders and names, trust bullets updated for the optional permissions. Paste as-is into the dashboard together with the 0.8.0 package. (v7, for 0.6.1, is in git history.)
 
 ```text
-Right-click any image and save it as PNG, JPG, WebP, GIF or PDF, or copy it as PNG. Imgkeep converts it on your computer and saves it where you want, every time.
+Imgkeep is a free, open-source browser extension. It adds one entry to your right-click menu: pick a format, and the image is converted on your computer and saved straight to your folder. Or copy it as PNG and paste it anywhere.
+
+Works where right-click doesn't: on sites like Instagram and Pinterest, photos sit under another layer, so a right-click can't reach them. Choose Imgkeep: Find image here, and Imgkeep finds the photo for you, at its largest size. Off until you turn it on.
 
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
 Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
 
-WHAT IT DOES
+FORMATS
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
+
+SIZE AND QUALITY
+
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
+• Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
+
+FOLDERS AND NAMES
+
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
-• Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
 • Never overwrites: if a file with the same name already exists, the new one gets a number like " (1)" instead of replacing it.
 
 BUILT TO BE TRUSTED
 
-• No access to your pages: Imgkeep can't read or change the sites you visit. It sees only the image you right-click.
+• Stays out of your pages: Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on.
 • Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
-• Four permissions only: contextMenus, downloads, storage, offscreen.
+• Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
 • Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
 
@@ -64,6 +72,8 @@ Save the image you right-click in the format and folder you choose.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
 - **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour, maximum width) in Chrome sync storage, keeps a pending save in session storage while one of the extension's small windows is open, and keeps in local storage the last format and width used in More options plus a count of successful and failed saves (to time a single rating request and label new menu items), and today's anonymous usage counts until they are sent as the one daily summary described under Data usage (turned off in Options, they are deleted). Nothing else in storage is sent anywhere.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.
+- **activeTab (optional, off until the user turns it on):** Only for "Imgkeep: Find image here", a menu item shown on sites that cover their images with another layer (Instagram, Pinterest, Facebook, X…), where the right-click can't reach the image. When the user clicks it, activeTab gives access to that one tab at that moment, to find the image under the click. The user turns it on in Options or the first time they use it.
+- **scripting (optional, off until the user turns it on):** Runs a small, packaged function once in that tab (with the activeTab access above) that reads the addresses of the images on screen and returns them. It never changes the page, and nothing from the page is kept or sent anywhere.
 - **Optional host access (http://\*/\*, https://\*/\*):** Not granted at install. Some sites block cross-site reads of their images, so the conversion fails. Only then, and only after the user clicks "Allow and save", Imgkeep requests access to that one site (for example https://example.com/\*), to fetch the image the user right-clicked. Each site can be removed in Options. No content scripts are used and no page content is read.
 
 ### Remote code
@@ -101,6 +111,7 @@ Certifications (tick all three):
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
 | `store/screenshot-4-site-access.png` | 1280×800 | Screenshot 4: the site-permission window |
 | `store/screenshot-5-gif.png` | 1280×800 | Screenshot 5: GIF keeps animation |
+| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Uses a made-up site, not Instagram's interface (trademarks). |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 | Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |

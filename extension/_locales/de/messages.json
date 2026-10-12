@@ -3,7 +3,7 @@
     "message": "Bild speichern als PNG, JPG, WebP, GIF oder PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern. WebP und AVIF lokal umwandeln. Keine persönlichen Daten."
+    "message": "Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern, auch versteckte. Lokal umgewandelt. Keine persönlichen Daten."
   },
   "menuParent": {
     "message": "Imgkeep: Bild speichern als"
@@ -28,6 +28,9 @@
   },
   "menuMoreOptions": {
     "message": "Weitere Optionen…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Bild hier finden…"
   },
   "menuNew": {
     "message": "$ITEM$ ✨ Neu",
@@ -54,7 +57,7 @@
     "message": "Diese Browserversion kann dieses Format nicht erstellen. Versuch es mit PNG."
   },
   "askErrBlob": {
-    "message": "Dieses Bild existiert nur innerhalb der Seite (ein blob:-Link). Imgkeep kann es nicht lesen, weil es keinen Zugriff auf deine Seiten hat."
+    "message": "Dieses Bild existiert nur innerhalb der Seite (ein blob:-Link), daher kann Imgkeep es noch nicht speichern. Ein Screenshot funktioniert."
   },
   "askErrTooLarge": {
     "message": "Dieses Bild ist zu groß, um es im Browser umzuwandeln."
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "Noch keine. Imgkeep fragt nur, wenn eine Website ein Bild blockiert, das du umwandeln möchtest."
   },
+  "optFindTitle": {
+    "message": "Bilder, die Websites verdecken"
+  },
+  "optFindLabel": {
+    "message": "Bilder unter verdeckenden Ebenen finden"
+  },
+  "optFindHint": {
+    "message": "Auf Websites wie Instagram und Pinterest mit der rechten Maustaste klicken und Imgkeep: Bild hier finden wählen. Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden – nur diese Seite, nur in diesem Moment. Es verändert nie eine Seite."
+  },
+  "optFindOn": {
+    "message": "Eingeschaltet."
+  },
+  "optFindOff": {
+    "message": "Ausgeschaltet."
+  },
   "optCountsTitle": {
     "message": "Anonyme Nutzungszahlen"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "Angeforderte Berechtigungen:"
   },
+  "optOptionalPermissions": {
+    "message": "Nur wenn du Bilder finden einschaltest:"
+  },
   "optPermissionsLabel": {
     "message": "Berechtigungen"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "Keine Werbung und keine Willkommens-Tabs. Kleine Fenster öffnen sich nur, wenn du sie aufrufst oder ein Speichervorgang deine Zustimmung braucht. Imgkeep bittet einmal um eine Bewertung, nachdem du es eine Weile genutzt hast."
+  },
+  "optTrust4": {
+    "message": "Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden – nur diese Seite, nur in diesem Moment. Es verändert nie eine Seite."
   },
   "optTrust3": {
     "message": "Jede kostenlose Funktion bleibt kostenlos."
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "Alles klar. Wir fragen nicht noch einmal."
+  },
+  "findWindowTitle": {
+    "message": "Bild finden"
+  },
+  "findEnableTitle": {
+    "message": "Bilder finden, die Websites verdecken"
+  },
+  "findEnableBody": {
+    "message": "Manche Websites wie Instagram und Pinterest legen eine weitere Ebene über ihre Bilder, sodass ein Rechtsklick sie nicht erreicht. Imgkeep kann das Bild unter dieser Ebene für dich finden."
+  },
+  "findPromise": {
+    "message": "Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden – nur diese Seite, nur in diesem Moment. Es verändert nie eine Seite."
+  },
+  "findTurnOn": {
+    "message": "Einschalten"
+  },
+  "findDenied": {
+    "message": "Nicht eingeschaltet. Du kannst es jederzeit in den Optionen einschalten."
+  },
+  "findOnTitle": {
+    "message": "Eingeschaltet"
+  },
+  "findOnBody": {
+    "message": "Klicke noch einmal mit der rechten Maustaste auf das Bild und wähle Imgkeep: Bild hier finden."
+  },
+  "findPickTitle": {
+    "message": "Welches Bild?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep konnte nicht erkennen, welches Bild du meinst. Wähle eins:"
+  },
+  "findPickOne": {
+    "message": "Bild $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Hier wurde kein Bild gefunden"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep hat in diesem Teil der Seite kein Bild gefunden. Klicke mit der rechten Maustaste direkt auf das Foto, oder öffne das Foto auf seiner eigenen Seite und versuche es erneut."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep konnte sich diese Seite nicht ansehen"
+  },
+  "findErrorBody": {
+    "message": "Lade die Seite neu, klicke mit der rechten Maustaste auf das Bild und wähle erneut Bild hier finden."
   }
 }

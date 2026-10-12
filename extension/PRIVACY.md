@@ -10,7 +10,7 @@ No personal data. Your images never leave your computer. The only thing Imgkeep 
 
 ## What Imgkeep reads
 
-Imgkeep reads only the image you right-click and choose to save. It converts that image on your computer and uploads nothing. It has no access to the pages you visit.
+Imgkeep reads only the image you right-click and choose to save. It converts that image on your computer and uploads nothing. Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on. When you choose "Find image here" on a site that covers its images (like Instagram or Pinterest), Imgkeep looks at that one page, at that moment, only to find the addresses of the images on screen, and then saves the one you choose like any other. Nothing else from the page is read or kept. You can turn this off in Options, under "Images that sites cover".
 
 ## The anonymous daily summary
 
@@ -21,7 +21,7 @@ A summary contains only:
 - successful saves per format (PNG, JPG, WebP, GIF, PDF, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;
-- how often a site-access or folder question was shown and a site was allowed, and how the one rating question was answered;
+- how often a site-access or folder question was shown and a site was allowed, how the one rating question was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
 - the extension's version, the browser (Chrome or Edge) and its language.
 
 It never contains images, image or page addresses, site names, file or folder names, the text of your settings, or any identifier for you or your device. Each summary carries a new random number, so summaries can't be linked to each other.

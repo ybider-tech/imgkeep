@@ -25,6 +25,10 @@ export const COUNT_KEYS = [
   ...FAILURES.map((f) => `fail_${f}`),
   "resized", // a save made smaller by the maximum width
   "last_used", // a save from the "last used" item at the top of the menu
+  "find_enabled", // Find image here was turned on
+  "find_found", // Find image here found the image under the right-click
+  "find_picker", // Find image here showed a list of the images on screen
+  "find_nothing", // Find image here found no image
   "copy",
   "more_options",
   "more_options_save",
