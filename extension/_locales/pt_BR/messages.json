@@ -29,6 +29,9 @@
   "menuMoreOptions": {
     "message": "Mais opções…"
   },
+  "menuFindImage": {
+    "message": "Imgkeep: Encontrar imagem aqui…"
+  },
   "menuNew": {
     "message": "$ITEM$ ✨ Novo",
     "placeholders": {
@@ -54,7 +57,7 @@
     "message": "Esta versão do navegador não consegue criar este formato. Tente PNG."
   },
   "askErrBlob": {
-    "message": "Esta imagem só existe dentro da página (um link blob:). O Imgkeep não consegue lê-la porque não tem acesso às suas páginas."
+    "message": "Esta imagem só existe dentro da página (um link blob:), então o Imgkeep ainda não consegue salvá-la. Uma captura de tela funciona."
   },
   "askErrTooLarge": {
     "message": "Esta imagem é grande demais para converter no navegador."
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "Nenhum ainda. O Imgkeep só pergunta quando um site bloqueia uma imagem que você quer converter."
   },
+  "optFindTitle": {
+    "message": "Imagens que os sites cobrem"
+  },
+  "optFindLabel": {
+    "message": "Encontrar imagens sob camadas que as cobrem"
+  },
+  "optFindHint": {
+    "message": "Em sites como Instagram e Pinterest, clique com o botão direito e escolha Imgkeep: Encontrar imagem aqui. O Imgkeep só olha uma página quando você pede para encontrar uma imagem nela, só essa página e só naquele momento. Ele nunca altera uma página."
+  },
+  "optFindOn": {
+    "message": "Ativado."
+  },
+  "optFindOff": {
+    "message": "Desativado."
+  },
   "optCountsTitle": {
     "message": "Contagens de uso anônimas"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "Permissões que ele pede:"
   },
+  "optOptionalPermissions": {
+    "message": "Só se você ativar Encontrar imagens:"
+  },
   "optPermissionsLabel": {
     "message": "Permissões"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "Sem anúncios e sem abas de boas-vindas. Janelas pequenas só abrem quando você pede ou quando um salvamento precisa da sua confirmação. O Imgkeep pede uma avaliação só uma vez, depois que você já o usou por um tempo."
+  },
+  "optTrust4": {
+    "message": "O Imgkeep só olha uma página quando você pede para encontrar uma imagem nela, só essa página e só naquele momento. Ele nunca altera uma página."
   },
   "optTrust3": {
     "message": "Todo recurso gratuito continua gratuito."
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "Tudo bem. Não vamos perguntar de novo."
+  },
+  "findWindowTitle": {
+    "message": "Encontrar imagem"
+  },
+  "findEnableTitle": {
+    "message": "Encontrar imagens que os sites cobrem"
+  },
+  "findEnableBody": {
+    "message": "Alguns sites, como Instagram e Pinterest, cobrem as imagens com outra camada, então o clique direito não chega até elas. O Imgkeep pode encontrar a imagem que está embaixo para você."
+  },
+  "findPromise": {
+    "message": "O Imgkeep só olha uma página quando você pede para encontrar uma imagem nela, só essa página e só naquele momento. Ele nunca altera uma página."
+  },
+  "findTurnOn": {
+    "message": "Ativar"
+  },
+  "findDenied": {
+    "message": "Não foi ativado. Você pode ativar quando quiser nas Opções."
+  },
+  "findOnTitle": {
+    "message": "Ativado"
+  },
+  "findOnBody": {
+    "message": "Clique com o botão direito na imagem de novo e escolha Imgkeep: Encontrar imagem aqui."
+  },
+  "findPickTitle": {
+    "message": "Qual imagem?"
+  },
+  "findPickBody": {
+    "message": "O Imgkeep não conseguiu saber qual imagem você queria. Escolha uma:"
+  },
+  "findPickOne": {
+    "message": "Imagem $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Nenhuma imagem encontrada aqui"
+  },
+  "findNothingBody": {
+    "message": "O Imgkeep não encontrou nenhuma imagem nesta parte da página. Clique com o botão direito bem em cima da foto, ou abra a foto na página dela e tente de novo."
+  },
+  "findErrorTitle": {
+    "message": "O Imgkeep não conseguiu olhar esta página"
+  },
+  "findErrorBody": {
+    "message": "Recarregue a página, clique com o botão direito na imagem e escolha Encontrar imagem aqui de novo."
   }
 }

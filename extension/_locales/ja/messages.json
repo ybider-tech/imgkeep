@@ -29,6 +29,9 @@
   "menuMoreOptions": {
     "message": "その他のオプション…"
   },
+  "menuFindImage": {
+    "message": "Imgkeep: ここで画像を探す…"
+  },
   "menuNew": {
     "message": "$ITEM$ ✨ 新機能",
     "placeholders": {
@@ -54,7 +57,7 @@
     "message": "このバージョンのブラウザではこの形式を作成できません。PNG をお試しください。"
   },
   "askErrBlob": {
-    "message": "この画像はページ内にしか存在しません（blob: リンク）。Imgkeep はページへのアクセス権を持たないため、読み込めません。"
+    "message": "この画像はページ内にしか存在しない（blob: リンク）ため、Imgkeep ではまだ保存できません。スクリーンショットなら保存できます。"
   },
   "askErrTooLarge": {
     "message": "この画像は大きすぎて、ブラウザ内で変換できません。"
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "まだありません。Imgkeep が確認するのは、変換したい画像をサイトがブロックしたときだけです。"
   },
+  "optFindTitle": {
+    "message": "サイトが覆っている画像"
+  },
+  "optFindLabel": {
+    "message": "覆われた画像を探す"
+  },
+  "optFindHint": {
+    "message": "Instagram や Pinterest などのサイトで右クリックし、「Imgkeep: ここで画像を探す」を選びます。Imgkeep がページを見るのは、そこで画像を探すよう頼まれたときだけ。そのページだけを、その瞬間だけ見ます。ページを変更することはありません。"
+  },
+  "optFindOn": {
+    "message": "オンにしました。"
+  },
+  "optFindOff": {
+    "message": "オフにしました。"
+  },
   "optCountsTitle": {
     "message": "匿名の利用回数"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "要求する権限:"
   },
+  "optOptionalPermissions": {
+    "message": "「画像を探す」をオンにした場合のみ："
+  },
   "optPermissionsLabel": {
     "message": "権限"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "広告なし、ようこそタブなし。小さなウィンドウが開くのは、あなたが呼び出したときか、保存に確認が必要なときだけです。評価のお願いは、しばらく使っていただいた後に一度だけです。"
+  },
+  "optTrust4": {
+    "message": "Imgkeep がページを見るのは、そこで画像を探すよう頼まれたときだけ。そのページだけを、その瞬間だけ見ます。ページを変更することはありません。"
   },
   "optTrust3": {
     "message": "無料の機能はずっと無料です。"
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "わかりました。もうお聞きしません。"
+  },
+  "findWindowTitle": {
+    "message": "画像を探す"
+  },
+  "findEnableTitle": {
+    "message": "サイトが覆っている画像を探す"
+  },
+  "findEnableBody": {
+    "message": "Instagram や Pinterest などの一部のサイトは、画像の上に別の層を重ねているため、右クリックが画像に届きません。Imgkeep がその層の下にある画像を探します。"
+  },
+  "findPromise": {
+    "message": "Imgkeep がページを見るのは、そこで画像を探すよう頼まれたときだけ。そのページだけを、その瞬間だけ見ます。ページを変更することはありません。"
+  },
+  "findTurnOn": {
+    "message": "オンにする"
+  },
+  "findDenied": {
+    "message": "オンになっていません。オプションからいつでもオンにできます。"
+  },
+  "findOnTitle": {
+    "message": "オンになりました"
+  },
+  "findOnBody": {
+    "message": "もう一度画像を右クリックして、「Imgkeep: ここで画像を探す」を選んでください。"
+  },
+  "findPickTitle": {
+    "message": "どの画像ですか？"
+  },
+  "findPickBody": {
+    "message": "どの画像のことか Imgkeep には判断できませんでした。1つ選んでください："
+  },
+  "findPickOne": {
+    "message": "画像 $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "ここには画像が見つかりません"
+  },
+  "findNothingBody": {
+    "message": "ページのこの部分に画像が見つかりませんでした。写真の真上で右クリックするか、写真をそのページで開いてからもう一度お試しください。"
+  },
+  "findErrorTitle": {
+    "message": "このページを見ることができませんでした"
+  },
+  "findErrorBody": {
+    "message": "ページを再読み込みしてから、画像を右クリックしてもう一度「ここで画像を探す」を選んでください。"
   }
 }

@@ -29,6 +29,9 @@
   "menuMoreOptions": {
     "message": "Plus d'options…"
   },
+  "menuFindImage": {
+    "message": "Imgkeep : Trouver l'image ici…"
+  },
   "menuNew": {
     "message": "$ITEM$ ✨ Nouveau",
     "placeholders": {
@@ -54,7 +57,7 @@
     "message": "Cette version du navigateur ne peut pas créer ce format. Essayez plutôt PNG."
   },
   "askErrBlob": {
-    "message": "Cette image n'existe que dans la page (un lien blob:). Imgkeep ne peut pas la lire, car il n'a pas accès à vos pages."
+    "message": "Cette image n'existe qu'à l'intérieur de la page (un lien blob:), donc Imgkeep ne peut pas encore l'enregistrer. Une capture d'écran fonctionne."
   },
   "askErrTooLarge": {
     "message": "Cette image est trop grande pour être convertie dans le navigateur."
@@ -323,6 +326,21 @@
   "optSitesEmpty": {
     "message": "Aucun pour l'instant. Imgkeep ne demande que lorsqu'un site bloque une image que vous voulez convertir."
   },
+  "optFindTitle": {
+    "message": "Images que les sites recouvrent"
+  },
+  "optFindLabel": {
+    "message": "Trouver les images sous les calques qui les recouvrent"
+  },
+  "optFindHint": {
+    "message": "Sur des sites comme Instagram et Pinterest, faites un clic droit et choisissez Imgkeep : Trouver l'image ici. Imgkeep ne regarde une page que lorsque vous lui demandez d'y trouver une image : seulement cette page, seulement à ce moment-là. Il ne modifie jamais une page."
+  },
+  "optFindOn": {
+    "message": "Activé."
+  },
+  "optFindOff": {
+    "message": "Désactivé."
+  },
   "optCountsTitle": {
     "message": "Statistiques d'utilisation anonymes"
   },
@@ -377,6 +395,9 @@
   "optPermissions": {
     "message": "Autorisations demandées :"
   },
+  "optOptionalPermissions": {
+    "message": "Seulement si vous activez Trouver les images :"
+  },
   "optPermissionsLabel": {
     "message": "Autorisations"
   },
@@ -385,6 +406,9 @@
   },
   "optTrust2": {
     "message": "Pas de pub ni d'onglets de bienvenue. De petites fenêtres s'ouvrent seulement quand vous les demandez ou quand un enregistrement a besoin de votre accord. Imgkeep demande une note une seule fois, après que vous l'avez utilisé un moment."
+  },
+  "optTrust4": {
+    "message": "Imgkeep ne regarde une page que lorsque vous lui demandez d'y trouver une image : seulement cette page, seulement à ce moment-là. Il ne modifie jamais une page."
   },
   "optTrust3": {
     "message": "Chaque fonction gratuite reste gratuite."
@@ -475,5 +499,56 @@
   },
   "reviewOk": {
     "message": "C'est noté. Nous ne demanderons plus."
+  },
+  "findWindowTitle": {
+    "message": "Trouver l'image"
+  },
+  "findEnableTitle": {
+    "message": "Trouver les images que les sites recouvrent"
+  },
+  "findEnableBody": {
+    "message": "Certains sites, comme Instagram et Pinterest, recouvrent leurs images d'un autre calque, si bien que le clic droit ne les atteint pas. Imgkeep peut trouver pour vous l'image sous ce calque."
+  },
+  "findPromise": {
+    "message": "Imgkeep ne regarde une page que lorsque vous lui demandez d'y trouver une image : seulement cette page, seulement à ce moment-là. Il ne modifie jamais une page."
+  },
+  "findTurnOn": {
+    "message": "Activer"
+  },
+  "findDenied": {
+    "message": "Non activé. Vous pouvez l'activer à tout moment dans les Options."
+  },
+  "findOnTitle": {
+    "message": "Activé"
+  },
+  "findOnBody": {
+    "message": "Faites de nouveau un clic droit sur l'image et choisissez Imgkeep : Trouver l'image ici."
+  },
+  "findPickTitle": {
+    "message": "Quelle image ?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep n'a pas pu savoir de quelle image il s'agissait. Choisissez-en une :"
+  },
+  "findPickOne": {
+    "message": "Image $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Aucune image trouvée ici"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep n'a trouvé aucune image dans cette partie de la page. Faites un clic droit directement sur la photo, ou ouvrez la photo sur sa propre page et réessayez."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep n'a pas pu regarder cette page"
+  },
+  "findErrorBody": {
+    "message": "Rechargez la page, faites un clic droit sur l'image et choisissez de nouveau Trouver l'image ici."
   }
 }

@@ -32,6 +32,7 @@ WHAT IT DOES
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
+• Find images that sites cover: on Instagram, Pinterest and similar sites, photos sit under another layer, so right-click can't reach them. Right-click and choose Imgkeep: Find image here. Off until you turn it on.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -39,9 +40,9 @@ WHAT IT DOES
 
 BUILT TO BE TRUSTED
 
-• No access to your pages: Imgkeep can't read or change the sites you visit. It sees only the image you right-click.
+• Stays out of your pages: Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on.
 • Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
-• Four permissions only: contextMenus, downloads, storage, offscreen.
+• Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
 • Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
 
@@ -64,6 +65,8 @@ Save the image you right-click in the format and folder you choose.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
 - **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour, maximum width) in Chrome sync storage, keeps a pending save in session storage while one of the extension's small windows is open, and keeps in local storage the last format and width used in More options plus a count of successful and failed saves (to time a single rating request and label new menu items), and today's anonymous usage counts until they are sent as the one daily summary described under Data usage (turned off in Options, they are deleted). Nothing else in storage is sent anywhere.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.
+- **activeTab (optional, off until the user turns it on):** Only for "Imgkeep: Find image here", a menu item shown on sites that cover their images with another layer (Instagram, Pinterest, Facebook, X…), where the right-click can't reach the image. When the user clicks it, activeTab gives access to that one tab at that moment, to find the image under the click. The user turns it on in Options or the first time they use it.
+- **scripting (optional, off until the user turns it on):** Runs a small, packaged function once in that tab (with the activeTab access above) that reads the addresses of the images on screen and returns them. It never changes the page, and nothing from the page is kept or sent anywhere.
 - **Optional host access (http://\*/\*, https://\*/\*):** Not granted at install. Some sites block cross-site reads of their images, so the conversion fails. Only then, and only after the user clicks "Allow and save", Imgkeep requests access to that one site (for example https://example.com/\*), to fetch the image the user right-clicked. Each site can be removed in Options. No content scripts are used and no page content is read.
 
 ### Remote code

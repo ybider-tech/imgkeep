@@ -43,6 +43,7 @@ WHAT IT DOES
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
+• Find images that sites cover: on Instagram, Pinterest and similar sites, photos sit under another layer, so right-click can't reach them. Right-click and choose Imgkeep: Find image here. Off until you turn it on.
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -50,9 +51,9 @@ WHAT IT DOES
 
 BUILT TO BE TRUSTED
 
-• No access to your pages: Imgkeep can't read or change the sites you visit. It sees only the image you right-click.
+• Stays out of your pages: Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on.
 • Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
-• Four permissions only: contextMenus, downloads, storage, offscreen.
+• Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • Open source under the MIT licence, with no build step, so what you read is what runs.
 • Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
 
@@ -72,6 +73,8 @@ Permissions: contextMenus (the menu), downloads (saving files), storage (setting
 New in 0.6.1: the extension name now starts with what it does ("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"). Menu items added since a user's previous version show "✨ New" for 30 days after an update. After at least 15 successful saves over 7 days, Imgkeep asks once for a rating (in its own window after a copy or save, and as a menu item for up to 14 days); "No thanks" ends it for good. No incentives. These counts stay in the extension's local storage and are never sent anywhere. Options has "What's new" and "Rate Imgkeep" links.
 
 New in 0.7.0: an anonymous daily usage summary, on by default and switched off with one click in Options ("Anonymous usage counts", which also shows exactly what was counted and sent). Once a day the extension sends one event to Aptabase (https://eu.aptabase.com/api/v0/event, an open-source analytics service hosted in the EU) with the previous day's totals: saves per format and save mode, failures by error type, copies, and similar counts, plus version, browser and language. It never contains image or page URLs, site or file names, or any identifier; each summary has a new random session id. This was announced on imgkeep.app and in the privacy policy before this version. The code is in extension/lib/telemetry.js (one fetch, to that one address). Also new: the format used last appears at the top of the right-click submenu, e.g. "JPG (last used)".
+
+New in 0.8.0: "Imgkeep: Find image here", a right-click item shown only on sites that cover their images with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads). It uses two OPTIONAL permissions, activeTab and scripting, which stay off until the user turns them on (in Options or the first time they use it). When clicked, it runs a packaged function once in that tab that reads the addresses of the images on screen, then opens the chosen one in the extension's own window to save. It never changes the page. To test: turn it on in Options → "Images that sites cover", open an Instagram profile, right-click a photo, choose "Imgkeep: Find image here".
 
 New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
 

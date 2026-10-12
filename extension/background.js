@@ -174,26 +174,67 @@ async function rememberFormat(format) {
   }
 }
 
-// PROTOTYPE: sites that cover their images with another layer, so the browser's "image" right-click never fires.
-const COVERED_SITES = ["*://*.instagram.com/*", "*://*.pinterest.com/*", "*://*.pinterest.co.uk/*", "*://*.facebook.com/*", "*://x.com/*", "*://*.tumblr.com/*", "http://127.0.0.1/*"];
+// ---- Find image here (opt-in) ----
+// Some sites cover their images with another layer, so the browser's "image" right-click never fires and
+// Imgkeep's menu doesn't appear. On those sites only, "Find image here" looks at that one page, once, when
+// the user clicks it (activeTab + scripting, both optional and off until turned on). It never changes a page.
+
+const FIND_PERMISSIONS = { permissions: ["activeTab", "scripting"] };
+
+const COVERED_SITES = [
+  "*://*.instagram.com/*",
+  "*://*.threads.com/*",
+  "*://*.threads.net/*",
+  "*://*.facebook.com/*",
+  "*://x.com/*",
+  "*://*.x.com/*",
+  "*://twitter.com/*",
+  "*://*.twitter.com/*",
+  "*://*.tumblr.com/*",
+  "*://*.flickr.com/*",
+  ...["com", "co.uk", "ca", "de", "fr", "es", "it", "com.au", "jp", "com.mx", "pt", "at", "ch", "nz", "ie", "ph", "cl", "dk", "se", "co.kr"].map((tld) => `*://*.pinterest.${tld}/*`),
+];
 
 function createFindMenu() {
   chrome.contextMenus.create(
-    { id: "imgkeep-find", title: "Imgkeep: Find image here…", contexts: ["page", "link", "frame"], documentUrlPatterns: COVERED_SITES },
+    { id: "imgkeep-find", title: msg("menuFindImage"), contexts: ["page", "link", "frame"], documentUrlPatterns: COVERED_SITES },
     ignoreError,
   );
 }
 
+const findTurnedOn = () => chrome.permissions.contains(FIND_PERMISSIONS);
+
+// Runs the finder in the page the user asked about. Only image addresses come back.
 async function findImage(info, tab) {
-  const [{ result } = {}] = await chrome.scripting.executeScript({
-    target: { tabId: tab.id, frameIds: [info.frameId || 0] },
-    func: findImageInPage,
-  });
-  globalThis.imgkeepLastFind = result; // for the prototype's tests
-  const pick = result?.found || result?.onScreen?.[0];
-  if (pick) await openWindow("editor", { url: pick.url, pageUrl: info.pageUrl || tab.url });
-  return result;
+  const pageUrl = info.pageUrl || tab?.url || "";
+  if (!(await findTurnedOn())) return openWindow("find", { mode: "enable", pageUrl });
+  let result;
+  try {
+    [{ result } = {}] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id, frameIds: [info.frameId || 0] },
+      func: findImageInPage,
+    });
+  } catch {
+    // Turned on after this page's right-click, or a page Chrome doesn't let extensions look at.
+    return openWindow("find", { mode: "error", pageUrl });
+  }
+  globalThis.imgkeepLastFind = result; // for automated tests only
+  const isWeb = (u) => typeof u === "string" && /^(https?:|data:image\/)/i.test(u);
+  const onScreen = (result?.onScreen || []).filter((c) => isWeb(c.url)).slice(0, 12);
+  if (isWeb(result?.found?.url)) {
+    count("find_found");
+    return openWindow("editor", { url: result.found.url, pageUrl });
+  }
+  if (onScreen.length) {
+    count("find_picker");
+    return openWindow("find", { mode: "pick", pageUrl, candidates: onScreen });
+  }
+  count("find_nothing");
+  return openWindow("find", { mode: "nothing", pageUrl });
 }
+
+// For automated tests only: run the finder on a tab, as if "Find image here" was clicked there.
+globalThis.imgkeepFindImage = (tabId, url) => findImage({ pageUrl: url, frameId: 0 }, { id: tabId, url });
 
 async function menuClicked(info, tab) {
   if (info.menuItemId === "imgkeep-find") return findImage(info, tab);
@@ -483,6 +524,7 @@ const WINDOWS = {
   ask: { width: 480, height: 380 },
   copy: { width: 400, height: 220 },
   editor: { width: 600, height: 780 },
+  find: { width: 560, height: 560 },
 };
 
 async function openWindow(page, input) {
@@ -591,6 +633,28 @@ const windowHandlers = {
   async job({ jobId }) {
     const { id, url, pageUrl } = await loadJob(jobId);
     return { ok: true, id, url, pageUrl, settings: await getSettings() };
+  },
+
+  // Find image: what this window is for (turn on, pick, nothing found, or couldn't look).
+  async finderJob({ jobId }) {
+    const { mode, candidates = [], pageUrl } = await loadJob(jobId);
+    return { ok: true, mode, pageUrl, candidates: candidates.map(({ url, width, height }) => ({ url, width, height })) };
+  },
+
+  // Find image: the user picked one of the images found on screen. Only an index comes from the window;
+  // the address is the one the finder stored.
+  async pickImage({ jobId, index }) {
+    const job = await loadJob(jobId);
+    const pick = job.candidates?.[Number(index)];
+    if (!pick) return { ok: false, code: "expired" };
+    await openWindow("editor", { url: pick.url, pageUrl: job.pageUrl });
+    return { ok: true };
+  },
+
+  // Find image: turned on from its window (the window asked the browser, which needs the click).
+  async finderTurnedOn() {
+    if (await findTurnedOn()) count("find_enabled");
+    return { ok: true, on: await findTurnedOn() };
   },
 
   // Open the image itself in a new tab (only web addresses).

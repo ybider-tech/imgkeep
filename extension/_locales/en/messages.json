@@ -37,6 +37,10 @@
     "message": "More options…",
     "description": "Right-click menu item: opens the More options window"
   },
+  "menuFindImage": {
+    "message": "Imgkeep: Find image here…",
+    "description": "Right-click menu item on sites that cover their images (Instagram, Pinterest…)"
+  },
   "menuNew": {
     "message": "$ITEM$ ✨ New",
     "description": "A right-click menu item that is new in this version, for 30 days after an update. $ITEM$ is the item's own name.",
@@ -68,7 +72,7 @@
     "description": "Error"
   },
   "askErrBlob": {
-    "message": "This image only exists inside the page (a blob: link). Imgkeep can't read it because it has no access to your pages.",
+    "message": "This image only exists inside the page (a blob: link), so Imgkeep can't save it yet. A screenshot works.",
     "description": "Error. Keep 'blob:' as is."
   },
   "askErrTooLarge": {
@@ -405,6 +409,26 @@
     "message": "None yet. Imgkeep asks only when a site blocks an image you want to convert.",
     "description": "Empty state"
   },
+  "optFindTitle": {
+    "message": "Images that sites cover",
+    "description": "Options section heading"
+  },
+  "optFindLabel": {
+    "message": "Find images under cover layers",
+    "description": "Options switch (off by default)"
+  },
+  "optFindHint": {
+    "message": "On sites like Instagram and Pinterest, right-click and choose Imgkeep: Find image here. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.",
+    "description": "How it works, and the promise (wording B)"
+  },
+  "optFindOn": {
+    "message": "Turned on.",
+    "description": "Status after switching on"
+  },
+  "optFindOff": {
+    "message": "Turned off.",
+    "description": "Status after switching off"
+  },
   "optCountsTitle": {
     "message": "Anonymous usage counts",
     "description": "Options section heading: the anonymous daily summary"
@@ -475,6 +499,10 @@
     "message": "Permissions it asks for:",
     "description": "Text before the permission names"
   },
+  "optOptionalPermissions": {
+    "message": "Only if you turn on Find images:",
+    "description": "Label above the two optional permissions"
+  },
   "optPermissionsLabel": {
     "message": "Permissions",
     "description": "Accessible label"
@@ -486,6 +514,10 @@
   "optTrust2": {
     "message": "No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating once, after you've used it for a while.",
     "description": "Bullet"
+  },
+  "optTrust4": {
+    "message": "Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.",
+    "description": "Trust list item (wording B)"
   },
   "optTrust3": {
     "message": "Every free feature stays free.",
@@ -606,5 +638,71 @@
   "reviewOk": {
     "message": "Got it. We won't ask again.",
     "description": "Shown after choosing No thanks"
+  },
+  "findWindowTitle": {
+    "message": "Find image",
+    "description": "Find image window title"
+  },
+  "findEnableTitle": {
+    "message": "Find images that sites cover",
+    "description": "Heading when Find image is not turned on yet"
+  },
+  "findEnableBody": {
+    "message": "Some sites, like Instagram and Pinterest, cover their images with another layer, so a right-click can't reach them. Imgkeep can find the image under that layer for you.",
+    "description": "Why Find image exists"
+  },
+  "findPromise": {
+    "message": "Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.",
+    "description": "The promise (wording B), shown before turning on"
+  },
+  "findTurnOn": {
+    "message": "Turn on",
+    "description": "Button: turn Find image on"
+  },
+  "findDenied": {
+    "message": "Not turned on. You can turn it on any time in Options.",
+    "description": "Shown when the browser didn't grant it"
+  },
+  "findOnTitle": {
+    "message": "Turned on",
+    "description": "Heading after turning on"
+  },
+  "findOnBody": {
+    "message": "Right-click the image again and choose Imgkeep: Find image here.",
+    "description": "What to do after turning on"
+  },
+  "findPickTitle": {
+    "message": "Which image?",
+    "description": "Picker heading"
+  },
+  "findPickBody": {
+    "message": "Imgkeep couldn't tell which image you meant. Pick one:",
+    "description": "Picker text"
+  },
+  "findPickOne": {
+    "message": "Image $NUMBER$",
+    "description": "Accessible name of a picker button. $NUMBER$ is 1, 2, 3…",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "No image found here",
+    "description": "Heading when no image was found"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep couldn't find an image on this part of the page. Right-click right on the photo, or open the photo on its own page and try again.",
+    "description": "What to try when no image was found"
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep couldn't look at this page",
+    "description": "Heading when the page couldn't be looked at"
+  },
+  "findErrorBody": {
+    "message": "Reload the page, then right-click the image and choose Find image here again.",
+    "description": "What to do then"
   }
 }

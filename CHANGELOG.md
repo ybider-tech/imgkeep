@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 — unreleased
+
+- **Find image here.** On sites that cover their photos with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads), the right-click can't reach the image, so Imgkeep's menu never appeared there. Now those sites get **Imgkeep: Find image here…**: Imgkeep looks at that page once, finds the image under the click (its largest version), and opens it in More options. If it can't tell which image you meant, a picker shows the images on screen; if there are none, it says so.
+- **Opt-in, with two optional permissions** (`activeTab`, `scripting`) that stay off until you turn them on, in Options → Images that sites cover or the first time you use it. Neither comes with an install warning; install permissions stay at four. The finder (`extension/lib/find-image.js`) only reads image addresses, never changes the page, and only runs when you click it. The static check allows exactly these two optional permissions, and `chrome.scripting` only in `background.js`.
+- **The promise is reworded,** in the store descriptions (9 languages), the website, Options and the privacy policy: "Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on."
+- The anonymous daily summary also counts how often Find image here was turned on, found an image, showed a list or found nothing (listed in the privacy policy).
+
 ## 0.7.1 — 2026-10-12
 
 - **Uninstall form.** After someone removes Imgkeep, the browser opens a short, optional Google Form: why they removed it (5 reasons or "Other") and what would have made them keep it. The address carries only the version (`lib/uninstall.js`); the form collects no email addresses. Registered with `chrome.runtime.setUninstallURL`, which needs no permission. The static check allows exactly that one form address. The privacy policy has a new "When you remove Imgkeep" section.

@@ -2,7 +2,7 @@
 // layer (Instagram, Pinterest…), where the browser's own "image" right-click never fires.
 //
 // findImageInPage runs inside the page, once, right after the user clicks "Find image here"
-// (chrome.scripting.executeScript with activeTab). It must be self-contained: no imports, no outer variables.
+// (the scripting API, with activeTab). It must be self-contained: no imports, no outer variables.
 // It reads only the page's image elements and returns their addresses; nothing else leaves the page.
 
 export function findImageInPage() {

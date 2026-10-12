@@ -150,6 +150,15 @@
       <ul id="sites"></ul>
     </section>
 
+    <section aria-labelledby="h-find">
+      <h2 id="h-find" data-i18n="optFindTitle">Images that sites cover</h2>
+      <label class="choice">
+        <input type="checkbox" id="imageFinder">
+        <span><span data-i18n="optFindLabel">Find images under cover layers</span><small data-i18n="optFindHint">On sites like Instagram and Pinterest, right-click and choose Imgkeep: Find image here. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.</small></span>
+      </label>
+      <p class="hint" id="imageFinderStatus" role="status" aria-live="polite"></p>
+    </section>
+
     <section aria-labelledby="h-counts">
       <h2 id="h-counts" data-i18n="optCountsTitle">Anonymous usage counts</h2>
       <label class="choice">
@@ -181,9 +190,15 @@
         <span class="tag">storage</span>
         <span class="tag">offscreen</span>
       </div>
+      <p class="muted" style="margin-bottom:4px" data-i18n="optOptionalPermissions">Only if you turn on Find images:</p>
+      <div class="tags">
+        <span class="tag">activeTab</span>
+        <span class="tag">scripting</span>
+      </div>
       <ul class="plain">
         <li data-i18n="optTrust1">Images are converted on your computer and never uploaded. The only other thing Imgkeep sends is the anonymous daily summary above, which you can turn off.</li>
         <li data-i18n="optTrust2">No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating once, after you've used it for a while.</li>
+        <li data-i18n="optTrust4">Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.</li>
         <li data-i18n="optTrust3">Every free feature stays free.</li>
       </ul>
       <p class="muted" style="margin:12px 0 0"><span data-i18n="optVersion">Version</span> <span id="version"></span> · <a href="https://imgkeep.app/whats-new.html" target="_blank" rel="noopener" data-i18n="optWhatsNew">What's new</a> · <a id="rateLink" target="_blank" rel="noopener" data-i18n="reviewRate">Rate Imgkeep</a> · <a href="https://imgkeep.app" target="_blank" rel="noopener">imgkeep.app</a></p>

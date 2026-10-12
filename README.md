@@ -14,7 +14,7 @@ Chrome now often saves images as WebP or AVIF, which many apps still can't open.
 
 ## Built to be trusted
 
-- Four permissions: `contextMenus`, `downloads`, `storage`, `offscreen`. No access to your pages. See [PERMISSIONS.md](PERMISSIONS.md).
+- Four permissions: `contextMenus`, `downloads`, `storage`, `offscreen`, plus two optional ones (`activeTab`, `scripting`) that stay off until you turn on **Find image here**. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page. See [PERMISSIONS.md](PERMISSIONS.md).
 - No remote code. Network use: fetching the image you clicked, and (since 0.7.0) one anonymous daily summary of feature use to Aptabase, on by default and off in Options. Never images, addresses, file names or identifiers.
 - No review prompts, welcome tabs, badges or upsells. A small window opens only when a save needs your decision.
 - Plain JavaScript ES modules, no build step, no npm dependencies. One small library is vendored as a single readable file: [gifenc](https://github.com/mattdesl/gifenc) (MIT) in `extension/lib/gifenc.js`, for making GIFs.
@@ -44,6 +44,7 @@ Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP
 - **Maximum width** (Options → Quality and size, off by default): wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Applies to every format except Original format. GIFs also stay within their own 800px limit; a GIF that is already a GIF is saved as it is.
 - **Checked output:** each converted file's first bytes must match the chosen format, and the file extension comes from them. A mismatch is an error, never a mislabelled file.
 - **Copy as PNG:** puts a PNG (transparency kept) on the clipboard. It runs in a small Imgkeep window, because the browser only lets a focused page write images to the clipboard; that's why no clipboard permission is needed. The window closes itself after "Copied". If the clipboard refuses, nothing on it changes and you can save the PNG instead.
+- **Find image here (opt-in):** on sites that cover their photos with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads), right-click → **Imgkeep: Find image here…**. Imgkeep runs `extension/lib/find-image.js` once in that tab: it takes the layer under the pointer, picks the image that overlaps it most (its largest `srcset` version), and opens it in More options; if the layer covers the whole screen (a sign-in wall) or nothing matches, a picker shows the images on screen. Uses the optional `activeTab` and `scripting` permissions, off until turned on in Options or on first use.
 - **Uninstall form:** after an uninstall, the browser opens a short, optional Google Form asking why (`extension/lib/uninstall.js`, `store/uninstall-form/`). Only the version is in its address; it collects no emails.
 - **"Last used" first:** the format of your last save from the menu is offered again as the top item ("JPG (last used)"), above a separator, so it's always in the same spot. Stored in local storage.
 - **"New" labels and one rating ask:** items added since your previous version say "New" in the menu for 30 days after an update. After real use (15 successful saves or copies, 7 days, last 3 saves worked) Imgkeep asks once for a rating: after a copy or a save in More options, and as a menu item for up to 14 days. Any answer, or none, ends it for good. Counted in local storage only (`extension/lib/review.js`). Options always has a quiet "Rate Imgkeep" link.
@@ -71,7 +72,7 @@ Needs Chrome 116 or newer, or Microsoft Edge. Tested automatically on the curren
 ## Known limits
 
 - **Folder reconnect after a restart.** The browser forgets folder access when it restarts unless you chose **Allow on every visit**. Then the first save asks you to reconnect (one click). This can't be done silently: the browser requires a click to grant folder access.
-- **Page `blob:` images can't be saved.** Some sites draw images from `blob:` URLs that only exist inside the page. Reading them would need access to your pages, which Imgkeep doesn't have. The error window explains this.
+- **Page `blob:` images can't be saved yet.** Some sites draw images from `blob:` URLs that only exist inside the page. Find image here doesn't offer them either (it only returns web addresses). A screenshot works.
 - **Original format and Ask always use Downloads.** In folder mode, **Original format** still saves through the browser's downloads (with your subfolder and name template). **Ask every time** uses the Save As dialog.
 - **Original format without a file extension** in the URL is named by the browser from the server's answer, without your subfolder or template.
 - Very large images may exceed the browser's canvas limit; you'll see "too large to convert".
