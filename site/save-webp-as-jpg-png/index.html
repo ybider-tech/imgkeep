@@ -11,10 +11,10 @@
   <meta property="og:title" content="How to save WebP as JPG or PNG in Chrome">
   <meta property="og:description" content="Save WebP images as JPG or PNG in Chrome: in one step with an extension, or free with Paint, Preview or copy and paste. Which format to pick, and why.">
   <meta property="og:url" content="https://imgkeep.app/save-webp-as-jpg-png/">
-  <meta property="og:image" content="https://imgkeep.app/og-image.png">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Imgkeep: save any image as PNG, JPG or WebP from Chrome's right-click menu">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format. Save web images as PNG, JPG, WebP, GIF or PDF from the right-click menu in Chrome or Edge.">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
@@ -35,6 +35,16 @@
         "@type": "Question",
         "name": "Can I make Chrome always save JPG?",
         "acceptedAnswer": { "@type": "Answer", "text": "No. Chrome has no setting for the format of saved images. It saves the file the site sent." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I save WebP as PNG without uploading it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use a converter that runs on your own computer. An extension like Imgkeep converts the image in your browser as you save it: right-click, Imgkeep: Save image as, PNG. Paint, Preview and copy and paste also work offline. Online converters are the ones that upload your image to their server." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I save a WebP image as JPG or PNG?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Right-click the image, choose Imgkeep: Save image as, then PNG or JPG. The WebP is converted on your computer, so nothing is uploaded. Without an extension, save the WebP and re-save it from Paint (File › Save as) or Preview (File › Export). Pick PNG for graphics and transparency, JPG for photos." }
       }
     ]
   }
@@ -42,9 +52,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../style.css?v=360ff6784e">
+  <link rel="stylesheet" href="../style.css?v=61b5a240ba">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Save WebP as JPG or PNG", "item": "https://imgkeep.app/save-webp-as-jpg-png/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to save WebP as JPG or PNG in Chrome", "description": "Right-click the image, choose Imgkeep: Save image as, then PNG or JPG. The WebP is converted on your computer, so nothing is uploaded. Without an extension, save the WebP and re-save it from Paint (File › Save as) or Preview (File › Export). Pick PNG for graphics and transparency, JPG for photos.", "url": "https://imgkeep.app/save-webp-as-jpg-png/", "mainEntityOfPage": "https://imgkeep.app/save-webp-as-jpg-png/", "image": "https://imgkeep.app/media/guides/menu-png.jpg", "datePublished": "2026-09-27", "dateModified": "2026-10-12", "inLanguage": "en", "author": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/"}, "publisher": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": {"@type": "ImageObject", "url": "https://imgkeep.app/icon128.png"}}}
   </script>
 </head>
 <body>
@@ -53,21 +66,25 @@
       <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
     </header>
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="../">← Home</a><span aria-hidden="true">›</span><span aria-current="page">Save WebP as JPG or PNG</span>
+      <a href="../#image-guides">← Home</a><span aria-hidden="true">›</span><span aria-current="page">Save WebP as JPG or PNG</span>
     </nav>
 
     <main class="doc">
       <h1>How to save WebP as JPG or PNG in Chrome</h1>
-      <p class="lead">Chrome saves images in the format the site sent, and that's often WebP. To get a JPG or PNG, you convert the image: as you save it, with an extension, or afterwards, with an app you already have.</p>
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Right-click the image, choose <strong>Imgkeep: Save image as</strong>, then <strong>PNG</strong> or <strong>JPG</strong>. The WebP is converted on your computer, so nothing is uploaded. Without an extension, save the WebP and re-save it from Paint (<strong>File › Save as</strong>) or Preview (<strong>File › Export</strong>). Pick PNG for graphics and transparency, JPG for photos.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-12">12 October 2026</time></p>
 
-      <h2>First: JPG or PNG?</h2>
+      <h2>Should I pick JPG or PNG?</h2>
       <ul>
         <li><strong>PNG</strong> keeps every pixel and any transparent background. Files are bigger. Best for logos, screenshots and graphics.</li>
         <li><strong>JPG</strong> is smaller and opens everywhere. Best for photos. It has no transparency, so transparent areas get a solid colour, usually white.</li>
       </ul>
       <p>Not sure? Pick PNG. It never loses anything.</p>
 
-      <h2>With an extension, in one step</h2>
+      <h2>How do I save WebP as PNG or JPG in one step?</h2>
       <p>An extension can convert the image as you save it, straight from the right-click menu. It runs in your browser, so pick one you can trust (<a href="../save-image-as-type-alternative/">how to check an image extension is safe</a>). Here's how it works with ours.</p>
 
       <div class="option">
@@ -78,12 +95,20 @@
           <li>Right-click the image and choose <strong>Imgkeep: Save image as</strong>.</li>
           <li>Pick <strong>PNG</strong> or <strong>JPG</strong>. The file is saved to your Downloads folder.</li>
         </ol>
+        <figure class="shot">
+          <img src="../media/guides/menu-png.jpg" width="1120" height="560" loading="lazy" decoding="async" alt="A product photo on a web page, right-clicked. The menu shows Imgkeep: Save image as, with a submenu listing PNG, JPG, WebP, GIF (keeps animation), PDF and Original format. PNG is highlighted.">
+          <figcaption>Right-click the image, choose <strong>Imgkeep: Save image as</strong>, then the format.</figcaption>
+        </figure>
         <p>In Options you can send images to a folder you pick instead, or choose where each time. You can also set the JPG quality, the background colour transparent images get as JPG (white by default), and file names like <code>{name}-{w}x{h}</code>. It never overwrites an existing file. Conversion happens on your computer; nothing is uploaded. Free and open source.</p>
+        <figure class="shot">
+          <img src="../media/guides/options-folder.jpg" width="1020" height="597" loading="lazy" decoding="async" alt="Imgkeep Options, Where to save: Downloads folder, A folder you choose (selected, Pictures connected) or Ask every time, with a subfolder field set to Imgkeep/{host}.">
+          <figcaption>Imgkeep Options: choose where images are saved.</figcaption>
+        </figure>
         <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-webp-as-jpg-png">Add Imgkeep to Chrome — free</a>
         <span class="cta-note">Works in Chrome 116 and newer.</span>
       </div>
 
-      <h2>Without an extension</h2>
+      <h2>How do I convert WebP without an extension?</h2>
 
       <h3>Windows: Paint</h3>
       <ol>
@@ -105,11 +130,13 @@
       <h3>Online converters</h3>
       <p>They work, but you upload the image to someone else's server. Fine for public pictures; think twice for anything private.</p>
 
-      <h2>If it still won't open</h2>
+      <h2>Why won't my converted file open?</h2>
       <p>Renaming <code>photo.webp</code> to <code>photo.jpg</code> doesn't convert it. It's still WebP inside, and many apps will refuse it. The reverse also happens: a site can send WebP from an address ending in <code>.jpg</code>. <a href="../chrome-saves-images-as-webp/">Here's why Chrome saves images as WebP</a>.</p>
       <p>If you can't save an image at all, it may exist only inside the page (a <code>blob:</code> address). Imgkeep can't save those yet; a screenshot works. On Instagram or Pinterest, where photos sit under another layer, use <strong>Imgkeep: Find image here</strong> instead.</p>
 
       <h2>Questions</h2>
+      <h3>How do I save WebP as PNG without uploading it?</h3>
+      <p>Use a converter that runs on your own computer. An extension like Imgkeep converts the image in your browser as you save it: right-click, <strong>Imgkeep: Save image as</strong>, <strong>PNG</strong>. Paint, Preview and copy and paste also work offline. Online converters are the ones that upload your image to their server.</p>
       <h3>Does converting WebP to JPG lose quality?</h3>
       <p>PNG keeps the pixels exactly as they are. JPG compresses again, so there's a small loss, usually invisible at high quality settings.</p>
       <h3>What about animated WebP?</h3>

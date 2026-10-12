@@ -16,6 +16,9 @@ test.afterAll(() => server?.close());
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
 const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "save-image-as-type-alternative"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
+const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
+// The home H1: what Imgkeep does (for search), then the tagline.
+const HOME_H1 = "Save image as PNG, JPG, WebP, GIF or PDF Any image. Your format.";
 // Every page as [URL path, file under site/].
 const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),
@@ -113,13 +116,16 @@ test("self-hosted fonts load, and the home page leads with what Imgkeep does", a
   await page.evaluate(() => document.fonts.ready);
   const loaded = await page.evaluate(() => [...document.fonts].filter((f) => f.status === "loaded").map((f) => f.family.replace(/"/g, "")));
   expect(loaded).toEqual(expect.arrayContaining(["Schibsted Grotesk", "Source Sans 3"]));
-  await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
-  await expect(page.locator(".kicker")).toHaveText("Right format. Right folder. Nothing else.");
+  await expect(page.locator("h1")).toHaveText(HOME_H1);
+  await expect(page.locator("h1 .eyebrow")).toHaveText("Save image as PNG, JPG, WebP, GIF or PDF");
 });
 
 test("Add to Chrome points to the live store listing", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
-  await expect(page.locator("#install")).toHaveAttribute("href", STORE);
+  // Header, hero and closing CTA each tag their own utm_campaign, so the store dashboard shows which one brings installs.
+  await expect(page.locator("#install")).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=hero`);
+  const home = await page.locator(`a[href^="${STORE}"]`).evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+  expect(home).toEqual(["header", "hero", "rating", "final"].map((c) => `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${c}`));
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const ld = blocks.map((b) => JSON.parse(b)).find((d) => d["@type"] === "SoftwareApplication");
   expect(ld.installUrl).toBe(STORE);
@@ -143,9 +149,14 @@ test("guide pages: one tagged store link each, linked to each other, from home a
     const hrefs = await page.$$eval("a[href]", (as) => as.map((a) => a.href).filter((h) => h.startsWith(location.origin)));
     for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
   }
-  for (const file of ["index.html", "support.html"]) {
-    await page.goto(`${server.url}/${file}`);
-    for (const guide of GUIDES) await expect(page.locator(`a[href="${guide}/"]`), `${file} links to ${guide}`).toHaveCount(1);
+  await page.goto(`${server.url}/support.html`);
+  for (const guide of GUIDES) await expect(page.locator(`a[href="${guide}/"]`), `support.html links to ${guide}`).toHaveCount(1);
+  // Home previews every guide: title and "Read" link both go to it, as plain crawlable links.
+  await page.goto(`${server.url}/index.html`);
+  for (const guide of GUIDES) {
+    const article = page.locator("#image-guides article", { has: page.locator(`h3 a[href="${guide}/"]`) });
+    await expect(article, `home previews ${guide}`).toHaveCount(1);
+    await expect(article.locator(`a.more[href="${guide}/"]`)).toHaveCount(1);
   }
 });
 
@@ -154,8 +165,10 @@ test("guides have a visible way back to the home page", async ({ page }) => {
     await page.goto(`${server.url}/${slug}/`);
     const home = page.locator('nav.crumbs a', { hasText: "Home" });
     await expect(home).toBeVisible();
+    // Back to the guides section, where the guide was most likely picked, not the top of the page.
+    await expect(home).toHaveAttribute("href", "../#image-guides");
     await home.click();
-    await expect(page.locator("h1")).toHaveText("Save any image as PNG, JPG or WebP");
+    await expect(page.locator("h1")).toHaveText(HOME_H1);
   }
 });
 
@@ -184,18 +197,18 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   const requests = [];
   page.on("request", (r) => requests.push(r.url()));
   await page.goto(`${server.url}/index.html`, { waitUntil: "networkidle" });
-  const video = page.locator("figure.video video");
+  const video = page.locator("figure.demo video");
   await expect(video).toHaveAttribute("preload", "none");
   expect(await video.getAttribute("autoplay")).toBeNull();
   // The poster is shown (and is the fallback where WebM can't play); the video file isn't fetched until play.
   expect(requests.some((u) => u.endsWith("/media/imgkeep-demo-poster.jpg"))).toBe(true);
   expect(requests.some((u) => u.endsWith("/media/imgkeep-demo.webm"))).toBe(false);
-  await expect(page.locator("figure.video video source")).toHaveAttribute("type", "video/webm");
+  await expect(page.locator("figure.demo video source")).toHaveAttribute("type", "video/webm");
   for (const file of ["media/imgkeep-demo.webm", "media/imgkeep-demo-poster.jpg"]) {
     const res = await page.request.get(`${server.url}/${file}`);
     expect(res.status(), file).toBe(200);
   }
-  await expect(page.locator("figure.video figcaption a")).toHaveAttribute("href", "https://youtu.be/QZfq5xLYdmo");
+  await expect(page.locator("figure.demo figcaption a")).toHaveAttribute("href", "https://youtu.be/QZfq5xLYdmo");
   // It actually plays in Chromium.
   const playable = await video.evaluate(async (v) => {
     v.muted = true;
@@ -209,7 +222,8 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
 
 test("home page links the Microsoft Edge listing too", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
-  await expect(page.locator("a.cta-alt")).toHaveAttribute("href", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd");
+  const edge = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+  expect(edge).toEqual([EDGE, EDGE]);
 });
 
 test("home links to Product Hunt with a self-hosted badge", async ({ page }) => {
@@ -218,4 +232,70 @@ test("home links to Product Hunt with a self-hosted badge", async ({ page }) => 
   await expect(badge).toHaveAttribute("href", "https://www.producthunt.com/products/imgkeep");
   await expect(badge.locator("img")).toHaveAttribute("src", "media/product-hunt-badge.svg");
   expect(await badge.locator("img").evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+});
+
+// Search and AI crawlers: robots.txt welcomes ChatGPT's and Claude's crawlers by name and blocks no one.
+test("robots.txt lets search and AI crawlers in, and llms.txt describes the site", async ({ page }) => {
+  const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
+  expect(robots).not.toMatch(/^Disallow:\s*\S/m);
+  const groups = robots.split(/\n\s*\n/);
+  for (const bot of ["OAI-SearchBot", "ChatGPT-User", "GPTBot", "Claude-SearchBot", "Claude-User", "ClaudeBot", "PerplexityBot", "*"]) {
+    const group = groups.find((g) => g.split("\n").some((l) => l.trim() === `User-agent: ${bot}`));
+    expect(group, bot).toBeTruthy();
+    expect(group, bot).toContain("Allow: /");
+  }
+  const res = await page.request.get(`${server.url}/llms.txt`);
+  expect(res.status()).toBe(200);
+  const llms = (await res.text()).replace(/\r\n/g, "\n"); // a Windows checkout has CRLF line endings
+  expect(llms).toMatch(/^# Imgkeep\n\n> Imgkeep is a free browser extension/);
+  for (const guide of GUIDES) expect(llms).toContain(`https://imgkeep.app/${guide}/`);
+  expect(llms).toContain(STORE);
+});
+
+// Answer engines quote the first thing a page says: every guide opens with a short, direct answer,
+// has a visible date that matches its structured data, and real screenshots that load.
+test("guides open with a short answer, a date and screenshots", async ({ page }) => {
+  for (const guide of GUIDES) {
+    await page.goto(`${server.url}/${guide}/`, { waitUntil: "networkidle" });
+    const first = page.locator("main > *").nth(1);
+    await expect(first, `${guide}: answer right after the H1`).toHaveClass("answer");
+    const words = (await first.locator("p").last().innerText()).split(/\s+/).length;
+    expect(words, `${guide}: answer is short`).toBeLessThanOrEqual(70);
+    const blocks = (await page.locator('script[type="application/ld+json"]').allTextContents()).map((b) => JSON.parse(b));
+    const article = blocks.find((d) => d["@type"] === "TechArticle");
+    expect(article, `${guide}: TechArticle`).toBeTruthy();
+    expect(article.url).toBe(`https://imgkeep.app/${guide}/`);
+    await expect(page.locator("main .updated time")).toHaveAttribute("datetime", article.dateModified);
+    const faq = blocks.find((d) => d["@type"] === "FAQPage");
+    expect(faq.mainEntity.length).toBeGreaterThan(0);
+    const shots = page.locator("main figure.shot img");
+    expect(await shots.count(), `${guide}: screenshots`).toBeGreaterThan(0);
+    for (const img of await shots.all()) {
+      expect(await img.getAttribute("alt")).toBeTruthy();
+      await img.scrollIntoViewIfNeeded();
+      expect(await img.evaluate((i) => i.complete && i.naturalWidth > 0), await img.getAttribute("src")).toBe(true);
+    }
+    expect((await page.request.get(article.image.replace("https://imgkeep.app", server.url))).status()).toBe(200);
+  }
+});
+
+test("home FAQ structured data says exactly what the page says", async ({ page }) => {
+  await page.goto(`${server.url}/index.html`);
+  const blocks = (await page.locator('script[type="application/ld+json"]').allTextContents()).map((b) => JSON.parse(b));
+  const faq = blocks.flatMap((d) => d["@graph"] || [d]).find((d) => d["@type"] === "FAQPage");
+  const visible = await page.locator("#faq dl > div").evaluateAll((divs) =>
+    divs.map((d) => [d.querySelector("dt").innerText, d.querySelector("dd").innerText.replace(/\s*Privacy policy\.$/, "")]));
+  expect(faq.mainEntity.map((q) => [q.name, q.acceptedAnswer.text])).toEqual(visible);
+});
+
+// The share preview (site/og-image.png, rendered from store/og.html by npm run og) must stay true:
+// Imgkeep sends an anonymous daily count, so "no tracking" or "no analytics" would be wrong there.
+test("social preview image exists and makes no false privacy claims", async ({ page }) => {
+  const source = await readFile(join(ROOT, "store", "og.html"), "utf8");
+  expect(source.replace(/<!--[\s\S]*?-->/g, "")).not.toMatch(/no tracking|no analytics|no data/i);
+  await page.goto(`${server.url}/index.html`);
+  const url = await page.locator('meta[property="og:image"]').getAttribute("content");
+  const res = await page.request.get(url.replace("https://imgkeep.app", server.url));
+  expect(res.status()).toBe(200);
+  expect(res.headers()["content-type"]).toContain("image/png");
 });

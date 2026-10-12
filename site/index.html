@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Imgkeep — Save any image as PNG, JPG or WebP in Chrome</title>
-  <meta name="description" content="Right-click any image in Chrome to save it as PNG, JPG, WebP, GIF or PDF, straight to your folder. Converted on your computer. No personal data, open source.">
+  <title>Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep</title>
+  <meta name="description" content="Right-click any image in Chrome or Edge to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Free and open source.">
   <link rel="canonical" href="https://imgkeep.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Imgkeep">
-  <meta property="og:title" content="Imgkeep — Save any image as PNG, JPG or WebP">
-  <meta property="og:description" content="A Chrome extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF, straight to your folder. Reads a page only when you ask, no personal data, open source.">
+  <meta property="og:title" content="Imgkeep — Any image. Your format.">
+  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
   <meta property="og:url" content="https://imgkeep.app/">
-  <meta property="og:image" content="https://imgkeep.app/og-image.png">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Imgkeep: save any image as PNG, JPG or WebP from Chrome's right-click menu">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format. Save web images as PNG, JPG, WebP, GIF or PDF from the right-click menu in Chrome or Edge.">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Imgkeep",
-    "description": "A Chrome extension that saves any image as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, or copies it as PNG, converting it on your computer.",
+    "description": "Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, or copies them as PNG. It converts each image on your computer and saves it to your chosen folder.",
     "url": "https://imgkeep.app/",
     "image": "https://imgkeep.app/icon128.png",
     "applicationCategory": "BrowserApplication",
@@ -31,6 +31,8 @@
     "installUrl": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
     "downloadUrl": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
     "license": "https://opensource.org/licenses/MIT",
+    "featureList": ["Save images as PNG, JPG, WebP, GIF or PDF", "Convert WebP and AVIF to JPG or PNG", "Keep animation when saving as GIF", "Copy as PNG", "Save to a folder you choose", "Custom file names", "Converts on your computer, no uploads"],
+    "publisher": { "@id": "https://imgkeep.app/#org" },
     "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]
   }
   </script>
@@ -38,7 +40,8 @@
   <link rel="apple-touch-icon" href="icon128.png">
   <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=360ff6784e">
+  <link rel="preload" href="media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="style.css?v=61b5a240ba">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,130 +55,214 @@
     "embedUrl": "https://www.youtube.com/embed/QZfq5xLYdmo"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://imgkeep.app/#org", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": "https://imgkeep.app/icon128.png", "email": "helloimgkeep@gmail.com", "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://www.producthunt.com/products/imgkeep"] },
+      { "@type": "WebSite", "@id": "https://imgkeep.app/#site", "name": "Imgkeep", "url": "https://imgkeep.app/", "publisher": { "@id": "https://imgkeep.app/#org" } },
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "Is Imgkeep free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything Imgkeep does today is free, with no ads and no limits. A paid Imgkeep Pro with extra features is planned, and the current features stay free." } },
+        { "@type": "Question", "name": "Does Imgkeep upload my images?", "acceptedAnswer": { "@type": "Answer", "text": "No. Each image is converted on your computer and saved straight to your folder. The only thing Imgkeep sends is one anonymous daily count of which features were used and which saves failed, and you can turn it off in Options." } },
+        { "@type": "Question", "name": "Which formats can it save?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, JPG, WebP, GIF (animation kept), PDF or the original format. It converts the WebP and AVIF images many sites now serve, and Copy as PNG puts an image on your clipboard." } },
+        { "@type": "Question", "name": "Can it save images that sites cover, like on Instagram or Pinterest?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the photo and choose Imgkeep: Find image here. Imgkeep looks at that page once, finds the photo under your click at its largest size, and opens it ready to save. It's off until you turn it on, and it never changes a page." } },
+        { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Google Chrome 116 and newer, and Microsoft Edge, in 9 languages." } },
+        { "@type": "Question", "name": "Can it save every image on a page at once?", "acceptedAnswer": { "@type": "Answer", "text": "No. Imgkeep saves the one image you right-click. For whole pages you need a bulk downloader." } }
+      ] }
+    ]
+  }
+  </script>
 </head>
-<body>
-  <div class="wrap">
-    <header class="top">
-      <a class="brand" href="./"><img src="icon128.png" alt="" width="36" height="36">Imgkeep</a>
+<body class="home">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Imgkeep home"><img src="icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#how-it-works">How it works</a>
+        <a href="#image-guides">Guides</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, with no tracking on this site. -->
       <!-- Self-hosted copy of Product Hunt's badge: their embed loads from api.producthunt.com, and the site makes no third-party requests. -->
       <a class="ph-badge" href="https://www.producthunt.com/products/imgkeep"><img src="media/product-hunt-badge.svg" alt="Imgkeep on Product Hunt" width="148" height="40"></a>
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Get Imgkeep <span aria-hidden="true">↗</span></a>
     </header>
 
-    <main>
-      <div class="hero">
-        <p class="kicker">Right format. Right folder. Nothing else.</p>
-        <h1>Save any image as PNG, JPG or WebP</h1>
-        <p class="lead">Right-click any image on the web, pick a format, done. Imgkeep converts it on your computer and saves it where you want, every time. WebP and AVIF included, PDF when you need a document, and Copy as PNG when you just want to paste it.</p>
-        <!-- Store link by extension ID: it keeps working if the listing name changes. -->
-        <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl">Add to Chrome — free</a>
-        <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Microsoft Edge →</a>
-        <span class="cta-note">Works in Chrome 116+ and Microsoft Edge, in 9 languages. Four permissions. Reads a page only when you ask.</span>
-      </div>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">Save image as PNG, JPG, WebP, GIF or PDF</span> <span class="display">Any image. <span class="accent">Your format.</span></span></h1>
+        <p class="lead">Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF or PDF. Right-click to convert on your device and save to your chosen folder.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Add to Chrome — free</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Edge <span aria-hidden="true">↗</span></a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Rated 5.0 out of 5 on the Chrome Web Store"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · on the Chrome Web Store</a></p>
+        <p class="trust">No account <span aria-hidden="true">·</span> No uploads <span aria-hidden="true">·</span> Open source</p>
+      </section>
 
-      <figure class="video">
-        <video controls preload="none" playsinline width="1280" height="720" poster="media/imgkeep-demo-poster.jpg" aria-describedby="video-desc">
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
           <source src="media/imgkeep-demo.webm" type="video/webm">
           <a href="https://youtu.be/QZfq5xLYdmo">Watch the 28-second demo on YouTube</a>
         </video>
-        <figcaption id="video-desc">See it in 28 seconds: right-click an animated image → Imgkeep → <strong>GIF (keeps animation)</strong>, then save a WebP photo as JPG. No sound. <a href="https://youtu.be/QZfq5xLYdmo">Can't play it? Watch on YouTube</a>.</figcaption>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">Can't play it? Watch on YouTube <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">A 28-second silent demo: right-click an animated WebP image, open Imgkeep: Save image as, and choose GIF (keeps animation). The saved GIF still moves. Then a WebP photo is saved as a JPG the same way.</span>
+        </figcaption>
       </figure>
 
-      <section aria-labelledby="features">
-        <h2 id="features">What it does</h2>
-        <div class="grid">
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-            </span>
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">How it works</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>Right-click an image</h3>
+            <p>Find an image on the web and right-click it.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>Pick your format</h3>
+            <p>Choose PNG, JPG, WebP, GIF (keeps animation), PDF or original. Or copy it as PNG to paste anywhere.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>Save to your folder</h3>
+            <p>Imgkeep converts it on your computer and saves it where you want, every time.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">Features</p>
+        <h2 id="features-title">Everything it does.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
             <h3>Remembers your folder</h3>
             <p>Pick a folder once. Every image lands there, in subfolders you name, and nothing is ever overwritten.</p>
-          </div>
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
-            </span>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
             <h3>Handles WebP and AVIF</h3>
             <p>Turn the WebP and AVIF files sites serve into PNG or JPG that every app opens. Animations stay animated as GIF.</p>
-          </div>
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
-            </span>
-            <h3>Your file names</h3>
-            <p>Name files with the original name, the site, the date or the size, like <code>{name}-{w}x{h}</code>.</p>
-          </div>
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
-            </span>
-            <h3>Quality you control</h3>
-            <p>Set JPG and WebP quality, and the background colour transparent images get as JPG.</p>
-          </div>
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-            </span>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
             <h3>Copy as PNG</h3>
             <p>Put the image on your clipboard as a real PNG, transparency kept, and paste it into chat, docs or design tools.</p>
-          </div>
-          <div class="card">
-            <span class="mark" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-            </span>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>Your file names</h3>
+            <p>Name files with the original name, the site, the date or the size, like <code>{name}-{w}x{h}</code>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>Works where right-click doesn't</h3>
+            <p>On sites like Instagram and Pinterest, photos sit under another layer. Choose <strong>Find image here</strong> and Imgkeep finds the photo at its largest size. Off until you turn it on.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             <h3>Resize and preview</h3>
-            <p>Set a maximum width and big images shrink to fit. <strong>More options</strong> shows the result and its real file size before you save.</p>
-          </div>
+            <p>Set a maximum width and big images shrink to fit. <strong>More options</strong> shows the result and its real file size before you save, with quality and background you choose.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">Image format guides</p>
+        <h2 id="guides-title">A little clarity on image formats.</h2>
+        <p class="intro">Practical guides for the images you save every day, and for choosing an extension you can trust.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">Explained</p>
+            <h3><a href="chrome-saves-images-as-webp/">Why Chrome saves WebP</a></h3>
+            <p>Chrome saves the exact file a site sends, and many sites send WebP because it's smaller. No Chrome setting changes that: convert the image as you save it, or afterwards in Paint or Preview.</p>
+            <a class="more" href="chrome-saves-images-as-webp/">Understand WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">How to</p>
+            <h3><a href="save-webp-as-jpg-png/">Save WebP as JPG or PNG</a></h3>
+            <p>Right-click the image and save it as PNG or JPG with a converter that runs on your computer, so nothing is uploaded. Pick PNG for graphics and transparency, JPG for photos.</p>
+            <a class="more" href="save-webp-as-jpg-png/">Read the WebP guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">How to</p>
+            <h3><a href="save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a></h3>
+            <p>AVIF is smaller than WebP, but many apps and upload forms still can't open it. Save it as JPG or PNG as you download it, or export it from Preview or Paint (with Microsoft's free AV1 extension).</p>
+            <a class="more" href="save-avif-as-jpg-png/">Read the AVIF guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Safety</p>
+            <h3><a href="save-image-as-type-alternative/">Safe alternative to Save image as Type</a></h3>
+            <p>Google removed it in March 2026, after a new owner made it insert affiliate links on shopping sites. If you still have it, remove it, and check any replacement's permissions, data, owner and source.</p>
+            <a class="more" href="save-image-as-type-alternative/">Read the checklist <span aria-hidden="true">→</span></a>
+          </article>
         </div>
       </section>
 
-      <section aria-labelledby="trust">
-        <h2 id="trust">Built to be trusted</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Reads a page only when you ask</h3>
-            <p>Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page.</p>
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">Straight answers.</h2>
+        <dl>
+          <div>
+            <dt>Is Imgkeep free?</dt>
+            <dd>Yes. Everything Imgkeep does today is free, with no ads and no limits. A paid Imgkeep Pro with extra features is planned, and the current features stay free.</dd>
           </div>
-          <div class="card">
-            <h3>Your images stay on your computer</h3>
-            <p>Conversion happens on your device. No uploads, no account. Only an anonymous daily count of which features were used, which you can turn off.</p>
+          <div>
+            <dt>Does Imgkeep upload my images?</dt>
+            <dd>No. Each image is converted on your computer and saved straight to your folder. The only thing Imgkeep sends is one anonymous daily count of which features were used and which saves failed, and you can turn it off in Options. <a href="privacy.html">Privacy policy</a>.</dd>
           </div>
-          <div class="card">
-            <h3>Open source</h3>
-            <p>Every line is public under the MIT licence, with no build step. Read it before you install.</p>
+          <div>
+            <dt>Which formats can it save?</dt>
+            <dd>PNG, JPG, WebP, GIF (animation kept), PDF or the original format. It converts the WebP and AVIF images many sites now serve, and <strong>Copy as PNG</strong> puts an image on your clipboard.</dd>
           </div>
-          <div class="card">
-            <h3>Not for sale</h3>
-            <p>No ads, no data deals. One request for a rating, after you've used it a while, and never again. Every free feature stays free.</p>
+          <div>
+            <dt>Can it save images that sites cover, like on Instagram or Pinterest?</dt>
+            <dd>Yes. Right-click the photo and choose <strong>Imgkeep: Find image here</strong>. Imgkeep looks at that page once, finds the photo under your click at its largest size, and opens it ready to save. It's off until you turn it on, and it never changes a page.</dd>
           </div>
+          <div>
+            <dt>Which browsers does it work in?</dt>
+            <dd>Google Chrome 116 and newer, and Microsoft Edge, in 9 languages.</dd>
+          </div>
+          <div>
+            <dt>Can it save every image on a page at once?</dt>
+            <dd>No. Imgkeep saves the one image you right-click. For whole pages you need a bulk downloader.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">Ready to save it your way?</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Add to Chrome — free</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Edge <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="trust">No account <span aria-hidden="true">·</span> No uploads <span aria-hidden="true">·</span> Open source</p>
         </div>
-      </section>
-
-      <section aria-labelledby="ideas">
-        <h2 id="ideas">Missing something?</h2>
-        <p>Suggest a feature or vote for the ideas you want most. The most-wanted ideas get built first.</p>
-        <a class="cta secondary" href="ideas.html">Suggest or vote on ideas</a>
-      </section>
-
-      <section aria-labelledby="pro">
-        <h2 id="pro">Coming later: Imgkeep Pro</h2>
-        <p class="pro"><strong>Presets</strong> for the sizes and formats you use most, <strong>file-size targets</strong> like "under 200 KB", <strong>rules</strong> that send each site's images to the right folder, and a log of where every image came from. Everything in Imgkeep today stays free. <a href="pro.html">Join the waitlist</a>.</p>
       </section>
     </main>
 
-    <footer>
-      <nav aria-label="Footer">
-        <a href="privacy.html">Privacy</a>
-        <a href="https://github.com/ybider-tech/imgkeep" id="source">Source code</a>
-        <a href="support.html">Support</a>
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="./" aria-label="Imgkeep home"><img src="icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">Your images stay on your computer.</p>
+        <nav aria-label="Footer">
+          <a href="privacy.html">Privacy</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">Source code</a>
+          <a href="support.html">Support</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="More">
         <a href="ideas.html">Ideas</a>
         <a href="whats-new.html">What's new</a>
+        <a href="pro.html">Imgkeep Pro waitlist</a>
         <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
-      </nav>
-      <nav class="guides" aria-label="Guides">
-        <a href="chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
-        <a href="save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
-        <a href="save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
-        <a href="save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
       </nav>
     </footer>
   </div>
