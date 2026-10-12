@@ -84,6 +84,19 @@ Needs Chrome 116 or newer, or Microsoft Edge. Tested automatically on the curren
 - **More options** converts to PNG, JPG and WebP. GIF and PDF are in the right-click menu.
 - Copy as PNG needs its window to keep focus until the copy is done. If you click away while it's converting, it offers **Try again**.
 
+## Guides
+
+Step-by-step help on [imgkeep.app](https://imgkeep.app), with and without an extension:
+
+- [Why Chrome saves images as WebP (and how to get JPG or PNG)](https://imgkeep.app/chrome-saves-images-as-webp/)
+- [How to save WebP as JPG or PNG in Chrome](https://imgkeep.app/save-webp-as-jpg-png/)
+- [How to save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/)
+- [Chrome saves images as JFIF? How to get JPG](https://imgkeep.app/chrome-saves-images-as-jfif/)
+- [How to save an animated WebP as a GIF](https://imgkeep.app/save-animated-webp-as-gif/)
+- [How to save an image as a PDF in Chrome](https://imgkeep.app/save-image-as-pdf/)
+- [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/)
+- [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/)
+
 ## Development
 
 Requirements: Node.js 20 or newer. The extension needs nothing; Node is only for tests and store images.

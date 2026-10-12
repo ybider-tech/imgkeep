@@ -14,7 +14,7 @@ test.beforeAll(async () => {
 test.afterAll(() => server?.close());
 
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
-const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "save-image-as-type-alternative", "save-image-right-click-not-working"];
+const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "chrome-saves-images-as-jfif", "save-animated-webp-as-gif", "save-image-as-pdf", "save-image-as-type-alternative", "save-image-right-click-not-working"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
 // The home H1: what Imgkeep does (for search), then the tagline.
@@ -191,7 +191,7 @@ test("the rating link lives only on Support and Ideas, never as a pop-up or on o
     const html = await readFile(join(ROOT, "site", file), "utf8");
     expect(html.split(REVIEWS).length - 1, file).toBe(1);
   }
-  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html", "save-image-as-type-alternative/index.html", "save-image-right-click-not-working/index.html"]) {
+  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html", "save-image-as-type-alternative/index.html", "save-image-right-click-not-working/index.html", "chrome-saves-images-as-jfif/index.html", "save-animated-webp-as-gif/index.html", "save-image-as-pdf/index.html"]) {
     expect(await readFile(join(ROOT, "site", file), "utf8"), file).not.toContain("/reviews");
   }
 });

@@ -23,6 +23,9 @@ Key facts:
 - [Why Chrome saves images as WebP](https://imgkeep.app/chrome-saves-images-as-webp/): Chrome saves the file the site sent; many sites send WebP. No setting changes it; convert as you save or afterwards.
 - [How to save WebP as JPG or PNG](https://imgkeep.app/save-webp-as-jpg-png/): with an extension in one step, or with Paint, Preview or copy and paste. Which format to pick.
 - [How to save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/): what AVIF is, why apps refuse it, and how to convert it.
+- [Chrome saves images as JFIF? How to get JPG](https://imgkeep.app/chrome-saves-images-as-jfif/): a .jfif file is a JPEG with a different ending, set by a Windows registry setting; rename it, fix the setting, or save as JPG.
+- [How to save an animated WebP as a GIF](https://imgkeep.app/save-animated-webp-as-gif/): keep an animation moving (JPG and PNG keep one frame); what GIF keeps and loses; with an extension or GIMP.
+- [How to save an image as a PDF in Chrome](https://imgkeep.app/save-image-as-pdf/): Chrome's print to PDF, Photos or Preview, or a one-page PDF the size of the image from the right-click menu.
 - [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/): why Google removed it in March 2026, and a checklist for judging any image extension.
 - [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/): why some sites cover their photos so the right-click can't reach them, the workarounds (developer tools, a screenshot), and Imgkeep's opt-in Find image here.
 
