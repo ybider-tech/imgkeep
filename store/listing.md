@@ -1,4 +1,4 @@
-# Chrome Web Store listing: Imgkeep 0.6.1
+# Chrome Web Store listing: Imgkeep 0.8.0
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
@@ -15,7 +15,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v7 (for 0.6.1): the "Free, with no limits" bullet now says Imgkeep asks for a rating once. v6 (for 0.6.0) added Copy as PNG, maximum width and More options. Paste as-is into the dashboard together with the 0.6.0 package. (v5, for 0.5.0, is the same without those three bullets and the last two menu items.)
+v8 (for 0.8.0): leads with Find image here ("Works where right-click doesn't"), a distinct opening paragraph, features grouped under Formats / Size and quality / Folders and names, trust bullets updated for the optional permissions. Paste as-is into the dashboard together with the 0.8.0 package. (v7, for 0.6.1, is in git history.)
 
 ```text
 Imgkeep is a free, open-source browser extension. It adds one entry to your right-click menu: pick a format, and the image is converted on your computer and saved straight to your folder. Or copy it as PNG and paste it anywhere.

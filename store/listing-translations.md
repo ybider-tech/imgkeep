@@ -1,6 +1,6 @@
-# Store listing translations: Imgkeep 0.6.0
+# Store listing translations: Imgkeep 0.8.0
 
-Translations of the v6 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
+Translations of the v8 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
 The name and summary come from the package (`extension/_locales/<lang>/messages.json`), so only the
 description is pasted here. Button and menu names match the extension's own translations.
 
@@ -9,7 +9,7 @@ Hindi (hi), Arabic (ar). Images stay English for now.
 
 ## How to add them
 
-**Chrome Web Store** (after uploading the 0.5.0 package): Store listing tab → language dropdown at the top
+**Chrome Web Store** (after uploading the package): Store listing tab → language dropdown at the top
 (it lists the languages found in `_locales`) → pick each one → paste its description → Save draft.
 Screenshots, tiles and video are shared across languages unless you upload localised ones.
 
