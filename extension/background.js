@@ -213,6 +213,7 @@ async function findImage(info, tab) {
     [{ result } = {}] = await chrome.scripting.executeScript({
       target: { tabId: tab.id, frameIds: [info.frameId || 0] },
       func: findImageInPage,
+      args: [typeof info.linkUrl === "string" ? info.linkUrl : null],
     });
   } catch {
     // Turned on after this page's right-click, or a page Chrome doesn't let extensions look at.

@@ -45,6 +45,37 @@ test("the finder picks the photo under a cover layer, at its largest size", asyn
   await page.close();
 });
 
+test("the right-clicked link wins over the pointer, which has moved to where the menu item was", async () => {
+  const page = await ctx.context.newPage();
+  await page.goto(`${server.url}/covered/pinterest-signed-in.html`);
+  const pin1 = new URL("/pin/111/", server.url).href;
+  // Right-clicked pin 1, but the pointer now rests on pin 2 (the menu item was over it).
+  const box = await page.locator("#q2").boundingBox();
+  await page.mouse.move(box.x + 70, box.y + 60);
+  const r = await page.evaluate(`(${findImageInPage.toString()})(${JSON.stringify(pin1)})`);
+  expect(r.via).toBe("link");
+  expect(name(r.found?.url)).toBe("wide.webp"); // pin 1, at its largest
+  // Without a link (a page right-click), the pointer is the only guess left.
+  const h = await page.evaluate(`(${findImageInPage.toString()})(null)`);
+  expect(h.via).toBe("hover");
+  expect(name(h.found?.url)).toBe("photo.jpg");
+  // A link Chrome reports that isn't on the page: the pointer again.
+  const gone = await page.evaluate(`(${findImageInPage.toString()})("https://elsewhere.example/x")`);
+  expect(gone.via).toBe("hover");
+  await page.close();
+});
+
+test("a right-clicked link with no image under it: no guess, the picker", async () => {
+  const page = await ctx.context.newPage();
+  await page.goto(`${server.url}/covered/pinterest-signed-in.html`);
+  await page.mouse.move(5, 5);
+  const user = new URL("/user/x/", server.url).href;
+  const r = await page.evaluate(`(${findImageInPage.toString()})(${JSON.stringify(user)})`);
+  expect(r.found).toBeNull();
+  expect(r.onScreen.length).toBe(2);
+  await page.close();
+});
+
 test("a layer over the whole page (a sign-in wall) means: don't guess, list what's on screen", async () => {
   const page = await ctx.context.newPage();
   const r = await findAt(page, "instagram-wall.html", "#t1");
