@@ -24,6 +24,7 @@ Key facts:
 - [How to save WebP as JPG or PNG](https://imgkeep.app/save-webp-as-jpg-png/): with an extension in one step, or with Paint, Preview or copy and paste. Which format to pick.
 - [How to save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/): what AVIF is, why apps refuse it, and how to convert it.
 - [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/): why Google removed it in March 2026, and a checklist for judging any image extension.
+- [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/): why some sites cover their photos so the right-click can't reach them, the workarounds (developer tools, a screenshot), and Imgkeep's opt-in Find image here.
 
 ## More
 

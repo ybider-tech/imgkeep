@@ -14,7 +14,7 @@ test.beforeAll(async () => {
 test.afterAll(() => server?.close());
 
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
-const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "save-image-as-type-alternative"];
+const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "save-image-as-type-alternative", "save-image-right-click-not-working"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
 // The home H1: what Imgkeep does (for search), then the tagline.
@@ -150,7 +150,10 @@ test("guide pages: one tagged store link each, linked to each other, from home a
     for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
   }
   await page.goto(`${server.url}/support.html`);
-  for (const guide of GUIDES) await expect(page.locator(`a[href="${guide}/"]`), `support.html links to ${guide}`).toHaveCount(1);
+  for (const guide of GUIDES) await expect(page.locator(`footer a[href="${guide}/"]`), `support.html links to ${guide}`).toHaveCount(1);
+  // The answer about an image that won't save points to the guide on exactly that problem.
+  const wontSave = page.locator("main h2", { hasText: "An image won't save" }).locator("xpath=following-sibling::p[1]");
+  await expect(wontSave.locator('a[href="save-image-right-click-not-working/"]')).toHaveCount(1);
   // Home previews every guide: title and "Read" link both go to it, as plain crawlable links.
   await page.goto(`${server.url}/index.html`);
   for (const guide of GUIDES) {
@@ -188,7 +191,7 @@ test("the rating link lives only on Support and Ideas, never as a pop-up or on o
     const html = await readFile(join(ROOT, "site", file), "utf8");
     expect(html.split(REVIEWS).length - 1, file).toBe(1);
   }
-  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html", "save-image-as-type-alternative/index.html"]) {
+  for (const file of ["index.html", "privacy.html", "404.html", "chrome-saves-images-as-webp/index.html", "save-webp-as-jpg-png/index.html", "save-avif-as-jpg-png/index.html", "save-image-as-type-alternative/index.html", "save-image-right-click-not-working/index.html"]) {
     expect(await readFile(join(ROOT, "site", file), "utf8"), file).not.toContain("/reviews");
   }
 });
