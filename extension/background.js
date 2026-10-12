@@ -8,6 +8,7 @@ import { JobError } from "./lib/job-error.js";
 import { APTABASE, addCount, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
+import { findImageInPage } from "./lib/find-image.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
@@ -65,6 +66,7 @@ async function createMenus() {
       item("imgkeep-sep2", "separator");
       item("imgkeep-copy");
       item("imgkeep-more");
+      createFindMenu();
       resolve();
     });
   });
@@ -172,7 +174,29 @@ async function rememberFormat(format) {
   }
 }
 
-async function menuClicked(info) {
+// PROTOTYPE: sites that cover their images with another layer, so the browser's "image" right-click never fires.
+const COVERED_SITES = ["*://*.instagram.com/*", "*://*.pinterest.com/*", "*://*.pinterest.co.uk/*", "*://*.facebook.com/*", "*://x.com/*", "*://*.tumblr.com/*", "http://127.0.0.1/*"];
+
+function createFindMenu() {
+  chrome.contextMenus.create(
+    { id: "imgkeep-find", title: "Imgkeep: Find image here…", contexts: ["page", "link", "frame"], documentUrlPatterns: COVERED_SITES },
+    ignoreError,
+  );
+}
+
+async function findImage(info, tab) {
+  const [{ result } = {}] = await chrome.scripting.executeScript({
+    target: { tabId: tab.id, frameIds: [info.frameId || 0] },
+    func: findImageInPage,
+  });
+  globalThis.imgkeepLastFind = result; // for the prototype's tests
+  const pick = result?.found || result?.onScreen?.[0];
+  if (pick) await openWindow("editor", { url: pick.url, pageUrl: info.pageUrl || tab.url });
+  return result;
+}
+
+async function menuClicked(info, tab) {
+  if (info.menuItemId === "imgkeep-find") return findImage(info, tab);
   if (info.menuItemId === "imgkeep-rate") return openRateWindow();
   if (!info.srcUrl) return;
   const input = { url: info.srcUrl, pageUrl: info.pageUrl };
@@ -189,7 +213,7 @@ async function menuClicked(info) {
 }
 
 const MENU_FORMATS = Object.values(MENU);
-chrome.contextMenus.onClicked.addListener((info) => void menuClicked(info));
+chrome.contextMenus.onClicked.addListener((info, tab) => void menuClicked(info, tab));
 
 // For automated tests only.
 globalThis.imgkeepMenuClicked = menuClicked;
