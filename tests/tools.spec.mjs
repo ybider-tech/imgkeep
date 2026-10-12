@@ -256,6 +256,18 @@ test("More options: Copy as PNG uses the chosen width", async () => {
   await win.close();
 });
 
+test("More options: a tall image (like a pin) is shown whole, not cut off", async () => {
+  const w = 300, h = 1200;
+  const tall = `data:image/png;base64,${encodePng(w, h, Buffer.alloc(w * h * 4, 200)).toString("base64")}`;
+  const win = await openWindow("editor", tall);
+  await expect(win.locator("#sourceFacts")).toHaveText("300 × 1,200");
+  const [img, stage] = await Promise.all(["#preview", "#stage"].map((s) => win.locator(s).boundingBox()));
+  expect(img.y).toBeGreaterThanOrEqual(stage.y);
+  expect(img.y + img.height).toBeLessThanOrEqual(stage.y + stage.height + 0.5);
+  expect(img.width / img.height).toBeCloseTo(w / h, 1); // shape kept
+  await win.close();
+});
+
 test("More options: a broken image shows the problem and a way out", async () => {
   const win = await openWindow("editor", "data:image/png;base64,AAAAAAAAAAAAAAAA");
   await expect(win.locator("#problem")).toContainText("Couldn't save this image");
