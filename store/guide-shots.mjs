@@ -44,6 +44,8 @@ await page.evaluate(() => document.fonts.ready);
 for (const [format, url, file] of [
   ["PNG", "shop.example.com/products/stoneware-mug", "menu-png.jpg"],
   ["JPG", "photos.example.com/gallery/stoneware-mug", "menu-jpg.jpg"],
+  ["GIF (keeps animation)", "art.example.com/loops/stoneware-mug", "menu-gif.jpg"],
+  ["PDF", "shop.example.com/receipts/stoneware-mug", "menu-pdf.jpg"],
 ]) {
   await page.evaluate(([format, url]) => {
     const scene = document.querySelector("#scene-1");
