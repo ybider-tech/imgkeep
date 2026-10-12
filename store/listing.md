@@ -115,9 +115,9 @@ Certifications (tick all three):
 | `store/screenshot-1-menu.png` | 1280×800 | Screenshot 1: the right-click menu over a product page |
 | `store/screenshot-2-options.png` | 1280×800 | Screenshot 2: the options page |
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
-| `store/screenshot-4-site-access.png` | 1280×800 | Screenshot 4: the site-permission window |
+| `store/screenshot-4-site-access.png` | 1280×800 | Not on the Chrome Web Store since 0.8.0 (the store allows 5 screenshots; this rare case is covered in the description). Edge keeps it (up to 10). |
 | `store/screenshot-5-gif.png` | 1280×800 | Screenshot 5: GIF keeps animation |
-| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Uses a made-up site, not Instagram's interface (trademarks). |
+| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Chrome order: menu, find, options, trust, GIF. Uses a made-up site, not Instagram's interface (trademarks). |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 | Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |
