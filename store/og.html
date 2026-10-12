@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- The social preview image (site/og-image.png, 1200×630) shown when imgkeep.app is shared. Render: npm run og.
+     Every claim here must stay true: no "no tracking" (Imgkeep sends an anonymous daily count, see the privacy page). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    @font-face { font-family: "Schibsted Grotesk"; font-weight: 700; src: url("../site/fonts/schibsted-grotesk-700-latin.woff2") format("woff2"); }
+    @font-face { font-family: "Source Sans 3"; font-weight: 400 700; src: url("../site/fonts/source-sans-3-latin.woff2") format("woff2"); }
+    html, body { margin: 0; }
+    #og {
+      position: relative; width: 1200px; height: 630px; overflow: hidden; box-sizing: border-box;
+      background: #111514; color: #e9efed; font-family: "Source Sans 3", sans-serif; padding: 64px 0 0 72px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; font: 700 34px "Schibsted Grotesk", sans-serif; }
+    .brand img { width: 52px; height: 52px; }
+    h1 { margin: 58px 0 0; font: 700 84px/1.02 "Schibsted Grotesk", sans-serif; letter-spacing: -0.035em; }
+    h1 span { display: block; color: #42b8a3; }
+    p { margin: 26px 0 0; width: 470px; font-size: 27px; line-height: 1.4; color: #a1afab; }
+    .pills { display: flex; gap: 12px; margin-top: 34px; }
+    .pills b { font-weight: 600; font-size: 21px; padding: 8px 16px; border-radius: 999px; background: #16332e; color: #9fded2; }
+    /* The real demo poster (right-click menu, GIF highlighted), scaled down to the browser window and menus. */
+    .shot {
+      position: absolute; left: 600px; top: 112px; width: 568px; height: 386px; border-radius: 16px;
+      background: url("../site/media/imgkeep-demo-poster.jpg") no-repeat; background-size: 832px 468px; background-position: -26px -36px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="og">
+    <div class="brand"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+    <h1>Any image.<span>Your format.</span></h1>
+    <p>Save web images as PNG, JPG, WebP, GIF or PDF. Right-click in Chrome or Edge.</p>
+    <div class="pills"><b>Free</b><b>No uploads</b><b>Open source</b></div>
+    <div class="shot"></div>
+  </div>
+</body>
+</html>

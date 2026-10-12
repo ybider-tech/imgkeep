@@ -287,3 +287,15 @@ test("home FAQ structured data says exactly what the page says", async ({ page }
     divs.map((d) => [d.querySelector("dt").innerText, d.querySelector("dd").innerText.replace(/\s*Privacy policy\.$/, "")]));
   expect(faq.mainEntity.map((q) => [q.name, q.acceptedAnswer.text])).toEqual(visible);
 });
+
+// The share preview (site/og-image.png, rendered from store/og.html by npm run og) must stay true:
+// Imgkeep sends an anonymous daily count, so "no tracking" or "no analytics" would be wrong there.
+test("social preview image exists and makes no false privacy claims", async ({ page }) => {
+  const source = await readFile(join(ROOT, "store", "og.html"), "utf8");
+  expect(source.replace(/<!--[\s\S]*?-->/g, "")).not.toMatch(/no tracking|no analytics|no data/i);
+  await page.goto(`${server.url}/index.html`);
+  const url = await page.locator('meta[property="og:image"]').getAttribute("content");
+  const res = await page.request.get(url.replace("https://imgkeep.app", server.url));
+  expect(res.status()).toBe(200);
+  expect(res.headers()["content-type"]).toContain("image/png");
+});
