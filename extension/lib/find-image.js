@@ -51,7 +51,8 @@ export function findImageInPage(linkUrl) {
     if (visible(r)) candidates.push({ url, rect: r, kind: "background", el });
   }
 
-  // Where was the right-click? Without a link, the deepest hovered element is the best guess left.
+  // Where was the right-click? Without a link, the deepest hovered element is the best guess left,
+  // and only a guess: the pointer may have moved up to a menu's length since (REACH, CSS pixels).
   // The whole page (html, body), or a layer covering most of the screen (a sign-in wall, a lightbox
   // backdrop), doesn't tell us the spot: then the picker takes over.
   const last = [...document.querySelectorAll(":hover")].pop();
@@ -90,14 +91,29 @@ export function findImageInPage(linkUrl) {
     under = best(matching(hovered));
     via = "hover";
   }
-
   const unique = (list) => [...new Map(list.map((c) => [c.url, c])).values()];
+
+  // A guess is only opened directly when no other image is within the pointer's reach (one big photo).
+  // Otherwise the picker shows, with the guess first: one more click beats the wrong image.
+  let guess = null;
+  if (via === "hover" && under.length) {
+    const REACH = 480;
+    const hr = hovered.getBoundingClientRect();
+    const near = (r) =>
+      r.right > hr.left - REACH && r.left < hr.right + REACH && r.bottom > hr.top - REACH && r.top < hr.bottom + REACH;
+    if (unique(candidates).some((c) => c.url !== under[0].url && near(c.rect))) [guess, under] = [under[0], []];
+  }
+
   const out = (c) => ({ url: c.url, kind: c.kind, width: Math.round(c.rect.width), height: Math.round(c.rect.height) });
   return {
     hoveredTag: hovered ? hovered.tagName.toLowerCase() : null,
     via,
     found: under.length ? out(under[0]) : null,
-    // For a picker when nothing (or several things) sit under the click: biggest first.
-    onScreen: unique(candidates).sort((a, b) => area(b.rect) - area(a.rect)).slice(0, 12).map(out),
+    guess: guess ? out(guess) : null,
+    // For a picker when the image under the click isn't certain: the guess first, then biggest first.
+    onScreen: unique(candidates)
+      .sort((a, b) => (b.url === guess?.url) - (a.url === guess?.url) || area(b.rect) - area(a.rect))
+      .slice(0, 12)
+      .map(out),
   };
 }

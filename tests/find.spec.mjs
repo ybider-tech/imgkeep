@@ -32,16 +32,39 @@ const name = (url) => url?.split("/").pop();
 
 test("the finder picks the photo under a cover layer, at its largest size", async () => {
   const page = await ctx.context.newPage();
+  // Without a link the pointer decides; neighbours nearby make it a guess (the picker, guess first).
+  const pick = (r) => (r.found || r.guess)?.url;
   // Instagram: <img srcset> under an empty overlay div; the largest srcset entry wins.
-  expect(name((await findAt(page, "instagram.html", "#t1")).found?.url)).toBe("wide.webp");
-  expect(name((await findAt(page, "instagram.html", "#t2")).found?.url)).toBe("photo.jpg");
+  expect(name(pick(await findAt(page, "instagram.html", "#t1")))).toBe("wide.webp");
+  expect(name(pick(await findAt(page, "instagram.html", "#t2")))).toBe("photo.jpg");
   // Pinterest: "1x, 2x, 4x" density descriptors; 4x is the original.
-  expect(name((await findAt(page, "pinterest.html", "#q1")).found?.url)).toBe("wide.webp");
-  expect(name((await findAt(page, "pinterest.html", "#q2")).found?.url)).toBe("photo.jpg");
+  expect(name(pick(await findAt(page, "pinterest.html", "#q1")))).toBe("wide.webp");
+  expect(name(pick(await findAt(page, "pinterest.html", "#q2")))).toBe("photo.jpg");
   // A CSS background image on a link.
   const bg = await findAt(page, "feed.html", "#p3");
-  expect(bg.found).toMatchObject({ kind: "background" });
-  expect(name(bg.found.url)).toBe("photo.jpg");
+  expect(bg.guess).toMatchObject({ kind: "background" });
+  expect(name(bg.guess.url)).toBe("photo.jpg");
+  await page.close();
+});
+
+test("no link and other images within reach: the picker, with the pointer's guess first", async () => {
+  const page = await ctx.context.newPage();
+  // Threads: carousel photos side by side, no link over them.
+  const r = await findAt(page, "threads.html", "#c2");
+  expect(r.via).toBe("hover");
+  expect(r.found).toBeNull();
+  expect(name(r.guess.url)).toBe("photo.jpg");
+  expect(name(r.onScreen[0].url)).toBe("photo.jpg");
+  expect(r.onScreen.length).toBe(2);
+  await page.close();
+});
+
+test("no link, one photo alone on screen: it opens directly", async () => {
+  const page = await ctx.context.newPage();
+  const r = await findAt(page, "threads-single.html", "#solo");
+  expect(r.via).toBe("hover");
+  expect(name(r.found?.url)).toBe("wide.webp");
+  expect(r.guess).toBeNull();
   await page.close();
 });
 
@@ -55,10 +78,11 @@ test("the right-clicked link wins over the pointer, which has moved to where the
   const r = await page.evaluate(`(${findImageInPage.toString()})(${JSON.stringify(pin1)})`);
   expect(r.via).toBe("link");
   expect(name(r.found?.url)).toBe("wide.webp"); // pin 1, at its largest
-  // Without a link (a page right-click), the pointer is the only guess left.
+  // Without a link (a page right-click), the pointer is only a guess: pin 1 is near, so the picker.
   const h = await page.evaluate(`(${findImageInPage.toString()})(null)`);
   expect(h.via).toBe("hover");
-  expect(name(h.found?.url)).toBe("photo.jpg");
+  expect(h.found).toBeNull();
+  expect(name(h.guess?.url)).toBe("photo.jpg");
   // A link Chrome reports that isn't on the page: the pointer again.
   const gone = await page.evaluate(`(${findImageInPage.toString()})("https://elsewhere.example/x")`);
   expect(gone.via).toBe("hover");
