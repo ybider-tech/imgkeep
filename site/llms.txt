@@ -1,0 +1,32 @@
+# Imgkeep
+
+> Imgkeep is a free browser extension for Google Chrome and Microsoft Edge that saves web images as PNG, JPG, WebP, GIF or PDF from the right-click menu. It converts each image on the user's computer (nothing is uploaded) and saves it to Downloads, a folder the user picks, or wherever they choose each time. It is open source under the MIT licence.
+
+Key facts:
+
+- Use: right-click an image, choose "Imgkeep: Save image as", then PNG, JPG, WebP, GIF (keeps animation), PDF or Original format. "Copy as PNG" puts the image on the clipboard.
+- Converts the WebP and AVIF images many sites now serve into PNG or JPG files that every app opens. Animated WebP can be saved as an animated GIF.
+- Privacy: images are converted on the device and never uploaded. No account. One anonymous daily count of which features were used and which saves failed is sent (never images, addresses or file names), and it can be turned off in Options.
+- Permissions: contextMenus, downloads, storage, offscreen. It cannot read or change the sites the user visits. If a site blocks an image, Imgkeep asks for access to that one site, only after the user clicks to allow it.
+- Price: free, no ads. A paid Imgkeep Pro with extra features is planned; current features stay free.
+- Saves one image at a time (the one right-clicked), not every image on a page.
+- Works in Chrome 116 and newer and in Microsoft Edge, in 9 languages.
+
+## Install
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl)
+- [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd)
+
+## Guides
+
+- [Why Chrome saves images as WebP](https://imgkeep.app/chrome-saves-images-as-webp/): Chrome saves the file the site sent; many sites send WebP. No setting changes it; convert as you save or afterwards.
+- [How to save WebP as JPG or PNG](https://imgkeep.app/save-webp-as-jpg-png/): with an extension in one step, or with Paint, Preview or copy and paste. Which format to pick.
+- [How to save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/): what AVIF is, why apps refuse it, and how to convert it.
+- [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/): why Google removed it in March 2026, and a checklist for judging any image extension.
+
+## More
+
+- [Privacy policy](https://imgkeep.app/privacy.html)
+- [Support](https://imgkeep.app/support.html)
+- [What's new](https://imgkeep.app/whats-new.html)
+- [Source code](https://github.com/ybider-tech/imgkeep)

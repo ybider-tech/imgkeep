@@ -30,6 +30,11 @@
         "@type": "Question",
         "name": "Does converting AVIF lose quality?",
         "acceptedAnswer": { "@type": "Answer", "text": "Saving as PNG keeps the pixels exactly as they are, but the file gets much bigger. JPG compresses again, with a small loss that's usually invisible at high quality settings." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I save AVIF as JPG or PNG?",
+        "acceptedAnswer": { "@type": "Answer", "text": "AVIF is a newer, smaller image format that Chrome saves as-is, but many apps can't open it yet. To get a JPG or PNG, save it with a converter such as Imgkeep (right-click › Imgkeep: Save image as › JPG), or export it from Preview on a recent Mac, or from Paint with Microsoft's free AV1 Video Extension." }
       }
     ]
   }
@@ -37,9 +42,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../style.css?v=360ff6784e">
+  <link rel="stylesheet" href="../style.css?v=61b5a240ba">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Save AVIF as JPG or PNG", "item": "https://imgkeep.app/save-avif-as-jpg-png/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to save AVIF as JPG or PNG", "description": "AVIF is a newer, smaller image format that Chrome saves as-is, but many apps can't open it yet. To get a JPG or PNG, save it with a converter such as Imgkeep (right-click › Imgkeep: Save image as › JPG), or export it from Preview on a recent Mac, or from Paint with Microsoft's free AV1 Video Extension.", "url": "https://imgkeep.app/save-avif-as-jpg-png/", "mainEntityOfPage": "https://imgkeep.app/save-avif-as-jpg-png/", "image": "https://imgkeep.app/media/guides/menu-jpg.jpg", "datePublished": "2026-09-27", "dateModified": "2026-10-12", "inLanguage": "en", "author": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/"}, "publisher": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": {"@type": "ImageObject", "url": "https://imgkeep.app/icon128.png"}}}
   </script>
 </head>
 <body>
@@ -48,34 +56,42 @@
       <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
     </header>
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href="../">← Home</a><span aria-hidden="true">›</span><span aria-current="page">Save AVIF as JPG or PNG</span>
+      <a href="../#image-guides">← Home</a><span aria-hidden="true">›</span><span aria-current="page">Save AVIF as JPG or PNG</span>
     </nav>
 
     <main class="doc">
       <h1>How to save AVIF as JPG or PNG</h1>
-      <p class="lead">You saved an image from Chrome and got an <code>.avif</code> file that your app won't open. Here's what AVIF is, why you got it, and how to turn it into a JPG or PNG.</p>
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>AVIF is a newer, smaller image format that Chrome saves as-is, but many apps can't open it yet. To get a JPG or PNG, save it with a converter such as Imgkeep (right-click › <strong>Imgkeep: Save image as › JPG</strong>), or export it from Preview on a recent Mac, or from Paint with Microsoft's free AV1 Video Extension.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-12">12 October 2026</time></p>
 
-      <h2>What AVIF is</h2>
+      <h2>What is AVIF?</h2>
       <p>AVIF is a newer image format based on the AV1 video codec. Its big advantage is size: an AVIF is usually much smaller than a JPG of the same quality, and often smaller than WebP too. Chrome, Edge, Firefox and Safari all display it.</p>
 
-      <h2>Why Chrome saved an AVIF</h2>
+      <h2>Why did Chrome save an AVIF?</h2>
       <p>When Chrome asks a site for an image, it says which formats it can show, and current versions list AVIF first. Many sites and image services use that to send the smallest file. <strong>Save image as…</strong> then saves exactly what arrived, without converting it. There's no Chrome setting to change this. The same thing happens with WebP: <a href="../chrome-saves-images-as-webp/">why Chrome saves images as WebP</a>.</p>
 
-      <h2>Why apps won't open it</h2>
+      <h2>Why won't my apps open AVIF?</h2>
       <p>Browsers adopted AVIF quickly, but plenty of other software hasn't: older photo apps and editors, some office tools, upload forms, and print services. On Windows, Photos and Paint need Microsoft's free AV1 Video Extension (from the Microsoft Store) before they can open AVIF. Recent versions of macOS open AVIF in Preview; older ones don't.</p>
 
-      <h2>With an extension, in one step</h2>
+      <h2>How do I save AVIF as JPG or PNG in one step?</h2>
       <p>An extension can convert the image as you save it, so you never deal with the AVIF file at all. It runs in your browser, so pick one you can trust (<a href="../save-image-as-type-alternative/">how to check an image extension is safe</a>).</p>
 
       <div class="option">
         <p class="label">Our extension</p>
         <h3>Imgkeep</h3>
         <p>Right-click the image, choose <strong>Imgkeep: Save image as</strong>, then <strong>JPG</strong> or <strong>PNG</strong>. Imgkeep reads the AVIF, converts it on your computer, and saves a normal <code>.jpg</code> or <code>.png</code> to Downloads, or to a folder you pick. Transparent areas become white in a JPG, or a colour you choose. Nothing is uploaded. Free and open source.</p>
+        <figure class="shot">
+          <img src="../media/guides/menu-jpg.jpg" width="1120" height="560" loading="lazy" decoding="async" alt="A photo on a web page, right-clicked. The menu shows Imgkeep: Save image as, with a submenu listing PNG, JPG, WebP, GIF (keeps animation), PDF and Original format. JPG is highlighted.">
+          <figcaption>Right-click the image, choose <strong>Imgkeep: Save image as</strong>, then <strong>JPG</strong> or <strong>PNG</strong>.</figcaption>
+        </figure>
         <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-avif-as-jpg-png">Add Imgkeep to Chrome — free</a>
         <span class="cta-note">Four permissions, no access to your pages.</span>
       </div>
 
-      <h2>Without an extension</h2>
+      <h2>How do I convert AVIF without an extension?</h2>
 
       <h3>Windows: Paint</h3>
       <ol>

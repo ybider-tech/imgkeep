@@ -1,4 +1,37 @@
-# imgkeep.app: everything is public and may be crawled.
+# imgkeep.app: everything is public and may be crawled, by search engines and AI assistants alike.
+# The groups below are explicit so it's clear the AI crawlers are welcome; "User-agent: *" already allows them.
+
+# OpenAI: ChatGPT search, ChatGPT user requests, model training
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic: Claude search, Claude user requests, model training
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (Gemini) and everyone else
+User-agent: Google-Extended
+Allow: /
+
 User-agent: *
 Allow: /
 

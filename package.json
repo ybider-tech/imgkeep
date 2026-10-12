@@ -14,7 +14,8 @@
     "store": "node store/render.mjs",
     "package": "sh scripts/package.sh",
     "version-css": "node scripts/version-css.mjs",
-    "video": "node store/video/render.mjs"
+    "video": "node store/video/render.mjs",
+    "guide-shots": "node store/guide-shots.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
