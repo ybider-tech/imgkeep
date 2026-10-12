@@ -1,8 +1,9 @@
 # Store listing translations: Imgkeep 0.8.0
 
-Translations of the v8 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
+Translations of the v9 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
 The name and summary come from the package (`extension/_locales/<lang>/messages.json`), so only the
 description is pasted here. Button and menu names match the extension's own translations.
+They say "the browser's Downloads folder", never Chrome, so the same text works on Edge (which rejects descriptions naming Chrome).
 
 Languages: Hebrew (he), Spanish (es), Portuguese, Brazil (pt_BR), German (de), French (fr), Japanese (ja),
 Hindi (hi), Arabic (ar). Images stay English for now.
@@ -22,359 +23,407 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 ## he — Hebrew
 
 ```text
-‏Imgkeep הוא תוסף דפדפן חינמי בקוד פתוח. הוא מוסיף פריט אחד לתפריט הלחיצה הימנית: בוחרים פורמט, והתמונה מומרת במחשב שלך ונשמרת ישר לתיקייה שלך. או מעתיקים אותה כ-PNG ומדביקים בכל מקום.
+‏Imgkeep הוא ממיר תמונות חינמי לתפריט הלחיצה הימנית. שומרים כל תמונה כ-PNG,‏ JPG,‏ WebP,‏ GIF או PDF, ממירים WebP ו-AVIF, ושומרים תמונות גם באתרים שמסתירים אותן מהלחיצה הימנית.
 
-עובד גם איפה שלחיצה ימנית לא: באתרים כמו Instagram ו-Pinterest התמונות מתחת לשכבה נוספת, כך שלחיצה ימנית לא מגיעה אליהן. בוחרים Imgkeep: מציאת תמונה כאן, ו-Imgkeep מוצא בשבילך את התמונה, בגודל הכי גדול שלה. כבוי עד שמפעילים אותו.
+לחיצה ימנית על תמונה ← Imgkeep: שמירת התמונה בתור ← בוחרים פורמט. התמונה נשמרת ישר לתיקייה שבחרת, או מעתיקים אותה כ-PNG ומדביקים באפליקציה אחרת. התמונות מומרות במחשב שלך: בלי העלאות, בלי חשבון.
 
-אתרים רבים מגישים היום תמונות WebP ו-AVIF שאפליקציות אחרות לא פותחות. ‏Imgkeep הופך אותן לקבצים שנפתחים בכל מקום, בלחיצה ימנית אחת:
+עובד גם איפה שלחיצה ימנית לא
 
-‏Imgkeep: שמירת התמונה בתור ← PNG · JPG · WebP · GIF (שומר על האנימציה) · PDF · הפורמט המקורי · העתקה כ-PNG · אפשרויות נוספות…
+באתרים כמו Instagram ו-Pinterest, שכבה מעל התמונה מונעת מ"שמירת התמונה בשם" של הדפדפן להגיע אליה. לוחצים לחיצה ימנית מעל התמונה ובוחרים "Imgkeep: מציאת תמונה כאן": ‏Imgkeep מוצא את התמונה שמתחת לשכבה, בגודל הכי גדול שזמין. אם הוא לא בטוח לאיזו תמונה התכוונת, הוא מציג את התמונות שעל המסך כדי שתבחר.
 
-פורמטים
+מציאת תמונה כאן כבויה עד שמפעילים אותה, באפשרויות או בפעם הראשונה שמשתמשים בה. היא מסתכלת על הדף הנוכחי רק כשמבקשים, ואף פעם לא משנה אותו.
 
-• קבצים שנפתחים בכל מקום: JPG או PNG רגילים, וקובצי JPG נשמרים כ-‎.jpg ולא כ-‎.jfif. גם SVG ותמונות data:‎ עובדים.
-• האנימציה נשמרת: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF שממשיך לזוז, עם התזמון והשקיפות. קובצי GIF מונפשים נשמרים בדיוק כמו שהם.
-• שמירה כ-PDF: קובץ PDF של עמוד אחד בגודל התמונה בדיוק, לקבלות, למסמכים ולשיתוף. השקיפות נשמרת.
+המרת WebP ו-AVIF ל-PNG או JPG
+
+מקבלים את הפורמט שצריך לעריכה, לשיתוף ולאפליקציות אחרות: PNG,‏ JPG,‏ WebP,‏ GIF,‏ PDF או הפורמט המקורי.
+
+• קבצים רגילים: קובצי JPG נשמרים כ-‎.jpg ולא כ-‎.jfif. גם SVG ותמונות data:‎ עובדים.
+• האנימציה ממשיכה לזוז: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF ששומר על התזמון והשקיפות. קובצי GIF מונפשים נשמרים בלי שינוי.
+• שמירה כ-PDF: קובץ PDF של עמוד אחד בגודל התמונה, עם השקיפות. שימושי לקבלות, למסמכים ולשיתוף.
 • העתקה כ-PNG: התמונה נכנסת ללוח כקובץ PNG אמיתי, עם השקיפות, ומוכנה להדבקה בכל מקום.
+• שמירת המקור: שומרים את התמונה בפורמט המקורי שלה כשלא צריך המרה.
 
-גודל ואיכות
+שינוי גודל ושליטה באיכות
 
-• שינוי גודל: מגדירים באפשרויות רוחב מרבי, ותמונות גדולות יותר מוקטנות כדי להתאים, עם אותן פרופורציות. תמונות קטנות יותר אף פעם לא מוגדלות.
-• אפשרויות נוספות: תצוגה מקדימה של התוצאה עם הגודל האמיתי בפיקסלים ובקילובייטים, ובחירת פורמט, רוחב, איכות, רקע ושם קובץ לתמונה הזו בלבד.
-• איכות בשליטתך: מחוונים לאיכות JPG ו-WebP, וצבע רקע לתמונות שקופות שנשמרות כ-JPG.
+• שינוי גודל אוטומטי: מגדירים רוחב מרבי באפשרויות. תמונות גדולות יותר מוקטנות באותן פרופורציות; תמונות קטנות יותר אף פעם לא מוגדלות.
+• תצוגה מקדימה לפני השמירה: אפשרויות נוספות מציג את גודל התוצאה בפיקסלים ובקילובייטים. בוחרים פורמט, רוחב, איכות, רקע ושם קובץ לתמונה הזו.
+• כוונון איכות: מחוונים לאיכות JPG ו-WebP, וצבע רקע לתמונות שקופות שנשמרות כ-JPG.
 
-תיקיות ושמות
+תיקיות ושמות קבצים לבחירתך
 
-• שמירה לתיקייה שלך: בוחרים תיקייה פעם אחת וכל תמונה נכנסת אליה, או משתמשים בתיקיית ההורדות, או שואלים בכל פעם. אפשר להוסיף תתי-תיקיות כמו Imgkeep/{host}.
+• שמירה לתיקייה שלך: בוחרים תיקייה פעם אחת, משתמשים בתיקיית ההורדות של הדפדפן, או שואלים בכל פעם. מסדרים תמונות בתתי-תיקיות כמו Imgkeep/{host}.
 • שמות קבצים משלך: מרכיבים שמות מ-{name},‏ {host},‏ {date},‏ {time},‏ {w} ו-{h}, למשל {name}-{w}x{h}.
-• אף פעם לא דורס: אם כבר קיים קובץ באותו שם, הקובץ החדש מקבל מספר, כמו " (1)", במקום להחליף אותו.
+• אף פעם לא דורס: אם כבר קיים קובץ באותו שם, הקובץ החדש מקבל מספר, כמו " (1)".
 
-נבנה כדי שאפשר יהיה לסמוך עליו
+המרה מקומית וגישה בשליטתך
 
-• לא נכנס לדפים שלך: ‏Imgkeep לא קורא את האתרים שבהם ביקרת, עם חריג אחד שבשליטתך: כשמבקשים ממנו למצוא תמונה מוסתרת, הוא מסתכל על הדף הזה, פעם אחת, באותו רגע. הוא אף פעם לא משנה דף. כבוי עד שמפעילים אותו.
-• התמונות שלך לא יוצאות מהמחשב: הן מומרות במכשיר שלך. בלי העלאות, בלי חשבון. הדבר היחיד ש-Imgkeep שולח הוא סיכום יומי אנונימי, כמו „12 שמירות כ-JPG, אחת נכשלה”, כדי שנדע מה לשפר. אף פעם לא כתובות או שמות קבצים. לחיצה אחת באפשרויות מכבה אותו.
-• ארבע הרשאות בלבד: contextMenus,‏ downloads,‏ storage,‏ offscreen. שתיים נוספות, activeTab ו-scripting, רק אם מפעילים את מציאת התמונה כאן.
-• קוד פתוח ברישיון MIT, בלי שלב בנייה, כך שמה שקוראים זה מה שרץ.
-• חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים. ‏Imgkeep פותח חלון קטן רק כשמבקשים (העתקה כ-PNG, אפשרויות נוספות) או כששמירה צריכה את האישור שלך, ומבקש דירוג פעם אחת בלבד, אחרי שהשתמשת בו זמן מה.
+• בלי העלאות: התמונות מומרות במחשב שלך. בלי חשבון.
+• לא קורא דפים ברקע: ‏Imgkeep מסתכל על דף רק כשמבקשים ממנו למצוא בו תמונה, ואף פעם לא משנה דף.
+• ארבע הרשאות בלבד: contextMenus,‏ downloads,‏ storage,‏ offscreen. שתיים נוספות, activeTab ו-scripting, רק אם מפעילים את מציאת תמונה כאן.
+• סיכום יומי אנונימי אחד: ספירות שימוש וכשלים, כמו „12 שמירות כ-JPG, אחת נכשלה”, כדי שנדע מה לשפר. אף פעם לא תמונות, כתובות אתרים או שמות קבצים. לחיצה אחת באפשרויות מכבה אותו.
+• קוד פתוח ברישיון MIT, בלי שלב בנייה, כך שהקוד שקוראים הוא הקוד שרץ.
+• חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים, ובקשת דירוג אחת בלבד, אי פעם. כל תכונה שקיימת היום נשארת חינמית.
 
 כשאתר חוסם תמונה
 
 אתרים מעטים מונעים מאתרים אחרים לקרוא את התמונות שלהם. רק אז, ורק אחרי שמאשרים בלחיצה, ‏Imgkeep מבקש מהדפדפן גישה לאתר האחד הזה. אפשר להסיר אותה בכל עת באפשרויות. או לבחור "לשמור בפורמט המקורי".
 
-כל תכונה ב-Imgkeep היום נשארת חינמית. רעיונות והצבעות: imgkeep.app/ideas.html
+הצעות לתכונות והצבעה על רעיונות: https://imgkeep.app/ideas.html
 ```
 
 ## es — Spanish
 
 ```text
-Imgkeep es una extensión de navegador gratuita y de código abierto. Añade una opción al menú del clic derecho: eliges un formato y la imagen se convierte en tu equipo y se guarda directamente en tu carpeta. O cópiala como PNG y pégala donde quieras.
+Imgkeep es un conversor de imágenes gratuito para tu menú del clic derecho. Guarda cualquier imagen como PNG, JPG, WebP, GIF o PDF, convierte WebP y AVIF, y guarda fotos incluso en sitios que las ocultan del clic derecho.
 
-Funciona donde el clic derecho no llega: en sitios como Instagram y Pinterest, las fotos están bajo otra capa y el clic derecho no las alcanza. Elige Imgkeep: Buscar imagen aquí e Imgkeep encuentra la foto por ti, en su tamaño más grande. Desactivado hasta que lo actives.
+Clic derecho en una imagen → Imgkeep: Guardar imagen como → elige el formato. Se guarda directamente en la carpeta que elijas, o cópiala como PNG y pégala en otra aplicación. Las imágenes se convierten en tu equipo: sin subidas, sin cuenta.
 
-Muchos sitios sirven ahora imágenes WebP y AVIF que otras aplicaciones no abren. Imgkeep las convierte en archivos que se abren en cualquier parte, con un clic derecho:
+FUNCIONA DONDE EL CLIC DERECHO NO LLEGA
 
-Imgkeep: Guardar imagen como → PNG · JPG · WebP · GIF (conserva la animación) · PDF · Formato original · Copiar como PNG · Más opciones…
+En sitios como Instagram y Pinterest, una capa sobre la foto impide que el "Guardar imagen como" del navegador llegue a ella. Haz clic derecho sobre la foto y elige "Imgkeep: Buscar imagen aquí": Imgkeep encuentra la imagen detrás de la capa, en el tamaño más grande disponible. Si no está seguro de qué imagen querías, te muestra las imágenes de la pantalla para que elijas.
 
-FORMATOS
+Buscar imagen aquí está desactivado hasta que lo actives, en Opciones o la primera vez que lo uses. Solo mira la página actual cuando se lo pides, y nunca la cambia.
 
-• Archivos que se abren en cualquier sitio: JPG o PNG estándar, y los JPG se guardan como .jpg, no como .jfif. También funcionan las imágenes SVG y data:.
-• Conserva la animación: WebP, AVIF y APNG animados se convierten en un GIF que sigue moviéndose, con su ritmo y su transparencia. Los GIF animados se guardan tal cual.
-• Guardar como PDF: un PDF de una página del tamaño exacto de la imagen, para recibos, documentos y compartir. La transparencia se conserva.
-• Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, y pégala donde quieras.
+CONVIERTE WEBP Y AVIF A PNG O JPG
 
-TAMAÑO Y CALIDAD
+Consigue el formato que necesitas para editar, compartir y usar en otras aplicaciones: PNG, JPG, WebP, GIF, PDF o el formato original.
 
-• Cambiar tamaño: fija un ancho máximo en Opciones y las imágenes más grandes se reducen para caber, manteniendo su proporción. Las más pequeñas nunca se amplían.
-• Más opciones: mira una vista previa del resultado con su tamaño real en píxeles y kilobytes, y elige formato, ancho, calidad, fondo y nombre de archivo solo para esa imagen.
-• Calidad a tu medida: controles de calidad para JPG y WebP, y el color de fondo para imágenes transparentes guardadas como JPG.
+• Archivos de imagen estándar: los JPG se guardan como .jpg, no como .jfif. También funcionan las imágenes SVG y data:.
+• Las animaciones siguen moviéndose: WebP, AVIF y APNG animados se convierten en un GIF que conserva su ritmo y su transparencia. Los GIF animados se guardan sin cambios.
+• Guardar como PDF: un PDF de una página del tamaño de la imagen, con su transparencia. Útil para recibos, documentos y compartir.
+• Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, lista para pegar donde quieras.
+• Conserva el original: guarda la imagen en su formato original cuando no necesites convertirla.
 
-CARPETAS Y NOMBRES
+CAMBIA EL TAMAÑO Y CONTROLA LA CALIDAD
 
-• Guarda en tu carpeta: elige una carpeta una vez y todas las imágenes irán allí, o usa las Descargas de Chrome, o pregunta cada vez. Añade subcarpetas como Imgkeep/{host}.
-• Tus nombres de archivo: crea nombres con {name}, {host}, {date}, {time}, {w} y {h}, por ejemplo {name}-{w}x{h}.
-• Nunca sobrescribe: si ya existe un archivo con el mismo nombre, el nuevo recibe un número, como " (1)", en lugar de reemplazarlo.
+• Cambio de tamaño automático: fija un ancho máximo en Opciones. Las imágenes más grandes se reducen manteniendo su proporción; las más pequeñas nunca se amplían.
+• Vista previa antes de guardar: Más opciones muestra el tamaño del resultado en píxeles y kilobytes. Elige formato, ancho, calidad, fondo y nombre de archivo para esa imagen.
+• Ajusta la calidad: controles de calidad para JPG y WebP, y un color de fondo para imágenes transparentes guardadas como JPG.
 
-HECHO PARA SER DE CONFIANZA
+ELIGE TUS CARPETAS Y NOMBRES DE ARCHIVO
 
-• No se mete en tus páginas: Imgkeep no lee los sitios que visitas, con una excepción que tú controlas: cuando le pides que encuentre una imagen tapada, mira esa página, una sola vez, en ese momento. Nunca cambia una página. Desactivado hasta que lo actives.
-• Tus imágenes nunca salen de tu equipo: se convierten en tu dispositivo. Sin subidas, sin cuenta. Lo único que envía Imgkeep es un resumen diario anónimo, como «12 guardados como JPG, 1 fallido», para saber qué mejorar. Nunca direcciones ni nombres de archivo. Un clic en Opciones lo desactiva.
+• Guarda en tu carpeta: elige una carpeta una vez, usa la carpeta de descargas del navegador o pregunta cada vez. Organiza las imágenes en subcarpetas como Imgkeep/{host}.
+• Nombres de archivo a tu medida: crea nombres con {name}, {host}, {date}, {time}, {w} y {h}, por ejemplo {name}-{w}x{h}.
+• Nunca sobrescribe: si ya existe un archivo con el mismo nombre, el nuevo recibe un número, como " (1)".
+
+CONVERSIÓN LOCAL Y ACCESO BAJO TU CONTROL
+
+• Sin subidas: las imágenes se convierten en tu equipo. Sin cuenta.
+• No lee páginas en segundo plano: Imgkeep solo mira una página cuando le pides que encuentre una imagen en ella, y nunca cambia una página.
 • Solo cuatro permisos: contextMenus, downloads, storage, offscreen. Dos más, activeTab y scripting, solo si activas Buscar imagen aquí.
-• Código abierto con licencia MIT y sin paso de compilación: lo que lees es lo que se ejecuta.
-• Gratis y sin límites: sin anuncios ni pestañas de bienvenida. Imgkeep solo abre una pequeña ventana cuando tú la pides (Copiar como PNG, Más opciones) o cuando un guardado necesita tu aprobación, y pide una valoración una sola vez, después de que lo hayas usado un tiempo.
+• Un único resumen diario anónimo: recuentos de uso y fallos, como «12 guardados como JPG, 1 fallido», para saber qué mejorar. Nunca imágenes, direcciones web ni nombres de archivo. Un clic en Opciones lo desactiva.
+• Código abierto con licencia MIT y sin paso de compilación: el código que lees es el código que se ejecuta.
+• Gratis y sin límites: sin anuncios, sin pestañas de bienvenida y una sola petición de valoración, nunca más. Todas las funciones disponibles hoy seguirán siendo gratis.
 
 CUANDO UN SITIO BLOQUEA UNA IMAGEN
 
 Algunos sitios impiden que otros sitios lean sus imágenes. Solo entonces, y solo después de que lo permitas con un clic, Imgkeep pide a tu navegador acceso a ese único sitio. Puedes quitarlo cuando quieras en Opciones. O elige "Guardar en el formato original".
 
-Todas las funciones de Imgkeep de hoy seguirán siendo gratis. Ideas y votos: imgkeep.app/ideas.html
+Sugiere funciones y vota ideas: https://imgkeep.app/ideas.html
 ```
 
 ## pt_BR — Portuguese (Brazil)
 
 ```text
-O Imgkeep é uma extensão de navegador gratuita e de código aberto. Ela adiciona um item ao menu do clique direito: você escolhe um formato e a imagem é convertida no seu computador e salva direto na sua pasta. Ou copie como PNG e cole onde quiser.
+O Imgkeep é um conversor de imagens gratuito para o seu menu do clique direito. Salve qualquer imagem como PNG, JPG, WebP, GIF ou PDF, converta WebP e AVIF e salve fotos até em sites que as escondem do clique direito.
 
-Funciona onde o clique direito não chega: em sites como Instagram e Pinterest, as fotos ficam sob outra camada e o clique direito não as alcança. Escolha Imgkeep: Encontrar imagem aqui e o Imgkeep encontra a foto para você, no maior tamanho. Desativado até você ativar.
+Clique direito em uma imagem → Imgkeep: Salvar imagem como → escolha o formato. Ela é salva direto na pasta que você escolheu, ou copie como PNG e cole em outro app. As imagens são convertidas no seu computador: sem uploads, sem conta.
 
-Muitos sites agora usam imagens WebP e AVIF que outros apps não abrem. O Imgkeep transforma essas imagens em arquivos que abrem em qualquer lugar, com um clique direito:
+FUNCIONA ONDE O CLIQUE DIREITO NÃO CHEGA
 
-Imgkeep: Salvar imagem como → PNG · JPG · WebP · GIF (mantém a animação) · PDF · Formato original · Copiar como PNG · Mais opções…
+Em sites como Instagram e Pinterest, uma camada sobre a foto impede que o "Salvar imagem como" do navegador chegue até ela. Clique com o botão direito sobre a foto e escolha "Imgkeep: Encontrar imagem aqui": o Imgkeep encontra a imagem atrás da camada, no maior tamanho disponível. Se não tiver certeza de qual imagem você quis, ele mostra as imagens da tela para você escolher.
 
-FORMATOS
+Encontrar imagem aqui fica desativado até você ativar, nas Opções ou na primeira vez que usar. Ele só olha a página atual quando você pede, e nunca a altera.
 
-• Arquivos que abrem em qualquer lugar: JPG ou PNG padrão, e JPGs são salvos como .jpg, não .jfif. Imagens SVG e data: também funcionam.
-• Mantém a animação: WebP, AVIF e APNG animados viram um GIF que continua se movendo, com o tempo e a transparência. GIFs animados são salvos exatamente como são.
-• Salvar como PDF: um PDF de uma página do tamanho exato da imagem, para recibos, documentos e compartilhamento. A transparência é mantida.
-• Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, e cole onde quiser.
+CONVERTA WEBP E AVIF PARA PNG OU JPG
 
-TAMANHO E QUALIDADE
+Tenha o formato de que você precisa para editar, compartilhar e usar em outros apps: PNG, JPG, WebP, GIF, PDF ou o formato original.
 
-• Redimensionar: defina uma largura máxima nas Opções e as imagens maiores são reduzidas para caber, mantendo a proporção. As menores nunca são ampliadas.
-• Mais opções: veja uma prévia do resultado com o tamanho real em pixels e kilobytes, e escolha formato, largura, qualidade, fundo e nome do arquivo só para essa imagem.
-• Qualidade sob seu controle: controles de qualidade para JPG e WebP, e a cor de fundo para imagens transparentes salvas como JPG.
+• Arquivos de imagem padrão: JPGs são salvos como .jpg, não .jfif. Imagens SVG e data: também funcionam.
+• Animações continuam se movendo: WebP, AVIF e APNG animados viram um GIF que mantém o tempo e a transparência. GIFs animados são salvos sem alterações.
+• Salvar como PDF: um PDF de uma página do tamanho da imagem, com transparência. Útil para recibos, documentos e compartilhamento.
+• Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, pronta para colar onde quiser.
+• Mantenha o original: salve a imagem no formato original quando não precisar converter.
 
-PASTAS E NOMES
+REDIMENSIONE IMAGENS E CONTROLE A QUALIDADE
 
-• Salva na sua pasta: escolha uma pasta uma vez e toda imagem vai para lá, ou use os Downloads do Chrome, ou pergunte sempre. Adicione subpastas como Imgkeep/{host}.
-• Seus nomes de arquivo: monte nomes com {name}, {host}, {date}, {time}, {w} e {h}, por exemplo {name}-{w}x{h}.
-• Nunca sobrescreve: se já existe um arquivo com o mesmo nome, o novo recebe um número, como " (1)", em vez de substituí-lo.
+• Redimensionamento automático: defina uma largura máxima nas Opções. Imagens maiores são reduzidas mantendo a proporção; as menores nunca são ampliadas.
+• Prévia antes de salvar: Mais opções mostra o tamanho do resultado em pixels e kilobytes. Escolha formato, largura, qualidade, fundo e nome do arquivo para essa imagem.
+• Ajuste a qualidade: controles de qualidade para JPG e WebP, e uma cor de fundo para imagens transparentes salvas como JPG.
 
-FEITO PARA SER CONFIÁVEL
+ESCOLHA SUAS PASTAS E NOMES DE ARQUIVO
 
-• Fica fora das suas páginas: o Imgkeep não lê os sites que você visita, com uma exceção que você controla: quando você pede para encontrar uma imagem coberta, ele olha aquela página, uma única vez, naquele momento. Ele nunca altera uma página. Desativado até você ativar.
-• Suas imagens nunca saem do seu computador: são convertidas no seu dispositivo. Sem uploads, sem conta. A única coisa que o Imgkeep envia é um resumo diário anônimo, como "12 salvamentos como JPG, 1 falhou", para sabermos o que melhorar. Nunca endereços ou nomes de arquivos. Um clique nas Opções desativa.
+• Salve na sua pasta: escolha uma pasta uma vez, use a pasta de downloads do navegador ou pergunte sempre. Organize as imagens em subpastas como Imgkeep/{host}.
+• Nomes de arquivo personalizados: monte nomes com {name}, {host}, {date}, {time}, {w} e {h}, por exemplo {name}-{w}x{h}.
+• Nunca sobrescreve: se já existe um arquivo com o mesmo nome, o novo recebe um número, como " (1)".
+
+CONVERSÃO LOCAL E ACESSO SOB SEU CONTROLE
+
+• Sem uploads: as imagens são convertidas no seu computador. Sem conta.
+• Não lê páginas em segundo plano: o Imgkeep só olha uma página quando você pede para encontrar uma imagem nela, e nunca altera uma página.
 • Só quatro permissões: contextMenus, downloads, storage, offscreen. Mais duas, activeTab e scripting, só se você ativar Encontrar imagem aqui.
-• Código aberto com licença MIT e sem etapa de build: o que você lê é o que roda.
-• Grátis e sem limites: sem anúncios e sem abas de boas-vindas. O Imgkeep só abre uma janela pequena quando você pede (Copiar como PNG, Mais opções) ou quando um salvamento precisa da sua confirmação, e pede uma avaliação só uma vez, depois que você já o usou por um tempo.
+• Um único resumo diário anônimo: contagens de uso e falhas, como "12 salvamentos como JPG, 1 falhou", para sabermos o que melhorar. Nunca imagens, endereços de sites ou nomes de arquivos. Um clique nas Opções desativa.
+• Código aberto com licença MIT e sem etapa de build: o código que você lê é o código que roda.
+• Grátis e sem limites: sem anúncios, sem abas de boas-vindas e um único pedido de avaliação, só uma vez. Todos os recursos disponíveis hoje continuam grátis.
 
 QUANDO UM SITE BLOQUEIA UMA IMAGEM
 
 Alguns sites impedem que outros sites leiam suas imagens. Só nesse caso, e só depois que você permitir com um clique, o Imgkeep pede ao navegador acesso a esse único site. Você pode remover quando quiser nas Opções. Ou escolha "Salvar no formato original".
 
-Todos os recursos do Imgkeep de hoje continuam grátis. Ideias e votos: imgkeep.app/ideas.html
+Sugira recursos e vote em ideias: https://imgkeep.app/ideas.html
 ```
 
 ## de — German
 
 ```text
-Imgkeep ist eine kostenlose Open-Source-Browsererweiterung. Sie fügt deinem Rechtsklickmenü einen Eintrag hinzu: Format wählen, und das Bild wird auf deinem Computer umgewandelt und direkt in deinem Ordner gespeichert. Oder kopiere es als PNG und füge es überall ein.
+Imgkeep ist ein kostenloser Bildkonverter für dein Rechtsklickmenü. Speichere jedes Bild als PNG, JPG, WebP, GIF oder PDF, wandle WebP und AVIF um und speichere Fotos sogar auf Websites, die sie vor dem Rechtsklick verstecken.
 
-Funktioniert, wo der Rechtsklick nicht hinkommt: Auf Websites wie Instagram und Pinterest liegen Fotos unter einer weiteren Ebene, sodass ein Rechtsklick sie nicht erreicht. Wähle Imgkeep: Bild hier finden, und Imgkeep findet das Foto für dich, in der größten Version. Aus, bis du es einschaltest.
+Rechtsklick auf ein Bild → Imgkeep: Bild speichern als → Format wählen. Es wird direkt in deinem gewählten Ordner gespeichert, oder kopiere es als PNG und füge es in eine andere App ein. Die Bilder werden auf deinem Computer umgewandelt: keine Uploads, kein Konto.
 
-Viele Websites liefern heute WebP- und AVIF-Bilder, die andere Programme nicht öffnen. Imgkeep macht daraus Dateien, die sich überall öffnen lassen, mit einem Rechtsklick:
+FUNKTIONIERT, WO DER RECHTSKLICK NICHT HINKOMMT
 
-Imgkeep: Bild speichern als → PNG · JPG · WebP · GIF (behält Animation) · PDF · Originalformat · Als PNG kopieren · Weitere Optionen…
+Auf Websites wie Instagram und Pinterest verhindert eine Ebene über dem Foto, dass das „Bild speichern unter“ des Browsers es erreicht. Klicke mit der rechten Maustaste auf das Foto und wähle „Imgkeep: Bild hier finden“: Imgkeep findet das Bild hinter der Ebene, in der größten verfügbaren Größe. Wenn es nicht sicher ist, welches Bild du meinst, zeigt es dir die Bilder auf dem Bildschirm zur Auswahl.
 
-FORMATE
+Bild hier finden ist aus, bis du es einschaltest, in den Optionen oder bei der ersten Nutzung. Es sieht sich die aktuelle Seite nur an, wenn du es bittest, und verändert sie nie.
 
-• Dateien, die sich überall öffnen: normales JPG oder PNG, und JPGs werden als .jpg gespeichert, nicht als .jfif. SVG- und data:-Bilder funktionieren auch.
-• Animation bleibt erhalten: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF, das sich weiter bewegt, mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
-• Als PDF speichern: ein einseitiges PDF genau in der Größe des Bildes, für Belege, Dokumente und zum Teilen. Transparenz bleibt erhalten.
+WEBP UND AVIF IN PNG ODER JPG UMWANDELN
+
+Hol dir das Format, das du zum Bearbeiten, Teilen und für andere Apps brauchst: PNG, JPG, WebP, GIF, PDF oder das Originalformat.
+
+• Normale Bilddateien: JPGs werden als .jpg gespeichert, nicht als .jfif. SVG- und data:-Bilder funktionieren auch.
+• Animationen bleiben in Bewegung: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
+• Als PDF speichern: ein einseitiges PDF in der Größe des Bildes, mit Transparenz. Praktisch für Belege, Dokumente und zum Teilen.
 • Als PNG kopieren: Das Bild landet als echtes PNG mit Transparenz in der Zwischenablage, bereit zum Einfügen.
+• Original behalten: Speichere das Bild im Originalformat, wenn du keine Umwandlung brauchst.
 
-GRÖSSE UND QUALITÄT
+BILDGRÖSSE ÄNDERN UND QUALITÄT STEUERN
 
-• Größe ändern: Lege in den Optionen eine maximale Breite fest, und größere Bilder werden passend verkleinert, ohne ihre Form zu verlieren. Kleinere werden nie vergrößert.
-• Weitere Optionen: Sieh dir eine Vorschau des Ergebnisses mit der echten Größe in Pixeln und Kilobyte an und wähle Format, Breite, Qualität, Hintergrund und Dateinamen nur für dieses Bild.
-• Qualität nach Wunsch: Regler für die JPG- und WebP-Qualität und die Hintergrundfarbe für transparente Bilder, die als JPG gespeichert werden.
+• Automatisch verkleinern: Lege in den Optionen eine maximale Breite fest. Größere Bilder werden proportional verkleinert; kleinere werden nie vergrößert.
+• Vorschau vor dem Speichern: Weitere Optionen zeigt die Größe des Ergebnisses in Pixeln und Kilobyte. Wähle Format, Breite, Qualität, Hintergrund und Dateinamen für dieses Bild.
+• Qualität einstellen: Regler für die JPG- und WebP-Qualität und eine Hintergrundfarbe für transparente Bilder, die als JPG gespeichert werden.
 
-ORDNER UND NAMEN
+ORDNER UND DATEINAMEN NACH WAHL
 
-• Speichert in deinen Ordner: einmal einen Ordner wählen und jedes Bild landet dort, oder den Download-Ordner von Chrome nutzen, oder jedes Mal fragen. Mit Unterordnern wie Imgkeep/{host}.
-• Deine Dateinamen: Namen aus {name}, {host}, {date}, {time}, {w} und {h} bauen, z. B. {name}-{w}x{h}.
-• Überschreibt nie: Gibt es schon eine Datei mit demselben Namen, bekommt die neue eine Nummer wie " (1)", statt sie zu ersetzen.
+• In deinen Ordner speichern: einmal einen Ordner wählen, den Download-Ordner des Browsers nutzen oder jedes Mal fragen. Sortiere Bilder in Unterordner wie Imgkeep/{host}.
+• Eigene Dateinamen: Namen aus {name}, {host}, {date}, {time}, {w} und {h} bauen, z. B. {name}-{w}x{h}.
+• Überschreibt nie: Gibt es schon eine Datei mit demselben Namen, bekommt die neue eine Nummer wie " (1)".
 
-GEBAUT, UM VERTRAUEN ZU VERDIENEN
+LOKALE UMWANDLUNG UND ZUGRIFF UNTER DEINER KONTROLLE
 
-• Bleibt aus deinen Seiten heraus: Imgkeep liest die Websites, die du besuchst, nicht – mit einer Ausnahme, die du steuerst: Wenn du es bittest, ein verdecktes Bild zu finden, sieht es sich diese Seite an, einmal, in diesem Moment. Es verändert nie eine Seite. Aus, bis du es einschaltest.
-• Deine Bilder verlassen nie deinen Computer: Sie werden auf deinem Gerät umgewandelt. Keine Uploads, kein Konto. Das Einzige, was Imgkeep sendet, ist eine anonyme tägliche Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“, damit wir wissen, was wir verbessern sollten. Niemals Adressen oder Dateinamen. Ein Klick in den Optionen schaltet sie aus.
+• Keine Uploads: Die Bilder werden auf deinem Computer umgewandelt. Kein Konto.
+• Kein Lesen von Seiten im Hintergrund: Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden, und verändert nie eine Seite.
 • Nur vier Berechtigungen: contextMenus, downloads, storage, offscreen. Zwei weitere, activeTab und scripting, nur wenn du Bild hier finden einschaltest.
-• Open Source unter der MIT-Lizenz, ohne Build-Schritt: Was du liest, ist das, was läuft.
-• Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs. Imgkeep öffnet nur dann ein kleines Fenster, wenn du es aufrufst (Als PNG kopieren, Weitere Optionen) oder wenn ein Speichervorgang deine Zustimmung braucht, und bittet nur ein einziges Mal um eine Bewertung, nachdem du es eine Weile genutzt hast.
+• Eine anonyme tägliche Zusammenfassung: Nutzungszahlen und Fehler wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“, damit wir wissen, was wir verbessern sollten. Niemals Bilder, Webadressen oder Dateinamen. Ein Klick in den Optionen schaltet sie aus.
+• Open Source unter der MIT-Lizenz, ohne Build-Schritt: Der Code, den du liest, ist der Code, der läuft.
+• Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs und nur eine einzige Bitte um eine Bewertung. Jede Funktion, die es heute gibt, bleibt kostenlos.
 
 WENN EINE WEBSITE EIN BILD BLOCKIERT
 
 Einige Websites verhindern, dass andere Websites ihre Bilder lesen. Nur dann, und erst nachdem du es per Klick erlaubt hast, bittet Imgkeep deinen Browser um Zugriff auf genau diese eine Website. Du kannst ihn jederzeit in den Optionen entfernen. Oder wähle „Stattdessen im Originalformat speichern“.
 
-Jede Funktion, die Imgkeep heute hat, bleibt kostenlos. Ideen und Abstimmungen: imgkeep.app/ideas.html
+Funktionen vorschlagen und über Ideen abstimmen: https://imgkeep.app/ideas.html
 ```
 
 ## fr — French
 
 ```text
-Imgkeep est une extension de navigateur gratuite et open source. Elle ajoute une entrée au menu du clic droit : choisissez un format, et l'image est convertie sur votre ordinateur puis enregistrée directement dans votre dossier. Ou copiez-la en PNG et collez-la où vous voulez.
+Imgkeep est un convertisseur d'images gratuit pour votre menu du clic droit. Enregistrez n'importe quelle image en PNG, JPG, WebP, GIF ou PDF, convertissez le WebP et l'AVIF, et enregistrez des photos même sur les sites qui les cachent au clic droit.
 
-Fonctionne là où le clic droit ne passe pas : sur des sites comme Instagram et Pinterest, les photos sont sous un autre calque, et le clic droit ne les atteint pas. Choisissez Imgkeep : Trouver l'image ici, et Imgkeep trouve la photo pour vous, dans sa plus grande taille. Désactivé tant que vous ne l'activez pas.
+Clic droit sur une image → Imgkeep : Enregistrer l'image en → choisissez le format. Elle est enregistrée directement dans le dossier de votre choix, ou copiez-la en PNG et collez-la dans une autre application. Les images sont converties sur votre ordinateur : pas d'envoi, pas de compte.
 
-Beaucoup de sites servent désormais des images WebP et AVIF que d'autres applications n'ouvrent pas. Imgkeep les transforme en fichiers qui s'ouvrent partout, en un clic droit :
+FONCTIONNE LÀ OÙ LE CLIC DROIT NE PASSE PAS
 
-Imgkeep : Enregistrer l'image en → PNG · JPG · WebP · GIF (garde l'animation) · PDF · Format d'origine · Copier en PNG · Plus d'options…
+Sur des sites comme Instagram et Pinterest, un calque posé sur la photo empêche le « Enregistrer l'image sous » du navigateur de l'atteindre. Faites un clic droit sur la photo et choisissez « Imgkeep : Trouver l'image ici » : Imgkeep trouve l'image derrière le calque, dans la plus grande taille disponible. S'il n'est pas sûr de l'image voulue, il vous montre les images à l'écran pour que vous choisissiez.
 
-FORMATS
+Trouver l'image ici est désactivé tant que vous ne l'activez pas, dans les Options ou à la première utilisation. Il ne regarde la page en cours que lorsque vous le demandez, et ne la modifie jamais.
 
-• Des fichiers qui s'ouvrent partout : JPG ou PNG standard, et les JPG sont enregistrés en .jpg, pas en .jfif. Les images SVG et data: fonctionnent aussi.
-• L'animation est conservée : les WebP, AVIF et APNG animés deviennent un GIF qui bouge toujours, avec son rythme et sa transparence. Les GIF animés sont enregistrés tels quels.
-• Enregistrer en PDF : un PDF d'une page à la taille exacte de l'image, pour les reçus, les documents et le partage. La transparence est conservée.
+CONVERTIR LE WEBP ET L'AVIF EN PNG OU JPG
+
+Obtenez le format qu'il vous faut pour retoucher, partager et utiliser dans d'autres applications : PNG, JPG, WebP, GIF, PDF ou le format d'origine.
+
+• Des fichiers standard : les JPG sont enregistrés en .jpg, pas en .jfif. Les images SVG et data: fonctionnent aussi.
+• Les animations continuent de bouger : les WebP, AVIF et APNG animés deviennent un GIF qui garde son rythme et sa transparence. Les GIF animés sont enregistrés sans changement.
+• Enregistrer en PDF : un PDF d'une page à la taille de l'image, transparence comprise. Pratique pour les reçus, les documents et le partage.
 • Copier en PNG : l'image va dans le presse-papiers en vrai PNG, transparence comprise, prête à être collée.
+• Garder l'original : enregistrez l'image dans son format d'origine quand vous n'avez pas besoin de conversion.
 
-TAILLE ET QUALITÉ
+REDIMENSIONNER ET CONTRÔLER LA QUALITÉ
 
-• Redimensionner : fixez une largeur maximale dans les Options et les images plus grandes sont réduites pour tenir, en gardant leurs proportions. Les plus petites ne sont jamais agrandies.
-• Plus d'options : un aperçu du résultat avec sa taille réelle en pixels et en kilo-octets, puis le choix du format, de la largeur, de la qualité, du fond et du nom de fichier pour cette image seulement.
-• La qualité que vous choisissez : curseurs de qualité JPG et WebP, et couleur de fond pour les images transparentes enregistrées en JPG.
+• Redimensionnement automatique : fixez une largeur maximale dans les Options. Les images plus grandes sont réduites en gardant leurs proportions ; les plus petites ne sont jamais agrandies.
+• Aperçu avant l'enregistrement : Plus d'options affiche la taille du résultat en pixels et en kilo-octets. Choisissez le format, la largeur, la qualité, le fond et le nom de fichier pour cette image.
+• Régler la qualité : curseurs de qualité JPG et WebP, et une couleur de fond pour les images transparentes enregistrées en JPG.
 
-DOSSIERS ET NOMS
+CHOISISSEZ VOS DOSSIERS ET NOMS DE FICHIERS
 
-• Enregistre dans votre dossier : choisissez un dossier une fois et chaque image y va, ou utilisez les Téléchargements de Chrome, ou demandez à chaque fois. Ajoutez des sous-dossiers comme Imgkeep/{host}.
-• Vos noms de fichiers : composez des noms avec {name}, {host}, {date}, {time}, {w} et {h}, par exemple {name}-{w}x{h}.
-• N'écrase jamais rien : si un fichier du même nom existe déjà, le nouveau reçoit un numéro, comme « (1) », au lieu de le remplacer.
+• Enregistrer dans votre dossier : choisissez un dossier une fois, utilisez le dossier de téléchargements du navigateur ou demandez à chaque fois. Rangez les images dans des sous-dossiers comme Imgkeep/{host}.
+• Noms de fichiers personnalisés : composez des noms avec {name}, {host}, {date}, {time}, {w} et {h}, par exemple {name}-{w}x{h}.
+• N'écrase jamais rien : si un fichier du même nom existe déjà, le nouveau reçoit un numéro, comme « (1) ».
 
-CONÇU POUR MÉRITER VOTRE CONFIANCE
+CONVERSION LOCALE ET ACCÈS SOUS VOTRE CONTRÔLE
 
-• Reste en dehors de vos pages : Imgkeep ne lit pas les sites que vous visitez, à une exception près, que vous contrôlez : quand vous lui demandez de trouver une image recouverte, il regarde cette page, une seule fois, à ce moment-là. Il ne modifie jamais une page. Désactivé tant que vous ne l'activez pas.
-• Vos images ne quittent jamais votre ordinateur : elles sont converties sur votre appareil. Pas d'envoi, pas de compte. La seule chose qu'Imgkeep envoie est un résumé quotidien anonyme, comme « 12 enregistrements en JPG, 1 échec », pour savoir quoi améliorer. Jamais d'adresses ni de noms de fichiers. Un clic dans les Options le désactive.
+• Pas d'envoi : les images sont converties sur votre ordinateur. Pas de compte.
+• Aucune lecture des pages en arrière-plan : Imgkeep ne regarde une page que lorsque vous lui demandez d'y trouver une image, et ne modifie jamais une page.
 • Seulement quatre autorisations : contextMenus, downloads, storage, offscreen. Deux de plus, activeTab et scripting, seulement si vous activez Trouver l'image ici.
-• Open source sous licence MIT, sans étape de compilation : ce que vous lisez est ce qui s'exécute.
-• Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue. Imgkeep n'ouvre une petite fenêtre que si vous la demandez (Copier en PNG, Plus d'options) ou quand un enregistrement a besoin de votre accord, et ne demande une note qu'une seule fois, après que vous l'avez utilisé un moment.
+• Un seul résumé quotidien anonyme : des compteurs d'utilisation et d'échecs, comme « 12 enregistrements en JPG, 1 échec », pour savoir quoi améliorer. Jamais d'images, d'adresses de sites ni de noms de fichiers. Un clic dans les Options le désactive.
+• Open source sous licence MIT, sans étape de compilation : le code que vous lisez est le code qui s'exécute.
+• Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue, et une seule demande de note, une fois pour toutes. Toutes les fonctions disponibles aujourd'hui restent gratuites.
 
 QUAND UN SITE BLOQUE UNE IMAGE
 
 Quelques sites empêchent d'autres sites de lire leurs images. Seulement dans ce cas, et seulement après que vous l'avez autorisé d'un clic, Imgkeep demande à votre navigateur l'accès à ce seul site. Vous pouvez le retirer à tout moment dans les Options. Ou choisissez « Enregistrer au format d'origine ».
 
-Toutes les fonctions d'Imgkeep d'aujourd'hui restent gratuites. Idées et votes : imgkeep.app/ideas.html
+Proposez des fonctions et votez pour des idées : https://imgkeep.app/ideas.html
 ```
 
 ## ja — Japanese
 
 ```text
-Imgkeep は無料のオープンソースのブラウザ拡張機能です。右クリックメニューに項目を1つ追加します。形式を選ぶと、画像はパソコン上で変換され、そのまま指定のフォルダに保存されます。PNG としてコピーして、どこにでも貼り付けることもできます。
+Imgkeep は、右クリックメニューで使える無料の画像変換ツールです。どんな画像も PNG・JPG・WebP・GIF・PDF で保存でき、WebP や AVIF を変換し、右クリックから画像を隠しているサイトでも写真を保存できます。
 
-右クリックが届かない場所でも使えます：Instagram や Pinterest などのサイトでは、写真の上に別の層があり、右クリックが届きません。「Imgkeep: ここで画像を探す」を選ぶと、Imgkeep が写真をいちばん大きいサイズで見つけます。オンにするまでオフです。
+画像を右クリック →「Imgkeep: 名前を付けて画像を保存」→ 形式を選ぶ。選んだフォルダにそのまま保存されます。PNG としてコピーして、別のアプリに貼り付けることもできます。画像はパソコン上で変換され、アップロードもアカウントも不要です。
 
-最近は多くのサイトが、他のアプリでは開けない WebP や AVIF の画像を使っています。Imgkeep なら右クリック一回で、どこでも開けるファイルに変換できます。
+右クリックが届かない場所でも使える
 
-Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（アニメーションを保持） · PDF · 元の形式 · PNGとしてコピー · その他のオプション…
+Instagram や Pinterest などのサイトでは、写真の上に重なった層のせいで、ブラウザの「名前を付けて画像を保存」が届きません。写真の上で右クリックして「Imgkeep: ここで画像を探す」を選ぶと、Imgkeep が層の下の画像を、利用できるいちばん大きいサイズで見つけます。どの画像か判断できないときは、画面上の画像を表示して選んでもらいます。
 
-形式
+「ここで画像を探す」は、オンにするまでオフです。オプションから、または初めて使うときにオンにできます。ページを見るのは頼まれたときだけで、ページを変更することはありません。
 
-• どこでも開けるファイル：標準的な JPG や PNG で保存。JPG は .jfif ではなく .jpg で保存されます。SVG や data: 画像にも対応。
-• アニメーションを保持：アニメーション WebP・AVIF・APNG は、タイミングと透過を保ったまま動く GIF になります。アニメーション GIF はそのまま保存されます。
-• PDF で保存：画像とまったく同じサイズの 1 ページの PDF。領収書や書類、共有に便利です。透過も保たれます。
-• PNGとしてコピー：透過を保った本物のPNGとしてクリップボードに入れ、どこにでも貼り付けられます。
+WEBP と AVIF を PNG や JPG に変換
 
-サイズと画質
+編集や共有、他のアプリで使うのに必要な形式で保存できます：PNG、JPG、WebP、GIF、PDF、または元の形式。
 
-• サイズ変更：オプションで最大幅を設定すると、それより大きい画像は縦横比を保って縮小されます。小さい画像は拡大されません。
-• その他のオプション：仕上がりをプレビューし、実際のピクセル数とファイルサイズを確認してから、その画像だけの形式、幅、画質、背景、ファイル名を選べます。
+• 標準的な画像ファイル：JPG は .jfif ではなく .jpg で保存されます。SVG や data: 画像にも対応。
+• アニメーションはそのまま：アニメーション WebP・AVIF・APNG は、タイミングと透過を保った GIF になります。アニメーション GIF はそのまま保存されます。
+• PDF で保存：画像と同じサイズの 1 ページの PDF。透過も保たれます。領収書や書類、共有に便利です。
+• PNGとしてコピー：透過を保った本物の PNG としてクリップボードに入れ、どこにでも貼り付けられます。
+• 元の形式のまま：変換が不要なときは、画像を元の形式で保存できます。
+
+サイズ変更と画質の調整
+
+• 自動でサイズ変更：オプションで最大幅を設定すると、それより大きい画像は縦横比を保って縮小されます。小さい画像は拡大されません。
+• 保存前にプレビュー：「その他のオプション」で、仕上がりのピクセル数とキロバイト単位のサイズを確認できます。その画像の形式、幅、画質、背景、ファイル名を選べます。
 • 画質を調整：JPG と WebP の画質スライダー、透過画像を JPG で保存するときの背景色を設定できます。
 
-フォルダとファイル名
+フォルダとファイル名を自由に
 
-• 指定のフォルダへ保存：一度フォルダを選べば、すべての画像がそこに保存されます。Chrome のダウンロード フォルダを使うことも、毎回確認することもできます。Imgkeep/{host} のようなサブフォルダも追加できます。
+• 指定のフォルダへ保存：一度フォルダを選ぶか、ブラウザのダウンロード フォルダを使うか、毎回確認するかを選べます。Imgkeep/{host} のようなサブフォルダで整理できます。
 • ファイル名を自由に：{name}、{host}、{date}、{time}、{w}、{h} を組み合わせて名前を作れます。例：{name}-{w}x{h}
-• 上書きしない：同じ名前のファイルがあれば、置き換えずに「 (1)」のような番号を付けて保存します。
+• 上書きしない：同じ名前のファイルがあれば、新しいファイルに「 (1)」のような番号を付けます。
 
-安心して使えるように
+パソコン上での変換と、あなたが決めるアクセス
 
-• ページには立ち入りません：Imgkeep は閲覧中のサイトを読み取りません。例外はあなたが決める1つだけ。覆われた画像を探すよう頼んだときに、そのページを、その瞬間に1回だけ見ます。ページを変更することはありません。オンにするまでオフです。
-• 画像がパソコンの外に出ることはありません：お使いのデバイス上で変換されます。アップロードもアカウントもなし。Imgkeep が送るのは「JPGで12回保存、1回失敗」のような匿名の1日分のまとめだけで、改善に役立てます。アドレスやファイル名は一切含みません。オプションでワンクリックでオフにできます。
+• アップロードなし：画像はパソコン上で変換されます。アカウントも不要です。
+• バックグラウンドでページを読みません：Imgkeep がページを見るのは、そこで画像を探すよう頼まれたときだけで、ページを変更することはありません。
 • 権限は 4 つだけ：contextMenus、downloads、storage、offscreen。「ここで画像を探す」をオンにした場合のみ、activeTab と scripting の 2 つが加わります。
+• 匿名の 1 日分のまとめを 1 回だけ：「JPGで12回保存、1回失敗」のような使用回数と失敗の数で、改善に役立てます。画像、サイトのアドレス、ファイル名は一切含みません。オプションでワンクリックでオフにできます。
 • MIT ライセンスのオープンソースで、ビルド工程なし。読めるコードがそのまま動きます。
-• 無料で制限なし：広告なし、ようこそタブなし。小さなウィンドウが開くのは、あなたが呼び出したとき（PNGとしてコピー、その他のオプション）か、保存に確認が必要なときだけ。評価のお願いは、しばらく使っていただいた後に一度だけです。
+• 無料で制限なし：広告なし、ようこそタブなし、評価のお願いは一度だけ。現在のすべての機能は、これからも無料です。
 
 サイトが画像をブロックしているとき
 
 一部のサイトは、他のサイトから画像を読み込めないようにしています。その場合に限り、あなたがクリックで許可したときだけ、Imgkeep はそのサイトひとつへのアクセスをブラウザに求めます。アクセスはオプションからいつでも削除できます。「代わりに元の形式で保存」を選ぶこともできます。
 
-現在の Imgkeep のすべての機能は、これからも無料です。アイデアと投票：imgkeep.app/ideas.html
+機能の提案やアイデアへの投票：https://imgkeep.app/ideas.html
 ```
 
 ## hi — Hindi
 
 ```text
-Imgkeep एक मुफ़्त, ओपन-सोर्स ब्राउज़र एक्सटेंशन है। यह आपके राइट-क्लिक मेन्यू में एक विकल्प जोड़ता है: फ़ॉर्मैट चुनें, और इमेज आपके कंप्यूटर पर बदलकर सीधे आपके फ़ोल्डर में सेव हो जाती है। या इसे PNG के रूप में कॉपी करके कहीं भी पेस्ट करें।
+Imgkeep आपके राइट-क्लिक मेन्यू के लिए एक मुफ़्त इमेज कन्वर्टर है। किसी भी इमेज को PNG, JPG, WebP, GIF या PDF के रूप में सेव करें, WebP और AVIF बदलें, और उन साइटों पर भी फ़ोटो सेव करें जो उन्हें राइट-क्लिक से छिपाती हैं।
 
-जहाँ राइट-क्लिक काम नहीं करता, वहाँ भी काम करता है: Instagram और Pinterest जैसी साइटों पर फ़ोटो एक और परत के नीचे होती हैं, इसलिए राइट-क्लिक उन तक नहीं पहुँचता। Imgkeep: यहाँ इमेज ढूँढें चुनें, और Imgkeep आपके लिए फ़ोटो उसके सबसे बड़े साइज़ में ढूँढ देता है। जब तक आप चालू न करें, यह बंद रहता है।
+इमेज पर राइट-क्लिक करें → Imgkeep: इमेज इस रूप में सेव करें → अपना फ़ॉर्मैट चुनें। इमेज सीधे आपके चुने हुए फ़ोल्डर में सेव होती है, या उसे PNG के रूप में कॉपी करके किसी दूसरे ऐप में पेस्ट करें। इमेज आपके कंप्यूटर पर ही बदली जाती हैं: न अपलोड, न अकाउंट।
 
-आजकल कई साइटें WebP और AVIF इमेज देती हैं जो दूसरे ऐप नहीं खोलते। Imgkeep एक राइट-क्लिक में उन्हें ऐसी फ़ाइलों में बदल देता है जो हर जगह खुलती हैं:
+जहाँ राइट-क्लिक काम नहीं करता, वहाँ भी काम करता है
 
-Imgkeep: इमेज इस रूप में सेव करें → PNG · JPG · WebP · GIF (एनिमेशन बना रहता है) · PDF · मूल फ़ॉर्मैट · PNG के रूप में कॉपी करें · और विकल्प…
+Instagram और Pinterest जैसी साइटों पर फ़ोटो के ऊपर एक परत होती है, जिसकी वजह से ब्राउज़र का अपना "इमेज इस रूप में सेव करें" उस तक नहीं पहुँचता। फ़ोटो पर राइट-क्लिक करें और "Imgkeep: यहाँ इमेज ढूँढें" चुनें: Imgkeep परत के पीछे की इमेज को उसके सबसे बड़े उपलब्ध साइज़ में ढूँढ देता है। अगर उसे पक्का पता न हो कि आप कौन-सी इमेज चाहते थे, तो वह स्क्रीन पर मौजूद इमेज दिखाता है ताकि आप चुन सकें।
 
-फ़ॉर्मैट
+यहाँ इमेज ढूँढें तब तक बंद रहता है जब तक आप इसे चालू न करें, विकल्पों में या पहली बार इस्तेमाल करते समय। यह मौजूदा पेज को सिर्फ़ तभी देखता है जब आप कहें, और उसे कभी नहीं बदलता।
 
-• हर जगह खुलने वाली फ़ाइलें: सामान्य JPG या PNG, और JPG फ़ाइलें .jfif नहीं, .jpg के रूप में सेव होती हैं। SVG और data: इमेज भी चलती हैं।
-• एनिमेशन बना रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जो चलते रहते हैं, उनकी टाइमिंग और पारदर्शिता के साथ। एनिमेटेड GIF बिल्कुल वैसे ही सेव होते हैं।
-• PDF में सेव करें: इमेज के बिल्कुल बराबर आकार का एक पेज का PDF, रसीदों, दस्तावेज़ों और शेयर करने के लिए। पारदर्शिता बनी रहती है।
+WEBP और AVIF को PNG या JPG में बदलें
+
+एडिटिंग, शेयर करने और दूसरे ऐप के लिए ज़रूरी फ़ॉर्मैट पाएँ: PNG, JPG, WebP, GIF, PDF या मूल फ़ॉर्मैट।
+
+• सामान्य इमेज फ़ाइलें: JPG फ़ाइलें .jfif नहीं, .jpg के रूप में सेव होती हैं। SVG और data: इमेज भी चलती हैं।
+• एनिमेशन चलता रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जिनमें टाइमिंग और पारदर्शिता बनी रहती है। एनिमेटेड GIF बिना बदलाव के सेव होते हैं।
+• PDF में सेव करें: इमेज के साइज़ का एक पेज का PDF, पारदर्शिता के साथ। रसीदों, दस्तावेज़ों और शेयर करने के लिए उपयोगी।
 • PNG के रूप में कॉपी करें: इमेज पारदर्शिता के साथ असली PNG के रूप में क्लिपबोर्ड पर जाती है, कहीं भी पेस्ट करने के लिए तैयार।
+• मूल रखें: जब बदलने की ज़रूरत न हो, तो इमेज को उसके मूल फ़ॉर्मैट में सेव करें।
 
-साइज़ और क्वालिटी
+इमेज का साइज़ बदलें और क्वालिटी नियंत्रित करें
 
-• साइज़ बदलें: विकल्पों में अधिकतम चौड़ाई तय करें और बड़ी इमेज आकार का अनुपात बनाए रखते हुए छोटी हो जाती हैं। छोटी इमेज कभी बड़ी नहीं की जातीं।
-• और विकल्प: नतीजे का प्रीव्यू उसके असली साइज़ (पिक्सेल और किलोबाइट) के साथ देखें, फिर सिर्फ़ उस इमेज के लिए फ़ॉर्मैट, चौड़ाई, क्वालिटी, बैकग्राउंड और फ़ाइल का नाम चुनें।
-• क्वालिटी आपके हाथ में: JPG और WebP क्वालिटी के स्लाइडर, और JPG में सेव होने वाली पारदर्शी इमेज के लिए बैकग्राउंड रंग।
+• अपने-आप साइज़ बदलें: विकल्पों में अधिकतम चौड़ाई तय करें। बड़ी इमेज अनुपात बनाए रखते हुए छोटी हो जाती हैं; छोटी इमेज कभी बड़ी नहीं की जातीं।
+• सेव करने से पहले प्रीव्यू: और विकल्प नतीजे का साइज़ पिक्सेल और किलोबाइट में दिखाता है। उस इमेज के लिए फ़ॉर्मैट, चौड़ाई, क्वालिटी, बैकग्राउंड और फ़ाइल का नाम चुनें।
+• क्वालिटी एडजस्ट करें: JPG और WebP क्वालिटी के स्लाइडर, और JPG में सेव होने वाली पारदर्शी इमेज के लिए बैकग्राउंड रंग।
 
-फ़ोल्डर और नाम
+अपने फ़ोल्डर और फ़ाइल नाम चुनें
 
-• आपके फ़ोल्डर में सेव: एक बार फ़ोल्डर चुनें और हर इमेज वहीं जाएगी, या Chrome का डाउनलोड फ़ोल्डर इस्तेमाल करें, या हर बार पूछें। Imgkeep/{host} जैसे सब-फ़ोल्डर जोड़ें।
-• आपके फ़ाइल नाम: {name}, {host}, {date}, {time}, {w} और {h} से नाम बनाएँ, जैसे {name}-{w}x{h}।
-• कभी ओवरराइट नहीं करता: अगर उसी नाम की फ़ाइल पहले से है, तो नई फ़ाइल को " (1)" जैसा नंबर मिलता है और पुरानी फ़ाइल बदली नहीं जाती।
+• आपके फ़ोल्डर में सेव: एक बार फ़ोल्डर चुनें, ब्राउज़र का डाउनलोड फ़ोल्डर इस्तेमाल करें, या हर बार पूछें। इमेज को Imgkeep/{host} जैसे सब-फ़ोल्डर में व्यवस्थित करें।
+• अपने फ़ाइल नाम: {name}, {host}, {date}, {time}, {w} और {h} से नाम बनाएँ, जैसे {name}-{w}x{h}।
+• कभी ओवरराइट नहीं करता: अगर उसी नाम की फ़ाइल पहले से है, तो नई फ़ाइल को " (1)" जैसा नंबर मिलता है।
 
-भरोसे के लिए बनाया गया
+आपके कंप्यूटर पर कन्वर्ज़न और आपके नियंत्रण में पहुँच
 
-• आपके पेजों से दूर रहता है: Imgkeep आपकी देखी गई साइटों को नहीं पढ़ता, सिर्फ़ एक अपवाद के साथ जो आपके हाथ में है: जब आप उससे कोई ढकी हुई इमेज ढूँढने को कहते हैं, तो वह उस पेज को एक बार, उसी पल देखता है। वह कभी किसी पेज को नहीं बदलता। जब तक आप चालू न करें, यह बंद रहता है।
-• आपकी इमेज कभी आपके कंप्यूटर से बाहर नहीं जातीं: वे आपके डिवाइस पर ही बदली जाती हैं। न अपलोड, न अकाउंट। Imgkeep सिर्फ़ एक गुमनाम रोज़ का सारांश भेजता है, जैसे "JPG में 12 सेव, 1 विफल", ताकि हम जानें कि क्या बेहतर करना है। कभी भी पते या फ़ाइल के नाम नहीं। विकल्पों में एक क्लिक से इसे बंद करें।
+• कोई अपलोड नहीं: इमेज आपके कंप्यूटर पर ही बदली जाती हैं। कोई अकाउंट नहीं।
+• बैकग्राउंड में पेज नहीं पढ़ता: Imgkeep किसी पेज को सिर्फ़ तभी देखता है जब आप उससे वहाँ इमेज ढूँढने को कहें, और कभी किसी पेज को नहीं बदलता।
 • सिर्फ़ चार अनुमतियाँ: contextMenus, downloads, storage, offscreen। दो और, activeTab और scripting, सिर्फ़ तब जब आप यहाँ इमेज ढूँढें चालू करें।
-• MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो आप पढ़ते हैं वही चलता है।
-• मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब। Imgkeep छोटी विंडो तभी खोलता है जब आप खुद कहें (PNG के रूप में कॉपी करें, और विकल्प) या जब किसी सेव के लिए आपकी मंज़ूरी चाहिए, और कुछ समय इस्तेमाल के बाद सिर्फ़ एक बार रेटिंग माँगता है।
+• रोज़ एक गुमनाम सारांश: इस्तेमाल और विफलताओं की गिनती, जैसे "JPG में 12 सेव, 1 विफल", ताकि हम जानें कि क्या बेहतर करना है। कभी भी इमेज, वेबसाइट के पते या फ़ाइल के नाम नहीं। विकल्पों में एक क्लिक से इसे बंद करें।
+• MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो कोड आप पढ़ते हैं वही चलता है।
+• मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब, और रेटिंग का अनुरोध सिर्फ़ एक बार। आज उपलब्ध हर सुविधा मुफ़्त रहेगी।
 
 जब कोई साइट इमेज को ब्लॉक करती है
 
 कुछ साइटें दूसरी साइटों को अपनी इमेज पढ़ने से रोकती हैं। सिर्फ़ तभी, और सिर्फ़ आपके क्लिक करके अनुमति देने के बाद, Imgkeep आपके ब्राउज़र से उस एक साइट की पहुँच माँगता है। आप इसे कभी भी विकल्पों में हटा सकते हैं। या "इसके बजाय मूल फ़ॉर्मैट में सेव करें" चुनें।
 
-Imgkeep की आज की हर सुविधा मुफ़्त रहेगी। सुझाव और वोट: imgkeep.app/ideas.html
+सुविधाएँ सुझाएँ और आइडिया पर वोट करें: https://imgkeep.app/ideas.html
 ```
 
 ## ar — Arabic
 
 ```text
-Imgkeep إضافة متصفح مجانية ومفتوحة المصدر. تضيف عنصرًا واحدًا إلى قائمة النقر بزر الماوس الأيمن: اختر صيغة، فتُحوَّل الصورة على جهازك وتُحفظ مباشرة في مجلدك. أو انسخها بصيغة PNG والصقها في أي مكان.
+Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس الأيمن. احفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، وحوّل صور WebP وAVIF، واحفظ الصور حتى في المواقع التي تخفيها عن النقرة اليمنى.
 
-يعمل حيث لا تعمل النقرة اليمنى: في مواقع مثل Instagram وPinterest، تكون الصور تحت طبقة أخرى فلا تصل إليها النقرة اليمنى. اختر Imgkeep: البحث عن الصورة هنا، وسيجد Imgkeep الصورة لك بأكبر حجم لها. متوقف حتى تشغّله.
+انقر بزر الماوس الأيمن على صورة ← Imgkeep: حفظ الصورة بصيغة ← اختر الصيغة. تُحفظ مباشرة في المجلد الذي اخترته، أو انسخها بصيغة PNG والصقها في تطبيق آخر. تُحوَّل الصور على جهازك: بلا رفع ملفات، بلا حساب.
 
-تقدّم مواقع كثيرة اليوم صور WebP وAVIF لا تفتحها التطبيقات الأخرى. يحوّلها Imgkeep إلى ملفات تُفتح في كل مكان، بنقرة يمنى واحدة:
+يعمل حيث لا تعمل النقرة اليمنى
 
-Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع الحفاظ على الحركة) · PDF · الصيغة الأصلية · نسخ بصيغة PNG · مزيد من الخيارات…
+في مواقع مثل Instagram وPinterest، توجد طبقة فوق الصورة تمنع أمر "حفظ الصورة باسم" في المتصفح من الوصول إليها. انقر بزر الماوس الأيمن فوق الصورة واختر "Imgkeep: البحث عن الصورة هنا"، فيجد Imgkeep الصورة خلف الطبقة بأكبر حجم متاح. وإذا لم يكن متأكدًا من الصورة التي تقصدها، يعرض لك الصور الظاهرة على الشاشة لتختار منها.
 
-الصيغ
+البحث عن الصورة هنا متوقف حتى تشغّله، من الخيارات أو في أول مرة تستخدمه. لا ينظر إلى الصفحة الحالية إلا عندما تطلب ذلك، ولا يغيّرها أبدًا.
 
-• ملفات تُفتح في أي مكان: JPG أو PNG قياسية، وتُحفظ ملفات JPG بامتداد ‎.jpg وليس ‎.jfif. تعمل صور SVG وdata:‎ أيضًا.
-• الحفاظ على الحركة: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يظل متحركًا، بتوقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة كما هي تمامًا.
-• الحفظ بصيغة PDF: ملف PDF من صفحة واحدة بحجم الصورة تمامًا، للإيصالات والمستندات والمشاركة. وتبقى الشفافية كما هي.
+تحويل WebP وAVIF إلى PNG أو JPG
+
+احصل على الصيغة التي تحتاجها للتعديل والمشاركة والتطبيقات الأخرى: PNG أو JPG أو WebP أو GIF أو PDF أو الصيغة الأصلية.
+
+• ملفات صور قياسية: تُحفظ ملفات JPG بامتداد ‎.jpg وليس ‎.jfif. تعمل صور SVG وdata:‎ أيضًا.
+• الحركة تستمر: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يحافظ على توقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة دون تغيير.
+• الحفظ بصيغة PDF: ملف PDF من صفحة واحدة بحجم الصورة، مع الشفافية. مفيد للإيصالات والمستندات والمشاركة.
 • النسخ بصيغة PNG: تُنسخ الصورة إلى الحافظة كملف PNG حقيقي مع شفافيتها، جاهزة للصق في أي مكان.
+• الاحتفاظ بالأصل: احفظ الصورة بصيغتها الأصلية عندما لا تحتاج إلى تحويل.
 
-الحجم والجودة
+تغيير حجم الصور والتحكم في الجودة
 
-• تغيير الحجم: حدّد عرضًا أقصى من الخيارات فتُصغَّر الصور الأكبر لتناسبه مع الحفاظ على نسبها. ولا تُكبَّر الصور الأصغر أبدًا.
-• مزيد من الخيارات: عاين النتيجة بحجمها الحقيقي بالبكسل والكيلوبايت، ثم اختر الصيغة والعرض والجودة والخلفية واسم الملف لهذه الصورة وحدها.
-• جودة تتحكم بها: أشرطة لضبط جودة JPG وWebP، ولون الخلفية للصور الشفافة المحفوظة بصيغة JPG.
+• تغيير الحجم تلقائيًا: حدّد عرضًا أقصى من الخيارات. تُصغَّر الصور الأكبر مع الحفاظ على نسبها، ولا تُكبَّر الصور الأصغر أبدًا.
+• معاينة قبل الحفظ: يعرض مزيد من الخيارات حجم النتيجة بالبكسل والكيلوبايت. اختر الصيغة والعرض والجودة والخلفية واسم الملف لتلك الصورة.
+• ضبط الجودة: أشرطة لضبط جودة JPG وWebP، ولون خلفية للصور الشفافة المحفوظة بصيغة JPG.
 
-المجلدات والأسماء
+اختر مجلداتك وأسماء ملفاتك
 
-• الحفظ في مجلدك: اختر مجلدًا مرة واحدة وستذهب إليه كل صورة، أو استخدم مجلد التنزيلات في Chrome، أو اطلب السؤال في كل مرة. أضف مجلدات فرعية مثل Imgkeep/{host}.
-• أسماء ملفاتك: كوّن الأسماء من {name} و{host} و{date} و{time} و{w} و{h}، مثل {name}-{w}x{h}.
-• لا يستبدل أي ملف: إذا كان هناك ملف بالاسم نفسه، يحصل الملف الجديد على رقم مثل " (1)" بدلًا من استبدال القديم.
+• الحفظ في مجلدك: اختر مجلدًا مرة واحدة، أو استخدم مجلد التنزيلات في المتصفح، أو اطلب السؤال في كل مرة. نظّم الصور في مجلدات فرعية مثل Imgkeep/{host}.
+• أسماء ملفات مخصصة: كوّن الأسماء من {name} و{host} و{date} و{time} و{w} و{h}، مثل {name}-{w}x{h}.
+• لا يستبدل أي ملف: إذا كان هناك ملف بالاسم نفسه، يحصل الملف الجديد على رقم مثل " (1)".
 
-مصمَّم ليكون جديرًا بالثقة
+تحويل على جهازك ووصول تتحكم فيه
 
-• يبقى خارج صفحاتك: لا يقرأ Imgkeep المواقع التي تزورها، باستثناء واحد تتحكم فيه: عندما تطلب منه العثور على صورة مخفية، ينظر إلى تلك الصفحة مرة واحدة، في تلك اللحظة. ولا يغيّر أي صفحة أبدًا. متوقف حتى تشغّله.
-• صورك لا تغادر جهازك أبدًا: تُحوَّل على جهازك. بلا رفع ملفات، بلا حساب. الشيء الوحيد الذي يرسله Imgkeep هو ملخص يومي مجهول، مثل "12 حفظًا بصيغة JPG، فشل 1"، لنعرف ما الذي نحسّنه. لا عناوين ولا أسماء ملفات أبدًا. نقرة واحدة في الخيارات توقفه.
+• بلا رفع ملفات: تُحوَّل الصور على جهازك. بلا حساب.
+• لا قراءة للصفحات في الخلفية: لا ينظر Imgkeep إلى صفحة إلا عندما تطلب منه العثور على صورة فيها، ولا يغيّر أي صفحة أبدًا.
 • أربعة أذونات فقط: contextMenus وdownloads وstorage وoffscreen. واثنان آخران، activeTab وscripting، فقط إذا شغّلت البحث عن الصورة هنا.
-• مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فما تقرؤه هو ما يعمل.
-• مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية. لا يفتح Imgkeep نافذة صغيرة إلا عندما تطلبها (نسخ بصيغة PNG، مزيد من الخيارات) أو عندما يحتاج الحفظ إلى موافقتك، ويطلب تقييمًا مرة واحدة فقط بعد أن تستخدمه لفترة.
+• ملخص يومي مجهول واحد: أعداد الاستخدام والإخفاقات، مثل "12 حفظًا بصيغة JPG، فشل 1"، لنعرف ما الذي نحسّنه. لا صور ولا عناوين مواقع ولا أسماء ملفات أبدًا. نقرة واحدة في الخيارات توقفه.
+• مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فالشيفرة التي تقرؤها هي التي تعمل.
+• مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية، وطلب تقييم واحد فقط، مرة واحدة. كل ميزة متاحة اليوم ستبقى مجانية.
 
 عندما يحظر موقع صورة
 
 تمنع بعض المواقع المواقع الأخرى من قراءة صورها. في هذه الحالة فقط، وفقط بعد أن تسمح بذلك بنقرة، يطلب Imgkeep من متصفحك الوصول إلى ذلك الموقع وحده. يمكنك إزالته في أي وقت من الخيارات. أو اختر "الحفظ بالصيغة الأصلية بدلًا من ذلك".
 
-كل ميزة في Imgkeep اليوم ستبقى مجانية. الأفكار والتصويت: imgkeep.app/ideas.html
+اقترح ميزات وصوّت على الأفكار: https://imgkeep.app/ideas.html
 ```

@@ -15,49 +15,55 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v8 (for 0.8.0): leads with Find image here ("Works where right-click doesn't"), a distinct opening paragraph, features grouped under Formats / Size and quality / Folders and names, trust bullets updated for the optional permissions. Paste as-is into the dashboard together with the 0.8.0 package. (v7, for 0.6.1, is in git history.)
+v9 (for 0.8.0, approved 2026-10-12): search-friendly headings (Works where right-click doesn't, Convert WebP and AVIF…), sites named only as examples ("on sites like Instagram and Pinterest", never "downloader"), Keep the original bullet, four permissions and one rating request kept. Edge: the same with "your browser's Downloads folder" (see edge-listing.md). Translations: listing-translations.md (browser-neutral, for both stores).
 
 ```text
-Imgkeep is a free, open-source browser extension. It adds one entry to your right-click menu: pick a format, and the image is converted on your computer and saved straight to your folder. Or copy it as PNG and paste it anywhere.
+Imgkeep is a free image converter for your right-click menu. Save any image as PNG, JPG, WebP, GIF or PDF, convert WebP and AVIF, and save photos even on sites that hide them from the right-click.
 
-Works where right-click doesn't: on sites like Instagram and Pinterest, photos sit under another layer, so a right-click can't reach them. Choose Imgkeep: Find image here, and Imgkeep finds the photo for you, at its largest size. Off until you turn it on.
+Right-click an image → Imgkeep: Save image as → choose your format. It's saved straight to your chosen folder, or copy it as PNG and paste it into another app. Images are converted on your computer: no uploads, no account.
 
-Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
+WORKS WHERE RIGHT-CLICK DOESN'T
 
-Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
+On sites like Instagram and Pinterest, a layer over the photo stops the browser's own "Save image as" from reaching it. Right-click over the photo and choose "Imgkeep: Find image here": Imgkeep finds the image behind the layer, at its largest available size. If it isn't sure which image you meant, it shows you the images on screen to pick from.
 
-FORMATS
+Find image here is off until you turn it on, in Options or the first time you use it. It looks at the current page only when you ask, and never changes it.
 
-• Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
-• Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
-• Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
-• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
+CONVERT WEBP AND AVIF TO PNG OR JPG
 
-SIZE AND QUALITY
+Get the format you need for editing, sharing and other apps: PNG, JPG, WebP, GIF, PDF or the original format.
 
-• Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
-• More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
-• Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
+• Standard image files: JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
+• Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
+• Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
+• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, ready to paste anywhere.
+• Keep the original: save the image in its original format when you don't need a conversion.
 
-FOLDERS AND NAMES
+RESIZE IMAGES AND CONTROL QUALITY
 
-• Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
-• Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
-• Never overwrites: if a file with the same name already exists, the new one gets a number like " (1)" instead of replacing it.
+• Resize automatically: set a maximum width in Options. Larger images scale down proportionally; smaller ones are never enlarged.
+• Preview before saving: More options shows the result's size in pixels and kilobytes. Choose format, width, quality, background and file name for that image.
+• Adjust quality: JPG and WebP quality sliders, and a background colour for transparent images saved as JPG.
 
-BUILT TO BE TRUSTED
+CHOOSE YOUR FOLDERS AND FILE NAMES
 
-• Stays out of your pages: Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on.
-• Your images never leave your computer: they're converted on your device. No uploads, no account. The only thing Imgkeep sends is one anonymous daily summary, like "12 saves as JPG, 1 failed", so we know what to improve. Never addresses or file names. One click in Options turns it off.
+• Save to your folder: choose a folder once, use Chrome's Downloads folder, or ask every time. Organise images into subfolders like Imgkeep/{host}.
+• Custom file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
+• Never overwrites: if a file with the same name exists, the new one gets a number like " (1)".
+
+LOCAL CONVERSION AND ACCESS YOU CONTROL
+
+• No uploads: images are converted on your computer. No account.
+• No background page reading: Imgkeep looks at a page only when you ask it to find an image there, and never changes a page.
 • Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
-• Open source under the MIT licence, with no build step, so what you read is what runs.
-• Free, with no limits: no ads, no welcome tabs. Imgkeep opens a small window only when you ask for one (Copy as PNG, More options) or when a save needs your OK, and asks for a rating just once, after you've used it for a while.
+• One anonymous daily summary: usage counts and failures, like "12 saves as JPG, 1 failed", so we know what to improve. Never images, website addresses or file names. One click in Options turns it off.
+• Open source under the MIT licence, with no build step, so the code you read is the code that runs.
+• Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free.
 
 WHEN A SITE BLOCKS AN IMAGE
 
 A few sites stop other sites from reading their images. Only then, and only after you click to allow it, Imgkeep asks your browser for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
 
-Every feature in Imgkeep today stays free. Ideas and votes: imgkeep.app/ideas.html
+Suggest features and vote on ideas: https://imgkeep.app/ideas.html
 ```
 
 ## Privacy practices tab
