@@ -74,7 +74,7 @@ Save the image you right-click in the format and folder you choose.
 
 ### Permission justifications
 
-- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…) to the right-click menu on images. This menu is the only way to use the extension.
+- **contextMenus:** Adds the "Imgkeep: Save image as" entry (PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…) to the right-click menu on images, and an "Imgkeep: Find image here" item on sites that cover their images with another layer (only usable after the user turns that feature on). This menu is the only way to use the extension.
 - **downloads:** Saves the converted image, or the original file, through Chrome's downloads, with the subfolder and file name the user set, and without overwriting existing files.
 - **storage:** Stores the user's settings (save mode, subfolder, file-name template, quality, JPG background colour, maximum width) in Chrome sync storage, keeps a pending save in session storage while one of the extension's small windows is open, and keeps in local storage the last format and width used in More options plus a count of successful and failed saves (to time a single rating request and label new menu items), and today's anonymous usage counts until they are sent as the one daily summary described under Data usage (turned off in Options, they are deleted). Nothing else in storage is sent anywhere.
 - **offscreen:** Creates an offscreen document to decode the image and re-encode it with a canvas on the user's computer, and to write the file into the folder the user chose. Service workers have no DOM or canvas for this.
