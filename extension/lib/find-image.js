@@ -1,4 +1,4 @@
-// PROTOTYPE. Finds the image under the right-click on sites that cover their images with another
+// "Find image here": finds the image under the right-click on sites that cover their images with another
 // layer (Instagram, Pinterest…), where the browser's own "image" right-click never fires.
 //
 // findImageInPage runs inside the page, once, right after the user clicks "Find image here"
