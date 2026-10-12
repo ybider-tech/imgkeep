@@ -24,6 +24,8 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 ```text
 לחיצה ימנית על כל תמונה ושמירה שלה כ-PNG, JPG, WebP, GIF או PDF, או העתקה שלה כ-PNG. ‏Imgkeep ממיר אותה במחשב שלך ושומר אותה איפה שבחרת, בכל פעם.
 
+עובד גם איפה שלחיצה ימנית לא: באתרים כמו Instagram ו-Pinterest התמונות מתחת לשכבה נוספת, כך שלחיצה ימנית לא מגיעה אליהן. בוחרים Imgkeep: מציאת תמונה כאן, ו-Imgkeep מוצא בשבילך את התמונה, בגודל הכי גדול שלה. כבוי עד שמפעילים אותו.
+
 אתרים רבים מגישים היום תמונות WebP ו-AVIF שאפליקציות אחרות לא פותחות. ‏Imgkeep הופך אותן לקבצים שנפתחים בכל מקום, בלחיצה ימנית אחת:
 
 ‏Imgkeep: שמירת התמונה בתור ← PNG · JPG · WebP · GIF (שומר על האנימציה) · PDF · הפורמט המקורי · העתקה כ-PNG · אפשרויות נוספות…
@@ -36,7 +38,6 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 • העתקה כ-PNG: התמונה נכנסת ללוח כקובץ PNG אמיתי, עם השקיפות, ומוכנה להדבקה בכל מקום.
 • שינוי גודל: מגדירים באפשרויות רוחב מרבי, ותמונות גדולות יותר מוקטנות כדי להתאים, עם אותן פרופורציות. תמונות קטנות יותר אף פעם לא מוגדלות.
 • אפשרויות נוספות: תצוגה מקדימה של התוצאה עם הגודל האמיתי בפיקסלים ובקילובייטים, ובחירת פורמט, רוחב, איכות, רקע ושם קובץ לתמונה הזו בלבד.
-• מציאת תמונות שאתרים מסתירים: ב-Instagram, ב-Pinterest ובאתרים דומים התמונות מתחת לשכבה נוספת, כך שלחיצה ימנית לא מגיעה אליהן. לוחצים לחיצה ימנית ובוחרים Imgkeep: מציאת תמונה כאן. כבוי עד שמפעילים אותו.
 • שמירה לתיקייה שלך: בוחרים תיקייה פעם אחת וכל תמונה נכנסת אליה, או משתמשים בתיקיית ההורדות, או שואלים בכל פעם. אפשר להוסיף תתי-תיקיות כמו Imgkeep/{host}.
 • שמות קבצים משלך: מרכיבים שמות מ-{name},‏ {host},‏ {date},‏ {time},‏ {w} ו-{h}, למשל {name}-{w}x{h}.
 • איכות בשליטתך: מחוונים לאיכות JPG ו-WebP, וצבע רקע לתמונות שקופות שנשמרות כ-JPG.
@@ -62,6 +63,8 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 ```text
 Haz clic derecho en cualquier imagen y guárdala como PNG, JPG, WebP, GIF o PDF, o cópiala como PNG. Imgkeep la convierte en tu equipo y la guarda donde quieras, siempre.
 
+Funciona donde el clic derecho no llega: en sitios como Instagram y Pinterest, las fotos están bajo otra capa y el clic derecho no las alcanza. Elige Imgkeep: Buscar imagen aquí e Imgkeep encuentra la foto por ti, en su tamaño más grande. Desactivado hasta que lo actives.
+
 Muchos sitios sirven ahora imágenes WebP y AVIF que otras aplicaciones no abren. Imgkeep las convierte en archivos que se abren en cualquier parte, con un clic derecho:
 
 Imgkeep: Guardar imagen como → PNG · JPG · WebP · GIF (conserva la animación) · PDF · Formato original · Copiar como PNG · Más opciones…
@@ -74,7 +77,6 @@ QUÉ HACE
 • Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, y pégala donde quieras.
 • Cambiar tamaño: fija un ancho máximo en Opciones y las imágenes más grandes se reducen para caber, manteniendo su proporción. Las más pequeñas nunca se amplían.
 • Más opciones: mira una vista previa del resultado con su tamaño real en píxeles y kilobytes, y elige formato, ancho, calidad, fondo y nombre de archivo solo para esa imagen.
-• Buscar imágenes que los sitios tapan: en Instagram, Pinterest y sitios parecidos, las fotos están bajo otra capa y el clic derecho no llega a ellas. Haz clic derecho y elige Imgkeep: Buscar imagen aquí. Desactivado hasta que lo actives.
 • Guarda en tu carpeta: elige una carpeta una vez y todas las imágenes irán allí, o usa las Descargas de Chrome, o pregunta cada vez. Añade subcarpetas como Imgkeep/{host}.
 • Tus nombres de archivo: crea nombres con {name}, {host}, {date}, {time}, {w} y {h}, por ejemplo {name}-{w}x{h}.
 • Calidad a tu medida: controles de calidad para JPG y WebP, y el color de fondo para imágenes transparentes guardadas como JPG.
@@ -100,6 +102,8 @@ Todas las funciones de Imgkeep de hoy seguirán siendo gratis. Ideas y votos: im
 ```text
 Clique com o botão direito em qualquer imagem e salve como PNG, JPG, WebP, GIF ou PDF, ou copie como PNG. O Imgkeep converte no seu computador e salva onde você quiser, sempre.
 
+Funciona onde o clique direito não chega: em sites como Instagram e Pinterest, as fotos ficam sob outra camada e o clique direito não as alcança. Escolha Imgkeep: Encontrar imagem aqui e o Imgkeep encontra a foto para você, no maior tamanho. Desativado até você ativar.
+
 Muitos sites agora usam imagens WebP e AVIF que outros apps não abrem. O Imgkeep transforma essas imagens em arquivos que abrem em qualquer lugar, com um clique direito:
 
 Imgkeep: Salvar imagem como → PNG · JPG · WebP · GIF (mantém a animação) · PDF · Formato original · Copiar como PNG · Mais opções…
@@ -112,7 +116,6 @@ O QUE ELE FAZ
 • Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, e cole onde quiser.
 • Redimensionar: defina uma largura máxima nas Opções e as imagens maiores são reduzidas para caber, mantendo a proporção. As menores nunca são ampliadas.
 • Mais opções: veja uma prévia do resultado com o tamanho real em pixels e kilobytes, e escolha formato, largura, qualidade, fundo e nome do arquivo só para essa imagem.
-• Encontrar imagens que os sites cobrem: no Instagram, no Pinterest e em sites parecidos, as fotos ficam sob outra camada e o clique direito não chega até elas. Clique com o botão direito e escolha Imgkeep: Encontrar imagem aqui. Desativado até você ativar.
 • Salva na sua pasta: escolha uma pasta uma vez e toda imagem vai para lá, ou use os Downloads do Chrome, ou pergunte sempre. Adicione subpastas como Imgkeep/{host}.
 • Seus nomes de arquivo: monte nomes com {name}, {host}, {date}, {time}, {w} e {h}, por exemplo {name}-{w}x{h}.
 • Qualidade sob seu controle: controles de qualidade para JPG e WebP, e a cor de fundo para imagens transparentes salvas como JPG.
@@ -138,6 +141,8 @@ Todos os recursos do Imgkeep de hoje continuam grátis. Ideias e votos: imgkeep.
 ```text
 Per Rechtsklick jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern oder als PNG kopieren. Imgkeep wandelt es auf deinem Computer um und speichert es dort, wo du es haben willst, jedes Mal.
 
+Funktioniert, wo der Rechtsklick nicht hinkommt: Auf Websites wie Instagram und Pinterest liegen Fotos unter einer weiteren Ebene, sodass ein Rechtsklick sie nicht erreicht. Wähle Imgkeep: Bild hier finden, und Imgkeep findet das Foto für dich, in der größten Version. Aus, bis du es einschaltest.
+
 Viele Websites liefern heute WebP- und AVIF-Bilder, die andere Programme nicht öffnen. Imgkeep macht daraus Dateien, die sich überall öffnen lassen, mit einem Rechtsklick:
 
 Imgkeep: Bild speichern als → PNG · JPG · WebP · GIF (behält Animation) · PDF · Originalformat · Als PNG kopieren · Weitere Optionen…
@@ -150,7 +155,6 @@ WAS ES MACHT
 • Als PNG kopieren: Das Bild landet als echtes PNG mit Transparenz in der Zwischenablage, bereit zum Einfügen.
 • Größe ändern: Lege in den Optionen eine maximale Breite fest, und größere Bilder werden passend verkleinert, ohne ihre Form zu verlieren. Kleinere werden nie vergrößert.
 • Weitere Optionen: Sieh dir eine Vorschau des Ergebnisses mit der echten Größe in Pixeln und Kilobyte an und wähle Format, Breite, Qualität, Hintergrund und Dateinamen nur für dieses Bild.
-• Bilder finden, die Websites verdecken: Auf Instagram, Pinterest und ähnlichen Websites liegen Fotos unter einer weiteren Ebene, sodass ein Rechtsklick sie nicht erreicht. Rechtsklick und Imgkeep: Bild hier finden wählen. Aus, bis du es einschaltest.
 • Speichert in deinen Ordner: einmal einen Ordner wählen und jedes Bild landet dort, oder den Download-Ordner von Chrome nutzen, oder jedes Mal fragen. Mit Unterordnern wie Imgkeep/{host}.
 • Deine Dateinamen: Namen aus {name}, {host}, {date}, {time}, {w} und {h} bauen, z. B. {name}-{w}x{h}.
 • Qualität nach Wunsch: Regler für die JPG- und WebP-Qualität und die Hintergrundfarbe für transparente Bilder, die als JPG gespeichert werden.
@@ -176,6 +180,8 @@ Jede Funktion, die Imgkeep heute hat, bleibt kostenlos. Ideen und Abstimmungen: 
 ```text
 Faites un clic droit sur n'importe quelle image et enregistrez-la en PNG, JPG, WebP, GIF ou PDF, ou copiez-la en PNG. Imgkeep la convertit sur votre ordinateur et l'enregistre où vous voulez, à chaque fois.
 
+Fonctionne là où le clic droit ne passe pas : sur des sites comme Instagram et Pinterest, les photos sont sous un autre calque, et le clic droit ne les atteint pas. Choisissez Imgkeep : Trouver l'image ici, et Imgkeep trouve la photo pour vous, dans sa plus grande taille. Désactivé tant que vous ne l'activez pas.
+
 Beaucoup de sites servent désormais des images WebP et AVIF que d'autres applications n'ouvrent pas. Imgkeep les transforme en fichiers qui s'ouvrent partout, en un clic droit :
 
 Imgkeep : Enregistrer l'image en → PNG · JPG · WebP · GIF (garde l'animation) · PDF · Format d'origine · Copier en PNG · Plus d'options…
@@ -188,7 +194,6 @@ CE QU'IL FAIT
 • Copier en PNG : l'image va dans le presse-papiers en vrai PNG, transparence comprise, prête à être collée.
 • Redimensionner : fixez une largeur maximale dans les Options et les images plus grandes sont réduites pour tenir, en gardant leurs proportions. Les plus petites ne sont jamais agrandies.
 • Plus d'options : un aperçu du résultat avec sa taille réelle en pixels et en kilo-octets, puis le choix du format, de la largeur, de la qualité, du fond et du nom de fichier pour cette image seulement.
-• Trouver les images que les sites recouvrent : sur Instagram, Pinterest et les sites du même genre, les photos sont sous un autre calque, et le clic droit ne les atteint pas. Faites un clic droit et choisissez Imgkeep : Trouver l'image ici. Désactivé tant que vous ne l'activez pas.
 • Enregistre dans votre dossier : choisissez un dossier une fois et chaque image y va, ou utilisez les Téléchargements de Chrome, ou demandez à chaque fois. Ajoutez des sous-dossiers comme Imgkeep/{host}.
 • Vos noms de fichiers : composez des noms avec {name}, {host}, {date}, {time}, {w} et {h}, par exemple {name}-{w}x{h}.
 • La qualité que vous choisissez : curseurs de qualité JPG et WebP, et couleur de fond pour les images transparentes enregistrées en JPG.
@@ -214,6 +219,8 @@ Toutes les fonctions d'Imgkeep d'aujourd'hui restent gratuites. Idées et votes 
 ```text
 どんな画像も右クリックで PNG・JPG・WebP・GIF・PDF として保存、または PNG としてコピー。Imgkeep はパソコン上で変換し、毎回あなたの決めた場所に保存します。
 
+右クリックが届かない場所でも使えます：Instagram や Pinterest などのサイトでは、写真の上に別の層があり、右クリックが届きません。「Imgkeep: ここで画像を探す」を選ぶと、Imgkeep が写真をいちばん大きいサイズで見つけます。オンにするまでオフです。
+
 最近は多くのサイトが、他のアプリでは開けない WebP や AVIF の画像を使っています。Imgkeep なら右クリック一回で、どこでも開けるファイルに変換できます。
 
 Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（アニメーションを保持） · PDF · 元の形式 · PNGとしてコピー · その他のオプション…
@@ -226,7 +233,6 @@ Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（ア�
 • PNGとしてコピー：透過を保った本物のPNGとしてクリップボードに入れ、どこにでも貼り付けられます。
 • サイズ変更：オプションで最大幅を設定すると、それより大きい画像は縦横比を保って縮小されます。小さい画像は拡大されません。
 • その他のオプション：仕上がりをプレビューし、実際のピクセル数とファイルサイズを確認してから、その画像だけの形式、幅、画質、背景、ファイル名を選べます。
-• サイトが覆っている画像を探す：Instagram や Pinterest などのサイトでは、写真の上に別の層があり、右クリックが届きません。右クリックして「Imgkeep: ここで画像を探す」を選びます。オンにするまでオフです。
 • 指定のフォルダへ保存：一度フォルダを選べば、すべての画像がそこに保存されます。Chrome のダウンロード フォルダを使うことも、毎回確認することもできます。Imgkeep/{host} のようなサブフォルダも追加できます。
 • ファイル名を自由に：{name}、{host}、{date}、{time}、{w}、{h} を組み合わせて名前を作れます。例：{name}-{w}x{h}
 • 画質を調整：JPG と WebP の画質スライダー、透過画像を JPG で保存するときの背景色を設定できます。
@@ -252,6 +258,8 @@ Imgkeep: 名前を付けて画像を保存 → PNG · JPG · WebP · GIF（ア�
 ```text
 किसी भी इमेज पर राइट-क्लिक करें और उसे PNG, JPG, WebP, GIF या PDF में सेव करें, या PNG के रूप में कॉपी करें। Imgkeep उसे आपके कंप्यूटर पर ही बदलता है और हर बार वहीं सेव करता है जहाँ आप चाहते हैं।
 
+जहाँ राइट-क्लिक काम नहीं करता, वहाँ भी काम करता है: Instagram और Pinterest जैसी साइटों पर फ़ोटो एक और परत के नीचे होती हैं, इसलिए राइट-क्लिक उन तक नहीं पहुँचता। Imgkeep: यहाँ इमेज ढूँढें चुनें, और Imgkeep आपके लिए फ़ोटो उसके सबसे बड़े साइज़ में ढूँढ देता है। जब तक आप चालू न करें, यह बंद रहता है।
+
 आजकल कई साइटें WebP और AVIF इमेज देती हैं जो दूसरे ऐप नहीं खोलते। Imgkeep एक राइट-क्लिक में उन्हें ऐसी फ़ाइलों में बदल देता है जो हर जगह खुलती हैं:
 
 Imgkeep: इमेज इस रूप में सेव करें → PNG · JPG · WebP · GIF (एनिमेशन बना रहता है) · PDF · मूल फ़ॉर्मैट · PNG के रूप में कॉपी करें · और विकल्प…
@@ -264,7 +272,6 @@ Imgkeep: इमेज इस रूप में सेव करें → PNG 
 • PNG के रूप में कॉपी करें: इमेज पारदर्शिता के साथ असली PNG के रूप में क्लिपबोर्ड पर जाती है, कहीं भी पेस्ट करने के लिए तैयार।
 • साइज़ बदलें: विकल्पों में अधिकतम चौड़ाई तय करें और बड़ी इमेज आकार का अनुपात बनाए रखते हुए छोटी हो जाती हैं। छोटी इमेज कभी बड़ी नहीं की जातीं।
 • और विकल्प: नतीजे का प्रीव्यू उसके असली साइज़ (पिक्सेल और किलोबाइट) के साथ देखें, फिर सिर्फ़ उस इमेज के लिए फ़ॉर्मैट, चौड़ाई, क्वालिटी, बैकग्राउंड और फ़ाइल का नाम चुनें।
-• साइटों की ढकी हुई इमेज ढूँढें: Instagram, Pinterest और ऐसी ही साइटों पर फ़ोटो एक और परत के नीचे होती हैं, इसलिए राइट-क्लिक उन तक नहीं पहुँचता। राइट-क्लिक करें और Imgkeep: यहाँ इमेज ढूँढें चुनें। जब तक आप चालू न करें, यह बंद रहता है।
 • आपके फ़ोल्डर में सेव: एक बार फ़ोल्डर चुनें और हर इमेज वहीं जाएगी, या Chrome का डाउनलोड फ़ोल्डर इस्तेमाल करें, या हर बार पूछें। Imgkeep/{host} जैसे सब-फ़ोल्डर जोड़ें।
 • आपके फ़ाइल नाम: {name}, {host}, {date}, {time}, {w} और {h} से नाम बनाएँ, जैसे {name}-{w}x{h}।
 • क्वालिटी आपके हाथ में: JPG और WebP क्वालिटी के स्लाइडर, और JPG में सेव होने वाली पारदर्शी इमेज के लिए बैकग्राउंड रंग।
@@ -290,6 +297,8 @@ Imgkeep की आज की हर सुविधा मुफ़्त रह
 ```text
 انقر بزر الماوس الأيمن على أي صورة واحفظها بصيغة PNG أو JPG أو WebP أو GIF أو PDF، أو انسخها بصيغة PNG. يحوّلها Imgkeep على جهازك ويحفظها حيث تريد، في كل مرة.
 
+يعمل حيث لا تعمل النقرة اليمنى: في مواقع مثل Instagram وPinterest، تكون الصور تحت طبقة أخرى فلا تصل إليها النقرة اليمنى. اختر Imgkeep: البحث عن الصورة هنا، وسيجد Imgkeep الصورة لك بأكبر حجم لها. متوقف حتى تشغّله.
+
 تقدّم مواقع كثيرة اليوم صور WebP وAVIF لا تفتحها التطبيقات الأخرى. يحوّلها Imgkeep إلى ملفات تُفتح في كل مكان، بنقرة يمنى واحدة:
 
 Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع الحفاظ على الحركة) · PDF · الصيغة الأصلية · نسخ بصيغة PNG · مزيد من الخيارات…
@@ -302,7 +311,6 @@ Imgkeep: حفظ الصورة بصيغة ← PNG · JPG · WebP · GIF (مع ال
 • النسخ بصيغة PNG: تُنسخ الصورة إلى الحافظة كملف PNG حقيقي مع شفافيتها، جاهزة للصق في أي مكان.
 • تغيير الحجم: حدّد عرضًا أقصى من الخيارات فتُصغَّر الصور الأكبر لتناسبه مع الحفاظ على نسبها. ولا تُكبَّر الصور الأصغر أبدًا.
 • مزيد من الخيارات: عاين النتيجة بحجمها الحقيقي بالبكسل والكيلوبايت، ثم اختر الصيغة والعرض والجودة والخلفية واسم الملف لهذه الصورة وحدها.
-• البحث عن الصور التي تغطيها المواقع: في Instagram وPinterest والمواقع المشابهة، تكون الصور تحت طبقة أخرى فلا تصل إليها النقرة اليمنى. انقر بزر الماوس الأيمن واختر Imgkeep: البحث عن الصورة هنا. متوقف حتى تشغّله.
 • الحفظ في مجلدك: اختر مجلدًا مرة واحدة وستذهب إليه كل صورة، أو استخدم مجلد التنزيلات في Chrome، أو اطلب السؤال في كل مرة. أضف مجلدات فرعية مثل Imgkeep/{host}.
 • أسماء ملفاتك: كوّن الأسماء من {name} و{host} و{date} و{time} و{w} و{h}، مثل {name}-{w}x{h}.
 • جودة تتحكم بها: أشرطة لضبط جودة JPG وWebP، ولون الخلفية للصور الشفافة المحفوظة بصيغة JPG.

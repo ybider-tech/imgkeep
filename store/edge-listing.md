@@ -13,7 +13,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ## Store listing (English)
 - **Display name:** comes from the manifest: Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
-- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.
+- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, even ones sites hide. Converted on your device. No personal data.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
@@ -31,6 +31,8 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 ```text
 Right-click any image and save it as PNG, JPG, WebP, GIF or PDF, or copy it as PNG. Imgkeep converts it on your computer and saves it where you want, every time.
 
+Works where right-click doesn't: on sites like Instagram and Pinterest, photos sit under another layer, so a right-click can't reach them. Choose Imgkeep: Find image here, and Imgkeep finds the photo for you, at its largest size. Off until you turn it on.
+
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
 Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
@@ -43,7 +45,6 @@ WHAT IT DOES
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
-• Find images that sites cover: on Instagram, Pinterest and similar sites, photos sit under another layer, so right-click can't reach them. Right-click and choose Imgkeep: Find image here. Off until you turn it on.
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.

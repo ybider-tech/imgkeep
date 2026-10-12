@@ -169,13 +169,13 @@
 <!-- 3. Trust list -->
 <section class="scene" id="scene-3">
   <div class="head">
-    <h1>Four permissions.<br>No access to your pages.</h1>
+    <h1>Four permissions.<br>Reads a page only when you ask.</h1>
   </div>
   <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
   <ul class="points" style="position:absolute; left:80px; top:250px; width:500px;">
-    <li><span class="check">✓</span><span><b>Sees only the image you click</b>No content scripts, no reading your pages.</span></li>
-    <li><span class="check">✓</span><span><b>Nothing leaves your computer</b>Converted locally. No uploads, no analytics.</span></li>
-    <li><span class="check">✓</span><span><b>Open source, no nags</b>No ads, no review requests, no welcome tabs.</span></li>
+    <li><span class="check">✓</span><span><b>Stays out of your pages</b>Looks at a page only when you ask it to find an image there. Never changes a page.</span></li>
+    <li><span class="check">✓</span><span><b>Your images stay on your computer</b>Converted locally, no uploads. One anonymous daily count, off in one click.</span></li>
+    <li><span class="check">✓</span><span><b>Open source, no nags</b>No ads, no welcome tabs. One request for a rating, ever.</span></li>
     <li><span class="check">✓</span><span><b>Free stays free</b>Every free feature stays free.</span></li>
   </ul>
   <div class="window" style="left:640px; top:236px; width:560px;">
@@ -215,6 +215,51 @@
   </div>
   <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
   <img class="shot" src="_capture/gif.png" alt="" style="position:absolute; left:0; top:162px; width:1280px;">
+</section>
+
+<!-- 6. Find image here, on a site that covers its photos -->
+<section class="scene" id="scene-6">
+  <div class="head">
+    <h1>Right-click can't reach it?<br>Imgkeep can.</h1>
+    <p class="sub">On sites like Instagram and Pinterest, photos sit under another layer. Choose Find image here.</p>
+  </div>
+  <div class="logo"><img src="../extension/icons/icon128.png" alt="">Imgkeep</div>
+  <div class="browser" style="left:80px; top:250px; width:1120px; height:620px;">
+    <div class="bar"><div class="dots"><i></i><i></i><i></i></div><div class="url">photos.example.com/@studio.lume</div></div>
+    <div class="content" style="padding:28px 48px; font-family:system-ui,sans-serif;">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:22px;">
+        <div style="width:58px; height:58px; border-radius:50%; background:linear-gradient(140deg,#e8a86b,#7b3f4f);"></div>
+        <div><b style="font-size:18px;">studio.lume</b><div style="color:#666; font-size:14px;">214 posts · ceramics &amp; light</div></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px;">
+        <div style="height:230px; background:linear-gradient(150deg,#f2c79a,#c06b4e);"></div>
+        <div style="height:230px; background:radial-gradient(circle at 40% 38%,#fff3d6 0 16%,transparent 17%),linear-gradient(160deg,#9fb8c8,#3f5f78);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#c9d1a4,#6f7a3a);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#e3b7c2,#8a4f6a);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#d9c6a8,#7a6248);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#a9c4b2,#4f6b5a);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#f0d29a,#b5803c);"></div>
+        <div style="height:230px; background:linear-gradient(150deg,#b8b0d8,#5a4f8a);"></div>
+      </div>
+      <div class="menu" style="left:330px; top:170px;">
+        <div>Back</div>
+        <div>Forward</div>
+        <div>Reload</div>
+        <hr>
+        <div>Save as…</div>
+        <div>Print…</div>
+        <hr>
+        <div class="on"><span><img src="../extension/icons/icon16.png" alt="">Imgkeep: Find image here…</span></div>
+        <hr>
+        <div>Inspect</div>
+      </div>
+      <svg class="cursor" style="left:470px; top:388px;" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 2l14 8-6 1.5L8 18z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+  <div class="window" style="left:770px; top:236px; width:400px;">
+    <div class="title"><div class="dots"><i></i><i></i><i></i></div>Imgkeep · More options</div>
+    <img class="shot" src="_capture/editor.png" alt="" style="width:400px;">
+  </div>
 </section>
 
 <!-- Promo tile 440×280 -->

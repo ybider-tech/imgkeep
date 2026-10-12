@@ -3,7 +3,7 @@
     "message": "Guardar imagen como PNG, JPG, WebP, GIF o PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF. Convierte WebP y AVIF en tu equipo. Sin datos personales."
+    "message": "Clic derecho para guardar cualquier imagen como PNG, JPG, WebP, GIF o PDF, incluso las que los sitios ocultan. Sin datos personales."
   },
   "menuParent": {
     "message": "Imgkeep: Guardar imagen como"

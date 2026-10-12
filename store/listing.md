@@ -6,7 +6,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 - **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF. Converts WebP and AVIF on your device. No personal data.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, even ones sites hide. Converted on your device. No personal data.
 - **Category:** Tools
 - **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
@@ -20,6 +20,8 @@ v7 (for 0.6.1): the "Free, with no limits" bullet now says Imgkeep asks for a ra
 ```text
 Right-click any image and save it as PNG, JPG, WebP, GIF or PDF, or copy it as PNG. Imgkeep converts it on your computer and saves it where you want, every time.
 
+Works where right-click doesn't: on sites like Instagram and Pinterest, photos sit under another layer, so a right-click can't reach them. Choose Imgkeep: Find image here, and Imgkeep finds the photo for you, at its largest size. Off until you turn it on.
+
 Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep turns them into files that open everywhere, in one right-click:
 
 Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
@@ -32,7 +34,6 @@ WHAT IT DOES
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
-• Find images that sites cover: on Instagram, Pinterest and similar sites, photos sit under another layer, so right-click can't reach them. Right-click and choose Imgkeep: Find image here. Off until you turn it on.
 • Saves to your folder: choose a folder once and every image goes there, or use Chrome's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
 • Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
@@ -104,6 +105,7 @@ Certifications (tick all three):
 | `store/screenshot-3-trust.png` | 1280×800 | Screenshot 3: the trust list |
 | `store/screenshot-4-site-access.png` | 1280×800 | Screenshot 4: the site-permission window |
 | `store/screenshot-5-gif.png` | 1280×800 | Screenshot 5: GIF keeps animation |
+| `store/screenshot-6-find.png` | 1280×800 | Screenshot 6 (new in 0.8.0): Find image here on a photo feed. Drag it to second place, right after the menu: it's the differentiator. Uses a made-up site, not Instagram's interface (trademarks). |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
 | Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |

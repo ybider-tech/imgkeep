@@ -15,6 +15,7 @@ await mkdir(CAPTURE, { recursive: true });
 // ---- 1. Real UI captures ----
 const ext = await launchWithExtension({ viewport: { width: 1000, height: 1100 }, deviceScaleFactor: 2, colorScheme: "light" });
 const plain = await startServer({ cors: false });
+const cors = await startServer({ cors: true });
 try {
   await ext.sw.evaluate(() =>
     chrome.storage.sync.set({ saveMode: "folder", subfolder: "Imgkeep/{host}", filenameTemplate: "{name}-{w}x{h}" }),
@@ -40,9 +41,19 @@ try {
   // Show a real-looking host instead of 127.0.0.1.
   await ask.evaluate(() => (document.querySelector("#body strong").textContent = "images.example.net"));
   await ask.screenshot({ path: join(CAPTURE, "ask.png") });
+
+  // More options with a found photo (scene 6), as after "Find image here".
+  const edOpened = ext.context.waitForEvent("page", { predicate: (p) => p.url().includes("/editor.html") });
+  await ext.sw.evaluate((url) => globalThis.imgkeepOpenWindow("editor", { url }), `${cors.url}/photo.webp`);
+  const editor = await edOpened;
+  await editor.setViewportSize({ width: 600, height: 760 });
+  await editor.locator("#resultFacts").filter({ hasText: "×" }).waitFor();
+  await editor.locator("#name").fill("ceramics-lamp");
+  await editor.screenshot({ path: join(CAPTURE, "editor.png") });
 } finally {
   await ext.context.close();
   await plain.close();
+  await cors.close();
   await rm(ext.userDataDir, { recursive: true, force: true });
 }
 
@@ -73,6 +84,7 @@ const shots = [
   ["#scene-3", "screenshot-3-trust.png"],
   ["#scene-4", "screenshot-4-site-access.png"],
   ["#scene-5", "screenshot-5-gif.png"],
+  ["#scene-6", "screenshot-6-find.png"],
   ["#tile", "promo-tile-440x280.png"],
   ["#marquee", "marquee-1400x560.png"],
 ];

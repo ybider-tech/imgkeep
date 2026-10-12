@@ -3,7 +3,7 @@
     "message": "Enregistrer l'image en PNG, JPG, WebP, GIF ou PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic droit : enregistrez toute image en PNG, JPG, WebP, GIF ou PDF. Convertit WebP et AVIF en local. Aucune donnée personnelle."
+    "message": "Clic droit : enregistrez toute image en PNG, JPG, WebP, GIF ou PDF, même celles que les sites cachent. Aucune donnée personnelle."
   },
   "menuParent": {
     "message": "Imgkeep : Enregistrer l'image en"
