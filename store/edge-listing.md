@@ -29,7 +29,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ### Description
 ```text
-Right-click any image and save it as PNG, JPG, WebP, GIF or PDF, or copy it as PNG. Imgkeep converts it on your computer and saves it where you want, every time.
+Imgkeep is a free, open-source browser extension. It adds one entry to your right-click menu: pick a format, and the image is converted on your computer and saved straight to your folder. Or copy it as PNG and paste it anywhere.
 
 Works where right-click doesn't: on sites like Instagram and Pinterest, photos sit under another layer, so a right-click can't reach them. Choose Imgkeep: Find image here, and Imgkeep finds the photo for you, at its largest size. Off until you turn it on.
 
@@ -37,17 +37,23 @@ Many sites now serve WebP and AVIF images that other apps won't open. Imgkeep tu
 
 Imgkeep: Save image as → PNG · JPG · WebP · GIF (keeps animation) · PDF · Original format · Copy as PNG · More options…
 
-WHAT IT DOES
+FORMATS
 
 • Files that open anywhere: standard JPG or PNG, and JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep the animation: animated WebP, AVIF and APNG become a GIF that keeps moving, with its timing and transparency. Animated GIFs are saved exactly as they are.
 • Save as PDF: a one-page PDF exactly the size of the image, for receipts, documents and sharing. Transparency is kept.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it anywhere.
+
+SIZE AND QUALITY
+
 • Resize: set a maximum width in Options and bigger images are scaled down to fit, keeping their shape. Smaller ones are never enlarged.
 • More options: preview the result with its real size in pixels and kilobytes, then pick format, width, quality, background and file name for just this image.
+• Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
+
+FOLDERS AND NAMES
+
 • Saves to your folder: choose a folder once and every image goes there, or use Edge's Downloads, or ask every time. Add subfolders like Imgkeep/{host}.
 • Your file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
-• Quality you control: JPG and WebP quality sliders, and the background colour for transparent images saved as JPG.
 • Never overwrites: if a file with the same name already exists, the new one gets a number like " (1)" instead of replacing it.
 
 BUILT TO BE TRUSTED
