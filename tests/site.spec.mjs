@@ -246,7 +246,7 @@ test("robots.txt lets search and AI crawlers in, and llms.txt describes the site
   }
   const res = await page.request.get(`${server.url}/llms.txt`);
   expect(res.status()).toBe(200);
-  const llms = await res.text();
+  const llms = (await res.text()).replace(/\r\n/g, "\n"); // a Windows checkout has CRLF line endings
   expect(llms).toMatch(/^# Imgkeep\n\n> Imgkeep is a free browser extension/);
   for (const guide of GUIDES) expect(llms).toContain(`https://imgkeep.app/${guide}/`);
   expect(llms).toContain(STORE);
