@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Right-click won't save the image? Here's why, and the fix</title>
+  <meta name="description" content="Some sites cover their photos with another layer, so right-click can't save them. Why it happens, the free workarounds, and a way to find the image in Chrome.">
+  <link rel="canonical" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="When right-click won't save an image">
+  <meta property="og:description" content="Some sites cover their photos with another layer, so right-click can't save them. Why it happens, the free workarounds, and a way to find the image in Chrome.">
+  <meta property="og:url" content="https://imgkeep.app/save-image-right-click-not-working/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format. Save web images as PNG, JPG, WebP, GIF or PDF from the right-click menu in Chrome or Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is Save image as missing when I right-click a photo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your right-click didn't land on the image. The site has put another element on top of it, often a transparent layer or a link, so the browser shows the menu for that element instead, without Save image as. The image is still on the page, underneath." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Imgkeep read the pages I visit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page. It reads only the addresses of the images on screen, and nothing from the page is kept or sent. Find image here is off until you turn it on." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Imgkeep save every image on the page at once?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Imgkeep saves one image at a time, the one you right-clicked or picked. To download every image on a page, you need a bulk downloader." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I save an image when right-click doesn't work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "On sites like Instagram and Pinterest, the photo sits under another layer, so your right-click hits the layer and Save image as never appears. Without an extension, find the image's address in the browser's developer tools, or take a screenshot. With Imgkeep, right-click and choose Imgkeep: Find image here… to open the photo at its largest size, ready to save." }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=61b5a240ba">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "When right-click won't save an image", "item": "https://imgkeep.app/save-image-right-click-not-working/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "TechArticle", "headline": "When right-click won't save an image", "description": "On sites like Instagram and Pinterest, the photo sits under another layer, so your right-click hits the layer and Save image as never appears. Without an extension, find the image's address in the browser's developer tools, or take a screenshot. With Imgkeep, right-click and choose Imgkeep: Find image here… to open the photo at its largest size, ready to save.", "url": "https://imgkeep.app/save-image-right-click-not-working/", "mainEntityOfPage": "https://imgkeep.app/save-image-right-click-not-working/", "image": "https://imgkeep.app/media/guides/find-image.jpg", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "inLanguage": "en", "author": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/"}, "publisher": {"@type": "Organization", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": {"@type": "ImageObject", "url": "https://imgkeep.app/icon128.png"}}}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+    </header>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../#image-guides">← Home</a><span aria-hidden="true">›</span><span aria-current="page">When right-click won't save an image</span>
+    </nav>
+
+    <main class="doc">
+      <h1>When right-click won't save an image</h1>
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>On sites like Instagram and Pinterest, the photo sits under another layer, so your right-click hits the layer and <strong>Save image as</strong> never appears. Without an extension, find the image's address in the browser's developer tools, or take a screenshot. With Imgkeep, right-click and choose <strong>Imgkeep: Find image here…</strong> to open the photo at its largest size, ready to save.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-13">13 October 2026</time></p>
+
+      <h2>Why doesn't "Save image as" appear when I right-click?</h2>
+      <p>Because your right-click didn't land on the image. The browser shows the image options (<strong>Save image as…</strong>, <strong>Copy image</strong>, <strong>Open image in new tab</strong>) only when the thing directly under the pointer is an image. If the menu only offers <strong>Back</strong>, <strong>Reload</strong> and <strong>Save as…</strong>, or link options, something else is on top. The usual reasons:</p>
+      <ul>
+        <li><strong>A cover layer.</strong> Many social and photo sites put a transparent layer or a link over each photo. You see the photo; your click hits the layer.</li>
+        <li><strong>A background image.</strong> Some pages draw a photo as the background of a box (CSS), not as an image element, so the browser doesn't treat it as an image.</li>
+        <li><strong>An image that exists only inside the page.</strong> Its address starts with <code>blob:</code>, and it has no address you can open or save on its own.</li>
+        <li><strong>A switched-off menu.</strong> A few sites turn off the right-click menu entirely, so no menu opens at all.</li>
+      </ul>
+
+      <h2>How do I save it without an extension?</h2>
+      <p>It can be done, but every way is a bit fiddly.</p>
+
+      <h3>Open the photo on its own page</h3>
+      <p>Click the photo to open its own post or page, then try the right-click again. On some sites the bigger view is a plain image; on many it's covered the same way.</p>
+
+      <h3>Find the address in developer tools</h3>
+      <ol>
+        <li>Right-click the photo and choose <strong>Inspect</strong>. The Elements panel opens at the element under your click, usually the cover layer.</li>
+        <li>Look just above or below it for an <code>&lt;img&gt;</code> tag. Its <code>src</code> is the image address; a <code>srcset</code>, if there is one, lists bigger sizes.</li>
+        <li>Right-click the address and choose <strong>Open in new tab</strong>, then save the image from that tab.</li>
+      </ol>
+      <p>Or use the <strong>Network</strong> panel: filter by <strong>Img</strong>, reload the page, and look for the photo among dozens of icons and thumbnails with names like <code>a8f3e…jpg</code>. Right-click it and choose <strong>Open in new tab</strong>.</p>
+
+      <h3>Take a screenshot</h3>
+      <p>On Windows, press Win+Shift+S; on a Mac, Cmd+Shift+4. It always works, even for <code>blob:</code> images, but you get the photo only at the size it's shown on screen, not the original.</p>
+
+      <h2>How does Imgkeep find the image?</h2>
+      <p>Imgkeep is a browser extension that saves images as PNG, JPG, WebP, GIF or PDF from the right-click menu. On sites that cover their images, like Instagram and Pinterest, it adds <strong>Imgkeep: Find image here…</strong> to the menu. We make Imgkeep, and here's exactly what that item does.</p>
+
+      <div class="option">
+        <p class="label">Our extension</p>
+        <h3>Imgkeep: Find image here…</h3>
+        <ol>
+          <li>Right-click the photo and choose <strong>Imgkeep: Find image here…</strong></li>
+          <li>Imgkeep looks at that page once and finds the image under your click, at the largest size the page offers.</li>
+          <li>It opens the image in <strong>More options</strong>, where you pick the format and size, then <strong>Save</strong> or <strong>Copy as PNG</strong>.</li>
+        </ol>
+        <figure class="shot">
+          <img src="../media/guides/find-image.jpg" width="1160" height="576" loading="lazy" decoding="async" alt="A photo grid on a made-up site, photos.example.com. Right-clicking a photo shows the page menu (Back, Forward, Reload, Save as, Print) with Imgkeep: Find image here… highlighted. Beside it, Imgkeep's More options window shows the found image with PNG, JPG and WebP, a maximum width, a file name, and Save and Copy as PNG buttons.">
+          <figcaption>On a covered photo, choose <strong>Imgkeep: Find image here…</strong>, and the photo opens in More options.</figcaption>
+        </figure>
+        <p>On feeds where the cover is a link, as in many photo grids, Imgkeep uses the link you right-clicked to tell which image you meant. When it can't be sure, for example with photos side by side and no link, it shows the images on screen so you can pick one, with your likely one first. If there's no image there, it says so.</p>
+        <p>It's off until you turn it on, in Options under <strong>Images that sites cover</strong>, or the first time you use it. Turning it on adds two optional permissions, <code>activeTab</code> and <code>scripting</code>. The four permissions Imgkeep asks for at install stay the same.</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-image-right-click-not-working">Add Imgkeep to Chrome — free</a>
+        <span class="cta-note">Off until you turn it on. Also for Microsoft Edge. No uploads, no account.</span>
+      </div>
+
+      <h2>Does Imgkeep read the pages I visit?</h2>
+      <p>No. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page. It reads only the addresses of the images on screen, and nothing from the page is kept or sent. The rest of the time, Imgkeep reads only the image you right-click to save. Details are in the <a href="../privacy.html">privacy policy</a>, and the <a href="https://github.com/ybider-tech/imgkeep">source code</a> is public.</p>
+
+      <h2>What still won't work?</h2>
+      <ul>
+        <li><strong>Images the page hasn't loaded yet.</strong> Many sites load photos only as you scroll to them. Scroll until the photo is on screen, then try again.</li>
+        <li><strong><code>blob:</code> images.</strong> They exist only inside the page, and Imgkeep can't save them. A screenshot works.</li>
+        <li><strong>Protected content.</strong> Video frames and other DRM-protected content can't be saved this way.</li>
+        <li><strong>One image at a time.</strong> Imgkeep saves the image you right-clicked or picked, not every image on the page.</li>
+        <li><strong>A switched-off menu.</strong> If a site stops the right-click menu from opening at all, Imgkeep's item can't appear either. Use developer tools or a screenshot.</li>
+      </ul>
+      <p>On other sites, where the right-click reaches the image, you don't need Find image here: the usual <strong>Imgkeep: Save image as</strong> menu appears on the image itself.</p>
+
+      <h2>Can I use the photos I save?</h2>
+      <p>Saving a photo doesn't give you the right to reuse it. Keeping a picture for your own reference, a mood board or a recipe is one thing; posting it, printing it or using it in your work is another. Ask the person who took it first, and credit them.</p>
+
+      <h2>Related guides</h2>
+      <ul>
+        <li><a href="../chrome-saves-images-as-webp/">Why Chrome saves images as WebP</a></li>
+        <li><a href="../save-webp-as-jpg-png/">How to save WebP as JPG or PNG</a></li>
+        <li><a href="../save-avif-as-jpg-png/">How to save AVIF as JPG or PNG</a></li>
+        <li><a href="../chrome-saves-images-as-jfif/">Chrome saves images as JFIF? How to get JPG</a></li>
+        <li><a href="../save-animated-webp-as-gif/">How to save an animated WebP as a GIF</a></li>
+        <li><a href="../save-image-as-pdf/">How to save an image as a PDF in Chrome</a></li>
+        <li><a href="../save-image-as-type-alternative/">A safe alternative to Save image as Type</a></li>
+      </ul>
+
+      <h2>Questions</h2>
+      <h3>Why is Save image as missing when I right-click a photo?</h3>
+      <p>Your right-click didn't land on the image. The site has put another element on top of it, often a transparent layer or a link, so the browser shows the menu for that element instead, without <strong>Save image as</strong>. The image is still on the page, underneath.</p>
+      <h3>Does Imgkeep read the pages I visit?</h3>
+      <p>No. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page. It reads only the addresses of the images on screen, and nothing from the page is kept or sent. <strong>Find image here</strong> is off until you turn it on.</p>
+      <h3>Can Imgkeep save every image on the page at once?</h3>
+      <p>No. Imgkeep saves one image at a time, the one you right-clicked or picked. To download every image on a page, you need a bulk downloader.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
