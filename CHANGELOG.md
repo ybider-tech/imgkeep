@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.8.1 — unreleased
+## 0.8.1 — 2026-10-14
 
 - **The anonymous daily summary also counts what is converted into what,** for example WebP → JPG or AVIF → PNG (`webp_to_jpg`, `avif_to_png`…), so we know which conversions matter most. The original's format comes from the image's own bytes (or its type, for SVG), never from its address or name. Original format saves aren't conversions and aren't counted this way. Listed in the privacy policy.
 
