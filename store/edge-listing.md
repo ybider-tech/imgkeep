@@ -81,7 +81,7 @@ Suggest features and vote on ideas: https://imgkeep.app/ideas.html
 ```text
 Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…). To test: right-click any image on any website and pick a format; the file is saved to Downloads. "Copy as PNG" opens a small window that copies the image to the clipboard and closes itself. "More options…" opens a window with a preview, where you can pick format, maximum width, quality and file name before saving.
 
-Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No content scripts, no remote code. One anonymous daily summary of feature use (counts only, no URLs or file names) is sent to Aptabase (eu.aptabase.com); it can be turned off in Options. Source code: https://github.com/ybider-tech/imgkeep
+Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No declared content scripts and no remote code (the optional Find image feature, below, runs one packaged function only when the user clicks it). One anonymous daily summary of feature use (counts only, no URLs or file names) is sent to Aptabase (eu.aptabase.com); it can be turned off in Options. Source code: https://github.com/ybider-tech/imgkeep
 
 New in 0.6.1: the extension name now starts with what it does ("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"). Menu items added since a user's previous version show "✨ New" for 30 days after an update. After at least 15 successful saves over 7 days, Imgkeep asks once for a rating (in its own window after a copy or save, and as a menu item for up to 14 days); "No thanks" ends it for good. No incentives. These counts stay in the extension's local storage and are never sent anywhere. Options has "What's new" and "Rate Imgkeep" links.
 
@@ -89,7 +89,9 @@ New in 0.7.0: an anonymous daily usage summary, on by default and switched off w
 
 New in 0.8.0: "Imgkeep: Find image here", a right-click item shown only on sites that cover their images with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads). It uses two OPTIONAL permissions, activeTab and scripting, which stay off until the user turns them on (in Options or the first time they use it). When clicked, it runs a packaged function once in that tab that reads the addresses of the images on screen, then opens the chosen one in the extension's own window to save. It never changes the page. To test: turn it on in Options → "Images that sites cover", open an Instagram profile, right-click a photo, choose "Imgkeep: Find image here".
 
+New in 0.8.1: the anonymous daily summary also counts conversions by the original's format and the chosen one (for example webp_to_jpg), read from the image's bytes. Still no URLs, site or file names. Listed in the privacy policy.
+
 New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
 
-The same package is live on the Chrome Web Store: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
+Imgkeep is also on the Chrome Web Store (0.8.0 live, 0.8.1 in review there): https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 ```
