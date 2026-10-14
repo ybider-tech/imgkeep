@@ -348,7 +348,7 @@
     "message": "Enviar um resumo diário anônimo"
   },
   "optCountsHint": {
-    "message": "Uma vez por dia, o Imgkeep envia um resumo como \"12 salvamentos como JPG, 1 falhou\" para o Aptabase, um serviço de análise de código aberto hospedado na UE, para sabermos quais recursos melhorar e quais salvamentos falham. Nunca imagens, endereços de páginas, nomes de arquivos ou qualquer coisa que identifique você."
+    "message": "Uma vez por dia, o Imgkeep envia um resumo como \"12 salvamentos como JPG, 1 falhou\" para o PostHog, um serviço de análise de código aberto hospedado na UE, para sabermos quais recursos melhorar e quais salvamentos falham. Nunca imagens, endereços de páginas, nomes de arquivos ou qualquer coisa que identifique você."
   },
   "optCountsShow": {
     "message": "Ver exatamente o que é enviado"

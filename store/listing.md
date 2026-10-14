@@ -90,9 +90,9 @@ No, I am not using remote code. All code is packaged in the extension. There are
 
 What user data do you plan to collect from users now or in the future? Since 0.7.0: **User activity** only (tick it; leave every other category unticked).
 
-Why: 0.7.0 sends one anonymous daily summary of feature use (counts of saves per format and mode, failures by error type, copies, More options, site-access and rating answers, version, browser, language) to Aptabase. No images, URLs, site or file names, or identifiers. Aptabase derives the country from the request's IP address and doesn't store the IP. If the form's "Location" definition (region, IP address) seems to cover a country derived by the analytics service, tick Location too: over-disclosing is safe, under-disclosing is not.
+Why: 0.7.0 sends one anonymous daily summary of feature use (counts of saves per format and mode, failures by error type, copies, More options, site-access and rating answers, version, browser, language) to PostHog (EU cloud; Aptabase until 0.8.1). No images, URLs, site or file names, or identifiers. Since 0.9.0 no location at all: the PostHog project discards IP addresses and each event turns off location lookup. If the form's "Location" definition (region, IP address) seems to cover a country derived by the analytics service, tick Location too: over-disclosing is safe, under-disclosing is not.
 
-Justification text, if asked: "Anonymous daily counts of which features were used and which saves failed (for example: 12 saves as JPG, 1 failed), sent to Aptabase (EU) to decide what to improve. No personal data, URLs or file names. On by default, one click off in Options."
+Justification text, if asked: "Anonymous daily counts of which features were used and which saves failed (for example: 12 saves as JPG, 1 failed), sent to PostHog (EU) to decide what to improve. No personal data, URLs or file names. On by default, one click off in Options."
 
 Certifications (tick all three):
 

@@ -5,7 +5,7 @@ import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, 
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
-import { APTABASE, addCount, conversionKey, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
+import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
@@ -452,7 +452,7 @@ globalThis.imgkeepRunJob = runJob;
 
 // ---- Anonymous daily counts (lib/telemetry.js; on by default, off in Options) ----
 
-let appKey = APTABASE.appKey;
+let appKey = ANALYTICS.appKey;
 let countsQueue = Promise.resolve();
 let sendQueue = Promise.resolve();
 
@@ -485,8 +485,8 @@ async function sendOutbox() {
   const event = summaryEvent(box.props, {
     appVersion: chrome.runtime.getManifest().version,
     locale: chrome.i18n.getUILanguage(),
-    // Store installs have an update_url; an unpacked copy (development, testing) doesn't. Aptabase keeps
-    // debug events apart from real ones.
+    // Store installs have an update_url; an unpacked copy (development, testing) doesn't, and its
+    // summaries are marked debug so they stay out of the real numbers.
     isDebug: !("update_url" in chrome.runtime.getManifest()),
   });
   if (await sendSummary(event, appKey)) {

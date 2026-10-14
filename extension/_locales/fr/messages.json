@@ -348,7 +348,7 @@
     "message": "Envoyer un résumé quotidien anonyme"
   },
   "optCountsHint": {
-    "message": "Une fois par jour, Imgkeep envoie un résumé comme « 12 enregistrements en JPG, 1 échec » à Aptabase, un service d'analyse open source hébergé dans l'UE, pour savoir quelles fonctions améliorer et quels enregistrements échouent. Jamais d'images, d'adresses de pages, de noms de fichiers ni rien qui vous identifie."
+    "message": "Une fois par jour, Imgkeep envoie un résumé comme « 12 enregistrements en JPG, 1 échec » à PostHog, un service d'analyse open source hébergé dans l'UE, pour savoir quelles fonctions améliorer et quels enregistrements échouent. Jamais d'images, d'adresses de pages, de noms de fichiers ni rien qui vous identifie."
   },
   "optCountsShow": {
     "message": "Voir exactement ce qui est envoyé"

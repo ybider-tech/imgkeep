@@ -348,7 +348,7 @@
     "message": "Enviar un resumen diario anónimo"
   },
   "optCountsHint": {
-    "message": "Una vez al día, Imgkeep envía un resumen como «12 guardados como JPG, 1 fallido» a Aptabase, un servicio de analítica de código abierto alojado en la UE, para saber qué funciones mejorar y qué guardados fallan. Nunca imágenes, direcciones de páginas, nombres de archivo ni nada que te identifique."
+    "message": "Una vez al día, Imgkeep envía un resumen como «12 guardados como JPG, 1 fallido» a PostHog, un servicio de analítica de código abierto alojado en la UE, para saber qué funciones mejorar y qué guardados fallan. Nunca imágenes, direcciones de páginas, nombres de archivo ni nada que te identifique."
   },
   "optCountsShow": {
     "message": "Ver exactamente qué se envía"

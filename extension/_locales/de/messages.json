@@ -348,7 +348,7 @@
     "message": "Eine anonyme tägliche Zusammenfassung senden"
   },
   "optCountsHint": {
-    "message": "Einmal am Tag sendet Imgkeep eine Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“ an Aptabase, einen Open-Source-Analysedienst mit Servern in der EU, damit wir wissen, welche Funktionen wir verbessern sollten und welche Speichervorgänge scheitern. Niemals Bilder, Seitenadressen, Dateinamen oder etwas, das dich identifiziert."
+    "message": "Einmal am Tag sendet Imgkeep eine Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“ an PostHog, einen Open-Source-Analysedienst mit Servern in der EU, damit wir wissen, welche Funktionen wir verbessern sollten und welche Speichervorgänge scheitern. Niemals Bilder, Seitenadressen, Dateinamen oder etwas, das dich identifiziert."
   },
   "optCountsShow": {
     "message": "Genau sehen, was gesendet wird"

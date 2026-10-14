@@ -438,7 +438,7 @@
     "description": "Checkbox label (on by default)"
   },
   "optCountsHint": {
-    "message": "Once a day, Imgkeep sends a summary like \"12 saves as JPG, 1 failed\" to Aptabase, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.",
+    "message": "Once a day, Imgkeep sends a summary like \"12 saves as JPG, 1 failed\" to PostHog, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.",
     "description": "What the summary is, where it goes, and what is never in it"
   },
   "optCountsShow": {
