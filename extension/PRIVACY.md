@@ -29,6 +29,8 @@ It never contains images, image or page addresses, site names, file or folder na
 
 Like any service your browser connects to, Aptabase receives your IP address when a summary arrives (through its content delivery network). Aptabase doesn't store it: it uses it to work out the country, and combines it with your browser's user agent and a code it throws away every 24 hours to count daily users. Aptabase keeps summaries for up to 5 years. Its privacy policy: https://aptabase.com/legal/privacy
 
+Coming in version 0.9.0: the summary will go to PostHog, an open-source analytics service, in its EU cloud (eu.i.posthog.com), instead of Aptabase. The counts stay the same. Each summary will be an anonymous event with no profile of a person; Imgkeep's PostHog project discards IP addresses, and no location (country or city) is looked up. PostHog's privacy policy: https://posthog.com/privacy
+
 ## Where your settings live
 
 Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update.
