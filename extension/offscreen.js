@@ -153,6 +153,7 @@ const handlers = {
       mime: out.blob.type,
       ext,
       size: out.blob.size,
+      sourceType: await sniffImageType(input), // for the anonymous counts: "image/webp" → JPG
     };
     if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
     if (msg.want === "url") {

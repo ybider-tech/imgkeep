@@ -5,7 +5,7 @@ import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, 
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
-import { APTABASE, addCount, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
+import { APTABASE, addCount, conversionKey, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
@@ -394,7 +394,14 @@ async function attempt(job) {
 
   // The extension comes from the checked output bytes, never from the menu item alone.
   const target = buildTarget({ settings, url: job.url, width: conv.width, height: conv.height, ext: conv.ext, name: job.options?.name });
-  const size = { width: conv.width, height: conv.height, mime: conv.mime, bytes: conv.size, resized: conv.width < conv.sourceWidth };
+  const size = {
+    width: conv.width,
+    height: conv.height,
+    mime: conv.mime,
+    bytes: conv.size,
+    resized: conv.width < conv.sourceWidth,
+    sourceType: conv.sourceType,
+  };
 
   if (mode === "folder") {
     const w = await toOffscreen({ type: "write", jobId: job.id, ...target });
@@ -497,6 +504,8 @@ function countJob(job, result) {
   if (result.ok) {
     const keys = [`save_${job.format}`, `mode_${result.mode}`];
     if (result.resized) keys.push("resized");
+    const conversion = conversionKey(result.sourceType, job.format);
+    if (conversion) keys.push(conversion);
     if (job.origin === "editor") keys.push("more_options_save");
     return count(...keys);
   }
