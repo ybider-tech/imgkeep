@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 — 2026-10-14
+
+- **The anonymous daily summary also counts what is converted into what,** for example WebP → JPG or AVIF → PNG (`webp_to_jpg`, `avif_to_png`…), so we know which conversions matter most. The original's format comes from the image's own bytes (or its type, for SVG), never from its address or name. Original format saves aren't conversions and aren't counted this way. Listed in the privacy policy.
+
 ## 0.8.0 — 2026-10-12
 
 - **Find image here.** On sites that cover their photos with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads), the right-click can't reach the image, so Imgkeep's menu never appeared there. Now those sites get **Imgkeep: Find image here…**: Imgkeep looks at that page once, finds the image under the click (its largest version), and opens it in More options. On feeds where the cover is a link (Pinterest, Instagram grids), the right-clicked link decides which image. Without one, the pointer is only a guess: if other images are near, a picker shows the images on screen with the guess first; if there are none, it says so.

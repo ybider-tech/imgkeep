@@ -1,8 +1,8 @@
 // Anonymous daily usage counts (on by default; one click off in Options).
 //
 // What is counted: how many saves worked per format and save mode, how many failed and why (an error
-// code), copies, More options, site-access and rating answers, and saves made smaller by the maximum
-// width. Counted on this computer, then sent once a day as ONE summary of the previous active day.
+// code), copies, More options, site-access and rating answers, saves made smaller by the maximum
+// width, and for each conversion the original image's format and the one it became (webp_to_jpg). Counted on this computer, then sent once a day as ONE summary of the previous active day.
 // Never: image or page addresses, site or file names, folder names, settings text, or any identifier.
 //
 // Sent to Aptabase (open source, EU-hosted, https://aptabase.com) with one direct request. This file and
@@ -19,8 +19,12 @@ export const APTABASE = {
 const FORMATS = ["png", "jpg", "webp", "gif", "pdf", "original"];
 const MODES = ["downloads", "folder", "ask"];
 const FAILURES = ["blocked", "http", "decode", "unsupported", "blob", "too_large", "timeout", "download", "write", "expired", "unknown", "copy"];
+// Conversions: the original image's format (from its bytes) → the format it was saved as.
+const SOURCES = ["jpg", "png", "webp", "avif", "gif", "svg", "bmp", "ico", "other"];
+const TARGETS = FORMATS.filter((f) => f !== "original");
 export const COUNT_KEYS = [
   ...FORMATS.map((f) => `save_${f}`),
+  ...SOURCES.flatMap((s) => TARGETS.map((t) => `${s}_to_${t}`)),
   ...MODES.map((m) => `mode_${m}`),
   ...FAILURES.map((f) => `fail_${f}`),
   "resized", // a save made smaller by the maximum width
@@ -39,6 +43,22 @@ export const COUNT_KEYS = [
   "rating_rate",
   "rating_no",
 ];
+
+// "image/webp" → "webp"; anything not listed → "other".
+const SOURCE_BY_TYPE = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/apng": "png",
+  "image/webp": "webp",
+  "image/avif": "avif",
+  "image/gif": "gif",
+  "image/svg+xml": "svg",
+  "image/bmp": "bmp",
+  "image/x-icon": "ico",
+  "image/vnd.microsoft.icon": "ico",
+};
+export const conversionKey = (sourceType, format) =>
+  TARGETS.includes(format) ? `${SOURCE_BY_TYPE[String(sourceType || "").toLowerCase()] || "other"}_to_${format}` : null;
 
 export const failureKey = (code) => {
   const key = `fail_${String(code || "unknown").replace(/-/g, "_")}`;

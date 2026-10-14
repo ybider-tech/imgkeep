@@ -94,8 +94,24 @@ test.describe("in the extension", () => {
     await ctx.sw.evaluate(() => chrome.storage.sync.set({ maxWidth: 100 }));
     await run(`${cors.url}/photo.png`, "webp");
     const counts = await local("counts");
-    expect(counts.c).toEqual({ save_png: 1, save_jpg: 1, save_webp: 1, mode_downloads: 3, resized: 1, fail_http: 1 });
+    expect(counts.c).toEqual({
+      save_png: 1, save_jpg: 1, save_webp: 1, mode_downloads: 3, resized: 1, fail_http: 1,
+      // What was converted into what, from the original's bytes (not its address or name).
+      webp_to_png: 1, png_to_jpg: 1, png_to_webp: 1,
+    });
     expect(await sent()).toEqual([]); // nothing goes out during the day
+  });
+
+  test("conversion pairs: only known formats, and Original format is no conversion", async () => {
+    const t = await import("../extension/lib/telemetry.js");
+    expect(t.conversionKey("image/webp", "jpg")).toBe("webp_to_jpg");
+    expect(t.conversionKey("IMAGE/AVIF", "pdf")).toBe("avif_to_pdf");
+    expect(t.conversionKey("image/svg+xml", "png")).toBe("svg_to_png");
+    expect(t.conversionKey("text/html", "png")).toBe("other_to_png");
+    expect(t.conversionKey("", "gif")).toBe("other_to_gif");
+    expect(t.conversionKey("image/webp", "original")).toBeNull();
+    expect(t.conversionKey("image/webp", "https://example.com")).toBeNull();
+    expect(t.COUNT_KEYS).toContain("webp_to_jpg");
   });
 
   test("the next day, one summary goes to Aptabase, and it holds only counts", async () => {
@@ -107,7 +123,7 @@ test.describe("in the extension", () => {
     expect(req.url).toBe("https://eu.aptabase.com/api/v0/event");
     expect(req).toMatchObject({ method: "POST", credentials: "omit", headers: { "Content-Type": "application/json", "App-Key": "A-EU-1234567890" } });
     expect(req.body.eventName).toBe("daily_counts");
-    expect(req.body.props).toEqual({ save_png: 1, mode_downloads: 1, fail_http: 1, browser: "chrome" });
+    expect(req.body.props).toEqual({ save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome" });
     // Loaded unpacked (no update_url), so Aptabase files it as a debug event.
     const { version } = await ctx.sw.evaluate(() => chrome.runtime.getManifest());
     expect(req.body.systemProps).toMatchObject({ appVersion: version, sdkVersion: "imgkeep-direct@1", isDebug: true });
