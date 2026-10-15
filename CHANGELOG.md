@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.9.0 — unreleased
+## 0.9.0 — 2026-10-15
 
 - **Save as ICO, in More options.** One icon file with the image at 16, 32 and 48 px, plus 256 px when the image is at least that big, each stored as a PNG with transparency (`lib/ico.js`, no library). Images that aren't square are centred with transparent edges; animations use their first frame. Width and quality don't apply, so they're hidden for ICO. Not in the right-click menu, to keep it short. Counted like the other formats (`save_ico`, `webp_to_ico`…).
 - **Save as BMP, in More options.** A plain 24-bit bitmap that every app opens, Paint included (`lib/bmp.js`, no library). Maximum width applies; transparent areas get the background colour, like JPG. Counted as `save_bmp`.

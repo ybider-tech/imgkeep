@@ -91,7 +91,7 @@ New in 0.8.0: "Imgkeep: Find image here", a right-click item shown only on sites
 
 New in 0.8.1: the anonymous daily summary also counts conversions by the original's format and the chosen one (for example webp_to_jpg), read from the image's bytes. Still no URLs, site or file names. Listed in the privacy policy.
 
-New in 0.9.0: the anonymous daily summary goes to PostHog's EU cloud (https://eu.i.posthog.com/i/v0/e/) instead of Aptabase; same counts, still one request a day from extension/lib/telemetry.js. Each summary is an anonymous event with a new random id ($process_person_profile: false) and location lookup turned off ($geoip_disable: true); the project discards IP addresses. Announced on imgkeep.app before this version.
+New in 0.9.0: More options can save as ICO (16/32/48/256 px PNGs in one icon file, written by extension/lib/ico.js) and BMP (24-bit, extension/lib/bmp.js); both are small hand-written encoders, no library. The anonymous daily summary goes to PostHog's EU cloud (https://eu.i.posthog.com/i/v0/e/) instead of Aptabase; same counts, still one request a day from extension/lib/telemetry.js. Each summary is an anonymous event with a new random id ($process_person_profile: false) and location lookup turned off ($geoip_disable: true); the project discards IP addresses. Announced on imgkeep.app before this version.
 
 New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
 
