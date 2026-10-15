@@ -35,7 +35,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 
 המרת WebP ו-AVIF ל-PNG או JPG
 
-מקבלים את הפורמט שצריך לעריכה, לשיתוף ולאפליקציות אחרות: PNG,‏ JPG,‏ WebP,‏ GIF,‏ PDF,‏ ICO,‏ BMP או הפורמט המקורי.
+מקבלים את הפורמט שצריך לעריכה, לשיתוף ולאפליקציות אחרות.
 
 • קבצים רגילים: קובצי JPG נשמרים כ-‎.jpg ולא כ-‎.jfif. גם SVG ותמונות data:‎ עובדים.
 • האנימציה ממשיכה לזוז: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF ששומר על התזמון והשקיפות. קובצי GIF מונפשים נשמרים בלי שינוי.
@@ -87,7 +87,7 @@ Buscar imagen aquí está desactivado hasta que lo actives, en Opciones o la pri
 
 CONVIERTE WEBP Y AVIF A PNG O JPG
 
-Consigue el formato que necesitas para editar, compartir y usar en otras aplicaciones: PNG, JPG, WebP, GIF, PDF, ICO, BMP o el formato original.
+Consigue el formato que necesitas para editar, compartir y usar en otras aplicaciones.
 
 • Archivos de imagen estándar: los JPG se guardan como .jpg, no como .jfif. También funcionan las imágenes SVG y data:.
 • Las animaciones siguen moviéndose: WebP, AVIF y APNG animados se convierten en un GIF que conserva su ritmo y su transparencia. Los GIF animados se guardan sin cambios.
@@ -139,7 +139,7 @@ Encontrar imagem aqui fica desativado até você ativar, nas Opções ou na prim
 
 CONVERTA WEBP E AVIF PARA PNG OU JPG
 
-Tenha o formato de que você precisa para editar, compartilhar e usar em outros apps: PNG, JPG, WebP, GIF, PDF, ICO, BMP ou o formato original.
+Tenha o formato de que você precisa para editar, compartilhar e usar em outros apps.
 
 • Arquivos de imagem padrão: JPGs são salvos como .jpg, não .jfif. Imagens SVG e data: também funcionam.
 • Animações continuam se movendo: WebP, AVIF e APNG animados viram um GIF que mantém o tempo e a transparência. GIFs animados são salvos sem alterações.
@@ -191,7 +191,7 @@ Bild hier finden ist aus, bis du es einschaltest, in den Optionen oder bei der e
 
 WEBP UND AVIF IN PNG ODER JPG UMWANDELN
 
-Hol dir das Format, das du zum Bearbeiten, Teilen und für andere Apps brauchst: PNG, JPG, WebP, GIF, PDF, ICO, BMP oder das Originalformat.
+Hol dir das Format, das du zum Bearbeiten, Teilen und für andere Apps brauchst.
 
 • Normale Bilddateien: JPGs werden als .jpg gespeichert, nicht als .jfif. SVG- und data:-Bilder funktionieren auch.
 • Animationen bleiben in Bewegung: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
@@ -243,7 +243,7 @@ Trouver l'image ici est désactivé tant que vous ne l'activez pas, dans les Opt
 
 CONVERTIR LE WEBP ET L'AVIF EN PNG OU JPG
 
-Obtenez le format qu'il vous faut pour retoucher, partager et utiliser dans d'autres applications : PNG, JPG, WebP, GIF, PDF, ICO, BMP ou le format d'origine.
+Obtenez le format qu'il vous faut pour retoucher, partager et utiliser dans d'autres applications.
 
 • Des fichiers standard : les JPG sont enregistrés en .jpg, pas en .jfif. Les images SVG et data: fonctionnent aussi.
 • Les animations continuent de bouger : les WebP, AVIF et APNG animés deviennent un GIF qui garde son rythme et sa transparence. Les GIF animés sont enregistrés sans changement.
@@ -295,7 +295,7 @@ Instagram や Pinterest などのサイトでは、写真の上に重なった�
 
 WEBP と AVIF を PNG や JPG に変換
 
-編集や共有、他のアプリで使うのに必要な形式で保存できます：PNG、JPG、WebP、GIF、PDF、ICO、BMP、または元の形式。
+編集や共有、他のアプリで使うのに必要な形式で保存できます。
 
 • 標準的な画像ファイル：JPG は .jfif ではなく .jpg で保存されます。SVG や data: 画像にも対応。
 • アニメーションはそのまま：アニメーション WebP・AVIF・APNG は、タイミングと透過を保った GIF になります。アニメーション GIF はそのまま保存されます。
@@ -347,7 +347,7 @@ Instagram और Pinterest जैसी साइटों पर फ़ोट�
 
 WEBP और AVIF को PNG या JPG में बदलें
 
-एडिटिंग, शेयर करने और दूसरे ऐप के लिए ज़रूरी फ़ॉर्मैट पाएँ: PNG, JPG, WebP, GIF, PDF, ICO, BMP या मूल फ़ॉर्मैट।
+एडिटिंग, शेयर करने और दूसरे ऐप के लिए ज़रूरी फ़ॉर्मैट पाएँ।
 
 • सामान्य इमेज फ़ाइलें: JPG फ़ाइलें .jfif नहीं, .jpg के रूप में सेव होती हैं। SVG और data: इमेज भी चलती हैं।
 • एनिमेशन चलता रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जिनमें टाइमिंग और पारदर्शिता बनी रहती है। एनिमेटेड GIF बिना बदलाव के सेव होते हैं।
@@ -399,7 +399,7 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 
 تحويل WebP وAVIF إلى PNG أو JPG
 
-احصل على الصيغة التي تحتاجها للتعديل والمشاركة والتطبيقات الأخرى: PNG أو JPG أو WebP أو GIF أو PDF أو ICO أو BMP أو الصيغة الأصلية.
+احصل على الصيغة التي تحتاجها للتعديل والمشاركة والتطبيقات الأخرى.
 
 • ملفات صور قياسية: تُحفظ ملفات JPG بامتداد ‎.jpg وليس ‎.jfif. تعمل صور SVG وdata:‎ أيضًا.
 • الحركة تستمر: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يحافظ على توقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة دون تغيير.
