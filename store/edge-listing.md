@@ -41,7 +41,7 @@ Find image here is off until you turn it on, in Options or the first time you us
 
 CONVERT WEBP AND AVIF TO PNG OR JPG
 
-Get the format you need for editing, sharing and other apps.
+Many sites now use WebP and AVIF images, which other apps often can't open. Imgkeep saves them in a format that works wherever you need it.
 
 • Standard image files: JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
