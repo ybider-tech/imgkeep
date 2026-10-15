@@ -1,5 +1,5 @@
 // 0.7.0: the anonymous daily summary. Pure rules first (Node), then the real extension, with the
-// service worker's fetch replaced so we can see exactly what would be sent (nothing reaches Aptabase).
+// service worker's fetch replaced so we can see exactly what would be sent (nothing reaches PostHog).
 import { test, expect } from "@playwright/test";
 import { rm } from "node:fs/promises";
 import { launchWithExtension } from "./launch.mjs";
@@ -23,20 +23,30 @@ test.describe("rules", () => {
     expect(t.failureKey("something-new")).toBe("fail_unknown");
   });
 
-  test("a summary event has Aptabase's shape and a fresh session id every time", async () => {
+  test("a summary is an anonymous PostHog event with a fresh id every time", async () => {
     const t = await import("../extension/lib/telemetry.js");
     const now = new Date("2026-10-09T08:00:00Z");
-    const a = t.summaryEvent({ save_png: 1, browser: "chrome" }, { appVersion: "0.7.0", locale: "en", now });
-    expect(Object.keys(a).sort()).toEqual(["eventName", "props", "sessionId", "systemProps", "timestamp"]);
-    expect(a).toMatchObject({
+    const a = t.summaryEvent({ save_png: 1, browser: "chrome" }, { appVersion: "0.9.0", locale: "en", now });
+    expect(Object.keys(a).sort()).toEqual(["distinct_id", "event", "properties", "timestamp"]);
+    expect(a).toEqual({
+      event: "daily_counts",
+      distinct_id: expect.any(String),
       timestamp: "2026-10-09T08:00:00.000Z",
-      eventName: "daily_counts",
-      systemProps: { locale: "en", isDebug: false, appVersion: "0.7.0", sdkVersion: "imgkeep-direct@1" },
-      props: { save_png: 1, browser: "chrome" },
+      properties: {
+        save_png: 1,
+        browser: "chrome",
+        app_version: "0.9.0",
+        locale: "en",
+        debug: false,
+        // No person profile, no location lookup.
+        $process_person_profile: false,
+        $geoip_disable: true,
+        $lib: "imgkeep-direct",
+      },
     });
-    const ids = new Set(Array.from({ length: 20 }, () => t.summaryEvent({}, { now }).sessionId));
+    const ids = new Set(Array.from({ length: 20 }, () => t.summaryEvent({}, { now }).distinct_id));
     expect(ids.size).toBe(20);
-    expect(t.APTABASE.url).toBe("https://eu.aptabase.com/api/v0/event");
+    expect(t.ANALYTICS.url).toBe("https://eu.i.posthog.com/i/v0/e/");
   });
 });
 
@@ -55,7 +65,7 @@ test.describe("in the extension", () => {
         globalThis.sent.push({ url, method: init.method, headers: init.headers, credentials: init.credentials, body: JSON.parse(init.body) });
         return { ok: !globalThis.fetchFails };
       };
-      globalThis.imgkeepSetAppKey("A-EU-1234567890");
+      globalThis.imgkeepSetAppKey("phc_test");
     });
   });
 
@@ -114,22 +124,28 @@ test.describe("in the extension", () => {
     expect(t.COUNT_KEYS).toContain("webp_to_jpg");
   });
 
-  test("the next day, one summary goes to Aptabase, and it holds only counts", async () => {
+  test("the next day, one summary goes to PostHog, and it holds only counts", async () => {
     await run(`${cors.url}/photo.webp`, "png");
     await run(`${cors.url}/missing.png`, "jpg");
     await nextDay();
     const [req] = await sent();
     expect((await sent()).length).toBe(1);
-    expect(req.url).toBe("https://eu.aptabase.com/api/v0/event");
-    expect(req).toMatchObject({ method: "POST", credentials: "omit", headers: { "Content-Type": "application/json", "App-Key": "A-EU-1234567890" } });
-    expect(req.body.eventName).toBe("daily_counts");
-    expect(req.body.props).toEqual({ save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome" });
-    // Loaded unpacked (no update_url), so Aptabase files it as a debug event.
+    expect(req.url).toBe("https://eu.i.posthog.com/i/v0/e/");
+    expect(req).toMatchObject({ method: "POST", credentials: "omit", headers: { "Content-Type": "application/json" } });
+    expect(req.body).toMatchObject({ api_key: "phc_test", event: "daily_counts" });
     const { version } = await ctx.sw.evaluate(() => chrome.runtime.getManifest());
-    expect(req.body.systemProps).toMatchObject({ appVersion: version, sdkVersion: "imgkeep-direct@1", isDebug: true });
+    expect(req.body.properties).toEqual({
+      save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome",
+      app_version: version,
+      locale: expect.any(String),
+      debug: true, // loaded unpacked (no update_url): kept out of the real numbers
+      $process_person_profile: false,
+      $geoip_disable: true,
+      $lib: "imgkeep-direct",
+    });
     // No address, file or site name anywhere in what's sent.
     expect(JSON.stringify(req.body)).not.toMatch(/127\.0\.0\.1|photo|missing|http:/);
-    expect(await local("countsLastSent")).toMatchObject({ props: req.body.props });
+    expect(await local("countsLastSent")).toMatchObject({ props: { save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome" } });
     expect(await local("countsOutbox")).toBeUndefined();
   });
 
@@ -167,7 +183,7 @@ test.describe("in the extension", () => {
     await run(`${cors.url}/photo.webp`, "png");
     await nextDay();
     expect(await sent()).toEqual([]);
-    await ctx.sw.evaluate(() => globalThis.imgkeepSetAppKey("A-EU-1234567890"));
+    await ctx.sw.evaluate(() => globalThis.imgkeepSetAppKey("phc_test"));
   });
 
   test("Options explains it, is on by default, and shows exactly what's counted", async () => {

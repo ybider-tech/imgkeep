@@ -348,7 +348,7 @@
     "message": "Enviar um resumo diário anônimo"
   },
   "optCountsHint": {
-    "message": "Uma vez por dia, o Imgkeep envia um resumo como \"12 salvamentos como JPG, 1 falhou\" para o Aptabase, um serviço de análise de código aberto hospedado na UE, para sabermos quais recursos melhorar e quais salvamentos falham. Nunca imagens, endereços de páginas, nomes de arquivos ou qualquer coisa que identifique você."
+    "message": "Uma vez por dia, o Imgkeep envia um resumo como \"12 salvamentos como JPG, 1 falhou\" para o PostHog, um serviço de análise de código aberto hospedado na UE, para sabermos quais recursos melhorar e quais salvamentos falham. Nunca imagens, endereços de páginas, nomes de arquivos ou qualquer coisa que identifique você."
   },
   "optCountsShow": {
     "message": "Ver exatamente o que é enviado"
@@ -460,6 +460,12 @@
   },
   "editPngHint": {
     "message": "PNG mantém cada pixel. Para um arquivo menor, reduza a largura máxima ou escolha JPG ou WebP."
+  },
+  "editIcoHint": {
+    "message": "Um arquivo de ícone com a imagem em 16, 32 e 48 px, e também em 256 px quando ela é grande o bastante. Imagens que não são quadradas ganham bordas transparentes."
+  },
+  "editBmpHint": {
+    "message": "Um bitmap simples que qualquer app abre. Os arquivos são grandes, e as áreas transparentes ficam com a cor de fundo."
   },
   "editMaxWidthHint": {
     "message": "Em pixels. Mantém a proporção e nunca amplia."

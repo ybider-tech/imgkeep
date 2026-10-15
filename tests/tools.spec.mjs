@@ -256,6 +256,66 @@ test("More options: Copy as PNG uses the chosen width", async () => {
   await win.close();
 });
 
+test("More options: ICO holds 16, 32, 48 and 256 px PNGs, square, with transparent edges", async () => {
+  const win = await openWindow("editor", wide); // 2400 × 1200: big enough for 256 px, not square
+  await win.getByText("ICO", { exact: true }).click();
+  await expect(win.locator("#resultFacts")).toContainText("16, 32, 48, 256 px · ICO ·");
+  await expect(win.locator("#icoHint")).toBeVisible();
+  await expect(win.locator("#qualityField")).toBeHidden(); // no quality or width for an icon
+  await expect(win.locator("#widthField")).toBeHidden();
+  await expect(win.locator("#ext")).toHaveText(".ico");
+  await win.getByLabel("File name").fill("favicon");
+  await win.getByRole("button", { name: "Save" }).click();
+  await expect(win.locator("#status")).toHaveText("Saved as favicon.ico");
+  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "favicon\\.ico$", orderBy: ["-startTime"] }));
+  const bytes = await readFile((await waitForDownload(item.id)).filename);
+  // Header: reserved 0, type 1 (icon), 4 images.
+  expect([bytes.readUInt16LE(0), bytes.readUInt16LE(2), bytes.readUInt16LE(4)]).toEqual([0, 1, 4]);
+  const sizes = [];
+  for (let i = 0; i < 4; i++) {
+    const e = 6 + 16 * i;
+    const size = bytes[e] || 256; // 0 means 256
+    const png = bytes.subarray(bytes.readUInt32LE(e + 12), bytes.readUInt32LE(e + 12) + bytes.readUInt32LE(e + 8));
+    expect(sniff(png)).toBe("image/png");
+    const img = await decode(Buffer.from(png));
+    expect([img.width, img.height]).toEqual([size, size]);
+    expect(img.left[3]).toBe(0); // the wide image sits in the middle: the top edge is transparent
+    sizes.push(size);
+  }
+  expect(sizes).toEqual([16, 32, 48, 256]);
+  await win.close();
+});
+
+test("More options: BMP is a 24-bit bitmap, width applied, transparency on the background colour", async () => {
+  const win = await openWindow("editor", wide); // left half transparent, right half blue
+  await win.getByText("BMP", { exact: true }).click();
+  await expect(win.locator("#bmpHint")).toBeVisible();
+  await expect(win.locator("#qualityField")).toBeHidden();
+  await expect(win.locator("#backgroundField")).toBeVisible();
+  await win.getByLabel("Maximum width").fill("600");
+  await expect(win.locator("#resultFacts")).toContainText("600 × 300 · BMP ·");
+  await win.getByLabel("File name").fill("bitmap");
+  await win.getByRole("button", { name: "Save" }).click();
+  await expect(win.locator("#status")).toHaveText("Saved as bitmap.bmp");
+  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "bitmap\\.bmp$", orderBy: ["-startTime"] }));
+  const bytes = await readFile((await waitForDownload(item.id)).filename);
+  expect(bytes.subarray(0, 2).toString()).toBe("BM");
+  expect([bytes.readUInt32LE(2), bytes.readUInt16LE(28)]).toEqual([bytes.length, 24]);
+  const img = await decode(bytes);
+  expect([img.width, img.height]).toEqual([600, 300]);
+  expect(img.left).toEqual([255, 255, 255, 255]); // transparent → the default white background
+  expect(img.right).toEqual([20, 60, 200, 255]);
+  await win.close();
+});
+
+test("ICO: a small image gets 16, 32 and 48 px only", async () => {
+  const t = await import("../extension/lib/ico.js");
+  expect(t.icoSizes(100, 40)).toEqual([16, 32, 48]);
+  expect(t.icoSizes(256, 10)).toEqual([16, 32, 48, 256]);
+  expect(t.fitSquare(200, 100, 32)).toEqual({ x: 0, y: 8, w: 32, h: 16 });
+  expect(t.fitSquare(50, 50, 16)).toEqual({ x: 0, y: 0, w: 16, h: 16 });
+});
+
 test("More options: a tall image (like a pin) is shown whole, not cut off", async () => {
   const w = 300, h = 1200;
   const tall = `data:image/png;base64,${encodePng(w, h, Buffer.alloc(w * h * 4, 200)).toString("base64")}`;

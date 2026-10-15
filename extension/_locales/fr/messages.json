@@ -348,7 +348,7 @@
     "message": "Envoyer un résumé quotidien anonyme"
   },
   "optCountsHint": {
-    "message": "Une fois par jour, Imgkeep envoie un résumé comme « 12 enregistrements en JPG, 1 échec » à Aptabase, un service d'analyse open source hébergé dans l'UE, pour savoir quelles fonctions améliorer et quels enregistrements échouent. Jamais d'images, d'adresses de pages, de noms de fichiers ni rien qui vous identifie."
+    "message": "Une fois par jour, Imgkeep envoie un résumé comme « 12 enregistrements en JPG, 1 échec » à PostHog, un service d'analyse open source hébergé dans l'UE, pour savoir quelles fonctions améliorer et quels enregistrements échouent. Jamais d'images, d'adresses de pages, de noms de fichiers ni rien qui vous identifie."
   },
   "optCountsShow": {
     "message": "Voir exactement ce qui est envoyé"
@@ -460,6 +460,12 @@
   },
   "editPngHint": {
     "message": "Le PNG conserve chaque pixel. Pour un fichier plus léger, réduisez la largeur maximale ou choisissez JPG ou WebP."
+  },
+  "editIcoHint": {
+    "message": "Un fichier d'icône avec l'image en 16, 32 et 48 px, plus 256 px si elle est assez grande. Les images qui ne sont pas carrées reçoivent des bords transparents."
+  },
+  "editBmpHint": {
+    "message": "Un bitmap simple que toutes les applications ouvrent. Les fichiers sont lourds, et les zones transparentes prennent la couleur de fond."
   },
   "editMaxWidthHint": {
     "message": "En pixels. Garde les proportions, n'agrandit jamais."

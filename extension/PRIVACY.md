@@ -14,11 +14,11 @@ Imgkeep reads only the image you right-click and choose to save. It converts tha
 
 ## The anonymous daily summary
 
-Since version 0.7.0, Imgkeep counts on your computer how often its features are used. Once a day it sends the totals of the previous day it was used to Aptabase, an open-source analytics service hosted in the EU (eu.aptabase.com), to learn which features to improve and whether saves fail. It is on by default. Turn it off in Imgkeep's Options, under "Anonymous usage counts"; anything counted and not yet sent is then deleted. The same section shows exactly what has been counted and the last summary sent.
+Since version 0.7.0, Imgkeep counts on your computer how often its features are used. Once a day it sends the totals of the previous day it was used to PostHog, an open-source analytics service, in its EU cloud (eu.i.posthog.com), to learn which features to improve and whether saves fail. (Up to version 0.8.1, summaries went to Aptabase, also hosted in the EU.) It is on by default. Turn it off in Imgkeep's Options, under "Anonymous usage counts"; anything counted and not yet sent is then deleted. The same section shows exactly what has been counted and the last summary sent.
 
 A summary contains only:
 
-- successful saves per format (PNG, JPG, WebP, GIF, PDF, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
+- successful saves per format (PNG, JPG, WebP, GIF, PDF, ICO, BMP, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
 - for each conversion, the format the image had and the format it was saved as (for example WebP to JPG), read from the image itself (since 0.8.1);
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;
@@ -27,9 +27,7 @@ A summary contains only:
 
 It never contains images, image or page addresses, site names, file or folder names, the text of your settings, or any identifier for you or your device. Each summary carries a new random number, so summaries can't be linked to each other.
 
-Like any service your browser connects to, Aptabase receives your IP address when a summary arrives (through its content delivery network). Aptabase doesn't store it: it uses it to work out the country, and combines it with your browser's user agent and a code it throws away every 24 hours to count daily users. Aptabase keeps summaries for up to 5 years. Its privacy policy: https://aptabase.com/legal/privacy
-
-Coming in version 0.9.0: the summary will go to PostHog, an open-source analytics service, in its EU cloud (eu.i.posthog.com), instead of Aptabase. The counts stay the same. Each summary will be an anonymous event with no profile of a person; Imgkeep's PostHog project discards IP addresses, and no location (country or city) is looked up. PostHog's privacy policy: https://posthog.com/privacy
+Like any service your browser connects to, PostHog receives your IP address when a summary arrives. Imgkeep's PostHog project is set to discard it, and each summary asks PostHog not to look up a location from it, so no IP address, country or city is stored. Each summary is sent as an anonymous event: PostHog keeps no profile of a person for it. PostHog keeps events for up to one year on Imgkeep's plan. Its privacy policy: https://posthog.com/privacy
 
 ## Where your settings live
 

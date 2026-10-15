@@ -348,7 +348,7 @@
     "message": "Enviar un resumen diario anónimo"
   },
   "optCountsHint": {
-    "message": "Una vez al día, Imgkeep envía un resumen como «12 guardados como JPG, 1 fallido» a Aptabase, un servicio de analítica de código abierto alojado en la UE, para saber qué funciones mejorar y qué guardados fallan. Nunca imágenes, direcciones de páginas, nombres de archivo ni nada que te identifique."
+    "message": "Una vez al día, Imgkeep envía un resumen como «12 guardados como JPG, 1 fallido» a PostHog, un servicio de analítica de código abierto alojado en la UE, para saber qué funciones mejorar y qué guardados fallan. Nunca imágenes, direcciones de páginas, nombres de archivo ni nada que te identifique."
   },
   "optCountsShow": {
     "message": "Ver exactamente qué se envía"
@@ -460,6 +460,12 @@
   },
   "editPngHint": {
     "message": "PNG conserva cada píxel. Para un archivo más pequeño, baja el ancho máximo o elige JPG o WebP."
+  },
+  "editIcoHint": {
+    "message": "Un archivo de icono con la imagen a 16, 32 y 48 px, y también a 256 px si es lo bastante grande. Las imágenes que no son cuadradas reciben bordes transparentes."
+  },
+  "editBmpHint": {
+    "message": "Un mapa de bits sencillo que abre cualquier aplicación. Los archivos son grandes y las zonas transparentes toman el color de fondo."
   },
   "editMaxWidthHint": {
     "message": "En píxeles. Mantiene la proporción y nunca amplía."

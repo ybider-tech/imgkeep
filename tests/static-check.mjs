@@ -1,7 +1,7 @@
 // Static trust check. Fails if the extension asks for more than it should, makes network calls
 // anywhere but the two allowed places, or references outside URLs.
 //   offscreen.js      fetches the image you chose (and nothing else is fetched there by design)
-//   lib/telemetry.js  sends the anonymous daily summary, to exactly one Aptabase URL
+//   lib/telemetry.js  sends the anonymous daily summary, to exactly one PostHog URL
 import { readFile, readdir } from "node:fs/promises";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -10,11 +10,11 @@ const EXT = join(dirname(fileURLToPath(import.meta.url)), "..", "extension");
 const ALLOWED_PERMISSIONS = ["contextMenus", "downloads", "offscreen", "storage"];
 const ALLOWED_OPTIONAL_HOSTS = ["http://*/*", "https://*/*"];
 // imgkeep.app and the two stores (for "Rate Imgkeep"). These are links people click, never requests the extension makes.
-const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore|microsoftedge\.microsoft\.com\/addons|aptabase\.com|posthog\.com)(\/|$)|^https:\/\/eu\.aptabase\.com\/api\/v0\/event$|^https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w\/viewform$/;
+const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore|microsoftedge\.microsoft\.com\/addons|posthog\.com)(\/|$)|^https:\/\/eu\.i\.posthog\.com\/i\/v0\/e\/$|^https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w\/viewform$/;
 // The uninstall form (lib/uninstall.js) is the one Google address allowed: the browser opens it after an
 // uninstall; the extension never requests it.
 const FETCH_FILES = ["offscreen.js", "lib/telemetry.js"];
-const TELEMETRY_URL = "https://eu.aptabase.com/api/v0/event";
+const TELEMETRY_URL = "https://eu.i.posthog.com/i/v0/e/";
 const TEXT_FILES = /\.(js|mjs|html|css|json|md|txt)$/
 
 const problems = [];
@@ -60,8 +60,8 @@ for await (const path of walk(EXT)) {
   }
   const relPosix = rel.split("\\").join("/");
   if (/\bfetch\s*\(/.test(text) && !FETCH_FILES.includes(relPosix)) fail(`${rel}: fetch( is only allowed in ${FETCH_FILES.join(" and ")}`);
-  if (/aptabase\.com/i.test(text) && relPosix !== "lib/telemetry.js" && !rel.startsWith("_locales") && rel !== "PRIVACY.md") {
-    fail(`${rel}: only lib/telemetry.js may talk to Aptabase`);
+  if (/posthog\.com/i.test(text) && relPosix !== "lib/telemetry.js" && !rel.startsWith("_locales") && rel !== "PRIVACY.md") {
+    fail(`${rel}: only lib/telemetry.js may talk to PostHog`);
   }
   for (const [url] of text.matchAll(/https?:\/\/[^\s"'`<>)\]]*/g)) {
     if (!ALLOWED_URL.test(url)) fail(`${rel}: outside URL ${url}`);
@@ -75,7 +75,7 @@ for await (const path of walk(EXT)) {
 const telemetry = await readFile(join(EXT, "lib", "telemetry.js"), "utf8");
 if ((telemetry.match(/\bfetch\s*\(/g) || []).length !== 1) fail("lib/telemetry.js must make exactly one fetch(");
 if (!telemetry.includes(`url: "${TELEMETRY_URL}"`)) fail(`lib/telemetry.js must send only to ${TELEMETRY_URL}`);
-if (!/fetch\(APTABASE\.url,/.test(telemetry)) fail("lib/telemetry.js must fetch APTABASE.url and nothing else");
+if (!/fetch\(ANALYTICS\.url,/.test(telemetry)) fail("lib/telemetry.js must fetch ANALYTICS.url and nothing else");
 
 // Translations (_locales): same messages everywhere, placeholders and tokens kept, store limits respected.
 const LOCALES = join(EXT, "_locales");
@@ -126,4 +126,4 @@ if (problems.length) {
   console.error(`Static check failed:\n- ${problems.join("\n- ")}`);
   process.exit(1);
 }
-console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one Aptabase URL), no other outside URLs.");
+console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one PostHog URL), no other outside URLs.");

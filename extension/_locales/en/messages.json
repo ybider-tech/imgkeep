@@ -438,7 +438,7 @@
     "description": "Checkbox label (on by default)"
   },
   "optCountsHint": {
-    "message": "Once a day, Imgkeep sends a summary like \"12 saves as JPG, 1 failed\" to Aptabase, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.",
+    "message": "Once a day, Imgkeep sends a summary like \"12 saves as JPG, 1 failed\" to PostHog, an open-source analytics service hosted in the EU, so we know which features to improve and which saves fail. Never images, page addresses, file names or anything that identifies you.",
     "description": "What the summary is, where it goes, and what is never in it"
   },
   "optCountsShow": {
@@ -586,6 +586,12 @@
   "editPngHint": {
     "message": "PNG keeps every pixel. For a smaller file, lower the maximum width or choose JPG or WebP.",
     "description": "Hint under the format choice when PNG is chosen"
+  },
+  "editIcoHint": {
+    "message": "An icon file with the image at 16, 32 and 48 px, plus 256 px when it's big enough. Images that aren't square get transparent edges."
+  },
+  "editBmpHint": {
+    "message": "A plain bitmap that every app opens. Files are large, and transparent areas get the background colour."
   },
   "editMaxWidthHint": {
     "message": "In pixels. Keeps the shape, never enlarges.",

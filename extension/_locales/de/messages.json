@@ -348,7 +348,7 @@
     "message": "Eine anonyme tägliche Zusammenfassung senden"
   },
   "optCountsHint": {
-    "message": "Einmal am Tag sendet Imgkeep eine Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“ an Aptabase, einen Open-Source-Analysedienst mit Servern in der EU, damit wir wissen, welche Funktionen wir verbessern sollten und welche Speichervorgänge scheitern. Niemals Bilder, Seitenadressen, Dateinamen oder etwas, das dich identifiziert."
+    "message": "Einmal am Tag sendet Imgkeep eine Zusammenfassung wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“ an PostHog, einen Open-Source-Analysedienst mit Servern in der EU, damit wir wissen, welche Funktionen wir verbessern sollten und welche Speichervorgänge scheitern. Niemals Bilder, Seitenadressen, Dateinamen oder etwas, das dich identifiziert."
   },
   "optCountsShow": {
     "message": "Genau sehen, was gesendet wird"
@@ -460,6 +460,12 @@
   },
   "editPngHint": {
     "message": "PNG behält jedes Pixel. Für eine kleinere Datei verringere die maximale Breite oder wähle JPG oder WebP."
+  },
+  "editIcoHint": {
+    "message": "Eine Icon-Datei mit dem Bild in 16, 32 und 48 px, dazu 256 px, wenn es groß genug ist. Nicht quadratische Bilder bekommen transparente Ränder."
+  },
+  "editBmpHint": {
+    "message": "Eine einfache Bitmap, die jedes Programm öffnet. Die Dateien sind groß, und transparente Bereiche bekommen die Hintergrundfarbe."
   },
   "editMaxWidthHint": {
     "message": "In Pixeln. Behält die Form, vergrößert nie."

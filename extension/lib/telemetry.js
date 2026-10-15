@@ -5,18 +5,20 @@
 // width, and for each conversion the original image's format and the one it became (webp_to_jpg). Counted on this computer, then sent once a day as ONE summary of the previous active day.
 // Never: image or page addresses, site or file names, folder names, settings text, or any identifier.
 //
-// Sent to Aptabase (open source, EU-hosted, https://aptabase.com) with one direct request. This file and
-// offscreen.js (which fetches the image you chose) are the only places that may make a network request,
-// and this one may only call APTABASE.url. tests/static-check.mjs enforces both.
+// Sent to PostHog (open source, EU cloud, https://posthog.com) with one direct request, as an anonymous
+// event: a new random id each time and no person profile. The project discards client IP addresses.
+// This file and offscreen.js (which fetches the image you chose) are the only places that may make a
+// network request, and this one may only call ANALYTICS.url. tests/static-check.mjs enforces both.
+// (Until 0.8.1 the summary went to Aptabase.)
 
-export const APTABASE = {
-  url: "https://eu.aptabase.com/api/v0/event",
-  // The Imgkeep app's key in Aptabase (EU region). Not a secret: it only allows sending events.
-  appKey: "A-EU-2150018612",
+export const ANALYTICS = {
+  url: "https://eu.i.posthog.com/i/v0/e/",
+  // The Imgkeep project's public key in PostHog (EU). Not a secret: it only allows sending events.
+  appKey: "phc_ySndSqiXPjvRPLoBmrGW96UsQQUGrGk5qCGKjneucWk2",
 };
 
 // Every count that can be sent. Anything else is dropped before sending.
-const FORMATS = ["png", "jpg", "webp", "gif", "pdf", "original"];
+const FORMATS = ["png", "jpg", "webp", "gif", "pdf", "ico", "bmp", "original"];
 const MODES = ["downloads", "folder", "ask"];
 const FAILURES = ["blocked", "http", "decode", "unsupported", "blob", "too_large", "timeout", "download", "write", "expired", "unknown", "copy"];
 // Conversions: the original image's format (from its bytes) → the format it was saved as.
@@ -92,31 +94,39 @@ export function summaryProps(c, browser) {
   return props;
 }
 
-// A fresh random session id for every summary, so summaries can't be linked to each other.
+// A fresh random id for every summary, so summaries can't be linked to each other.
 export function randomSessionId(now = Date.now()) {
   return `${Math.floor(now / 1000)}${String(Math.floor(Math.random() * 1e8)).padStart(8, "0")}`;
 }
 
-// Aptabase's event format (the same one its own SDK sends).
+// PostHog's event format. $process_person_profile: false makes it an anonymous event: PostHog keeps no
+// person for it. $geoip_disable: true stops it from looking up a location from the IP address. debug marks copies loaded unpacked (development, testing), so dashboards can leave them out.
 export function summaryEvent(props, { appVersion, locale, now = new Date(), isDebug = false }) {
   return {
+    event: "daily_counts",
+    distinct_id: randomSessionId(now.getTime()),
     timestamp: now.toISOString(),
-    sessionId: randomSessionId(now.getTime()),
-    eventName: "daily_counts",
-    systemProps: { locale, isDebug, appVersion, sdkVersion: "imgkeep-direct@1" },
-    props,
+    properties: {
+      ...props,
+      app_version: appVersion,
+      locale,
+      debug: isDebug,
+      $process_person_profile: false,
+      $geoip_disable: true, // no location lookup at all (country, city…) from the request's IP address
+      $lib: "imgkeep-direct",
+    },
   };
 }
 
-// Sends one summary. Returns true if Aptabase accepted it. Never throws.
-export async function sendSummary(event, appKey = APTABASE.appKey) {
+// Sends one summary. Returns true if PostHog accepted it. Never throws.
+export async function sendSummary(event, appKey = ANALYTICS.appKey) {
   if (!appKey) return false;
   try {
-    const res = await fetch(APTABASE.url, {
+    const res = await fetch(ANALYTICS.url, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "App-Key": appKey },
+      headers: { "Content-Type": "application/json" },
       credentials: "omit",
-      body: JSON.stringify(event),
+      body: JSON.stringify({ api_key: appKey, ...event }),
     });
     return res.ok;
   } catch {

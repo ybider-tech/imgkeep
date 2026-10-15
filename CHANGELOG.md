@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 — 2026-10-15
+
+- **Save as ICO, in More options.** One icon file with the image at 16, 32 and 48 px, plus 256 px when the image is at least that big, each stored as a PNG with transparency (`lib/ico.js`, no library). Images that aren't square are centred with transparent edges; animations use their first frame. Width and quality don't apply, so they're hidden for ICO. Not in the right-click menu, to keep it short. Counted like the other formats (`save_ico`, `webp_to_ico`…).
+- **Save as BMP, in More options.** A plain 24-bit bitmap that every app opens, Paint included (`lib/bmp.js`, no library). Maximum width applies; transparent areas get the background colour, like JPG. Counted as `save_bmp`.
+- **The anonymous daily summary moves from Aptabase to PostHog** (open source, EU cloud), which shows the numbers far more clearly. Announced on imgkeep.app/whats-new.html and in the privacy policy first. Same counts, still one summary a day, still one click off in Options.
+- Each summary is an anonymous PostHog event: a new random id every time, no person profile (`$process_person_profile: false`), and no location lookup (`$geoip_disable: true`). The PostHog project discards client IP addresses, so no IP, country or city is stored (Aptabase kept the country). Unpacked copies mark their summaries `debug: true`.
+- `lib/telemetry.js` still makes exactly one request, now only to `https://eu.i.posthog.com/i/v0/e/`; the static check allows that address and no other. Privacy policy, Options (9 languages), README, PERMISSIONS.md and the store notes name PostHog.
+
 ## 0.8.1 — 2026-10-14
 
 - **The anonymous daily summary also counts what is converted into what,** for example WebP → JPG or AVIF → PNG (`webp_to_jpg`, `avif_to_png`…), so we know which conversions matter most. The original's format comes from the image's own bytes (or its type, for SVG), never from its address or name. Original format saves aren't conversions and aren't counted this way. Listed in the privacy policy.
