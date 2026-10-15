@@ -590,6 +590,9 @@
   "editIcoHint": {
     "message": "An icon file with the image at 16, 32 and 48 px, plus 256 px when it's big enough. Images that aren't square get transparent edges."
   },
+  "editBmpHint": {
+    "message": "A plain bitmap that every app opens. Files are large, and transparent areas get the background colour."
+  },
   "editMaxWidthHint": {
     "message": "In pixels. Keeps the shape, never enlarges.",
     "description": "Hint under the maximum width field"

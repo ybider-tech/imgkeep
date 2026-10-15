@@ -286,6 +286,28 @@ test("More options: ICO holds 16, 32, 48 and 256 px PNGs, square, with transpare
   await win.close();
 });
 
+test("More options: BMP is a 24-bit bitmap, width applied, transparency on the background colour", async () => {
+  const win = await openWindow("editor", wide); // left half transparent, right half blue
+  await win.getByText("BMP", { exact: true }).click();
+  await expect(win.locator("#bmpHint")).toBeVisible();
+  await expect(win.locator("#qualityField")).toBeHidden();
+  await expect(win.locator("#backgroundField")).toBeVisible();
+  await win.getByLabel("Maximum width").fill("600");
+  await expect(win.locator("#resultFacts")).toContainText("600 × 300 · BMP ·");
+  await win.getByLabel("File name").fill("bitmap");
+  await win.getByRole("button", { name: "Save" }).click();
+  await expect(win.locator("#status")).toHaveText("Saved as bitmap.bmp");
+  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "bitmap\\.bmp$", orderBy: ["-startTime"] }));
+  const bytes = await readFile((await waitForDownload(item.id)).filename);
+  expect(bytes.subarray(0, 2).toString()).toBe("BM");
+  expect([bytes.readUInt32LE(2), bytes.readUInt16LE(28)]).toEqual([bytes.length, 24]);
+  const img = await decode(bytes);
+  expect([img.width, img.height]).toEqual([600, 300]);
+  expect(img.left).toEqual([255, 255, 255, 255]); // transparent → the default white background
+  expect(img.right).toEqual([20, 60, 200, 255]);
+  await win.close();
+});
+
 test("ICO: a small image gets 16, 32 and 48 px only", async () => {
   const t = await import("../extension/lib/ico.js");
   expect(t.icoSizes(100, 40)).toEqual([16, 32, 48]);

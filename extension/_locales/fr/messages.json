@@ -464,6 +464,9 @@
   "editIcoHint": {
     "message": "Un fichier d'icône avec l'image en 16, 32 et 48 px, plus 256 px si elle est assez grande. Les images qui ne sont pas carrées reçoivent des bords transparents."
   },
+  "editBmpHint": {
+    "message": "Un bitmap simple que toutes les applications ouvrent. Les fichiers sont lourds, et les zones transparentes prennent la couleur de fond."
+  },
   "editMaxWidthHint": {
     "message": "En pixels. Garde les proportions, n'agrandit jamais."
   },

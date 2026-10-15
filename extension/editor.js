@@ -11,7 +11,7 @@ import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, fo
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
 const toBackground = (type, extra) => ask(jobId, type, extra);
-const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", ico: "ICO" };
+const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", ico: "ICO", bmp: "BMP" };
 const LAST = "editorLast"; // the last format and width used here, in chrome.storage.local
 
 let job = null; // { url, pageUrl, settings }
@@ -44,13 +44,14 @@ function setBusy(busy) {
 // Controls that only apply to some formats.
 function syncControls() {
   const f = format();
-  $("qualityField").hidden = f === "png" || f === "ico";
+  $("qualityField").hidden = f === "png" || f === "ico" || f === "bmp"; // lossless, no quality
   $("pngHint").hidden = f !== "png";
   $("icoHint").hidden = f !== "ico";
+  $("bmpHint").hidden = f !== "bmp";
   $("widthField").hidden = f === "ico"; // an icon has fixed sizes
-  $("backgroundField").hidden = f !== "jpg";
+  $("backgroundField").hidden = f !== "jpg" && f !== "bmp";
   const settings = job.settings;
-  if (f !== "png" && f !== "ico" && !$("quality").dataset.touched) $("quality").value = f === "webp" ? settings.webpQuality : settings.jpgQuality;
+  if (!["png", "ico", "bmp"].includes(f) && !$("quality").dataset.touched) $("quality").value = f === "webp" ? settings.webpQuality : settings.jpgQuality;
   $("qualityOut").textContent = $("quality").value;
 }
 

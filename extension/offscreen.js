@@ -8,6 +8,7 @@ import { decode, draw, encodeCanvas, fitWidth, processImage, sniffImageType, ver
 import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } from "./lib/gif.js";
 import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
 import { buildIco, fitSquare, icoSizes } from "./lib/ico.js";
+import { buildBmp } from "./lib/bmp.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
 // and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
@@ -144,6 +145,27 @@ async function toIco(input) {
   }
 }
 
+// BMP output: 24-bit, maximum width applied, transparent areas on the background colour (like JPG).
+async function toBmp(input, { maxWidth, background }) {
+  const image = await decode(input);
+  let canvas;
+  try {
+    const { width, height } = fitWidth(image.width, image.height, maxWidth);
+    canvas = draw(image, { width, height, background: background || "#ffffff" });
+    let rgba;
+    try {
+      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
+    } catch {
+      throw new JobError("too-large");
+    }
+    const blob = new Blob([buildBmp(rgba, width, height)], { type: "image/bmp" });
+    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height };
+  } finally {
+    if (canvas) canvas.width = canvas.height = 0;
+    image.done();
+  }
+}
+
 function toDataUrl(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -162,7 +184,7 @@ const handlers = {
   async convert(msg) {
     const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
     const make =
-      msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : msg.mime === "image/x-icon" ? toIco : still;
+      { "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp }[msg.mime] || still;
     const out = await make(input, msg);
     // Whatever made it, the file must really be the type it will be named as.
     const ext = await verifyOutput(out.blob, msg.mime);

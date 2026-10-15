@@ -13,6 +13,7 @@ export const EXT_BY_TYPE = {
   "image/gif": "gif",
   "application/pdf": "pdf",
   "image/x-icon": "ico",
+  "image/bmp": "bmp",
 };
 
 // The type from the file's first bytes. Servers often send the wrong Content-Type,
@@ -26,6 +27,7 @@ export function typeFromBytes(b) {
   if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return "image/jpeg";
   if (text(0, 5) === "%PDF-") return "application/pdf";
   if (b[0] === 0 && b[1] === 0 && b[2] === 1 && b[3] === 0) return "image/x-icon";
+  if (text(0, 2) === "BM") return "image/bmp";
   return "";
 }
 

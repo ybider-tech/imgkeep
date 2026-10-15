@@ -25,6 +25,8 @@ export const FORMATS = {
   pdf: { mime: "application/pdf", ext: "pdf", label: "PDF" },
   // ICO (More options only): 16, 32 and 48 px, plus 256 px for big images, in one icon file.
   ico: { mime: "image/x-icon", ext: "ico", label: "ICO" },
+  // BMP (More options only): 24-bit; transparent areas get the background colour, like JPG.
+  bmp: { mime: "image/bmp", ext: "bmp", label: "BMP" },
 };
 
 // Caps for making GIFs, so a huge animation can't hang the browser. Over a cap → "too-large".
@@ -142,7 +144,7 @@ export function buildTarget({ settings, url, width, height, ext, now, sample, na
     .map((part) => sanitizeSegment(fillTemplate(part, tokens)))
     .filter(Boolean);
   const name =
-    sanitizeSegment(String(typedName ?? "").replace(/\.(png|jpe?g|jfif|webp|gif|pdf|avif|ico)$/i, "")) ||
+    sanitizeSegment(String(typedName ?? "").replace(/\.(png|jpe?g|jfif|webp|gif|pdf|avif|ico|bmp)$/i, "")) ||
     sanitizeSegment(fillTemplate(settings.filenameTemplate || "{name}", tokens)) ||
     sanitizeSegment(tokens.name) ||
     "image";
