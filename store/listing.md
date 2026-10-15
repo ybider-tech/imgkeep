@@ -30,7 +30,7 @@ Find image here is off until you turn it on, in Options or the first time you us
 
 CONVERT WEBP AND AVIF TO PNG OR JPG
 
-Get the format you need for editing, sharing and other apps: PNG, JPG, WebP, AVIF, GIF, PDF, ICO, BMP or the original format.
+Get the format you need for editing, sharing and other apps.
 
 • Standard image files: JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
