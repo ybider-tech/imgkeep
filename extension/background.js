@@ -5,6 +5,7 @@ import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, 
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
+import { AVIF_DEFAULT_QUALITY } from "./lib/avif.js";
 import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
@@ -339,7 +340,7 @@ async function download({ url, filename, saveAs }) {
 // Settings, with More options' choices on top.
 function choicesFor(job, settings) {
   const o = job.options || {};
-  const quality = job.format === "webp" ? settings.webpQuality : settings.jpgQuality; // PDF photos use JPG quality
+  const quality = job.format === "webp" ? settings.webpQuality : job.format === "avif" ? AVIF_DEFAULT_QUALITY : settings.jpgQuality; // PDF photos use JPG quality
   return {
     quality: o.quality ?? quality,
     background: o.background ?? settings.jpgBackground,
@@ -577,7 +578,7 @@ function cleanOptions(o = {}) {
   return out;
 }
 
-const WINDOW_FORMATS = ["png", "jpg", "webp", "ico", "bmp"];
+const WINDOW_FORMATS = ["png", "jpg", "webp", "avif", "ico", "bmp"];
 
 // Converts a window's image without saving it and returns the file as a data: URL (preview, clipboard).
 async function convertForWindow(jobId, format, options) {

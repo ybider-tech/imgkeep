@@ -2,6 +2,9 @@
 // anywhere but the two allowed places, or references outside URLs.
 //   offscreen.js      fetches the image you chose (and nothing else is fetched there by design)
 //   lib/telemetry.js  sends the anonymous daily summary, to exactly one PostHog URL
+// One compiled part: the AVIF encoder in vendor/avif (since 0.10.0), pinned to exact bytes below and loaded
+// by offscreen.js, which hands it the .wasm file from inside the extension, so its loader never fetches.
+import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,6 +31,17 @@ async function* walk(dir) {
   }
 }
 
+// The vendored AVIF encoder: @jsquash/avif 2.1.1 (libavif 1.0.1 + libaom), unchanged. Its loader is generic
+// Emscripten code (it mentions fetch, XMLHttpRequest and importScripts for other environments), so instead of
+// scanning its text, its exact bytes are pinned. Updating it means updating these hashes on purpose.
+const VENDOR = {
+  "vendor/avif/avif_enc.js": "c6805e62cae5c1b9870fcc0448437da9e4edfc58c3da264af52361281082c63c",
+  "vendor/avif/avif_enc.wasm": "d9f2a95164362af48558d176e619becfd49dd97b50b86c679b47100860522b3d",
+};
+const VENDOR_NOTICES = ["vendor/avif/LICENSE-jsquash", "vendor/avif/LICENSE-libavif", "vendor/avif/LICENSE-libaom", "vendor/avif/PATENTS-libaom", "vendor/avif/README"];
+// WebAssembly is allowed (for that encoder), nothing else: no remote sources, no eval.
+const ALLOWED_CSP = "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'";
+
 // Manifest
 const manifest = JSON.parse(await readFile(join(EXT, "manifest.json"), "utf8"));
 const perms = [...(manifest.permissions || [])].sort();
@@ -47,13 +61,29 @@ if (JSON.stringify([...(manifest.optional_permissions || [])].sort()) !== JSON.s
   fail(`optional_permissions must be exactly ${ALLOWED_OPTIONAL.join(", ")}`);
 }
 if (manifest.manifest_version !== 3) fail("manifest_version must be 3");
+if (JSON.stringify(manifest.content_security_policy) !== JSON.stringify({ extension_pages: ALLOWED_CSP })) {
+  fail(`content_security_policy must be exactly { extension_pages: "${ALLOWED_CSP}" }`);
+}
 if (JSON.stringify(manifest).includes("<all_urls>")) fail("manifest must not mention <all_urls>");
 if (manifest.description.length > 132) fail("description is longer than 132 characters");
 
 // Files
+const vendorSeen = new Set();
 for await (const path of walk(EXT)) {
-  if (!TEXT_FILES.test(path)) continue;
   const rel = relative(EXT, path);
+  const relPath = rel.split("\\").join("/");
+  if (relPath.startsWith("vendor/")) {
+    vendorSeen.add(relPath);
+    if (VENDOR[relPath]) {
+      const hash = createHash("sha256").update(await readFile(path)).digest("hex");
+      if (hash !== VENDOR[relPath]) fail(`${relPath}: changed (sha256 ${hash}); vendored code must match the pinned bytes`);
+    } else if (!VENDOR_NOTICES.includes(relPath)) {
+      fail(`${relPath}: unexpected file in vendor/`);
+    }
+    continue;
+  }
+  if (path.endsWith(".wasm")) fail(`${rel}: WebAssembly is only allowed in vendor/avif`);
+  if (!TEXT_FILES.test(path)) continue;
   let text = await readFile(path, "utf8");
   if (rel === "manifest.json") {
     for (const p of ALLOWED_OPTIONAL_HOSTS) text = text.replaceAll(`"${p}"`, '""');
@@ -69,6 +99,15 @@ for await (const path of walk(EXT)) {
   if (/\b(eval|new Function)\s*\(/.test(text)) fail(`${rel}: eval/new Function is not allowed`);
   if (/chrome\.scripting\./.test(text) && relPosix !== "background.js") fail(`${rel}: only background.js may use chrome.scripting`);
   if (/\bimportScripts\s*\(|\bimport\s*\(\s*["'`]https?:/.test(text)) fail(`${rel}: remote code is not allowed`);
+}
+
+for (const file of [...Object.keys(VENDOR), ...VENDOR_NOTICES]) if (!vendorSeen.has(file)) fail(`${file}: missing`);
+// Only offscreen.js may load the encoder.
+for await (const path of walk(EXT)) {
+  const rel = relative(EXT, path).split("\\").join("/");
+  if (rel.startsWith("vendor/") || !/\.(js|mjs|html)$/.test(rel)) continue;
+  const loads = /(\bimport\s*\(|\bfrom\s+|getURL\s*\()\s*["'`][^"'`]*vendor\//.test(await readFile(path, "utf8"));
+  if (loads && rel !== "offscreen.js") fail(`${rel}: only offscreen.js may load vendored code`);
 }
 
 // The summary goes to exactly one address, with exactly one request.
@@ -126,4 +165,4 @@ if (problems.length) {
   console.error(`Static check failed:\n- ${problems.join("\n- ")}`);
   process.exit(1);
 }
-console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one PostHog URL), no other outside URLs.");
+console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one PostHog URL), no other outside URLs; one compiled part (AVIF encoder), pinned.");

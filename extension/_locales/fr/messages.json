@@ -467,6 +467,9 @@
   "editBmpHint": {
     "message": "Un bitmap simple que toutes les applications ouvrent. Les fichiers sont lourds, et les zones transparentes prennent la couleur de fond."
   },
+  "editAvifHint": {
+    "message": "Souvent deux fois plus léger qu'un JPG qui a le même rendu. Les navigateurs récents et la plupart des applications actuelles l'ouvrent ; certaines anciennes non."
+  },
   "editMaxWidthHint": {
     "message": "En pixels. Garde les proportions, n'agrandit jamais."
   },

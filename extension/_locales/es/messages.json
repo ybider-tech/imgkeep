@@ -467,6 +467,9 @@
   "editBmpHint": {
     "message": "Un mapa de bits sencillo que abre cualquier aplicación. Los archivos son grandes y las zonas transparentes toman el color de fondo."
   },
+  "editAvifHint": {
+    "message": "Suele ocupar la mitad que un JPG que se ve igual. Lo abren los navegadores modernos y la mayoría de las aplicaciones actuales; algunas antiguas no."
+  },
   "editMaxWidthHint": {
     "message": "En píxeles. Mantiene la proporción y nunca amplía."
   },

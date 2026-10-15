@@ -308,6 +308,30 @@ test("More options: BMP is a 24-bit bitmap, width applied, transparency on the b
   await win.close();
 });
 
+test("More options: AVIF from the bundled encoder, width applied, transparency kept", async () => {
+  const win = await openWindow("editor", wide); // left half transparent, right half blue
+  await win.getByText("AVIF", { exact: true }).click();
+  await expect(win.locator("#avifHint")).toBeVisible();
+  await expect(win.locator("#qualityField")).toBeVisible();
+  await expect(win.locator("#quality")).toHaveValue("60");
+  await expect(win.locator("#backgroundField")).toBeHidden(); // AVIF keeps transparency
+  await win.getByLabel("Maximum width").fill("800");
+  await expect(win.locator("#resultFacts")).toContainText("800 × 400 · AVIF ·", { timeout: 20000 });
+  await win.getByLabel("File name").fill("small");
+  await win.getByRole("button", { name: "Save" }).click();
+  await expect(win.locator("#status")).toHaveText("Saved as small.avif");
+  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "small\\.avif$", orderBy: ["-startTime"] }));
+  const bytes = await readFile((await waitForDownload(item.id)).filename);
+  expect(bytes.subarray(4, 12).toString()).toBe("ftypavif");
+  const img = await decode(bytes);
+  expect([img.width, img.height]).toEqual([800, 400]);
+  expect(img.left[3]).toBe(0); // still transparent
+  const [r, g, b, a] = img.right;
+  expect(a).toBe(255);
+  expect(Math.abs(r - 20) + Math.abs(g - 60) + Math.abs(b - 200)).toBeLessThan(30); // lossy, close to the blue
+  await win.close();
+});
+
 test("ICO: a small image gets 16, 32 and 48 px only", async () => {
   const t = await import("../extension/lib/ico.js");
   expect(t.icoSizes(100, 40)).toEqual([16, 32, 48]);

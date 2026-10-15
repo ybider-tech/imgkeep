@@ -467,6 +467,9 @@
   "editBmpHint": {
     "message": "Eine einfache Bitmap, die jedes Programm öffnet. Die Dateien sind groß, und transparente Bereiche bekommen die Hintergrundfarbe."
   },
+  "editAvifHint": {
+    "message": "Oft halb so groß wie ein JPG, das gleich aussieht. Moderne Browser und die meisten aktuellen Programme öffnen es, manche älteren nicht."
+  },
   "editMaxWidthHint": {
     "message": "In Pixeln. Behält die Form, vergrößert nie."
   },
