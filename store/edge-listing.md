@@ -41,12 +41,13 @@ Find image here is off until you turn it on, in Options or the first time you us
 
 CONVERT WEBP AND AVIF TO PNG OR JPG
 
-Get the format you need for editing, sharing and other apps: PNG, JPG, WebP, GIF, PDF or the original format.
+Get the format you need for editing, sharing and other apps: PNG, JPG, WebP, GIF, PDF, ICO, BMP or the original format.
 
 • Standard image files: JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
 • Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, ready to paste anywhere.
+• Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
 
 RESIZE IMAGES AND CONTROL QUALITY

@@ -35,12 +35,13 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 
 המרת WebP ו-AVIF ל-PNG או JPG
 
-מקבלים את הפורמט שצריך לעריכה, לשיתוף ולאפליקציות אחרות: PNG,‏ JPG,‏ WebP,‏ GIF,‏ PDF או הפורמט המקורי.
+מקבלים את הפורמט שצריך לעריכה, לשיתוף ולאפליקציות אחרות: PNG,‏ JPG,‏ WebP,‏ GIF,‏ PDF,‏ ICO,‏ BMP או הפורמט המקורי.
 
 • קבצים רגילים: קובצי JPG נשמרים כ-‎.jpg ולא כ-‎.jfif. גם SVG ותמונות data:‎ עובדים.
 • האנימציה ממשיכה לזוז: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF ששומר על התזמון והשקיפות. קובצי GIF מונפשים נשמרים בלי שינוי.
 • שמירה כ-PDF: קובץ PDF של עמוד אחד בגודל התמונה, עם השקיפות. שימושי לקבלות, למסמכים ולשיתוף.
 • העתקה כ-PNG: התמונה נכנסת ללוח כקובץ PNG אמיתי, עם השקיפות, ומוכנה להדבקה בכל מקום.
+• אייקונים ומפות סיביות: באפשרויות נוספות שומרים כ-ICO (מ-16 עד 256 פיקסלים בקובץ אחד, לקיצורי דרך בשולחן העבודה ולאייקוני אתרים) או כ-BMP.
 • שמירת המקור: שומרים את התמונה בפורמט המקורי שלה כשלא צריך המרה.
 
 שינוי גודל ושליטה באיכות
@@ -86,12 +87,13 @@ Buscar imagen aquí está desactivado hasta que lo actives, en Opciones o la pri
 
 CONVIERTE WEBP Y AVIF A PNG O JPG
 
-Consigue el formato que necesitas para editar, compartir y usar en otras aplicaciones: PNG, JPG, WebP, GIF, PDF o el formato original.
+Consigue el formato que necesitas para editar, compartir y usar en otras aplicaciones: PNG, JPG, WebP, GIF, PDF, ICO, BMP o el formato original.
 
 • Archivos de imagen estándar: los JPG se guardan como .jpg, no como .jfif. También funcionan las imágenes SVG y data:.
 • Las animaciones siguen moviéndose: WebP, AVIF y APNG animados se convierten en un GIF que conserva su ritmo y su transparencia. Los GIF animados se guardan sin cambios.
 • Guardar como PDF: un PDF de una página del tamaño de la imagen, con su transparencia. Útil para recibos, documentos y compartir.
 • Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, lista para pegar donde quieras.
+• Iconos y mapas de bits: en Más opciones, guarda como ICO (de 16 a 256 px en un solo archivo, para accesos directos y favicons) o BMP.
 • Conserva el original: guarda la imagen en su formato original cuando no necesites convertirla.
 
 CAMBIA EL TAMAÑO Y CONTROLA LA CALIDAD
@@ -137,12 +139,13 @@ Encontrar imagem aqui fica desativado até você ativar, nas Opções ou na prim
 
 CONVERTA WEBP E AVIF PARA PNG OU JPG
 
-Tenha o formato de que você precisa para editar, compartilhar e usar em outros apps: PNG, JPG, WebP, GIF, PDF ou o formato original.
+Tenha o formato de que você precisa para editar, compartilhar e usar em outros apps: PNG, JPG, WebP, GIF, PDF, ICO, BMP ou o formato original.
 
 • Arquivos de imagem padrão: JPGs são salvos como .jpg, não .jfif. Imagens SVG e data: também funcionam.
 • Animações continuam se movendo: WebP, AVIF e APNG animados viram um GIF que mantém o tempo e a transparência. GIFs animados são salvos sem alterações.
 • Salvar como PDF: um PDF de uma página do tamanho da imagem, com transparência. Útil para recibos, documentos e compartilhamento.
 • Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, pronta para colar onde quiser.
+• Ícones e bitmaps: em Mais opções, salve como ICO (de 16 a 256 px em um só arquivo, para atalhos na área de trabalho e favicons) ou BMP.
 • Mantenha o original: salve a imagem no formato original quando não precisar converter.
 
 REDIMENSIONE IMAGENS E CONTROLE A QUALIDADE
@@ -188,12 +191,13 @@ Bild hier finden ist aus, bis du es einschaltest, in den Optionen oder bei der e
 
 WEBP UND AVIF IN PNG ODER JPG UMWANDELN
 
-Hol dir das Format, das du zum Bearbeiten, Teilen und für andere Apps brauchst: PNG, JPG, WebP, GIF, PDF oder das Originalformat.
+Hol dir das Format, das du zum Bearbeiten, Teilen und für andere Apps brauchst: PNG, JPG, WebP, GIF, PDF, ICO, BMP oder das Originalformat.
 
 • Normale Bilddateien: JPGs werden als .jpg gespeichert, nicht als .jfif. SVG- und data:-Bilder funktionieren auch.
 • Animationen bleiben in Bewegung: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
 • Als PDF speichern: ein einseitiges PDF in der Größe des Bildes, mit Transparenz. Praktisch für Belege, Dokumente und zum Teilen.
 • Als PNG kopieren: Das Bild landet als echtes PNG mit Transparenz in der Zwischenablage, bereit zum Einfügen.
+• Icons und Bitmaps: In Weitere Optionen als ICO speichern (16 bis 256 px in einer Datei, für Desktop-Verknüpfungen und Favicons) oder als BMP.
 • Original behalten: Speichere das Bild im Originalformat, wenn du keine Umwandlung brauchst.
 
 BILDGRÖSSE ÄNDERN UND QUALITÄT STEUERN
@@ -239,12 +243,13 @@ Trouver l'image ici est désactivé tant que vous ne l'activez pas, dans les Opt
 
 CONVERTIR LE WEBP ET L'AVIF EN PNG OU JPG
 
-Obtenez le format qu'il vous faut pour retoucher, partager et utiliser dans d'autres applications : PNG, JPG, WebP, GIF, PDF ou le format d'origine.
+Obtenez le format qu'il vous faut pour retoucher, partager et utiliser dans d'autres applications : PNG, JPG, WebP, GIF, PDF, ICO, BMP ou le format d'origine.
 
 • Des fichiers standard : les JPG sont enregistrés en .jpg, pas en .jfif. Les images SVG et data: fonctionnent aussi.
 • Les animations continuent de bouger : les WebP, AVIF et APNG animés deviennent un GIF qui garde son rythme et sa transparence. Les GIF animés sont enregistrés sans changement.
 • Enregistrer en PDF : un PDF d'une page à la taille de l'image, transparence comprise. Pratique pour les reçus, les documents et le partage.
 • Copier en PNG : l'image va dans le presse-papiers en vrai PNG, transparence comprise, prête à être collée.
+• Icônes et bitmaps : dans Plus d'options, enregistrez en ICO (de 16 à 256 px dans un seul fichier, pour les raccourcis du bureau et les favicons) ou en BMP.
 • Garder l'original : enregistrez l'image dans son format d'origine quand vous n'avez pas besoin de conversion.
 
 REDIMENSIONNER ET CONTRÔLER LA QUALITÉ
@@ -290,12 +295,13 @@ Instagram や Pinterest などのサイトでは、写真の上に重なった�
 
 WEBP と AVIF を PNG や JPG に変換
 
-編集や共有、他のアプリで使うのに必要な形式で保存できます：PNG、JPG、WebP、GIF、PDF、または元の形式。
+編集や共有、他のアプリで使うのに必要な形式で保存できます：PNG、JPG、WebP、GIF、PDF、ICO、BMP、または元の形式。
 
 • 標準的な画像ファイル：JPG は .jfif ではなく .jpg で保存されます。SVG や data: 画像にも対応。
 • アニメーションはそのまま：アニメーション WebP・AVIF・APNG は、タイミングと透過を保った GIF になります。アニメーション GIF はそのまま保存されます。
 • PDF で保存：画像と同じサイズの 1 ページの PDF。透過も保たれます。領収書や書類、共有に便利です。
 • PNGとしてコピー：透過を保った本物の PNG としてクリップボードに入れ、どこにでも貼り付けられます。
+• アイコンとビットマップ：「その他のオプション」で ICO（16〜256 px を 1 つのファイルに。デスクトップのショートカットやファビコンに）や BMP で保存できます。
 • 元の形式のまま：変換が不要なときは、画像を元の形式で保存できます。
 
 サイズ変更と画質の調整
@@ -341,12 +347,13 @@ Instagram और Pinterest जैसी साइटों पर फ़ोट�
 
 WEBP और AVIF को PNG या JPG में बदलें
 
-एडिटिंग, शेयर करने और दूसरे ऐप के लिए ज़रूरी फ़ॉर्मैट पाएँ: PNG, JPG, WebP, GIF, PDF या मूल फ़ॉर्मैट।
+एडिटिंग, शेयर करने और दूसरे ऐप के लिए ज़रूरी फ़ॉर्मैट पाएँ: PNG, JPG, WebP, GIF, PDF, ICO, BMP या मूल फ़ॉर्मैट।
 
 • सामान्य इमेज फ़ाइलें: JPG फ़ाइलें .jfif नहीं, .jpg के रूप में सेव होती हैं। SVG और data: इमेज भी चलती हैं।
 • एनिमेशन चलता रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जिनमें टाइमिंग और पारदर्शिता बनी रहती है। एनिमेटेड GIF बिना बदलाव के सेव होते हैं।
 • PDF में सेव करें: इमेज के साइज़ का एक पेज का PDF, पारदर्शिता के साथ। रसीदों, दस्तावेज़ों और शेयर करने के लिए उपयोगी।
 • PNG के रूप में कॉपी करें: इमेज पारदर्शिता के साथ असली PNG के रूप में क्लिपबोर्ड पर जाती है, कहीं भी पेस्ट करने के लिए तैयार।
+• आइकन और बिटमैप: और विकल्प में ICO (एक ही फ़ाइल में 16 से 256 px, डेस्कटॉप शॉर्टकट और फ़ेविकॉन के लिए) या BMP के रूप में सेव करें।
 • मूल रखें: जब बदलने की ज़रूरत न हो, तो इमेज को उसके मूल फ़ॉर्मैट में सेव करें।
 
 इमेज का साइज़ बदलें और क्वालिटी नियंत्रित करें
@@ -392,12 +399,13 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 
 تحويل WebP وAVIF إلى PNG أو JPG
 
-احصل على الصيغة التي تحتاجها للتعديل والمشاركة والتطبيقات الأخرى: PNG أو JPG أو WebP أو GIF أو PDF أو الصيغة الأصلية.
+احصل على الصيغة التي تحتاجها للتعديل والمشاركة والتطبيقات الأخرى: PNG أو JPG أو WebP أو GIF أو PDF أو ICO أو BMP أو الصيغة الأصلية.
 
 • ملفات صور قياسية: تُحفظ ملفات JPG بامتداد ‎.jpg وليس ‎.jfif. تعمل صور SVG وdata:‎ أيضًا.
 • الحركة تستمر: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يحافظ على توقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة دون تغيير.
 • الحفظ بصيغة PDF: ملف PDF من صفحة واحدة بحجم الصورة، مع الشفافية. مفيد للإيصالات والمستندات والمشاركة.
 • النسخ بصيغة PNG: تُنسخ الصورة إلى الحافظة كملف PNG حقيقي مع شفافيتها، جاهزة للصق في أي مكان.
+• الأيقونات والصور النقطية: من مزيد من الخيارات، احفظ بصيغة ICO (من 16 إلى 256 بكسل في ملف واحد، لاختصارات سطح المكتب وأيقونات المواقع) أو BMP.
 • الاحتفاظ بالأصل: احفظ الصورة بصيغتها الأصلية عندما لا تحتاج إلى تحويل.
 
 تغيير حجم الصور والتحكم في الجودة
