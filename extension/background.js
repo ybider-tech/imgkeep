@@ -577,7 +577,7 @@ function cleanOptions(o = {}) {
   return out;
 }
 
-const WINDOW_FORMATS = ["png", "jpg", "webp"];
+const WINDOW_FORMATS = ["png", "jpg", "webp", "ico"];
 
 // Converts a window's image without saving it and returns the file as a data: URL (preview, clipboard).
 async function convertForWindow(jobId, format, options) {

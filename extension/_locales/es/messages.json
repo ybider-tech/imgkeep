@@ -461,6 +461,9 @@
   "editPngHint": {
     "message": "PNG conserva cada píxel. Para un archivo más pequeño, baja el ancho máximo o elige JPG o WebP."
   },
+  "editIcoHint": {
+    "message": "Un archivo de icono con la imagen a 16, 32 y 48 px, y también a 256 px si es lo bastante grande. Las imágenes que no son cuadradas reciben bordes transparentes."
+  },
   "editMaxWidthHint": {
     "message": "En píxeles. Mantiene la proporción y nunca amplía."
   },

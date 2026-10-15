@@ -88,12 +88,14 @@
           <label><input type="radio" name="format" value="png"> PNG</label>
           <label><input type="radio" name="format" value="jpg"> JPG</label>
           <label><input type="radio" name="format" value="webp"> WebP</label>
+          <label><input type="radio" name="format" value="ico"> ICO</label>
         </div>
+        <p class="hint" id="icoHint" data-i18n="editIcoHint" hidden>An icon file with the image at 16, 32 and 48 px, plus 256 px when it's big enough. Images that aren't square get transparent edges.</p>
         <p class="hint" id="pngHint" data-i18n="editPngHint" hidden>PNG keeps every pixel. For a smaller file, lower the maximum width or choose JPG or WebP.</p>
       </fieldset>
 
       <div class="two">
-        <div class="field">
+        <div class="field" id="widthField">
           <label for="maxWidth" data-i18n="optMaxWidth">Maximum width</label>
           <input type="number" id="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Original size" data-i18n-placeholder="optMaxWidthPlaceholder" aria-describedby="maxWidthHint">
           <p class="hint" id="maxWidthHint" data-i18n="editMaxWidthHint">In pixels. Keeps the shape, never enlarges.</p>

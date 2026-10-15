@@ -5,12 +5,13 @@
 import { t, localisePage } from "./lib/i18n.js";
 import { buildTarget, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
+import { icoSizes } from "./lib/ico.js";
 import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
 const toBackground = (type, extra) => ask(jobId, type, extra);
-const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP" };
+const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", ico: "ICO" };
 const LAST = "editorLast"; // the last format and width used here, in chrome.storage.local
 
 let job = null; // { url, pageUrl, settings }
@@ -43,11 +44,13 @@ function setBusy(busy) {
 // Controls that only apply to some formats.
 function syncControls() {
   const f = format();
-  $("qualityField").hidden = f === "png";
+  $("qualityField").hidden = f === "png" || f === "ico";
   $("pngHint").hidden = f !== "png";
+  $("icoHint").hidden = f !== "ico";
+  $("widthField").hidden = f === "ico"; // an icon has fixed sizes
   $("backgroundField").hidden = f !== "jpg";
   const settings = job.settings;
-  if (f !== "png" && !$("quality").dataset.touched) $("quality").value = f === "webp" ? settings.webpQuality : settings.jpgQuality;
+  if (f !== "png" && f !== "ico" && !$("quality").dataset.touched) $("quality").value = f === "webp" ? settings.webpQuality : settings.jpgQuality;
   $("qualityOut").textContent = $("quality").value;
 }
 
@@ -110,7 +113,9 @@ async function preview() {
   $("stageNote").hidden = true;
   $("sourceFacts").replaceChildren(isolate(formatSize(res.sourceWidth, res.sourceHeight)));
   // Format and extension come from the checked output bytes.
-  const parts = [formatSize(res.width, res.height), LABEL[res.ext] || res.ext.toUpperCase(), formatBytes(res.size)];
+  // An icon holds several sizes: "16, 32, 48, 256 px".
+  const dims = res.ext === "ico" ? `${icoSizes(res.sourceWidth, res.sourceHeight).join(", ")} px` : formatSize(res.width, res.height);
+  const parts = [dims, LABEL[res.ext] || res.ext.toUpperCase(), formatBytes(res.size)];
   $("resultFacts").replaceChildren(...parts.flatMap((p, i) => (i ? [" · ", isolate(p)] : [isolate(p)])));
   $("ext").textContent = `.${res.ext}`;
   if (!nameEdited) {

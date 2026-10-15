@@ -587,6 +587,9 @@
     "message": "PNG keeps every pixel. For a smaller file, lower the maximum width or choose JPG or WebP.",
     "description": "Hint under the format choice when PNG is chosen"
   },
+  "editIcoHint": {
+    "message": "An icon file with the image at 16, 32 and 48 px, plus 256 px when it's big enough. Images that aren't square get transparent edges."
+  },
   "editMaxWidthHint": {
     "message": "In pixels. Keeps the shape, never enlarges.",
     "description": "Hint under the maximum width field"

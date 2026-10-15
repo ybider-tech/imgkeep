@@ -7,6 +7,7 @@ import { GIF_LIMITS, nameFromUrl } from "./lib/settings.js";
 import { decode, draw, encodeCanvas, fitWidth, processImage, sniffImageType, verifyOutput } from "./lib/image.js";
 import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } from "./lib/gif.js";
 import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
+import { buildIco, fitSquare, icoSizes } from "./lib/ico.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
 // and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
@@ -121,6 +122,28 @@ async function toPdf(input, { url, quality, maxWidth }) {
   }
 }
 
+// ICO output: the image at 16, 32 and 48 px (and 256 px when it's big enough), each a square PNG with
+// the image centred and transparent edges. Animated images use their first frame.
+async function toIco(input) {
+  const image = await decode(input);
+  try {
+    const images = [];
+    for (const size of icoSizes(image.width, image.height)) {
+      const canvas = new OffscreenCanvas(size, size);
+      const ctx = canvas.getContext("2d");
+      ctx.imageSmoothingQuality = "high";
+      const { x, y, w, h } = fitSquare(image.width, image.height, size);
+      ctx.drawImage(image.source, x, y, w, h);
+      images.push({ size, png: new Uint8Array(await (await canvas.convertToBlob({ type: "image/png" })).arrayBuffer()) });
+    }
+    const largest = images[images.length - 1].size;
+    const blob = new Blob([buildIco(images)], { type: "image/x-icon" });
+    return { blob, width: largest, height: largest, sourceWidth: image.width, sourceHeight: image.height };
+  } finally {
+    image.done();
+  }
+}
+
 function toDataUrl(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -138,7 +161,8 @@ const handlers = {
   // sourceId: reuse the image a window already fetched (More options, Copy as PNG).
   async convert(msg) {
     const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
-    const make = msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : still;
+    const make =
+      msg.mime === "image/gif" ? animate : msg.mime === "application/pdf" ? toPdf : msg.mime === "image/x-icon" ? toIco : still;
     const out = await make(input, msg);
     // Whatever made it, the file must really be the type it will be named as.
     const ext = await verifyOutput(out.blob, msg.mime);
