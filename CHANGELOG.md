@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.10.0 — unreleased
+## 0.10.0 — 2026-10-16
 
 - **Save as AVIF, in More options.** Often half the size of a JPG that looks the same. Maximum width and quality apply (quality 60 by default), transparency is kept, animations use their first frame. Browsers can read AVIF but can't write it, so Imgkeep includes libavif, the reference AVIF encoder (1.0.1, with libaom), compiled to WebAssembly: `extension/vendor/avif`, from @jsquash/avif 2.1.1, unchanged, with its licences. It loads only the first time someone saves as AVIF, and at speed 8 encodes a 1600 × 1000 photo in about 0.35 s.
 - **One compiled part, pinned.** The manifest allows WebAssembly (`content_security_policy: script-src 'self' 'wasm-unsafe-eval'; object-src 'self'`), no new permission. The static check pins the encoder's two files by SHA-256, allows `.wasm` nowhere else, allows only `offscreen.js` to load vendored code, and pins that exact CSP. `offscreen.js` reads the `.wasm` file from inside the extension and hands it over, so the encoder's generic loader never fetches anything.
