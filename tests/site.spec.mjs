@@ -55,9 +55,12 @@ test("privacy.html matches PRIVACY.md", async ({ page }) => {
   for (const line of lines) expect(html, `missing: ${line}`).toContain(line.replace(/\s+/g, " "));
 });
 
-test("no analytics or trackers on the site", async () => {
+test("no third-party analytics or trackers on the site", async () => {
   for (const [, file] of PAGES) {
-    const raw = await readFile(join(ROOT, "site", file), "utf8");
+    let raw = await readFile(join(ROOT, "site", file), "utf8");
+    // The one script: the site's own anonymous counter (count.js, tested below), exactly once per page.
+    expect(raw.split('<script src="/count.js" defer></script>').length - 1, `${file}: count.js once`).toBe(1);
+    raw = raw.replace('<script src="/count.js" defer></script>', "");
     expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
     // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
     // data, not code. Browsers never execute it. It must parse as JSON; every other <script> still fails.
@@ -301,4 +304,72 @@ test("social preview image exists and makes no false privacy claims", async ({ p
   const res = await page.request.get(url.replace("https://imgkeep.app", server.url));
   expect(res.status()).toBe(200);
   expect(res.headers()["content-type"]).toContain("image/png");
+});
+
+// count.js: anonymous page and store-button counts, on imgkeep.app only.
+test("count.js keeps nothing on the visitor's computer and talks to one address only", async () => {
+  const js = await readFile(join(ROOT, "site", "count.js"), "utf8");
+  expect(js).not.toMatch(/document\.cookie|localStorage|sessionStorage|indexedDB|navigator\.sendBeacon/);
+  expect([...js.matchAll(/https?:\/\/[^\s"'`)]+/g)].map((m) => m[0]).filter((u) => !/^https:\/\/(chromewebstore\.google\.com|microsoftedge\.microsoft\.com\/addons)\//.test(u))).toEqual([
+    "https://eu.i.posthog.com/i/v0/e/",
+  ]);
+  expect(js).toContain('credentials: "omit"');
+  expect(js).toContain("$process_person_profile: false");
+  expect(js).toContain("$geoip_disable: true");
+});
+
+// Serves the site as if it were imgkeep.app, and catches what count.js sends.
+async function onImgkeepApp(context) {
+  const sent = [];
+  await context.route("https://imgkeep.app/**", async (route) => {
+    let path = new URL(route.request().url()).pathname;
+    if (path.endsWith("/")) path += "index.html";
+    try {
+      const body = await readFile(join(ROOT, "site", path));
+      const type = path.endsWith(".html") ? "text/html" : path.endsWith(".js") ? "text/javascript" : path.endsWith(".css") ? "text/css" : undefined;
+      await route.fulfill({ body, contentType: type });
+    } catch {
+      await route.fulfill({ status: 404, body: "" });
+    }
+  });
+  await context.route("https://eu.i.posthog.com/**", async (route) => {
+    if (route.request().method() === "POST") sent.push(JSON.parse(route.request().postData()));
+    await route.fulfill({ status: 200, body: '{"status":"Ok"}', headers: { "Access-Control-Allow-Origin": "https://imgkeep.app", "Access-Control-Allow-Headers": "Content-Type", "Content-Type": "application/json" } });
+  });
+  await context.route(/chromewebstore\.google\.com|microsoftedge\.microsoft\.com/, (route) => route.fulfill({ status: 200, body: "store", contentType: "text/html" }));
+  return sent;
+}
+
+test("count.js on imgkeep.app: one anonymous page view, and a store click with its page and link", async ({ browser }) => {
+  const context = await browser.newContext();
+  const sent = await onImgkeepApp(context);
+  const page = await context.newPage();
+  await page.goto("https://imgkeep.app/save-webp-as-jpg-png/", { referer: "https://www.google.com/search?q=private+words" });
+  await expect.poll(() => sent.length).toBe(1);
+  const [view] = sent;
+  expect(view).toMatchObject({ api_key: expect.stringMatching(/^phc_/), event: "site_pageview" });
+  expect(view.properties).toEqual({
+    referrer: "google.com", // the referring site only: never its full address or search words
+    path: "/save-webp-as-jpg-png/",
+    $process_person_profile: false,
+    $geoip_disable: true,
+    $lib: "imgkeep-site",
+  });
+  await page.locator('a[href^="https://chromewebstore.google.com/"]').first().click();
+  await expect.poll(() => sent.length).toBe(2);
+  expect(sent[1]).toMatchObject({ event: "site_store_click", properties: { store: "chrome", campaign: "save-webp-as-jpg-png", path: "/save-webp-as-jpg-png/" } });
+  expect(sent[1].distinct_id).not.toBe(view.distinct_id); // a new random id every time: events can't be linked
+  expect(await context.cookies()).toEqual([]);
+  await context.close();
+});
+
+test("count.js sends nothing when the browser asks sites not to track (Global Privacy Control)", async ({ browser }) => {
+  const context = await browser.newContext();
+  await context.addInitScript(() => Object.defineProperty(navigator, "globalPrivacyControl", { get: () => true }));
+  const sent = await onImgkeepApp(context);
+  const page = await context.newPage();
+  await page.goto("https://imgkeep.app/");
+  await page.waitForTimeout(500);
+  expect(sent).toEqual([]);
+  await context.close();
 });
