@@ -87,6 +87,17 @@ const decode = (bytes) =>
     return { width: bmp.width, height: bmp.height, left: px(2, 2), right: px(bmp.width - 3, bmp.height - 3) };
   }, bytes.toString("base64"));
 
+async function findDownload(filenameRegex) {
+  let item;
+  await expect
+    .poll(async () => {
+      [item] = await ctx.sw.evaluate((re) => chrome.downloads.search({ filenameRegex: re, orderBy: ["-startTime"] }), filenameRegex);
+      return Boolean(item);
+    })
+    .toBe(true);
+  return item;
+}
+
 async function saved(result) {
   expect(result, JSON.stringify(result)).toMatchObject({ ok: true });
   const dl = await waitForDownload(result.downloadId);
@@ -267,7 +278,8 @@ test("More options: ICO holds 16, 32, 48 and 256 px PNGs, square, with transpare
   await win.getByLabel("File name").fill("favicon");
   await win.getByRole("button", { name: "Save" }).click();
   await expect(win.locator("#status")).toHaveText("Saved as favicon.ico");
-  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "favicon\\.ico$", orderBy: ["-startTime"] }));
+  // The browser can list the download a moment after the status line (seen on Windows CI): wait for it.
+  const item = await findDownload("favicon\\.ico$");
   const bytes = await readFile((await waitForDownload(item.id)).filename);
   // Header: reserved 0, type 1 (icon), 4 images.
   expect([bytes.readUInt16LE(0), bytes.readUInt16LE(2), bytes.readUInt16LE(4)]).toEqual([0, 1, 4]);
@@ -297,7 +309,8 @@ test("More options: BMP is a 24-bit bitmap, width applied, transparency on the b
   await win.getByLabel("File name").fill("bitmap");
   await win.getByRole("button", { name: "Save" }).click();
   await expect(win.locator("#status")).toHaveText("Saved as bitmap.bmp");
-  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "bitmap\\.bmp$", orderBy: ["-startTime"] }));
+  // The browser can list the download a moment after the status line (seen on Windows CI): wait for it.
+  const item = await findDownload("bitmap\\.bmp$");
   const bytes = await readFile((await waitForDownload(item.id)).filename);
   expect(bytes.subarray(0, 2).toString()).toBe("BM");
   expect([bytes.readUInt32LE(2), bytes.readUInt16LE(28)]).toEqual([bytes.length, 24]);
@@ -320,7 +333,8 @@ test("More options: AVIF from the bundled encoder, width applied, transparency k
   await win.getByLabel("File name").fill("small");
   await win.getByRole("button", { name: "Save" }).click();
   await expect(win.locator("#status")).toHaveText("Saved as small.avif");
-  const [item] = await ctx.sw.evaluate(() => chrome.downloads.search({ filenameRegex: "small\\.avif$", orderBy: ["-startTime"] }));
+  // The browser can list the download a moment after the status line (seen on Windows CI): wait for it.
+  const item = await findDownload("small\\.avif$");
   const bytes = await readFile((await waitForDownload(item.id)).filename);
   expect(bytes.subarray(4, 12).toString()).toBe("ftypavif");
   const img = await decode(bytes);
