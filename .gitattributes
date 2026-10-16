@@ -1,0 +1,2 @@
+# Vendored code is pinned by SHA-256 (tests/static-check.mjs): never convert its line endings (Windows checkouts).
+extension/vendor/** -text
