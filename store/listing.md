@@ -35,7 +35,7 @@ Many sites now use WebP and AVIF images, which other apps often can't open. Imgk
 • Standard image files: JPGs are saved as .jpg, not .jfif. SVG and data: images work too.
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
 • Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
-• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, ready to paste anywhere.
+• Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it straight into a design or slide tool like Canva or Google Slides.
 • Save as AVIF: in More options, files often half the size of a JPG that looks the same, transparency kept.
 • Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
