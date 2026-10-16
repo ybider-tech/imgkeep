@@ -63,5 +63,26 @@ for (const [format, url, file] of [
   await page.locator("#scene-1 .browser").screenshot(jpg(file));
   console.log(`site/media/guides/${file}`);
 }
+
+// Copy as PNG: the scene's submenu stops at Original format, so add the real menu's last two items
+// (a separator, Copy as PNG, More options…) for this shot only, after the shots above are taken.
+await page.evaluate(() => {
+  const scene = document.querySelector("#scene-1");
+  scene.querySelector(".url").textContent = "shop.example.com/products/stoneware-mug";
+  const sub = scene.querySelectorAll(".menu")[1];
+  const item = (text) => Object.assign(document.createElement("div"), { textContent: text });
+  sub.append(document.createElement("hr"), item("Copy as PNG"), item("More options…"));
+  // The longer submenu needs room: move both menus (and the pointer) up by the same amount.
+  const UP = 100;
+  const [menu] = scene.querySelectorAll(".menu");
+  menu.style.top = `${150 - UP}px`;
+  sub.style.top = `${290 - UP}px`;
+  const items = [...sub.children].filter((d) => d.tagName === "DIV");
+  for (const d of items) d.classList.toggle("on", d.textContent === "Copy as PNG");
+  const on = items.find((d) => d.textContent === "Copy as PNG");
+  scene.querySelector(".cursor").style.top = `${318 - UP + on.offsetTop - items[0].offsetTop}px`;
+});
+await page.locator("#scene-1 .browser").screenshot(jpg("menu-copy-png.jpg"));
+console.log("site/media/guides/menu-copy-png.jpg");
 await browser.close();
 console.log("site/media/guides/options-folder.jpg, trust.jpg");

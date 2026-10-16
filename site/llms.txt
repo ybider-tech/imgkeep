@@ -28,6 +28,7 @@ Key facts:
 - [How to save an image as a PDF in Chrome](https://imgkeep.app/save-image-as-pdf/): Chrome's print to PDF, Photos or Preview, or a one-page PDF the size of the image from the right-click menu.
 - [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/): why Google removed it in March 2026, and a checklist for judging any image extension.
 - [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/): why some sites cover their photos so the right-click can't reach them, the workarounds (developer tools, a screenshot), and Imgkeep's opt-in Find image here.
+- [How to get an image from the web into Canva, Figma or Google Slides](https://imgkeep.app/web-image-into-canva-figma-google-slides/): copy it as a PNG and paste it, or save WebP or AVIF as PNG or JPG when a tool says the file type isn't supported; which formats each tool's help lists.
 
 ## More
 

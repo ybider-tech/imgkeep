@@ -231,6 +231,12 @@ footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 /* Guide pages */
 .doc h3 { margin-top: 1.4em; }
 .doc ul { padding-left: 1.3em; }
+/* Small fact tables in guides (formats per tool). Scrolls sideways on narrow screens instead of squeezing. */
+.table-wrap { overflow-x: auto; margin: 1em 0; }
+.doc table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.doc th { font-weight: 700; }
+.doc td small { color: var(--muted); }
 .option {
   background: var(--surface);
   border: 1px solid var(--border);
