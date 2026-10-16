@@ -96,6 +96,7 @@ Step-by-step help on [imgkeep.app](https://imgkeep.app), with and without an ext
 - [How to save an image as a PDF in Chrome](https://imgkeep.app/save-image-as-pdf/)
 - [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/)
 - [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/)
+- [How to get an image from the web into Canva, Figma or Google Slides](https://imgkeep.app/web-image-into-canva-figma-google-slides/)
 
 ## Development
 
