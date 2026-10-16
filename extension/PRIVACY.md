@@ -1,6 +1,6 @@
 # Imgkeep privacy policy
 
-Last updated: 14 October 2026
+Last updated: 16 October 2026
 
 Imgkeep is a browser extension for Chrome and Microsoft Edge that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
@@ -18,7 +18,7 @@ Since version 0.7.0, Imgkeep counts on your computer how often its features are 
 
 A summary contains only:
 
-- successful saves per format (PNG, JPG, WebP, GIF, PDF, ICO, BMP, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
+- successful saves per format (PNG, JPG, WebP, AVIF, GIF, PDF, ICO, BMP, original) and per save mode (Downloads, a folder you chose, ask every time), how many were made smaller by the maximum width, and how many used the "last used" format at the top of the menu;
 - for each conversion, the format the image had and the format it was saved as (for example WebP to JPG), read from the image itself (since 0.8.1);
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;

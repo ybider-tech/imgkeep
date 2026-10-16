@@ -593,6 +593,9 @@
   "editBmpHint": {
     "message": "A plain bitmap that every app opens. Files are large, and transparent areas get the background colour."
   },
+  "editAvifHint": {
+    "message": "Often half the size of a JPG that looks the same. Modern browsers and most current apps open it; some older apps don't."
+  },
   "editMaxWidthHint": {
     "message": "In pixels. Keeps the shape, never enlarges.",
     "description": "Hint under the maximum width field"

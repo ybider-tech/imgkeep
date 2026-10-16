@@ -1,0 +1,17 @@
+AVIF encoder used by Imgkeep's "Save as AVIF" (since 0.10.0). The only compiled code in Imgkeep.
+
+Files, unchanged from the npm package @jsquash/avif version 2.1.1 (folder codec/enc):
+  avif_enc.js    Emscripten loader (generic: it also mentions fetch, XMLHttpRequest and importScripts for
+                 other environments; in Imgkeep they never run, because offscreen.js hands it the .wasm bytes)
+  avif_enc.wasm  libavif 1.0.1 with the libaom AV1 encoder, compiled to WebAssembly
+
+sha256:
+  c6805e62cae5c1b9870fcc0448437da9e4edfc58c3da264af52361281082c63c  avif_enc.js
+  d9f2a95164362af48558d176e619becfd49dd97b50b86c679b47100860522b3d  avif_enc.wasm
+
+Check it yourself:  npm pack @jsquash/avif@2.1.1, unpack it, and compare package/codec/enc/ with these files
+(shasum -a 256). tests/static-check.mjs fails the build if either file changes.
+
+Licences: jSquash (Apache 2.0, LICENSE-jsquash), libavif (BSD 2-clause, LICENSE-libavif),
+libaom (BSD 2-clause, LICENSE-libaom, and the Alliance for Open Media Patent License 1.0, PATENTS-libaom).
+Source code: the jSquash, libavif and libaom projects on GitHub and aomedia.googlesource.com.

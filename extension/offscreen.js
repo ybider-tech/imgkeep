@@ -9,6 +9,7 @@ import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } fr
 import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
 import { buildIco, fitSquare, icoSizes } from "./lib/ico.js";
 import { buildBmp } from "./lib/bmp.js";
+import { encodeAvif } from "./lib/avif.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
 // and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
@@ -166,6 +167,43 @@ async function toBmp(input, { maxWidth, background }) {
   }
 }
 
+// The AVIF encoder (vendor/avif), loaded the first time someone saves as AVIF. Its .wasm file is read from
+// inside the extension here and handed over, so the encoder's own loader never fetches anything.
+let avifEncoder = null;
+function loadAvifEncoder() {
+  avifEncoder ??= (async () => {
+    const wasmBinary = await (await fetch(chrome.runtime.getURL("vendor/avif/avif_enc.wasm"))).arrayBuffer();
+    const { default: factory } = await import("./vendor/avif/avif_enc.js");
+    return factory({ wasmBinary, noInitialRun: true });
+  })().catch((e) => {
+    avifEncoder = null; // try again next time
+    throw e;
+  });
+  return avifEncoder;
+}
+
+// AVIF output: maximum width applied, transparency kept. Animated images use their first frame.
+async function toAvif(input, { maxWidth, quality }) {
+  const encoder = await loadAvifEncoder();
+  const image = await decode(input);
+  let canvas;
+  try {
+    const { width, height } = fitWidth(image.width, image.height, maxWidth);
+    canvas = draw(image, { width, height });
+    let rgba;
+    try {
+      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
+    } catch {
+      throw new JobError("too-large");
+    }
+    const blob = new Blob([encodeAvif(encoder, rgba, width, height, quality)], { type: "image/avif" });
+    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height, quality };
+  } finally {
+    if (canvas) canvas.width = canvas.height = 0;
+    image.done();
+  }
+}
+
 function toDataUrl(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -184,7 +222,7 @@ const handlers = {
   async convert(msg) {
     const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
     const make =
-      { "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp }[msg.mime] || still;
+      { "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp, "image/avif": toAvif }[msg.mime] || still;
     const out = await make(input, msg);
     // Whatever made it, the file must really be the type it will be named as.
     const ext = await verifyOutput(out.blob, msg.mime);

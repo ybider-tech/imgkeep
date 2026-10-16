@@ -30,3 +30,7 @@ Two network requests, and only these:
 Not a request: after an uninstall, the browser opens the optional uninstall form (`chrome.runtime.setUninstallURL`, a Google Form whose address carries only the version). Imgkeep sends nothing there itself.
 
 Neither needs a permission: the image request uses the optional per-site access when needed, and PostHog allows cross-origin requests. The static check (`tests/static-check.mjs`) fails the build if `fetch(` appears in any other file, if `lib/telemetry.js` makes more than one request or to any other address, or if any file references a URL other than imgkeep.app, the two stores or Aptabase.
+
+## Content security policy (since 0.10.0)
+
+`manifest.json` sets `"content_security_policy": { "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'" }`. That's Chrome's default plus one thing: WebAssembly, for the AVIF encoder (`extension/vendor/avif`, libavif compiled to WebAssembly), the one compiled part of Imgkeep. It adds no permission and shows no install warning. Scripts still come only from the extension itself: no remote code, no `eval`. The static check pins this exact policy and the encoder's two files by SHA-256, allows `.wasm` nowhere else, and lets only `offscreen.js` load vendored code. `offscreen.js` reads the `.wasm` file from inside the extension and hands it to the encoder, so the encoder's own loader never makes a request.

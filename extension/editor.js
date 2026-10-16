@@ -6,12 +6,13 @@ import { t, localisePage } from "./lib/i18n.js";
 import { buildTarget, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
 import { icoSizes } from "./lib/ico.js";
+import { AVIF_DEFAULT_QUALITY } from "./lib/avif.js";
 import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
 const toBackground = (type, extra) => ask(jobId, type, extra);
-const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", ico: "ICO", bmp: "BMP" };
+const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", avif: "AVIF", ico: "ICO", bmp: "BMP" };
 const LAST = "editorLast"; // the last format and width used here, in chrome.storage.local
 
 let job = null; // { url, pageUrl, settings }
@@ -48,10 +49,12 @@ function syncControls() {
   $("pngHint").hidden = f !== "png";
   $("icoHint").hidden = f !== "ico";
   $("bmpHint").hidden = f !== "bmp";
+  $("avifHint").hidden = f !== "avif";
   $("widthField").hidden = f === "ico"; // an icon has fixed sizes
   $("backgroundField").hidden = f !== "jpg" && f !== "bmp";
   const settings = job.settings;
-  if (!["png", "ico", "bmp"].includes(f) && !$("quality").dataset.touched) $("quality").value = f === "webp" ? settings.webpQuality : settings.jpgQuality;
+  if (!["png", "ico", "bmp"].includes(f) && !$("quality").dataset.touched)
+    $("quality").value = f === "webp" ? settings.webpQuality : f === "avif" ? AVIF_DEFAULT_QUALITY : settings.jpgQuality;
   $("qualityOut").textContent = $("quality").value;
 }
 

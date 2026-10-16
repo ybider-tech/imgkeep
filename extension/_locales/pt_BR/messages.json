@@ -467,6 +467,9 @@
   "editBmpHint": {
     "message": "Um bitmap simples que qualquer app abre. Os arquivos são grandes, e as áreas transparentes ficam com a cor de fundo."
   },
+  "editAvifHint": {
+    "message": "Costuma ter metade do tamanho de um JPG com a mesma aparência. Navegadores modernos e a maioria dos apps atuais abrem; alguns apps antigos não."
+  },
   "editMaxWidthHint": {
     "message": "Em pixels. Mantém a proporção e nunca amplia."
   },

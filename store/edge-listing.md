@@ -47,6 +47,7 @@ Many sites now use WebP and AVIF images, which other apps often can't open. Imgk
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
 • Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, ready to paste anywhere.
+• Save as AVIF: in More options, files often half the size of a JPG that looks the same, transparency kept.
 • Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
 
@@ -68,7 +69,7 @@ LOCAL CONVERSION AND ACCESS YOU CONTROL
 • No background page reading: Imgkeep looks at a page only when you ask it to find an image there, and never changes a page.
 • Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • One anonymous daily summary: usage counts and failures, like "12 saves as JPG, 1 failed", so we know what to improve. Never images, website addresses or file names. One click in Options turns it off.
-• Open source under the MIT licence, with no build step, so the code you read is the code that runs.
+• Open source under the MIT licence, with no build step: the code you read is the code that runs. The one compiled part, the AVIF encoder, is the open-source libavif, unchanged and checked by its fingerprint.
 • Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free.
 
 WHEN A SITE BLOCKS AN IMAGE
@@ -91,6 +92,8 @@ New in 0.7.0: an anonymous daily usage summary, on by default and switched off w
 New in 0.8.0: "Imgkeep: Find image here", a right-click item shown only on sites that cover their images with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads). It uses two OPTIONAL permissions, activeTab and scripting, which stay off until the user turns them on (in Options or the first time they use it). When clicked, it runs a packaged function once in that tab that reads the addresses of the images on screen, then opens the chosen one in the extension's own window to save. It never changes the page. To test: turn it on in Options → "Images that sites cover", open an Instagram profile, right-click a photo, choose "Imgkeep: Find image here".
 
 New in 0.8.1: the anonymous daily summary also counts conversions by the original's format and the chosen one (for example webp_to_jpg), read from the image's bytes. Still no URLs, site or file names. Listed in the privacy policy.
+
+New in 0.10.0: More options can save as AVIF. Browsers can't encode AVIF, so the package includes libavif 1.0.1 (with libaom) compiled to WebAssembly, unchanged from the open-source npm package @jsquash/avif 2.1.1, in extension/vendor/avif with its licences and a README giving SHA-256 checksums to compare with the published package. The manifest therefore sets content_security_policy extension_pages to "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'" (WebAssembly only; no remote code, no eval). The encoder is loaded only by offscreen.js, only when the user saves as AVIF, and offscreen.js reads the .wasm from inside the package and passes it in, so the encoder's loader makes no network request. No new permission. To test: right-click an image, Imgkeep: Save image as → More options…, Format → AVIF, Save.
 
 New in 0.9.0: More options can save as ICO (16/32/48/256 px PNGs in one icon file, written by extension/lib/ico.js) and BMP (24-bit, extension/lib/bmp.js); both are small hand-written encoders, no library. The anonymous daily summary goes to PostHog's EU cloud (https://eu.i.posthog.com/i/v0/e/) instead of Aptabase; same counts, still one request a day from extension/lib/telemetry.js. Each summary is an anonymous event with a new random id ($process_person_profile: false) and location lookup turned off ($geoip_disable: true); the project discards IP addresses. Announced on imgkeep.app before this version.
 

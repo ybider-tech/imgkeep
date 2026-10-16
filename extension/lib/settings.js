@@ -27,6 +27,8 @@ export const FORMATS = {
   ico: { mime: "image/x-icon", ext: "ico", label: "ICO" },
   // BMP (More options only): 24-bit; transparent areas get the background colour, like JPG.
   bmp: { mime: "image/bmp", ext: "bmp", label: "BMP" },
+  // AVIF (More options only): libavif compiled to WebAssembly (vendor/avif). Transparency kept.
+  avif: { mime: "image/avif", ext: "avif", label: "AVIF" },
 };
 
 // Caps for making GIFs, so a huge animation can't hang the browser. Over a cap → "too-large".

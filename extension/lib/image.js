@@ -14,6 +14,7 @@ export const EXT_BY_TYPE = {
   "application/pdf": "pdf",
   "image/x-icon": "ico",
   "image/bmp": "bmp",
+  "image/avif": "avif",
 };
 
 // The type from the file's first bytes. Servers often send the wrong Content-Type,

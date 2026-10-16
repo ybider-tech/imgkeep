@@ -36,6 +36,7 @@ Many sites now use WebP and AVIF images, which other apps often can't open. Imgk
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
 • Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, ready to paste anywhere.
+• Save as AVIF: in More options, files often half the size of a JPG that looks the same, transparency kept.
 • Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
 
@@ -57,7 +58,7 @@ LOCAL CONVERSION AND ACCESS YOU CONTROL
 • No background page reading: Imgkeep looks at a page only when you ask it to find an image there, and never changes a page.
 • Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • One anonymous daily summary: usage counts and failures, like "12 saves as JPG, 1 failed", so we know what to improve. Never images, website addresses or file names. One click in Options turns it off.
-• Open source under the MIT licence, with no build step, so the code you read is the code that runs.
+• Open source under the MIT licence, with no build step: the code you read is the code that runs. The one compiled part, the AVIF encoder, is the open-source libavif, unchanged and checked by its fingerprint.
 • Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free.
 
 WHEN A SITE BLOCKS AN IMAGE

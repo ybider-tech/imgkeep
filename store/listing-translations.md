@@ -41,6 +41,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 • האנימציה ממשיכה לזוז: ‏WebP,‏ AVIF ו-APNG מונפשים הופכים ל-GIF ששומר על התזמון והשקיפות. קובצי GIF מונפשים נשמרים בלי שינוי.
 • שמירה כ-PDF: קובץ PDF של עמוד אחד בגודל התמונה, עם השקיפות. שימושי לקבלות, למסמכים ולשיתוף.
 • העתקה כ-PNG: התמונה נכנסת ללוח כקובץ PNG אמיתי, עם השקיפות, ומוכנה להדבקה בכל מקום.
+• שמירה כ-AVIF: באפשרויות נוספות, קבצים שלרוב קטנים בחצי מ-JPG שנראה אותו דבר, עם השקיפות.
 • אייקונים ומפות סיביות: באפשרויות נוספות שומרים כ-ICO (מ-16 עד 256 פיקסלים בקובץ אחד, לקיצורי דרך בשולחן העבודה ולאייקוני אתרים) או כ-BMP.
 • שמירת המקור: שומרים את התמונה בפורמט המקורי שלה כשלא צריך המרה.
 
@@ -62,7 +63,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 • לא קורא דפים ברקע: ‏Imgkeep מסתכל על דף רק כשמבקשים ממנו למצוא בו תמונה, ואף פעם לא משנה דף.
 • ארבע הרשאות בלבד: contextMenus,‏ downloads,‏ storage,‏ offscreen. שתיים נוספות, activeTab ו-scripting, רק אם מפעילים את מציאת תמונה כאן.
 • סיכום יומי אנונימי אחד: ספירות שימוש וכשלים, כמו „12 שמירות כ-JPG, אחת נכשלה”, כדי שנדע מה לשפר. אף פעם לא תמונות, כתובות אתרים או שמות קבצים. לחיצה אחת באפשרויות מכבה אותו.
-• קוד פתוח ברישיון MIT, בלי שלב בנייה, כך שהקוד שקוראים הוא הקוד שרץ.
+• קוד פתוח ברישיון MIT, בלי שלב בנייה: הקוד שקוראים הוא הקוד שרץ. החלק המהודר היחיד, מקודד ה-AVIF, הוא libavif בקוד פתוח, ללא שינוי ונבדק לפי טביעת האצבע שלו.
 • חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים, ובקשת דירוג אחת בלבד, אי פעם. כל תכונה שקיימת היום נשארת חינמית.
 
 כשאתר חוסם תמונה
@@ -93,6 +94,7 @@ Muchos sitios usan ahora imágenes WebP y AVIF, que otras aplicaciones a menudo 
 • Las animaciones siguen moviéndose: WebP, AVIF y APNG animados se convierten en un GIF que conserva su ritmo y su transparencia. Los GIF animados se guardan sin cambios.
 • Guardar como PDF: un PDF de una página del tamaño de la imagen, con su transparencia. Útil para recibos, documentos y compartir.
 • Copiar como PNG: pon la imagen en el portapapeles como un PNG de verdad, con su transparencia, lista para pegar donde quieras.
+• Guardar como AVIF: en Más opciones, archivos que suelen ocupar la mitad que un JPG que se ve igual, con su transparencia.
 • Iconos y mapas de bits: en Más opciones, guarda como ICO (de 16 a 256 px en un solo archivo, para accesos directos y favicons) o BMP.
 • Conserva el original: guarda la imagen en su formato original cuando no necesites convertirla.
 
@@ -114,7 +116,7 @@ CONVERSIÓN LOCAL Y ACCESO BAJO TU CONTROL
 • No lee páginas en segundo plano: Imgkeep solo mira una página cuando le pides que encuentre una imagen en ella, y nunca cambia una página.
 • Solo cuatro permisos: contextMenus, downloads, storage, offscreen. Dos más, activeTab y scripting, solo si activas Buscar imagen aquí.
 • Un único resumen diario anónimo: recuentos de uso y fallos, como «12 guardados como JPG, 1 fallido», para saber qué mejorar. Nunca imágenes, direcciones web ni nombres de archivo. Un clic en Opciones lo desactiva.
-• Código abierto con licencia MIT y sin paso de compilación: el código que lees es el código que se ejecuta.
+• Código abierto con licencia MIT y sin paso de compilación: el código que lees es el código que se ejecuta. La única parte compilada, el codificador AVIF, es libavif, de código abierto, sin cambios y verificada por su huella.
 • Gratis y sin límites: sin anuncios, sin pestañas de bienvenida y una sola petición de valoración, nunca más. Todas las funciones disponibles hoy seguirán siendo gratis.
 
 CUANDO UN SITIO BLOQUEA UNA IMAGEN
@@ -145,6 +147,7 @@ Muitos sites agora usam imagens WebP e AVIF, que outros apps muitas vezes não a
 • Animações continuam se movendo: WebP, AVIF e APNG animados viram um GIF que mantém o tempo e a transparência. GIFs animados são salvos sem alterações.
 • Salvar como PDF: um PDF de uma página do tamanho da imagem, com transparência. Útil para recibos, documentos e compartilhamento.
 • Copiar como PNG: coloque a imagem na área de transferência como um PNG de verdade, com transparência, pronta para colar onde quiser.
+• Salvar como AVIF: em Mais opções, arquivos que costumam ter metade do tamanho de um JPG com a mesma aparência, com transparência.
 • Ícones e bitmaps: em Mais opções, salve como ICO (de 16 a 256 px em um só arquivo, para atalhos na área de trabalho e favicons) ou BMP.
 • Mantenha o original: salve a imagem no formato original quando não precisar converter.
 
@@ -166,7 +169,7 @@ CONVERSÃO LOCAL E ACESSO SOB SEU CONTROLE
 • Não lê páginas em segundo plano: o Imgkeep só olha uma página quando você pede para encontrar uma imagem nela, e nunca altera uma página.
 • Só quatro permissões: contextMenus, downloads, storage, offscreen. Mais duas, activeTab e scripting, só se você ativar Encontrar imagem aqui.
 • Um único resumo diário anônimo: contagens de uso e falhas, como "12 salvamentos como JPG, 1 falhou", para sabermos o que melhorar. Nunca imagens, endereços de sites ou nomes de arquivos. Um clique nas Opções desativa.
-• Código aberto com licença MIT e sem etapa de build: o código que você lê é o código que roda.
+• Código aberto com licença MIT e sem etapa de build: o código que você lê é o código que roda. A única parte compilada, o codificador AVIF, é o libavif, de código aberto, sem alterações e verificado pela sua impressão digital.
 • Grátis e sem limites: sem anúncios, sem abas de boas-vindas e um único pedido de avaliação, só uma vez. Todos os recursos disponíveis hoje continuam grátis.
 
 QUANDO UM SITE BLOQUEIA UMA IMAGEM
@@ -197,6 +200,7 @@ Viele Websites nutzen heute WebP- und AVIF-Bilder, die andere Programme oft nich
 • Animationen bleiben in Bewegung: animierte WebP-, AVIF- und APNG-Bilder werden zu einem GIF mit Timing und Transparenz. Animierte GIFs werden unverändert gespeichert.
 • Als PDF speichern: ein einseitiges PDF in der Größe des Bildes, mit Transparenz. Praktisch für Belege, Dokumente und zum Teilen.
 • Als PNG kopieren: Das Bild landet als echtes PNG mit Transparenz in der Zwischenablage, bereit zum Einfügen.
+• Als AVIF speichern: In Weitere Optionen, oft halb so groß wie ein JPG, das gleich aussieht, mit Transparenz.
 • Icons und Bitmaps: In Weitere Optionen als ICO speichern (16 bis 256 px in einer Datei, für Desktop-Verknüpfungen und Favicons) oder als BMP.
 • Original behalten: Speichere das Bild im Originalformat, wenn du keine Umwandlung brauchst.
 
@@ -218,7 +222,7 @@ LOKALE UMWANDLUNG UND ZUGRIFF UNTER DEINER KONTROLLE
 • Kein Lesen von Seiten im Hintergrund: Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden, und verändert nie eine Seite.
 • Nur vier Berechtigungen: contextMenus, downloads, storage, offscreen. Zwei weitere, activeTab und scripting, nur wenn du Bild hier finden einschaltest.
 • Eine anonyme tägliche Zusammenfassung: Nutzungszahlen und Fehler wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“, damit wir wissen, was wir verbessern sollten. Niemals Bilder, Webadressen oder Dateinamen. Ein Klick in den Optionen schaltet sie aus.
-• Open Source unter der MIT-Lizenz, ohne Build-Schritt: Der Code, den du liest, ist der Code, der läuft.
+• Open Source unter der MIT-Lizenz, ohne Build-Schritt: Der Code, den du liest, ist der Code, der läuft. Der einzige kompilierte Teil, der AVIF-Encoder, ist das quelloffene libavif, unverändert und per Fingerabdruck geprüft.
 • Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs und nur eine einzige Bitte um eine Bewertung. Jede Funktion, die es heute gibt, bleibt kostenlos.
 
 WENN EINE WEBSITE EIN BILD BLOCKIERT
@@ -249,6 +253,7 @@ Beaucoup de sites utilisent désormais des images WebP et AVIF, que d'autres app
 • Les animations continuent de bouger : les WebP, AVIF et APNG animés deviennent un GIF qui garde son rythme et sa transparence. Les GIF animés sont enregistrés sans changement.
 • Enregistrer en PDF : un PDF d'une page à la taille de l'image, transparence comprise. Pratique pour les reçus, les documents et le partage.
 • Copier en PNG : l'image va dans le presse-papiers en vrai PNG, transparence comprise, prête à être collée.
+• Enregistrer en AVIF : dans Plus d'options, des fichiers souvent deux fois plus légers qu'un JPG au même rendu, transparence comprise.
 • Icônes et bitmaps : dans Plus d'options, enregistrez en ICO (de 16 à 256 px dans un seul fichier, pour les raccourcis du bureau et les favicons) ou en BMP.
 • Garder l'original : enregistrez l'image dans son format d'origine quand vous n'avez pas besoin de conversion.
 
@@ -270,7 +275,7 @@ CONVERSION LOCALE ET ACCÈS SOUS VOTRE CONTRÔLE
 • Aucune lecture des pages en arrière-plan : Imgkeep ne regarde une page que lorsque vous lui demandez d'y trouver une image, et ne modifie jamais une page.
 • Seulement quatre autorisations : contextMenus, downloads, storage, offscreen. Deux de plus, activeTab et scripting, seulement si vous activez Trouver l'image ici.
 • Un seul résumé quotidien anonyme : des compteurs d'utilisation et d'échecs, comme « 12 enregistrements en JPG, 1 échec », pour savoir quoi améliorer. Jamais d'images, d'adresses de sites ni de noms de fichiers. Un clic dans les Options le désactive.
-• Open source sous licence MIT, sans étape de compilation : le code que vous lisez est le code qui s'exécute.
+• Open source sous licence MIT, sans étape de compilation : le code que vous lisez est le code qui s'exécute. La seule partie compilée, l'encodeur AVIF, est libavif, open source, inchangé et vérifié par son empreinte.
 • Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue, et une seule demande de note, une fois pour toutes. Toutes les fonctions disponibles aujourd'hui restent gratuites.
 
 QUAND UN SITE BLOQUE UNE IMAGE
@@ -301,6 +306,7 @@ WEBP と AVIF を PNG や JPG に変換
 • アニメーションはそのまま：アニメーション WebP・AVIF・APNG は、タイミングと透過を保った GIF になります。アニメーション GIF はそのまま保存されます。
 • PDF で保存：画像と同じサイズの 1 ページの PDF。透過も保たれます。領収書や書類、共有に便利です。
 • PNGとしてコピー：透過を保った本物の PNG としてクリップボードに入れ、どこにでも貼り付けられます。
+• AVIF で保存：「その他のオプション」で、同じ見た目の JPG の半分ほどのサイズになることが多いファイルを、透過を保ったまま保存できます。
 • アイコンとビットマップ：「その他のオプション」で ICO（16〜256 px を 1 つのファイルに。デスクトップのショートカットやファビコンに）や BMP で保存できます。
 • 元の形式のまま：変換が不要なときは、画像を元の形式で保存できます。
 
@@ -322,7 +328,7 @@ WEBP と AVIF を PNG や JPG に変換
 • バックグラウンドでページを読みません：Imgkeep がページを見るのは、そこで画像を探すよう頼まれたときだけで、ページを変更することはありません。
 • 権限は 4 つだけ：contextMenus、downloads、storage、offscreen。「ここで画像を探す」をオンにした場合のみ、activeTab と scripting の 2 つが加わります。
 • 匿名の 1 日分のまとめを 1 回だけ：「JPGで12回保存、1回失敗」のような使用回数と失敗の数で、改善に役立てます。画像、サイトのアドレス、ファイル名は一切含みません。オプションでワンクリックでオフにできます。
-• MIT ライセンスのオープンソースで、ビルド工程なし。読めるコードがそのまま動きます。
+• MIT ライセンスのオープンソースで、ビルド工程なし。読めるコードがそのまま動きます。唯一のコンパイル済み部分である AVIF エンコーダーは、オープンソースの libavif をそのまま使い、フィンガープリントで検証しています。
 • 無料で制限なし：広告なし、ようこそタブなし、評価のお願いは一度だけ。現在のすべての機能は、これからも無料です。
 
 サイトが画像をブロックしているとき
@@ -353,6 +359,7 @@ WEBP और AVIF को PNG या JPG में बदलें
 • एनिमेशन चलता रहता है: एनिमेटेड WebP, AVIF और APNG ऐसे GIF बन जाते हैं जिनमें टाइमिंग और पारदर्शिता बनी रहती है। एनिमेटेड GIF बिना बदलाव के सेव होते हैं।
 • PDF में सेव करें: इमेज के साइज़ का एक पेज का PDF, पारदर्शिता के साथ। रसीदों, दस्तावेज़ों और शेयर करने के लिए उपयोगी।
 • PNG के रूप में कॉपी करें: इमेज पारदर्शिता के साथ असली PNG के रूप में क्लिपबोर्ड पर जाती है, कहीं भी पेस्ट करने के लिए तैयार।
+• AVIF में सेव करें: और विकल्प में, अक्सर उतने ही अच्छे दिखने वाले JPG से आधे साइज़ की फ़ाइलें, पारदर्शिता के साथ।
 • आइकन और बिटमैप: और विकल्प में ICO (एक ही फ़ाइल में 16 से 256 px, डेस्कटॉप शॉर्टकट और फ़ेविकॉन के लिए) या BMP के रूप में सेव करें।
 • मूल रखें: जब बदलने की ज़रूरत न हो, तो इमेज को उसके मूल फ़ॉर्मैट में सेव करें।
 
@@ -374,7 +381,7 @@ WEBP और AVIF को PNG या JPG में बदलें
 • बैकग्राउंड में पेज नहीं पढ़ता: Imgkeep किसी पेज को सिर्फ़ तभी देखता है जब आप उससे वहाँ इमेज ढूँढने को कहें, और कभी किसी पेज को नहीं बदलता।
 • सिर्फ़ चार अनुमतियाँ: contextMenus, downloads, storage, offscreen। दो और, activeTab और scripting, सिर्फ़ तब जब आप यहाँ इमेज ढूँढें चालू करें।
 • रोज़ एक गुमनाम सारांश: इस्तेमाल और विफलताओं की गिनती, जैसे "JPG में 12 सेव, 1 विफल", ताकि हम जानें कि क्या बेहतर करना है। कभी भी इमेज, वेबसाइट के पते या फ़ाइल के नाम नहीं। विकल्पों में एक क्लिक से इसे बंद करें।
-• MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो कोड आप पढ़ते हैं वही चलता है।
+• MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो कोड आप पढ़ते हैं वही चलता है। एकमात्र कंपाइल किया गया हिस्सा, AVIF एनकोडर, ओपन-सोर्स libavif है, बिना बदलाव के और उसके फ़िंगरप्रिंट से जाँचा गया।
 • मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब, और रेटिंग का अनुरोध सिर्फ़ एक बार। आज उपलब्ध हर सुविधा मुफ़्त रहेगी।
 
 जब कोई साइट इमेज को ब्लॉक करती है
@@ -405,6 +412,7 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 • الحركة تستمر: تتحول صور WebP وAVIF وAPNG المتحركة إلى GIF يحافظ على توقيتها وشفافيتها. وتُحفظ ملفات GIF المتحركة دون تغيير.
 • الحفظ بصيغة PDF: ملف PDF من صفحة واحدة بحجم الصورة، مع الشفافية. مفيد للإيصالات والمستندات والمشاركة.
 • النسخ بصيغة PNG: تُنسخ الصورة إلى الحافظة كملف PNG حقيقي مع شفافيتها، جاهزة للصق في أي مكان.
+• الحفظ بصيغة AVIF: من مزيد من الخيارات، ملفات غالبًا بنصف حجم JPG يبدو مثلها، مع الحفاظ على الشفافية.
 • الأيقونات والصور النقطية: من مزيد من الخيارات، احفظ بصيغة ICO (من 16 إلى 256 بكسل في ملف واحد، لاختصارات سطح المكتب وأيقونات المواقع) أو BMP.
 • الاحتفاظ بالأصل: احفظ الصورة بصيغتها الأصلية عندما لا تحتاج إلى تحويل.
 
@@ -426,7 +434,7 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 • لا قراءة للصفحات في الخلفية: لا ينظر Imgkeep إلى صفحة إلا عندما تطلب منه العثور على صورة فيها، ولا يغيّر أي صفحة أبدًا.
 • أربعة أذونات فقط: contextMenus وdownloads وstorage وoffscreen. واثنان آخران، activeTab وscripting، فقط إذا شغّلت البحث عن الصورة هنا.
 • ملخص يومي مجهول واحد: أعداد الاستخدام والإخفاقات، مثل "12 حفظًا بصيغة JPG، فشل 1"، لنعرف ما الذي نحسّنه. لا صور ولا عناوين مواقع ولا أسماء ملفات أبدًا. نقرة واحدة في الخيارات توقفه.
-• مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فالشيفرة التي تقرؤها هي التي تعمل.
+• مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فالشيفرة التي تقرؤها هي التي تعمل. الجزء المُجمَّع الوحيد، مُرمِّز AVIF، هو libavif مفتوح المصدر، دون تعديل ويُتحقق منه ببصمته.
 • مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية، وطلب تقييم واحد فقط، مرة واحدة. كل ميزة متاحة اليوم ستبقى مجانية.
 
 عندما يحظر موقع صورة
