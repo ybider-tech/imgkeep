@@ -43,7 +43,8 @@
   send("site_pageview", { referrer });
 
   // Called by the converter (site/convert/app.js) after a batch: only the formats and the number of files.
-  const FORMATS = ["png", "jpg", "jpeg", "webp", "avif", "gif", "svg", "bmp", "ico", "pdf", "tiff", "heic", "other"];
+  // "clipboard": Copy as PNG on a converted image.
+  const FORMATS = ["png", "jpg", "jpeg", "webp", "avif", "gif", "svg", "bmp", "ico", "pdf", "tiff", "heic", "clipboard", "other"];
   window.imgkeepCountConversion = (from, to, files) => {
     const pick = (f) => (FORMATS.includes(f) ? f : "other");
     const n = Math.min(Math.max(1, Math.floor(Number(files)) || 1), 100);

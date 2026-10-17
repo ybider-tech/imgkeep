@@ -131,3 +131,20 @@ test("the conversion count gets only the format pair and the number of files", a
   await expect(page.locator("#status")).toContainText("Done: 2 of 2");
   expect(await page.evaluate(() => window.__counted)).toEqual([["webp", "jpg", 2]]);
 });
+
+test("each result offers Download as the chosen format and Copy as PNG, which puts a real PNG on the clipboard", async ({ page, context }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"], { origin: server.url });
+  await open(page);
+  await page.selectOption("#format", "jpg");
+  await drop(page, [await fixture("photo.webp", "image/webp")]);
+  const result = page.locator(".result").first();
+  await expect(result.getByRole("link", { name: "Download JPG" })).toBeVisible();
+  await result.getByRole("button", { name: "Copy as PNG" }).click();
+  await expect(result.getByRole("button", { name: "Copied ✓" })).toBeVisible();
+  const pasted = await page.evaluate(async () => {
+    const [item] = await navigator.clipboard.read();
+    const png = await item.getType("image/png");
+    return [...new Uint8Array(await png.arrayBuffer()).slice(0, 4)];
+  });
+  expect(pasted).toEqual([0x89, 0x50, 0x4e, 0x47]); // a PNG, though the download is a JPG
+});

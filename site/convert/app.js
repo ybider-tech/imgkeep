@@ -106,6 +106,25 @@ async function init() {
   });
 }
 
+// Copy as PNG: a real PNG on the clipboard, transparency kept, ready to paste into a design, slide or chat.
+// The clipboard only takes PNG images from web pages, hence PNG whatever was chosen for the download.
+const canCopy = Boolean(navigator.clipboard?.write && window.ClipboardItem);
+function copyButton(file, out, opts) {
+  const button = Object.assign(document.createElement("button"), { type: "button", className: "button", textContent: "Copy as PNG" });
+  button.addEventListener("click", async () => {
+    // The PNG is handed over as a promise so the copy stays tied to this click while it's being made.
+    const png = out.blob.type === "image/png" ? Promise.resolve(out.blob) : convert(file, { ...opts, mime: "image/png", title: undefined }).then((r) => r.blob);
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
+      button.textContent = "Copied ✓";
+      window.imgkeepCountConversion?.(short(out.sourceType || file.type || ""), "clipboard", 1);
+    } catch {
+      button.textContent = "Couldn't copy: download instead";
+    }
+    setTimeout(() => (button.textContent = "Copy as PNG"), 2500);
+  });
+  return button;
+}
 let busy = Promise.resolve();
 function run(files) {
   busy = busy.then(() => convertAll(files.slice(0, MAX_FILES), files.length > MAX_FILES)).catch(() => {});
@@ -138,12 +157,15 @@ async function convertAll(files, cut) {
       if (out.ext !== "pdf") item.prepend(Object.assign(document.createElement("img"), { src: url, alt: "", loading: "lazy" }));
       const change = out.blob.size - file.size;
       const pct = file.size ? Math.round((100 * change) / file.size) : 0;
+      const actions = Object.assign(document.createElement("div"), { className: "actions" });
+      actions.append(Object.assign(document.createElement("a"), { href: url, download: name, className: "button primary", textContent: `Download ${target.label}` }));
+      if (canCopy) actions.append(copyButton(file, out, opts));
       item.append(
         Object.assign(document.createElement("span"), {
           className: "facts",
           textContent: `${out.width} × ${out.height} · ${kb(file.size)} → ${kb(out.blob.size)} (${pct > 0 ? "+" : ""}${pct}%)`,
         }),
-        Object.assign(document.createElement("a"), { href: url, download: name, className: "button", textContent: `Download ${out.ext.toUpperCase()}` }),
+        actions,
       );
       const pair = `${short(out.sourceType || file.type || "")}>${key}`;
       pairs.set(pair, (pairs.get(pair) || 0) + 1);

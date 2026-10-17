@@ -554,7 +554,8 @@ footer .guides { margin-top: 12px; }
 .converter .result .name { grid-area: name; font-weight: 600; overflow-wrap: anywhere; }
 .converter .result .facts, .converter .result .error { grid-area: facts; color: var(--muted); font-variant-numeric: tabular-nums; }
 .converter .result .error { color: #b3261e; }
-.converter .result .button { grid-area: btn; }
+.converter .result .actions { grid-area: btn; display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.converter .button.primary { background: var(--accent); color: #fff; }
 .converter .button { display: inline-block; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); background: none; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
 .converter .install { margin-top: 18px; }
 @media (max-width: 560px) {
