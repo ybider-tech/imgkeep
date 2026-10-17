@@ -535,3 +535,55 @@ footer .guides { margin-top: 12px; }
   border-radius: 10px;
 }
 .shot figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+
+/* Free Image Converter (site/convert/) */
+.converter { margin: 24px 0 40px; }
+.converter .drop { display: block; border: 2px dashed var(--border); border-radius: 14px; padding: 36px 20px; text-align: center; cursor: pointer; background: var(--surface); }
+.converter .drop:hover, .converter .drop.over, .converter .drop:focus-within { border-color: var(--accent); }
+.converter .drop .pick { color: var(--accent); text-decoration: underline; }
+.converter .drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.converter .settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px 20px; margin: 18px 0 8px; }
+.converter .field label { display: block; font-weight: 600; margin-bottom: 4px; }
+.converter select, .converter input[type="number"] { width: 100%; font: inherit; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: inherit; }
+.converter input[type="range"] { width: 100%; }
+.converter input[type="color"] { width: 56px; height: 36px; border: 1px solid var(--border); border-radius: 8px; background: none; }
+.converter .status { min-height: 1.5em; font-weight: 600; }
+.converter .results { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 10px; }
+.converter .result { display: grid; grid-template-columns: 64px 1fr auto; grid-template-areas: "img name btn" "img facts btn"; align-items: center; gap: 2px 14px; padding: 10px; border: 1px solid var(--border); border-radius: 10px; }
+.converter .result img { grid-area: img; width: 64px; height: 64px; object-fit: contain; background: repeating-conic-gradient(var(--border) 0 25%, transparent 0 50%) 0 0 / 12px 12px; border-radius: 6px; }
+.converter .result .name { grid-area: name; font-weight: 600; overflow-wrap: anywhere; }
+.converter .result .facts, .converter .result .error { grid-area: facts; color: var(--muted); font-variant-numeric: tabular-nums; }
+.converter .result .error { color: #b3261e; }
+.converter .result .actions { grid-area: btn; display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.converter .button.primary { background: var(--accent); color: #fff; }
+.converter .button { display: inline-block; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); background: none; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.converter .install { margin-top: 18px; }
+@media (max-width: 560px) {
+  .converter .result { grid-template-columns: 48px 1fr; grid-template-areas: "img name" "img facts" "btn btn"; }
+  .converter .result img { width: 48px; height: 48px; }
+}
+
+/* Header link to the converter on pages with only the brand. */
+.mini-nav { margin-left: auto; }
+.mini-nav a { font-weight: 600; text-decoration: none; color: var(--accent); }
+.mini-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+header:has(.mini-nav) { display: flex; align-items: center; }
+/* Converter pages */
+.converter-page .crumbs { font-size: 0.95rem; color: var(--muted); margin-bottom: 8px; }
+.converter-page .popular { margin: 4px 0 28px; color: var(--muted); }
+.converter-page .popular span { font-weight: 600; margin-right: 4px; }
+.converter-page .popular a[aria-current="page"] { font-weight: 700; color: var(--text, inherit); text-decoration: none; }
+.converter-page .sends { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.converter-page details.check { border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin: 12px 0 20px; }
+.converter-page details.check summary { font-weight: 700; cursor: pointer; }
+.converter .install .install-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.converter .install .cta { margin: 0; }
+.converter .install .cta-alt { font-weight: 600; }
+.home .convert-band { margin-top: 96px; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: var(--accent-soft); }
+.home .convert-band h2 { margin-top: 4px; }
+.home .convert-band .popular span { font-weight: 600; margin-right: 4px; }
+.home .convert-band .band-link { font-weight: 700; }
+/* Our display rules must never override the hidden attribute (Download all and the install box start hidden). */
+.converter [hidden] { display: none !important; }
+.converter .status:empty, .converter .results:empty { min-height: 0; margin: 0; }
+.converter { margin-bottom: 16px; }

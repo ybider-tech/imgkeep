@@ -1,15 +1,9 @@
-// Offscreen document: fetches the clicked image, runs it through the pipeline (lib/image.js, or a GIF
-// or PDF writer), and writes to the chosen folder. This is the only file that makes a network request.
+// Offscreen document: fetches the clicked image, converts it (lib/convert.js, shared with the website's
+// converter), and writes to the chosen folder. This is the only file that makes a network request.
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { JobError } from "./lib/job-error.js";
-import { GIF_LIMITS, nameFromUrl } from "./lib/settings.js";
-import { decode, draw, encodeCanvas, fitWidth, processImage, sniffImageType, verifyOutput } from "./lib/image.js";
-import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } from "./lib/gif.js";
-import { buildPdf, splitAlpha, deflate } from "./lib/pdf.js";
-import { buildIco, fitSquare, icoSizes } from "./lib/ico.js";
-import { buildBmp } from "./lib/bmp.js";
-import { encodeAvif } from "./lib/avif.js";
+import { convert } from "./lib/convert.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
 // and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
@@ -57,116 +51,6 @@ async function sourceFor(jobId, url) {
   return blob;
 }
 
-// PNG, JPG and WebP.
-async function still(input, opts) {
-  const image = await decode(input);
-  try {
-    return await processImage(image, { ...opts, type: opts.mime });
-  } finally {
-    image.done();
-  }
-}
-
-// GIF output. A GIF stays exactly as it is; animated WebP/AVIF/APNG are re-encoded frame by frame;
-// a still image becomes a one-frame GIF.
-async function animate(input, { maxWidth }) {
-  const type = await sniffImageType(input);
-  if (type === "image/gif") {
-    const { width, height } = await gifSize(input);
-    return { blob: new Blob([input], { type: "image/gif" }), width, height, sourceWidth: width, sourceHeight: height };
-  }
-  const deadline = Date.now() + GIF_LIMITS.timeoutMs;
-  const animation = await openAnimation(input, type);
-  if (animation) {
-    try {
-      checkLimits(animation);
-      const size = fitGif(animation.width, animation.height, maxWidth);
-      const blob = await encodeGif(animation.frames(), { ...size, deadline });
-      return { blob, ...size, sourceWidth: animation.width, sourceHeight: animation.height };
-    } finally {
-      animation.close();
-    }
-  }
-  const image = await decode(input);
-  try {
-    const size = fitGif(image.width, image.height, maxWidth);
-    const blob = await encodeGif(stillFrame(image.source), { ...size, deadline });
-    return { blob, ...size, sourceWidth: image.width, sourceHeight: image.height };
-  } finally {
-    image.done();
-  }
-}
-
-// PDF output: one page, exactly the image. Opaque images are stored as JPEG (small), images with
-// transparency losslessly with an alpha mask. Animated images use their first frame, like PNG and JPG.
-async function toPdf(input, { url, quality, maxWidth }) {
-  const image = await decode(input);
-  let canvas;
-  try {
-    const { width, height } = fitWidth(image.width, image.height, maxWidth);
-    canvas = draw(image, { width, height });
-    let rgba;
-    try {
-      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
-    } catch {
-      throw new JobError("too-large");
-    }
-    const { rgb, alpha } = splitAlpha(rgba);
-    const pdfImage = alpha
-      ? { rgb: await deflate(rgb), alpha: await deflate(alpha) }
-      : { jpeg: new Uint8Array(await (await encodeCanvas(canvas, "image/jpeg", quality)).arrayBuffer()) };
-    const title = nameFromUrl(url); // "image" for data: URLs
-    const blob = buildPdf({ width, height, image: pdfImage, title });
-    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height };
-  } finally {
-    if (canvas) canvas.width = canvas.height = 0;
-    image.done();
-  }
-}
-
-// ICO output: the image at 16, 32 and 48 px (and 256 px when it's big enough), each a square PNG with
-// the image centred and transparent edges. Animated images use their first frame.
-async function toIco(input) {
-  const image = await decode(input);
-  try {
-    const images = [];
-    for (const size of icoSizes(image.width, image.height)) {
-      const canvas = new OffscreenCanvas(size, size);
-      const ctx = canvas.getContext("2d");
-      ctx.imageSmoothingQuality = "high";
-      const { x, y, w, h } = fitSquare(image.width, image.height, size);
-      ctx.drawImage(image.source, x, y, w, h);
-      images.push({ size, png: new Uint8Array(await (await canvas.convertToBlob({ type: "image/png" })).arrayBuffer()) });
-    }
-    const largest = images[images.length - 1].size;
-    const blob = new Blob([buildIco(images)], { type: "image/x-icon" });
-    return { blob, width: largest, height: largest, sourceWidth: image.width, sourceHeight: image.height };
-  } finally {
-    image.done();
-  }
-}
-
-// BMP output: 24-bit, maximum width applied, transparent areas on the background colour (like JPG).
-async function toBmp(input, { maxWidth, background }) {
-  const image = await decode(input);
-  let canvas;
-  try {
-    const { width, height } = fitWidth(image.width, image.height, maxWidth);
-    canvas = draw(image, { width, height, background: background || "#ffffff" });
-    let rgba;
-    try {
-      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
-    } catch {
-      throw new JobError("too-large");
-    }
-    const blob = new Blob([buildBmp(rgba, width, height)], { type: "image/bmp" });
-    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height };
-  } finally {
-    if (canvas) canvas.width = canvas.height = 0;
-    image.done();
-  }
-}
-
 // The AVIF encoder (vendor/avif), loaded the first time someone saves as AVIF. Its .wasm file is read from
 // inside the extension here and handed over, so the encoder's own loader never fetches anything.
 let avifEncoder = null;
@@ -180,28 +64,6 @@ function loadAvifEncoder() {
     throw e;
   });
   return avifEncoder;
-}
-
-// AVIF output: maximum width applied, transparency kept. Animated images use their first frame.
-async function toAvif(input, { maxWidth, quality }) {
-  const encoder = await loadAvifEncoder();
-  const image = await decode(input);
-  let canvas;
-  try {
-    const { width, height } = fitWidth(image.width, image.height, maxWidth);
-    canvas = draw(image, { width, height });
-    let rgba;
-    try {
-      rgba = canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, width, height).data;
-    } catch {
-      throw new JobError("too-large");
-    }
-    const blob = new Blob([encodeAvif(encoder, rgba, width, height, quality)], { type: "image/avif" });
-    return { blob, width, height, sourceWidth: image.width, sourceHeight: image.height, quality };
-  } finally {
-    if (canvas) canvas.width = canvas.height = 0;
-    image.done();
-  }
 }
 
 function toDataUrl(blob) {
@@ -221,11 +83,7 @@ const handlers = {
   // sourceId: reuse the image a window already fetched (More options, Copy as PNG).
   async convert(msg) {
     const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
-    const make =
-      { "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp, "image/avif": toAvif }[msg.mime] || still;
-    const out = await make(input, msg);
-    // Whatever made it, the file must really be the type it will be named as.
-    const ext = await verifyOutput(out.blob, msg.mime);
+    const out = await convert(input, { ...msg, avifEncoder: loadAvifEncoder });
     const entry = { blob: out.blob };
     remember(pending, msg.jobId, entry);
     const result = {
@@ -233,11 +91,11 @@ const handlers = {
       height: out.height,
       sourceWidth: out.sourceWidth,
       sourceHeight: out.sourceHeight,
-      quality: out.quality ?? null,
+      quality: out.quality,
       mime: out.blob.type,
-      ext,
+      ext: out.ext,
       size: out.blob.size,
-      sourceType: await sniffImageType(input), // for the anonymous counts: "image/webp" → JPG
+      sourceType: out.sourceType, // for the anonymous counts: "image/webp" → JPG
     };
     if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
     if (msg.want === "url") {

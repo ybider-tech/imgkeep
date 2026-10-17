@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PNG to ICO Converter: No Uploads, No Sign-Up — Imgkeep</title>
+  <meta name="description" content="Turn a PNG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, transparency kept. Made in your browser without uploading. No sign-up. Free.">
+  <link rel="canonical" href="https://imgkeep.app/png-to-ico/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="PNG to ICO Converter: No Uploads, No Sign-Up — Imgkeep">
+  <meta property="og:description" content="Turn a PNG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, transparency kept. Made in your browser without uploading. No sign-up. Free.">
+  <meta property="og:url" content="https://imgkeep.app/png-to-ico/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "@id": "https://imgkeep.app/png-to-ico/#app", "name": "PNG to ICO Converter", "url": "https://imgkeep.app/png-to-ico/", "description": "Turn a PNG or JPG into an .ico icon with 16, 32 and 48 px sizes, plus 256 px for large images, in your browser, with no uploads and no sign-up.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (runs in a web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Converts in the browser: images are never uploaded", "No account or sign-up", "One .ico with 16, 32 and 48 px icons, plus 256 px for large images", "Transparency kept", "Non-square images centred on a transparent square"], "isPartOf": {"@id": "https://imgkeep.app/#site"}, "publisher": {"@id": "https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Free Image Converter", "item": "https://imgkeep.app/convert/"}, {"@type": "ListItem", "position": 3, "name": "PNG to ICO", "item": "https://imgkeep.app/png-to-ico/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why is my icon blurry at 16 px?", "acceptedAnswer": {"@type": "Answer", "text": "16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best; very detailed images become a blur at that size."}}, {"@type": "Question", "name": "Can I choose the sizes?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Every .ico holds 16, 32 and 48 px, plus 256 px when the image is at least 256 px."}}, {"@type": "Question", "name": "Does it keep transparency?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each size is stored as a PNG inside the .ico, transparency included."}}, {"@type": "Question", "name": "How do I convert PNG to ICO?", "acceptedAnswer": {"@type": "Answer", "text": "Drop a PNG (or JPG) above, keep ICO selected and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. Each size is stored as a PNG inside, so transparency is kept. Images that aren't square are centred on a transparent square. Nothing is uploaded."}}]}
+  </script>
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=1e02367091">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <script src="/count.js" defer></script>
+  <script type="module" src="../convert/app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Main"><a href="../convert/" aria-current="page">Converter</a></nav>
+    </header>
+    <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../convert/">← Converter</a> › PNG to ICO</nav>
+      <h1>PNG to ICO Converter</h1>
+      <p class="lead">Make a favicon or Windows icon without uploading: one .ico with all the common sizes.</p>
+
+      <section id="converter" class="converter" data-to="ico" aria-label="Converter">
+        <label id="drop" class="drop" for="files">
+          <strong>Drop a PNG or JPG here</strong> or <span class="pick">choose files</span>, or paste with ⌘V / Ctrl+V
+          <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp">
+        </label>
+        <div class="settings">
+          <div class="field"><label for="format">Convert to</label><select id="format"></select></div>
+          <div class="field" id="qualityField"><label for="quality">Quality <output id="qualityOut">92</output></label><input type="range" id="quality" min="1" max="100" value="92"></div>
+          <div class="field" id="widthField"><label for="maxWidth">Maximum width (px)</label><input type="number" id="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Keep size"></div>
+          <div class="field" id="backgroundField"><label for="background">Background for transparent areas</label><input type="color" id="background" value="#ffffff"></div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <ul id="results" class="results"></ul>
+        <button type="button" id="downloadAll" class="button" hidden>Download all</button>
+        <aside id="install" class="callout install" hidden>
+          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, or copies it as PNG, straight from the right-click menu in Chrome and Edge.</p>
+          <p class="install-links"><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=png-to-ico">Add to Chrome — free</a> <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=png-to-ico">Also for Edge</a></p>
+        </aside>
+      </section>
+
+      <p class="sends">This page sends two anonymous counts, a page view and which formats you converted with how many files (for example "webp → jpg, 3 files"), never images, file names or sizes. <a href="../privacy.html#website">Privacy</a>.</p>
+      <details class="check">
+        <summary>Check it yourself</summary>
+        <ul>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format.</li>
+          <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
+          <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
+        </ul>
+      </details>
+
+      <nav class="popular" aria-label="Popular conversions"><span>Popular:</span> <a href="../webp-to-jpg/">WebP to JPG</a> · <a href="../webp-to-png/">WebP to PNG</a> · <a href="../avif-to-jpg/">AVIF to JPG</a> · <a href="../png-to-jpg/">PNG to JPG</a> · <a href="../png-to-ico/" aria-current="page">PNG to ICO</a> · <a href="../convert/">All formats</a></nav>
+
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Drop a PNG (or JPG) above, keep ICO selected and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. Each size is stored as a PNG inside, so transparency is kept. Images that aren't square are centred on a transparent square. Nothing is uploaded.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-17">17 October 2026</time></p>
+
+      <h2>What size should my image be?</h2>
+      <p>Square and at least 256 × 256 pixels gives the sharpest result, and adds the 256 px size used by Windows for large icons. Smaller images still work: they get the 16, 32 and 48 px sizes.</p>
+
+      <h2>Is this the right file for a website favicon?</h2>
+      <p>Yes. Put it at the root of your site as <code>favicon.ico</code>, and browsers find it on their own. Current browsers also accept a PNG favicon through a <code>&lt;link rel="icon"&gt;</code> tag, but the .ico with several sizes is the most widely recognised.</p>
+
+      <h2>Will it work as a Windows icon?</h2>
+      <p>Yes. Each size inside is stored as a PNG, which Windows reads in icon files, so desktop shortcuts get a sharp icon with a transparent background.</p>
+
+      <h2>What about JPG to ICO?</h2>
+      <p>It works the same way: drop a JPG instead. JPG has no transparency, so the icon keeps the JPG's background.</p>
+
+
+      <h2>Questions</h2>
+      <h3>Why is my icon blurry at 16 px?</h3>
+      <p>16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best; very detailed images become a blur at that size.</p>
+      <h3>Can I choose the sizes?</h3>
+      <p>Not yet. Every .ico holds 16, 32 and 48 px, plus 256 px when the image is at least 256 px.</p>
+      <h3>Does it keep transparency?</h3>
+      <p>Yes. Each size is stored as a PNG inside the .ico, transparency included.</p>
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="../convert/">Converter</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+        <a href="../web-image-into-canva-figma-google-slides/">Web images into Canva, Figma or Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

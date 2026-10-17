@@ -19,10 +19,13 @@ const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfca
 const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
 // The home H1: what Imgkeep does (for search), then the tagline.
 const HOME_H1 = "Save image as PNG, JPG, WebP, GIF or PDF Any image. Your format.";
+// The Free Image Converter and its pair pages (tests/converter.spec.mjs tests the tool itself).
+const CONVERTERS = ["convert", "webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico"];
 // Every page as [URL path, file under site/].
 const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
+  ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
 ];
 
 for (const [page] of PAGES) {
@@ -61,6 +64,12 @@ test("no third-party analytics or trackers on the site", async () => {
     // The one script: the site's own anonymous counter (count.js, tested below), exactly once per page.
     expect(raw.split('<script src="/count.js" defer></script>').length - 1, `${file}: count.js once`).toBe(1);
     raw = raw.replace('<script src="/count.js" defer></script>', "");
+    // Converter pages also load the converter, from this site only (it converts in the page; nothing is uploaded).
+    if (CONVERTERS.some((c) => file === `${c}/index.html`)) {
+      const app = c => c === "convert/index.html" ? '<script type="module" src="app.js"></script>' : '<script type="module" src="../convert/app.js"></script>';
+      expect(raw.split(app(file)).length - 1, `${file}: the converter script once`).toBe(1);
+      raw = raw.replace(app(file), "");
+    }
     expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
     // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
     // data, not code. Browsers never execute it. It must parse as JSON; every other <script> still fails.
@@ -87,7 +96,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
   const pages = { "index.html": "https://imgkeep.app/", "privacy.html": "https://imgkeep.app/privacy.html",
     "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html",
     "pro.html": "https://imgkeep.app/pro.html", "whats-new.html": "https://imgkeep.app/whats-new.html",
-    ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])) };
+    ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
+    ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])) };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
@@ -232,12 +242,38 @@ test("home page links the Microsoft Edge listing too", async ({ page }) => {
   expect(edge).toEqual([EDGE, EDGE]);
 });
 
-test("home links to Product Hunt with a self-hosted badge", async ({ page }) => {
+test("home links to Product Hunt from the footer, not the header (it would compete with Get Imgkeep)", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
-  const badge = page.locator("a.ph-badge");
-  await expect(badge).toHaveAttribute("href", "https://www.producthunt.com/products/imgkeep");
-  await expect(badge.locator("img")).toHaveAttribute("src", "media/product-hunt-badge.svg");
-  expect(await badge.locator("img").evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+  await expect(page.locator("footer a[href='https://www.producthunt.com/products/imgkeep']")).toHaveCount(1);
+  await expect(page.locator("header a[href*='producthunt.com']")).toHaveCount(0);
+});
+
+test("every page's header links to the converter", async ({ page }) => {
+  for (const [path] of PAGES) {
+    await page.goto(`${server.url}/${path}`);
+    await expect(page.locator("header a", { hasText: "Converter" }), path).toHaveCount(1);
+  }
+});
+
+test("converter pages: privacy-first titles, structured data that says what the page says, the tool before the answer", async ({ page }) => {
+  for (const slug of CONVERTERS) {
+    await page.goto(`${server.url}/${slug}/`);
+    expect(await page.title(), slug).toMatch(/: No Uploads, No Sign-Up — Imgkeep$/);
+    const blocks = await page.locator('script[type="application/ld+json"]').evaluateAll((s) => s.map((x) => JSON.parse(x.textContent)));
+    const app = blocks.find((d) => d["@type"] === "WebApplication");
+    expect(app.offers.price, slug).toBe("0");
+    expect(blocks.some((d) => "aggregateRating" in d), `${slug}: no rating the page doesn't show`).toBe(false);
+    const faq = blocks.find((d) => d["@type"] === "FAQPage");
+    const visible = await page.locator("main h2:text-is('Questions') ~ h3").evaluateAll((hs) => hs.map((h) => [h.textContent, h.nextElementSibling.textContent]));
+    const answer = await page.locator(".answer p:not(.label)").textContent();
+    expect(faq.mainEntity.map((q) => [q.name, q.acceptedAnswer.text]).slice(0, -1), slug).toEqual(visible);
+    expect(faq.mainEntity.at(-1).acceptedAnswer.text, `${slug}: last FAQ is the short answer`).toBe(answer);
+    expect(answer.split(/\s+/).length, `${slug}: short answer is short`).toBeLessThanOrEqual(70);
+    // The tool comes first: searchers came to convert. Then the short answer.
+    const order = await page.evaluate(() => [document.querySelector("#converter"), document.querySelector(".answer")].map((el) => [...document.querySelectorAll("main *")].indexOf(el)));
+    expect(order[0], slug).toBeLessThan(order[1]);
+    expect(await page.locator("main").textContent(), slug).toMatch(/nothing is uploaded/i);
+  }
 });
 
 // Search and AI crawlers: robots.txt welcomes ChatGPT's and Claude's crawlers by name and blocks no one.
@@ -255,6 +291,7 @@ test("robots.txt lets search and AI crawlers in, and llms.txt describes the site
   const llms = (await res.text()).replace(/\r\n/g, "\n"); // a Windows checkout has CRLF line endings
   expect(llms).toMatch(/^# Imgkeep\n\n> Imgkeep is a free browser extension/);
   for (const guide of GUIDES) expect(llms).toContain(`https://imgkeep.app/${guide}/`);
+  for (const c of CONVERTERS) expect(llms).toContain(`https://imgkeep.app/${c}/`);
   expect(llms).toContain(STORE);
 });
 

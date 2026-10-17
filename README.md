@@ -84,6 +84,10 @@ Needs Chrome 116 or newer, or Microsoft Edge. Tested automatically on the curren
 - **More options** converts to PNG, JPG and WebP. GIF and PDF are in the right-click menu.
 - Copy as PNG needs its window to keep focus until the copy is done. If you click away while it's converting, it offers **Try again**.
 
+## Free Image Converter
+
+[imgkeep.app/convert/](https://imgkeep.app/convert/) converts images in the browser with the same code as the extension (`site/convert/lib` is a checked copy of `extension/lib`, kept identical by `npm run site-lib` and a test). It makes no network request while converting and works offline once loaded: `tests/converter.spec.mjs` checks both. No uploads, no sign-up.
+
 ## Guides
 
 Step-by-step help on [imgkeep.app](https://imgkeep.app), with and without an extension:
