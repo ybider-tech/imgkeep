@@ -72,8 +72,8 @@ test("WebP → JPG in the page: a real JPEG, the right name, no upload, then the
 test("every output the converter offers comes out as that format", async ({ page }) => {
   await open(page);
   const offered = await page.locator("#format option:not([disabled])").evaluateAll((o) => o.map((x) => x.value));
-  expect(offered).toEqual(["png", "jpg", "webp", "gif", "pdf", "ico", "bmp"]); // AVIF waits for 0.10.0
-  const expectHead = { png: [0x89, 0x50, 0x4e, 0x47], jpg: [0xff, 0xd8, 0xff], webp: "RIFF", gif: "GIF8", pdf: "%PDF", ico: [0, 0, 1, 0], bmp: "BM" };
+  expect(offered).toEqual(["png", "jpg", "webp", "avif", "gif", "pdf", "ico", "bmp"]);
+  const expectHead = { png: [0x89, 0x50, 0x4e, 0x47], jpg: [0xff, 0xd8, 0xff], webp: "RIFF", avif: "....ftypavif", gif: "GIF8", pdf: "%PDF", ico: [0, 0, 1, 0], bmp: "BM" };
   for (const key of offered) {
     await page.evaluate(() => (document.getElementById("results").innerHTML = ""));
     await page.selectOption("#format", key);
@@ -82,7 +82,8 @@ test("every output the converter offers comes out as that format", async ({ page
     const [file] = await downloaded(page);
     expect(file.name).toBe(`photo.${key}`);
     const want = expectHead[key];
-    if (typeof want === "string") expect(text(file.head).slice(0, want.length)).toBe(want);
+    if (want === "....ftypavif") expect(text(file.head).slice(4, 12), key).toBe("ftypavif");
+    else if (typeof want === "string") expect(text(file.head).slice(0, want.length)).toBe(want);
     else expect(file.head.slice(0, want.length)).toEqual(want);
   }
 });
@@ -149,10 +150,10 @@ test("each result offers Download as the chosen format and Copy as PNG, which pu
   expect(pasted).toEqual([0x89, 0x50, 0x4e, 0x47]); // a PNG, though the download is a JPG
 });
 
-test("works offline once the page has loaded: every format, no network at all", async ({ page, context }) => {
+test("works offline once the page has loaded: every format except AVIF (its encoder loads when first chosen)", async ({ page, context }) => {
   await open(page);
   await context.setOffline(true);
-  const offered = await page.locator("#format option:not([disabled])").evaluateAll((o) => o.map((x) => x.value));
+  const offered = (await page.locator("#format option:not([disabled])").evaluateAll((o) => o.map((x) => x.value))).filter((f) => f !== "avif");
   for (const key of offered) {
     await page.evaluate(() => (document.getElementById("results").innerHTML = ""));
     await page.selectOption("#format", key);
@@ -166,7 +167,7 @@ test("pair pages start on their format, and the menu still offers every format",
   for (const [path, to] of [["/convert/", "png"], ["/webp-to-jpg/", "jpg"], ["/webp-to-png/", "png"], ["/avif-to-jpg/", "jpg"], ["/png-to-jpg/", "jpg"], ["/png-to-ico/", "ico"]]) {
     await open(page, path);
     await expect(page.locator("#format"), path).toHaveValue(to);
-    expect(await page.locator("#format option").count(), path).toBe(7);
+    expect(await page.locator("#format option").count(), path).toBe(8);
   }
 });
 
@@ -185,4 +186,15 @@ test("before converting, only the drop zone and settings show: no Download all, 
   await expect(page.locator("#downloadAll")).toBeHidden();
   await expect(page.locator("#install")).toBeHidden();
   await expect(page.locator("#drop")).toBeVisible();
+});
+
+test("AVIF: the encoder comes from this site only, and only once AVIF is chosen", async ({ page }) => {
+  const { requests } = await open(page);
+  expect(requests.some((u) => u.includes("avif_enc"))).toBe(false); // not loaded for everyone
+  await page.selectOption("#format", "avif");
+  await drop(page, [await fixture("photo.png", "image/png")]);
+  await expect(page.locator("#status")).toContainText("Done: 1 of 1", { timeout: 20000 });
+  const enc = requests.filter((u) => u.includes("avif_enc"));
+  expect(enc.length).toBeGreaterThan(0);
+  expect(enc.every((u) => u.startsWith(server.url))).toBe(true);
 });

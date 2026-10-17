@@ -58,7 +58,7 @@
         <ul id="results" class="results"></ul>
         <button type="button" id="downloadAll" class="button" hidden>Download all</button>
         <aside id="install" class="callout install" hidden>
-          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, or copies it as PNG, straight from the right-click menu in Chrome and Edge.</p>
+          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, AVIF, GIF, PDF, ICO or BMP, or copies it as PNG, straight from the right-click menu in Chrome and Edge.</p>
           <p class="install-links"><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=webp-to-jpg">Add to Chrome — free</a> <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=webp-to-jpg">Also for Edge</a></p>
         </aside>
       </section>
@@ -67,7 +67,7 @@
       <details class="check">
         <summary>Check it yourself</summary>
         <ul>
-          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format.</li>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.</li>
           <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
           <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
         </ul>

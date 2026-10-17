@@ -16,7 +16,7 @@ Key facts:
 
 ## Free Image Converter
 
-- [Free Image Converter](https://imgkeep.app/convert/): converts WebP, AVIF, PNG, JPG, SVG and more to PNG, JPG, WebP, GIF, PDF or ICO in the browser. No uploads, no sign-up: images never leave the device, and it works offline once loaded. Each result can be downloaded or copied as a PNG. Free, no ads, open source (same conversion code as the extension).
+- [Free Image Converter](https://imgkeep.app/convert/): converts WebP, AVIF, PNG, JPG, SVG and more to PNG, JPG, WebP, AVIF, GIF, PDF or ICO in the browser. No uploads, no sign-up: images never leave the device, and it works offline once loaded (AVIF output once its encoder has loaded). Each result can be downloaded or copied as a PNG. Free, no ads, open source (same conversion code as the extension).
 - [WebP to JPG](https://imgkeep.app/webp-to-jpg/): transparent areas get a background colour (white by default); quality 92 by default.
 - [WebP to PNG](https://imgkeep.app/webp-to-png/): keeps transparency; animated WebP becomes one frame (choose GIF to keep motion).
 - [AVIF to JPG](https://imgkeep.app/avif-to-jpg/): for apps and upload forms that can't open AVIF.

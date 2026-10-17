@@ -6,8 +6,8 @@ import { convert } from "./lib/convert.js";
 import { DEFAULTS, FORMATS } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
 
-// AVIF output appears once Imgkeep 0.10.0 (which adds it to the extension) is live.
-const AVIF_READY = false;
+// AVIF output: on since Imgkeep 0.10.0 (which added it to the extension) went live, 2026-10-18.
+const AVIF_READY = true;
 const MAX_FILES = 20;
 const MAX_BYTES = 50 * 1000 * 1000;
 const OUTPUTS = ["png", "jpg", "webp", ...(AVIF_READY ? ["avif"] : []), "gif", "pdf", "ico", "bmp"];
