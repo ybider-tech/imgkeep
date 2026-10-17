@@ -585,3 +585,5 @@ header:has(.mini-nav) { display: flex; align-items: center; }
 .home .convert-band .band-link { font-weight: 700; }
 /* Our display rules must never override the hidden attribute (Download all and the install box start hidden). */
 .converter [hidden] { display: none !important; }
+.converter .status:empty, .converter .results:empty { min-height: 0; margin: 0; }
+.converter { margin-bottom: 16px; }
