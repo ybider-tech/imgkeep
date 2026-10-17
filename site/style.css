@@ -704,3 +704,8 @@ header:has(.cv-nav) { display: flex; align-items: center; flex-wrap: wrap; gap: 
   .cv-row .cv-info { padding-right: 48px; }
   .cv-row .cv-remove { position: absolute; top: 10px; right: 10px; }
 }
+.cv-how summary { list-style: none; gap: 10px; }
+.cv-how summary::-webkit-details-marker { display: none; }
+.cv-how summary::before { content: ""; width: 0; height: 0; border-left: 7px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; transition: transform 150ms; }
+.cv-how[open] summary::before { transform: rotate(90deg); }
+@media (prefers-reduced-motion: reduce) { .cv-how summary::before { transition: none; } }
