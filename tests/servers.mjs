@@ -17,6 +17,14 @@ const TYPES = {
   ".webm": "video/webm",
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
+  ".wasm": "application/wasm",
+  ".json": "application/json",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml",
+  ".ico": "image/x-icon",
+  ".bmp": "image/bmp",
 };
 
 function pngChunk(tag, data) {
@@ -59,7 +67,7 @@ function big() {
   return bigPng;
 }
 
-export function startServer({ cors, root = FIXTURES }) {
+export function startServer({ cors, root = FIXTURES, port = 0 }) {
   const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, "http://x").pathname);
     const headers = cors ? { "Access-Control-Allow-Origin": "*" } : {};
@@ -78,7 +86,7 @@ export function startServer({ cors, root = FIXTURES }) {
     }
   });
   return new Promise((resolve) => {
-    server.listen(0, "127.0.0.1", () => {
+    server.listen(port, "127.0.0.1", () => {
       const { port } = server.address();
       resolve({ url: `http://127.0.0.1:${port}`, close: () => new Promise((r) => server.close(r)) });
     });

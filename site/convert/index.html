@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free Image Converter — Imgkeep</title>
+  <meta name="description" content="Convert WebP, AVIF, PNG, JPG and more right in your browser. Nothing is uploaded: your images are converted on your device. Free, no sign-up.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://imgkeep.app/convert/">
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=1f29e85888">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <script src="/count.js" defer></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+    </header>
+    <main class="doc converter-page">
+      <h1>Free Image Converter</h1>
+      <p class="lead">Convert images right in your browser. Your images stay on your device: nothing is uploaded.</p>
+
+      <section id="converter" class="converter" data-to="" aria-label="Converter">
+        <label id="drop" class="drop" for="files">
+          <strong>Drop images here</strong> or <span class="pick">choose files</span>, or paste with ⌘V / Ctrl+V
+          <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic">
+        </label>
+        <div class="settings">
+          <div class="field"><label for="format">Convert to</label><select id="format"></select></div>
+          <div class="field" id="qualityField"><label for="quality">Quality <output id="qualityOut">92</output></label><input type="range" id="quality" min="1" max="100" value="92"></div>
+          <div class="field" id="widthField"><label for="maxWidth">Maximum width (px)</label><input type="number" id="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Keep size"></div>
+          <div class="field" id="backgroundField"><label for="background">Background for transparent areas</label><input type="color" id="background" value="#ffffff"></div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <ul id="results" class="results"></ul>
+        <button type="button" id="downloadAll" class="button" hidden>Download all</button>
+        <aside id="install" class="callout install" hidden>
+          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, straight from the right-click menu, in Chrome and Edge.</p>
+          <p><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Add to Chrome — free</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Also for Edge</a></p>
+        </aside>
+      </section>
+      <!-- Content, FAQ and structured data follow Beacon's SEO/GEO design (Output/SEO/2026-10-17_converter-seo-geo-design.md). -->
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+        <a href="../web-image-into-canva-figma-google-slides/">Web images into Canva, Figma or Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

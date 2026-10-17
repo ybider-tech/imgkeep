@@ -2,6 +2,7 @@
 // Two events, sent straight to PostHog (EU cloud) with one request each; no PostHog library.
 //   site_pageview     the page's path, and the referring site's name only (e.g. "google.com")
 //   site_store_click  the page's path, which store (chrome or edge), and the link's utm_campaign
+//   site_convert      on the Free Image Converter: the format pair and how many files (e.g. webp → jpg, 3)
 // No cookies, no local storage, a new random id for every event, no person profile, no location lookup;
 // the PostHog project discards IP addresses. Nothing is sent when the browser asks sites not to track
 // (Global Privacy Control or Do Not Track), or anywhere but imgkeep.app.
@@ -40,6 +41,14 @@
     if (host && host !== location.hostname.replace(/^www\./, "")) referrer = host;
   } catch {}
   send("site_pageview", { referrer });
+
+  // Called by the converter (site/convert/app.js) after a batch: only the formats and the number of files.
+  const FORMATS = ["png", "jpg", "jpeg", "webp", "avif", "gif", "svg", "bmp", "ico", "pdf", "tiff", "heic", "other"];
+  window.imgkeepCountConversion = (from, to, files) => {
+    const pick = (f) => (FORMATS.includes(f) ? f : "other");
+    const n = Math.min(Math.max(1, Math.floor(Number(files)) || 1), 100);
+    send("site_convert", { from: pick(from), to: pick(to), files: n });
+  };
 
   document.addEventListener(
     "click",
