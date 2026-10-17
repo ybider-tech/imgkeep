@@ -148,3 +148,41 @@ test("each result offers Download as the chosen format and Copy as PNG, which pu
   });
   expect(pasted).toEqual([0x89, 0x50, 0x4e, 0x47]); // a PNG, though the download is a JPG
 });
+
+test("works offline once the page has loaded: every format, no network at all", async ({ page, context }) => {
+  await open(page);
+  await context.setOffline(true);
+  const offered = await page.locator("#format option:not([disabled])").evaluateAll((o) => o.map((x) => x.value));
+  for (const key of offered) {
+    await page.evaluate(() => (document.getElementById("results").innerHTML = ""));
+    await page.selectOption("#format", key);
+    await drop(page, [await fixture("photo.webp", "image/webp")]);
+    await expect(page.locator("#status"), key).toContainText("Done: 1 of 1");
+  }
+  await context.setOffline(false);
+});
+
+test("pair pages start on their format, and the menu still offers every format", async ({ page }) => {
+  for (const [path, to] of [["/convert/", "png"], ["/webp-to-jpg/", "jpg"], ["/webp-to-png/", "png"], ["/avif-to-jpg/", "jpg"], ["/png-to-jpg/", "jpg"], ["/png-to-ico/", "ico"]]) {
+    await open(page, path);
+    await expect(page.locator("#format"), path).toHaveValue(to);
+    expect(await page.locator("#format option").count(), path).toBe(7);
+  }
+});
+
+test("a pair page converts like the main page, with its own store-link campaign", async ({ page }) => {
+  const { errors } = await open(page, "/avif-to-jpg/");
+  await drop(page, [await fixture("photo.avif", "image/avif")]);
+  await expect(page.locator("#status")).toContainText("Done: 1 of 1");
+  const [file] = await downloaded(page);
+  expect(file.name).toBe("photo.jpg");
+  await expect(page.locator("#install a.cta")).toHaveAttribute("href", /utm_medium=converter&utm_campaign=avif-to-jpg/);
+  expect(errors).toEqual([]);
+});
+
+test("before converting, only the drop zone and settings show: no Download all, no install box", async ({ page }) => {
+  await open(page);
+  await expect(page.locator("#downloadAll")).toBeHidden();
+  await expect(page.locator("#install")).toBeHidden();
+  await expect(page.locator("#drop")).toBeVisible();
+});

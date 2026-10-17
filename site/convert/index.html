@@ -3,13 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free Image Converter — Imgkeep</title>
-  <meta name="description" content="Convert WebP, AVIF, PNG, JPG and more right in your browser. Nothing is uploaded: your images are converted on your device. Free, no sign-up.">
-  <meta name="robots" content="noindex">
+  <title>Free Image Converter: No Uploads, No Sign-Up — Imgkeep</title>
+  <meta name="description" content="Convert images in your browser. Your images never leave your device: no uploads, no account, no ads. WebP, AVIF, PNG, JPG to PNG, JPG, WebP, GIF, PDF or ICO.">
   <link rel="canonical" href="https://imgkeep.app/convert/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Free Image Converter: No Uploads, No Sign-Up — Imgkeep">
+  <meta property="og:description" content="Convert images in your browser. Your images never leave your device: no uploads, no account, no ads. WebP, AVIF, PNG, JPG to PNG, JPG, WebP, GIF, PDF or ICO.">
+  <meta property="og:url" content="https://imgkeep.app/convert/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "@id": "https://imgkeep.app/convert/#app", "name": "Imgkeep Free Image Converter", "alternateName": "Free Image Converter", "url": "https://imgkeep.app/convert/", "description": "A free image converter that runs in your browser, with no uploads and no sign-up: convert WebP, AVIF, PNG, JPG, SVG and more to PNG, JPG, WebP, GIF, PDF or ICO. Images are converted on your device and never uploaded.", "applicationCategory": "MultimediaApplication", "applicationSubCategory": "Image converter", "operatingSystem": "Any (runs in a web browser)", "browserRequirements": "Requires a current Chrome, Edge, Firefox or Safari. WebP output isn't available in Safari.", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Converts in the browser: images are never uploaded", "No account or sign-up", "Works offline once the page has loaded", "Up to 20 files at once", "Outputs PNG, JPG, WebP, GIF, PDF and ICO", "Download each result, or copy it as a PNG to paste anywhere", "Keeps animation when converting animated WebP, AVIF or APNG to GIF (Chrome and Edge)", "ICO files with 16, 32 and 48 px icons, plus 256 px for large images", "Shows the file size before and after", "No ads, no watermark"], "screenshot": "https://imgkeep.app/media/convert/converter.jpg", "license": "https://opensource.org/licenses/MIT", "sameAs": ["https://github.com/ybider-tech/imgkeep"], "isPartOf": {"@id": "https://imgkeep.app/#site"}, "publisher": {"@id": "https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Free Image Converter", "item": "https://imgkeep.app/convert/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this image converter free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's no account, no daily limit, no watermark and no ads."}}, {"@type": "Question", "name": "Are my images uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your images are converted in your browser and never leave your device. The page sends two anonymous counts, a page view and which formats you converted with how many files, never images, file names or sizes."}}, {"@type": "Question", "name": "Do I need to sign up?", "acceptedAnswer": {"@type": "Answer", "text": "No. There's no account and nothing to sign up for. Open the page, drop your images and download or copy the results."}}, {"@type": "Question", "name": "Does it work on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The converter works in mobile browsers too. The Imgkeep extension, which converts images from the right-click menu, is for desktop Chrome and Edge."}}, {"@type": "Question", "name": "Can I convert HEIC photos?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Chrome, Edge and Firefox can't read HEIC images, so a browser converter can't open them there."}}, {"@type": "Question", "name": "How do I convert images without uploading them?", "acceptedAnswer": {"@type": "Answer", "text": "Drop your images on this page, pick the format (PNG, JPG, WebP, GIF, PDF or ICO), then download each result or copy it as a PNG to paste anywhere. The conversion runs in your browser, so nothing is uploaded and there's no account. It keeps working offline once the page has loaded. Free, with no ads and no daily limit."}}]}
+  </script>
   <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../style.css?v=5008e5d14f">
+  <link rel="stylesheet" href="../style.css?v=bb03c94deb">
   <link rel="icon" href="../favicon.png" type="image/png">
   <script src="/count.js" defer></script>
   <script type="module" src="app.js"></script>
@@ -18,15 +36,17 @@
   <div class="page">
     <header>
       <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Main"><a href="../convert/" aria-current="page">Converter</a></nav>
     </header>
     <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../">← Home</a> › Free Image Converter</nav>
       <h1>Free Image Converter</h1>
-      <p class="lead">Convert images right in your browser. Your images stay on your device: nothing is uploaded.</p>
+      <p class="lead">Your images stay on your device: nothing is uploaded, and there's no account. Convert WebP, AVIF, PNG, JPG, SVG and more, right in your browser.</p>
 
       <section id="converter" class="converter" data-to="" aria-label="Converter">
         <label id="drop" class="drop" for="files">
           <strong>Drop images here</strong> or <span class="pick">choose files</span>, or paste with ⌘V / Ctrl+V
-          <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic">
+          <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp">
         </label>
         <div class="settings">
           <div class="field"><label for="format">Convert to</label><select id="format"></select></div>
@@ -38,15 +58,83 @@
         <ul id="results" class="results"></ul>
         <button type="button" id="downloadAll" class="button" hidden>Download all</button>
         <aside id="install" class="callout install" hidden>
-          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, straight from the right-click menu, in Chrome and Edge.</p>
-          <p><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Add to Chrome — free</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Also for Edge</a></p>
+          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, or copies it as PNG, straight from the right-click menu in Chrome and Edge.</p>
+          <p class="install-links"><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Add to Chrome — free</a> <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Also for Edge</a></p>
         </aside>
       </section>
-      <!-- Content, FAQ and structured data follow Beacon's SEO/GEO design (Output/SEO/2026-10-17_converter-seo-geo-design.md). -->
+
+      <p class="sends">This page sends two anonymous counts, a page view and which formats you converted with how many files (for example "webp → jpg, 3 files"), never images, file names or sizes. <a href="../privacy.html#website">Privacy</a>.</p>
+      <details class="check" open>
+        <summary>Check it yourself</summary>
+        <ul>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format.</li>
+          <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
+          <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
+        </ul>
+      </details>
+
+      <nav class="popular" aria-label="Popular conversions"><span>Popular:</span> <a href="../webp-to-jpg/">WebP to JPG</a> · <a href="../webp-to-png/">WebP to PNG</a> · <a href="../avif-to-jpg/">AVIF to JPG</a> · <a href="../png-to-jpg/">PNG to JPG</a> · <a href="../png-to-ico/">PNG to ICO</a> · <a href="../convert/" aria-current="page">All formats</a></nav>
+
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Drop your images on this page, pick the format (PNG, JPG, WebP, GIF, PDF or ICO), then download each result or copy it as a PNG to paste anywhere. The conversion runs in your browser, so nothing is uploaded and there's no account. It keeps working offline once the page has loaded. Free, with no ads and no daily limit.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-17">17 October 2026</time></p>
+
+      <h2>How do I convert an image without uploading it?</h2>
+      <p>Use a converter that does the work in your browser, like this one. Your files are read by the page on your own device and converted there, with the same code as the Imgkeep extension. Nothing is sent to a server, so there's nothing to delete afterwards and no account to create.</p>
+      <p>You can check it: load the page, turn off your Wi-Fi and convert a file. It still works. Or watch your browser's Network tab while converting: no request carries your image.</p>
+
+      <h2>Which format should I convert to?</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Format</th><th>Best for</th><th>Transparency</th></tr></thead>
+        <tbody>
+          <tr><td>PNG</td><td>Logos, screenshots, graphics, anything you'll edit again</td><td>Kept</td></tr>
+          <tr><td>JPG</td><td>Photos, smaller files, upload forms</td><td>No: a background colour fills it</td></tr>
+          <tr><td>WebP</td><td>Websites (small files); not in Safari</td><td>Kept</td></tr>
+          <tr><td>GIF</td><td>Animations (keeps the motion in Chrome and Edge)</td><td>On or off only</td></tr>
+          <tr><td>PDF</td><td>Documents and receipts: one page per image</td><td>Kept</td></tr>
+          <tr><td>ICO</td><td>Favicons and Windows icons: 16, 32, 48 (and 256) px</td><td>Kept</td></tr>
+          <tr><td>BMP</td><td>Old software that wants bitmaps</td><td>No: a background colour fills it</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>Can I paste the result instead of downloading it?</h2>
+      <p>Yes. Every result has <strong>Copy as PNG</strong>: it puts the image on your clipboard as a real PNG, transparency kept, ready to paste into Canva, Figma, Google Slides or a chat. See <a href="../web-image-into-canva-figma-google-slides/">getting an image into Canva, Figma or Google Slides</a>.</p>
+
+      <h2>What are WebP and AVIF, and why won&#x27;t my apps open them?</h2>
+      <p>Many sites now send images as WebP or AVIF: smaller files that browsers show fine, but that older apps, upload forms and some design tools refuse. Converting to PNG or JPG fixes that. More in <a href="../chrome-saves-images-as-webp/">why Chrome saves images as WebP</a> and <a href="../save-avif-as-jpg-png/">how to save AVIF as JPG or PNG</a>.</p>
+
+      <h2>What are the limits?</h2>
+      <ul>
+        <li>Up to 20 files at once, each up to 50 MB.</li>
+        <li>GIFs are at most 800 px wide and 600 frames; animation is kept in Chrome and Edge.</li>
+        <li>ICO files hold 16, 32 and 48 px, plus 256 px when the image is at least that big.</li>
+        <li>Safari can't make WebP files, so WebP output isn't offered there.</li>
+        <li>HEIC photos (from iPhones) can't be opened in Chrome, Edge or Firefox.</li>
+        <li>Very large images are slower on phones.</li>
+      </ul>
+
+      <h2>Is there a faster way for images on web pages?</h2>
+      <p>Yes: the <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=convert">Imgkeep</a> extension for Chrome and Edge does the same in one right-click, before you even have a file: right-click any image, choose <strong>Imgkeep: Save image as</strong>, then the format. It also finds photos that sites like Instagram and Pinterest hide under another layer.</p>
+
+
+      <h2>Questions</h2>
+      <h3>Is this image converter free?</h3>
+      <p>Yes. There's no account, no daily limit, no watermark and no ads.</p>
+      <h3>Are my images uploaded?</h3>
+      <p>No. Your images are converted in your browser and never leave your device. The page sends two anonymous counts, a page view and which formats you converted with how many files, never images, file names or sizes.</p>
+      <h3>Do I need to sign up?</h3>
+      <p>No. There's no account and nothing to sign up for. Open the page, drop your images and download or copy the results.</p>
+      <h3>Does it work on my phone?</h3>
+      <p>Yes. The converter works in mobile browsers too. The Imgkeep extension, which converts images from the right-click menu, is for desktop Chrome and Edge.</p>
+      <h3>Can I convert HEIC photos?</h3>
+      <p>Not yet. Chrome, Edge and Firefox can't read HEIC images, so a browser converter can't open them there.</p>
     </main>
     <footer>
       <nav aria-label="Footer">
         <a href="../">Home</a>
+        <a href="../convert/">Converter</a>
         <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
         <a href="../ideas.html">Ideas</a>
         <a href="../support.html">Support</a>

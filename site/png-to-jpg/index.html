@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PNG to JPG Converter: No Uploads, No Sign-Up — Imgkeep</title>
+  <meta name="description" content="Convert PNG to JPG without uploading, for smaller files. Pick the quality and the colour for transparent areas. Runs in your browser, no sign-up. Free.">
+  <link rel="canonical" href="https://imgkeep.app/png-to-jpg/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="PNG to JPG Converter: No Uploads, No Sign-Up — Imgkeep">
+  <meta property="og:description" content="Convert PNG to JPG without uploading, for smaller files. Pick the quality and the colour for transparent areas. Runs in your browser, no sign-up. Free.">
+  <meta property="og:url" content="https://imgkeep.app/png-to-jpg/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "@id": "https://imgkeep.app/png-to-jpg/#app", "name": "PNG to JPG Converter", "url": "https://imgkeep.app/png-to-jpg/", "description": "Convert PNG images to JPG in your browser, with no uploads and no sign-up. Choose the JPG quality and the colour for transparent areas.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (runs in a web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Converts in the browser: images are never uploaded", "No account or sign-up", "Up to 20 files at once", "Choose JPG quality and background colour", "Optional maximum width", "Shows the file size before and after"], "isPartOf": {"@id": "https://imgkeep.app/#site"}, "publisher": {"@id": "https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Free Image Converter", "item": "https://imgkeep.app/convert/"}, {"@type": "ListItem", "position": 3, "name": "PNG to JPG", "item": "https://imgkeep.app/png-to-jpg/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does PNG to JPG lose quality?", "acceptedAnswer": {"@type": "Answer", "text": "A little: JPG compresses, PNG doesn't. At the default quality of 92 it's usually invisible in photos, but sharp text and lines can look slightly soft."}}, {"@type": "Question", "name": "Can I convert JPG back to PNG?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, pick PNG in the menu above. It won't bring back detail the JPG already lost, but nothing more is lost."}}, {"@type": "Question", "name": "How many files can I convert at once?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 20 at a time, each up to 50 MB."}}, {"@type": "Question", "name": "How do I convert PNG to JPG?", "acceptedAnswer": {"@type": "Answer", "text": "Drop your PNG files above, keep JPG selected and download. JPG files are usually much smaller than PNG for photos. JPG has no transparency, so see-through areas get a background colour, white unless you pick another. Quality is 92 by default. Nothing is uploaded and there's no sign-up: everything runs in your browser."}}]}
+  </script>
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=bb03c94deb">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <script src="/count.js" defer></script>
+  <script type="module" src="../convert/app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Main"><a href="../convert/" aria-current="page">Converter</a></nav>
+    </header>
+    <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../convert/">← Converter</a> › PNG to JPG</nav>
+      <h1>PNG to JPG Converter</h1>
+      <p class="lead">Convert PNG to JPG without uploading, for smaller files. Your images stay on your device.</p>
+
+      <section id="converter" class="converter" data-to="jpg" aria-label="Converter">
+        <label id="drop" class="drop" for="files">
+          <strong>Drop PNG files here</strong> or <span class="pick">choose files</span>, or paste with ⌘V / Ctrl+V
+          <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp">
+        </label>
+        <div class="settings">
+          <div class="field"><label for="format">Convert to</label><select id="format"></select></div>
+          <div class="field" id="qualityField"><label for="quality">Quality <output id="qualityOut">92</output></label><input type="range" id="quality" min="1" max="100" value="92"></div>
+          <div class="field" id="widthField"><label for="maxWidth">Maximum width (px)</label><input type="number" id="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Keep size"></div>
+          <div class="field" id="backgroundField"><label for="background">Background for transparent areas</label><input type="color" id="background" value="#ffffff"></div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <ul id="results" class="results"></ul>
+        <button type="button" id="downloadAll" class="button" hidden>Download all</button>
+        <aside id="install" class="callout install" hidden>
+          <p><strong>Do this in one right-click next time.</strong> Imgkeep saves any image on the web as PNG, JPG, WebP, GIF, PDF, ICO or BMP, or copies it as PNG, straight from the right-click menu in Chrome and Edge.</p>
+          <p class="install-links"><a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=png-to-jpg">Add to Chrome — free</a> <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=png-to-jpg">Also for Edge</a></p>
+        </aside>
+      </section>
+
+      <p class="sends">This page sends two anonymous counts, a page view and which formats you converted with how many files (for example "webp → jpg, 3 files"), never images, file names or sizes. <a href="../privacy.html#website">Privacy</a>.</p>
+      <details class="check">
+        <summary>Check it yourself</summary>
+        <ul>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format.</li>
+          <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
+          <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
+        </ul>
+      </details>
+
+      <nav class="popular" aria-label="Popular conversions"><span>Popular:</span> <a href="../webp-to-jpg/">WebP to JPG</a> · <a href="../webp-to-png/">WebP to PNG</a> · <a href="../avif-to-jpg/">AVIF to JPG</a> · <a href="../png-to-jpg/" aria-current="page">PNG to JPG</a> · <a href="../png-to-ico/">PNG to ICO</a> · <a href="../convert/">All formats</a></nav>
+
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Drop your PNG files above, keep JPG selected and download. JPG files are usually much smaller than PNG for photos. JPG has no transparency, so see-through areas get a background colour, white unless you pick another. Quality is 92 by default. Nothing is uploaded and there's no sign-up: everything runs in your browser.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-10-17">17 October 2026</time></p>
+
+      <h2>How much smaller will it be?</h2>
+      <p>It depends on the image. Photos usually shrink a lot; flat graphics with few colours can even grow. The converter shows the real size before and after for every file, so you can see which one you're getting.</p>
+
+      <h2>When should I keep PNG?</h2>
+      <p>For text, logos, screenshots and anything with sharp edges or a transparent background. JPG blurs sharp edges slightly and can't be see-through.</p>
+
+      <h2>What happens to a transparent background?</h2>
+      <p>JPG can't store transparency, so transparent areas get the background colour you pick above. White by default, but any colour works, for example to match the page you'll put the image on.</p>
+
+      <h2>Can I resize at the same time?</h2>
+      <p>Yes: set a maximum width before converting. Wider images are scaled down, keeping their shape; smaller ones are never enlarged.</p>
+
+
+      <h2>Questions</h2>
+      <h3>Does PNG to JPG lose quality?</h3>
+      <p>A little: JPG compresses, PNG doesn't. At the default quality of 92 it's usually invisible in photos, but sharp text and lines can look slightly soft.</p>
+      <h3>Can I convert JPG back to PNG?</h3>
+      <p>Yes, pick PNG in the menu above. It won't bring back detail the JPG already lost, but nothing more is lost.</p>
+      <h3>How many files can I convert at once?</h3>
+      <p>Up to 20 at a time, each up to 50 MB.</p>
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="../convert/">Converter</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+        <a href="../web-image-into-canva-figma-google-slides/">Web images into Canva, Figma or Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

@@ -562,3 +562,26 @@ footer .guides { margin-top: 12px; }
   .converter .result { grid-template-columns: 48px 1fr; grid-template-areas: "img name" "img facts" "btn btn"; }
   .converter .result img { width: 48px; height: 48px; }
 }
+
+/* Header link to the converter on pages with only the brand. */
+.mini-nav { margin-left: auto; }
+.mini-nav a { font-weight: 600; text-decoration: none; color: var(--accent); }
+.mini-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+header:has(.mini-nav) { display: flex; align-items: center; }
+/* Converter pages */
+.converter-page .crumbs { font-size: 0.95rem; color: var(--muted); margin-bottom: 8px; }
+.converter-page .popular { margin: 4px 0 28px; color: var(--muted); }
+.converter-page .popular span { font-weight: 600; margin-right: 4px; }
+.converter-page .popular a[aria-current="page"] { font-weight: 700; color: var(--text, inherit); text-decoration: none; }
+.converter-page .sends { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.converter-page details.check { border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin: 12px 0 20px; }
+.converter-page details.check summary { font-weight: 700; cursor: pointer; }
+.converter .install .install-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.converter .install .cta { margin: 0; }
+.converter .install .cta-alt { font-weight: 600; }
+.home .convert-band { margin-top: 96px; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: var(--accent-soft); }
+.home .convert-band h2 { margin-top: 4px; }
+.home .convert-band .popular span { font-weight: 600; margin-right: 4px; }
+.home .convert-band .band-link { font-weight: 700; }
+/* Our display rules must never override the hidden attribute (Download all and the install box start hidden). */
+.converter [hidden] { display: none !important; }

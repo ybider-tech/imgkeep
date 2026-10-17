@@ -12,6 +12,16 @@ Key facts:
 - Price: free, no ads. A paid Imgkeep Pro with extra features is planned; current features stay free.
 - Saves one image at a time (the one right-clicked), not every image on a page.
 - Works in Chrome 116 and newer and in Microsoft Edge, in 9 languages.
+- Free Image Converter at imgkeep.app/convert/: the same conversion code in a web page, for files already on a computer or phone. No uploads, no sign-up.
+
+## Free Image Converter
+
+- [Free Image Converter](https://imgkeep.app/convert/): converts WebP, AVIF, PNG, JPG, SVG and more to PNG, JPG, WebP, GIF, PDF or ICO in the browser. No uploads, no sign-up: images never leave the device, and it works offline once loaded. Each result can be downloaded or copied as a PNG. Free, no ads, open source (same conversion code as the extension).
+- [WebP to JPG](https://imgkeep.app/webp-to-jpg/): transparent areas get a background colour (white by default); quality 92 by default.
+- [WebP to PNG](https://imgkeep.app/webp-to-png/): keeps transparency; animated WebP becomes one frame (choose GIF to keep motion).
+- [AVIF to JPG](https://imgkeep.app/avif-to-jpg/): for apps and upload forms that can't open AVIF.
+- [PNG to JPG](https://imgkeep.app/png-to-jpg/): smaller files for photos; choose quality and background colour.
+- [PNG to ICO](https://imgkeep.app/png-to-ico/): one .ico with 16, 32 and 48 px icons, plus 256 px for large images.
 
 ## Install
 
