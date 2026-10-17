@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.10.1 — unreleased
+
+- **Fix: a daily summary could be sent several times.** When Imgkeep woke up on a new day without counting anything (the browser wakes extensions many times a day), it sent yesterday's summary but left yesterday's counts in place, so each later wake-up sent the same summary again until the first save of the day replaced them. Present since 0.7.0. Seen in PostHog on 16 October 2026: 68 summaries arrived, 17 of them distinct. Now the counts are cleared once they become the summary. New test: three wake-ups after the new day send one summary.
+- The PostHog dashboards and the weekly digest already count each identical summary once, so numbers from earlier versions are correct there too.
+
 ## 0.10.0 — 2026-10-16
 
 - **Save as AVIF, in More options.** Often half the size of a JPG that looks the same. Maximum width and quality apply (quality 60 by default), transparency is kept, animations use their first frame. Browsers can read AVIF but can't write it, so Imgkeep includes libavif, the reference AVIF encoder (1.0.1, with libaom), compiled to WebAssembly: `extension/vendor/avif`, from @jsquash/avif 2.1.1, unchanged, with its licences. It loads only the first time someone saves as AVIF, and at speed 8 encodes a 1600 × 1000 photo in about 0.35 s.

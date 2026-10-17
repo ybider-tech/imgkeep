@@ -124,6 +124,16 @@ test.describe("in the extension", () => {
     expect(t.COUNT_KEYS).toContain("webp_to_jpg");
   });
 
+  test("a summary is sent once, however often Imgkeep wakes up before the next save", async () => {
+    await run(`${cors.url}/photo.webp`, "png");
+    await nextDay(); // the first wake-up of the new day sends yesterday's summary
+    expect((await sent()).length).toBe(1);
+    // The browser wakes Imgkeep many times a day; none of those may send the same summary again.
+    for (let i = 0; i < 3; i++) await ctx.sw.evaluate(() => globalThis.imgkeepCount());
+    expect((await sent()).length).toBe(1);
+    expect(await local("counts")).toBeUndefined(); // yesterday's counts are gone once they're summarised
+  });
+
   test("the next day, one summary goes to PostHog, and it holds only counts", async () => {
     await run(`${cors.url}/photo.webp`, "png");
     await run(`${cors.url}/missing.png`, "jpg");

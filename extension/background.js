@@ -471,7 +471,10 @@ function count(...keys) {
         counts = null;
       }
       for (const key of keys) counts = addCount(counts, key, today);
+      // Yesterday's counts must go once they're the summary: a wake-up that counts nothing used to leave
+      // them in place, so every later wake-up sent the same summary again (fixed in 0.10.1).
       if (counts) await chrome.storage.local.set({ counts });
+      else await chrome.storage.local.remove("counts");
       // Sending happens on its own queue: a save waits for its count to be stored, never for the network.
       sendQueue = sendQueue.then(sendOutbox).catch(() => {});
     })
