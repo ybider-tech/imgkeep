@@ -30,7 +30,7 @@ const res = await fetch(POSTHOG, {
     event: "store_users",
     distinct_id: "imgkeep-stores", // one fixed id: these are store totals, not a person
     timestamp: new Date().toISOString(),
-    properties: { chrome_users: chrome, edge_users: edge, total_users: chrome + edge, $process_person_profile: false, $lib: "imgkeep-store-users" },
+    properties: { chrome_users: chrome, edge_users: edge, total_users: chrome + edge, $process_person_profile: false, $geoip_disable: true, $lib: "imgkeep-store-users" },
   }),
 });
 if (!res.ok) throw new Error(`PostHog answered ${res.status}`);
