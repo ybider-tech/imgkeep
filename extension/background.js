@@ -137,6 +137,8 @@ async function onInstalled({ reason, previousVersion }) {
     if (items.length) await chrome.storage.local.set({ menuNew: { items, until: now + NEW_DAYS * DAY } });
   }
   await refreshMenus();
+  // A new install is counted once, like a save: no id, nothing about the person (anonymous daily summary).
+  if (reason === "install") await count("installed");
 }
 
 chrome.runtime.onInstalled.addListener((details) => onInstalled(details).then(() => checkCounts()));

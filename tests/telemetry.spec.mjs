@@ -77,6 +77,7 @@ test.describe("in the extension", () => {
 
   test.beforeEach(async () => {
     await ctx.sw.evaluate(async () => {
+      await globalThis.imgkeepCount(); // let pending counts (the test install's own "installed") land first
       await chrome.storage.local.clear();
       await chrome.storage.sync.clear();
       globalThis.sent.length = 0;
@@ -122,6 +123,15 @@ test.describe("in the extension", () => {
     expect(t.conversionKey("image/webp", "original")).toBeNull();
     expect(t.conversionKey("image/webp", "https://example.com")).toBeNull();
     expect(t.COUNT_KEYS).toContain("webp_to_jpg");
+  });
+
+  test("a new install is counted once, and an update isn't", async () => {
+    await ctx.sw.evaluate(() => globalThis.imgkeepOnInstalled({ reason: "install" }));
+    await ctx.sw.evaluate(() => globalThis.imgkeepOnInstalled({ reason: "update", previousVersion: "0.10.1" }));
+    expect((await local("counts")).c).toEqual({ installed: 1 });
+    await nextDay();
+    const [req] = await sent();
+    expect(req.body.properties).toMatchObject({ installed: 1 });
   });
 
   test("a summary is sent once, however often Imgkeep wakes up before the next save", async () => {

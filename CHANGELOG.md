@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.2 — unreleased
+
+- **The anonymous daily summary counts new installs** (`installed: 1` on the day Imgkeep is installed), so new installs show up in PostHog within a day, by browser and version, instead of the store dashboards' two-to-three-day lag. No id and nothing about the person, like every other count. Updates aren't counted. Listed in the privacy policy.
+
 ## 0.10.1 — 2026-10-18
 
 - **Fix: a daily summary could be sent several times.** When Imgkeep woke up on a new day without counting anything (the browser wakes extensions many times a day), it sent yesterday's summary but left yesterday's counts in place, so each later wake-up sent the same summary again until the first save of the day replaced them. Present since 0.7.0. Seen in PostHog on 16 October 2026: 68 summaries arrived, 17 of them distinct. Now the counts are cleared once they become the summary. New test: three wake-ups after the new day send one summary.
