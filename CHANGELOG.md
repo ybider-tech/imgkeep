@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.10.2 — unreleased
+## 0.10.2 — 2026-10-19
 
 - **The anonymous daily summary counts new installs** (`installed: 1` on the day Imgkeep is installed), so new installs show up in PostHog within a day, by browser and version, instead of the store dashboards' two-to-three-day lag. No id and nothing about the person, like every other count. Updates aren't counted. Listed in the privacy policy.
 

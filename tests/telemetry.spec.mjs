@@ -67,6 +67,10 @@ test.describe("in the extension", () => {
       };
       globalThis.imgkeepSetAppKey("phc_test");
     });
+    // The test profile is a fresh install: wait for its own "installed" count, so it can't land mid-test.
+    await expect
+      .poll(() => ctx.sw.evaluate(() => chrome.storage.local.get("counts").then((s) => s.counts?.c?.installed ?? 0)), { timeout: 10_000 })
+      .toBe(1);
   });
 
   test.afterAll(async () => {
@@ -77,7 +81,6 @@ test.describe("in the extension", () => {
 
   test.beforeEach(async () => {
     await ctx.sw.evaluate(async () => {
-      await globalThis.imgkeepCount(); // let pending counts (the test install's own "installed") land first
       await chrome.storage.local.clear();
       await chrome.storage.sync.clear();
       globalThis.sent.length = 0;
