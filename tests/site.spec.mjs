@@ -388,6 +388,7 @@ test("count.js on imgkeep.app: one anonymous page view, and a store click with i
   expect(view.properties).toEqual({
     referrer: "google.com", // the referring site only: never its full address or search words
     path: "/save-webp-as-jpg-png/",
+    device: "desktop", // only the kind of device: never the browser's details
     $process_person_profile: false,
     $geoip_disable: true,
     $lib: "imgkeep-site",
@@ -398,6 +399,26 @@ test("count.js on imgkeep.app: one anonymous page view, and a store click with i
   expect(sent[1].distinct_id).not.toBe(view.distinct_id); // a new random id every time: events can't be linked
   expect(await context.cookies()).toEqual([]);
   await context.close();
+});
+
+test("count.js says only the kind of device: phone, tablet or desktop", async ({ browser }) => {
+  const kinds = {
+    mobile: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "mobile ": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36",
+    tablet: "Mozilla/5.0 (Linux; Android 15; SM-X710) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "tablet ": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15", // iPad
+  };
+  for (const [kind, userAgent] of Object.entries(kinds)) {
+    const context = await browser.newContext({ userAgent, hasTouch: true });
+    if (kind === "tablet ") await context.addInitScript(() => Object.defineProperty(navigator, "maxTouchPoints", { get: () => 5 }));
+    const sent = await onImgkeepApp(context);
+    const page = await context.newPage();
+    await page.goto("https://imgkeep.app/");
+    await expect.poll(() => sent.length).toBe(1);
+    expect(sent[0].properties.device, userAgent).toBe(kind.trim());
+    expect(JSON.stringify(sent[0])).not.toMatch(/Mozilla|iPhone|Android|Pixel/);
+    await context.close();
+  }
 });
 
 test("count.js sends nothing when the browser asks sites not to track (Global Privacy Control)", async ({ browser }) => {

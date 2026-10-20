@@ -1,8 +1,10 @@
 // Anonymous counts for imgkeep.app: which pages are visited, and which pages send people to the stores.
-// Two events, sent straight to PostHog (EU cloud) with one request each; no PostHog library.
+// Events sent straight to PostHog (EU cloud) with one request each; no PostHog library.
 //   site_pageview     the page's path, and the referring site's name only (e.g. "google.com")
 //   site_store_click  the page's path, which store (chrome or edge), and the link's utm_campaign
 //   site_convert      on the Free Image Converter: the format pair and how many files (e.g. webp → jpg, 3)
+// Each event also says the kind of device: "mobile", "tablet" or "desktop", worked out here; the browser's
+// details never leave the page.
 // No cookies, no local storage, a new random id for every event, no person profile, no location lookup;
 // the PostHog project discards IP addresses. Nothing is sent when the browser asks sites not to track
 // (Global Privacy Control or Do Not Track), or anywhere but imgkeep.app.
@@ -11,6 +13,15 @@
   const KEY = "phc_ySndSqiXPjvRPLoBmrGW96UsQQUGrGk5qCGKjneucWk2"; // public: it can only send events
   if (!/^(www\.)?imgkeep\.app$/.test(location.hostname)) return;
   if (navigator.globalPrivacyControl === true || navigator.doNotTrack === "1") return;
+
+  // Only the kind of device, so we know how many visitors are on phones. iPads say "Macintosh" but have touch.
+  const ua = navigator.userAgent;
+  const device =
+    /iPad|Tablet/i.test(ua) || (/Android/i.test(ua) && !/Mobile/i.test(ua)) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)
+      ? "tablet"
+      : /Mobi|iPhone|iPod|Android/i.test(ua)
+        ? "mobile"
+        : "desktop";
 
   const randomId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}${Math.random()}`.replace(".", ""));
   const send = (event, props) =>
@@ -27,6 +38,7 @@
         properties: {
           ...props,
           path: location.pathname,
+          device,
           $process_person_profile: false,
           $geoip_disable: true,
           $lib: "imgkeep-site",
