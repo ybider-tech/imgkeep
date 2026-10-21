@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.11.0 — unreleased
+
+- **Get colour palette, in the right-click menu.** A small window shows the image's 5, 8 or 12 main colours, largest first, with a bar showing how much of the image each one covers. Click a colour to copy it as HEX, RGB or HSL; copy them all as CSS variables, a Tailwind snippet, JSON or a plain list; or save them as a PNG swatch strip, a GIMP palette (`.gpl`, also for Inkscape and Krita) or Adobe swatches (`.ase`, for Illustrator, Photoshop and InDesign). The count and format you pick are remembered. Also a button in More options, so it works for images found by Find image here too.
+- **How the colours are found** (`lib/palette.js`, no library): the image is made small (200 px on its longer side), transparent pixels are left out, similar pixels are grouped, then k-means in Lab colour space with a fixed seed, so the same image always gives the same palette. Colours that look alike (ΔE under 8) count as one. Each colour is the exact average of its pixels. Runs in the offscreen document; the window gets only the colours and a small preview, never loads the image itself.
+- **No new permission, no new request.** Palettes use the same image fetch (and the same "allow this site" question when a site blocks it), the offscreen canvas and the downloads Imgkeep already has. Colour values go on the clipboard from the palette's own focused window, like Copy as PNG. Palette files are saved the way you save images: Downloads, your folder (or Downloads if the folder isn't available) or asking where, named like the image plus `-palette`.
+- **The right-click menu is now just "Imgkeep"** (it was "Imgkeep: Save image as"), since it holds saving, copying and colours. Get colour palette shows "✨ New" for 30 days after the update.
+- The anonymous daily summary counts palettes opened (`palette_open`, `palette_from_find`), colours copied (`palette_copy_one`, `palette_copy_all`) and palette files saved (`palette_save_png`, `palette_save_gpl`, `palette_save_ase`), never the colours. Listed in the privacy policy.
+- 9 languages. New tests: `tests/palette.spec.mjs` (exact colours and shares, transparency, the same palette every time, `.gpl` and `.ase` read back, the window, copying, the three files, More options).
+
 ## 0.10.2 — 2026-10-19
 
 - **The anonymous daily summary counts new installs** (`installed: 1` on the day Imgkeep is installed), so new installs show up in PostHog within a day, by browser and version, instead of the store dashboards' two-to-three-day lag. No id and nothing about the person, like every other count. Updates aren't counted. Listed in the privacy policy.

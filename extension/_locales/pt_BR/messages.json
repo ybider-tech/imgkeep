@@ -3,10 +3,10 @@
     "message": "Salvar imagem como PNG, JPG, WebP, GIF ou PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "Botão direito para salvar qualquer imagem como PNG, JPG, WebP, GIF ou PDF, até as que os sites escondem. Sem dados pessoais."
+    "message": "Botão direito: salve qualquer imagem como PNG, JPG, WebP, GIF ou PDF, ou pegue a paleta de cores. No seu PC. Sem dados pessoais."
   },
   "menuParent": {
-    "message": "Imgkeep: Salvar imagem como"
+    "message": "Imgkeep"
   },
   "menuLastUsed": {
     "message": "$FORMAT$ (último usado)",
@@ -25,6 +25,9 @@
   },
   "menuCopyPng": {
     "message": "Copiar como PNG"
+  },
+  "menuPalette": {
+    "message": "Obter paleta de cores"
   },
   "menuMoreOptions": {
     "message": "Mais opções…"
@@ -559,5 +562,93 @@
   },
   "findErrorBody": {
     "message": "Recarregue a página, clique com o botão direito na imagem e escolha Encontrar imagem aqui de novo."
+  },
+  "paletteTitle": {
+    "message": "Paleta de cores"
+  },
+  "paletteLoading": {
+    "message": "Procurando as cores…"
+  },
+  "paletteCount": {
+    "message": "Cores"
+  },
+  "paletteSwatches": {
+    "message": "As cores principais da imagem, da maior para a menor"
+  },
+  "paletteCopyOne": {
+    "message": "Copiar $VALUE$ ($SHARE$ da imagem)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Copiado: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Copiar tudo como"
+  },
+  "paletteCodeCss": {
+    "message": "Variáveis CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Lista"
+  },
+  "paletteCopiedAll": {
+    "message": "Todas as cores copiadas como $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Salvar como"
+  },
+  "paletteSavePng": {
+    "message": "Amostras PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paleta do GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Amostras da Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Sua pasta não estava disponível, então foi para Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Esta imagem é totalmente transparente, então não tem cores."
+  },
+  "paletteCopyFailed": {
+    "message": "Não foi possível copiar. Clique dentro desta janela e tente de novo."
+  },
+  "paletteNote": {
+    "message": "Calculado no seu computador. A imagem e as cores dela nunca saem dele."
   }
 }

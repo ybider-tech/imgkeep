@@ -1,5 +1,5 @@
 // Service worker: context menu, save jobs, and the extension's small windows
-// (ask: a save needs your OK; copy: Copy as PNG; editor: More options).
+// (ask: a save needs your OK; copy: Copy as PNG; editor: More options; palette: Get colour palette).
 
 import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, clampQuality, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
@@ -10,6 +10,7 @@ import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summa
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
+import { cleanHexes } from "./lib/palette.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
@@ -31,6 +32,7 @@ const TITLES = {
   "imgkeep-pdf": () => "PDF",
   "imgkeep-original": () => msg("menuOriginal"),
   "imgkeep-copy": () => msg("menuCopyPng"),
+  "imgkeep-palette": () => msg("menuPalette"),
   "imgkeep-more": () => msg("menuMoreOptions"),
 };
 
@@ -66,6 +68,7 @@ async function createMenus() {
       item("imgkeep-original");
       item("imgkeep-sep2", "separator");
       item("imgkeep-copy");
+      item("imgkeep-palette");
       item("imgkeep-more");
       createFindMenu();
       resolve();
@@ -227,7 +230,7 @@ async function findImage(info, tab) {
   const onScreen = (result?.onScreen || []).filter((c) => isWeb(c.url)).slice(0, 12);
   if (isWeb(result?.found?.url)) {
     count("find_found");
-    return openWindow("editor", { url: result.found.url, pageUrl });
+    return openWindow("editor", { url: result.found.url, pageUrl, via: "find" });
   }
   if (onScreen.length) {
     count("find_picker");
@@ -246,6 +249,7 @@ async function menuClicked(info, tab) {
   if (!info.srcUrl) return;
   const input = { url: info.srcUrl, pageUrl: info.pageUrl };
   if (info.menuItemId === "imgkeep-copy") return openWindow("copy", input);
+  if (info.menuItemId === "imgkeep-palette") return openWindow("palette", input);
   if (info.menuItemId === "imgkeep-more") return openWindow("editor", input);
   let format = MENU[info.menuItemId];
   if (info.menuItemId === "imgkeep-last") {
@@ -541,11 +545,13 @@ const WINDOWS = {
   copy: { width: 400, height: 220 },
   editor: { width: 600, height: 780 },
   find: { width: 560, height: 560 },
+  palette: { width: 500, height: 720 },
 };
 
 async function openWindow(page, input) {
   const job = { id: crypto.randomUUID(), pageUrl: "", ...input };
   if (page === "editor") count("more_options");
+  if (page === "palette") count(...(input.via === "find" ? ["palette_open", "palette_from_find"] : ["palette_open"]));
   await chrome.storage.session.set({ [jobKey(job.id)]: job });
   await chrome.windows.create({
     url: chrome.runtime.getURL(`${page}.html?job=${encodeURIComponent(job.id)}`),
@@ -584,6 +590,7 @@ function cleanOptions(o = {}) {
 }
 
 const WINDOW_FORMATS = ["png", "jpg", "webp", "avif", "ico", "bmp"];
+const PALETTE_KINDS = ["png", "gpl", "ase"];
 
 // Converts a window's image without saving it and returns the file as a data: URL (preview, clipboard).
 async function convertForWindow(jobId, format, options) {
@@ -663,7 +670,7 @@ const windowHandlers = {
     const job = await loadJob(jobId);
     const pick = job.candidates?.[Number(index)];
     if (!pick) return { ok: false, code: "expired" };
-    await openWindow("editor", { url: pick.url, pageUrl: job.pageUrl });
+    await openWindow("editor", { url: pick.url, pageUrl: job.pageUrl, via: "find" });
     return { ok: true };
   },
 
@@ -671,6 +678,62 @@ const windowHandlers = {
   async finderTurnedOn() {
     if (await findTurnedOn()) count("find_enabled");
     return { ok: true, on: await findTurnedOn() };
+  },
+
+  // More options → Get colour palette: the same image in the palette window.
+  async openPalette({ jobId }) {
+    const { url, pageUrl, via } = await loadJob(jobId);
+    await openWindow("palette", { url, pageUrl, via });
+    return { ok: true };
+  },
+
+  // Get colour palette: the image's main colours (for 5, 8 and 12) and a small preview.
+  async palette({ jobId }) {
+    const job = await loadJob(jobId);
+    if (job.url.startsWith("blob:")) return { ok: false, reason: "error", code: "blob" };
+    const res = await toOffscreen({ type: "palette", jobId, url: job.url });
+    if (!res.ok) {
+      const result = await failure(job, res);
+      count(result.reason === "host" ? "site_access_asked" : failureKey(res.code));
+      return result;
+    }
+    await chrome.storage.session.set({ [jobKey(jobId)]: { ...job, width: res.width, height: res.height } });
+    return res;
+  },
+
+  // Get colour palette → Save: a PNG swatch strip, a .gpl or an .ase file, named like the image plus
+  // "-palette", saved the way the user saves images (Downloads, the chosen folder, or asking where).
+  async savePalette({ jobId, kind, hexes }) {
+    if (!PALETTE_KINDS.includes(kind)) throw new JobError("unknown", `Unknown palette file ${kind}`);
+    const job = await loadJob(jobId);
+    const clean = cleanHexes(hexes);
+    if (!clean.length) throw new JobError("unknown", "No colours");
+    const settings = await getSettings();
+    const base = buildTarget({ settings, url: job.url, width: job.width, height: job.height, ext: kind });
+    const target = { ...base, name: `${base.name}-palette` };
+    const run = crypto.randomUUID();
+    let mode = settings.saveMode;
+    const file = await toOffscreen({ type: "swatchFile", jobId: run, kind, hexes: clean, name: target.name, want: mode === "folder" ? "none" : "url" });
+    if (!file.ok) return { ok: false, reason: "error", code: file.code, detail: file.detail };
+    let result;
+    if (mode === "folder") {
+      const w = await toOffscreen({ type: "write", jobId: run, ...target });
+      if (w.ok) result = { ok: true, mode, path: w.path };
+      else {
+        // No folder, or the browser wants it allowed again: a palette is small, so it goes to Downloads instead.
+        const again = await toOffscreen({ type: "take", jobId: run });
+        if (!again.ok) return { ok: false, reason: "error", code: again.code };
+        mode = "downloads";
+        const downloadId = await download({ url: again.dataUrl, filename: targetPath(target), saveAs: false });
+        result = { ok: true, mode, downloadId, filename: targetPath(target), folderFallback: true };
+      }
+    } else {
+      const downloadId = await download({ url: file.url, filename: targetPath(target), saveAs: mode === "ask" });
+      result = { ok: true, mode, downloadId, filename: targetPath(target) };
+    }
+    releaseIfOpen(run);
+    count(`palette_save_${kind}`);
+    return result;
   },
 
   // Open the image itself in a new tab (only web addresses).
@@ -715,7 +778,7 @@ const reviewHandlers = {
 
   // Counts only the windows know about: a site allowed from a window, a copy the clipboard refused.
   async count({ key }) {
-    if (["site_access_allowed", "fail_copy"].includes(key)) count(key);
+    if (["site_access_allowed", "fail_copy", "palette_copy_one", "palette_copy_all"].includes(key)) count(key);
     return { ok: true };
   },
 

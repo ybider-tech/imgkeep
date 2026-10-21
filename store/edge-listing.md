@@ -29,9 +29,9 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ### Description
 ```text
-Imgkeep is a free image converter for your right-click menu. Save any image as PNG, JPG, WebP, GIF or PDF, convert WebP and AVIF, and save photos even on sites that hide them from the right-click.
+Imgkeep is a free image converter for your right-click menu. Save any image as PNG, JPG, WebP, GIF or PDF, take its colour palette, convert WebP and AVIF, and save photos even on sites that hide them from the right-click.
 
-Right-click an image → Imgkeep: Save image as → choose your format. It's saved straight to your chosen folder, or copy it as PNG and paste it into another app. Images are converted on your computer: no uploads, no account.
+Right-click an image → Imgkeep → choose your format. It's saved straight to your chosen folder, or copy it as PNG and paste it into another app. Images are converted on your computer: no uploads, no account.
 
 WORKS WHERE RIGHT-CLICK DOESN'T
 
@@ -50,6 +50,15 @@ Many sites now use WebP and AVIF images, which other apps often can't open. Imgk
 • Save as AVIF: in More options, files often half the size of a JPG that looks the same, transparency kept.
 • Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
+
+TAKE THE COLOURS FROM ANY IMAGE
+
+Right-click an image → Imgkeep → Get colour palette. See its main colours, largest first, and click one to copy it as HEX, RGB or HSL.
+
+• Copy all at once as CSS variables, a Tailwind snippet, JSON or a plain list.
+• Save the palette as a PNG swatch strip, a .gpl file (GIMP, Inkscape, Krita) or an .ase file (Adobe Illustrator, Photoshop, InDesign).
+• Works with Find image here, so you can take colours from photos on sites like Instagram and Pinterest that block the right-click.
+• Worked out on your computer. The image and its colours never leave it.
 
 RESIZE IMAGES AND CONTROL QUALITY
 
@@ -70,7 +79,7 @@ LOCAL CONVERSION AND ACCESS YOU CONTROL
 • Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
 • One anonymous daily summary: usage counts and failures, like "12 saves as JPG, 1 failed", so we know what to improve. Never images, website addresses or file names. One click in Options turns it off.
 • Open source under the MIT licence, with no build step: the code you read is the code that runs. The one compiled part, the AVIF encoder, is the open-source libavif, unchanged and checked by its fingerprint.
-• Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free.
+• Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free, including colour palettes.
 
 WHEN A SITE BLOCKS AN IMAGE
 
@@ -81,7 +90,7 @@ Suggest features and vote on ideas: https://imgkeep.app/ideas.html
 
 ## Notes for certification
 ```text
-Imgkeep adds a right-click menu on images ("Imgkeep: Save image as" → PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…). To test: right-click any image on any website and pick a format; the file is saved to Downloads. "Copy as PNG" opens a small window that copies the image to the clipboard and closes itself. "More options…" opens a window with a preview, where you can pick format, maximum width, quality and file name before saving.
+Imgkeep adds a right-click menu on images ("Imgkeep" → PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, Get colour palette, More options…). To test: right-click any image on any website and pick a format; the file is saved to Downloads. "Copy as PNG" opens a small window that copies the image to the clipboard and closes itself. "More options…" opens a window with a preview, where you can pick format, maximum width, quality and file name before saving.
 
 Permissions: contextMenus (the menu), downloads (saving files), storage (settings), offscreen (a hidden page with a canvas to convert the image locally). Optional host access is requested for one site at a time, only when that site blocks cross-site image reads and only after the user clicks "Allow and save". No declared content scripts and no remote code (the optional Find image feature, below, runs one packaged function only when the user clicks it). One anonymous daily summary of feature use (counts only, no URLs or file names) is sent to Aptabase (eu.aptabase.com); it can be turned off in Options. Source code: https://github.com/ybider-tech/imgkeep
 
@@ -100,4 +109,6 @@ New in 0.9.0: More options can save as ICO (16/32/48/256 px PNGs in one icon fil
 New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
 
 Imgkeep is also on the Chrome Web Store (0.8.0 live, 0.8.1 in review there): https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
+
+New in 0.11.0: "Get colour palette" in the right-click menu (and as a button in More options). It opens the extension's own window with the image's main colours, worked out locally from the same image fetch and offscreen canvas the conversions use. Clicking a colour copies its value to the clipboard from that focused window (no clipboard permission); palettes can be saved as a PNG, a .gpl or an .ase file through downloads. No new permission and no new network request. The menu's name is now just "Imgkeep". The daily summary counts palettes opened, copied and saved (never the colours), listed in the privacy policy.
 ```

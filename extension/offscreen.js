@@ -4,6 +4,8 @@
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { JobError } from "./lib/job-error.js";
 import { convert } from "./lib/convert.js";
+import { decode, draw, fitWidth, sniffImageType } from "./lib/image.js";
+import { PALETTE_COUNTS, PALETTE_SAMPLE, cleanHexes, extractPalette, toAse, toGpl } from "./lib/palette.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
 // and the converted file waiting to be saved. Both are dropped when the job ends, or after 10 minutes.
@@ -75,6 +77,54 @@ function toDataUrl(blob) {
   });
 }
 
+// The longer side fitted to `max`, keeping the shape.
+function fitLongest(width, height, max) {
+  const scale = Math.min(1, max / Math.max(width, height));
+  return { width: Math.max(1, Math.round(width * scale)), height: Math.max(1, Math.round(height * scale)) };
+}
+
+function pixels(canvas) {
+  try {
+    return canvas.getContext("2d", { willReadFrequently: true }).getImageData(0, 0, canvas.width, canvas.height).data;
+  } catch {
+    throw new JobError("too-large");
+  }
+}
+
+// A swatch strip: one block per colour, its HEX value printed underneath. 1200 px wide.
+async function swatchStrip(hexes) {
+  const width = 1200;
+  const block = width / hexes.length;
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = 380;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#FFFFFF";
+  ctx.fillRect(0, 0, width, canvas.height);
+  const size = Math.min(26, Math.floor(block / 4.6));
+  ctx.font = `600 ${size}px system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif`;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  hexes.forEach((hex, i) => {
+    const x = Math.round(i * block);
+    ctx.fillStyle = hex;
+    ctx.fillRect(x, 0, Math.round((i + 1) * block) - x, 300);
+    ctx.fillStyle = "#1C2321";
+    ctx.fillText(hex, x + block / 2, 340);
+  });
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+  canvas.width = canvas.height = 0;
+  if (!blob) throw new JobError("too-large");
+  return blob;
+}
+
+const PALETTE_FILES = {
+  png: async (hexes) => swatchStrip(hexes),
+  // octet-stream for both: with text/plain the browser renames a .gpl download to .txt.
+  gpl: async (hexes, name) => new Blob([toGpl(hexes, name)], { type: "application/octet-stream" }),
+  ase: async (hexes) => new Blob([toAse(hexes)], { type: "application/octet-stream" }),
+};
+
 // Data URLs stay small enough for chrome.downloads; bigger files use a blob: URL kept alive here.
 const DATA_URL_LIMIT = 1.5 * 1024 * 1024;
 
@@ -102,6 +152,45 @@ const handlers = {
       if (out.blob.size <= DATA_URL_LIMIT) result.url = await toDataUrl(out.blob);
       else result.url = entry.blobUrl = URL.createObjectURL(out.blob);
     }
+    return result;
+  },
+
+  // The image's main colours, for 5, 8 and 12 at once (switching in the window needs no new request),
+  // and a small preview of the image, so the window never loads it from the web itself.
+  async palette({ jobId, url }) {
+    const input = await sourceFor(jobId, url);
+    const image = await decode(input);
+    let sample;
+    let thumb;
+    try {
+      sample = draw(image, fitLongest(image.width, image.height, PALETTE_SAMPLE));
+      const data = pixels(sample);
+      const palettes = Object.fromEntries(PALETTE_COUNTS.map((n) => [n, extractPalette(data, n)]));
+      thumb = draw(image, fitWidth(image.width, image.height, 800));
+      const preview = await new Promise((resolve) => thumb.toBlob(resolve, "image/webp", 0.85));
+      return {
+        palettes,
+        width: image.width,
+        height: image.height,
+        thumb: preview ? await toDataUrl(preview) : "",
+        sourceType: await sniffImageType(input),
+      };
+    } finally {
+      for (const c of [sample, thumb]) if (c) c.width = c.height = 0;
+      image.done();
+    }
+  },
+
+  // A palette as a file (PNG swatch strip, .gpl or .ase), held like a converted image until it's saved.
+  // The window sends only colours ("#RRGGBB"), never bytes.
+  async swatchFile({ jobId, kind, hexes, name, want }) {
+    const clean = cleanHexes(hexes);
+    if (!PALETTE_FILES[kind] || !clean.length) throw new JobError("unknown");
+    const blob = await PALETTE_FILES[kind](clean, name);
+    const entry = { blob };
+    remember(pending, jobId, entry);
+    const result = { ext: kind, size: blob.size };
+    if (want === "url") result.url = await toDataUrl(blob); // a few KB at most
     return result;
   },
 

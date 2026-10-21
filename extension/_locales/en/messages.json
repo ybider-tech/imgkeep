@@ -4,12 +4,12 @@
     "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
   },
   "extDescription": {
-    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, even ones sites hide. Converted on your device. No personal data.",
+    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or take its colour palette. On your device. No personal data.",
     "description": "Store summary. Max 132 characters."
   },
   "menuParent": {
-    "message": "Imgkeep: Save image as",
-    "description": "Right-click menu entry on images."
+    "message": "Imgkeep",
+    "description": "Right-click menu entry on images. Since 0.11.0 just the name: it holds saving, copying and the colour palette."
   },
   "menuLastUsed": {
     "message": "$FORMAT$ (last used)",
@@ -32,6 +32,10 @@
   "menuCopyPng": {
     "message": "Copy as PNG",
     "description": "Right-click menu item: copies the image to the clipboard as PNG. Also the Copy window's title and button."
+  },
+  "menuPalette": {
+    "message": "Get colour palette",
+    "description": "Right-click menu item: shows the image's main colours. Also the palette window's button in More options."
   },
   "menuMoreOptions": {
     "message": "More options…",
@@ -713,5 +717,113 @@
   "findErrorBody": {
     "message": "Reload the page, then right-click the image and choose Find image here again.",
     "description": "What to do then"
+  },
+  "paletteTitle": {
+    "message": "Colour palette",
+    "description": "Palette window title and heading"
+  },
+  "paletteLoading": {
+    "message": "Finding the colours…",
+    "description": "While the colours are worked out"
+  },
+  "paletteCount": {
+    "message": "Colours",
+    "description": "Label of the 5 / 8 / 12 switch: how many colours to show"
+  },
+  "paletteSwatches": {
+    "message": "The image's main colours, largest first",
+    "description": "Screen-reader label of the list of colours"
+  },
+  "paletteCopyOne": {
+    "message": "Copy $VALUE$ ($SHARE$ of the image)",
+    "description": "Tooltip and label of one colour. $VALUE$ is e.g. #C8A27A, $SHARE$ e.g. 32%",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Copied $VALUE$",
+    "description": "Status after copying one colour",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Copy all as",
+    "description": "Label before the buttons that copy every colour as code"
+  },
+  "paletteCodeCss": {
+    "message": "CSS variables",
+    "description": "Button: CSS custom properties (--color-1 …)"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind",
+    "description": "Button: a Tailwind colors snippet. Product name, keep it."
+  },
+  "paletteCodeJson": {
+    "message": "JSON",
+    "description": "Button: a JSON array"
+  },
+  "paletteCodeList": {
+    "message": "List",
+    "description": "Button: one colour per line"
+  },
+  "paletteCopiedAll": {
+    "message": "Copied all colours as $KIND$",
+    "description": "Status after copying all colours. $KIND$ is the button's name (CSS variables, Tailwind…)",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Save as",
+    "description": "Label before the buttons that save the palette as a file"
+  },
+  "paletteSavePng": {
+    "message": "PNG swatches",
+    "description": "Button: a PNG image with one block per colour and its HEX value"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP palette",
+    "description": "Button: a .gpl palette file (GIMP, Inkscape, Krita)"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe swatches",
+    "description": "Button: an .ase swatch file (Illustrator, Photoshop, InDesign)"
+  },
+  "paletteSavedFallback": {
+    "message": "Your folder wasn't available, so it went to Downloads: $PATH$",
+    "description": "Status: the chosen folder couldn't be used, so the small palette file went to Downloads",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "This image is fully transparent, so it has no colours to take.",
+    "description": "The image has no visible pixels"
+  },
+  "paletteCopyFailed": {
+    "message": "Couldn't copy. Click inside this window, then try again.",
+    "description": "The clipboard refused the text (usually the window lost focus)"
+  },
+  "paletteNote": {
+    "message": "Worked out on your computer. The image and its colours never leave it.",
+    "description": "Small print at the bottom of the palette window"
   }
 }

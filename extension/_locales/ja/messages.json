@@ -3,10 +3,10 @@
     "message": "画像をPNG・JPG・WebP・GIF・PDFで保存 — Imgkeep"
   },
   "extDescription": {
-    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存。サイトが隠している画像にも対応。パソコン上で変換。個人データの収集なし。"
+    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存、またはカラーパレットを取得。処理はパソコン上で。個人データの収集なし。"
   },
   "menuParent": {
-    "message": "Imgkeep: 名前を付けて画像を保存"
+    "message": "Imgkeep"
   },
   "menuLastUsed": {
     "message": "$FORMAT$（前回と同じ）",
@@ -25,6 +25,9 @@
   },
   "menuCopyPng": {
     "message": "PNGとしてコピー"
+  },
+  "menuPalette": {
+    "message": "カラーパレットを取得"
   },
   "menuMoreOptions": {
     "message": "その他のオプション…"
@@ -559,5 +562,93 @@
   },
   "findErrorBody": {
     "message": "ページを再読み込みしてから、画像を右クリックしてもう一度「ここで画像を探す」を選んでください。"
+  },
+  "paletteTitle": {
+    "message": "カラーパレット"
+  },
+  "paletteLoading": {
+    "message": "色を探しています…"
+  },
+  "paletteCount": {
+    "message": "色の数"
+  },
+  "paletteSwatches": {
+    "message": "画像の主な色（多い順）"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ をコピー（画像の $SHARE$）",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "コピーしました：$VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "まとめてコピー"
+  },
+  "paletteCodeCss": {
+    "message": "CSS変数"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "リスト"
+  },
+  "paletteCopiedAll": {
+    "message": "すべての色を $KIND$ としてコピーしました",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "ファイルに保存"
+  },
+  "paletteSavePng": {
+    "message": "PNGスウォッチ"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMPパレット"
+  },
+  "paletteSaveAse": {
+    "message": "Adobeスウォッチ"
+  },
+  "paletteSavedFallback": {
+    "message": "指定のフォルダが使えなかったため、ダウンロードに保存しました：$PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "この画像は完全に透明なので、色がありません。"
+  },
+  "paletteCopyFailed": {
+    "message": "コピーできませんでした。このウィンドウ内をクリックしてから、もう一度お試しください。"
+  },
+  "paletteNote": {
+    "message": "色はパソコン上で計算されます。画像もその色も外に送られることはありません。"
   }
 }

@@ -2,7 +2,7 @@
 // Step 1 captures the real extension UI (options page, trust list, ask window) into store/_capture/.
 // Step 2 screenshots each scene at 1280×800 and the promo tile at 440×280.
 import { chromium } from "@playwright/test";
-import { mkdir, rm } from "node:fs/promises";
+import { mkdir, readFile, rm } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { launchWithExtension } from "../tests/launch.mjs";
@@ -50,6 +50,20 @@ try {
   await editor.locator("#resultFacts").filter({ hasText: "×" }).waitFor();
   await editor.locator("#name").fill("ceramics-lamp");
   await editor.screenshot({ path: join(CAPTURE, "editor.png") });
+
+  // Get colour palette (scene 7) for a made-up interior picture (store/palette-room.svg), one colour just copied.
+  const palOpened = ext.context.waitForEvent("page", { predicate: (p) => p.url().includes("/palette.html") });
+  const room = `data:image/svg+xml,${encodeURIComponent(await readFile(join(STORE, "palette-room.svg"), "utf8"))}`;
+  await ext.sw.evaluate((url) => globalThis.imgkeepOpenWindow("palette", { url }), room);
+  const palette = await palOpened;
+  await palette.setViewportSize({ width: 500, height: 600 });
+  await palette.locator(".swatch").first().waitFor();
+  await palette.evaluate(() => {
+    const swatch = document.querySelectorAll(".swatch")[2];
+    swatch.classList.add("copied");
+    document.querySelector("#status").textContent = `Copied ${swatch.querySelector(".value").textContent}`;
+  });
+  await palette.screenshot({ path: join(CAPTURE, "palette.png") });
 } finally {
   await ext.context.close();
   await plain.close();
@@ -85,6 +99,7 @@ const shots = [
   ["#scene-4", "screenshot-4-site-access.png"],
   ["#scene-5", "screenshot-5-gif.png"],
   ["#scene-6", "screenshot-6-find.png"],
+  ["#scene-7", "screenshot-7-palette.png"],
   ["#tile", "promo-tile-440x280.png"],
   ["#marquee", "marquee-1400x560.png"],
 ];

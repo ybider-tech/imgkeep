@@ -3,10 +3,10 @@
     "message": "इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें — Imgkeep"
   },
   "extDescription": {
-    "message": "राइट-क्लिक करके किसी भी इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें, साइटों की छिपाई इमेज भी। कोई निजी डेटा नहीं।"
+    "message": "राइट-क्लिक करके किसी भी इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें या उसका कलर पैलेट पाएं। आपके डिवाइस पर। कोई निजी डेटा नहीं।"
   },
   "menuParent": {
-    "message": "Imgkeep: इमेज इस रूप में सेव करें"
+    "message": "Imgkeep"
   },
   "menuLastUsed": {
     "message": "$FORMAT$ (पिछली बार वाला)",
@@ -25,6 +25,9 @@
   },
   "menuCopyPng": {
     "message": "PNG के रूप में कॉपी करें"
+  },
+  "menuPalette": {
+    "message": "कलर पैलेट पाएं"
   },
   "menuMoreOptions": {
     "message": "और विकल्प…"
@@ -559,5 +562,93 @@
   },
   "findErrorBody": {
     "message": "पेज को फिर से लोड करें, फिर इमेज पर राइट-क्लिक करके दोबारा यहाँ इमेज ढूँढें चुनें।"
+  },
+  "paletteTitle": {
+    "message": "कलर पैलेट"
+  },
+  "paletteLoading": {
+    "message": "रंग खोजे जा रहे हैं…"
+  },
+  "paletteCount": {
+    "message": "रंग"
+  },
+  "paletteSwatches": {
+    "message": "इमेज के मुख्य रंग, सबसे ज़्यादा वाले पहले"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ कॉपी करें (इमेज का $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "कॉपी किया गया: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "सब कॉपी करें इस रूप में"
+  },
+  "paletteCodeCss": {
+    "message": "CSS वेरिएबल"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "सूची"
+  },
+  "paletteCopiedAll": {
+    "message": "सभी रंग $KIND$ के रूप में कॉपी किए गए",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "इस रूप में सेव करें"
+  },
+  "paletteSavePng": {
+    "message": "PNG स्वैच"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP पैलेट"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe स्वैच"
+  },
+  "paletteSavedFallback": {
+    "message": "आपका फ़ोल्डर उपलब्ध नहीं था, इसलिए फ़ाइल डाउनलोड में गई: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "यह इमेज पूरी तरह पारदर्शी है, इसलिए इसमें कोई रंग नहीं है।"
+  },
+  "paletteCopyFailed": {
+    "message": "कॉपी नहीं हो सका। इस विंडो के अंदर क्लिक करें, फिर दोबारा कोशिश करें।"
+  },
+  "paletteNote": {
+    "message": "आपके कंप्यूटर पर निकाला जाता है। इमेज और उसके रंग कभी बाहर नहीं जाते।"
   }
 }

@@ -3,10 +3,10 @@
     "message": "حفظ الصورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "انقر بزر الماوس الأيمن لحفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، حتى التي تخفيها المواقع. بلا بيانات شخصية."
+    "message": "انقر بالزر الأيمن لحفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، أو أخذ لوحة ألوانها. على جهازك. بلا بيانات شخصية."
   },
   "menuParent": {
-    "message": "Imgkeep: حفظ الصورة بصيغة"
+    "message": "Imgkeep"
   },
   "menuLastUsed": {
     "message": "$FORMAT$ (آخر صيغة مستخدمة)",
@@ -25,6 +25,9 @@
   },
   "menuCopyPng": {
     "message": "نسخ بصيغة PNG"
+  },
+  "menuPalette": {
+    "message": "الحصول على لوحة الألوان"
   },
   "menuMoreOptions": {
     "message": "مزيد من الخيارات…"
@@ -559,5 +562,93 @@
   },
   "findErrorBody": {
     "message": "أعد تحميل الصفحة، ثم انقر بزر الماوس الأيمن على الصورة واختر البحث عن الصورة هنا مرة أخرى."
+  },
+  "paletteTitle": {
+    "message": "لوحة الألوان"
+  },
+  "paletteLoading": {
+    "message": "جارٍ البحث عن الألوان…"
+  },
+  "paletteCount": {
+    "message": "الألوان"
+  },
+  "paletteSwatches": {
+    "message": "الألوان الرئيسية في الصورة، الأكثر أولًا"
+  },
+  "paletteCopyOne": {
+    "message": "نسخ $VALUE$ ($SHARE$ من الصورة)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "تم النسخ: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "نسخ الكل بصيغة"
+  },
+  "paletteCodeCss": {
+    "message": "متغيرات CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "قائمة"
+  },
+  "paletteCopiedAll": {
+    "message": "نُسخت كل الألوان بصيغة $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "حفظ بصيغة"
+  },
+  "paletteSavePng": {
+    "message": "عينات PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "لوحة GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "عينات Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "لم يكن مجلدك متاحًا، لذا حُفظ الملف في التنزيلات: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "هذه الصورة شفافة بالكامل، لذا لا ألوان فيها."
+  },
+  "paletteCopyFailed": {
+    "message": "تعذّر النسخ. انقر داخل هذه النافذة ثم حاول مجددًا."
+  },
+  "paletteNote": {
+    "message": "تُحسب على جهازك. الصورة وألوانها لا تغادره أبدًا."
   }
 }

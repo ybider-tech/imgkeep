@@ -32,7 +32,9 @@ If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.
 
 ## What it does
 
-Right-click an image → **Imgkeep: Save image as** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, **Original format**, **Copy as PNG** or **More options…**.
+Right-click an image → **Imgkeep** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, **Original format**, **Copy as PNG**, **Get colour palette** or **More options…**.
+
+- **Get colour palette** (0.11.0): the image's 5, 8 or 12 main colours, largest first, with how much of the image each one covers. Click one to copy it as HEX, RGB or HSL; copy them all as CSS variables, a Tailwind snippet, JSON or a list; or save them as a PNG swatch strip, a `.gpl` palette (GIMP, Inkscape, Krita) or an `.ase` file (Adobe Illustrator, Photoshop, InDesign). Worked out on your computer (`extension/lib/palette.js`: k-means in Lab colour space with a fixed seed, so the same image always gives the same palette). Also in More options, so it works for images found by Find image here.
 
 - Reads WebP, AVIF, SVG, PNG, JPG, GIF and `data:` images.
 - **GIF keeps animation:** an animated GIF is saved exactly as it is; animated WebP, AVIF and APNG are converted frame by frame, keeping each frame's timing and transparency. A still image saved as GIF becomes a one-frame GIF. GIFs are made at most 800px wide (larger ones are scaled down, keeping their shape).

@@ -13,9 +13,10 @@ test.describe("rules", () => {
     expect(compareVersions("0.6.0", "0.5.0")).toBe(1);
     expect(compareVersions("0.6.0", "0.6.0")).toBe(0);
     expect(compareVersions("0.10.0", "0.9.9")).toBe(1);
-    expect(newItemsSince("0.4.0")).toEqual(["imgkeep-pdf", "imgkeep-copy", "imgkeep-more"]);
-    expect(newItemsSince("0.5.0")).toEqual(["imgkeep-copy", "imgkeep-more"]);
-    expect(newItemsSince("0.6.0")).toEqual([]);
+    expect(newItemsSince("0.4.0")).toEqual(["imgkeep-pdf", "imgkeep-copy", "imgkeep-more", "imgkeep-palette"]);
+    expect(newItemsSince("0.5.0")).toEqual(["imgkeep-copy", "imgkeep-more", "imgkeep-palette"]);
+    expect(newItemsSince("0.6.0")).toEqual(["imgkeep-palette"]);
+    expect(newItemsSince("0.11.0")).toEqual([]);
   });
 
   test("the rating ask: after real use, never during failures, once", async () => {
@@ -132,7 +133,7 @@ test.describe("in the extension", () => {
   });
 
   test("a fresh install, or an update with no new items, labels nothing", async () => {
-    for (const details of [{ reason: "install" }, { reason: "update", previousVersion: "0.6.0" }]) {
+    for (const details of [{ reason: "install" }, { reason: "update", previousVersion: "0.11.0" }]) {
       await installed(details);
       const t = await titles();
       expect(Object.values(t).some((title) => title.includes("New")), JSON.stringify(t)).toBe(false);

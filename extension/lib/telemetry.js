@@ -3,7 +3,7 @@
 // What is counted: how many saves worked per format and save mode, how many failed and why (an error
 // code), copies, More options, site-access and rating answers, saves made smaller by the maximum
 // width, for each conversion the original image's format and the one it became (webp_to_jpg), and a new
-// install (installed: 1 on the day it happened). Counted on this computer, then sent once a day as ONE summary of the previous active day.
+// install (installed: 1 on the day it happened), and colour palettes opened, copied and saved (never the colours). Counted on this computer, then sent once a day as ONE summary of the previous active day.
 // Never: image or page addresses, site or file names, folder names, settings text, or any identifier.
 //
 // Sent to PostHog (open source, EU cloud, https://posthog.com) with one direct request, as an anonymous
@@ -38,6 +38,13 @@ export const COUNT_KEYS = [
   "find_picker", // Find image here showed a list of the images on screen
   "find_nothing", // Find image here found no image
   "copy",
+  "palette_open", // Get colour palette opened (from the menu or from More options)
+  "palette_from_find", // … for an image that Find image here found
+  "palette_copy_one", // one colour copied
+  "palette_copy_all", // all colours copied as code (CSS, Tailwind, JSON or a list)
+  "palette_save_png", // saved as a PNG swatch strip
+  "palette_save_gpl", // saved as a GIMP palette
+  "palette_save_ase", // saved as an Adobe swatch file
   "more_options",
   "more_options_save",
   "site_access_asked",

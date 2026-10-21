@@ -5,7 +5,7 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 
 | Permission | Type | Why Imgkeep needs it | Since |
 |---|---|---|---|
-| `contextMenus` | Required | Adds "Imgkeep: Save image as" (PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, More options…) to the right-click menu on images. | 0.3.0 |
+| `contextMenus` | Required | Adds "Imgkeep" (PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, Get colour palette, More options…) to the right-click menu on images. | 0.3.0 |
 | `downloads` | Required | Saves files through Chrome's downloads with your subfolder and file name, never overwriting (`conflictAction: "uniquify"`). | 0.3.0 |
 | `storage` | Required | Keeps your settings in Chrome sync storage, a pending save in session storage while one of Imgkeep's small windows is open, the format and width you last used in More options, a count of saves for the one-time rating ask and the "New" menu labels, and today's anonymous usage counts until they're sent as the one daily summary (off in Options), in local storage. Nothing else in storage is sent anywhere. | 0.3.0 |
 | `offscreen` | Required | A hidden extension page with a canvas, to decode and re-encode the image on your computer and write into your chosen folder. Service workers have no canvas. | 0.3.0 |
@@ -17,7 +17,8 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 
 - No `host_permissions`, no `<all_urls>`. Without the two optional permissions below it can't read the pages you visit, and it never changes them.
 - No content scripts (nothing runs on pages by itself), no `tabs`. `scripting` is only optional, for Find image here. ("Open image" uses `chrome.tabs.create`, which needs no permission.)
-- No `clipboardWrite` or `clipboardRead`. Copy as PNG writes the image from Imgkeep's own small window, which has focus, so the browser allows it without a permission (and without the install warning a new permission would bring). Imgkeep never reads the clipboard.
+- No `clipboardWrite` or `clipboardRead`. Copy as PNG writes the image from Imgkeep's own small window, which has focus, so the browser allows it without a permission (and without the install warning a new permission would bring). Get colour palette copies colour values the same way. Imgkeep never reads the clipboard.
+- Get colour palette (0.11.0) needs no permission of its own: it uses the same image fetch, the offscreen canvas and the downloads above, and the colours are worked out on your computer.
 - No `unlimitedStorage`, `history`, `cookies`, `webRequest` or `identity`.
 
 ## Network use

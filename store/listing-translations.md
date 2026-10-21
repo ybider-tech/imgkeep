@@ -1,4 +1,4 @@
-# Store listing translations: Imgkeep 0.8.0
+# Store listing translations: Imgkeep 0.11.0
 
 Translations of the v9 description in [listing.md](listing.md), for the Chrome Web Store and Edge Add-ons.
 The name and summary come from the package (`extension/_locales/<lang>/messages.json`), so only the
@@ -23,9 +23,9 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 ## he — Hebrew
 
 ```text
-‏Imgkeep הוא ממיר תמונות חינמי לתפריט הלחיצה הימנית. שומרים כל תמונה כ-PNG,‏ JPG,‏ WebP,‏ GIF או PDF, ממירים WebP ו-AVIF, ושומרים תמונות גם באתרים שמסתירים אותן מהלחיצה הימנית.
+‏Imgkeep הוא ממיר תמונות חינמי לתפריט הלחיצה הימנית. שומרים כל תמונה כ-PNG,‏ JPG,‏ WebP,‏ GIF או PDF, לוקחים ממנה את פלטת הצבעים, ממירים WebP ו-AVIF, ושומרים תמונות גם באתרים שמסתירים אותן מהלחיצה הימנית.
 
-לחיצה ימנית על תמונה ← Imgkeep: שמירת התמונה בתור ← בוחרים פורמט. התמונה נשמרת ישר לתיקייה שבחרת, או מעתיקים אותה כ-PNG ומדביקים באפליקציה אחרת. התמונות מומרות במחשב שלך: בלי העלאות, בלי חשבון.
+לחיצה ימנית על תמונה ← Imgkeep ← בוחרים פורמט. התמונה נשמרת ישר לתיקייה שבחרת, או מעתיקים אותה כ-PNG ומדביקים באפליקציה אחרת. התמונות מומרות במחשב שלך: בלי העלאות, בלי חשבון.
 
 עובד גם איפה שלחיצה ימנית לא
 
@@ -44,6 +44,15 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 • שמירה כ-AVIF: באפשרויות נוספות, קבצים שלרוב קטנים בחצי מ-JPG שנראה אותו דבר, עם השקיפות.
 • אייקונים ומפות סיביות: באפשרויות נוספות שומרים כ-ICO (מ-16 עד 256 פיקסלים בקובץ אחד, לקיצורי דרך בשולחן העבודה ולאייקוני אתרים) או כ-BMP.
 • שמירת המקור: שומרים את התמונה בפורמט המקורי שלה כשלא צריך המרה.
+
+לוקחים את הצבעים מכל תמונה
+
+לחיצה ימנית על תמונה ← Imgkeep ← קבלת פלטת צבעים. רואים את הצבעים העיקריים שלה, מהגדול לקטן, ולוחצים על צבע כדי להעתיק אותו כ-HEX,‏ RGB או HSL.
+
+• מעתיקים את כולם בבת אחת כמשתני CSS, קטע Tailwind,‏ JSON או רשימה פשוטה.
+• שומרים את הפלטה כרצועת דוגמיות PNG, קובץ ‎.gpl‏ (GIMP,‏ Inkscape,‏ Krita) או קובץ ‎.ase‏ (Adobe Illustrator,‏ Photoshop,‏ InDesign).
+• עובד עם מציאת תמונה כאן, כך שאפשר לקחת צבעים מתמונות באתרים כמו Instagram ו-Pinterest שחוסמים את הלחיצה הימנית.
+• מחושב במחשב שלך. התמונה והצבעים שלה לא יוצאים ממנו.
 
 שינוי גודל ושליטה באיכות
 
@@ -64,7 +73,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 • ארבע הרשאות בלבד: contextMenus,‏ downloads,‏ storage,‏ offscreen. שתיים נוספות, activeTab ו-scripting, רק אם מפעילים את מציאת תמונה כאן.
 • סיכום יומי אנונימי אחד: ספירות שימוש וכשלים, כמו „12 שמירות כ-JPG, אחת נכשלה”, כדי שנדע מה לשפר. אף פעם לא תמונות, כתובות אתרים או שמות קבצים. לחיצה אחת באפשרויות מכבה אותו.
 • קוד פתוח ברישיון MIT, בלי שלב בנייה: הקוד שקוראים הוא הקוד שרץ. החלק המהודר היחיד, מקודד ה-AVIF, הוא libavif בקוד פתוח, ללא שינוי ונבדק לפי טביעת האצבע שלו.
-• חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים, ובקשת דירוג אחת בלבד, אי פעם. כל תכונה שקיימת היום נשארת חינמית.
+• חינמי, בלי הגבלות: בלי פרסומות, בלי לשוניות ברוכים הבאים, ובקשת דירוג אחת בלבד, אי פעם. כל תכונה שקיימת היום נשארת חינמית, כולל פלטות הצבעים.
 
 כשאתר חוסם תמונה
 
@@ -76,9 +85,9 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 ## es — Spanish
 
 ```text
-Imgkeep es un conversor de imágenes gratuito para tu menú del clic derecho. Guarda cualquier imagen como PNG, JPG, WebP, GIF o PDF, convierte WebP y AVIF, y guarda fotos incluso en sitios que las ocultan del clic derecho.
+Imgkeep es un conversor de imágenes gratuito para tu menú del clic derecho. Guarda cualquier imagen como PNG, JPG, WebP, GIF o PDF, saca su paleta de colores, convierte WebP y AVIF, y guarda fotos incluso en sitios que las ocultan del clic derecho.
 
-Clic derecho en una imagen → Imgkeep: Guardar imagen como → elige el formato. Se guarda directamente en la carpeta que elijas, o cópiala como PNG y pégala en otra aplicación. Las imágenes se convierten en tu equipo: sin subidas, sin cuenta.
+Clic derecho en una imagen → Imgkeep → elige el formato. Se guarda directamente en la carpeta que elijas, o cópiala como PNG y pégala en otra aplicación. Las imágenes se convierten en tu equipo: sin subidas, sin cuenta.
 
 FUNCIONA DONDE EL CLIC DERECHO NO LLEGA
 
@@ -97,6 +106,15 @@ Muchos sitios usan ahora imágenes WebP y AVIF, que otras aplicaciones a menudo 
 • Guardar como AVIF: en Más opciones, archivos que suelen ocupar la mitad que un JPG que se ve igual, con su transparencia.
 • Iconos y mapas de bits: en Más opciones, guarda como ICO (de 16 a 256 px en un solo archivo, para accesos directos y favicons) o BMP.
 • Conserva el original: guarda la imagen en su formato original cuando no necesites convertirla.
+
+TOMA LOS COLORES DE CUALQUIER IMAGEN
+
+Clic derecho en una imagen → Imgkeep → Obtener paleta de colores. Ve sus colores principales, de mayor a menor, y haz clic en uno para copiarlo como HEX, RGB o HSL.
+
+• Cópialos todos a la vez como variables CSS, un fragmento de Tailwind, JSON o una lista.
+• Guarda la paleta como una tira de muestras PNG, un archivo .gpl (GIMP, Inkscape, Krita) o un archivo .ase (Adobe Illustrator, Photoshop, InDesign).
+• Funciona con Buscar imagen aquí, así que puedes tomar colores de fotos en sitios como Instagram y Pinterest que bloquean el clic derecho.
+• Se calcula en tu equipo. La imagen y sus colores nunca salen de él.
 
 CAMBIA EL TAMAÑO Y CONTROLA LA CALIDAD
 
@@ -117,7 +135,7 @@ CONVERSIÓN LOCAL Y ACCESO BAJO TU CONTROL
 • Solo cuatro permisos: contextMenus, downloads, storage, offscreen. Dos más, activeTab y scripting, solo si activas Buscar imagen aquí.
 • Un único resumen diario anónimo: recuentos de uso y fallos, como «12 guardados como JPG, 1 fallido», para saber qué mejorar. Nunca imágenes, direcciones web ni nombres de archivo. Un clic en Opciones lo desactiva.
 • Código abierto con licencia MIT y sin paso de compilación: el código que lees es el código que se ejecuta. La única parte compilada, el codificador AVIF, es libavif, de código abierto, sin cambios y verificada por su huella.
-• Gratis y sin límites: sin anuncios, sin pestañas de bienvenida y una sola petición de valoración, nunca más. Todas las funciones disponibles hoy seguirán siendo gratis.
+• Gratis y sin límites: sin anuncios, sin pestañas de bienvenida y una sola petición de valoración, nunca más. Todas las funciones disponibles hoy seguirán siendo gratis, incluidas las paletas de colores.
 
 CUANDO UN SITIO BLOQUEA UNA IMAGEN
 
@@ -129,9 +147,9 @@ Sugiere funciones y vota ideas: https://imgkeep.app/ideas.html
 ## pt_BR — Portuguese (Brazil)
 
 ```text
-O Imgkeep é um conversor de imagens gratuito para o seu menu do clique direito. Salve qualquer imagem como PNG, JPG, WebP, GIF ou PDF, converta WebP e AVIF e salve fotos até em sites que as escondem do clique direito.
+O Imgkeep é um conversor de imagens gratuito para o seu menu do clique direito. Salve qualquer imagem como PNG, JPG, WebP, GIF ou PDF, pegue a paleta de cores, converta WebP e AVIF e salve fotos até em sites que as escondem do clique direito.
 
-Clique direito em uma imagem → Imgkeep: Salvar imagem como → escolha o formato. Ela é salva direto na pasta que você escolheu, ou copie como PNG e cole em outro app. As imagens são convertidas no seu computador: sem uploads, sem conta.
+Clique direito em uma imagem → Imgkeep → escolha o formato. Ela é salva direto na pasta que você escolheu, ou copie como PNG e cole em outro app. As imagens são convertidas no seu computador: sem uploads, sem conta.
 
 FUNCIONA ONDE O CLIQUE DIREITO NÃO CHEGA
 
@@ -150,6 +168,15 @@ Muitos sites agora usam imagens WebP e AVIF, que outros apps muitas vezes não a
 • Salvar como AVIF: em Mais opções, arquivos que costumam ter metade do tamanho de um JPG com a mesma aparência, com transparência.
 • Ícones e bitmaps: em Mais opções, salve como ICO (de 16 a 256 px em um só arquivo, para atalhos na área de trabalho e favicons) ou BMP.
 • Mantenha o original: salve a imagem no formato original quando não precisar converter.
+
+PEGUE AS CORES DE QUALQUER IMAGEM
+
+Clique direito em uma imagem → Imgkeep → Obter paleta de cores. Veja as cores principais, da maior para a menor, e clique em uma para copiá-la como HEX, RGB ou HSL.
+
+• Copie todas de uma vez como variáveis CSS, um trecho de Tailwind, JSON ou uma lista simples.
+• Salve a paleta como uma faixa de amostras PNG, um arquivo .gpl (GIMP, Inkscape, Krita) ou um arquivo .ase (Adobe Illustrator, Photoshop, InDesign).
+• Funciona com Encontrar imagem aqui, então você pode pegar cores de fotos em sites como Instagram e Pinterest que bloqueiam o clique direito.
+• Calculado no seu computador. A imagem e as cores dela nunca saem dele.
 
 REDIMENSIONE IMAGENS E CONTROLE A QUALIDADE
 
@@ -170,7 +197,7 @@ CONVERSÃO LOCAL E ACESSO SOB SEU CONTROLE
 • Só quatro permissões: contextMenus, downloads, storage, offscreen. Mais duas, activeTab e scripting, só se você ativar Encontrar imagem aqui.
 • Um único resumo diário anônimo: contagens de uso e falhas, como "12 salvamentos como JPG, 1 falhou", para sabermos o que melhorar. Nunca imagens, endereços de sites ou nomes de arquivos. Um clique nas Opções desativa.
 • Código aberto com licença MIT e sem etapa de build: o código que você lê é o código que roda. A única parte compilada, o codificador AVIF, é o libavif, de código aberto, sem alterações e verificado pela sua impressão digital.
-• Grátis e sem limites: sem anúncios, sem abas de boas-vindas e um único pedido de avaliação, só uma vez. Todos os recursos disponíveis hoje continuam grátis.
+• Grátis e sem limites: sem anúncios, sem abas de boas-vindas e um único pedido de avaliação, só uma vez. Todos os recursos disponíveis hoje continuam grátis, incluindo as paletas de cores.
 
 QUANDO UM SITE BLOQUEIA UMA IMAGEM
 
@@ -182,9 +209,9 @@ Sugira recursos e vote em ideias: https://imgkeep.app/ideas.html
 ## de — German
 
 ```text
-Imgkeep ist ein kostenloser Bildkonverter für dein Rechtsklickmenü. Speichere jedes Bild als PNG, JPG, WebP, GIF oder PDF, wandle WebP und AVIF um und speichere Fotos sogar auf Websites, die sie vor dem Rechtsklick verstecken.
+Imgkeep ist ein kostenloser Bildkonverter für dein Rechtsklickmenü. Speichere jedes Bild als PNG, JPG, WebP, GIF oder PDF, hol dir seine Farbpalette, wandle WebP und AVIF um und speichere Fotos sogar auf Websites, die sie vor dem Rechtsklick verstecken.
 
-Rechtsklick auf ein Bild → Imgkeep: Bild speichern als → Format wählen. Es wird direkt in deinem gewählten Ordner gespeichert, oder kopiere es als PNG und füge es in eine andere App ein. Die Bilder werden auf deinem Computer umgewandelt: keine Uploads, kein Konto.
+Rechtsklick auf ein Bild → Imgkeep → Format wählen. Es wird direkt in deinem gewählten Ordner gespeichert, oder kopiere es als PNG und füge es in eine andere App ein. Die Bilder werden auf deinem Computer umgewandelt: keine Uploads, kein Konto.
 
 FUNKTIONIERT, WO DER RECHTSKLICK NICHT HINKOMMT
 
@@ -203,6 +230,15 @@ Viele Websites nutzen heute WebP- und AVIF-Bilder, die andere Programme oft nich
 • Als AVIF speichern: In Weitere Optionen, oft halb so groß wie ein JPG, das gleich aussieht, mit Transparenz.
 • Icons und Bitmaps: In Weitere Optionen als ICO speichern (16 bis 256 px in einer Datei, für Desktop-Verknüpfungen und Favicons) oder als BMP.
 • Original behalten: Speichere das Bild im Originalformat, wenn du keine Umwandlung brauchst.
+
+FARBEN AUS JEDEM BILD HOLEN
+
+Rechtsklick auf ein Bild → Imgkeep → Farbpalette holen. Sieh seine Hauptfarben, größte zuerst, und klick auf eine, um sie als HEX, RGB oder HSL zu kopieren.
+
+• Kopiere alle auf einmal als CSS-Variablen, Tailwind-Snippet, JSON oder einfache Liste.
+• Speichere die Palette als PNG-Farbstreifen, als .gpl-Datei (GIMP, Inkscape, Krita) oder als .ase-Datei (Adobe Illustrator, Photoshop, InDesign).
+• Funktioniert mit „Bild hier finden“, so holst du Farben auch aus Fotos auf Websites wie Instagram und Pinterest, die den Rechtsklick blockieren.
+• Wird auf deinem Computer berechnet. Das Bild und seine Farben verlassen ihn nie.
 
 BILDGRÖSSE ÄNDERN UND QUALITÄT STEUERN
 
@@ -223,7 +259,7 @@ LOKALE UMWANDLUNG UND ZUGRIFF UNTER DEINER KONTROLLE
 • Nur vier Berechtigungen: contextMenus, downloads, storage, offscreen. Zwei weitere, activeTab und scripting, nur wenn du Bild hier finden einschaltest.
 • Eine anonyme tägliche Zusammenfassung: Nutzungszahlen und Fehler wie „12-mal als JPG gespeichert, 1 fehlgeschlagen“, damit wir wissen, was wir verbessern sollten. Niemals Bilder, Webadressen oder Dateinamen. Ein Klick in den Optionen schaltet sie aus.
 • Open Source unter der MIT-Lizenz, ohne Build-Schritt: Der Code, den du liest, ist der Code, der läuft. Der einzige kompilierte Teil, der AVIF-Encoder, ist das quelloffene libavif, unverändert und per Fingerabdruck geprüft.
-• Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs und nur eine einzige Bitte um eine Bewertung. Jede Funktion, die es heute gibt, bleibt kostenlos.
+• Kostenlos und ohne Grenzen: keine Werbung, keine Willkommens-Tabs und nur eine einzige Bitte um eine Bewertung. Jede Funktion, die es heute gibt, bleibt kostenlos, auch die Farbpaletten.
 
 WENN EINE WEBSITE EIN BILD BLOCKIERT
 
@@ -235,9 +271,9 @@ Funktionen vorschlagen und über Ideen abstimmen: https://imgkeep.app/ideas.html
 ## fr — French
 
 ```text
-Imgkeep est un convertisseur d'images gratuit pour votre menu du clic droit. Enregistrez n'importe quelle image en PNG, JPG, WebP, GIF ou PDF, convertissez le WebP et l'AVIF, et enregistrez des photos même sur les sites qui les cachent au clic droit.
+Imgkeep est un convertisseur d'images gratuit pour votre menu du clic droit. Enregistrez n'importe quelle image en PNG, JPG, WebP, GIF ou PDF, récupérez sa palette de couleurs, convertissez le WebP et l'AVIF, et enregistrez des photos même sur les sites qui les cachent au clic droit.
 
-Clic droit sur une image → Imgkeep : Enregistrer l'image en → choisissez le format. Elle est enregistrée directement dans le dossier de votre choix, ou copiez-la en PNG et collez-la dans une autre application. Les images sont converties sur votre ordinateur : pas d'envoi, pas de compte.
+Clic droit sur une image → Imgkeep → choisissez le format. Elle est enregistrée directement dans le dossier de votre choix, ou copiez-la en PNG et collez-la dans une autre application. Les images sont converties sur votre ordinateur : pas d'envoi, pas de compte.
 
 FONCTIONNE LÀ OÙ LE CLIC DROIT NE PASSE PAS
 
@@ -256,6 +292,15 @@ Beaucoup de sites utilisent désormais des images WebP et AVIF, que d'autres app
 • Enregistrer en AVIF : dans Plus d'options, des fichiers souvent deux fois plus légers qu'un JPG au même rendu, transparence comprise.
 • Icônes et bitmaps : dans Plus d'options, enregistrez en ICO (de 16 à 256 px dans un seul fichier, pour les raccourcis du bureau et les favicons) ou en BMP.
 • Garder l'original : enregistrez l'image dans son format d'origine quand vous n'avez pas besoin de conversion.
+
+RÉCUPÉREZ LES COULEURS DE N'IMPORTE QUELLE IMAGE
+
+Clic droit sur une image → Imgkeep → Obtenir la palette de couleurs. Voyez ses couleurs principales, de la plus présente à la moins présente, et cliquez sur une couleur pour la copier en HEX, RGB ou HSL.
+
+• Copiez-les toutes d'un coup en variables CSS, en extrait Tailwind, en JSON ou en simple liste.
+• Enregistrez la palette en bande de nuances PNG, en fichier .gpl (GIMP, Inkscape, Krita) ou en fichier .ase (Adobe Illustrator, Photoshop, InDesign).
+• Fonctionne avec « Trouver l'image ici », pour prendre les couleurs de photos sur des sites comme Instagram et Pinterest qui bloquent le clic droit.
+• Calculé sur votre ordinateur. L'image et ses couleurs ne le quittent jamais.
 
 REDIMENSIONNER ET CONTRÔLER LA QUALITÉ
 
@@ -276,7 +321,7 @@ CONVERSION LOCALE ET ACCÈS SOUS VOTRE CONTRÔLE
 • Seulement quatre autorisations : contextMenus, downloads, storage, offscreen. Deux de plus, activeTab et scripting, seulement si vous activez Trouver l'image ici.
 • Un seul résumé quotidien anonyme : des compteurs d'utilisation et d'échecs, comme « 12 enregistrements en JPG, 1 échec », pour savoir quoi améliorer. Jamais d'images, d'adresses de sites ni de noms de fichiers. Un clic dans les Options le désactive.
 • Open source sous licence MIT, sans étape de compilation : le code que vous lisez est le code qui s'exécute. La seule partie compilée, l'encodeur AVIF, est libavif, open source, inchangé et vérifié par son empreinte.
-• Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue, et une seule demande de note, une fois pour toutes. Toutes les fonctions disponibles aujourd'hui restent gratuites.
+• Gratuit, sans limites : pas de pub, pas d'onglets de bienvenue, et une seule demande de note, une fois pour toutes. Toutes les fonctions disponibles aujourd'hui restent gratuites, palettes de couleurs comprises.
 
 QUAND UN SITE BLOQUE UNE IMAGE
 
@@ -288,9 +333,9 @@ Proposez des fonctions et votez pour des idées : https://imgkeep.app/ideas.html
 ## ja — Japanese
 
 ```text
-Imgkeep は、右クリックメニューで使える無料の画像変換ツールです。どんな画像も PNG・JPG・WebP・GIF・PDF で保存でき、WebP や AVIF を変換し、右クリックから画像を隠しているサイトでも写真を保存できます。
+Imgkeep は、右クリックメニューで使える無料の画像変換ツールです。どんな画像も PNG・JPG・WebP・GIF・PDF で保存でき、カラーパレットを取り出し、WebP や AVIF を変換し、右クリックから画像を隠しているサイトでも写真を保存できます。
 
-画像を右クリック →「Imgkeep: 名前を付けて画像を保存」→ 形式を選ぶ。選んだフォルダにそのまま保存されます。PNG としてコピーして、別のアプリに貼り付けることもできます。画像はパソコン上で変換され、アップロードもアカウントも不要です。
+画像を右クリック →「Imgkeep」→ 形式を選ぶ。選んだフォルダにそのまま保存されます。PNG としてコピーして、別のアプリに貼り付けることもできます。画像はパソコン上で変換され、アップロードもアカウントも不要です。
 
 右クリックが届かない場所でも使える
 
@@ -309,6 +354,15 @@ WEBP と AVIF を PNG や JPG に変換
 • AVIF で保存：「その他のオプション」で、同じ見た目の JPG の半分ほどのサイズになることが多いファイルを、透過を保ったまま保存できます。
 • アイコンとビットマップ：「その他のオプション」で ICO（16〜256 px を 1 つのファイルに。デスクトップのショートカットやファビコンに）や BMP で保存できます。
 • 元の形式のまま：変換が不要なときは、画像を元の形式で保存できます。
+
+どんな画像からも色を取り出す
+
+画像を右クリック →「Imgkeep」→「カラーパレットを取得」。主な色が多い順に表示され、クリックすると HEX・RGB・HSL でコピーできます。
+
+• すべての色を CSS変数、Tailwind のスニペット、JSON、シンプルなリストとしてまとめてコピー。
+• パレットを PNG のスウォッチ画像、.gpl ファイル（GIMP・Inkscape・Krita）、.ase ファイル（Adobe Illustrator・Photoshop・InDesign）として保存。
+•「ここで画像を探す」と組み合わせれば、Instagram や Pinterest のように右クリックを妨げるサイトの写真からも色を取り出せます。
+• 色はパソコン上で計算されます。画像もその色も外に送られることはありません。
 
 サイズ変更と画質の調整
 
@@ -329,7 +383,7 @@ WEBP と AVIF を PNG や JPG に変換
 • 権限は 4 つだけ：contextMenus、downloads、storage、offscreen。「ここで画像を探す」をオンにした場合のみ、activeTab と scripting の 2 つが加わります。
 • 匿名の 1 日分のまとめを 1 回だけ：「JPGで12回保存、1回失敗」のような使用回数と失敗の数で、改善に役立てます。画像、サイトのアドレス、ファイル名は一切含みません。オプションでワンクリックでオフにできます。
 • MIT ライセンスのオープンソースで、ビルド工程なし。読めるコードがそのまま動きます。唯一のコンパイル済み部分である AVIF エンコーダーは、オープンソースの libavif をそのまま使い、フィンガープリントで検証しています。
-• 無料で制限なし：広告なし、ようこそタブなし、評価のお願いは一度だけ。現在のすべての機能は、これからも無料です。
+• 無料で制限なし：広告なし、ようこそタブなし、評価のお願いは一度だけ。現在のすべての機能は、カラーパレットも含めて、これからも無料です。
 
 サイトが画像をブロックしているとき
 
@@ -341,9 +395,9 @@ WEBP と AVIF を PNG や JPG に変換
 ## hi — Hindi
 
 ```text
-Imgkeep आपके राइट-क्लिक मेन्यू के लिए एक मुफ़्त इमेज कन्वर्टर है। किसी भी इमेज को PNG, JPG, WebP, GIF या PDF के रूप में सेव करें, WebP और AVIF बदलें, और उन साइटों पर भी फ़ोटो सेव करें जो उन्हें राइट-क्लिक से छिपाती हैं।
+Imgkeep आपके राइट-क्लिक मेन्यू के लिए एक मुफ़्त इमेज कन्वर्टर है। किसी भी इमेज को PNG, JPG, WebP, GIF या PDF के रूप में सेव करें, उसका कलर पैलेट लें, WebP और AVIF बदलें, और उन साइटों पर भी फ़ोटो सेव करें जो उन्हें राइट-क्लिक से छिपाती हैं।
 
-इमेज पर राइट-क्लिक करें → Imgkeep: इमेज इस रूप में सेव करें → अपना फ़ॉर्मैट चुनें। इमेज सीधे आपके चुने हुए फ़ोल्डर में सेव होती है, या उसे PNG के रूप में कॉपी करके किसी दूसरे ऐप में पेस्ट करें। इमेज आपके कंप्यूटर पर ही बदली जाती हैं: न अपलोड, न अकाउंट।
+इमेज पर राइट-क्लिक करें → Imgkeep → अपना फ़ॉर्मैट चुनें। इमेज सीधे आपके चुने हुए फ़ोल्डर में सेव होती है, या उसे PNG के रूप में कॉपी करके किसी दूसरे ऐप में पेस्ट करें। इमेज आपके कंप्यूटर पर ही बदली जाती हैं: न अपलोड, न अकाउंट।
 
 जहाँ राइट-क्लिक काम नहीं करता, वहाँ भी काम करता है
 
@@ -362,6 +416,15 @@ WEBP और AVIF को PNG या JPG में बदलें
 • AVIF में सेव करें: और विकल्प में, अक्सर उतने ही अच्छे दिखने वाले JPG से आधे साइज़ की फ़ाइलें, पारदर्शिता के साथ।
 • आइकन और बिटमैप: और विकल्प में ICO (एक ही फ़ाइल में 16 से 256 px, डेस्कटॉप शॉर्टकट और फ़ेविकॉन के लिए) या BMP के रूप में सेव करें।
 • मूल रखें: जब बदलने की ज़रूरत न हो, तो इमेज को उसके मूल फ़ॉर्मैट में सेव करें।
+
+किसी भी इमेज से रंग लें
+
+इमेज पर राइट-क्लिक करें → Imgkeep → कलर पैलेट पाएं। उसके मुख्य रंग देखें, सबसे ज़्यादा वाले पहले, और किसी रंग पर क्लिक करके उसे HEX, RGB या HSL के रूप में कॉपी करें।
+
+• सारे रंग एक साथ CSS वेरिएबल, Tailwind स्निपेट, JSON या सादी सूची के रूप में कॉपी करें।
+• पैलेट को PNG स्वैच पट्टी, .gpl फ़ाइल (GIMP, Inkscape, Krita) या .ase फ़ाइल (Adobe Illustrator, Photoshop, InDesign) के रूप में सेव करें।
+• यहाँ इमेज ढूँढें के साथ काम करता है, ताकि Instagram और Pinterest जैसी साइटों पर भी फ़ोटो से रंग ले सकें जो राइट-क्लिक रोकती हैं।
+• आपके कंप्यूटर पर निकाला जाता है। इमेज और उसके रंग कभी बाहर नहीं जाते।
 
 इमेज का साइज़ बदलें और क्वालिटी नियंत्रित करें
 
@@ -382,7 +445,7 @@ WEBP और AVIF को PNG या JPG में बदलें
 • सिर्फ़ चार अनुमतियाँ: contextMenus, downloads, storage, offscreen। दो और, activeTab और scripting, सिर्फ़ तब जब आप यहाँ इमेज ढूँढें चालू करें।
 • रोज़ एक गुमनाम सारांश: इस्तेमाल और विफलताओं की गिनती, जैसे "JPG में 12 सेव, 1 विफल", ताकि हम जानें कि क्या बेहतर करना है। कभी भी इमेज, वेबसाइट के पते या फ़ाइल के नाम नहीं। विकल्पों में एक क्लिक से इसे बंद करें।
 • MIT लाइसेंस के तहत ओपन सोर्स, बिना बिल्ड स्टेप के, यानी जो कोड आप पढ़ते हैं वही चलता है। एकमात्र कंपाइल किया गया हिस्सा, AVIF एनकोडर, ओपन-सोर्स libavif है, बिना बदलाव के और उसके फ़िंगरप्रिंट से जाँचा गया।
-• मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब, और रेटिंग का अनुरोध सिर्फ़ एक बार। आज उपलब्ध हर सुविधा मुफ़्त रहेगी।
+• मुफ़्त, बिना किसी सीमा के: न विज्ञापन, न वेलकम टैब, और रेटिंग का अनुरोध सिर्फ़ एक बार। आज उपलब्ध हर सुविधा मुफ़्त रहेगी, कलर पैलेट भी।
 
 जब कोई साइट इमेज को ब्लॉक करती है
 
@@ -394,9 +457,9 @@ WEBP और AVIF को PNG या JPG में बदलें
 ## ar — Arabic
 
 ```text
-Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس الأيمن. احفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، وحوّل صور WebP وAVIF، واحفظ الصور حتى في المواقع التي تخفيها عن النقرة اليمنى.
+Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس الأيمن. احفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، وخذ لوحة ألوانها، وحوّل صور WebP وAVIF، واحفظ الصور حتى في المواقع التي تخفيها عن النقرة اليمنى.
 
-انقر بزر الماوس الأيمن على صورة ← Imgkeep: حفظ الصورة بصيغة ← اختر الصيغة. تُحفظ مباشرة في المجلد الذي اخترته، أو انسخها بصيغة PNG والصقها في تطبيق آخر. تُحوَّل الصور على جهازك: بلا رفع ملفات، بلا حساب.
+انقر بزر الماوس الأيمن على صورة ← Imgkeep ← اختر الصيغة. تُحفظ مباشرة في المجلد الذي اخترته، أو انسخها بصيغة PNG والصقها في تطبيق آخر. تُحوَّل الصور على جهازك: بلا رفع ملفات، بلا حساب.
 
 يعمل حيث لا تعمل النقرة اليمنى
 
@@ -415,6 +478,15 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 • الحفظ بصيغة AVIF: من مزيد من الخيارات، ملفات غالبًا بنصف حجم JPG يبدو مثلها، مع الحفاظ على الشفافية.
 • الأيقونات والصور النقطية: من مزيد من الخيارات، احفظ بصيغة ICO (من 16 إلى 256 بكسل في ملف واحد، لاختصارات سطح المكتب وأيقونات المواقع) أو BMP.
 • الاحتفاظ بالأصل: احفظ الصورة بصيغتها الأصلية عندما لا تحتاج إلى تحويل.
+
+خذ الألوان من أي صورة
+
+انقر بزر الماوس الأيمن على صورة ← Imgkeep ← الحصول على لوحة الألوان. شاهد ألوانها الرئيسية، الأكثر أولًا، وانقر على لون لنسخه بصيغة HEX أو RGB أو HSL.
+
+• انسخها كلها دفعة واحدة كمتغيرات CSS أو مقتطف Tailwind أو JSON أو قائمة بسيطة.
+• احفظ اللوحة كشريط عينات PNG أو ملف ‎.gpl (GIMP وInkscape وKrita) أو ملف ‎.ase (Adobe Illustrator وPhotoshop وInDesign).
+• يعمل مع "البحث عن الصورة هنا"، فيمكنك أخذ الألوان من الصور في مواقع مثل Instagram وPinterest التي تمنع النقرة اليمنى.
+• تُحسب على جهازك. الصورة وألوانها لا تغادره أبدًا.
 
 تغيير حجم الصور والتحكم في الجودة
 
@@ -435,7 +507,7 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 • أربعة أذونات فقط: contextMenus وdownloads وstorage وoffscreen. واثنان آخران، activeTab وscripting، فقط إذا شغّلت البحث عن الصورة هنا.
 • ملخص يومي مجهول واحد: أعداد الاستخدام والإخفاقات، مثل "12 حفظًا بصيغة JPG، فشل 1"، لنعرف ما الذي نحسّنه. لا صور ولا عناوين مواقع ولا أسماء ملفات أبدًا. نقرة واحدة في الخيارات توقفه.
 • مفتوح المصدر بترخيص MIT، وبلا خطوة بناء، فالشيفرة التي تقرؤها هي التي تعمل. الجزء المُجمَّع الوحيد، مُرمِّز AVIF، هو libavif مفتوح المصدر، دون تعديل ويُتحقق منه ببصمته.
-• مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية، وطلب تقييم واحد فقط، مرة واحدة. كل ميزة متاحة اليوم ستبقى مجانية.
+• مجاني وبلا حدود: بلا إعلانات، بلا علامات تبويب ترحيبية، وطلب تقييم واحد فقط، مرة واحدة. كل ميزة متاحة اليوم ستبقى مجانية، بما فيها لوحات الألوان.
 
 عندما يحظر موقع صورة
 

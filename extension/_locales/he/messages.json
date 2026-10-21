@@ -3,10 +3,10 @@
     "message": "שמירת תמונה כ-PNG, JPG, WebP, GIF או PDF — Imgkeep"
   },
   "extDescription": {
-    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF, גם כאלה שאתרים מסתירים. מומר במחשב שלך. בלי מידע אישי."
+    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF, או לקבלת פלטת הצבעים שלה. במחשב שלך. בלי מידע אישי."
   },
   "menuParent": {
-    "message": "Imgkeep: שמירת התמונה בתור"
+    "message": "Imgkeep"
   },
   "menuLastUsed": {
     "message": "$FORMAT$ (בפעם הקודמת)",
@@ -25,6 +25,9 @@
   },
   "menuCopyPng": {
     "message": "העתקה כ-PNG"
+  },
+  "menuPalette": {
+    "message": "קבלת פלטת צבעים"
   },
   "menuMoreOptions": {
     "message": "אפשרויות נוספות…"
@@ -559,5 +562,93 @@
   },
   "findErrorBody": {
     "message": "טוענים מחדש את הדף, ואז לוחצים לחיצה ימנית על התמונה ובוחרים שוב מציאת תמונה כאן."
+  },
+  "paletteTitle": {
+    "message": "פלטת צבעים"
+  },
+  "paletteLoading": {
+    "message": "מחפש את הצבעים…"
+  },
+  "paletteCount": {
+    "message": "צבעים"
+  },
+  "paletteSwatches": {
+    "message": "הצבעים העיקריים בתמונה, מהגדול לקטן"
+  },
+  "paletteCopyOne": {
+    "message": "העתקת $VALUE$ ($SHARE$ מהתמונה)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "הועתק: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "העתקת הכול כ־"
+  },
+  "paletteCodeCss": {
+    "message": "משתני CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "רשימה"
+  },
+  "paletteCopiedAll": {
+    "message": "כל הצבעים הועתקו: $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "שמירה כ־"
+  },
+  "paletteSavePng": {
+    "message": "דוגמיות PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "פלטת GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "דוגמיות Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "התיקייה שלך לא הייתה זמינה, אז הקובץ נשמר בהורדות: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "התמונה שקופה לגמרי, אז אין בה צבעים."
+  },
+  "paletteCopyFailed": {
+    "message": "ההעתקה נכשלה. לחצו בתוך החלון ונסו שוב."
+  },
+  "paletteNote": {
+    "message": "הצבעים מחושבים במחשב שלך. התמונה והצבעים שלה לא יוצאים ממנו."
   }
 }

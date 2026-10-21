@@ -1,5 +1,5 @@
 // More options: pick format, maximum width, quality, background and file name for one image,
-// see the real result (dimensions, encoded size, the image itself), then Save or Copy as PNG.
+// see the real result (dimensions, encoded size, the image itself), then Save, Copy as PNG or Get colour palette.
 // The preview comes from the same pipeline as every other save, so what you see is what you get.
 
 import { t, localisePage } from "./lib/i18n.js";
@@ -223,6 +223,8 @@ async function init() {
   $("form").addEventListener("submit", (e) => (e.preventDefault(), save()));
   $("save").addEventListener("click", save);
   $("copy").addEventListener("click", copy);
+  // The same image's colours, in their own window (also how images found by Find image here get there).
+  $("palette").addEventListener("click", () => toBackground("openPalette").catch(() => {}));
   $("close").addEventListener("click", close);
   $("controls").disabled = false; // usable only now, so nothing typed earlier gets overwritten
   await preview();

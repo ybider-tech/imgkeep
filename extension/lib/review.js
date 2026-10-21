@@ -65,7 +65,7 @@ export const finishAsk = (usage) => ({ ...usage, ask: "done" });
 // ---- "New" in the right-click menu ----
 
 // The version that added each menu item.
-export const MENU_SINCE = { "imgkeep-pdf": "0.5.0", "imgkeep-copy": "0.6.0", "imgkeep-more": "0.6.0" };
+export const MENU_SINCE = { "imgkeep-pdf": "0.5.0", "imgkeep-copy": "0.6.0", "imgkeep-more": "0.6.0", "imgkeep-palette": "0.11.0" };
 export const NEW_DAYS = 30;
 
 export function compareVersions(a, b) {
