@@ -14,7 +14,7 @@ def ph(**kw):
 # key: (description, placeholders, after_key, [en, he, es, pt_BR, de, fr, ja, hi, ar])
 M = {
  "extDescription": ("Store summary. Max 132 characters.", None, None, [
-  "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or take its colour palette. On your device. No personal data.",
+  "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.",
   "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF, או לקבלת פלטת הצבעים שלה. במחשב שלך. בלי מידע אישי.",
   "Clic derecho: guarda cualquier imagen como PNG, JPG, WebP, GIF o PDF, o saca su paleta. En tu equipo. Sin datos personales.",
   "Botão direito: salve qualquer imagem como PNG, JPG, WebP, GIF ou PDF, ou pegue a paleta de cores. No seu PC. Sem dados pessoais.",

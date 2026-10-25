@@ -50,7 +50,7 @@ required fields (search terms optional; reuse the English screenshots and logo) 
 לחיצה ימנית על תמונה ← Imgkeep ← קבלת פלטת צבעים. רואים את הצבעים העיקריים שלה, מהגדול לקטן, ולוחצים על צבע כדי להעתיק אותו כ-HEX,‏ RGB או HSL.
 
 • מעתיקים את כולם בבת אחת כמשתני CSS, קטע Tailwind,‏ JSON או רשימה פשוטה.
-• שומרים את הפלטה כרצועת דוגמיות PNG, קובץ ‎.gpl‏ (GIMP,‏ Inkscape,‏ Krita) או קובץ ‎.ase‏ (Adobe Illustrator,‏ Photoshop,‏ InDesign).
+• שומרים את הפלטה כרצועת דוגמיות PNG, קובץ ‎.gpl‏ (GIMP) או קובץ ‎.ase‏ (Adobe).
 • עובד עם מציאת תמונה כאן, כך שאפשר לקחת צבעים מתמונות באתרים כמו Instagram ו-Pinterest שחוסמים את הלחיצה הימנית.
 • מחושב במחשב שלך. התמונה והצבעים שלה לא יוצאים ממנו.
 
@@ -112,7 +112,7 @@ TOMA LOS COLORES DE CUALQUIER IMAGEN
 Clic derecho en una imagen → Imgkeep → Obtener paleta de colores. Ve sus colores principales, de mayor a menor, y haz clic en uno para copiarlo como HEX, RGB o HSL.
 
 • Cópialos todos a la vez como variables CSS, un fragmento de Tailwind, JSON o una lista.
-• Guarda la paleta como una tira de muestras PNG, un archivo .gpl (GIMP, Inkscape, Krita) o un archivo .ase (Adobe Illustrator, Photoshop, InDesign).
+• Guarda la paleta como una tira de muestras PNG, un archivo .gpl (GIMP) o un archivo .ase (Adobe).
 • Funciona con Buscar imagen aquí, así que puedes tomar colores de fotos en sitios como Instagram y Pinterest que bloquean el clic derecho.
 • Se calcula en tu equipo. La imagen y sus colores nunca salen de él.
 
@@ -174,7 +174,7 @@ PEGUE AS CORES DE QUALQUER IMAGEM
 Clique direito em uma imagem → Imgkeep → Obter paleta de cores. Veja as cores principais, da maior para a menor, e clique em uma para copiá-la como HEX, RGB ou HSL.
 
 • Copie todas de uma vez como variáveis CSS, um trecho de Tailwind, JSON ou uma lista simples.
-• Salve a paleta como uma faixa de amostras PNG, um arquivo .gpl (GIMP, Inkscape, Krita) ou um arquivo .ase (Adobe Illustrator, Photoshop, InDesign).
+• Salve a paleta como uma faixa de amostras PNG, um arquivo .gpl (GIMP) ou um arquivo .ase (Adobe).
 • Funciona com Encontrar imagem aqui, então você pode pegar cores de fotos em sites como Instagram e Pinterest que bloqueiam o clique direito.
 • Calculado no seu computador. A imagem e as cores dela nunca saem dele.
 
@@ -236,7 +236,7 @@ FARBEN AUS JEDEM BILD HOLEN
 Rechtsklick auf ein Bild → Imgkeep → Farbpalette holen. Sieh seine Hauptfarben, größte zuerst, und klick auf eine, um sie als HEX, RGB oder HSL zu kopieren.
 
 • Kopiere alle auf einmal als CSS-Variablen, Tailwind-Snippet, JSON oder einfache Liste.
-• Speichere die Palette als PNG-Farbstreifen, als .gpl-Datei (GIMP, Inkscape, Krita) oder als .ase-Datei (Adobe Illustrator, Photoshop, InDesign).
+• Speichere die Palette als PNG-Farbstreifen, als .gpl-Datei (GIMP) oder als .ase-Datei (Adobe).
 • Funktioniert mit „Bild hier finden“, so holst du Farben auch aus Fotos auf Websites wie Instagram und Pinterest, die den Rechtsklick blockieren.
 • Wird auf deinem Computer berechnet. Das Bild und seine Farben verlassen ihn nie.
 
@@ -298,7 +298,7 @@ RÉCUPÉREZ LES COULEURS DE N'IMPORTE QUELLE IMAGE
 Clic droit sur une image → Imgkeep → Obtenir la palette de couleurs. Voyez ses couleurs principales, de la plus présente à la moins présente, et cliquez sur une couleur pour la copier en HEX, RGB ou HSL.
 
 • Copiez-les toutes d'un coup en variables CSS, en extrait Tailwind, en JSON ou en simple liste.
-• Enregistrez la palette en bande de nuances PNG, en fichier .gpl (GIMP, Inkscape, Krita) ou en fichier .ase (Adobe Illustrator, Photoshop, InDesign).
+• Enregistrez la palette en bande de nuances PNG, en fichier .gpl (GIMP) ou en fichier .ase (Adobe).
 • Fonctionne avec « Trouver l'image ici », pour prendre les couleurs de photos sur des sites comme Instagram et Pinterest qui bloquent le clic droit.
 • Calculé sur votre ordinateur. L'image et ses couleurs ne le quittent jamais.
 
@@ -360,7 +360,7 @@ WEBP と AVIF を PNG や JPG に変換
 画像を右クリック →「Imgkeep」→「カラーパレットを取得」。主な色が多い順に表示され、クリックすると HEX・RGB・HSL でコピーできます。
 
 • すべての色を CSS変数、Tailwind のスニペット、JSON、シンプルなリストとしてまとめてコピー。
-• パレットを PNG のスウォッチ画像、.gpl ファイル（GIMP・Inkscape・Krita）、.ase ファイル（Adobe Illustrator・Photoshop・InDesign）として保存。
+• パレットを PNG のスウォッチ画像、.gpl ファイル（GIMP）、.ase ファイル（Adobe）として保存。
 •「ここで画像を探す」と組み合わせれば、Instagram や Pinterest のように右クリックを妨げるサイトの写真からも色を取り出せます。
 • 色はパソコン上で計算されます。画像もその色も外に送られることはありません。
 
@@ -422,7 +422,7 @@ WEBP और AVIF को PNG या JPG में बदलें
 इमेज पर राइट-क्लिक करें → Imgkeep → कलर पैलेट पाएं। उसके मुख्य रंग देखें, सबसे ज़्यादा वाले पहले, और किसी रंग पर क्लिक करके उसे HEX, RGB या HSL के रूप में कॉपी करें।
 
 • सारे रंग एक साथ CSS वेरिएबल, Tailwind स्निपेट, JSON या सादी सूची के रूप में कॉपी करें।
-• पैलेट को PNG स्वैच पट्टी, .gpl फ़ाइल (GIMP, Inkscape, Krita) या .ase फ़ाइल (Adobe Illustrator, Photoshop, InDesign) के रूप में सेव करें।
+• पैलेट को PNG स्वैच पट्टी, .gpl फ़ाइल (GIMP) या .ase फ़ाइल (Adobe) के रूप में सेव करें।
 • यहाँ इमेज ढूँढें के साथ काम करता है, ताकि Instagram और Pinterest जैसी साइटों पर भी फ़ोटो से रंग ले सकें जो राइट-क्लिक रोकती हैं।
 • आपके कंप्यूटर पर निकाला जाता है। इमेज और उसके रंग कभी बाहर नहीं जाते।
 
@@ -484,7 +484,7 @@ Imgkeep محوّل صور مجاني لقائمة النقر بزر الماوس
 انقر بزر الماوس الأيمن على صورة ← Imgkeep ← الحصول على لوحة الألوان. شاهد ألوانها الرئيسية، الأكثر أولًا، وانقر على لون لنسخه بصيغة HEX أو RGB أو HSL.
 
 • انسخها كلها دفعة واحدة كمتغيرات CSS أو مقتطف Tailwind أو JSON أو قائمة بسيطة.
-• احفظ اللوحة كشريط عينات PNG أو ملف ‎.gpl (GIMP وInkscape وKrita) أو ملف ‎.ase (Adobe Illustrator وPhotoshop وInDesign).
+• احفظ اللوحة كشريط عينات PNG أو ملف ‎.gpl (GIMP) أو ملف ‎.ase (Adobe).
 • يعمل مع "البحث عن الصورة هنا"، فيمكنك أخذ الألوان من الصور في مواقع مثل Instagram وPinterest التي تمنع النقرة اليمنى.
 • تُحسب على جهازك. الصورة وألوانها لا تغادره أبدًا.
 

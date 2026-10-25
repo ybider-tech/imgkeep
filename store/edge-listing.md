@@ -13,17 +13,17 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 
 ## Store listing (English)
 - **Display name:** comes from the manifest: Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
-- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, even ones sites hide. Converted on your device. No personal data.
+- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
-- **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`
+- **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`, `store/screenshot-6-find.png`, `store/screenshot-7-palette.png` (0.11.0: add 6 and 7; Edge allows 10)
 - **YouTube video URL:** https://youtu.be/QZfq5xLYdmo (add now as a listing update)
 - **Search terms** (7 max, ≤30 characters each, ≤21 words in total; these are 21):
   1. save image as png
   2. save image as jpg
   3. webp to jpg
   4. webp to png
-  5. webp to gif
+  5. image color palette
   6. avif to jpg
   7. converter
 
@@ -56,7 +56,7 @@ TAKE THE COLOURS FROM ANY IMAGE
 Right-click an image → Imgkeep → Get colour palette. See its main colours, largest first, and click one to copy it as HEX, RGB or HSL.
 
 • Copy all at once as CSS variables, a Tailwind snippet, JSON or a plain list.
-• Save the palette as a PNG swatch strip, a .gpl file (GIMP, Inkscape, Krita) or an .ase file (Adobe Illustrator, Photoshop, InDesign).
+• Save the palette as a PNG swatch strip, a .gpl file for GIMP or an .ase file for Adobe apps.
 • Works with Find image here, so you can take colours from photos on sites like Instagram and Pinterest that block the right-click.
 • Worked out on your computer. The image and its colours never leave it.
 

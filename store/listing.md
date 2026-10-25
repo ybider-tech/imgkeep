@@ -6,7 +6,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 - **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or take its colour palette. On your device. No personal data.
+- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.
 - **Category:** Tools
 - **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
@@ -45,7 +45,7 @@ TAKE THE COLOURS FROM ANY IMAGE
 Right-click an image → Imgkeep → Get colour palette. See its main colours, largest first, and click one to copy it as HEX, RGB or HSL.
 
 • Copy all at once as CSS variables, a Tailwind snippet, JSON or a plain list.
-• Save the palette as a PNG swatch strip, a .gpl file (GIMP, Inkscape, Krita) or an .ase file (Adobe Illustrator, Photoshop, InDesign).
+• Save the palette as a PNG swatch strip, a .gpl file for GIMP or an .ase file for Adobe apps.
 • Works with Find image here, so you can take colours from photos on sites like Instagram and Pinterest that block the right-click.
 • Worked out on your computer. The image and its colours never leave it.
 

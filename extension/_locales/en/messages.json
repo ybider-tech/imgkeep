@@ -4,7 +4,7 @@
     "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
   },
   "extDescription": {
-    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or take its colour palette. On your device. No personal data.",
+    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.",
     "description": "Store summary. Max 132 characters."
   },
   "menuParent": {
