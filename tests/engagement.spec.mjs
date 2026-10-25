@@ -175,6 +175,21 @@ test.describe("in the extension", () => {
     await again.waitForEvent("close", { timeout: 5000 });
   });
 
+  test("the counts tell the menu item and the window note apart (0.11.0)", async () => {
+    const counts = () => ctx.sw.evaluate(() => globalThis.imgkeepCount().then(() => chrome.storage.local.get("counts")).then((s) => s.counts?.c || {}));
+    await setUsage(ready());
+    await ctx.sw.evaluate(() => globalThis.imgkeepRefreshMenus()); // shown again: still counted once
+    expect(await counts()).toEqual({ rating_asked: 1, rating_menu_shown: 1 });
+    const win = await copyWindow();
+    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
+    await win.close();
+    expect(await counts()).toMatchObject({ rating_asked: 1, rating_menu_shown: 1, rating_window_shown: 1 });
+    const rate = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/rate.html") });
+    await ctx.sw.evaluate(() => globalThis.imgkeepMenuClicked({ menuItemId: "imgkeep-rate" }));
+    await (await rate).close();
+    expect(await counts()).toMatchObject({ rating_asked: 1, rating_menu_clicked: 1 });
+  });
+
   test("a window asks only once, even if it was closed without an answer", async () => {
     await setUsage(ready());
     const first = await copyWindow();

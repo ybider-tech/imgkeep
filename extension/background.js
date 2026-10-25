@@ -112,9 +112,12 @@ async function refreshMenus() {
     await chrome.storage.local.set({ usage });
   }
   const showRate = menuAskVisible(usage, now);
-  if (showRate && usage.ask === "waiting") {
-    await chrome.storage.local.set({ usage: markAsked(usage, now) });
-    count("rating_asked");
+  if (showRate && !usage.menuShown) {
+    // The first time the "Rate it" item appears. Counted apart from the window note, to see which one people see.
+    const wasWaiting = usage.ask === "waiting";
+    usage = { ...markAsked(usage, now), menuShown: true };
+    await chrome.storage.local.set({ usage });
+    count(...(wasWaiting ? ["rating_asked", "rating_menu_shown"] : ["rating_menu_shown"]));
   }
   // Decided from storage every time, not from menuTitles: the worker may have restarted since the menu was built.
   // Creating an item that exists, or removing one that doesn't, is a harmless error.
@@ -245,7 +248,10 @@ globalThis.imgkeepFindImage = (tabId, url) => findImage({ pageUrl: url, frameId:
 
 async function menuClicked(info, tab) {
   if (info.menuItemId === "imgkeep-find") return findImage(info, tab);
-  if (info.menuItemId === "imgkeep-rate") return openRateWindow();
+  if (info.menuItemId === "imgkeep-rate") {
+    count("rating_menu_clicked");
+    return openRateWindow();
+  }
   if (!info.srcUrl) return;
   const input = { url: info.srcUrl, pageUrl: info.pageUrl };
   if (info.menuItemId === "imgkeep-copy") return openWindow("copy", input);
@@ -761,7 +767,7 @@ const reviewHandlers = {
     await usageQueue; // a use counted just now may be what makes it due
     const usage = await getUsage();
     if (!windowCanAsk(usage, Date.now())) return { ok: true, show: false };
-    if (usage.ask === "waiting") count("rating_asked");
+    count(...(usage.ask === "waiting" ? ["rating_asked", "rating_window_shown"] : ["rating_window_shown"]));
     await chrome.storage.local.set({ usage: markWindowAsked(usage, Date.now()) });
     await refreshMenus();
     return { ok: true, show: true };

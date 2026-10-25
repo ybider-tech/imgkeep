@@ -23,7 +23,7 @@ A summary contains only:
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;
 - how often a colour palette was opened (and whether for an image Find image here found), and how often one colour or all of them were copied or saved as a PNG, GIMP or Adobe file (since 0.11.0), never the colours themselves;
-- how often a site-access or folder question was shown and a site was allowed, how the one rating question was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
+- how often a site-access or folder question was shown and a site was allowed, whether the one rating question was shown in the right-click menu or in a window, whether its menu item was clicked (since 0.11.0) and how it was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
 - whether Imgkeep was installed that day (a count of 1, since 0.10.2), so we know how many people install it;
 - the extension's version, the browser (Chrome or Edge) and its language.
 

@@ -7,6 +7,7 @@
 - **No new permission, no new request.** Palettes use the same image fetch (and the same "allow this site" question when a site blocks it), the offscreen canvas and the downloads Imgkeep already has. Colour values go on the clipboard from the palette's own focused window, like Copy as PNG. Palette files are saved the way you save images: Downloads, your folder (or Downloads if the folder isn't available) or asking where, named like the image plus `-palette`.
 - **The right-click menu is now just "Imgkeep"** (it was "Imgkeep: Save image as"), since it holds saving, copying and colours. Get colour palette shows "✨ New" for 30 days after the update.
 - The anonymous daily summary counts palettes opened (`palette_open`, `palette_from_find`), colours copied (`palette_copy_one`, `palette_copy_all`) and palette files saved (`palette_save_png`, `palette_save_gpl`, `palette_save_ase`), never the colours. Listed in the privacy policy.
+- **The one rating ask is counted where it appears:** `rating_menu_shown` (the "Rate it" menu item), `rating_window_shown` (the note in a window) and `rating_menu_clicked`. PostHog showed 9 installs reaching the ask since 15 October and none answering; `rating_asked` alone couldn't tell whether people saw it. Listed in the privacy policy.
 - 9 languages. New tests: `tests/palette.spec.mjs` (exact colours and shares, transparency, the same palette every time, `.gpl` and `.ase` read back, the window, copying, the three files, More options).
 
 ## 0.10.2 — 2026-10-19
