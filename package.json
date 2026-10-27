@@ -17,9 +17,13 @@
     "video": "node store/video/render.mjs",
     "guide-shots": "node store/guide-shots.mjs",
     "og": "node store/og.mjs",
-    "site-lib": "node scripts/site-lib.mjs"
+    "site-lib": "node scripts/site-lib.mjs",
+    "translate": "node scripts/translate.mjs",
+    "release": "node scripts/release.mjs",
+    "build-firefox": "node scripts/build-firefox.mjs"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
     "@playwright/test": "^1.55.0",
     "puppeteer-core": "^25.16.0"
   }
