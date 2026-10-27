@@ -102,7 +102,7 @@ export function summaryProps(c, browser) {
     const n = Math.floor(Number(c?.[key]));
     if (n > 0) props[key] = n;
   }
-  props.browser = browser === "edge" ? "edge" : "chrome";
+  props.browser = ["edge", "firefox"].includes(browser) ? browser : "chrome";
   return props;
 }
 

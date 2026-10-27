@@ -15,10 +15,11 @@ export const REVIEW = {
 export const REVIEW_URLS = {
   chrome: "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews",
   edge: "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd",
+  firefox: "https://addons.mozilla.org/firefox/addon/imgkeep/reviews/",
 };
 
-// Edge identifies itself with "Edg/" in its user agent.
-export const storeFor = (userAgent = "") => (/\bEdg\//.test(userAgent) ? "edge" : "chrome");
+// Edge identifies itself with "Edg/" in its user agent, Firefox with "Firefox/".
+export const storeFor = (userAgent = "") => (/\bEdg\//.test(userAgent) ? "edge" : /\bFirefox\//.test(userAgent) ? "firefox" : "chrome");
 export const reviewUrl = (userAgent) => REVIEW_URLS[storeFor(userAgent)];
 
 // usage: { firstSeen, uses, recent: [true, false, …], ask, askedAt, windowAsked }

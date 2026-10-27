@@ -2,6 +2,7 @@
 // converter), and writes to the chosen folder. This is the only file that makes a network request.
 
 import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
+import { IS_FIREFOX } from "./lib/browser.js";
 import { JobError } from "./lib/job-error.js";
 import { convert } from "./lib/convert.js";
 import { decode, draw, fitWidth, sniffImageType } from "./lib/image.js";
@@ -126,7 +127,14 @@ const PALETTE_FILES = {
 };
 
 // Data URLs stay small enough for chrome.downloads; bigger files use a blob: URL kept alive here.
-const DATA_URL_LIMIT = 1.5 * 1024 * 1024;
+// Firefox always gets a blob: URL (its downloads API doesn't take data: URLs).
+const DATA_URL_LIMIT = IS_FIREFOX ? 0 : 1.5 * 1024 * 1024;
+
+// A URL for chrome.downloads: a data: URL when small, otherwise a blob: URL kept with the entry.
+async function downloadUrl(entry) {
+  if (entry.blob.size <= DATA_URL_LIMIT) return toDataUrl(entry.blob);
+  return (entry.blobUrl = URL.createObjectURL(entry.blob));
+}
 
 const handlers = {
   // msg: { jobId, sourceId?, url, mime, quality, background, maxWidth, maxBytes, minQuality, want: "url" | "data" | "none" }
@@ -148,10 +156,7 @@ const handlers = {
       sourceType: out.sourceType, // for the anonymous counts: "image/webp" → JPG
     };
     if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
-    if (msg.want === "url") {
-      if (out.blob.size <= DATA_URL_LIMIT) result.url = await toDataUrl(out.blob);
-      else result.url = entry.blobUrl = URL.createObjectURL(out.blob);
-    }
+    if (msg.want === "url") result.url = await downloadUrl(entry);
     return result;
   },
 
@@ -190,7 +195,7 @@ const handlers = {
     const entry = { blob };
     remember(pending, jobId, entry);
     const result = { ext: kind, size: blob.size };
-    if (want === "url") result.url = await toDataUrl(blob); // a few KB at most
+    if (want === "url") result.url = await downloadUrl(entry);
     return result;
   },
 
@@ -230,10 +235,20 @@ const handlers = {
   },
 };
 
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg?.target !== "offscreen" || !handlers[msg.type] || sender.id !== chrome.runtime.id) return false;
-  handlers[msg.type](msg)
-    .then((result) => sendResponse({ ok: true, ...result }))
-    .catch((e) => sendResponse({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "", subs: e.subs }));
-  return true; // respond asynchronously
-});
+// One request → { ok: true, ...result } or { ok: false, code, detail, subs }.
+export function handle(msg) {
+  if (!Object.hasOwn(handlers, msg?.type)) return Promise.resolve({ ok: false, code: "unknown", detail: `Unknown request ${msg?.type}` });
+  return handlers[msg.type](msg)
+    .then((result) => ({ ok: true, ...result }))
+    .catch((e) => ({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "", subs: e.subs }));
+}
+
+// Chrome and Edge: requests arrive as messages from the service worker. (Firefox's background page imports
+// this file and calls handle() itself.)
+if (location.pathname.endsWith("/offscreen.html")) {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    if (msg?.target !== "offscreen" || !Object.hasOwn(handlers, msg.type) || sender.id !== chrome.runtime.id) return false;
+    handle(msg).then(sendResponse);
+    return true; // respond asynchronously
+  });
+}

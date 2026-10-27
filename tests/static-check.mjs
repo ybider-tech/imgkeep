@@ -13,7 +13,7 @@ const EXT = join(dirname(fileURLToPath(import.meta.url)), "..", "extension");
 const ALLOWED_PERMISSIONS = ["contextMenus", "downloads", "offscreen", "storage"];
 const ALLOWED_OPTIONAL_HOSTS = ["http://*/*", "https://*/*"];
 // imgkeep.app and the two stores (for "Rate Imgkeep"). These are links people click, never requests the extension makes.
-const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore|microsoftedge\.microsoft\.com\/addons|posthog\.com)(\/|$)|^https:\/\/eu\.i\.posthog\.com\/i\/v0\/e\/$|^https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w\/viewform$/;
+const ALLOWED_URL = /^https?:\/\/((www\.)?imgkeep\.app|chromewebstore\.google\.com|chrome\.google\.com\/webstore|microsoftedge\.microsoft\.com\/addons|addons\.mozilla\.org\/firefox\/addon\/imgkeep|posthog\.com)(\/|$)|^https:\/\/eu\.i\.posthog\.com\/i\/v0\/e\/$|^https:\/\/docs\.google\.com\/forms\/d\/e\/1FAIpQLSfC9O-KMngfyRF6yA7BMdxHgmHRSZBIDJdHeF886wsq_8aT6w\/viewform$/;
 // The uninstall form (lib/uninstall.js) is the one Google address allowed: the browser opens it after an
 // uninstall; the extension never requests it.
 const FETCH_FILES = ["offscreen.js", "lib/telemetry.js"];

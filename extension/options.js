@@ -5,6 +5,7 @@ import { cleanMaxWidth } from "./lib/image.js";
 import { reviewUrl } from "./lib/review.js";
 import { getFolder, setFolder, folderPermission } from "./lib/folder.js";
 import { t, localisePage } from "./lib/i18n.js";
+import { FOLDERS, IS_FIREFOX, COUNTS_CONSENT, countsAllowed } from "./lib/browser.js";
 
 const $ = (id) => document.getElementById(id);
 let savedTimer;
@@ -98,6 +99,12 @@ async function renderFind() {
 async function init() {
   localisePage();
   const s = await getSettings();
+  // Firefox can't write into a chosen folder (lib/browser.js): Downloads or ask every time.
+  if (!FOLDERS) {
+    document.querySelector('input[name="saveMode"][value="folder"]').closest("label").hidden = true;
+    $("chooseFolder").closest(".row").hidden = true;
+    if (s.saveMode === "folder") s.saveMode = "downloads";
+  }
 
   for (const radio of document.querySelectorAll('input[name="saveMode"]')) {
     radio.checked = radio.value === s.saveMode;
@@ -128,8 +135,16 @@ async function init() {
     save({ maxWidth });
   });
 
-  $("usageCounts").checked = s.usageCounts !== false;
+  $("usageCounts").checked = s.usageCounts !== false && (await countsAllowed());
   $("usageCounts").addEventListener("change", async (e) => {
+    // Firefox keeps its own switch for this ("technical and interaction data"), asked at install:
+    // turning the summary on here asks Firefox too, and turning it off withdraws that permission.
+    if (IS_FIREFOX) {
+      const ok = e.target.checked
+        ? await chrome.permissions.request(COUNTS_CONSENT).catch(() => false)
+        : await chrome.permissions.remove(COUNTS_CONSENT).catch(() => true);
+      if (e.target.checked && !ok) e.target.checked = false;
+    }
     await save({ usageCounts: e.target.checked });
     renderCounts();
   });

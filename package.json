@@ -20,6 +20,7 @@
     "site-lib": "node scripts/site-lib.mjs"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0"
+    "@playwright/test": "^1.55.0",
+    "puppeteer-core": "^25.16.0"
   }
 }

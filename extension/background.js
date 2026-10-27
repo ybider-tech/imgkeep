@@ -1,7 +1,7 @@
 // Service worker: context menu, save jobs, and the extension's small windows
 // (ask: a save needs your OK; copy: Copy as PNG; editor: More options; palette: Get colour palette).
 
-import { FORMATS, GIF_LIMITS, getSettings, buildTarget, targetPath, extFromUrl, clampQuality, cleanColour } from "./lib/settings.js";
+import { FORMATS, GIF_LIMITS, getSettings as storedSettings, buildTarget, targetPath, extFromUrl, clampQuality, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
@@ -10,10 +10,18 @@ import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summa
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
+import { FOLDERS, countsAllowed } from "./lib/browser.js";
 import { cleanHexes } from "./lib/palette.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
+
+// Settings as this browser can use them: Firefox can't write into a chosen folder (lib/browser.js), so a
+// "folder" setting (synced from elsewhere, say) saves to Downloads there.
+async function getSettings() {
+  const settings = await storedSettings();
+  return !FOLDERS && settings.saveMode === "folder" ? { ...settings, saveMode: "downloads" } : settings;
+}
 
 const MENU = {
   "imgkeep-png": "png",
@@ -274,8 +282,16 @@ chrome.contextMenus.onClicked.addListener((info, tab) => void menuClicked(info, 
 globalThis.imgkeepMenuClicked = menuClicked;
 
 // ---- Offscreen document (created on demand) ----
+// Firefox has no offscreen documents, but its background is a page with a DOM: there, offscreen.js runs
+// right here, with the same handlers and the same answers (lib/browser.js).
 
 let creating = null;
+let inPage = null; // Firefox: offscreen.js's handlers, loaded the first time they're needed
+
+async function runInPage(msg) {
+  inPage ??= import("./offscreen.js").then((m) => m.handle);
+  return (await inPage)(msg);
+}
 
 async function ensureOffscreen() {
   const url = chrome.runtime.getURL("offscreen.html");
@@ -291,13 +307,13 @@ async function ensureOffscreen() {
 const OFFSCREEN_TIMEOUT_MS = GIF_LIMITS.timeoutMs + 30_000;
 
 async function toOffscreen(msg) {
-  await ensureOffscreen();
   let timer;
   const timeout = new Promise((resolve) => {
     timer = setTimeout(() => resolve({ ok: false, code: "timeout" }), OFFSCREEN_TIMEOUT_MS);
   });
   try {
-    const res = await Promise.race([chrome.runtime.sendMessage({ target: "offscreen", ...msg }), timeout]);
+    const answer = chrome.offscreen ? ensureOffscreen().then(() => chrome.runtime.sendMessage({ target: "offscreen", ...msg })) : runInPage(msg);
+    const res = await Promise.race([answer, timeout]);
     return res || { ok: false, code: "unknown", detail: "No answer from the converter" };
   } finally {
     clearTimeout(timer);
@@ -306,12 +322,14 @@ async function toOffscreen(msg) {
 
 // Drop a job's converted file (and its source, with source: true) without starting the offscreen document just for that.
 async function releaseIfOpen(jobId, { source = false } = {}) {
+  if (!chrome.offscreen) return inPage && runInPage({ type: "release", jobId, all: source });
   const url = chrome.runtime.getURL("offscreen.html");
   const open = await chrome.runtime.getContexts({ contextTypes: ["OFFSCREEN_DOCUMENT"], documentUrls: [url] });
   if (open.length) await chrome.runtime.sendMessage({ target: "offscreen", type: "release", jobId, all: source });
 }
 
 async function dropSource(jobId) {
+  if (!chrome.offscreen) return inPage && runInPage({ type: "release", jobId, pending: false, all: true });
   const url = chrome.runtime.getURL("offscreen.html");
   const open = await chrome.runtime.getContexts({ contextTypes: ["OFFSCREEN_DOCUMENT"], documentUrls: [url] });
   if (open.length) await chrome.runtime.sendMessage({ target: "offscreen", type: "release", jobId, pending: false, all: true }).catch(() => {});
@@ -469,7 +487,8 @@ let appKey = ANALYTICS.appKey;
 let countsQueue = Promise.resolve();
 let sendQueue = Promise.resolve();
 
-const countsOn = async () => (await getSettings()).usageCounts !== false;
+// On in Options and, on Firefox, allowed by the user in the browser too (asked at install; lib/browser.js).
+const countsOn = async () => (await getSettings()).usageCounts !== false && (await countsAllowed());
 
 // Adds to today's counts. When a new day starts, yesterday's counts become one summary to send.
 function count(...keys) {
@@ -498,6 +517,7 @@ function count(...keys) {
 async function sendOutbox() {
   const { countsOutbox: box } = await chrome.storage.local.get("countsOutbox");
   if (!box) return;
+  if (!(await countsAllowed())) return chrome.storage.local.remove("countsOutbox"); // Firefox: permission withdrawn
   const event = summaryEvent(box.props, {
     appVersion: chrome.runtime.getManifest().version,
     locale: chrome.i18n.getUILanguage(),
@@ -736,8 +756,9 @@ const windowHandlers = {
     } else {
       const downloadId = await download({ url: file.url, filename: targetPath(target), saveAs: mode === "ask" });
       result = { ok: true, mode, downloadId, filename: targetPath(target) };
+      if (file.url.startsWith("blob:")) blobDownloads.set(downloadId, run); // kept until the download ends
     }
-    releaseIfOpen(run);
+    if (!file.url?.startsWith("blob:")) releaseIfOpen(run);
     count(`palette_save_${kind}`);
     return result;
   },

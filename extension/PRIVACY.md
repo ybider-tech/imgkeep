@@ -1,8 +1,8 @@
 # Imgkeep privacy policy
 
-Last updated: 21 October 2026
+Last updated: 27 October 2026
 
-Imgkeep is a browser extension for Chrome and Microsoft Edge that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
+Imgkeep is a browser extension for Chrome, Microsoft Edge and Firefox that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
 ## What Imgkeep collects
 
@@ -14,7 +14,7 @@ Imgkeep reads only the image you right-click and choose to save. It converts tha
 
 ## The anonymous daily summary
 
-Since version 0.7.0, Imgkeep counts on your computer how often its features are used. Once a day it sends the totals of the previous day it was used to PostHog, an open-source analytics service, in its EU cloud (eu.i.posthog.com), to learn which features to improve and whether saves fail. (Up to version 0.8.1, summaries went to Aptabase, also hosted in the EU.) It is on by default. Turn it off in Imgkeep's Options, under "Anonymous usage counts"; anything counted and not yet sent is then deleted. The same section shows exactly what has been counted and the last summary sent.
+Since version 0.7.0, Imgkeep counts on your computer how often its features are used. Once a day it sends the totals of the previous day it was used to PostHog, an open-source analytics service, in its EU cloud (eu.i.posthog.com), to learn which features to improve and whether saves fail. (Up to version 0.8.1, summaries went to Aptabase, also hosted in the EU.) It is on by default in Chrome and Edge. In Firefox it is off unless you allow it: Firefox asks when you install Imgkeep ("technical and interaction data"), and you can change it later in Imgkeep's Options or in Firefox's add-on settings. Turn it off in Imgkeep's Options, under "Anonymous usage counts"; anything counted and not yet sent is then deleted. The same section shows exactly what has been counted and the last summary sent.
 
 A summary contains only:
 
@@ -33,7 +33,7 @@ Like any service your browser connects to, PostHog receives your IP address when
 
 ## Where your settings live
 
-Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in Chrome or Edge, the browser copies them across your devices. If you choose a folder, the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update.
+Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in your browser, it copies them across your devices. If you choose a folder (Chrome and Edge only), the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update.
 
 ## The clipboard
 

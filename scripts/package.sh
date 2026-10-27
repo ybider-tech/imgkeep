@@ -12,3 +12,6 @@ rm -f "$OUT"
 (cd extension && zip -r -X -q "../$OUT" . -x '.*' -x '*/.*' -x '*.test.*' -x 'tests/*')
 echo "Built $OUT"
 unzip -l "$OUT"
+
+# The same code for Firefox (only the manifest differs): dist/imgkeep-firefox-<version>.zip
+node scripts/build-firefox.mjs
