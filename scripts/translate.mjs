@@ -11,12 +11,15 @@
 //   node scripts/translate.mjs --run             translate now (a few languages at a time)
 //   node scripts/translate.mjs --run --batch     through the Message Batches API: half the price, done within ~1 hour
 //   node scripts/translate.mjs --run --only=zh_CN,ko   just these languages
+//   node scripts/translate.mjs --sample          one small request, to measure the real cost of the whole run
+// Every run prints what it really cost (scripts/claude-cost.mjs: Sonnet 5, low effort).
 //   node scripts/translate.mjs --run --only=zh_CN --force --kind=store   again, even if up to date
 //
 // Every result is checked before it's written: placeholders ($PATH$), file-name tokens ({name}), the only HTML
 // allowed (<code>, <strong>), store length limits. A string that fails is retried once with the reason.
 // Credentials: ANTHROPIC_API_KEY, or ~/.config/imgkeep/anthropic.env (ANTHROPIC_API_KEY=…). Never printed.
 import Anthropic from "@anthropic-ai/sdk";
+import { MODEL, EFFORT, tally, estimate } from "./claude-cost.mjs";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -28,7 +31,6 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const LOCALES_DIR = join(ROOT, "extension", "_locales");
 const STORE_DIR = join(ROOT, "store", "i18n");
 const LOCK = join(ROOT, "i18n", "translations.lock.json");
-const MODEL = "claude-opus-5";
 // Strings per request: one JSON schema with every key would be too large for structured outputs.
 const CHUNK = 40;
 
@@ -155,7 +157,7 @@ function request(lang, kind, keys, src, glossary) {
     // The style guide is the same for every language: cached, so 50 languages pay for it about once.
     system: [{ type: "text", text: STYLE, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: prompt(lang, kind, keys, src, glossary) }],
-    output_config: { format: { type: "json_schema", schema: schema(keys) } },
+    output_config: { effort: EFFORT, format: { type: "json_schema", schema: schema(keys) } },
   };
 }
 
@@ -176,10 +178,13 @@ const textOf = (message) => {
   return JSON.parse(message.content.find((b) => b.type === "text")?.text || "{}");
 };
 
-// Real-time: streamed (large answers), with server-side fallback to another model if one ever declines.
+const COST = tally();
+
+// Real-time: streamed (large answers). Every answer's tokens go into COST.
 async function translateNow(client, params) {
-  const stream = client.beta.messages.stream({ ...params, betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" });
-  return textOf(await stream.finalMessage());
+  const message = await client.messages.stream(params).finalMessage();
+  COST.add(message.usage);
+  return textOf(message);
 }
 
 // Store texts must quote the interface the way this language's interface says it: every menu name the
@@ -236,9 +241,11 @@ async function save(lang, kind, translated, src, lock) {
 // ---- Main ----
 
 const args = process.argv.slice(2);
-const run = args.includes("--run");
+const run = args.includes("--run") || args.includes("--sample");
 const batch = args.includes("--batch");
 const only = args.find((a) => a.startsWith("--only="))?.slice(7).split(",");
+// --sample: one request (the first language's first strings) to measure the real price, then a projection.
+const sample = args.includes("--sample");
 const force = args.includes("--force");
 const kinds = args.find((a) => a.startsWith("--kind="))?.slice(7).split(",") || ["ui", "store"];
 if (force && !only) throw new Error("--force needs --only=… (it re-translates even what's up to date)");
@@ -248,11 +255,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const chars = jobs.reduce((n, j) => n + [...j.uiKeys.map((k) => src.ui[k].text), ...j.storeKeys.map((k) => src.store[k].text)].join("").length, 0);
   console.log(`${jobs.length} languages need work, ${chars.toLocaleString()} English characters in all.`);
   for (const j of jobs) console.log(`  ${j.lang.padEnd(6)} ${String(j.uiKeys.length).padStart(4)} interface strings, ${j.storeKeys.length} store texts`);
-  // About 4 characters a token in English; translations run longer, and each request carries instructions.
-  const outTokens = Math.round((chars / 4) * 1.6);
-  const inTokens = Math.round(chars / 4 + jobs.length * 2 * 1500);
-  const dollars = (inTokens * 5 + outTokens * 25) / 1e6;
-  console.log(`Estimate with ${MODEL}: ~${inTokens.toLocaleString()} tokens in, ~${outTokens.toLocaleString()} out, about $${dollars.toFixed(2)} (half with --batch), plus thinking.`);
+  if (chars) console.log(estimate(chars, jobs.reduce((n, j) => n + Math.ceil(j.uiKeys.length / CHUNK) + (j.storeKeys.length ? 1 : 0), 0), { batch }));
   if (!run) {
     console.log("Nothing sent. Add --run to translate.");
     process.exit(0);
@@ -263,8 +266,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // Interface strings first: the store texts quote the interface's names.
   for (const kind of ["ui", "store"]) {
     const work = [];
-    for (const j of jobs) {
-      const all = kind === "ui" ? j.uiKeys : j.storeKeys;
+    for (const j of sample ? jobs.slice(0, 1) : jobs) {
+      const all = (kind === "ui" ? j.uiKeys : j.storeKeys).slice(0, sample ? CHUNK : undefined);
       const glossary = kind === "store" ? await glossaryFor(j.lang) : null;
       for (let i = 0; i < all.length; i += CHUNK) {
         const keys = all.slice(i, i + CHUNK);
@@ -285,6 +288,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       for await (const r of await client.messages.batches.results(created.id)) {
         if (r.result.type === "succeeded") {
           try {
+            COST.add(r.result.message.usage, { batch: true });
             results.set(r.custom_id, textOf(r.result.message));
           } catch (e) {
             console.log(`  ${r.custom_id}: ${e.message}`);
@@ -326,6 +330,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const left = Object.keys(bad);
       console.log(`${w.id}: ${Object.keys(good).length} written${left.length ? `, ${left.length} still failing (kept English fallback): ${left.join(", ")}` : ""}`);
     }
+  }
+  console.log(COST.summary());
+  if (sample) {
+    const sent = Math.min(jobs[0]?.uiKeys.length || 0, CHUNK) + Math.min(jobs[0]?.storeKeys.length || 0, CHUNK);
+    const total = jobs.reduce((n, j) => n + j.uiKeys.length + j.storeKeys.length, 0);
+    if (sent) console.log(`Sample: ${sent} of ${total} strings. The whole run would cost about $${((COST.dollars() / sent) * total).toFixed(2)}, or about half that with --batch.`);
   }
   console.log("Done. Run npm test before committing.");
 }
