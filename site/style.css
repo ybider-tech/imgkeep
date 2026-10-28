@@ -717,6 +717,6 @@ header:has(.cv-nav) { display: flex; align-items: center; flex-wrap: wrap; gap: 
 .store p { margin: 0 0 12px; color: var(--muted); }
 .store .cta { margin-top: auto; text-align: center; white-space: nowrap; }
 .store-soon { margin-top: auto !important; font-weight: 600; color: var(--text) !important; }
-@media (max-width: 760px) { .stores { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .doc .stores, .stores { grid-template-columns: 1fr; } }
 .doc .faq dt { font-weight: 700; margin-top: 16px; }
 .doc .faq dd { margin: 4px 0 0; }
