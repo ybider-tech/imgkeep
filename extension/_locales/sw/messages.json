@@ -153,10 +153,10 @@
     "message": "Ghairi"
   },
   "askHostTitle": {
-    "message": "Ruhusu picha kutoka tovuti hii?"
+    "message": "Ruhusu Imgkeep kupata picha kutoka tovuti hii?"
   },
   "askHostBody": {
-    "message": "$HOST$ inazuia tovuti nyingine kusoma picha zake, kwa hiyo Imgkeep haiwezi kuigeuza hii bado.",
+    "message": "$HOST$ huruhusu kurasa zake pekee kupakia picha zake. Ili kubadilisha hii, Imgkeep inahitaji idhini yako kuipata moja kwa moja.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Ufikiaji ni kwa tovuti hii moja tu, ili kuleta picha unazochagua. Unaweza kuuondoa wakati wowote katika Chaguo."
+    "message": "Kwa tovuti hii pekee, na kwa picha unazochagua kuhifadhi pekee. Unaweza kuiondoa wakati wowote katika Chaguo."
+  },
+  "askPageTitle": {
+    "message": "Ruhusu Imgkeep isome picha hii kwenye tovuti hii?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ huiweka picha hii ndani ya ukurasa wake, kwa hivyo Imgkeep lazima iisome kutoka hapo. Inasoma picha hii pekee na haibadilishi chochote kwenye ukurasa.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Ruhusu na uhifadhi"

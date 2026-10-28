@@ -153,10 +153,10 @@
     "message": "Mégse"
   },
   "askHostTitle": {
-    "message": "Engedélyezed a képeket erről a webhelyről?"
+    "message": "Engedélyezed, hogy az Imgkeep képeket kérjen le erről a webhelyről?"
   },
   "askHostBody": {
-    "message": "A(z) $HOST$ nem engedi, hogy más webhelyek olvassák a képeit, ezért az Imgkeep egyelőre nem tudja átalakítani ezt a képet.",
+    "message": "A(z) $HOST$ csak a saját oldalainak engedi betölteni a képeit. Ennek átalakításához az Imgkeepnek az engedélyedre van szüksége, hogy közvetlenül lekérje.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Az engedély csak erre az egy webhelyre szól, és csak az általad kiválasztott képek letöltésére. Bármikor visszavonhatod a Beállításokban."
+    "message": "Csak erre a webhelyre, és csak a mentésre kiválasztott képekre. Bármikor eltávolíthatod a Beállításokban."
+  },
+  "askPageTitle": {
+    "message": "Engedélyezed, hogy az Imgkeep elolvassa ezt a képet ezen a webhelyen?"
+  },
+  "askPageBody": {
+    "message": "A(z) $HOST$ az oldalán belül tartja ezt a képet, ezért az Imgkeepnek onnan kell beolvasnia. Csak ezt a képet olvassa be, és semmit nem változtat az oldalon.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Engedélyezés és mentés"

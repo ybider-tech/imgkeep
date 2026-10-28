@@ -153,10 +153,10 @@
     "message": "Batal"
   },
   "askHostTitle": {
-    "message": "Benarkan imej daripada laman web ini?"
+    "message": "Benarkan Imgkeep mendapatkan imej dari tapak ini?"
   },
   "askHostBody": {
-    "message": "$HOST$ menghalang laman web lain daripada membaca imejnya, jadi Imgkeep belum boleh menukar imej ini.",
+    "message": "$HOST$ hanya membenarkan halamannya sendiri memuatkan imejnya. Untuk menukar imej ini, Imgkeep perlukan kebenaran anda untuk mendapatkannya terus.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Akses ini untuk laman web ini sahaja, bagi mengambil imej yang anda pilih. Anda boleh membuangnya bila-bila masa dalam Pilihan."
+    "message": "Hanya untuk tapak ini, dan hanya untuk imej yang anda pilih untuk disimpan. Anda boleh membuangnya bila-bila masa dalam Pilihan."
+  },
+  "askPageTitle": {
+    "message": "Benarkan Imgkeep membaca imej ini di tapak ini?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ menyimpan imej ini di dalam halamannya, jadi Imgkeep perlu membacanya dari situ. Ia hanya membaca imej ini dan tidak mengubah apa-apa pada halaman.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Benarkan dan simpan"

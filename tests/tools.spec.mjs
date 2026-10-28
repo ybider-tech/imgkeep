@@ -219,7 +219,7 @@ test("Copy as PNG: a refused clipboard explains, keeps the clipboard, and offers
 
 test("Copy as PNG from a site that blocks it asks for that site", async () => {
   const win = await openWindow("copy", `${plain.url}/photo.webp`);
-  await expect(win.locator("#title")).toHaveText("Allow images from this site?");
+  await expect(win.locator("#title")).toHaveText("Allow Imgkeep to get images from this site?");
   await expect(win.getByRole("button", { name: "Allow and copy" })).toBeVisible();
   await win.close();
 });

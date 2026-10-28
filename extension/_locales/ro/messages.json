@@ -153,10 +153,10 @@
     "message": "Renunță"
   },
   "askHostTitle": {
-    "message": "Permiți imaginile de pe acest site?"
+    "message": "Permiți ca Imgkeep să obțină imagini de pe acest site?"
   },
   "askHostBody": {
-    "message": "$HOST$ blochează alte site-uri să îi citească imaginile, așa că Imgkeep nu o poate converti încă pe aceasta.",
+    "message": "$HOST$ lasă doar paginile proprii să-i încarce imaginile. Ca să o convertească pe aceasta, Imgkeep are nevoie de acordul tău ca să o obțină direct.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Accesul e doar pentru acest site, ca să poată prelua imaginile pe care le alegi. Îl poți retrage oricând din Opțiuni."
+    "message": "Doar pentru acest site și doar pentru imaginile pe care alegi să le salvezi. Poți elimina oricând acest acces din Opțiuni."
+  },
+  "askPageTitle": {
+    "message": "Permiți ca Imgkeep să citească această imagine pe acest site?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ ține această imagine în interiorul paginii sale, așa că Imgkeep trebuie să o citească de acolo. Citește doar această imagine și nu schimbă nimic în pagină.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Permite și salvează"

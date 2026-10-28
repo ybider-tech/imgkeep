@@ -153,10 +153,10 @@
     "message": "Batal"
   },
   "askHostTitle": {
-    "message": "Izinkan gambar dari situs ini?"
+    "message": "Izinkan Imgkeep mengambil gambar dari situs ini?"
   },
   "askHostBody": {
-    "message": "$HOST$ melarang situs lain membaca gambarnya, jadi Imgkeep belum bisa mengonversi gambar ini.",
+    "message": "$HOST$ hanya mengizinkan halamannya sendiri memuat gambarnya. Untuk mengonversi gambar ini, Imgkeep perlu izin Anda untuk mengambilnya langsung.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Akses hanya untuk situs yang satu ini, untuk mengambil gambar yang Anda pilih. Anda bisa mencabutnya kapan saja di Opsi."
+    "message": "Hanya untuk situs ini, dan hanya untuk gambar yang Anda pilih untuk disimpan. Anda bisa menghapusnya kapan saja di Opsi."
+  },
+  "askPageTitle": {
+    "message": "Izinkan Imgkeep membaca gambar ini di situs ini?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ menyimpan gambar ini di dalam halamannya, jadi Imgkeep harus membacanya dari sana. Hanya gambar ini yang dibaca dan tidak ada yang diubah di halaman.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Izinkan dan simpan"

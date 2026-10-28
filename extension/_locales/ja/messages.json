@@ -153,10 +153,10 @@
     "message": "キャンセル"
   },
   "askHostTitle": {
-    "message": "このサイトの画像を許可しますか？"
+    "message": "Imgkeep にこのサイトから画像を取得することを許可しますか？"
   },
   "askHostBody": {
-    "message": "$HOST$ は他のサイトによる画像の読み込みをブロックしているため、Imgkeep はまだこの画像を変換できません。",
+    "message": "$HOST$ は自分のページにしか画像の読み込みを許可していません。この画像を変換するには、Imgkeep が直接取得することへの許可が必要です。",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "アクセスはこのサイトだけで、選んだ画像の取得にのみ使われます。オプションからいつでも削除できます。"
+    "message": "このサイトだけで、保存すると選んだ画像にのみ使われます。オプションからいつでも削除できます。"
+  },
+  "askPageTitle": {
+    "message": "Imgkeep にこのサイトでこの画像を読み取ることを許可しますか？"
+  },
+  "askPageBody": {
+    "message": "$HOST$ はこの画像をページの中に保持しているため、Imgkeep はそこから読み取る必要があります。読み取るのはこの画像だけで、ページは何も変更しません。",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "許可して保存"

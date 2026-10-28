@@ -153,10 +153,10 @@
     "message": "Annuleren"
   },
   "askHostTitle": {
-    "message": "Afbeeldingen van deze site toestaan?"
+    "message": "Imgkeep toestaan afbeeldingen van deze site op te halen?"
   },
   "askHostBody": {
-    "message": "$HOST$ blokkeert dat andere sites zijn afbeeldingen lezen, dus Imgkeep kan deze nog niet omzetten.",
+    "message": "$HOST$ laat alleen de eigen pagina's zijn afbeeldingen laden. Om deze om te zetten, heeft Imgkeep je toestemming nodig om hem rechtstreeks op te halen.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "De toegang geldt alleen voor deze ene site, om afbeeldingen op te halen die jij kiest. Je kunt die altijd weer intrekken in Opties."
+    "message": "Alleen voor deze site, en alleen voor de afbeeldingen die je wilt opslaan. Je kunt het altijd intrekken in Opties."
+  },
+  "askPageTitle": {
+    "message": "Imgkeep toestaan deze afbeelding op deze site te lezen?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ houdt deze afbeelding binnen de eigen pagina, dus Imgkeep moet hem daar lezen. Het leest alleen deze afbeelding en verandert niets aan de pagina.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Toestaan en opslaan"

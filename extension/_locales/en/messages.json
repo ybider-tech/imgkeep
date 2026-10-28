@@ -188,11 +188,11 @@
     "description": "Button"
   },
   "askHostTitle": {
-    "message": "Allow images from this site?",
+    "message": "Allow Imgkeep to get images from this site?",
     "description": "Window title"
   },
   "askHostBody": {
-    "message": "$HOST$ blocks other sites from reading its images, so Imgkeep can't convert this one yet.",
+    "message": "$HOST$ only lets its own pages load its images. To convert this one, Imgkeep needs your OK to fetch it directly.",
     "description": "$HOST$ is shown in bold.",
     "placeholders": {
       "host": {
@@ -202,8 +202,22 @@
     }
   },
   "askHostNote": {
-    "message": "Access is for this one site only, to fetch images you pick. You can remove it any time in Options.",
+    "message": "Only for this site, and only the images you choose to save. You can remove it any time in Options.",
     "description": "Note"
+  },
+  "askPageTitle": {
+    "message": "Allow Imgkeep to read this image on this site?",
+    "description": "Ask window title: a blob: image only exists inside its page; Imgkeep asks to read it there (one site)."
+  },
+  "askPageBody": {
+    "message": "$HOST$ keeps this image inside its page, so Imgkeep has to read it from there. It reads only this image and changes nothing on the page.",
+    "description": "Ask window: why Imgkeep needs to read the image in the page. $HOST$ is the site, e.g. web.whatsapp.com",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Allow and save",

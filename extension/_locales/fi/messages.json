@@ -153,10 +153,10 @@
     "message": "Peruuta"
   },
   "askHostTitle": {
-    "message": "Sallitaanko kuvat tältä sivustolta?"
+    "message": "Sallitaanko Imgkeepin hakea kuvia tältä sivustolta?"
   },
   "askHostBody": {
-    "message": "$HOST$ estää muita sivustoja lukemasta kuviaan, joten Imgkeep ei vielä voi muuntaa tätä kuvaa.",
+    "message": "$HOST$ antaa vain omien sivujensa ladata kuviaan. Muuntaakseen tämän Imgkeep tarvitsee lupasi hakea sen suoraan.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Käyttöoikeus koskee vain tätä sivustoa ja valitsemiesi kuvien hakemista. Voit poistaa sen milloin tahansa asetuksista."
+    "message": "Vain tälle sivustolle ja vain kuville, jotka päätät tallentaa. Voit poistaa luvan milloin tahansa asetuksista."
+  },
+  "askPageTitle": {
+    "message": "Sallitaanko Imgkeepin lukea tämä kuva tällä sivustolla?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ pitää tämän kuvan sivunsa sisällä, joten Imgkeepin täytyy lukea se sieltä. Se lukee vain tämän kuvan eikä muuta sivulla mitään.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Salli ja tallenna"

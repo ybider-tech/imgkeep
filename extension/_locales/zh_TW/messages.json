@@ -153,10 +153,10 @@
     "message": "取消"
   },
   "askHostTitle": {
-    "message": "允許來自這個網站的圖片？"
+    "message": "允許 Imgkeep 從此網站取得圖片嗎？"
   },
   "askHostBody": {
-    "message": "$HOST$ 阻止其他網站讀取它的圖片，因此 Imgkeep 目前還無法轉換這一張。",
+    "message": "$HOST$ 只允許自己的頁面載入其圖片。要轉換這張圖片，Imgkeep 需要你同意直接取得它。",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "存取權僅限這一個網站，只用來取得你挑選的圖片。你隨時可以在「選項」中移除。"
+    "message": "僅限此網站，且僅限你選擇儲存的圖片。你可以隨時在選項中移除。"
+  },
+  "askPageTitle": {
+    "message": "允許 Imgkeep 在此網站讀取這張圖片嗎？"
+  },
+  "askPageBody": {
+    "message": "$HOST$ 把這張圖片保存在頁面內部，所以 Imgkeep 需要從頁面中讀取它。它只讀取這張圖片，不會變更頁面上的任何內容。",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "允許並儲存"

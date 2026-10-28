@@ -107,6 +107,26 @@ function render() {
     return;
   }
 
+  // A blob: image: it only exists inside its page, so Imgkeep reads it there (scripting, for this one site).
+  if (reason === "page") {
+    $("title").textContent = t("askPageTitle");
+    body.append(el("p", {}, ...richText("askPageBody", job.host)), el("p", { className: "muted", textContent: t("askHostNote") }));
+    const label = { copy: t("copyAllowAndCopy"), editor: t("editAllow"), palette: t("editAllow") }[job.action] || t("askAllowAndSave");
+    actions.append(
+      button(label, async () => {
+        const granted = await chrome.permissions.request({ permissions: ["scripting"], origins: [job.origin] });
+        if (granted) chrome.runtime.sendMessage({ target: "background", type: "count", jobId, key: "site_access_allowed" }).catch(() => {});
+        if (!granted) return status(t("askNotAllowed"), true);
+        status(t("askSaving"));
+        const result = await toBackground("pageAllowed");
+        if (result?.opened) return cancel(); // the window it was for is open now
+        await afterRetry(result);
+      }, true),
+      cancelBtn,
+    );
+    return;
+  }
+
   if (reason === "folder-permission" || reason === "no-folder") {
     const reconnect = reason === "folder-permission" && folder;
     $("title").textContent = reconnect ? t("askReconnectTitle", [folder.name]) : t("askChooseTitle");

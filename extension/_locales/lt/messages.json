@@ -153,10 +153,10 @@
     "message": "Atšaukti"
   },
   "askHostTitle": {
-    "message": "Leisti paveikslėlius iš šios svetainės?"
+    "message": "Leisti Imgkeep gauti vaizdus iš šios svetainės?"
   },
   "askHostBody": {
-    "message": "$HOST$ neleidžia kitoms svetainėms skaityti savo paveikslėlių, todėl Imgkeep kol kas negali šio konvertuoti.",
+    "message": "$HOST$ leidžia įkelti savo vaizdus tik savo puslapiams. Kad galėtų konvertuoti šį vaizdą, Imgkeep reikia jūsų sutikimo jį gauti tiesiogiai.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Prieiga suteikiama tik šiai vienai svetainei, kad būtų galima parsisiųsti jūsų pasirinktus paveikslėlius. Bet kada galite ją panaikinti Parinktyse."
+    "message": "Tik šiai svetainei ir tik vaizdams, kuriuos nuspręsite išsaugoti. Bet kada galite tai pašalinti Parinktyse."
+  },
+  "askPageTitle": {
+    "message": "Leisti Imgkeep perskaityti šį vaizdą šioje svetainėje?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ laiko šį vaizdą savo puslapyje, todėl Imgkeep turi jį perskaityti iš ten. Jis perskaito tik šį vaizdą ir puslapyje nieko nekeičia.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Leisti ir išsaugoti"

@@ -153,10 +153,10 @@
     "message": "ይቅር"
   },
   "askHostTitle": {
-    "message": "ከዚህ ጣቢያ የሚገኙ ምስሎች ይፈቀዱ?"
+    "message": "Imgkeep ከዚህ ጣቢያ ምስሎችን እንዲያመጣ ይፈቀድ?"
   },
   "askHostBody": {
-    "message": "$HOST$ ሌሎች ጣቢያዎች ምስሎቹን እንዳያነቡ ያግዳል፣ ስለዚህ Imgkeep ይህንን ገና መለወጥ አይችልም።",
+    "message": "$HOST$ ምስሎቹን የሚጭኑት የራሱ ገጾች ብቻ ናቸው። ይህን ለመቀየር Imgkeep በቀጥታ ለማምጣት የእርስዎን ፈቃድ ይፈልጋል።",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "መዳረሻው የሚሰጠው ለዚህ አንድ ጣቢያ ብቻ ሲሆን፣ እርስዎ የሚመርጧቸውን ምስሎች ለማምጣት ነው። በማንኛውም ጊዜ ከአማራጮች ውስጥ ማስወገድ ይችላሉ።"
+    "message": "ለዚህ ጣቢያ ብቻ፣ እና ለማስቀመጥ ለሚመርጧቸው ምስሎች ብቻ። በማንኛውም ጊዜ በአማራጮች ውስጥ ማስወገድ ይችላሉ።"
+  },
+  "askPageTitle": {
+    "message": "Imgkeep ይህን ምስል በዚህ ጣቢያ ላይ እንዲያነብ ይፈቀድ?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ ይህን ምስል በገጹ ውስጥ ያስቀምጣል፣ ስለዚህ Imgkeep ከዚያ ማንበብ አለበት። ይህን ምስል ብቻ ያነባል፣ በገጹ ላይ ምንም አይቀይርም።",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "ይፍቀዱና ያስቀምጡ"

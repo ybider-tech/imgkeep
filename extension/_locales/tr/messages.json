@@ -153,10 +153,10 @@
     "message": "İptal"
   },
   "askHostTitle": {
-    "message": "Bu sitedeki görsellere izin verilsin mi?"
+    "message": "Imgkeep'in bu siteden görsel almasına izin verilsin mi?"
   },
   "askHostBody": {
-    "message": "$HOST$, görsellerinin başka siteler tarafından okunmasını engelliyor; bu yüzden Imgkeep bunu henüz dönüştüremiyor.",
+    "message": "$HOST$, görsellerini yalnızca kendi sayfalarının yüklemesine izin veriyor. Bunu dönüştürmek için Imgkeep'in görseli doğrudan alması için onayınız gerekiyor.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "İzin yalnızca bu site için geçerlidir ve seçtiğiniz görselleri almak içindir. Seçenekler'den istediğiniz zaman kaldırabilirsiniz."
+    "message": "Yalnızca bu site için ve yalnızca kaydetmeyi seçtiğiniz görseller için. Bunu istediğiniz zaman Seçenekler'den kaldırabilirsiniz."
+  },
+  "askPageTitle": {
+    "message": "Imgkeep'in bu sitede bu görseli okumasına izin verilsin mi?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ bu görseli kendi sayfasının içinde tutuyor, bu yüzden Imgkeep'in onu oradan okuması gerekiyor. Yalnızca bu görseli okur ve sayfada hiçbir şeyi değiştirmez.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "İzin ver ve kaydet"

@@ -153,10 +153,10 @@
     "message": "Loobu"
   },
   "askHostTitle": {
-    "message": "Kas lubada selle saidi pildid?"
+    "message": "Kas lubada Imgkeepil sellelt saidilt pilte tuua?"
   },
   "askHostBody": {
-    "message": "$HOST$ ei luba teistel saitidel oma pilte lugeda, nii et Imgkeep ei saa seda veel teisendada.",
+    "message": "$HOST$ laseb oma pilte laadida ainult oma lehtedel. Selle teisendamiseks vajab Imgkeep sinu nõusolekut, et see otse tuua.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Juurdepääs kehtib ainult sellele saidile, et tuua sinu valitud pilte. Saad selle igal ajal valikute lehel eemaldada."
+    "message": "Ainult selle saidi jaoks ja ainult piltide jaoks, mille otsustad salvestada. Saad selle igal ajal seadetes eemaldada."
+  },
+  "askPageTitle": {
+    "message": "Kas lubada Imgkeepil seda pilti sellel saidil lugeda?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ hoiab seda pilti oma lehe sees, nii et Imgkeep peab selle sealt lugema. See loeb ainult seda pilti ega muuda lehel midagi.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Luba ja salvesta"

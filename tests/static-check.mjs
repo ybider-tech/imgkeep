@@ -89,7 +89,11 @@ for await (const path of walk(EXT)) {
     for (const p of ALLOWED_OPTIONAL_HOSTS) text = text.replaceAll(`"${p}"`, '""');
   }
   const relPosix = rel.split("\\").join("/");
-  if (/\bfetch\s*\(/.test(text) && !FETCH_FILES.includes(relPosix)) fail(`${rel}: fetch( is only allowed in ${FETCH_FILES.join(" and ")}`);
+  // lib/read-blob.js runs inside the page and reads a blob: link (the page's own memory, not the network).
+  if (relPosix === "lib/read-blob.js") {
+    if ((text.match(/\bfetch\s*\(/g) || []).length !== 1 || !text.includes('if (typeof url !== "string" || !url.startsWith("blob:")) return'))
+      fail("lib/read-blob.js: one fetch(), and only after checking the link is blob:");
+  } else if (/\bfetch\s*\(/.test(text) && !FETCH_FILES.includes(relPosix)) fail(`${rel}: fetch( is only allowed in ${FETCH_FILES.join(" and ")}`);
   if (/posthog\.com/i.test(text) && relPosix !== "lib/telemetry.js" && !rel.startsWith("_locales") && rel !== "PRIVACY.md") {
     fail(`${rel}: only lib/telemetry.js may talk to PostHog`);
   }

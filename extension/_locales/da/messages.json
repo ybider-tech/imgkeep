@@ -153,10 +153,10 @@
     "message": "Annuller"
   },
   "askHostTitle": {
-    "message": "Tillad billeder fra denne side?"
+    "message": "Vil du lade Imgkeep hente billeder fra dette websted?"
   },
   "askHostBody": {
-    "message": "$HOST$ blokerer, at andre sider læser dens billeder, så Imgkeep kan ikke konvertere dette endnu.",
+    "message": "$HOST$ lader kun sine egne sider indlæse sine billeder. For at konvertere dette skal Imgkeep have dit OK til at hente det direkte.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Adgangen gælder kun denne ene side og bruges til at hente de billeder, du vælger. Du kan fjerne den når som helst under Indstillinger."
+    "message": "Kun for dette websted og kun for de billeder, du vælger at gemme. Du kan fjerne det når som helst under Indstillinger."
+  },
+  "askPageTitle": {
+    "message": "Vil du lade Imgkeep læse dette billede på dette websted?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ holder dette billede inde på sin side, så Imgkeep skal læse det derfra. Det læser kun dette billede og ændrer intet på siden.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Tillad og gem"

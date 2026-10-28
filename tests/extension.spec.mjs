@@ -173,7 +173,7 @@ test("A site without CORS opens the ask window with reason host", async () => {
   const ask = await opened;
   const job = await ctx.sw.evaluate((key) => chrome.storage.session.get(key).then((s) => s[key]), `job:${result.jobId}`);
   expect(job.reason).toBe("host");
-  await expect(ask.locator("#title")).toHaveText("Allow images from this site?");
+  await expect(ask.locator("#title")).toHaveText("Allow Imgkeep to get images from this site?");
   await expect(ask.getByRole("button", { name: "Allow and save" })).toBeVisible();
   await expect(ask.getByRole("button", { name: "Save original format instead" })).toBeVisible();
   await ask.close();

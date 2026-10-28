@@ -153,10 +153,10 @@
     "message": "Annuler"
   },
   "askHostTitle": {
-    "message": "Autoriser les images de ce site ?"
+    "message": "Autoriser Imgkeep à récupérer les images de ce site ?"
   },
   "askHostBody": {
-    "message": "$HOST$ empêche les autres sites de lire ses images, Imgkeep ne peut donc pas encore convertir celle-ci.",
+    "message": "$HOST$ ne laisse que ses propres pages charger ses images. Pour convertir celle-ci, Imgkeep a besoin de votre accord pour la récupérer directement.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "L'accès ne concerne que ce site, pour récupérer les images que vous choisissez. Vous pouvez le retirer à tout moment dans les Options."
+    "message": "Uniquement pour ce site, et uniquement pour les images que vous choisissez d'enregistrer. Vous pouvez le retirer à tout moment dans les Options."
+  },
+  "askPageTitle": {
+    "message": "Autoriser Imgkeep à lire cette image sur ce site ?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ garde cette image dans sa page, donc Imgkeep doit la lire depuis la page. Il lit uniquement cette image et ne modifie rien sur la page.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Autoriser et enregistrer"

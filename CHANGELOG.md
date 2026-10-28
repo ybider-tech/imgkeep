@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.12.0 — unreleased
+
+- **Imgkeep in 50 languages:** every language the Chrome Web Store offers, from Amharic to Vietnamese (it was 9). Machine-translated with `scripts/translate.mjs` (Claude), every string checked for placeholders, file-name tokens, allowed HTML and store length limits; store texts quote the menu exactly as each language names it.
+- **Images that only exist inside their page** (`blob:` links, as on WhatsApp Web, Google Photos and some editors) can be saved, copied and opened in More options or Get colour palette. Imgkeep reads that one image in the page (`lib/read-blob.js`, injected with `chrome.scripting`) and carries on with its bytes. It needs access to the page: right after Find image here's activeTab, or on a site you allow in the ask window ("Allow Imgkeep to read this image on this site?", optional `scripting` plus that one site). No new required permission. Before, these failed with "can't save it yet" (8 times in two weeks, from the anonymous counts). The static check allows that file's one network-free `fetch`, for `blob:` links only.
+- **A clearer site question:** "Allow Imgkeep to get images from this site?", why (the site only lets its own pages load its images) and what the access covers (this site, the images you choose to save). In two weeks, 28 of 149 site questions were answered no.
+- The privacy policy names the second case where Imgkeep looks at a page (a `blob:` image, after you allow the site).
+
 ## 0.11.0 — 2026-10-27
 
 - **Get colour palette, in the right-click menu.** A small window shows the image's 5, 8 or 12 main colours, largest first, with a bar showing how much of the image each one covers. Click a colour to copy it as HEX, RGB or HSL; copy them all as CSS variables, a Tailwind snippet, JSON or a plain list; or save them as a PNG swatch strip, a GIMP palette (`.gpl`, also for Inkscape and Krita) or Adobe swatches (`.ase`, for Illustrator, Photoshop and InDesign). The count and format you pick are remembered. Also a button in More options, so it works for images found by Find image here too.

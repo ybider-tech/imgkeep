@@ -153,10 +153,10 @@
     "message": "Atcelt"
   },
   "askHostTitle": {
-    "message": "Atļaut attēlus no šīs vietnes?"
+    "message": "Atļaut Imgkeep iegūt attēlus no šīs vietnes?"
   },
   "askHostBody": {
-    "message": "$HOST$ neļauj citām vietnēm nolasīt savus attēlus, tāpēc Imgkeep šo vēl nevar pārveidot.",
+    "message": "$HOST$ ļauj ielādēt savus attēlus tikai savām lapām. Lai to pārveidotu, Imgkeep vajag jūsu atļauju to iegūt tieši.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Piekļuve attiecas tikai uz šo vienu vietni, lai iegūtu tevis izvēlētos attēlus. To jebkurā brīdī vari noņemt Iestatījumos."
+    "message": "Tikai šai vietnei un tikai attēliem, kurus izvēlaties saglabāt. To jebkurā laikā var noņemt Opcijās."
+  },
+  "askPageTitle": {
+    "message": "Atļaut Imgkeep nolasīt šo attēlu šajā vietnē?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ tur šo attēlu savas lapas iekšpusē, tāpēc Imgkeep tas jānolasa no turienes. Tas nolasa tikai šo attēlu un lapā neko nemaina.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Atļaut un saglabāt"

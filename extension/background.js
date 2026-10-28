@@ -10,6 +10,7 @@ import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summa
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
+import { readBlobInPage } from "./lib/read-blob.js";
 import { FOLDERS, countsAllowed } from "./lib/browser.js";
 import { cleanHexes } from "./lib/palette.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
@@ -254,6 +255,35 @@ async function findImage(info, tab) {
 // For automated tests only: run the finder on a tab, as if "Find image here" was clicked there.
 globalThis.imgkeepFindImage = (tabId, url) => findImage({ pageUrl: url, frameId: 0 }, { id: tabId, url });
 
+// ---- Images that only exist inside their page (blob: links) ----
+// Sites like WhatsApp Web or Google Photos show images from blob: links, which only their own page can read.
+// With access to that page (Find image here's activeTab right after the right-click, or the site allowed in
+// the ask window), Imgkeep reads the image there, once, and carries on with its bytes like any other image.
+// It only reads the image the user right-clicked; it never changes the page.
+
+// → { url } with the image as a data: URL, { needsPage: { origin, host } } when access is needed first, or
+// { code } when it can't be read.
+async function pageImage({ url, pageUrl, tabId, frameId }) {
+  if (tabId == null) return { code: "blob" };
+  try {
+    const [{ result } = {}] = await chrome.scripting.executeScript({
+      target: { tabId, frameIds: [frameId || 0] },
+      world: "MAIN", // the page's own context: blob: links belong to it
+      func: readBlobInPage,
+      args: [url],
+    });
+    if (result?.dataUrl) return { url: result.dataUrl };
+    return { code: result?.error || "blob" };
+  } catch {
+    // No scripting permission, or no access to this page yet.
+    if (!/^https?:/i.test(pageUrl || "")) return { code: "blob" };
+    return { needsPage: { origin: originPattern(pageUrl), host: new URL(pageUrl).hostname } };
+  }
+}
+
+// The access the ask window requests for a blob: image: running the one function above, on this one site.
+const pageAccess = (origin) => ({ permissions: ["scripting"], origins: [origin] });
+
 async function menuClicked(info, tab) {
   if (info.menuItemId === "imgkeep-find") return findImage(info, tab);
   if (info.menuItemId === "imgkeep-rate") {
@@ -261,10 +291,16 @@ async function menuClicked(info, tab) {
     return openRateWindow();
   }
   if (!info.srcUrl) return;
-  const input = { url: info.srcUrl, pageUrl: info.pageUrl };
-  if (info.menuItemId === "imgkeep-copy") return openWindow("copy", input);
-  if (info.menuItemId === "imgkeep-palette") return openWindow("palette", input);
-  if (info.menuItemId === "imgkeep-more") return openWindow("editor", input);
+  let input = { url: info.srcUrl, pageUrl: info.pageUrl, tabId: tab?.id, frameId: info.frameId || 0 };
+  const action = { "imgkeep-copy": "copy", "imgkeep-palette": "palette", "imgkeep-more": "editor" }[info.menuItemId];
+  // A window works on the image's bytes, so a blob: image is read from its page first.
+  if (action && input.url.startsWith("blob:")) {
+    const page = await pageImage(input);
+    if (page.needsPage) return openAsk({ ...input, action, reason: "page", ...page.needsPage });
+    if (page.code) return openAsk({ ...input, action, reason: "error", code: page.code });
+    input = { ...input, url: page.url };
+  }
+  if (action) return openWindow(action, input);
   let format = MENU[info.menuItemId];
   if (info.menuItemId === "imgkeep-last") {
     ({ lastFormat: format } = await chrome.storage.local.get("lastFormat"));
@@ -460,12 +496,23 @@ async function runJob(input, { interactive = true } = {}) {
     options: input.options,
     sourceId: input.sourceId,
     origin: input.origin, // "editor" for saves from More options (only for counting)
+    tabId: input.tabId, // the page the image came from (blob: images are read there)
+    frameId: input.frameId,
   };
   let result;
   try {
+    if (job.url?.startsWith("blob:")) {
+      const page = await pageImage(job);
+      if (page.needsPage) throw Object.assign(new Error("page"), { page: page.needsPage });
+      if (page.code) throw new JobError(page.code);
+      job.url = page.url; // the same image, now as bytes; the original blob: link stays in the stored job
+    }
     result = await attempt(job);
   } catch (e) {
-    result = { ok: false, reason: "error", code: e.code || "unknown", detail: e.detail || e.message || "" };
+    result = e.page
+      ? { ok: false, reason: "page", ...e.page }
+      : { ok: false, reason: "error", code: e.code || "unknown", detail: e.detail || e.message || "" };
+    if (e.page) job.url = input.url;
   }
   result.jobId = job.id;
   // Once a save has its answer, the fetched image isn't needed (a retry fetches again). A window's image
@@ -545,7 +592,7 @@ function countJob(job, result) {
     if (job.origin === "editor") keys.push("more_options_save");
     return count(...keys);
   }
-  if (result.reason === "host") return count("site_access_asked");
+  if (result.reason === "host" || result.reason === "page") return count("site_access_asked");
   if (result.reason === "no-folder" || result.reason === "folder-permission") return count("folder_asked");
   return count(failureKey(result.code));
 }
@@ -704,6 +751,16 @@ const windowHandlers = {
   async finderTurnedOn() {
     if (await findTurnedOn()) count("find_enabled");
     return { ok: true, on: await findTurnedOn() };
+  },
+
+  // A blob: image after its page was allowed: open the window it was for, or save it.
+  async pageAllowed({ jobId }) {
+    const job = await loadJob(jobId);
+    if (!job.action) return windowHandlers.retry({ jobId });
+    const page = await pageImage(job);
+    if (!page.url) return { ok: false, reason: "error", code: page.code || "blob" };
+    await openWindow(job.action, { url: page.url, pageUrl: job.pageUrl });
+    return { ok: true, opened: true };
   },
 
   // More options → Get colour palette: the same image in the palette window.

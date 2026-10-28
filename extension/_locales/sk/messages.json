@@ -153,10 +153,10 @@
     "message": "Zrušiť"
   },
   "askHostTitle": {
-    "message": "Povoliť obrázky z tejto stránky?"
+    "message": "Povoliť Imgkeepu získavať obrázky z tejto stránky?"
   },
   "askHostBody": {
-    "message": "$HOST$ blokuje čítanie svojich obrázkov inými stránkami, takže Imgkeep tento zatiaľ nevie previesť.",
+    "message": "$HOST$ dovoľuje načítať svoje obrázky len vlastným stránkam. Aby ho Imgkeep prekonvertoval, potrebuje váš súhlas na jeho priame stiahnutie.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Prístup platí len pre túto jednu stránku a slúži na načítanie obrázkov, ktoré vyberiete. Kedykoľvek ho môžete odobrať v Možnostiach."
+    "message": "Len pre túto stránku a len pre obrázky, ktoré sa rozhodnete uložiť. Kedykoľvek to môžete odobrať v Možnostiach."
+  },
+  "askPageTitle": {
+    "message": "Povoliť Imgkeepu prečítať tento obrázok na tejto stránke?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ drží tento obrázok vo vnútri svojej stránky, takže ho Imgkeep musí prečítať odtiaľ. Prečíta len tento obrázok a na stránke nič nemení.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Povoliť a uložiť"

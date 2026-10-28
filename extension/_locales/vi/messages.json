@@ -153,10 +153,10 @@
     "message": "Hủy"
   },
   "askHostTitle": {
-    "message": "Cho phép ảnh từ trang này?"
+    "message": "Cho phép Imgkeep lấy hình ảnh từ trang web này?"
   },
   "askHostBody": {
-    "message": "$HOST$ chặn các trang khác đọc ảnh của mình, nên Imgkeep chưa chuyển đổi được ảnh này.",
+    "message": "$HOST$ chỉ cho các trang của chính nó tải hình ảnh. Để chuyển đổi ảnh này, Imgkeep cần bạn đồng ý để lấy ảnh trực tiếp.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Quyền truy cập chỉ áp dụng cho riêng trang này, để tải những ảnh bạn chọn. Bạn có thể gỡ bất cứ lúc nào trong Tùy chọn."
+    "message": "Chỉ cho trang web này, và chỉ cho những ảnh bạn chọn lưu. Bạn có thể gỡ quyền này bất cứ lúc nào trong Tùy chọn."
+  },
+  "askPageTitle": {
+    "message": "Cho phép Imgkeep đọc ảnh này trên trang web này?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ giữ ảnh này bên trong trang của nó, nên Imgkeep phải đọc ảnh từ đó. Imgkeep chỉ đọc ảnh này và không thay đổi gì trên trang.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Cho phép và lưu"

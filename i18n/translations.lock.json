@@ -35,9 +35,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -180,7 +180,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ar": {
   "ui:extName": "88ed1ca75cb377df",
@@ -218,9 +220,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -363,7 +365,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "bg": {
   "ui:extName": "88ed1ca75cb377df",
@@ -401,9 +405,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -546,7 +550,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "bn": {
   "ui:extName": "88ed1ca75cb377df",
@@ -584,9 +590,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -729,7 +735,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ca": {
   "ui:extName": "88ed1ca75cb377df",
@@ -767,9 +775,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -912,7 +920,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "cs": {
   "ui:extName": "88ed1ca75cb377df",
@@ -950,9 +960,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -1095,7 +1105,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "da": {
   "ui:extName": "88ed1ca75cb377df",
@@ -1133,9 +1145,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -1278,7 +1290,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "de": {
   "ui:extName": "88ed1ca75cb377df",
@@ -1316,9 +1330,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -1461,7 +1475,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "el": {
   "ui:extName": "88ed1ca75cb377df",
@@ -1499,9 +1515,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -1644,7 +1660,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "es": {
   "ui:extName": "88ed1ca75cb377df",
@@ -1682,9 +1700,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -1827,7 +1845,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "et": {
   "ui:extName": "88ed1ca75cb377df",
@@ -1865,9 +1885,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2010,7 +2030,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "fa": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2048,9 +2070,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2193,7 +2215,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "fi": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2231,9 +2255,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2376,7 +2400,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "fil": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2414,9 +2440,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2559,7 +2585,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "fr": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2597,9 +2625,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2742,7 +2770,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "gu": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2780,9 +2810,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -2925,7 +2955,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "he": {
   "ui:extName": "88ed1ca75cb377df",
@@ -2963,9 +2995,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -3108,7 +3140,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "hi": {
   "ui:extName": "88ed1ca75cb377df",
@@ -3146,9 +3180,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -3291,7 +3325,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "hr": {
   "ui:extName": "88ed1ca75cb377df",
@@ -3329,9 +3365,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -3474,7 +3510,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "hu": {
   "ui:extName": "88ed1ca75cb377df",
@@ -3512,9 +3550,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -3657,7 +3695,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "id": {
   "ui:extName": "88ed1ca75cb377df",
@@ -3695,9 +3735,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -3840,7 +3880,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "it": {
   "ui:extName": "88ed1ca75cb377df",
@@ -3878,9 +3920,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4023,7 +4065,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ja": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4061,9 +4105,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4206,7 +4250,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "kn": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4244,9 +4290,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4389,7 +4435,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ko": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4427,9 +4475,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4572,7 +4620,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "lt": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4610,9 +4660,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4755,7 +4805,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "lv": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4793,9 +4845,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -4938,7 +4990,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ml": {
   "ui:extName": "88ed1ca75cb377df",
@@ -4976,9 +5030,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -5121,7 +5175,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "mr": {
   "ui:extName": "88ed1ca75cb377df",
@@ -5159,9 +5215,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -5304,7 +5360,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ms": {
   "ui:extName": "88ed1ca75cb377df",
@@ -5342,9 +5400,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -5487,7 +5545,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "nl": {
   "ui:extName": "88ed1ca75cb377df",
@@ -5525,9 +5585,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -5670,7 +5730,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "no": {
   "ui:extName": "88ed1ca75cb377df",
@@ -5708,9 +5770,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -5853,7 +5915,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "pl": {
   "ui:extName": "88ed1ca75cb377df",
@@ -5891,9 +5955,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6036,7 +6100,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "pt_BR": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6074,9 +6140,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6219,7 +6285,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "pt_PT": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6257,9 +6325,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6402,7 +6470,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ro": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6440,9 +6510,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6585,7 +6655,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ru": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6623,9 +6695,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6768,7 +6840,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "sk": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6806,9 +6880,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -6951,7 +7025,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "sl": {
   "ui:extName": "88ed1ca75cb377df",
@@ -6989,9 +7065,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -7134,7 +7210,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "sr": {
   "ui:extName": "88ed1ca75cb377df",
@@ -7172,9 +7250,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -7317,7 +7395,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "sv": {
   "ui:extName": "88ed1ca75cb377df",
@@ -7355,9 +7435,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -7500,7 +7580,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "sw": {
   "ui:extName": "88ed1ca75cb377df",
@@ -7538,9 +7620,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -7683,7 +7765,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "ta": {
   "ui:extName": "88ed1ca75cb377df",
@@ -7721,9 +7805,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -7866,7 +7950,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "te": {
   "ui:extName": "88ed1ca75cb377df",
@@ -7904,9 +7990,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8049,7 +8135,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "th": {
   "ui:extName": "88ed1ca75cb377df",
@@ -8087,9 +8175,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8232,7 +8320,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "tr": {
   "ui:extName": "88ed1ca75cb377df",
@@ -8270,9 +8360,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8415,7 +8505,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "uk": {
   "ui:extName": "88ed1ca75cb377df",
@@ -8453,9 +8545,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8598,7 +8690,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "vi": {
   "ui:extName": "88ed1ca75cb377df",
@@ -8636,9 +8730,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8781,7 +8875,9 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "zh_CN": {
   "store:storeDescription": "6b6c2f644b1f44a8",
@@ -8822,9 +8918,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -8964,7 +9060,9 @@
   "ui:paletteSavedFallback": "c1ca7de0bb769441",
   "ui:paletteEmpty": "cdf5a93707e2b08e",
   "ui:paletteCopyFailed": "2908496c9ec5dd5e",
-  "ui:paletteNote": "b5872adea69c9005"
+  "ui:paletteNote": "b5872adea69c9005",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  },
  "zh_TW": {
   "ui:extName": "88ed1ca75cb377df",
@@ -9002,9 +9100,9 @@
   "ui:askRetry": "d8b8392e2c542950",
   "ui:askOpenImage": "1b5fe59610ba676e",
   "ui:askCancel": "19766ed6ccb2f4a3",
-  "ui:askHostTitle": "de034eaed6a81d82",
-  "ui:askHostBody": "626aeca9a45aedf8",
-  "ui:askHostNote": "26f2b60624819ba6",
+  "ui:askHostTitle": "63878c258cec1367",
+  "ui:askHostBody": "2ea92173af7d4c31",
+  "ui:askHostNote": "85f018f23dba463b",
   "ui:askAllowAndSave": "5ba39ad787819a51",
   "ui:askNotAllowed": "f6ad5fdf692d3dc3",
   "ui:askSaveOriginal": "c203192f3a61fc3d",
@@ -9147,6 +9245,8 @@
   "ui:paletteNote": "b5872adea69c9005",
   "store:storeDescription": "6b6c2f644b1f44a8",
   "store:amoSummary": "3e45c0e8086ab649",
-  "store:amoDescription": "eb8aadb5f16e4a8d"
+  "store:amoDescription": "eb8aadb5f16e4a8d",
+  "ui:askPageTitle": "74c7ad7df1e6201e",
+  "ui:askPageBody": "5c92e7e1316fae46"
  }
 }

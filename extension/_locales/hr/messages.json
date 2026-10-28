@@ -153,10 +153,10 @@
     "message": "Odustani"
   },
   "askHostTitle": {
-    "message": "Dopustiti slike s ove stranice?"
+    "message": "Dopustiti Imgkeepu da dohvaća slike s ove stranice?"
   },
   "askHostBody": {
-    "message": "$HOST$ drugim stranicama onemogućuje čitanje svojih slika, pa Imgkeep ovu još ne može pretvoriti.",
+    "message": "$HOST$ dopušta samo svojim stranicama da učitavaju njegove slike. Da bi pretvorio ovu, Imgkeepu treba vaše dopuštenje da je dohvati izravno.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Pristup vrijedi samo za ovu stranicu, radi dohvaćanja slika koje odaberete. Možete ga ukloniti bilo kada u Opcijama."
+    "message": "Samo za ovu stranicu i samo za slike koje odlučite spremiti. To možete ukloniti bilo kada u Opcijama."
+  },
+  "askPageTitle": {
+    "message": "Dopustiti Imgkeepu da pročita ovu sliku na ovoj stranici?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ drži ovu sliku unutar svoje stranice, pa je Imgkeep mora pročitati odande. Čita samo ovu sliku i ništa ne mijenja na stranici.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Dopusti i spremi"

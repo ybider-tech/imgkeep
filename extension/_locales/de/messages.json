@@ -153,10 +153,10 @@
     "message": "Abbrechen"
   },
   "askHostTitle": {
-    "message": "Bilder von dieser Website erlauben?"
+    "message": "Darf Imgkeep Bilder von dieser Website abrufen?"
   },
   "askHostBody": {
-    "message": "$HOST$ hindert andere Websites daran, seine Bilder zu lesen, deshalb kann Imgkeep dieses noch nicht umwandeln.",
+    "message": "$HOST$ lässt nur die eigenen Seiten seine Bilder laden. Um dieses umzuwandeln, braucht Imgkeep dein OK, es direkt abzurufen.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Der Zugriff gilt nur für diese eine Website, um Bilder abzurufen, die du auswählst. Du kannst ihn jederzeit in den Optionen entfernen."
+    "message": "Nur für diese Website und nur für die Bilder, die du speichern willst. Du kannst das jederzeit in den Optionen entfernen."
+  },
+  "askPageTitle": {
+    "message": "Darf Imgkeep dieses Bild auf dieser Website lesen?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ hält dieses Bild in der eigenen Seite, deshalb muss Imgkeep es dort lesen. Es liest nur dieses Bild und ändert nichts an der Seite.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Erlauben und speichern"

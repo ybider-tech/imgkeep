@@ -153,10 +153,10 @@
     "message": "Zrušit"
   },
   "askHostTitle": {
-    "message": "Povolit obrázky z tohoto webu?"
+    "message": "Povolit Imgkeepu získávat obrázky z tohoto webu?"
   },
   "askHostBody": {
-    "message": "$HOST$ brání jiným webům ve čtení svých obrázků, takže Imgkeep tento obrázek zatím nepřevede.",
+    "message": "$HOST$ dovoluje načítat své obrázky jen vlastním stránkám. Aby ho Imgkeep převedl, potřebuje váš souhlas k jeho přímému stažení.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Přístup platí jen pro tento jeden web, a to kvůli stažení obrázků, které vyberete. Kdykoli ho můžete odebrat v Možnostech."
+    "message": "Jen pro tento web a jen pro obrázky, které se rozhodnete uložit. Kdykoli to můžete odebrat v Možnostech."
+  },
+  "askPageTitle": {
+    "message": "Povolit Imgkeepu přečíst tento obrázek na tomto webu?"
+  },
+  "askPageBody": {
+    "message": "$HOST$ drží tento obrázek uvnitř své stránky, takže ho Imgkeep musí přečíst odtamtud. Přečte jen tento obrázek a na stránce nic nemění.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Povolit a uložit"

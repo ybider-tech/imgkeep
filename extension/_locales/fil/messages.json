@@ -153,10 +153,10 @@
     "message": "Kanselahin"
   },
   "askHostTitle": {
-    "message": "Payagan ang mga larawan mula sa site na ito?"
+    "message": "Payagan ang Imgkeep na kumuha ng mga larawan mula sa site na ito?"
   },
   "askHostBody": {
-    "message": "Hinaharang ng $HOST$ ang ibang site sa pagbasa ng mga larawan nito, kaya hindi pa ma-convert ng Imgkeep ang isang ito.",
+    "message": "Ang sariling mga page lang ng $HOST$ ang pinapayagan nitong mag-load ng mga larawan nito. Para ma-convert ito, kailangan ng Imgkeep ang pahintulot mo para direktang kunin ito.",
     "placeholders": {
       "host": {
         "content": "$1",
@@ -165,7 +165,19 @@
     }
   },
   "askHostNote": {
-    "message": "Para sa iisang site na ito lang ang access, para makuha ang mga larawang pipiliin mo. Puwede mo itong alisin anumang oras sa Mga Opsyon."
+    "message": "Para lang sa site na ito, at para lang sa mga larawang pipiliin mong i-save. Maaari mo itong alisin anumang oras sa Options."
+  },
+  "askPageTitle": {
+    "message": "Payagan ang Imgkeep na basahin ang larawang ito sa site na ito?"
+  },
+  "askPageBody": {
+    "message": "Itinatago ng $HOST$ ang larawang ito sa loob ng page nito, kaya kailangan itong basahin ng Imgkeep doon. Ang larawang ito lang ang binabasa nito at wala itong binabago sa page.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
   },
   "askAllowAndSave": {
     "message": "Payagan at i-save"
