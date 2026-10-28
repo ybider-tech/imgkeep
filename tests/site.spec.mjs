@@ -347,7 +347,7 @@ test("social preview image exists and makes no false privacy claims", async ({ p
 test("count.js keeps nothing on the visitor's computer and talks to one address only", async () => {
   const js = await readFile(join(ROOT, "site", "count.js"), "utf8");
   expect(js).not.toMatch(/document\.cookie|localStorage|sessionStorage|indexedDB|navigator\.sendBeacon/);
-  expect([...js.matchAll(/https?:\/\/[^\s"'`)]+/g)].map((m) => m[0]).filter((u) => !/^https:\/\/(chromewebstore\.google\.com|microsoftedge\.microsoft\.com\/addons)\//.test(u))).toEqual([
+  expect([...js.matchAll(/https?:\/\/[^\s"'`)]+/g)].map((m) => m[0]).filter((u) => !/^https:\/\/(chromewebstore\.google\.com|microsoftedge\.microsoft\.com\/addons|addons\.mozilla\.org)\//.test(u))).toEqual([
     "https://eu.i.posthog.com/i/v0/e/",
   ]);
   expect(js).toContain('credentials: "omit"');

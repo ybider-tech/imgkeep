@@ -1,7 +1,7 @@
 // Anonymous counts for imgkeep.app: which pages are visited, and which pages send people to the stores.
 // Events sent straight to PostHog (EU cloud) with one request each; no PostHog library.
 //   site_pageview     the page's path, and the referring site's name only (e.g. "google.com")
-//   site_store_click  the page's path, which store (chrome or edge), and the link's utm_campaign
+//   site_store_click  the page's path, which store (chrome, edge or firefox), and the link's utm_campaign
 //   site_convert      on the Free Image Converter: the format pair and how many files (e.g. webp → jpg, 3)
 // Each event also says the kind of device: "mobile", "tablet" or "desktop", worked out here; the browser's
 // details never leave the page.
@@ -66,11 +66,13 @@
   document.addEventListener(
     "click",
     (e) => {
-      const a = e.target.closest?.('a[href^="https://chromewebstore.google.com/"], a[href^="https://microsoftedge.microsoft.com/addons/"]');
+      const a = e.target.closest?.(
+        'a[href^="https://chromewebstore.google.com/"], a[href^="https://microsoftedge.microsoft.com/addons/"], a[href^="https://addons.mozilla.org/"]',
+      );
       if (!a) return;
       const link = new window.URL(a.href);
       send("site_store_click", {
-        store: link.hostname.startsWith("chromewebstore") ? "chrome" : "edge",
+        store: link.hostname.startsWith("chromewebstore") ? "chrome" : link.hostname === "addons.mozilla.org" ? "firefox" : "edge",
         campaign: link.searchParams.get("utm_campaign") || "",
       });
     },
