@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep</title>
-  <meta name="description" content="Right-click any image in Chrome or Edge to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Free and open source.">
+  <meta name="description" content="Right-click any image in Chrome or Edge to save it as PNG, JPG, WebP, GIF or PDF, or get its colour palette. Converted on your computer. Free and open source.">
   <link rel="canonical" href="https://imgkeep.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Imgkeep">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Imgkeep",
-    "description": "Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, or copies them as PNG. It converts each image on your computer and saves it to your chosen folder.",
+    "description": "Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, copies them as PNG, or shows their colour palette. It converts each image on your computer and saves it to your chosen folder.",
     "url": "https://imgkeep.app/",
     "image": "https://imgkeep.app/icon128.png",
     "applicationCategory": "BrowserApplication",
@@ -31,7 +31,7 @@
     "installUrl": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
     "downloadUrl": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
     "license": "https://opensource.org/licenses/MIT",
-    "featureList": ["Save images as PNG, JPG, WebP, GIF or PDF", "Convert WebP and AVIF to JPG or PNG", "Keep animation when saving as GIF", "Copy as PNG", "Save to a folder you choose", "Custom file names", "Converts on your computer, no uploads"],
+    "featureList": ["Save images as PNG, JPG, WebP, GIF or PDF", "Convert WebP and AVIF to JPG or PNG", "Keep animation when saving as GIF", "Copy as PNG", "Get an image's colour palette: copy HEX, RGB or HSL, or save .ase and .gpl files", "Save to a folder you choose", "Custom file names", "Converts on your computer, no uploads"],
     "publisher": { "@id": "https://imgkeep.app/#org" },
     "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]
   }
@@ -65,6 +65,7 @@
         { "@type": "Question", "name": "Is Imgkeep free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything Imgkeep does today is free, with no ads and no limits. A paid Imgkeep Pro with extra features is planned, and the current features stay free." } },
         { "@type": "Question", "name": "Does Imgkeep upload my images?", "acceptedAnswer": { "@type": "Answer", "text": "No. Each image is converted on your computer and saved straight to your folder. The only thing Imgkeep sends is one anonymous daily count of which features were used and which saves failed, and you can turn it off in Options." } },
         { "@type": "Question", "name": "Which formats can it save?", "acceptedAnswer": { "@type": "Answer", "text": "PNG, JPG, WebP, GIF (animation kept), PDF or the original format. It converts the WebP and AVIF images many sites now serve, and Copy as PNG puts an image on your clipboard." } },
+        { "@type": "Question", "name": "Can it get the colour palette from an image?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the image, choose Imgkeep, then Get colour palette. You see its 5, 8 or 12 main colours, largest first. Click one to copy it as HEX, RGB or HSL, or copy them all as CSS variables, Tailwind or JSON. Save them as a PNG, a GIMP palette or Adobe swatches. It's all worked out on your computer." } },
         { "@type": "Question", "name": "Can it save images that sites cover, like on Instagram or Pinterest?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the photo and choose Imgkeep: Find image here. Imgkeep looks at that page once, finds the photo under your click at its largest size, and opens it ready to save. It's off until you turn it on, and it never changes a page." } },
         { "@type": "Question", "name": "Can I convert images I already have on my computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the Free Image Converter at imgkeep.app/convert/: drop your files, pick PNG, JPG, WebP, AVIF, GIF, PDF or ICO, then download them or copy them as PNG. It runs in your browser, so nothing is uploaded and there's no sign-up. It works on phones too." } },
         { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Google Chrome 116 and newer, and Microsoft Edge, in 9 languages." } },
@@ -112,7 +113,7 @@
         </video>
         <figcaption>
           <a href="https://youtu.be/QZfq5xLYdmo">Can't play it? Watch on YouTube <span aria-hidden="true">↗</span></a>
-          <span class="sr-only" id="demo-desc">A 28-second silent demo: right-click an animated WebP image, open Imgkeep: Save image as, and choose GIF (keeps animation). The saved GIF still moves. Then a WebP photo is saved as a JPG the same way.</span>
+          <span class="sr-only" id="demo-desc">A 28-second silent demo: right-click an animated WebP image, open Imgkeep, and choose GIF (keeps animation). The saved GIF still moves. Then a WebP photo is saved as a JPG the same way.</span>
         </figcaption>
       </figure>
 
@@ -127,7 +128,7 @@
           <li>
             <span class="num" aria-hidden="true">02</span>
             <h3>Pick your format</h3>
-            <p>Choose PNG, JPG, WebP, GIF (keeps animation), PDF or original. Or copy it as PNG to paste anywhere.</p>
+            <p>Choose PNG, JPG, WebP, GIF (keeps animation), PDF or original. Or copy it as PNG, or get its colour palette.</p>
           </li>
           <li>
             <span class="num" aria-hidden="true">03</span>
@@ -165,6 +166,11 @@
             <p>Put the image on your clipboard as a real PNG, transparency kept, and paste it into chat, docs or design tools like Canva, Figma and Google Slides. <a href="web-image-into-canva-figma-google-slides/">How</a>.</p>
           </li>
           <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>Colour palette</h3>
+            <p>Get an image's main colours from the right-click menu. Copy one as HEX, RGB or HSL, copy them all as CSS or Tailwind, or save them for Adobe apps or GIMP.</p>
+          </li>
+          <li>
             <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
             <h3>Your file names</h3>
             <p>Name files with the original name, the site, the date or the size, like <code>{name}-{w}x{h}</code>.</p>
@@ -178,6 +184,16 @@
             <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
             <h3>Resize and preview</h3>
             <p>Set a maximum width and big images shrink to fit. <strong>More options</strong> shows the result and its real file size before you save, with quality and background you choose.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF, AVIF, ICO and BMP</h3>
+            <p>Save an image as a one-page PDF, or in More options as AVIF (often half the size of a JPG), an ICO icon for shortcuts and favicons, or BMP.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>Files you already have</h3>
+            <p>Convert images on your computer or phone with the <a href="convert/">Free Image Converter</a>. It runs in the page, so nothing is uploaded.</p>
           </li>
         </ul>
       </section>
@@ -259,6 +275,10 @@
           <div>
             <dt>Which formats can it save?</dt>
             <dd>PNG, JPG, WebP, GIF (animation kept), PDF or the original format. It converts the WebP and AVIF images many sites now serve, and <strong>Copy as PNG</strong> puts an image on your clipboard.</dd>
+          </div>
+          <div>
+            <dt>Can it get the colour palette from an image?</dt>
+            <dd>Yes. Right-click the image, choose Imgkeep, then Get colour palette. You see its 5, 8 or 12 main colours, largest first. Click one to copy it as HEX, RGB or HSL, or copy them all as CSS variables, Tailwind or JSON. Save them as a PNG, a GIMP palette or Adobe swatches. It's all worked out on your computer.</dd>
           </div>
           <div>
             <dt>Can it save images that sites cover, like on Instagram or Pinterest?</dt>

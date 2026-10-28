@@ -1,10 +1,11 @@
 # Imgkeep
 
-> Imgkeep is a free browser extension for Google Chrome and Microsoft Edge that saves web images as PNG, JPG, WebP, GIF or PDF from the right-click menu. It converts each image on the user's computer (nothing is uploaded) and saves it to Downloads, a folder the user picks, or wherever they choose each time. It is open source under the MIT licence.
+> Imgkeep is a free browser extension for Google Chrome and Microsoft Edge that saves web images as PNG, JPG, WebP, GIF or PDF from the right-click menu, and can show an image's colour palette. It converts each image on the user's computer (nothing is uploaded) and saves it to Downloads, a folder the user picks, or wherever they choose each time. It is open source under the MIT licence.
 
 Key facts:
 
-- Use: right-click an image, choose "Imgkeep: Save image as", then PNG, JPG, WebP, GIF (keeps animation), PDF or Original format. "Copy as PNG" puts the image on the clipboard.
+- Use: right-click an image, choose "Imgkeep", then PNG, JPG, WebP, GIF (keeps animation), PDF or Original format. "Copy as PNG" puts the image on the clipboard. "Get colour palette" shows its main colours.
+- Colour palette: "Get colour palette" shows an image's 5, 8 or 12 main colours, largest first, with each one's share. Click one to copy it as HEX, RGB or HSL; copy all as CSS variables, Tailwind, JSON or a list; or save a PNG swatch strip, a GIMP palette (.gpl) or Adobe swatches (.ase). Worked out on the device. It also works on images found with Find image here (through More options).
 - Converts the WebP and AVIF images many sites now serve into PNG or JPG files that every app opens. Animated WebP can be saved as an animated GIF.
 - Privacy: images are converted on the device and never uploaded. No account. One anonymous daily count of which features were used and which saves failed is sent (never images, addresses or file names), and it can be turned off in Options.
 - Find image here: on sites that cover their photos with another layer (like Instagram and Pinterest), a right-click can't reach the image. "Imgkeep: Find image here" looks at that page once, finds the photo under the click at its largest size, and opens it ready to save. Off until the user turns it on.

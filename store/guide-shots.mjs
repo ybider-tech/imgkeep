@@ -36,18 +36,22 @@ try {
   await rm(ext.userDataDir, { recursive: true, force: true });
 }
 
-// ---- Right-click menu, one shot per highlighted format ----
+// ---- Right-click menu, one shot per highlighted item ----
+// The scene has the whole 0.11 submenu (formats, Original format, Copy as PNG, Get colour palette, More
+// options…), placed so it fits the 560 px crop; the pointer sits on the highlighted item.
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 }, deviceScaleFactor: 1 });
 await page.goto(pathToFileURL(join(STORE, "scenes.html")).href, { waitUntil: "networkidle" });
 await page.evaluate(() => document.fonts.ready);
-for (const [format, url, file] of [
+for (const [item, url, file] of [
   ["PNG", "shop.example.com/products/stoneware-mug", "menu-png.jpg"],
   ["JPG", "photos.example.com/gallery/stoneware-mug", "menu-jpg.jpg"],
   ["GIF (keeps animation)", "art.example.com/loops/stoneware-mug", "menu-gif.jpg"],
   ["PDF", "shop.example.com/receipts/stoneware-mug", "menu-pdf.jpg"],
+  ["Copy as PNG", "shop.example.com/products/stoneware-mug", "menu-copy-png.jpg"],
+  ["Get colour palette", "shop.example.com/products/stoneware-mug", "menu-palette.jpg"],
 ]) {
-  await page.evaluate(([format, url]) => {
+  await page.evaluate(([item, url]) => {
     const scene = document.querySelector("#scene-1");
     scene.querySelector(".head").style.display = "none";
     scene.querySelector(".logo").style.display = "none";
@@ -55,34 +59,13 @@ for (const [format, url, file] of [
     Object.assign(b.style, { top: "40px", height: "560px" });
     b.querySelector(".url").textContent = url;
     const items = [...scene.querySelectorAll(".menu")[1].children].filter((d) => d.tagName === "DIV");
-    for (const d of items) d.classList.toggle("on", d.textContent === format);
-    // Move the pointer onto the highlighted item.
-    const on = items.find((d) => d.textContent === format);
-    scene.querySelector(".cursor").style.top = `${318 + on.offsetTop - items[0].offsetTop}px`;
-  }, [format, url]);
+    for (const d of items) d.classList.toggle("on", d.textContent === item);
+    // Move the pointer onto the highlighted item (its top in scenes.html is the first item's).
+    const on = items.find((d) => d.textContent === item);
+    scene.querySelector(".cursor").style.top = `${178 + on.offsetTop - items[0].offsetTop}px`;
+  }, [item, url]);
   await page.locator("#scene-1 .browser").screenshot(jpg(file));
   console.log(`site/media/guides/${file}`);
 }
-
-// Copy as PNG: the scene's submenu stops at Original format, so add the real menu's last two items
-// (a separator, Copy as PNG, More options…) for this shot only, after the shots above are taken.
-await page.evaluate(() => {
-  const scene = document.querySelector("#scene-1");
-  scene.querySelector(".url").textContent = "shop.example.com/products/stoneware-mug";
-  const sub = scene.querySelectorAll(".menu")[1];
-  const item = (text) => Object.assign(document.createElement("div"), { textContent: text });
-  sub.append(document.createElement("hr"), item("Copy as PNG"), item("More options…"));
-  // The longer submenu needs room: move both menus (and the pointer) up by the same amount.
-  const UP = 100;
-  const [menu] = scene.querySelectorAll(".menu");
-  menu.style.top = `${150 - UP}px`;
-  sub.style.top = `${290 - UP}px`;
-  const items = [...sub.children].filter((d) => d.tagName === "DIV");
-  for (const d of items) d.classList.toggle("on", d.textContent === "Copy as PNG");
-  const on = items.find((d) => d.textContent === "Copy as PNG");
-  scene.querySelector(".cursor").style.top = `${318 - UP + on.offsetTop - items[0].offsetTop}px`;
-});
-await page.locator("#scene-1 .browser").screenshot(jpg("menu-copy-png.jpg"));
-console.log("site/media/guides/menu-copy-png.jpg");
 await browser.close();
 console.log("site/media/guides/options-folder.jpg, trust.jpg");

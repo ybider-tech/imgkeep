@@ -2,7 +2,7 @@
 
 Right-click any image and save it as PNG, JPG, WebP, GIF (animation included) or PDF. Imgkeep converts it on your computer and saves it where you want.
 
-![The Imgkeep right-click menu: Save image as PNG, JPG, WebP, GIF or Original format](store/screenshot-1-menu.png)
+![The Imgkeep right-click menu: PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, Get colour palette and More options](store/screenshot-1-menu.png)
 
 **Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
 
