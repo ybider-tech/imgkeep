@@ -24,6 +24,10 @@ Key facts:
 - [PNG to JPG](https://imgkeep.app/png-to-jpg/): smaller files for photos; choose quality and background colour.
 - [PNG to ICO](https://imgkeep.app/png-to-ico/): one .ico with 16, 32 and 48 px icons, plus 256 px for large images.
 
+## Color palette from image
+
+- [Color palette from image](https://imgkeep.app/color-palette-from-image/): an image's 5, 8 or 12 main colors in the browser, no uploads, no sign-up; copy HEX, RGB, HSL, CSS or Tailwind, or save .ase and .gpl files. Same code as the extension.
+
 ## Install
 
 - [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl)

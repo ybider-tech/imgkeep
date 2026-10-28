@@ -720,3 +720,30 @@ header:has(.cv-nav) { display: flex; align-items: center; flex-wrap: wrap; gap: 
 @media (max-width: 760px) { .stores { grid-template-columns: 1fr; } }
 .doc .faq dt { font-weight: 700; margin-top: 16px; }
 .doc .faq dd { margin: 4px 0 0; }
+
+/* Color palette from image (the palette tool page). */
+.pal { margin-top: 24px; }
+.pal-result { margin-top: 20px; }
+.pal-stage { display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; height: 220px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.pal-stage img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.pal-bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin: 12px 0 16px; border: 1px solid var(--border); }
+.pal-bar span { display: block; height: 100%; }
+.pal-switches { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+.pal-switches fieldset { border: 0; padding: 0; margin: 0; display: flex; align-items: center; gap: 10px; }
+.pal-switches legend { float: left; font-weight: 700; padding: 0; margin-right: 6px; }
+.pal-seg { display: flex; gap: 6px; }
+.pal-seg label { border: 1px solid var(--border-control); border-radius: 8px; padding: 6px 14px; cursor: pointer; font-weight: 600; background: var(--surface); }
+.pal-seg input { position: absolute; opacity: 0; pointer-events: none; }
+.pal-seg label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: var(--on-accent, #fff); }
+.pal-seg label:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+.doc .pal-swatches, .pal-swatches { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.pal-swatch { width: 100%; padding: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); color: var(--text); cursor: pointer; font: inherit; text-align: center; }
+.pal-swatch.copied { box-shadow: 0 0 0 3px var(--accent); }
+.pal-chip { display: block; height: 72px; border-bottom: 1px solid var(--border); }
+.pal-value { display: block; padding: 6px 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; word-break: break-word; }
+.pal-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.pal-label { font-weight: 700; margin-right: 4px; }
+.pal-status { min-height: 1.5em; margin: 14px 0 0; font-weight: 700; }
+.pal-status.error { color: var(--danger, #a4302a); }
+.doc .pal-table { min-width: 0; } /* two short columns fit any screen */
+

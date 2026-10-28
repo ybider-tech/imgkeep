@@ -27,6 +27,7 @@ const PAGES = [
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
   ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
   ["download/", "download/index.html"],
+  ["color-palette-from-image/", "color-palette-from-image/index.html"],
 ];
 
 for (const [page] of PAGES) {
@@ -71,6 +72,12 @@ test("no third-party analytics or trackers on the site", async () => {
       expect(raw.split(app(file)).length - 1, `${file}: the converter script once`).toBe(1);
       raw = raw.replace(app(file), "");
     }
+    // The palette tool loads its own script, from this site only (it reads the image in the page).
+    if (file === "color-palette-from-image/index.html") {
+      const tool = '<script type="module" src="app.js"></script>';
+      expect(raw.split(tool).length - 1, `${file}: the palette script once`).toBe(1);
+      raw = raw.replace(tool, "");
+    }
     expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
     // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
     // data, not code. Browsers never execute it. It must parse as JSON; every other <script> still fails.
@@ -99,7 +106,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
     "pro.html": "https://imgkeep.app/pro.html", "whats-new.html": "https://imgkeep.app/whats-new.html",
     ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
     ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])),
-    "download/index.html": "https://imgkeep.app/download/" };
+    "download/index.html": "https://imgkeep.app/download/",
+    "color-palette-from-image/index.html": "https://imgkeep.app/color-palette-from-image/" };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
