@@ -42,7 +42,7 @@ test.describe("in Firefox", () => {
 
   test.beforeAll(async () => {
     test.setTimeout(120_000);
-    execFileSync(process.execPath, [join(ROOT, "scripts", "build-firefox.mjs")]);
+    execFileSync(process.execPath, [join(ROOT, "scripts", "build-firefox.mjs"), "--no-zip"]);
     const { default: puppeteer } = await import("puppeteer-core");
     cors = await startServer({ cors: true });
     downloads = await mkdtemp(join(tmpdir(), "imgkeep-ff-downloads-"));

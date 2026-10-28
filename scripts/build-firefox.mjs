@@ -33,17 +33,25 @@ export function firefoxManifest(chrome) {
   return m;
 }
 
-const manifest = JSON.parse(await readFile(join(SRC, "manifest.json"), "utf8"));
-await rm(OUT, { recursive: true, force: true });
-await mkdir(OUT, { recursive: true });
-await cp(SRC, OUT, {
-  recursive: true,
-  // Chrome-only: the offscreen page itself (offscreen.js stays, Firefox's background imports it).
-  filter: (path) => !/(^|\/)\.[^/]+$/.test(path) && !path.endsWith("offscreen.html") && !/\.test\./.test(path),
-});
-await writeFile(join(OUT, "manifest.json"), JSON.stringify(firefoxManifest(manifest), null, 2) + "\n");
+// Run as a script (not when a test imports firefoxManifest).
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const manifest = JSON.parse(await readFile(join(SRC, "manifest.json"), "utf8"));
+  await rm(OUT, { recursive: true, force: true });
+  await mkdir(OUT, { recursive: true });
+  await cp(SRC, OUT, {
+    recursive: true,
+    // Chrome-only: the offscreen page itself (offscreen.js stays, Firefox's background imports it).
+    filter: (path) => !/(^|\/)\.[^/]+$/.test(path) && !path.endsWith("offscreen.html") && !/\.test\./.test(path),
+  });
+  await writeFile(join(OUT, "manifest.json"), JSON.stringify(firefoxManifest(manifest), null, 2) + "\n");
 
-const zip = join(ROOT, "dist", `imgkeep-firefox-${manifest.version}.zip`);
-await rm(zip, { force: true });
-execFileSync("zip", ["-r", "-X", "-q", zip, "."], { cwd: OUT });
-console.log(`Built ${zip.replace(ROOT + "/", "")} (unpacked: dist/firefox/)`);
+  // The zip is for the store; tests only need the folder (and Windows has no zip command).
+  if (process.argv.includes("--no-zip")) {
+    console.log("Built dist/firefox/");
+  } else {
+    const zip = join(ROOT, "dist", `imgkeep-firefox-${manifest.version}.zip`);
+    await rm(zip, { force: true });
+    execFileSync("zip", ["-r", "-X", "-q", zip, "."], { cwd: OUT });
+    console.log(`Built ${zip.replace(ROOT + "/", "")} (unpacked: dist/firefox/)`);
+  }
+}
