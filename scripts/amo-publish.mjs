@@ -41,7 +41,7 @@ export async function amoMetadata() {
   }
   for (const [locale, s] of Object.entries(summary)) if (s.length > 250) throw new Error(`AMO summary ${locale} is ${s.length} characters (max 250)`);
   return {
-    categories: { firefox: ["photos-music-videos", "other"] },
+    categories: { firefox: ["photos-music-videos"] },
     summary,
     description,
     homepage: { "en-US": "https://imgkeep.app" },

@@ -5,7 +5,7 @@ Differences from Chrome and Edge, reflected in the text: no "A folder you choose
 
 - **Name:** Imgkeep: save image as PNG, JPG, WebP, GIF or PDF
 - **Add-on URL (slug):** imgkeep → https://addons.mozilla.org/firefox/addon/imgkeep/ (the rating link in the extension points here)
-- **Categories:** Photos, Music & Videos (`photos-music-videos`); Other
+- **Categories:** Photos, Music & Videos (`photos-music-videos`) (AMO doesn't allow "Other" alongside another category)
 - **Licence:** MIT
 - **Homepage:** https://imgkeep.app · **Support:** https://imgkeep.app/support.html · **Privacy policy:** https://imgkeep.app/privacy.html
 - **Firefox for Android:** not offered (no right-click menu there).
