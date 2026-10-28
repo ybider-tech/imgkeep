@@ -27,6 +27,7 @@ Key facts:
 
 - [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl)
 - [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd)
+- [Download page](https://imgkeep.app/download/): every store link in one place. Firefox is in review at Mozilla (addons.mozilla.org).
 
 ## Guides
 

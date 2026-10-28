@@ -709,3 +709,14 @@ header:has(.cv-nav) { display: flex; align-items: center; flex-wrap: wrap; gap: 
 .cv-how summary::before { content: ""; width: 0; height: 0; border-left: 7px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; transition: transform 150ms; }
 .cv-how[open] summary::before { transform: rotate(90deg); }
 @media (prefers-reduced-motion: reduce) { .cv-how summary::before { transition: none; } }
+
+/* Download page: one card per browser. */
+.doc .stores, .stores { list-style: none; padding: 0; margin: 28px 0 8px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.store { border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+.store h2 { margin: 0; font-size: 1.2rem; }
+.store p { margin: 0 0 12px; color: var(--muted); }
+.store .cta { margin-top: auto; text-align: center; white-space: nowrap; }
+.store-soon { margin-top: auto !important; font-weight: 600; color: var(--text) !important; }
+@media (max-width: 760px) { .stores { grid-template-columns: 1fr; } }
+.doc .faq dt { font-weight: 700; margin-top: 16px; }
+.doc .faq dd { margin: 4px 0 0; }

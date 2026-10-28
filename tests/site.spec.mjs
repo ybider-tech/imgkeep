@@ -26,6 +26,7 @@ const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
   ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
+  ["download/", "download/index.html"],
 ];
 
 for (const [page] of PAGES) {
@@ -97,7 +98,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
     "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html",
     "pro.html": "https://imgkeep.app/pro.html", "whats-new.html": "https://imgkeep.app/whats-new.html",
     ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
-    ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])) };
+    ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])),
+    "download/index.html": "https://imgkeep.app/download/" };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
@@ -236,10 +238,19 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   expect([playable.w, playable.h]).toEqual([1280, 720]);
 });
 
-test("home page links the Microsoft Edge listing too", async ({ page }) => {
+test("home page links the Microsoft Edge listing too, and the download page for other browsers", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
-  const edge = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-  expect(edge).toEqual([EDGE, EDGE]);
+  const links = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+  expect(links).toEqual([EDGE, "download/", EDGE, "download/"]);
+});
+
+test("the download page links both live stores, and Firefox only once it's listed", async ({ page }) => {
+  await page.goto(`${server.url}/download/`);
+  await expect(page.locator('.store a[href^="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl"]')).toHaveCount(1);
+  await expect(page.locator(`.store a[href^="${EDGE}"]`)).toHaveCount(1);
+  // While Mozilla reviews it, no link (it would be a dead end). Switch the card to a link on approval.
+  await expect(page.locator('a[href*="addons.mozilla.org"]')).toHaveCount(0);
+  await expect(page.locator(".store").nth(2)).toContainText("In review at Mozilla");
 });
 
 test("home links to Product Hunt from the footer, not the header (it would compete with Get Imgkeep)", async ({ page }) => {
