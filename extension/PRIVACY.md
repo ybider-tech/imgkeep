@@ -1,6 +1,6 @@
 # Imgkeep privacy policy
 
-Last updated: 27 October 2026
+Last updated: 28 October 2026
 
 Imgkeep is a browser extension for Chrome, Microsoft Edge and Firefox that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
@@ -10,7 +10,7 @@ No personal data. Your images never leave your computer. The only thing Imgkeep 
 
 ## What Imgkeep reads
 
-Imgkeep reads only the image you right-click and choose to save. It converts that image on your computer and uploads nothing. Imgkeep doesn't read the sites you visit, with one exception you control: when you ask it to find a hidden image, it looks at that page, just once, at that moment. It never changes a page. Off until you turn it on. When you choose "Find image here" on a site that covers its images (like Instagram or Pinterest), Imgkeep looks at that one page, at that moment, only to find the addresses of the images on screen, and then saves the one you choose like any other. Nothing else from the page is read or kept. You can turn this off in Options, under "Images that sites cover".
+Imgkeep reads only the image you right-click and choose to save. It converts that image on your computer and uploads nothing. Imgkeep doesn't read the sites you visit, with two exceptions you control: when you ask it to find a hidden image, and when the image you right-clicked only exists inside its page (a blob: link, as on some web apps). Then it looks at that page, just once, at that moment. For a blob: image it reads only that image, and only after you allow the site. It never changes a page. Off until you turn it on. When you choose "Find image here" on a site that covers its images (like Instagram or Pinterest), Imgkeep looks at that one page, at that moment, only to find the addresses of the images on screen, and then saves the one you choose like any other. Nothing else from the page is read or kept. You can turn this off in Options, under "Images that sites cover".
 
 ## The anonymous daily summary
 
