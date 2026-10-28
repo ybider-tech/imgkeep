@@ -6,8 +6,11 @@
 import { PALETTE_COUNTS, PALETTE_SAMPLE, colourText, extractPalette, paletteCode, toAse, toGpl } from "../convert/lib/palette.js";
 
 const $ = (id) => document.getElementById(id);
+// Translated pages carry their strings in <script type="application/json" id="strings"> (see convert/app.js).
+const STRINGS = JSON.parse(document.getElementById("strings")?.textContent || "{}");
+const t = (english, vars = {}) => (STRINGS[english] ?? english).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
 const MAX_BYTES = 50 * 1000 * 1000;
-const CODE_NAMES = { css: "CSS variables", tailwind: "Tailwind", json: "JSON", list: "List" };
+const CODE_NAMES = { css: t("CSS variables"), tailwind: "Tailwind", json: "JSON", list: t("List") };
 
 let palettes = null; // { 5: [...], 8: [...], 12: [...] }
 let imageName = "image";
@@ -15,7 +18,7 @@ let thumbUrl = "";
 
 const checked = (name) => document.querySelector(`input[name="${name}"]:checked`).value;
 const current = () => palettes?.[checked("count")] || [];
-const percent = (share) => new Intl.NumberFormat(undefined, { style: "percent", maximumFractionDigits: share < 0.01 ? 1 : 0 }).format(share);
+const percent = (share) => new Intl.NumberFormat(document.documentElement.lang || undefined, { style: "percent", maximumFractionDigits: share < 0.01 ? 1 : 0 }).format(share);
 
 function status(text, isError = false) {
   $("status").textContent = text;
@@ -54,13 +57,13 @@ function sample(image) {
 
 async function load(file) {
   if (!file) return;
-  if (file.size > MAX_BYTES) return status("That image is over 50 MB. Try a smaller one.", true);
-  status("Finding the colors…");
+  if (file.size > MAX_BYTES) return status(t("That image is over 50 MB. Try a smaller one."), true);
+  status(t("Finding the colors…"));
   let image;
   try {
     image = await decode(file);
   } catch {
-    return status("This file couldn't be opened as an image. HEIC photos from iPhones can't be opened in Chrome, Edge or Firefox.", true);
+    return status(t("This file couldn't be opened as an image. HEIC photos from iPhones can't be opened in Chrome, Edge or Firefox."), true);
   }
   const data = sample(image);
   image.close?.();
@@ -71,11 +74,11 @@ async function load(file) {
   $("thumb").src = thumbUrl;
   if (!palettes[5].length) {
     $("result").hidden = true;
-    return status("This image is fully transparent, so it has no colors to take.", true);
+    return status(t("This image is fully transparent, so it has no colors to take."), true);
   }
   $("result").hidden = false;
   $("drop").classList.add("compact");
-  $("dropTitle").textContent = "Drop another image";
+  $("dropTitle").textContent = t("Drop another image");
   status("");
   render();
 }
@@ -88,7 +91,7 @@ function render() {
   $("swatches").replaceChildren(
     ...colours.map((c) => {
       const value = colourText(c.hex, checked("format"));
-      const label = `Copy ${value} (${percent(c.share)} of the image)`;
+      const label = t("Copy {value} ({share} of the image)", { value, share: percent(c.share) });
       const button = document.createElement("button");
       button.type = "button";
       button.className = "pal-swatch";
@@ -102,7 +105,7 @@ function render() {
       text.dir = "ltr";
       text.textContent = value;
       button.append(chip, text);
-      button.addEventListener("click", () => copy(value, `Copied ${value}`, button));
+      button.addEventListener("click", () => copy(value, t("Copied {value}", { value }), button));
       const li = document.createElement("li");
       li.append(button);
       return li;
@@ -114,7 +117,7 @@ async function copy(text, done, button) {
   try {
     await navigator.clipboard.writeText(text);
   } catch {
-    return status("Couldn't copy. Click inside the page, then try again.", true);
+    return status(t("Couldn't copy. Click inside the page, then try again."), true);
   }
   for (const b of $("swatches").querySelectorAll(".copied")) b.classList.remove("copied");
   button?.classList.add("copied");
@@ -129,7 +132,7 @@ function download(blob, ext) {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 30_000);
-  status(`Saved ${a.download}`);
+  status(t("Saved {file}", { file: a.download }));
 }
 
 // One block per color with its HEX value underneath, 1200 px wide: the extension's PNG swatch strip.
@@ -179,5 +182,5 @@ addEventListener("paste", (e) => {
 });
 for (const radio of document.querySelectorAll('input[name="count"], input[name="format"]')) radio.addEventListener("change", () => palettes && render());
 for (const b of document.querySelectorAll("[data-code]"))
-  b.addEventListener("click", () => copy(paletteCode(current().map((c) => c.hex), b.dataset.code, checked("format")), `Copied all colors as ${CODE_NAMES[b.dataset.code]}`));
+  b.addEventListener("click", () => copy(paletteCode(current().map((c) => c.hex), b.dataset.code, checked("format")), t("Copied all colors as {kind}", { kind: CODE_NAMES[b.dataset.code] })));
 for (const b of document.querySelectorAll("[data-save]")) b.addEventListener("click", () => save(b.dataset.save));

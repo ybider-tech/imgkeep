@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зберегти зображення як PNG, JPG, WebP, GIF, PDF — Imgkeep</title>
+  <meta name="description" content="Клацніть зображення правою кнопкою в Chrome чи Edge: збережіть його як PNG, JPG, WebP, GIF або PDF чи отримайте палітру. Конвертація на вашому пристрої.">
+  <link rel="canonical" href="https://imgkeep.app/uk/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — Будь-яке зображення. Ваш формат.">
+  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
+  <meta property="og:url" content="https://imgkeep.app/uk/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: будь-яке зображення. Ваш формат. Зберігайте зображення з вебу як PNG, JPG, WebP, GIF або PDF прямо з контекстного меню в Chrome чи Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep — це безкоштовне розширення для Chrome та Edge, яке зберігає зображення з вебу як PNG, JPG, WebP, GIF (разом з анімацією) чи PDF просто з контекстного меню, копіює їх як PNG або показує їхню палітру кольорів. Воно перетворює кожне зображення на вашому комп'ютері й зберігає його у вибрану вами теку.","url":"https://imgkeep.app/uk/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["Зберігайте зображення як PNG, JPG, WebP, GIF чи PDF","Перетворюйте WebP і AVIF на JPG чи PNG","Зберігайте анімацію під час збереження в GIF","Копіювати як PNG","Отримуйте палітру кольорів зображення: копіюйте HEX, RGB чи HSL або зберігайте файли .ase і .gpl","Збереження в теку на ваш вибір","Власні імена файлів","Конвертує на вашому комп'ютері, без завантаження на сервер"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"Зберігайте WebP як JPG, PNG або GIF у Chrome одним кліком правою кнопкою","description":"28-секундна демонстрація Imgkeep: анімований WebP, збережений як GIF, який і далі рухається, і фото WebP, збережене як JPG, — усе через меню правої кнопки миші.","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/uk/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/uk/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чи Imgkeep безкоштовний?","acceptedAnswer":{"@type":"Answer","text":"Так. Усе, що Imgkeep робить сьогодні, безкоштовне — без реклами та обмежень. Платний Imgkeep Pro з додатковими можливостями в планах, а нинішні функції залишаться безкоштовними."}},{"@type":"Question","name":"Чи надсилає Imgkeep мої зображення в інтернет?","acceptedAnswer":{"@type":"Answer","text":"Ні. Кожне зображення конвертується на вашому комп'ютері й зберігається одразу в обрану теку. Єдине, що надсилає Imgkeep, — анонімна щоденна статистика того, які функції використовувалися і які збереження не вдалися, і її можна вимкнути в Параметрах."}},{"@type":"Question","name":"Які формати він може зберігати?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, GIF (зі збереженням анімації), PDF або оригінальний формат. Imgkeep конвертує зображення WebP та AVIF, які тепер віддають багато сайтів, а «Копіювати як PNG» кладе зображення в буфер обміну."}},{"@type":"Question","name":"Чи може він отримати палітру кольорів із зображення?","acceptedAnswer":{"@type":"Answer","text":"Так. Клацніть зображення правою кнопкою миші, оберіть Imgkeep, а потім Отримати палітру кольорів. Ви побачите його 5, 8 або 12 основних кольорів, починаючи з найбільшого. Клацніть будь-який, щоб скопіювати його як HEX, RGB чи HSL, або скопіюйте всі одразу як змінні CSS, Tailwind чи JSON. Збережіть їх як PNG, палітру GIMP або зразки Adobe. Усе обчислюється на вашому комп'ютері."}},{"@type":"Question","name":"Чи може він зберігати зображення, які сайти перекривають, як в Instagram чи Pinterest?","acceptedAnswer":{"@type":"Answer","text":"Так. Клацніть фото правою кнопкою й оберіть «Imgkeep: знайти зображення тут». Imgkeep один раз перегляне цю сторінку, знайде фото під вашим курсором у найбільшому розмірі й відкриє його готовим до збереження. Функція вимкнена, доки ви її не ввімкнете, і вона ніколи не змінює сторінку."}},{"@type":"Question","name":"Чи можу я конвертувати зображення, які вже є на моєму комп'ютері?","acceptedAnswer":{"@type":"Answer","text":"Так. Скористайтеся безкоштовним конвертером зображень на imgkeep.app/convert/: перетягніть файли, оберіть PNG, JPG, WebP, AVIF, GIF, PDF або ICO, а потім завантажте їх чи скопіюйте як PNG. Він працює у вашому браузері, тож нічого не надсилається на сервер і реєстрація не потрібна. Працює й на телефоні."}},{"@type":"Question","name":"У яких браузерах він працює?","acceptedAnswer":{"@type":"Answer","text":"У Google Chrome 116 і новіших та в Microsoft Edge, 9 мовами."}},{"@type":"Question","name":"Чи може він зберегти всі зображення на сторінці одразу?","acceptedAnswer":{"@type":"Answer","text":"Ні. Imgkeep зберігає те одне зображення, на якому ви клацнули правою кнопкою. Для цілих сторінок потрібен масовий завантажувач."}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">Перейти до вмісту</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/uk/" aria-label="Головна сторінка Imgkeep"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="Головне">
+        <a href="/uk/convert/">Конвертер</a>
+        <a href="/uk/color-palette-from-image/">Палітра кольорів</a>
+        <a href="#how-it-works">Як це працює</a>
+        <a href="#image-guides">Посібники</a>
+        <a href="/privacy.html">Конфіденційність</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Встановити Imgkeep <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">UK</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk" aria-current="true">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">Зберегти зображення як PNG, JPG, WebP, GIF чи PDF</span> <span class="display">Будь-яке зображення. <span class="accent">Ваш формат.</span></span></h1>
+        <p class="lead">Imgkeep — безкоштовне розширення для Chrome і Edge, яке зберігає зображення з вебу як PNG, JPG, WebP, GIF або PDF. Клацніть правою кнопкою, щоб конвертувати зображення на своєму пристрої та зберегти в обрану теку.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Додати в Chrome — безкоштовно</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Також для Edge <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/uk/download/">Firefox та інші браузери</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Оцінка 5.0 з 5 у Chrome Web Store"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · у Chrome Web Store</a></p>
+        <p class="trust">Без акаунта <span aria-hidden="true">·</span> Без завантажень на сервер <span aria-hidden="true">·</span> Відкритий код</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">Подивитися 28-секундне демо на YouTube</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">Не відтворюється? Дивіться на YouTube <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">28-секундне демо без звуку: клацніть анімоване зображення WebP правою кнопкою, відкрийте Imgkeep і виберіть GIF (зберігає анімацію). Збережений GIF так само рухається. Потім тим самим способом фото WebP зберігається як JPG.</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">Як це працює</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>Клацніть зображення правою кнопкою</h3>
+            <p>Знайдіть зображення в інтернеті та клацніть його правою кнопкою.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>Виберіть формат</h3>
+            <p>Виберіть PNG, JPG, WebP, GIF (зберігає анімацію), PDF або оригінальний формат. Або скопіюйте зображення як PNG чи отримайте його палітру кольорів.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>Збережіть у свою теку</h3>
+            <p>Imgkeep конвертує зображення на вашому комп'ютері й щоразу зберігає його там, де вам потрібно.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">Без встановлення, без завантажень на сервер</p>
+        <h2 id="convert-title">Конвертуйте зображення, які вже маєте.</h2>
+        <p>Перетягніть файли WebP, AVIF, PNG чи JPG і отримайте PNG, JPG, AVIF, GIF, PDF або ICO просто у браузері. Без завантажень на сервер, без реєстрації.</p>
+        <p><a class="band-link" href="/uk/convert/">Відкрити конвертер <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>Популярне:</span> <a href="/uk/webp-to-jpg/">WebP у JPG</a> · <a href="/uk/webp-to-png/">WebP у PNG</a> · <a href="/uk/avif-to-jpg/">AVIF у JPG</a> · <a href="/uk/png-to-jpg/">PNG у JPG</a> · <a href="/uk/png-to-ico/">PNG в ICO</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">Можливості</p>
+        <h2 id="features-title">Усе, що він уміє.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>Запам'ятовує вашу теку</h3>
+            <p>Виберіть теку один раз. Кожне зображення потрапляє саме туди, у підтеки з вашими назвами, і нічого ніколи не перезаписується.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>Працює з WebP і AVIF</h3>
+            <p>Перетворюйте файли WebP та AVIF, які віддають сайти, на PNG чи JPG, що відкриваються в будь-якій програмі. Анімації залишаються анімованими у форматі GIF.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>Копіювати як PNG</h3>
+            <p>Покладіть зображення в буфер обміну як справжній PNG зі збереженою прозорістю і вставте його в чат, документи чи редактори на кшталт Canva, Figma та Google Slides. <a href="/web-image-into-canva-figma-google-slides/">Як це зробити</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>Палітра кольорів</h3>
+            <p>Отримуйте основні кольори зображення просто з контекстного меню. Копіюйте колір як HEX, RGB чи HSL, усі кольори одразу як CSS або Tailwind, чи зберігайте їх для програм Adobe або GIMP. <a href="/uk/color-palette-from-image/">Або перетягніть зображення сюди</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>Ваші назви файлів</h3>
+            <p>Називайте файли за оригінальною назвою, сайтом, датою чи розміром — наприклад, <code>{name}-{w}x{h}</code>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>Працює там, де права кнопка не допомагає</h3>
+            <p>На сайтах на кшталт Instagram і Pinterest фото сховані під іншим шаром. Виберіть <strong>знайти зображення тут</strong> — і Imgkeep знайде фото в найбільшому розмірі. Вимкнено, доки ви самі не ввімкнете.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>Зміна розміру та попередній перегляд</h3>
+            <p>Задайте максимальну ширину — і великі зображення зменшуватимуться до неї. <strong>Більше параметрів</strong> показує результат і його справжній розмір файлу ще до збереження, з обраними вами якістю та тлом.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF, AVIF, ICO і BMP</h3>
+            <p>Збережіть зображення як PDF на одну сторінку або в розділі «Більше параметрів» — як AVIF (часто вдвічі менший за JPG), іконку ICO для ярликів і фавіконів чи BMP.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>Файли, які вже є у вас</h3>
+            <p>Конвертуйте зображення на комп'ютері чи телефоні за допомогою <a href="/uk/convert/">безкоштовного конвертера зображень</a>. Він працює прямо на сторінці, тож нічого не завантажується на сервер.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">Посібники з форматів зображень</p>
+        <h2 id="guides-title">Трохи ясності щодо форматів зображень.</h2>
+        <p class="intro">Практичні поради щодо зображень, які ви зберігаєте щодня, і щодо вибору розширення, якому можна довіряти.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">Пояснення</p>
+            <h3><a href="/uk/chrome-saves-images-as-webp/">Чому Chrome зберігає WebP</a></h3>
+            <p>Chrome зберігає саме той файл, який надсилає сайт, а багато сайтів надсилають WebP, бо він менший. Жодне налаштування Chrome цього не змінить: конвертуйте зображення під час збереження або потім у Paint чи Preview.</p>
+            <a class="more" href="/uk/chrome-saves-images-as-webp/">Розібратися з WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/uk/save-webp-as-jpg-png/">Зберегти WebP як JPG або PNG</a></h3>
+            <p>Клацніть зображення правою кнопкою миші та збережіть його як PNG чи JPG за допомогою конвертера, який працює на вашому комп'ютері, тож нічого не надсилається в інтернет. Обирайте PNG для графіки та прозорості, JPG — для фотографій.</p>
+            <a class="more" href="/uk/save-webp-as-jpg-png/">Читати посібник про WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/uk/save-avif-as-jpg-png/">Зберегти AVIF як JPG або PNG</a></h3>
+            <p>AVIF менший за WebP, але багато програм і форм завантаження досі не можуть його відкрити. Зберігайте його як JPG чи PNG одразу під час завантаження або експортуйте з Preview чи Paint (із безкоштовним розширенням AV1 від Microsoft).</p>
+            <a class="more" href="/uk/save-avif-as-jpg-png/">Читати посібник про AVIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Пояснення</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome зберігає JFIF</a></h3>
+            <p>Файл .jfif — це звичайний JPEG з іншим розширенням, яке задає один параметр у реєстрі Windows. Перейменуйте його на .jpg, виправте цей параметр раз і назавжди або одразу зберігайте як JPG.</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">Читати посібник про JFIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/save-animated-webp-as-gif/">Анімований WebP як GIF</a></h3>
+            <p>JPG і PNG зберігають лише один кадр. Збережіть анімацію як GIF, який відтворюється майже всюди, разом із її таймінгом і прозорістю — за один крок або в GIMP.</p>
+            <a class="more" href="/save-animated-webp-as-gif/">Читати посібник про GIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/save-image-as-pdf/">Зберегти зображення як PDF</a></h3>
+            <p>Друк у PDF в Chrome розміщує зображення на сторінці розміром з аркуш паперу. Або зробіть односторінковий PDF точно за розміром зображення — просто з контекстного меню.</p>
+            <a class="more" href="/save-image-as-pdf/">Читати посібник про PDF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Безпека</p>
+            <h3><a href="/save-image-as-type-alternative/">Безпечна альтернатива Save image as Type</a></h3>
+            <p>Google видалила його в березні 2026 року, після того як новий власник змусив його додавати партнерські посилання на сайтах магазинів. Якщо воно ще у вас встановлене, видаліть його, а в будь-якій заміні перевірте дозволи, дані, власника та вихідний код.</p>
+            <a class="more" href="/save-image-as-type-alternative/">Переглянути список перевірок <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/uk/save-image-right-click-not-working/">Коли права кнопка миші не зберігає зображення</a></h3>
+            <p>На сайтах на кшталт Instagram і Pinterest фотографії лежать під іншим шаром, тож клацання правою кнопкою до них не дістається. Чому так стається, які є безкоштовні обхідні шляхи і як Imgkeep знаходить фото за вас.</p>
+            <a class="more" href="/uk/save-image-right-click-not-working/">Читати посібник <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Інструкції</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">Зображення з вебу в Canva, Figma чи Slides</a></h3>
+            <p>Скопіюйте зображення з вебу як PNG і вставте його у свій дизайн чи слайд. Якщо редактор каже, що тип файлу не підтримується, значить сайт надіслав WebP або AVIF: збережіть його як PNG чи JPG.</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">Читати посібник <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Питання</p>
+        <h2 id="faq-title">Прямі відповіді.</h2>
+        <dl>
+          <div>
+            <dt>Чи Imgkeep безкоштовний?</dt>
+            <dd>Так. Усе, що Imgkeep робить сьогодні, безкоштовне — без реклами та обмежень. Платний Imgkeep Pro з додатковими можливостями в планах, а нинішні функції залишаться безкоштовними.</dd>
+          </div>
+          <div>
+            <dt>Чи надсилає Imgkeep мої зображення в інтернет?</dt>
+            <dd>Ні. Кожне зображення перетворюється на вашому комп'ютері й зберігається одразу у вашу теку. Єдине, що надсилає Imgkeep, — це анонімна щоденна статистика того, які функції використовувалися та які збереження не вдалися; її можна вимкнути в параметрах. <a href="/privacy.html">Політика конфіденційності</a>.</dd>
+          </div>
+          <div>
+            <dt>Які формати він може зберігати?</dt>
+            <dd>PNG, JPG, WebP, GIF (зі збереженням анімації), PDF або оригінальний формат. Він перетворює зображення WebP і AVIF, які тепер надсилає багато сайтів, а <strong>Копіювати як PNG</strong> кладе зображення у ваш буфер обміну.</dd>
+          </div>
+          <div>
+            <dt>Чи може він отримати палітру кольорів із зображення?</dt>
+            <dd>Так. Клацніть зображення правою кнопкою миші, оберіть Imgkeep, а потім Отримати палітру кольорів. Ви побачите його 5, 8 або 12 основних кольорів, починаючи з найбільшого. Клацніть будь-який, щоб скопіювати його як HEX, RGB чи HSL, або скопіюйте всі одразу як змінні CSS, Tailwind чи JSON. Збережіть їх як PNG, палітру GIMP або зразки Adobe. Усе обчислюється на вашому комп'ютері.</dd>
+          </div>
+          <div>
+            <dt>Чи може він зберігати зображення, які сайти перекривають, як в Instagram чи Pinterest?</dt>
+            <dd>Так. Клацніть фото правою кнопкою миші та оберіть <strong>Imgkeep: знайти зображення тут</strong>. Imgkeep один раз перегляне ту сторінку, знайде фото під вашим клацанням у найбільшому розмірі й відкриє його готовим до збереження. Функція вимкнена, доки ви її не ввімкнете, і вона ніколи не змінює сторінку.</dd>
+          </div>
+          <div>
+            <dt>Чи можу я конвертувати зображення, які вже є на моєму комп'ютері?</dt>
+            <dd>Так. Скористайтеся <a href="/uk/convert/">безкоштовним конвертером зображень</a> на imgkeep.app/convert/: перетягніть файли, оберіть PNG, JPG, WebP, AVIF, GIF, PDF або ICO, а потім завантажте їх чи скопіюйте як PNG. Він працює у вашому браузері, тож нічого не надсилається в інтернет і реєстрація не потрібна. Працює і на телефоні.</dd>
+          </div>
+          <div>
+            <dt>У яких браузерах він працює?</dt>
+            <dd>У Google Chrome 116 і новіших та в Microsoft Edge, 9 мовами.</dd>
+          </div>
+          <div>
+            <dt>Чи може він зберегти всі зображення на сторінці одразу?</dt>
+            <dd>Ні. Imgkeep зберігає те одне зображення, на якому ви клацнули правою кнопкою. Для цілих сторінок потрібен масовий завантажувач.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">Готові зберігати по-своєму?</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Додати в Chrome — безкоштовно</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Також для Edge <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/uk/download/">Firefox та інші браузери</a>
+          </div>
+          <p class="trust">Без акаунта <span aria-hidden="true">·</span> Без завантажень на сервер <span aria-hidden="true">·</span> Відкритий код</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/uk/" aria-label="Головна сторінка Imgkeep"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">Ваші зображення залишаються на вашому комп'ютері.</p>
+        <nav aria-label="Нижній колонтитул">
+          <a href="/uk/convert/">Конвертер</a>
+          <a href="/privacy.html">Конфіденційність</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">Вихідний код</a>
+          <a href="/support.html">Підтримка</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="Більше">
+        <a href="/uk/download/">Завантажити</a>
+        <a href="/ideas.html">Ідеї</a>
+        <a href="/whats-new.html">Що нового</a>
+        <a href="/pro.html">Список очікування Imgkeep Pro</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

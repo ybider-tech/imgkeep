@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>حفظ الصورة بصيغة PNG أو JPG أو WebP أو GIF — Imgkeep</title>
+  <meta name="description" content="انقر بزر الفأرة الأيمن على أي صورة في Chrome أو Edge لحفظها بصيغة PNG أو JPG أو WebP أو GIF أو PDF. التحويل يتم على جهازك. مجاني ومفتوح المصدر.">
+  <link rel="canonical" href="https://imgkeep.app/ar/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — أي صورة. بالصيغة التي تريدها.">
+  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
+  <meta property="og:url" content="https://imgkeep.app/ar/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: أي صورة، بالصيغة التي تريدها. احفظ صور الويب بصيغة PNG أو JPG أو WebP أو GIF أو PDF من قائمة النقر بزر الفأرة الأيمن في Chrome أو Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep إضافة مجانية لـ Chrome وEdge تحفظ صور الويب بصيغة PNG أو JPG أو WebP أو GIF (مع الحركة) أو PDF من قائمة النقر بالزر الأيمن، وتنسخها بصيغة PNG، أو تعرض لوحة ألوانها. تحوّل كل صورة على جهازك وتحفظها في المجلد الذي تختاره.","url":"https://imgkeep.app/ar/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["حفظ الصور بصيغة PNG أو JPG أو WebP أو GIF أو PDF","تحويل WebP وAVIF إلى JPG أو PNG","الحفاظ على الحركة عند الحفظ بصيغة GIF","نسخ بصيغة PNG","الحصول على لوحة ألوان الصورة: انسخ HEX أو RGB أو HSL، أو احفظ ملفات ‎.ase و‎.gpl","الحفظ في مجلد تختاره","أسماء ملفات مخصصة","التحويل يتم على جهازك، دون أي رفع"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"احفظ صور WebP بصيغة JPG أو PNG أو GIF في Chrome بنقرة يمنى واحدة","description":"عرض توضيحي مدته 28 ثانية لـ Imgkeep: صورة WebP متحركة تُحفظ بصيغة GIF مع بقاء الحركة، وصورة WebP تُحفظ بصيغة JPG، من قائمة النقر اليمنى.","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/ar/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/ar/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل Imgkeep مجاني؟","acceptedAnswer":{"@type":"Answer","text":"نعم. كل ما يقدّمه Imgkeep اليوم مجاني، بلا إعلانات وبلا حدود. وهناك خطة لإصدار Imgkeep Pro مدفوع بميزات إضافية، مع بقاء الميزات الحالية مجانية."}},{"@type":"Question","name":"هل يرفع Imgkeep صوري؟","acceptedAnswer":{"@type":"Answer","text":"لا. تُحوَّل كل صورة على جهازك وتُحفظ مباشرة في مجلدك. الشيء الوحيد الذي يرسله Imgkeep هو إحصاء يومي مجهول للميزات التي استُخدمت وعمليات الحفظ التي أخفقت، ويمكنك إيقافه من الخيارات."}},{"@type":"Question","name":"ما الصيغ التي يمكنه الحفظ بها؟","acceptedAnswer":{"@type":"Answer","text":"PNG أو JPG أو WebP أو GIF (مع الحفاظ على الحركة) أو PDF أو الصيغة الأصلية. يحوّل صور WebP وAVIF التي تقدّمها مواقع كثيرة اليوم، كما يضع خيار نسخ بصيغة PNG الصورة في الحافظة."}},{"@type":"Question","name":"هل يمكنه استخراج لوحة ألوان الصورة؟","acceptedAnswer":{"@type":"Answer","text":"نعم. انقر على الصورة بالزر الأيمن، واختر Imgkeep، ثم الحصول على لوحة الألوان. سترى ألوانها الرئيسية الـ5 أو الـ8 أو الـ12، مرتّبة من الأكثر حضورًا. انقر على أي لون لنسخه بصيغة HEX أو RGB أو HSL، أو انسخها كلها كمتغيّرات CSS أو Tailwind أو JSON. واحفظها بصيغة PNG أو لوحة GIMP أو عينات Adobe. ويجري كل ذلك على جهازك."}},{"@type":"Question","name":"هل يمكنه حفظ الصور التي تغطّيها المواقع، كما في Instagram أو Pinterest؟","acceptedAnswer":{"@type":"Answer","text":"نعم. انقر بالزر الأيمن على الصورة واختر Imgkeep: البحث عن الصورة هنا…. يفحص Imgkeep تلك الصفحة مرة واحدة، ويجد الصورة التي نقرت عليها بأكبر حجم متاح، ويفتحها جاهزة للحفظ. وهو معطّل حتى تفعّله، ولا يغيّر أي صفحة."}},{"@type":"Question","name":"هل يمكنني تحويل صور موجودة بالفعل على جهازي؟","acceptedAnswer":{"@type":"Answer","text":"نعم. استخدم محوّل الصور المجاني على imgkeep.app/convert/: أفلت ملفاتك، واختر PNG أو JPG أو WebP أو AVIF أو GIF أو PDF أو ICO، ثم نزّلها أو انسخها بصيغة PNG. يعمل داخل متصفحك، فلا يُرفع أي شيء ولا يلزم إنشاء حساب. ويعمل على الهواتف أيضًا."}},{"@type":"Question","name":"ما المتصفحات التي يعمل عليها؟","acceptedAnswer":{"@type":"Answer","text":"Google Chrome 116 وما بعده، وMicrosoft Edge، بتسع لغات."}},{"@type":"Question","name":"هل يمكنه حفظ كل صور الصفحة دفعة واحدة؟","acceptedAnswer":{"@type":"Answer","text":"لا. يحفظ Imgkeep الصورة التي تنقر عليها بالزر الأيمن فقط. أما الصفحات كاملةً فتحتاج إلى أداة تنزيل جماعي."}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">انتقل إلى المحتوى</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/ar/" aria-label="الصفحة الرئيسية لـ Imgkeep"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="القائمة الرئيسية">
+        <a href="/ar/convert/">محوّل الصور</a>
+        <a href="/ar/color-palette-from-image/">لوحة الألوان</a>
+        <a href="#how-it-works">كيف تعمل</a>
+        <a href="#image-guides">الأدلة</a>
+        <a href="/privacy.html">الخصوصية</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">احصل على Imgkeep <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">AR</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar" aria-current="true">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">حفظ الصورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF</span> <span class="display">أي صورة. <span class="accent">بالصيغة التي تريدها.</span></span></h1>
+        <p class="lead">Imgkeep إضافة مجانية لـ Chrome وEdge تحفظ صور الويب بصيغة PNG أو JPG أو WebP أو GIF أو PDF. انقر بزر الفأرة الأيمن لتحويل الصورة على جهازك وحفظها في المجلد الذي تختاره.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">أضف إلى Chrome — مجانًا</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">متوفرة أيضًا لـ Edge <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/ar/download/">Firefox ومتصفحات أخرى</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="تقييم 5.0 من 5 على Chrome Web Store"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · على Chrome Web Store</a></p>
+        <p class="trust">بدون حساب <span aria-hidden="true">·</span> بدون رفع <span aria-hidden="true">·</span> مفتوح المصدر</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">شاهد العرض التوضيحي (28 ثانية) على YouTube</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">لا يعمل التشغيل؟ شاهده على YouTube <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">عرض توضيحي صامت مدته 28 ثانية: نقر بزر الفأرة الأيمن على صورة WebP متحركة، ثم فتح Imgkeep واختيار GIF (مع الحفاظ على الحركة). ملف GIF المحفوظ يبقى متحركًا. بعدها تُحفظ صورة WebP بصيغة JPG بالطريقة نفسها.</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">كيف تعمل</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>انقر بزر الفأرة الأيمن على صورة</h3>
+            <p>ابحث عن صورة على الويب وانقر عليها بزر الفأرة الأيمن.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>اختر الصيغة</h3>
+            <p>اختر PNG أو JPG أو WebP أو GIF (مع الحفاظ على الحركة) أو PDF أو الصيغة الأصلية. أو انسخ الصورة بصيغة PNG، أو احصل على لوحة ألوانها.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>احفظها في مجلدك</h3>
+            <p>يحوّل Imgkeep الصورة على جهازك ويحفظها حيث تريد، في كل مرة.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">بدون تثبيت وبدون رفع</p>
+        <h2 id="convert-title">حوّل الصور الموجودة لديك.</h2>
+        <p>أفلت ملفات WebP أو AVIF أو PNG أو JPG واحصل على PNG أو JPG أو AVIF أو GIF أو PDF أو ICO، مباشرة في متصفحك. بدون رفع وبدون تسجيل.</p>
+        <p><a class="band-link" href="/ar/convert/">افتح المحوّل <span aria-hidden="true">←</span></a></p>
+        <p class="popular"><span>الأكثر استخدامًا:</span> <a href="/ar/webp-to-jpg/">WebP إلى JPG</a> · <a href="/ar/webp-to-png/">WebP إلى PNG</a> · <a href="/ar/avif-to-jpg/">AVIF إلى JPG</a> · <a href="/ar/png-to-jpg/">PNG إلى JPG</a> · <a href="/ar/png-to-ico/">PNG إلى ICO</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">المزايا</p>
+        <h2 id="features-title">كل ما تفعله الإضافة.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>يتذكّر مجلدك</h3>
+            <p>اختر مجلدًا مرة واحدة. كل صورة تُحفظ فيه، داخل مجلدات فرعية تسميها أنت، ولا يُستبدل أي ملف أبدًا.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>يتعامل مع WebP وAVIF</h3>
+            <p>حوّل ملفات WebP وAVIF التي تقدّمها المواقع إلى PNG أو JPG يفتحها أي تطبيق. والصور المتحركة تبقى متحركة بصيغة GIF.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>نسخ بصيغة PNG</h3>
+            <p>ضع الصورة في الحافظة كملف PNG حقيقي مع الحفاظ على الشفافية، ثم الصقها في المحادثات أو المستندات أو أدوات التصميم مثل Canva وFigma وGoogle Slides. <a href="/web-image-into-canva-figma-google-slides/">إليك الطريقة</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>لوحة الألوان</h3>
+            <p>احصل على الألوان الأساسية لأي صورة من قائمة النقر بزر الفأرة الأيمن. انسخ لونًا بصيغة HEX أو RGB أو HSL، أو انسخها كلها كـ CSS أو Tailwind، أو احفظها لتطبيقات Adobe أو GIMP. <a href="/ar/color-palette-from-image/">أو أفلت صورة هنا</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>أسماء ملفاتك</h3>
+            <p>سمِّ الملفات بالاسم الأصلي أو اسم الموقع أو التاريخ أو المقاس، مثل <code>{name}-{w}x{h}</code>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>يعمل حيث لا ينفع النقر بزر الفأرة الأيمن</h3>
+            <p>في مواقع مثل Instagram وPinterest، تقع الصور تحت طبقة أخرى. اختر <strong>البحث عن الصورة هنا</strong> ليعثر Imgkeep على الصورة بأكبر مقاس لها. هذه الميزة معطّلة حتى تفعّلها.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>تغيير المقاس والمعاينة</h3>
+            <p>حدّد عرضًا أقصى فتتقلّص الصور الكبيرة لتناسبه. ويعرض <strong>مزيد من الخيارات</strong> النتيجة وحجم الملف الفعلي قبل الحفظ، مع جودة وخلفية تختارهما بنفسك.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF وAVIF وICO وBMP</h3>
+            <p>احفظ الصورة كملف PDF من صفحة واحدة، أو من مزيد من الخيارات بصيغة AVIF (غالبًا نصف حجم JPG)، أو كأيقونة ICO للاختصارات وأيقونات المواقع، أو BMP.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>ملفات لديك بالفعل</h3>
+            <p>حوّل الصور الموجودة على حاسوبك أو هاتفك باستخدام <a href="/ar/convert/">محوّل الصور المجاني</a>. يعمل داخل الصفحة، فلا يُرفع أي شيء.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">أدلة صيغ الصور</p>
+        <h2 id="guides-title">قليل من الوضوح حول صيغ الصور.</h2>
+        <p class="intro">أدلة عملية للصور التي تحفظها كل يوم، ولاختيار إضافة تثق بها.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">شرح</p>
+            <h3><a href="/ar/chrome-saves-images-as-webp/">لماذا يحفظ Chrome بصيغة WebP</a></h3>
+            <p>يحفظ Chrome الملف نفسه الذي يرسله الموقع، وكثير من المواقع ترسل WebP لأنه أصغر حجمًا. ولا يوجد إعداد في Chrome يغيّر ذلك: حوّل الصورة أثناء حفظها، أو لاحقًا في Paint أو Preview.</p>
+            <a class="more" href="/ar/chrome-saves-images-as-webp/">تعرّف على WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/ar/save-webp-as-jpg-png/">حفظ WebP بصيغة JPG أو PNG</a></h3>
+            <p>انقر على الصورة بالزر الأيمن واحفظها بصيغة PNG أو JPG بمحوّل يعمل على جهازك، فلا يُرفع أي شيء. اختر PNG للرسومات والشفافية، وJPG للصور الفوتوغرافية.</p>
+            <a class="more" href="/ar/save-webp-as-jpg-png/">اقرأ دليل WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/ar/save-avif-as-jpg-png/">حفظ AVIF بصيغة JPG أو PNG</a></h3>
+            <p>حجم AVIF أصغر من WebP، لكن كثيرًا من التطبيقات ونماذج الرفع لا تزال عاجزة عن فتحه. احفظه بصيغة JPG أو PNG أثناء تنزيله، أو صدّره من Preview أو Paint (مع إضافة AV1 المجانية من Microsoft).</p>
+            <a class="more" href="/ar/save-avif-as-jpg-png/">اقرأ دليل AVIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">شرح</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome يحفظ بصيغة JFIF</a></h3>
+            <p>ملف ‎.jfif هو ملف JPEG عادي بامتداد مختلف يحدّده إعداد في سجل Windows. غيّر اسمه إلى ‎.jpg، أو صحّح الإعداد مرة واحدة، أو احفظ بصيغة JPG مباشرة.</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">اقرأ دليل JFIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/save-animated-webp-as-gif/">WebP المتحرك بصيغة GIF</a></h3>
+            <p>تحتفظ JPG وPNG بإطار واحد فقط. احفظ الحركة بصيغة GIF تعمل في كل مكان تقريبًا، مع توقيتها وشفافيتها، في خطوة واحدة أو باستخدام GIMP.</p>
+            <a class="more" href="/save-animated-webp-as-gif/">اقرأ دليل GIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/save-image-as-pdf/">حفظ الصورة بصيغة PDF</a></h3>
+            <p>تضع خاصية الطباعة إلى PDF في Chrome الصورة على صفحة بحجم الورق. أو أنشئ ملف PDF من صفحة واحدة بمقاس الصورة تمامًا، مباشرة من قائمة النقر بالزر الأيمن.</p>
+            <a class="more" href="/save-image-as-pdf/">اقرأ دليل PDF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">الأمان</p>
+            <h3><a href="/save-image-as-type-alternative/">بديل آمن لإضافة Save image as Type</a></h3>
+            <p>أزالتها Google في مارس 2026 بعد أن جعلها مالك جديد تُدرج روابط إحالة في مواقع التسوق. إن كانت لا تزال مثبتة لديك فأزِلها، وتحقّق من أذونات أي بديل وبياناته ومالكه وشيفرته المصدرية.</p>
+            <a class="more" href="/save-image-as-type-alternative/">اقرأ قائمة التحقق <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/ar/save-image-right-click-not-working/">عندما لا يحفظ النقر بالزر الأيمن الصورة</a></h3>
+            <p>في مواقع مثل Instagram وPinterest توجد الصور تحت طبقة أخرى، فلا يصل إليها نقرك بالزر الأيمن. إليك سبب حدوث ذلك، والحلول المجانية، وكيف يعثر Imgkeep على الصورة نيابة عنك.</p>
+            <a class="more" href="/ar/save-image-right-click-not-working/">اقرأ الدليل <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">أدلة إرشادية</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">صور الويب إلى Canva أو Figma أو Slides</a></h3>
+            <p>انسخ صورة من الويب بصيغة PNG والصقها في تصميمك أو شريحتك. وإذا قال أحد البرامج إن نوع الملف غير مدعوم، فالموقع أرسل WebP أو AVIF: احفظها بصيغة PNG أو JPG.</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">اقرأ الدليل <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">أسئلة</p>
+        <h2 id="faq-title">إجابات مباشرة.</h2>
+        <dl>
+          <div>
+            <dt>هل Imgkeep مجاني؟</dt>
+            <dd>نعم. كل ما يقدّمه Imgkeep اليوم مجاني، بلا إعلانات وبلا حدود. وهناك خطة لإصدار Imgkeep Pro مدفوع بميزات إضافية، مع بقاء الميزات الحالية مجانية.</dd>
+          </div>
+          <div>
+            <dt>هل يرفع Imgkeep صوري؟</dt>
+            <dd>لا. تُحوَّل كل صورة على جهازك وتُحفظ مباشرة في مجلدك. الشيء الوحيد الذي يرسله Imgkeep هو إحصاء يومي مجهول بالميزات المستخدمة وعمليات الحفظ التي أخفقت، ويمكنك إيقافه من الخيارات. <a href="/privacy.html">سياسة الخصوصية</a>.</dd>
+          </div>
+          <div>
+            <dt>ما الصيغ التي يمكنه الحفظ بها؟</dt>
+            <dd>PNG أو JPG أو WebP أو GIF (مع الحفاظ على الحركة) أو PDF أو الصيغة الأصلية. وهو يحوّل صور WebP وAVIF التي تقدّمها مواقع كثيرة اليوم، كما يضع <strong>نسخ بصيغة PNG</strong> الصورة في حافظتك.</dd>
+          </div>
+          <div>
+            <dt>هل يمكنه استخراج لوحة ألوان الصورة؟</dt>
+            <dd>نعم. انقر على الصورة بالزر الأيمن، واختر Imgkeep، ثم الحصول على لوحة الألوان. سترى ألوانها الرئيسية الـ5 أو الـ8 أو الـ12، مرتّبة من الأكثر حضورًا. انقر على أي لون لنسخه بصيغة HEX أو RGB أو HSL، أو انسخها كلها كمتغيّرات CSS أو Tailwind أو JSON. واحفظها بصيغة PNG أو لوحة GIMP أو عينات Adobe. ويجري كل ذلك على جهازك.</dd>
+          </div>
+          <div>
+            <dt>هل يمكنه حفظ الصور التي تغطّيها المواقع، كما في Instagram أو Pinterest؟</dt>
+            <dd>نعم. انقر على الصورة بالزر الأيمن واختر <strong>Imgkeep: البحث عن الصورة هنا</strong>. يفحص Imgkeep تلك الصفحة مرة واحدة، ويعثر على الصورة الموجودة تحت نقرتك بأكبر مقاس لها، ويفتحها جاهزة للحفظ. وهذه الميزة معطّلة حتى تفعّلها، ولا تغيّر أي صفحة أبدًا.</dd>
+          </div>
+          <div>
+            <dt>هل يمكنني تحويل صور موجودة بالفعل على جهازي؟</dt>
+            <dd>نعم. استخدم <a href="/ar/convert/">محوّل الصور المجاني</a> على imgkeep.app/convert/: أفلِت ملفاتك، واختر PNG أو JPG أو WebP أو AVIF أو GIF أو PDF أو ICO، ثم نزّلها أو انسخها بصيغة PNG. يعمل داخل متصفحك، فلا يُرفع أي شيء ولا حاجة إلى إنشاء حساب. ويعمل على الهواتف أيضًا.</dd>
+          </div>
+          <div>
+            <dt>ما المتصفحات التي يعمل عليها؟</dt>
+            <dd>Google Chrome 116 وما بعده، وMicrosoft Edge، بتسع لغات.</dd>
+          </div>
+          <div>
+            <dt>هل يمكنه حفظ كل صور الصفحة دفعة واحدة؟</dt>
+            <dd>لا. يحفظ Imgkeep الصورة التي تنقر عليها بالزر الأيمن فقط. أما الصفحات كاملةً فتحتاج إلى أداة تنزيل جماعي.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">جاهز للحفظ بطريقتك؟</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">أضف إلى Chrome — مجانًا</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">متوفرة أيضًا لـ Edge <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/ar/download/">Firefox ومتصفحات أخرى</a>
+          </div>
+          <p class="trust">بدون حساب <span aria-hidden="true">·</span> بدون رفع <span aria-hidden="true">·</span> مفتوح المصدر</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/ar/" aria-label="الصفحة الرئيسية لـ Imgkeep"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">صورك تبقى على جهازك.</p>
+        <nav aria-label="تذييل الصفحة">
+          <a href="/ar/convert/">محوّل الصور</a>
+          <a href="/privacy.html">الخصوصية</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">الشيفرة المصدرية</a>
+          <a href="/support.html">الدعم</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="المزيد">
+        <a href="/ar/download/">تنزيل</a>
+        <a href="/ideas.html">أفكار</a>
+        <a href="/whats-new.html">الجديد</a>
+        <a href="/pro.html">قائمة انتظار Imgkeep Pro</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

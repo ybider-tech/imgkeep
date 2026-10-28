@@ -10,20 +10,26 @@ import { convert } from "./lib/convert.js";
 import { DEFAULTS, FORMATS } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
 
+// The page's language: translated pages (imgkeep.app/<lang>/convert/) carry their strings in
+// <script type="application/json" id="strings">, keyed by the English text; English needs none.
+// {name}-style placeholders are filled in here. scripts/translate-site.mjs finds every t("…") below.
+const STRINGS = JSON.parse(document.getElementById("strings")?.textContent || "{}");
+const t = (english, vars = {}) => (STRINGS[english] ?? english).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+
 const MAX_FILES = 20;
 const MAX_BYTES = 50 * 1000 * 1000; // 50 MB, decimal, as the page says
 const AVIF_QUALITY = 60;
 const LOSSY = new Set(["jpg", "webp", "avif"]);
 const BACKGROUND = new Set(["jpg", "bmp"]);
 const HELPER = {
-  png: "PNG keeps transparency.",
-  jpg: "JPG works well for photos. Transparent areas use your background colour.",
-  webp: "WebP makes compact web images and can keep transparency.",
-  avif: "AVIF makes very small files for the web and keeps transparency. Some older apps can't open it.",
-  gif: "For animations: animated WebP, AVIF and APNG keep moving in Chrome and Edge. GIFs are at most 800 px wide.",
-  pdf: "Creates a one-page PDF for each image.",
-  ico: "Creates one icon file with 16, 32 and 48 px, plus 256 px when the image is at least that big.",
-  bmp: "For software that needs BMP. Transparent areas use your background colour.",
+  png: t("PNG keeps transparency."),
+  jpg: t("JPG works well for photos. Transparent areas use your background colour."),
+  webp: t("WebP makes compact web images and can keep transparency."),
+  avif: t("AVIF makes very small files for the web and keeps transparency. Some older apps can't open it."),
+  gif: t("For animations: animated WebP, AVIF and APNG keep moving in Chrome and Edge. GIFs are at most 800 px wide."),
+  pdf: t("Creates a one-page PDF for each image."),
+  ico: t("Creates one icon file with 16, 32 and 48 px, plus 256 px when the image is at least that big."),
+  bmp: t("For software that needs BMP. Transparent areas use your background colour."),
 };
 
 const $ = (id) => document.getElementById(id);
@@ -74,8 +80,8 @@ async function init() {
   if (!supported.webp) {
     const b = root.querySelector('[data-format="webp"]');
     b.disabled = true;
-    b.querySelector(".cv-fmt-cap").textContent = "Not in this browser";
-    b.title = "This browser can't create WebP files";
+    b.querySelector(".cv-fmt-cap").textContent = t("Not in this browser");
+    b.title = t("This browser can't create WebP files");
   }
   const preset = root.dataset.to;
   format = FORMATS[preset] && (preset !== "webp" || supported.webp) ? preset : "png";
@@ -133,7 +139,7 @@ async function init() {
     e.preventDefault();
     if (drop.classList.contains("over")) return;
     drop.classList.add("over");
-    $("dropTitle").textContent = "Drop to add images";
+    $("dropTitle").textContent = t("Drop to add images");
   });
   const leave = () => {
     drop.classList.remove("over");
@@ -156,7 +162,7 @@ async function init() {
   });
   $("downloadAll").addEventListener("click", () => {
     for (const it of items) if (it.status === "ready") it.row.querySelector("a[download]").click();
-    say("Downloads started");
+    say(t("Downloads started"));
   });
   if (matchMedia("(pointer: coarse)").matches) root.classList.add("touch");
   choose(format, { quiet: true });
@@ -170,8 +176,8 @@ function choose(key, { quiet = false } = {}) {
   for (const b of root.querySelectorAll("[data-format]")) b.setAttribute("aria-pressed", String(b.dataset.format === key));
   const extra = !["png", "jpg", "webp"].includes(key);
   $("moreBtn").classList.toggle("selected", extra);
-  $("moreName").textContent = extra ? label(key) : "More formats";
-  $("moreCap").textContent = extra ? "Other formats" : $("moreCap").dataset.all;
+  $("moreName").textContent = extra ? label(key) : t("More formats");
+  $("moreCap").textContent = extra ? t("Other formats") : $("moreCap").dataset.all;
   $("formatHelper").textContent = HELPER[key];
   $("currentFormat").textContent = label(key);
   $("qualityField").hidden = !LOSSY.has(key);
@@ -181,16 +187,17 @@ function choose(key, { quiet = false } = {}) {
   $("qualityOut").textContent = $("quality").value;
   syncDropTitle();
   if (changed && !quiet) {
-    say(`Output: ${label(key)}`);
+    say(t("Output: {format}", { format: label(key) }));
     settingsChanged(true);
   }
 }
 
 function syncDropTitle() {
   if ($("drop").classList.contains("over")) return;
-  const lead = items.length ? "Add more images to convert to " : root.classList.contains("touch") ? "Add images to convert to " : "Drop images to convert to ";
-  $("dropTitle").replaceChildren(lead, el("span", { className: "cv-target", textContent: label(format) }));
-  $("choose").textContent = items.length ? "Add more images" : "Choose images";
+  const sentence = items.length ? t("Add more images to convert to {format}") : root.classList.contains("touch") ? t("Add images to convert to {format}") : t("Drop images to convert to {format}");
+  const [before, after = ""] = sentence.split("{format}");
+  $("dropTitle").replaceChildren(before, el("span", { className: "cv-target", textContent: label(format) }), after);
+  $("choose").textContent = items.length ? t("Add more images") : t("Choose images");
   $("drop").classList.toggle("compact", items.length > 0);
 }
 
@@ -234,7 +241,7 @@ function settingsChanged(now = false) {
   if (!items.some((it) => it.file)) return;
   const go = () => {
     for (const it of items) if (it.file) schedule(it);
-    say(`Updating results to ${label(format)}…`);
+    say(t("Updating results to {format}…", { format: label(format) }));
   };
   if (now) go();
   else timer = setTimeout(go, 300);
@@ -244,12 +251,12 @@ function add(files) {
   const room = MAX_FILES - items.filter((it) => it.file).length;
   let accepted = 0;
   for (const file of files) {
-    const name = file.name || "Pasted image";
+    const name = file.name || t("Pasted image");
     let problem = null;
-    if (/\.(heic|heif)$/i.test(name) || /hei[cf]/i.test(file.type)) problem = `${name} isn't supported in this browser: HEIC photos can't be opened in Chrome, Edge or Firefox.`;
-    else if (file.type && !file.type.startsWith("image/")) problem = `${name} isn't an image this converter can open.`;
-    else if (file.size > MAX_BYTES) problem = `${name} exceeds the 50 MB limit.`;
-    else if (accepted >= room) problem = `You can add up to ${MAX_FILES} files. Remove an image to add ${name}.`;
+    if (/\.(heic|heif)$/i.test(name) || /hei[cf]/i.test(file.type)) problem = t("{name} isn't supported in this browser: HEIC photos can't be opened in Chrome, Edge or Firefox.", { name });
+    else if (file.type && !file.type.startsWith("image/")) problem = t("{name} isn't an image this converter can open.", { name });
+    else if (file.size > MAX_BYTES) problem = t("{name} exceeds the 50 MB limit.", { name });
+    else if (accepted >= room) problem = t("You can add up to {max} files. Remove an image to add {name}.", { max: MAX_FILES, name });
     if (problem) {
       rejected(name, problem);
       continue;
@@ -260,7 +267,7 @@ function add(files) {
     items.push(it);
     $("results").append(it.row);
     if (settingsValid()) schedule(it);
-    else setState(it, "Waiting: fix the setting above");
+    else setState(it, t("Waiting: fix the setting above"));
   }
   refresh();
 }
@@ -271,7 +278,7 @@ function rejected(name, text) {
     "li",
     { className: "cv-row failed" },
     el("div", { className: "cv-thumb fallback", textContent: "!" }),
-    el("div", { className: "cv-info" }, el("p", { className: "cv-name", textContent: `Couldn't add ${name}` }), el("p", { className: "cv-error", textContent: text })),
+    el("div", { className: "cv-info" }, el("p", { className: "cv-name", textContent: t("Couldn't add {name}", { name }) }), el("p", { className: "cv-error", textContent: text })),
     el("div", { className: "cv-actions" }, removeButton(it)),
   );
   items.push(it);
@@ -287,17 +294,17 @@ function row(it) {
       "div",
       { className: "cv-info" },
       el("p", { className: "cv-name", textContent: `${baseName(it.name)}.${FORMATS[format].ext}` }),
-      el("p", { className: "cv-from", textContent: `From ${it.name}` }),
+      el("p", { className: "cv-from", textContent: t("From {name}", { name: it.name }) }),
       el("p", { className: "cv-meta" }),
-      el("p", { className: "cv-state", textContent: "Queued" }),
+      el("p", { className: "cv-state", textContent: t("Queued") }),
     ),
     el("div", { className: "cv-actions" }, removeButton(it)),
   );
 }
 
 function removeButton(it) {
-  const b = el("button", { type: "button", className: "cv-remove", title: "Remove" });
-  b.setAttribute("aria-label", `Remove ${it.name}`);
+  const b = el("button", { type: "button", className: "cv-remove", title: t("Remove") });
+  b.setAttribute("aria-label", t("Remove {name}", { name: it.name }));
   b.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   b.addEventListener("click", () => remove(it));
   return b;
@@ -308,7 +315,7 @@ function remove(it) {
   if (it.url) URL.revokeObjectURL(it.url);
   it.row.remove();
   items.splice(items.indexOf(it), 1);
-  say(`Removed ${it.name}`);
+  say(t("Removed {name}", { name: it.name }));
   refresh();
   if (!items.length) $("choose").focus();
 }
@@ -320,14 +327,14 @@ function schedule(it) {
   const opts = options();
   const key = format;
   it.status = it.out ? "updating" : "queued";
-  setState(it, it.out ? "Updating results…" : "Queued");
+  setState(it, it.out ? t("Updating results…") : t("Queued"));
   it.row.querySelectorAll(".cv-download, .cv-copy").forEach((b) => b.remove()); // never an old file under a new label
   queue = queue.then(() => run(it, version, key, opts)).catch(() => {});
 }
 
 async function run(it, version, key, opts) {
   if (it.removed || version !== it.version) return; // a newer setting or a removal won
-  setState(it, "Converting…");
+  setState(it, t("Converting…"));
   try {
     const out = await convert(it.file, { ...opts, title: baseName(it.name) });
     if (it.removed || version !== it.version) return; // stale: never shown under the new settings
@@ -365,9 +372,9 @@ function showReady(it, key, opts) {
   it.row.querySelector(".cv-thumb").replaceWith(thumb);
   it.row.querySelector(".cv-name").textContent = name;
   it.row.querySelector(".cv-meta").textContent = `${out.width} × ${out.height} · ${label(key)} · ${size(out.blob.size)} (original ${size(it.file.size)})`;
-  setState(it, "✓ Ready");
-  const download = el("a", { className: "cv-download", href: it.url, download: name, textContent: `Download ${label(key)}` });
-  download.addEventListener("click", () => say(`Download started: ${name}`));
+  setState(it, `✓ ${t("Ready")}`);
+  const download = el("a", { className: "cv-download", href: it.url, download: name, textContent: t("Download {format}", { format: label(key) }) });
+  download.addEventListener("click", () => say(t("Download started: {name}", { name })));
   const kids = [download];
   if (canCopy) kids.push(copyButton(it, opts));
   it.row.querySelector(".cv-actions").prepend(...kids);
@@ -377,12 +384,12 @@ function showFailed(it, e) {
   it.row.classList.add("failed");
   it.row.querySelectorAll(".cv-download, .cv-copy").forEach((b) => b.remove());
   const why = {
-    decode: "It may be damaged, or a format this browser can't open.",
-    unsupported: "This browser can't make that format.",
-    "too-large": "It's too large to convert here.",
-    timeout: "It took too long and was stopped.",
+    decode: t("It may be damaged, or a format this browser can't open."),
+    unsupported: t("This browser can't make that format."),
+    "too-large": t("It's too large to convert here."),
+    timeout: t("It took too long and was stopped."),
   }[e?.code];
-  setState(it, `We couldn't convert ${it.name}. Try another image or format.${why ? ` ${why}` : ""}`);
+  setState(it, `${t("We couldn't convert {name}. Try another image or format.", { name: it.name })}${why ? ` ${why}` : ""}`);
   it.row.querySelector(".cv-state").className = "cv-state cv-error";
 }
 
@@ -390,19 +397,19 @@ function showFailed(it, e) {
 // pages can only put PNG images on the clipboard).
 const canCopy = Boolean(navigator.clipboard?.write && window.ClipboardItem);
 function copyButton(it, opts) {
-  const b = el("button", { type: "button", className: "cv-copy", textContent: "Copy as PNG" });
+  const b = el("button", { type: "button", className: "cv-copy", textContent: t("Copy as PNG") });
   b.addEventListener("click", async () => {
     const png = it.out.blob.type === "image/png" ? Promise.resolve(it.out.blob) : convert(it.file, { ...opts, mime: "image/png", title: undefined }).then((r) => r.blob);
     try {
       // Handed over as a promise so the copy stays tied to this click while the PNG is made.
       await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
-      b.textContent = "Copied as PNG";
-      say(`Copied ${it.name} as PNG`);
+      b.textContent = t("Copied as PNG");
+      say(t("Copied {name} as PNG", { name: it.name }));
       window.imgkeepCountConversion?.(short(it.out.sourceType || it.file.type || ""), "clipboard", 1);
     } catch {
-      b.textContent = "Couldn't copy: download it instead";
+      b.textContent = t("Couldn't copy: download it instead");
     }
-    setTimeout(() => (b.textContent = "Copy as PNG"), 2500);
+    setTimeout(() => (b.textContent = t("Copy as PNG")), 2500);
   });
   return b;
 }
@@ -415,10 +422,10 @@ function refresh() {
   const busy = items.filter(isBusy).length;
   $("resultsArea").hidden = items.length === 0;
   const parts = [];
-  if (ready) parts.push(`${ready} ready`);
-  if (busy) parts.push(`${busy} converting`);
-  if (failed) parts.push(`${failed} couldn't be converted`);
-  if (notAdded) parts.push(`${notAdded} ${notAdded === 1 ? "file" : "files"} not added`);
+  if (ready) parts.push(t("{n} ready", { n: ready }));
+  if (busy) parts.push(t("{n} converting", { n: busy }));
+  if (failed) parts.push(t("{n} couldn't be converted", { n: failed }));
+  if (notAdded) parts.push(notAdded === 1 ? t("{n} file not added", { n: notAdded }) : t("{n} files not added", { n: notAdded }));
   $("summary").textContent = parts.join(" · ");
   $("downloadAll").hidden = ready < 2;
   if (ready) $("install").hidden = false;

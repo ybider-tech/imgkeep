@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>如何在 Chrome 中把 WebP 存为 JPG 或 PNG — Imgkeep</title>
+  <meta name="description" content="在 Chrome 中把 WebP 保存为 JPG 或 PNG：用扩展一步完成，或免费使用 Paint、Preview 或复制粘贴。该选哪种格式，以及为什么。">
+  <link rel="canonical" href="https://imgkeep.app/zh/save-webp-as-jpg-png/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-webp-as-jpg-png/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-webp-as-jpg-png/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="如何在 Chrome 中把 WebP 保存为 JPG 或 PNG">
+  <meta property="og:description" content="在 Chrome 中把 WebP 保存为 JPG 或 PNG：用扩展一步完成，或免费使用 Paint、Preview 或复制粘贴。该选哪种格式，以及为什么。">
+  <meta property="og:url" content="https://imgkeep.app/zh/save-webp-as-jpg-png/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：任意图片，你的格式。在 Chrome 或 Edge 的右键菜单中，把网页图片保存为 PNG、JPG、WebP、GIF 或 PDF。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"把 WebP 转成 JPG 会损失画质吗？","acceptedAnswer":{"@type":"Answer","text":"PNG 会原样保留像素。JPG 会再压缩一次，因此有轻微损失，在较高质量设置下通常看不出来。"}},{"@type":"Question","name":"动态 WebP 怎么办？","acceptedAnswer":{"@type":"Answer","text":"JPG 和 PNG 无法保存动画，所以动态 WebP 转换后只会得到其中一帧的静态图片。要保留动画，请改存为 GIF：在 Imgkeep 中选择 GIF（保留动画）。"}},{"@type":"Question","name":"能让 Chrome 总是保存为 JPG 吗？","acceptedAnswer":{"@type":"Answer","text":"不能。Chrome 没有设置保存图片格式的选项，它保存的就是网站发来的文件。"}},{"@type":"Question","name":"怎样不上传就把 WebP 保存为 PNG？","acceptedAnswer":{"@type":"Answer","text":"用一个在你自己电脑上运行的转换工具。像 Imgkeep 这样的扩展会在保存时直接在浏览器里完成转换：右键单击 › Imgkeep › PNG。Paint、Preview 以及复制粘贴也都能离线完成。会把图片上传到服务器的，是那些在线转换网站。"}},{"@type":"Question","name":"怎样把 WebP 图片保存为 JPG 或 PNG？","acceptedAnswer":{"@type":"Answer","text":"右键单击图片，选择 Imgkeep，然后选 PNG 或 JPG。WebP 会在你的电脑上完成转换，不会上传任何东西。没有扩展时，可以先保存 WebP，再用 Paint（文件 › 另存为）或 Preview（文件 › 导出）重新保存。图形和需要透明背景时选 PNG，照片选 JPG。"}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/zh/"},{"@type":"ListItem","position":2,"name":"把 WebP 保存为 JPG 或 PNG","item":"https://imgkeep.app/zh/save-webp-as-jpg-png/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"如何在 Chrome 中把 WebP 保存为 JPG 或 PNG","description":"右键单击图片，选择 Imgkeep，然后选 PNG 或 JPG。WebP 会在你的电脑上完成转换，不会上传任何东西。没有扩展时，可以先保存 WebP，再用 Paint（文件 › 另存为）或 Preview（文件 › 导出）重新保存。图形和需要透明背景时选 PNG，照片选 JPG。","url":"https://imgkeep.app/zh/save-webp-as-jpg-png/","mainEntityOfPage":"https://imgkeep.app/save-webp-as-jpg-png/","image":"https://imgkeep.app/media/guides/menu-png.jpg","datePublished":"2026-09-27","dateModified":"2026-10-28","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/zh/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/zh/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/zh/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="主导航"><a href="/zh/convert/">转换器</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">ZH</summary><ul><li><a href="/save-webp-as-jpg-png/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-webp-as-jpg-png/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-webp-as-jpg-png/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a></li><li><a href="/pt-br/save-webp-as-jpg-png/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-webp-as-jpg-png/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/save-webp-as-jpg-png/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-webp-as-jpg-png/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-webp-as-jpg-png/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-webp-as-jpg-png/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/save-webp-as-jpg-png/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/save-webp-as-jpg-png/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-webp-as-jpg-png/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-webp-as-jpg-png/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="面包屑导航">
+      <a href="/zh/#image-guides">← 首页</a><span aria-hidden="true">›</span><span aria-current="page">把 WebP 保存为 JPG 或 PNG</span>
+    </nav>
+
+    <main class="doc">
+      <h1>如何在 Chrome 中把 WebP 保存为 JPG 或 PNG</h1>
+      <div class="answer">
+        <p class="label">简短回答</p>
+        <p>右键点击图片，选择 <strong>Imgkeep</strong>，再选 <strong>PNG</strong> 或 <strong>JPG</strong>。WebP 在你的电脑上完成转换，不会上传任何内容。如果不用扩展，可以先把 WebP 保存下来，再用 Paint（<strong>文件 › 另存为</strong>）或 Preview（<strong>文件 › 导出</strong>）重新保存。图形和需要透明背景时选 PNG，照片选 JPG。</p>
+      </div>
+      <p class="updated">更新于 <time datetime="2026-10-28">2026 年 10 月 28 日</time></p>
+
+      <h2>该选 JPG 还是 PNG？</h2>
+      <ul>
+        <li><strong>PNG</strong> 保留每个像素，也保留透明背景，文件更大。适合标志、截图和图形。</li>
+        <li><strong>JPG</strong> 文件更小，到哪都能打开，适合照片。它不支持透明，透明区域会变成纯色，通常是白色。</li>
+      </ul>
+      <p>拿不准？选 PNG，它不会丢失任何内容。</p>
+
+      <h2>怎样一步把 WebP 保存为 PNG 或 JPG？</h2>
+      <p>扩展可以在你保存图片的同时完成转换，直接从右键菜单操作。它在你的浏览器里运行，所以请选一个你信得过的（<a href="/save-image-as-type-alternative/">如何确认图片扩展是否安全</a>）。下面是我们这款扩展的用法。</p>
+
+      <div class="option">
+        <p class="label">我们的扩展</p>
+        <h3>Imgkeep</h3>
+        <ol>
+          <li>从 Chrome Web Store 把 Imgkeep 添加到 Chrome。</li>
+          <li>右键点击图片，选择 <strong>Imgkeep</strong>。</li>
+          <li>选择 <strong>PNG</strong> 或 <strong>JPG</strong>，文件会保存到你的下载文件夹。</li>
+        </ol>
+        <figure class="shot">
+          <img src="/media/guides/menu-png.jpg" width="1120" height="560" loading="lazy" decoding="async" alt="网页上的一张产品图片被右键点击。菜单中显示 Imgkeep，子菜单列出 PNG、JPG、WebP、GIF（保留动画）、PDF、原始格式、复制为 PNG、提取配色和更多选项…，其中 PNG 处于高亮状态。">
+          <figcaption>右键点击图片，选择 <strong>Imgkeep</strong>，然后选择格式。</figcaption>
+        </figure>
+        <p>在选项中，你可以改为把图片保存到自己指定的文件夹，或者每次都选择位置。你还能设置 JPG 质量、透明图片存为 JPG 时的背景色（默认白色），以及 <code>{name}-{w}x{h}</code> 这样的文件名。它绝不会覆盖已有文件。转换在你的电脑上完成，不会上传任何内容。免费且开源。</p>
+        <figure class="shot">
+          <img src="/media/guides/options-folder.jpg" width="1020" height="597" loading="lazy" decoding="async" alt="Imgkeep 选项中的“保存位置”：下载文件夹、你选择的文件夹（已选中，已连接 Pictures）或每次询问，子文件夹字段设为 Imgkeep/{host}。">
+          <figcaption>Imgkeep 选项：选择图片保存的位置。</figcaption>
+        </figure>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-webp-as-jpg-png">把 Imgkeep 添加到 Chrome — 免费</a>
+        <span class="cta-note">支持 Chrome 116 及更高版本。</span>
+      </div>
+
+      <h2>不用扩展怎么转换 WebP？</h2>
+      <p>已经有 WebP 文件了？直接在浏览器里转换，不会上传：<a href="/zh/webp-to-jpg/">WebP 转 JPG</a> 或 <a href="/zh/webp-to-png/">WebP 转 PNG</a>。</p>
+
+      <h3>Windows：Paint</h3>
+      <ol>
+        <li>像平常一样保存图片（右键 › <strong>图片另存为…</strong>）。</li>
+        <li>右键点击保存好的文件，选择 <strong>打开方式 › Paint</strong>。</li>
+        <li><strong>文件 › 另存为</strong>，然后选 <strong>JPEG 图片</strong> 或 <strong>PNG 图片</strong>。</li>
+      </ol>
+      <p>如果图片原本是透明背景，记得检查一下结果：Paint 可能不会保留透明度。</p>
+
+      <h3>Mac：Preview</h3>
+      <ol>
+        <li>保存图片，然后用 Preview 打开（在较旧的 macOS 版本上，Preview 可能打不开 WebP）。</li>
+        <li><strong>文件 › 导出</strong>，把<strong>格式</strong>设为 JPEG 或 PNG。</li>
+      </ol>
+
+      <h3>任意电脑：复制粘贴</h3>
+      <p>右键点击图片，选择<strong>复制图片</strong>，粘贴到图片编辑器里，再保存为 JPG 或 PNG。在 Preview 中使用<strong>文件 › 从剪贴板新建</strong>。这样完全跳过了 WebP 文件，但透明度可能会丢失。</p>
+
+      <h3>在线转换工具</h3>
+      <p>它们确实能用，但你得把图片上传到别人的服务器。公开图片没什么问题；涉及隐私的图片就要三思了。</p>
+
+      <h2>转换后的文件为什么打不开？</h2>
+      <p>把 <code>photo.webp</code> 改名成 <code>photo.jpg</code> 并不能转换格式。文件内部依然是 WebP，很多应用会拒绝打开。反过来也一样：网站可能通过以 <code>.jpg</code> 结尾的地址返回 WebP。<a href="/zh/chrome-saves-images-as-webp/">这里说明了 Chrome 为什么把图片保存为 WebP</a>。</p>
+      <p>如果图片根本保存不了，可能是它只存在于页面内部（<code>blob:</code> 地址）。Imgkeep 目前还无法保存这类图片，可以用截图代替。在 Instagram 或 Pinterest 上，照片被盖在另一层下面，可以改用<strong>Imgkeep：在此处查找图片</strong>（<a href="/zh/save-image-right-click-not-working/">右键无法保存图片时怎么办</a>）。</p>
+
+      <h2>相关指南</h2>
+      <ul>
+        <li><a href="/zh/chrome-saves-images-as-webp/">Chrome 为什么把图片保存为 WebP</a></li>
+        <li><a href="/zh/save-avif-as-jpg-png/">如何把 AVIF 保存为 JPG 或 PNG</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">Chrome 把图片保存成 JFIF？如何得到 JPG</a></li>
+        <li><a href="/save-animated-webp-as-gif/">如何把动态 WebP 保存为 GIF</a></li>
+        <li><a href="/save-image-as-pdf/">如何在 Chrome 里把图片保存为 PDF</a></li>
+        <li><a href="/save-image-as-type-alternative/">Save image as Type 的安全替代方案</a></li>
+        <li><a href="/zh/save-image-right-click-not-working/">右键无法保存图片时怎么办</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">如何把网页上的图片放进 Canva、Figma 或 Google Slides</a></li>
+      </ul>
+
+      <h2>常见问题</h2>
+      <h3>怎样不上传就把 WebP 保存为 PNG？</h3>
+      <p>用一个在你自己电脑上运行的转换工具。像 Imgkeep 这样的扩展会在保存时直接在浏览器里完成转换：右键单击 ›  <strong>Imgkeep</strong> › <strong>PNG</strong>。Paint、Preview 以及复制粘贴也都能离线完成。会把图片上传到服务器的，是那些在线转换网站。</p>
+      <h3>把 WebP 转成 JPG 会损失画质吗？</h3>
+      <p>PNG 会原样保留像素。JPG 会再压缩一次，因此有轻微损失，在较高质量设置下通常看不出来。</p>
+      <h3>动态 WebP 怎么办？</h3>
+      <p>JPG 和 PNG 无法保存动画，所以动态 WebP 转换后只会得到其中一帧的静态图片。要保留动画，请改存为 GIF：在 Imgkeep 中选择 GIF（保留动画）。详细步骤：<a href="/save-animated-webp-as-gif/">如何把动态 WebP 保存为 GIF</a>。</p>
+      <h3>能让 Chrome 总是保存为 JPG 吗？</h3>
+      <p>不能。Chrome 没有设置保存图片格式的选项，它保存的就是网站发来的文件。AVIF 也一样：参见<a href="/zh/save-avif-as-jpg-png/">如何把 AVIF 保存为 JPG 或 PNG</a>。</p>
+    </main>
+
+    <footer>
+      <nav aria-label="页脚">
+        <a href="/zh/">首页</a>
+        <a href="/zh/convert/">转换器</a>
+        <a href="https://github.com/ybider-tech/imgkeep">源代码</a>
+        <a href="/zh/download/">下载</a>
+        <a href="/ideas.html">建议</a>
+        <a href="/support.html">支持</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="指南">
+        <a href="/zh/chrome-saves-images-as-webp/">Chrome 为什么保存为 WebP</a>
+        <a href="/zh/save-webp-as-jpg-png/">把 WebP 保存为 JPG 或 PNG</a>
+        <a href="/zh/save-avif-as-jpg-png/">把 AVIF 保存为 JPG 或 PNG</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome 把图片存成 JFIF</a>
+        <a href="/save-animated-webp-as-gif/">把动态 WebP 存成 GIF</a>
+        <a href="/save-image-as-pdf/">把图片保存为 PDF</a>
+        <a href="/save-image-as-type-alternative/">Save image as Type 的安全替代品</a>
+        <a href="/zh/save-image-right-click-not-working/">右键菜单保存不了图片时</a>
+        <a href="/web-image-into-canva-figma-google-slides/">把网页图片放进 Canva、Figma 或 Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

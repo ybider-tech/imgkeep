@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bild als PNG, JPG, WebP, GIF oder PDF speichern — Imgkeep</title>
+  <meta name="description" content="Rechtsklick auf ein Bild in Chrome oder Edge: als PNG, JPG, WebP, GIF oder PDF speichern oder Farbpalette holen. Alles lokal. Kostenlos, Open Source.">
+  <link rel="canonical" href="https://imgkeep.app/de/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — Jedes Bild. Dein Format.">
+  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
+  <meta property="og:url" content="https://imgkeep.app/de/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Jedes Bild. Dein Format. Bilder aus dem Web in Chrome oder Edge über das Rechtsklick-Menü als PNG, JPG, WebP, GIF oder PDF speichern.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep ist eine kostenlose Erweiterung für Chrome und Edge, die Webbilder über das Rechtsklick-Menü als PNG, JPG, WebP, GIF (inklusive Animation) oder PDF speichert, sie als PNG kopiert oder ihre Farbpalette anzeigt. Jedes Bild wird auf deinem Computer umgewandelt und in dem Ordner gespeichert, den du wählst.","url":"https://imgkeep.app/de/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["Bilder als PNG, JPG, WebP, GIF oder PDF speichern","WebP und AVIF in JPG oder PNG umwandeln","Animation beim Speichern als GIF behalten","Als PNG kopieren","Farbpalette eines Bildes holen: HEX, RGB oder HSL kopieren oder .ase- und .gpl-Dateien speichern","In einen Ordner deiner Wahl speichern","Eigene Dateinamen","Konvertiert auf deinem Computer, keine Uploads"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"WebP in Chrome mit einem Rechtsklick als JPG, PNG oder GIF speichern","description":"28-sekündige Demo von Imgkeep: ein animiertes WebP, das als GIF gespeichert wird und sich weiter bewegt, und ein WebP-Foto, das als JPG gespeichert wird – jeweils aus dem Rechtsklick-Menü.","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/de/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/de/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist Imgkeep kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja. Alles, was Imgkeep heute kann, ist kostenlos – ohne Werbung und ohne Limits. Ein kostenpflichtiges Imgkeep Pro mit zusätzlichen Funktionen ist geplant, die jetzigen Funktionen bleiben kostenlos."}},{"@type":"Question","name":"Lädt Imgkeep meine Bilder hoch?","acceptedAnswer":{"@type":"Answer","text":"Nein. Jedes Bild wird auf deinem Computer konvertiert und direkt in deinen Ordner gespeichert. Imgkeep sendet nur eine anonyme Tageszählung darüber, welche Funktionen genutzt wurden und welche Speichervorgänge fehlgeschlagen sind – und die kannst du in den Optionen abschalten."}},{"@type":"Question","name":"Welche Formate kann es speichern?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, GIF (Animation bleibt erhalten), PDF oder das Originalformat. Imgkeep konvertiert die WebP- und AVIF-Bilder, die viele Seiten inzwischen ausliefern, und mit Als PNG kopieren landet ein Bild in der Zwischenablage."}},{"@type":"Question","name":"Kann es die Farbpalette eines Bildes ermitteln?","acceptedAnswer":{"@type":"Answer","text":"Ja. Rechtsklick auf das Bild, Imgkeep wählen, dann Farbpalette holen. Du siehst die 5, 8 oder 12 Hauptfarben, die größte zuerst. Klicke eine an, um sie als HEX, RGB oder HSL zu kopieren, oder kopiere alle als CSS-Variablen, Tailwind oder JSON. Speichere sie als PNG, GIMP-Palette oder Adobe-Farbfelder. Alles wird auf deinem Computer berechnet."}},{"@type":"Question","name":"Kann es Bilder speichern, die Seiten abdecken, etwa bei Instagram oder Pinterest?","acceptedAnswer":{"@type":"Answer","text":"Ja. Mach einen Rechtsklick auf das Foto und wähle Imgkeep: Bild hier finden. Imgkeep sieht sich diese Seite einmal an, findet das Foto unter deinem Klick in der größten Größe und öffnet es fertig zum Speichern. Die Funktion ist aus, bis du sie einschaltest, und sie verändert nie eine Seite."}},{"@type":"Question","name":"Kann ich Bilder umwandeln, die ich schon auf dem Computer habe?","acceptedAnswer":{"@type":"Answer","text":"Ja. Nimm den kostenlosen Bildkonverter unter imgkeep.app/convert/: Dateien ablegen, PNG, JPG, WebP, AVIF, GIF, PDF oder ICO wählen und dann herunterladen oder als PNG kopieren. Er läuft in deinem Browser, es wird also nichts hochgeladen und keine Anmeldung gebraucht. Auf dem Handy funktioniert er auch."}},{"@type":"Question","name":"In welchen Browsern funktioniert es?","acceptedAnswer":{"@type":"Answer","text":"In Google Chrome 116 und neuer sowie in Microsoft Edge, in 9 Sprachen."}},{"@type":"Question","name":"Kann es alle Bilder einer Seite auf einmal speichern?","acceptedAnswer":{"@type":"Answer","text":"Nein. Imgkeep speichert das eine Bild, auf das du rechtsklickst. Für ganze Seiten brauchst du einen Massen-Downloader."}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/de/" aria-label="Startseite von Imgkeep"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="/de/convert/">Konverter</a>
+        <a href="/de/color-palette-from-image/">Farbpalette</a>
+        <a href="#how-it-works">So funktioniert's</a>
+        <a href="#image-guides">Ratgeber</a>
+        <a href="/privacy.html">Datenschutz</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Imgkeep holen <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">DE</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">Bild als PNG, JPG, WebP, GIF oder PDF speichern</span> <span class="display">Jedes Bild. <span class="accent">Dein Format.</span></span></h1>
+        <p class="lead">Imgkeep ist eine kostenlose Erweiterung für Chrome und Edge, die Bilder aus dem Web als PNG, JPG, WebP, GIF oder PDF speichert. Ein Rechtsklick genügt: umgewandelt wird auf deinem Gerät, gespeichert im Ordner deiner Wahl.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Zu Chrome hinzufügen — kostenlos</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Auch für Edge <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/de/download/">Firefox und andere Browser</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Im Chrome Web Store mit 5,0 von 5 bewertet"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5,0</strong> · im Chrome Web Store</a></p>
+        <p class="trust">Kein Konto <span aria-hidden="true">·</span> Keine Uploads <span aria-hidden="true">·</span> Open Source</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">Die 28-Sekunden-Demo auf YouTube ansehen</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">Lässt sie sich nicht abspielen? Auf YouTube ansehen <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">Eine 28 Sekunden lange Demo ohne Ton: Rechtsklick auf ein animiertes WebP-Bild, Imgkeep öffnen und GIF (behält Animation) wählen. Das gespeicherte GIF bewegt sich weiterhin. Danach wird ein WebP-Foto auf dieselbe Weise als JPG gespeichert.</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">So funktioniert's</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>Rechtsklick auf ein Bild</h3>
+            <p>Such dir ein Bild im Web und klick mit der rechten Maustaste darauf.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>Format wählen</h3>
+            <p>Wähle PNG, JPG, WebP, GIF (behält Animation), PDF oder das Originalformat. Oder kopier es als PNG oder hol dir seine Farbpalette.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>In deinem Ordner speichern</h3>
+            <p>Imgkeep wandelt das Bild auf deinem Computer um und speichert es jedes Mal dort, wo du es haben willst.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">Keine Installation, keine Uploads</p>
+        <h2 id="convert-title">Wandle Bilder um, die du schon hast.</h2>
+        <p>Zieh WebP-, AVIF-, PNG- oder JPG-Dateien hinein und bekomm PNG, JPG, AVIF, GIF, PDF oder ICO — direkt in deinem Browser. Keine Uploads, keine Anmeldung.</p>
+        <p><a class="band-link" href="/de/convert/">Zum Konverter <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>Beliebt:</span> <a href="/de/webp-to-jpg/">WebP in JPG</a> · <a href="/de/webp-to-png/">WebP in PNG</a> · <a href="/de/avif-to-jpg/">AVIF in JPG</a> · <a href="/de/png-to-jpg/">PNG in JPG</a> · <a href="/de/png-to-ico/">PNG in ICO</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">Funktionen</p>
+        <h2 id="features-title">Alles, was Imgkeep kann.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>Merkt sich deinen Ordner</h3>
+            <p>Einmal einen Ordner wählen. Jedes Bild landet dort, in Unterordnern, die du benennst, und nichts wird überschrieben.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>Kommt mit WebP und AVIF klar</h3>
+            <p>Mach aus den WebP- und AVIF-Dateien, die Websites ausliefern, PNG oder JPG, die jede App öffnet. Animationen bleiben als GIF animiert.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>Als PNG kopieren</h3>
+            <p>Leg das Bild als echtes PNG in die Zwischenablage, Transparenz inklusive, und füg es in Chats, Dokumente oder Design-Tools wie Canva, Figma und Google Slides ein. <a href="/web-image-into-canva-figma-google-slides/">So geht's</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>Farbpalette</h3>
+            <p>Hol dir die wichtigsten Farben eines Bildes direkt aus dem Rechtsklick-Menü. Kopier eine davon als HEX, RGB oder HSL, alle zusammen als CSS oder Tailwind, oder speicher sie für Adobe-Programme oder GIMP. <a href="/de/color-palette-from-image/">Oder zieh hier ein Bild hinein</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>Deine Dateinamen</h3>
+            <p>Benenne Dateien nach dem Originalnamen, der Website, dem Datum oder der Größe, zum Beispiel <code>{name}-{w}x{h}</code>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>Funktioniert, wo der Rechtsklick nicht reicht</h3>
+            <p>Auf Seiten wie Instagram und Pinterest liegen Fotos unter einer zusätzlichen Ebene. Wähl <strong>Bild hier finden</strong>, und Imgkeep findet das Foto in seiner größten Größe. Aus, bis du es einschaltest.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>Größe ändern und Vorschau</h3>
+            <p>Leg eine maximale Breite fest, dann werden große Bilder passend verkleinert. <strong>Weitere Optionen</strong> zeigt dir das Ergebnis und die tatsächliche Dateigröße schon vor dem Speichern, mit Qualität und Hintergrund nach deiner Wahl.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF, AVIF, ICO und BMP</h3>
+            <p>Speicher ein Bild als einseitiges PDF oder unter Weitere Optionen als AVIF (oft halb so groß wie ein JPG), als ICO-Symbol für Verknüpfungen und Favicons oder als BMP.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>Dateien, die du schon hast</h3>
+            <p>Wandle Bilder auf deinem Computer oder Handy mit dem <a href="/de/convert/">kostenlosen Bildkonverter</a> um. Er läuft direkt auf der Seite, hochgeladen wird also nichts.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">Ratgeber zu Bildformaten</p>
+        <h2 id="guides-title">Etwas Klarheit bei Bildformaten.</h2>
+        <p class="intro">Praktische Ratgeber für die Bilder, die du täglich speicherst — und für die Wahl einer Erweiterung, der du vertrauen kannst.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">Erklärt</p>
+            <h3><a href="/de/chrome-saves-images-as-webp/">Warum Chrome WebP speichert</a></h3>
+            <p>Chrome speichert genau die Datei, die eine Website liefert, und viele Websites liefern WebP, weil es kleiner ist. Keine Chrome-Einstellung ändert das: Wandle das Bild beim Speichern um — oder danach in Paint oder Preview.</p>
+            <a class="more" href="/de/chrome-saves-images-as-webp/">WebP verstehen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/de/save-webp-as-jpg-png/">WebP als JPG oder PNG speichern</a></h3>
+            <p>Rechtsklick auf das Bild und als PNG oder JPG speichern – mit einem Konverter, der auf deinem Computer läuft, sodass nichts hochgeladen wird. PNG für Grafiken und Transparenz, JPG für Fotos.</p>
+            <a class="more" href="/de/save-webp-as-jpg-png/">WebP-Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/de/save-avif-as-jpg-png/">AVIF als JPG oder PNG speichern</a></h3>
+            <p>AVIF ist kleiner als WebP, aber viele Programme und Upload-Formulare können es immer noch nicht öffnen. Speichere es direkt beim Herunterladen als JPG oder PNG oder exportiere es aus Preview oder Paint (mit Microsofts kostenloser AV1-Erweiterung).</p>
+            <a class="more" href="/de/save-avif-as-jpg-png/">AVIF-Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Erklärt</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome speichert JFIF</a></h3>
+            <p>Eine .jfif-Datei ist ein ganz normales JPEG mit anderer Endung, festgelegt durch einen Eintrag in der Windows-Registry. Benenne sie in .jpg um, ändere die Einstellung einmalig oder speichere gleich als JPG.</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">JFIF-Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/save-animated-webp-as-gif/">Animiertes WebP als GIF</a></h3>
+            <p>JPG und PNG behalten nur ein einzelnes Bild. Speichere die Animation als GIF, das fast überall läuft – samt Timing und Transparenz, in einem Schritt oder mit GIMP.</p>
+            <a class="more" href="/save-animated-webp-as-gif/">GIF-Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/save-image-as-pdf/">Bild als PDF speichern</a></h3>
+            <p>Chromes „Als PDF drucken“ setzt das Bild auf eine Seite in Papierformat. Oder du erstellst direkt aus dem Rechtsklick-Menü ein einseitiges PDF, das genau so groß ist wie das Bild.</p>
+            <a class="more" href="/save-image-as-pdf/">PDF-Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Sicherheit</p>
+            <h3><a href="/save-image-as-type-alternative/">Sichere Alternative zu Save image as Type</a></h3>
+            <p>Google hat sie im März 2026 entfernt, nachdem ein neuer Eigentümer sie dazu gebracht hatte, auf Shopping-Seiten Affiliate-Links einzufügen. Wenn du sie noch hast, entferne sie – und prüfe bei jedem Ersatz Berechtigungen, Daten, Eigentümer und Quellcode.</p>
+            <a class="more" href="/save-image-as-type-alternative/">Checkliste lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/de/save-image-right-click-not-working/">Wenn sich ein Bild per Rechtsklick nicht speichern lässt</a></h3>
+            <p>Auf Seiten wie Instagram und Pinterest liegen Fotos unter einer weiteren Ebene, sodass dein Rechtsklick sie nie erreicht. Warum das so ist, welche kostenlosen Umwege es gibt und wie Imgkeep das Foto für dich findet.</p>
+            <a class="more" href="/de/save-image-right-click-not-working/">Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Anleitungen</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">Webbilder in Canva, Figma oder Slides</a></h3>
+            <p>Kopiere ein Webbild als PNG und füge es in dein Design oder deine Folie ein. Wenn ein Tool meldet, der Dateityp werde nicht unterstützt, hat die Seite WebP oder AVIF geliefert: Speichere es als PNG oder JPG.</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">Anleitung lesen <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Fragen</p>
+        <h2 id="faq-title">Klare Antworten.</h2>
+        <dl>
+          <div>
+            <dt>Ist Imgkeep kostenlos?</dt>
+            <dd>Ja. Alles, was Imgkeep heute kann, ist kostenlos – ohne Werbung und ohne Limits. Ein kostenpflichtiges Imgkeep Pro mit zusätzlichen Funktionen ist geplant, die jetzigen Funktionen bleiben kostenlos.</dd>
+          </div>
+          <div>
+            <dt>Lädt Imgkeep meine Bilder hoch?</dt>
+            <dd>Nein. Jedes Bild wird auf deinem Computer umgewandelt und direkt in deinen Ordner gespeichert. Das Einzige, was Imgkeep sendet, ist eine anonyme tägliche Zählung, welche Funktionen genutzt wurden und welche Speichervorgänge fehlgeschlagen sind – und die kannst du in den Optionen abschalten. <a href="/privacy.html">Datenschutzerklärung</a>.</dd>
+          </div>
+          <div>
+            <dt>Welche Formate kann es speichern?</dt>
+            <dd>PNG, JPG, WebP, GIF (Animation bleibt erhalten), PDF oder das Originalformat. Es wandelt die WebP- und AVIF-Bilder um, die viele Seiten inzwischen ausliefern, und <strong>Als PNG kopieren</strong> legt ein Bild in deine Zwischenablage.</dd>
+          </div>
+          <div>
+            <dt>Kann es die Farbpalette eines Bildes ermitteln?</dt>
+            <dd>Ja. Rechtsklick auf das Bild, Imgkeep wählen, dann Farbpalette holen. Du siehst die 5, 8 oder 12 Hauptfarben, die größte zuerst. Klicke eine an, um sie als HEX, RGB oder HSL zu kopieren, oder kopiere alle als CSS-Variablen, Tailwind oder JSON. Speichere sie als PNG, GIMP-Palette oder Adobe-Farbfelder. Alles wird auf deinem Computer berechnet.</dd>
+          </div>
+          <div>
+            <dt>Kann es Bilder speichern, die Seiten abdecken, etwa bei Instagram oder Pinterest?</dt>
+            <dd>Ja. Rechtsklick auf das Foto und <strong>Imgkeep: Bild hier finden</strong> wählen. Imgkeep sieht sich diese Seite einmal an, findet das Foto unter deinem Klick in seiner größten Größe und öffnet es bereit zum Speichern. Die Funktion ist aus, bis du sie einschaltest, und sie verändert nie eine Seite.</dd>
+          </div>
+          <div>
+            <dt>Kann ich Bilder umwandeln, die ich schon auf dem Computer habe?</dt>
+            <dd>Ja. Nutze den <a href="/de/convert/">kostenlosen Bildkonverter</a> unter imgkeep.app/convert/: Dateien ablegen, PNG, JPG, WebP, AVIF, GIF, PDF oder ICO wählen und dann herunterladen oder als PNG kopieren. Er läuft in deinem Browser, nichts wird hochgeladen und eine Anmeldung ist nicht nötig. Auch auf dem Handy.</dd>
+          </div>
+          <div>
+            <dt>In welchen Browsern funktioniert es?</dt>
+            <dd>In Google Chrome 116 und neuer sowie in Microsoft Edge, in 9 Sprachen.</dd>
+          </div>
+          <div>
+            <dt>Kann es alle Bilder einer Seite auf einmal speichern?</dt>
+            <dd>Nein. Imgkeep speichert das eine Bild, auf das du rechtsklickst. Für ganze Seiten brauchst du einen Massen-Downloader.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">Bereit, so zu speichern, wie du es willst?</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Zu Chrome hinzufügen — kostenlos</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Auch für Edge <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/de/download/">Firefox und andere Browser</a>
+          </div>
+          <p class="trust">Kein Konto <span aria-hidden="true">·</span> Keine Uploads <span aria-hidden="true">·</span> Open Source</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/de/" aria-label="Startseite von Imgkeep"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">Deine Bilder bleiben auf deinem Computer.</p>
+        <nav aria-label="Fußzeile">
+          <a href="/de/convert/">Konverter</a>
+          <a href="/privacy.html">Datenschutz</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">Quellcode</a>
+          <a href="/support.html">Support</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="Mehr">
+        <a href="/de/download/">Download</a>
+        <a href="/ideas.html">Ideen</a>
+        <a href="/whats-new.html">Neuigkeiten</a>
+        <a href="/pro.html">Warteliste für Imgkeep Pro</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

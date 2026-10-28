@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVIFをJPGやPNGで保存する方法 — Imgkeep</title>
+  <meta name="description" content="AVIFとは何か、サイトがAVIFを送る理由と多くのアプリで開けない理由、そしてChromeからAVIF画像をJPGやPNGで保存する方法を、拡張機能ありとなしの両方で解説します。">
+  <link rel="canonical" href="https://imgkeep.app/ja/save-avif-as-jpg-png/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-avif-as-jpg-png/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-avif-as-jpg-png/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="AVIFをJPGやPNGで保存する方法">
+  <meta property="og:description" content="AVIFとは何か、サイトがAVIFを送る理由と多くのアプリで開けない理由、そしてChromeからAVIF画像をJPGやPNGで保存する方法を、拡張機能ありとなしの両方で解説します。">
+  <meta property="og:url" content="https://imgkeep.app/ja/save-avif-as-jpg-png/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：どんな画像も、好きな形式で。ChromeやEdgeの右クリックメニューから、ウェブ上の画像をPNG、JPG、WebP、GIF、PDFで保存。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AVIFファイルはそのままにしておいてもいい？","acceptedAnswer":{"@type":"Answer","text":"使っているアプリがどれも開けるなら、そのままで大丈夫です。サイズが小さく、見た目もきれいです。受けつけないものがあるときや、ほかの人に画像を送るときに変換しましょう。"}},{"@type":"Question","name":"AVIFを変換すると画質は落ちる？","acceptedAnswer":{"@type":"Answer","text":"PNGで保存すればピクセルはそのまま残りますが、ファイルはずっと大きくなります。JPGは再度圧縮されるので多少は劣化しますが、品質を高めに設定すればふつうは見分けがつきません。"}},{"@type":"Question","name":"AVIFをJPGやPNGで保存するには？","acceptedAnswer":{"@type":"Answer","text":"AVIFは新しくファイルサイズの小さい画像形式で、Chromeはそのままの形で保存しますが、まだ開けないアプリが多くあります。JPGやPNGにするには、Imgkeepのような変換ツールで保存する（右クリック › Imgkeep › JPG）か、新しめのMacならPreviewから書き出すか、Microsoftの無料のAV1 Video Extensionを入れたPaintから書き出します。"}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/ja/"},{"@type":"ListItem","position":2,"name":"AVIFをJPGやPNGで保存する","item":"https://imgkeep.app/ja/save-avif-as-jpg-png/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"AVIFをJPGやPNGで保存する方法","description":"AVIFは新しくファイルサイズの小さい画像形式で、Chromeはそのままの形で保存しますが、まだ開けないアプリが多くあります。JPGやPNGにするには、Imgkeepのような変換ツールで保存する（右クリック › Imgkeep › JPG）か、新しめのMacならPreviewから書き出すか、Microsoftの無料のAV1 Video Extensionを入れたPaintから書き出します。","url":"https://imgkeep.app/ja/save-avif-as-jpg-png/","mainEntityOfPage":"https://imgkeep.app/save-avif-as-jpg-png/","image":"https://imgkeep.app/media/guides/menu-jpg.jpg","datePublished":"2026-09-27","dateModified":"2026-10-28","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ja/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ja/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/ja/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="メイン"><a href="/ja/convert/">コンバーター</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">JA</summary><ul><li><a href="/save-avif-as-jpg-png/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-avif-as-jpg-png/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-avif-as-jpg-png/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/save-avif-as-jpg-png/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-avif-as-jpg-png/" hreflang="ja" lang="ja" aria-current="true">日本語</a></li><li><a href="/ar/save-avif-as-jpg-png/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-avif-as-jpg-png/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-avif-as-jpg-png/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-avif-as-jpg-png/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/save-avif-as-jpg-png/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/save-avif-as-jpg-png/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-avif-as-jpg-png/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-avif-as-jpg-png/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="パンくずリスト">
+      <a href="/ja/#image-guides">← ホーム</a><span aria-hidden="true">›</span><span aria-current="page">AVIFをJPGやPNGで保存する</span>
+    </nav>
+
+    <main class="doc">
+      <h1>AVIFをJPGやPNGで保存する方法</h1>
+      <div class="answer">
+        <p class="label">簡単な答え</p>
+        <p>AVIFは新しくファイルサイズの小さい画像形式で、Chromeはそのままの形で保存しますが、まだ開けないアプリが多くあります。JPGやPNGにするには、Imgkeepのような変換ツールで保存する（右クリック ›<strong>Imgkeep › JPG</strong>）か、新しめのMacならPreviewから書き出すか、Microsoftの無料のAV1 Video Extensionを入れたPaintから書き出します。</p>
+      </div>
+      <p class="updated">更新日: <time datetime="2026-10-28">2026年10月28日</time></p>
+
+      <h2>AVIFとは？</h2>
+      <p>AVIFはAV1動画コーデックをもとにした新しい画像形式です。いちばんの利点はサイズで、同じ画質ならJPGよりずっと小さく、WebPより小さいこともよくあります。Chrome、Edge、Firefox、Safariはいずれも表示できます。</p>
+
+      <h2>ChromeがAVIFで保存したのはなぜ？</h2>
+      <p>Chromeはサイトに画像を要求するとき、自分が表示できる形式を伝えます。最近のバージョンでは、その先頭にAVIFが並びます。多くのサイトや画像配信サービスはそれを見て、いちばん小さいファイルを送ります。そのあと<strong>名前を付けて画像を保存…</strong>を使うと、届いたものがそのまま、変換されずに保存されます。これを変えるChromeの設定はありません。同じことはWebPでも起きます: <a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで画像を保存する理由</a>。</p>
+
+      <h2>アプリでAVIFが開けないのはなぜ？</h2>
+      <p>ブラウザはAVIFにすばやく対応しましたが、ほかのソフトは未対応のものがたくさんあります。古い写真アプリや画像編集ソフト、一部のオフィスソフト、アップロードフォーム、印刷サービスなどです。Windowsでは、フォトとPaintでAVIFを開くのに、Microsoft Storeの無料のAV1 Video Extensionが必要です。macOSは最近のバージョンならPreviewでAVIFを開けますが、古いものは開けません。</p>
+
+      <h2>AVIFをJPGやPNGで一度に保存するには？</h2>
+      <p>拡張機能なら保存するときに変換してくれるので、AVIFファイルを扱う必要がまったくありません。ブラウザの中で動くものなので、信頼できるものを選んでください（<a href="/save-image-as-type-alternative/">画像拡張機能が安全か確かめる方法</a>）。</p>
+
+      <div class="option">
+        <p class="label">私たちの拡張機能</p>
+        <h3>Imgkeep</h3>
+        <p>画像を右クリックして<strong>Imgkeep</strong>を選び、<strong>JPG</strong>または<strong>PNG</strong>を選びます。ImgkeepはAVIFを読み取り、お使いのパソコンの中で変換して、ふつうの<code>.jpg</code>や<code>.png</code>をダウンロードフォルダ、または自分で選んだフォルダに保存します。JPGでは透明な部分は白、または選んだ色になります。アップロードは一切ありません。無料でオープンソースです。</p>
+        <figure class="shot">
+          <img src="/media/guides/menu-jpg.jpg" width="1120" height="560" loading="lazy" decoding="async" alt="ウェブページ上の写真を右クリックしたところ。メニューにImgkeepが表示され、サブメニューにPNG、JPG、WebP、GIF（アニメーションを保持）、PDF、元の形式、PNGとしてコピー、カラーパレットを取得、その他のオプション…が並んでいる。JPGがハイライトされている。">
+          <figcaption>画像を右クリックして<strong>Imgkeep</strong>を選び、<strong>JPG</strong>または<strong>PNG</strong>を選びます。</figcaption>
+        </figure>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-avif-as-jpg-png">ImgkeepをChromeに追加 — 無料</a>
+        <span class="cta-note">権限は4つ。ページを読み取るのは、あなたが求めたときだけです。</span>
+      </div>
+
+      <h2>拡張機能なしでAVIFを変換するには？</h2>
+      <p>すでに手元にあるファイルなら、これがいちばん早い方法です: <a href="/ja/avif-to-jpg/">AVIFをJPGに変換するツール</a>はブラウザの中で動き、アップロードしません。透過を残したいときはPNGを選んでください。</p>
+
+      <h3>Windows：Paint</h3>
+      <ol>
+        <li>PaintでAVIFファイルが開けない場合は、Microsoft Storeから無料の<strong>AV1 Video Extension</strong>をインストールします。</li>
+        <li>保存した<code>.avif</code>ファイルを右クリックして、<strong>プログラムから開く › Paint</strong>を選びます。</li>
+        <li><strong>ファイル › 名前を付けて保存</strong>から、<strong>JPEG画像</strong>または<strong>PNG画像</strong>を選びます。</li>
+      </ol>
+
+      <h3>Mac：Preview</h3>
+      <ol>
+        <li><code>.avif</code>ファイルをPreviewで開きます。</li>
+        <li><strong>ファイル › 書き出す</strong>を選び、<strong>フォーマット</strong>をJPEGまたはPNGに設定します。</li>
+      </ol>
+      <p>Previewで開けない場合は、macOSのバージョンが古く、AVIFに対応していない可能性があります。ほかの方法を使ってください。</p>
+
+      <h3>どのパソコンでも：コピー＆ペースト</h3>
+      <p>Chromeで画像を右クリックして<strong>画像をコピー</strong>を選び、画像編集ソフトに貼り付けて、JPGまたはPNGで保存します。Chromeがすでに画像をデコードしているので、編集ソフトがAVIFファイルを開けない場合でもこの方法は使えます。透過は失われることがあります。メニューに<strong>画像をコピー</strong>がない場合は、画像の上に何かがかぶさっています: <a href="/ja/save-image-right-click-not-working/">右クリックで画像を保存できないとき</a>をご覧ください。</p>
+
+      <h3>スクリーンショット</h3>
+      <p>WindowsならWin+Shift+S、MacならCmd+Shift+4。手早いですが、得られるのは画面に表示されているサイズで、元の画像サイズではありません。</p>
+
+      <h3>オンラインの変換サービス</h3>
+      <p>使えますが、画像は他人のサーバーに送られます。公開されている写真なら問題ありませんが、プライベートなものは考え直したほうがいいでしょう。</p>
+
+      <h2>関連ガイド</h2>
+      <ul>
+        <li><a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで画像を保存する理由</a></li>
+        <li><a href="/ja/save-webp-as-jpg-png/">WebPをJPGやPNGで保存する方法</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">ChromeがJFIFで画像を保存する？ JPGで保存する方法</a></li>
+        <li><a href="/save-animated-webp-as-gif/">アニメーションWebPをGIFで保存する方法</a></li>
+        <li><a href="/save-image-as-pdf/">Chromeで画像をPDFとして保存する方法</a></li>
+        <li><a href="/save-image-as-type-alternative/">Save image as Typeの安全な代替</a></li>
+        <li><a href="/ja/save-image-right-click-not-working/">右クリックで画像を保存できないとき</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">ウェブ上の画像をCanva・Figma・Google Slidesに取り込む方法</a></li>
+      </ul>
+
+      <h2>よくある質問</h2>
+      <h3>AVIFファイルはそのままにしておいてもいい？</h3>
+      <p>使っているアプリがどれも開けるなら、そのままで大丈夫です。サイズが小さく、見た目もきれいです。受けつけないものがあるときや、ほかの人に画像を送るときに変換しましょう。</p>
+      <h3>AVIFを変換すると画質は落ちる？</h3>
+      <p>PNGで保存すればピクセルはそのまま残りますが、ファイルはずっと大きくなります。JPGは再度圧縮されるので多少は劣化しますが、品質を高めに設定すればふつうは見分けがつきません。WebPファイルについては<a href="/ja/save-webp-as-jpg-png/">WebPをJPGやPNGで保存する方法</a>をご覧ください。</p>
+    </main>
+
+    <footer>
+      <nav aria-label="フッター">
+        <a href="/ja/">ホーム</a>
+        <a href="/ja/convert/">コンバーター</a>
+        <a href="https://github.com/ybider-tech/imgkeep">ソースコード</a>
+        <a href="/ja/download/">ダウンロード</a>
+        <a href="/ideas.html">アイデア</a>
+        <a href="/support.html">サポート</a>
+        <a href="/privacy.html">プライバシー</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="ガイド">
+        <a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで保存する理由</a>
+        <a href="/ja/save-webp-as-jpg-png/">WebPをJPGやPNGで保存する</a>
+        <a href="/ja/save-avif-as-jpg-png/">AVIFをJPGやPNGで保存する</a>
+        <a href="/chrome-saves-images-as-jfif/">ChromeがJFIFで保存してしまう</a>
+        <a href="/save-animated-webp-as-gif/">アニメーションWebPをGIFに</a>
+        <a href="/save-image-as-pdf/">画像をPDFで保存する</a>
+        <a href="/save-image-as-type-alternative/">「Save image as Type」の安全な代替</a>
+        <a href="/ja/save-image-right-click-not-working/">右クリックで画像を保存できないとき</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Web上の画像をCanva・Figma・Slidesへ</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

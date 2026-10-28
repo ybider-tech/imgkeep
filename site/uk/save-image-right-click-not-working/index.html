@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правий клік не зберігає зображення? Причина і рішення</title>
+  <meta name="description" content="Деякі сайти накривають фото додатковим шаром, тож правий клік їх не зберігає. Чому так, безкоштовні обхідні шляхи та спосіб знайти зображення в Chrome.">
+  <link rel="canonical" href="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Коли правий клік не зберігає зображення">
+  <meta property="og:description" content="Деякі сайти накривають фото додатковим шаром, тож правий клік їх не зберігає. Чому так, безкоштовні обхідні шляхи та спосіб знайти зображення в Chrome.">
+  <meta property="og:url" content="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: будь-яке зображення. Ваш формат. Зберігайте зображення з вебу як PNG, JPG, WebP, GIF або PDF прямо з контекстного меню в Chrome чи Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чому немає пункту «Зберегти зображення як», коли я клацаю фото правою кнопкою?","acceptedAnswer":{"@type":"Answer","text":"Клацання не потрапило на зображення. Сайт розмістив поверх нього інший елемент — часто прозорий шар або посилання — тож браузер показує меню для цього елемента, без пункту «Зберегти зображення як». Зображення й далі на сторінці, просто під ним."}},{"@type":"Question","name":"Чи читає Imgkeep сторінки, які я відвідую?","acceptedAnswer":{"@type":"Answer","text":"Ні. Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення — саме цю сторінку і саме тоді. Він ніколи не змінює сторінку. Він зчитує лише адреси зображень на екрані, і нічого зі сторінки не зберігається й не надсилається. Функція «знайти зображення тут» вимкнена, доки ви її не ввімкнете."}},{"@type":"Question","name":"Чи може Imgkeep зберегти всі зображення зі сторінки одразу?","acceptedAnswer":{"@type":"Answer","text":"Ні. Imgkeep зберігає одне зображення за раз — те, яке ви клацнули або обрали. Щоб завантажити всі зображення зі сторінки, потрібен інструмент для масового завантаження."}},{"@type":"Question","name":"Як зберегти зображення, коли права кнопка не працює?","acceptedAnswer":{"@type":"Answer","text":"На сайтах на кшталт Instagram і Pinterest фото лежить під іншим шаром, тож клацання правою кнопкою потрапляє на цей шар, і пункт «Зберегти зображення як» не з'являється. Без розширення доведеться шукати адресу зображення в інструментах розробника браузера або робити знімок екрана. З Imgkeep клацніть правою кнопкою і виберіть «Imgkeep: знайти зображення тут…», щоб відкрити фото в найбільшому розмірі, готове до збереження."}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/uk/"},{"@type":"ListItem","position":2,"name":"Коли правий клік не зберігає зображення","item":"https://imgkeep.app/uk/save-image-right-click-not-working/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Коли правий клік не зберігає зображення","description":"На сайтах на кшталт Instagram і Pinterest фото лежить під іншим шаром, тож клацання правою кнопкою потрапляє на цей шар, і пункт «Зберегти зображення як» не з'являється. Без розширення доведеться шукати адресу зображення в інструментах розробника браузера або робити знімок екрана. З Imgkeep клацніть правою кнопкою і виберіть «Imgkeep: знайти зображення тут…», щоб відкрити фото в найбільшому розмірі, готове до збереження.","url":"https://imgkeep.app/uk/save-image-right-click-not-working/","mainEntityOfPage":"https://imgkeep.app/save-image-right-click-not-working/","image":"https://imgkeep.app/media/guides/find-image.jpg","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/uk/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/uk/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/uk/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Головне"><a href="/uk/convert/">Конвертер</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">UK</summary><ul><li><a href="/save-image-right-click-not-working/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-image-right-click-not-working/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-image-right-click-not-working/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/save-image-right-click-not-working/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-image-right-click-not-working/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/save-image-right-click-not-working/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-image-right-click-not-working/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-image-right-click-not-working/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-image-right-click-not-working/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/save-image-right-click-not-working/" hreflang="uk" lang="uk" aria-current="true">Українська</a></li><li><a href="/ko/save-image-right-click-not-working/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-image-right-click-not-working/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-image-right-click-not-working/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="Навігаційний ланцюжок">
+      <a href="/uk/#image-guides">← На головну</a><span aria-hidden="true">›</span><span aria-current="page">Коли правий клік не зберігає зображення</span>
+    </nav>
+
+    <main class="doc">
+      <h1>Коли правий клік не зберігає зображення</h1>
+      <div class="answer">
+        <p class="label">Коротка відповідь</p>
+        <p>На сайтах на кшталт Instagram і Pinterest фото лежить під іншим шаром, тож правий клік потрапляє в цей шар, і пункт <strong>Зберегти зображення як</strong> не з'являється. Без розширення доведеться шукати адресу зображення в інструментах розробника або робити знімок екрана. З Imgkeep клацніть правою кнопкою та виберіть <strong>Imgkeep: знайти зображення тут…</strong>, щоб відкрити фото в найбільшому розмірі, готове до збереження.</p>
+      </div>
+      <p class="updated">Оновлено <time datetime="2026-10-13">13 жовтня 2026</time></p>
+
+      <h2>Чому під час правого кліку не з'являється «Зберегти зображення як»?</h2>
+      <p>Бо ваш правий клік не потрапив на зображення. Браузер показує параметри зображення (<strong>Зберегти зображення як…</strong>, <strong>Копіювати зображення</strong>, <strong>Відкрити зображення в новій вкладці</strong>) лише тоді, коли просто під вказівником є зображення. Якщо в меню є тільки <strong>Назад</strong>, <strong>Перезавантажити</strong> і <strong>Зберегти як…</strong> чи параметри посилання, зверху лежить щось інше. Звичні причини:</p>
+      <ul>
+        <li><strong>Шар-накладка.</strong> Багато соціальних і фотосайтів розміщують над кожним фото прозорий шар або посилання. Ви бачите фото, а клік потрапляє в шар.</li>
+        <li><strong>Фонове зображення.</strong> Деякі сторінки малюють фото як фон блока (CSS), а не як елемент зображення, тож браузер не вважає його зображенням.</li>
+        <li><strong>Зображення, яке існує лише всередині сторінки.</strong> Його адреса починається з <code>blob:</code>, і окремої адреси, яку можна відкрити чи зберегти, немає.</li>
+        <li><strong>Вимкнене меню.</strong> Деякі сайти повністю вимикають контекстне меню, тож воно взагалі не відкривається.</li>
+      </ul>
+
+      <h2>Як зберегти зображення без розширення?</h2>
+      <p>Це можливо, але кожен спосіб трохи незручний.</p>
+
+      <h3>Відкрийте фото на окремій сторінці</h3>
+      <p>Клацніть фото, щоб відкрити його допис чи сторінку, і спробуйте правий клік ще раз. На деяких сайтах більший перегляд — це звичайне зображення, на багатьох воно так само перекрите.</p>
+
+      <h3>Знайдіть адресу в інструментах розробника</h3>
+      <ol>
+        <li>Клацніть фото правою кнопкою та виберіть <strong>Перевірити</strong>. Панель Elements відкриється на елементі під вашим кліком — зазвичай це шар-накладка.</li>
+        <li>Пошукайте трохи вище або нижче тег <code>&lt;img&gt;</code>. Його <code>src</code> — це адреса зображення, а <code>srcset</code>, якщо він є, перелічує більші розміри.</li>
+        <li>Клацніть адресу правою кнопкою, виберіть <strong>Відкрити в новій вкладці</strong> й збережіть зображення з цієї вкладки.</li>
+      </ol>
+      <p>Або скористайтеся панеллю <strong>Network</strong>: відфільтруйте за <strong>Img</strong>, перезавантажте сторінку й знайдіть фото серед десятків значків і мініатюр з назвами на кшталт <code>a8f3e…jpg</code>. Клацніть його правою кнопкою та виберіть <strong>Відкрити в новій вкладці</strong>.</p>
+
+      <h3>Зробіть знімок екрана</h3>
+      <p>У Windows натисніть Win+Shift+S, на Mac — Cmd+Shift+4. Це працює завжди, навіть для зображень <code>blob:</code>, але фото ви отримаєте лише в тому розмірі, в якому воно показане на екрані, а не в оригінальному.</p>
+
+      <h2>Як Imgkeep знаходить зображення?</h2>
+      <p>Imgkeep — це розширення для браузера, яке зберігає зображення як PNG, JPG, WebP, GIF або PDF прямо з контекстного меню. На сайтах, які накривають свої зображення, як-от Instagram і Pinterest, воно додає в меню пункт <strong>Imgkeep: знайти зображення тут…</strong>. Ми розробляємо Imgkeep, тож ось що саме робить цей пункт.</p>
+
+      <div class="option">
+        <p class="label">Наше розширення</p>
+        <h3>Imgkeep: знайти зображення тут…</h3>
+        <ol>
+          <li>Клацніть фото правою кнопкою і виберіть <strong>Imgkeep: знайти зображення тут…</strong></li>
+          <li>Imgkeep один раз переглядає цю сторінку і знаходить зображення під вашим курсором у найбільшому розмірі, який пропонує сторінка.</li>
+          <li>Воно відкривається в розділі <strong>Більше параметрів</strong>, де ви обираєте формат і розмір, а потім тиснете <strong>Зберегти</strong> або <strong>Копіювати як PNG</strong>.</li>
+        </ol>
+        <figure class="shot">
+          <img src="/media/guides/find-image.jpg" width="1160" height="576" loading="lazy" decoding="async" alt="Сітка фотографій на вигаданому сайті photos.example.com. Після клацання фото правою кнопкою видно меню сторінки (Назад, Уперед, Перезавантажити, Зберегти як, Друк) з підсвіченим пунктом «Imgkeep: знайти зображення тут…». Поруч — вікно «Більше параметрів» Imgkeep зі знайденим зображенням, форматами PNG, JPG і WebP, максимальною шириною, іменем файлу та кнопками «Зберегти» і «Копіювати як PNG».">
+          <figcaption>На перекритому фото виберіть <strong>Imgkeep: знайти зображення тут…</strong> — і фото відкриється в розділі «Більше параметрів».</figcaption>
+        </figure>
+        <p>У стрічках, де обкладинка є посиланням (як у багатьох сітках фотографій), Imgkeep за посиланням, на якому ви клацнули, визначає, яке зображення ви мали на увазі. Коли певності немає — наприклад, фото стоять поруч і посилання немає — Imgkeep показує зображення, що є на екрані, щоб ви обрали потрібне, а найімовірніше йде першим. Якщо зображення там немає, Imgkeep про це повідомить.</p>
+        <p>Функція вимкнена, доки ви її не ввімкнете — у параметрах, у розділі <strong>Зображення, які сайти перекривають</strong>, або під час першого використання. Увімкнення додає два необов'язкові дозволи: <code>activeTab</code> і <code>scripting</code>. Чотири дозволи, які Imgkeep запитує під час встановлення, лишаються ті самі.</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-image-right-click-not-working">Додати Imgkeep у Chrome — безкоштовно</a>
+        <span class="cta-note">Вимкнено, доки ви не ввімкнете. Також для Microsoft Edge. Жодних завантажень на сервер, без облікового запису.</span>
+      </div>
+
+      <h2>Чи читає Imgkeep сторінки, які я відвідую?</h2>
+      <p>Ні. Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення — саме цю сторінку і саме тоді. Він ніколи не змінює сторінку. Він зчитує лише адреси зображень на екрані, і нічого зі сторінки не зберігається й не надсилається. В інший час Imgkeep читає тільки те зображення, яке ви клацнули правою кнопкою, щоб зберегти. Подробиці — у <a href="/privacy.html">політиці конфіденційності</a>, а <a href="https://github.com/ybider-tech/imgkeep">вихідний код</a> відкритий.</p>
+
+      <h2>Що все одно не спрацює?</h2>
+      <ul>
+        <li><strong>Зображення, які сторінка ще не завантажила.</strong> Багато сайтів завантажують фото лише тоді, коли ви до них прокручуєте. Прокрутіть так, щоб фото було на екрані, і спробуйте ще раз.</li>
+        <li><strong>Зображення <code>blob:</code>.</strong> Вони існують лише всередині сторінки, і Imgkeep не може їх зберегти. Допоможе знімок екрана.</li>
+        <li><strong>Захищений вміст.</strong> Кадри відео та інший вміст із захистом DRM так зберегти не вийде.</li>
+        <li><strong>Одне зображення за раз.</strong> Imgkeep зберігає те зображення, яке ви клацнули або обрали, а не всі зображення на сторінці.</li>
+        <li><strong>Вимкнене меню.</strong> Якщо сайт взагалі не дає відкрити меню правої кнопки, пункт Imgkeep теж не з'явиться. Скористайтеся інструментами розробника або знімком екрана.</li>
+      </ul>
+      <p>На інших сайтах, де клацання правою кнопкою потрапляє на зображення, функція «знайти зображення тут» не потрібна: звичайне меню <strong>Imgkeep</strong> з'являється на самому зображенні.</p>
+
+      <h2>Чи можна використовувати збережені фото?</h2>
+      <p>Збереження фото не дає права його повторно використовувати. Зберегти зображення для себе, для дошки настрою чи рецепта — це одне, а опублікувати, надрукувати або використати в роботі — зовсім інше. Спершу запитайте автора й зазначте авторство.</p>
+
+      <h2>Схожі посібники</h2>
+      <ul>
+        <li><a href="/uk/chrome-saves-images-as-webp/">Чому Chrome зберігає зображення у WebP</a></li>
+        <li><a href="/uk/save-webp-as-jpg-png/">Як зберегти WebP як JPG або PNG</a></li>
+        <li><a href="/uk/save-avif-as-jpg-png/">Як зберегти AVIF як JPG або PNG</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">Chrome зберігає зображення як JFIF? Як отримати JPG</a></li>
+        <li><a href="/save-animated-webp-as-gif/">Як зберегти анімований WebP як GIF</a></li>
+        <li><a href="/save-image-as-pdf/">Як зберегти зображення у PDF в Chrome</a></li>
+        <li><a href="/save-image-as-type-alternative/">Безпечна альтернатива Save image as Type</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">Як перенести зображення з вебу в Canva, Figma чи Google Slides</a></li>
+      </ul>
+
+      <h2>Питання</h2>
+      <h3>Чому немає пункту «Зберегти зображення як», коли я клацаю фото правою кнопкою?</h3>
+      <p>Клацання не потрапило на зображення. Сайт розмістив поверх нього інший елемент — часто прозорий шар або посилання — тож браузер показує меню для цього елемента, без пункту <strong>Зберегти зображення як</strong>. Зображення й далі на сторінці, просто під ним.</p>
+      <h3>Чи читає Imgkeep сторінки, які я відвідую?</h3>
+      <p>Ні. Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення — саме цю сторінку і саме тоді. Він ніколи не змінює сторінку. Він зчитує лише адреси зображень на екрані, і нічого зі сторінки не зберігається й не надсилається. Функція <strong>«знайти зображення тут»</strong> вимкнена, доки ви її не ввімкнете.</p>
+      <h3>Чи може Imgkeep зберегти всі зображення зі сторінки одразу?</h3>
+      <p>Ні. Imgkeep зберігає одне зображення за раз — те, яке ви клацнули або обрали. Щоб завантажити всі зображення зі сторінки, потрібен інструмент для масового завантаження.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Нижній колонтитул">
+        <a href="/uk/">Головна</a>
+        <a href="/uk/convert/">Конвертер</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Вихідний код</a>
+        <a href="/uk/download/">Завантажити</a>
+        <a href="/ideas.html">Ідеї</a>
+        <a href="/support.html">Підтримка</a>
+        <a href="/privacy.html">Конфіденційність</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Посібники">
+        <a href="/uk/chrome-saves-images-as-webp/">Чому Chrome зберігає у WebP</a>
+        <a href="/uk/save-webp-as-jpg-png/">Зберегти WebP як JPG або PNG</a>
+        <a href="/uk/save-avif-as-jpg-png/">Зберегти AVIF як JPG або PNG</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome зберігає як JFIF</a>
+        <a href="/save-animated-webp-as-gif/">Анімований WebP як GIF</a>
+        <a href="/save-image-as-pdf/">Зберегти зображення як PDF</a>
+        <a href="/save-image-as-type-alternative/">Безпечна альтернатива «Save image as Type»</a>
+        <a href="/uk/save-image-right-click-not-working/">Коли правий клік не зберігає зображення</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Зображення з вебу в Canva, Figma чи Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

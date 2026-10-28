@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enregistrer une image en PNG, JPG, WebP, GIF — Imgkeep</title>
+  <meta name="description" content="Clic droit sur une image dans Chrome ou Edge pour l'enregistrer en PNG, JPG, WebP, GIF ou PDF, ou obtenir sa palette. Conversion locale. Gratuit, open source.">
+  <link rel="canonical" href="https://imgkeep.app/fr/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — N'importe quelle image. Votre format.">
+  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
+  <meta property="og:url" content="https://imgkeep.app/fr/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep : n'importe quelle image, votre format. Enregistrez les images du web en PNG, JPG, WebP, GIF ou PDF depuis le menu contextuel de Chrome ou Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep est une extension gratuite pour Chrome et Edge qui enregistre les images du web en PNG, JPG, WebP, GIF (animation comprise) ou PDF depuis le menu clic droit, les copie en PNG ou affiche leur palette de couleurs. Elle convertit chaque image sur votre ordinateur et l'enregistre dans le dossier de votre choix.","url":"https://imgkeep.app/fr/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["Enregistrer des images en PNG, JPG, WebP, GIF ou PDF","Convertir WebP et AVIF en JPG ou PNG","Garder l'animation à l'enregistrement en GIF","Copier en PNG","Obtenir la palette de couleurs d'une image : copier en HEX, RGB ou HSL, ou enregistrer des fichiers .ase et .gpl","Enregistrement dans un dossier de votre choix","Noms de fichiers personnalisés","Conversion sur votre ordinateur, sans aucun envoi"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"Enregistrez vos WebP en JPG, PNG ou GIF dans Chrome d'un simple clic droit","description":"Démonstration de 28 secondes d'Imgkeep : un WebP animé enregistré en GIF qui garde son animation, et une photo WebP enregistrée en JPG, depuis le menu du clic droit.","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/fr/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/fr/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Tout ce que fait Imgkeep aujourd'hui est gratuit, sans publicité ni limite. Une version payante, Imgkeep Pro, avec des fonctionnalités supplémentaires est prévue, et les fonctionnalités actuelles resteront gratuites."}},{"@type":"Question","name":"Imgkeep envoie-t-il mes images en ligne ?","acceptedAnswer":{"@type":"Answer","text":"Non. Chaque image est convertie sur votre ordinateur et enregistrée directement dans votre dossier. La seule chose qu'Imgkeep envoie est un décompte quotidien anonyme des fonctionnalités utilisées et des enregistrements qui ont échoué, et vous pouvez le désactiver dans les Options."}},{"@type":"Question","name":"Quels formats peut-il enregistrer ?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, GIF (animation conservée), PDF ou le format d'origine. Imgkeep convertit les images WebP et AVIF que servent aujourd'hui de nombreux sites, et Copier en PNG place une image dans votre presse-papiers."}},{"@type":"Question","name":"Peut-il récupérer la palette de couleurs d'une image ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Faites un clic droit sur l'image, choisissez Imgkeep, puis Obtenir la palette de couleurs. Vous voyez ses 5, 8 ou 12 couleurs principales, de la plus présente à la moins présente. Cliquez sur l'une d'elles pour la copier en HEX, RGB ou HSL, ou copiez-les toutes en variables CSS, Tailwind ou JSON. Enregistrez-les en PNG, en palette GIMP ou en nuancier Adobe. Tout est calculé sur votre ordinateur."}},{"@type":"Question","name":"Peut-il enregistrer les images que les sites recouvrent, comme sur Instagram ou Pinterest ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Faites un clic droit sur la photo et choisissez Imgkeep : Trouver l'image ici. Imgkeep examine la page une fois, trouve la photo située sous votre clic dans sa plus grande taille et l'ouvre, prête à être enregistrée. La fonction reste désactivée tant que vous ne l'activez pas, et elle ne modifie jamais une page."}},{"@type":"Question","name":"Puis-je convertir des images déjà présentes sur mon ordinateur ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Utilisez le convertisseur d'images gratuit sur imgkeep.app/convert/ : déposez vos fichiers, choisissez PNG, JPG, WebP, AVIF, GIF, PDF ou ICO, puis téléchargez-les ou copiez-les en PNG. Tout se passe dans votre navigateur : rien n'est envoyé et aucune inscription n'est nécessaire. Ça fonctionne aussi sur téléphone."}},{"@type":"Question","name":"Dans quels navigateurs fonctionne-t-il ?","acceptedAnswer":{"@type":"Answer","text":"Google Chrome 116 et versions ultérieures, et Microsoft Edge, en 9 langues."}},{"@type":"Question","name":"Peut-il enregistrer toutes les images d'une page d'un coup ?","acceptedAnswer":{"@type":"Answer","text":"Non. Imgkeep enregistre l'image sur laquelle vous faites un clic droit. Pour des pages entières, il vous faut un téléchargeur en masse."}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">Aller au contenu</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/fr/" aria-label="Accueil Imgkeep"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="/fr/convert/">Convertisseur</a>
+        <a href="/fr/color-palette-from-image/">Palette de couleurs</a>
+        <a href="#how-it-works">Comment ça marche</a>
+        <a href="#image-guides">Guides</a>
+        <a href="/privacy.html">Confidentialité</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Installer Imgkeep <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">FR</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr" aria-current="true">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">Enregistrer une image en PNG, JPG, WebP, GIF ou PDF</span> <span class="display">N'importe quelle image. <span class="accent">Votre format.</span></span></h1>
+        <p class="lead">Imgkeep est une extension gratuite pour Chrome et Edge qui enregistre les images du web en PNG, JPG, WebP, GIF ou PDF. Un clic droit, la conversion se fait sur votre appareil et le fichier arrive dans le dossier de votre choix.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Ajouter à Chrome — gratuit</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Aussi pour Edge <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/fr/download/">Firefox et autres navigateurs</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Noté 5,0 sur 5 sur le Chrome Web Store"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5,0</strong> · sur le Chrome Web Store</a></p>
+        <p class="trust">Sans compte <span aria-hidden="true">·</span> Sans envoi de fichiers <span aria-hidden="true">·</span> Open source</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">Voir la démo de 28 secondes sur YouTube</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">Lecture impossible ? Voir sur YouTube <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">Démo silencieuse de 28 secondes : clic droit sur une image WebP animée, ouverture d'Imgkeep et choix de GIF (garde l'animation). Le GIF enregistré bouge toujours. Ensuite, une photo WebP est enregistrée en JPG de la même façon.</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">Comment ça marche</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>Clic droit sur une image</h3>
+            <p>Trouvez une image sur le web et faites un clic droit dessus.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>Choisissez votre format</h3>
+            <p>Choisissez PNG, JPG, WebP, GIF (garde l'animation), PDF ou le format d'origine. Ou copiez l'image en PNG, ou obtenez sa palette de couleurs.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>Enregistrez dans votre dossier</h3>
+            <p>Imgkeep convertit l'image sur votre ordinateur et l'enregistre là où vous voulez, à chaque fois.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">Sans installation, sans envoi</p>
+        <h2 id="convert-title">Convertissez les images que vous avez déjà.</h2>
+        <p>Déposez des fichiers WebP, AVIF, PNG ou JPG et obtenez du PNG, JPG, AVIF, GIF, PDF ou ICO, directement dans votre navigateur. Aucun envoi, aucune inscription.</p>
+        <p><a class="band-link" href="/fr/convert/">Ouvrir le convertisseur <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>Populaires :</span> <a href="/fr/webp-to-jpg/">WebP en JPG</a> · <a href="/fr/webp-to-png/">WebP en PNG</a> · <a href="/fr/avif-to-jpg/">AVIF en JPG</a> · <a href="/fr/png-to-jpg/">PNG en JPG</a> · <a href="/fr/png-to-ico/">PNG en ICO</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">Fonctionnalités</p>
+        <h2 id="features-title">Tout ce qu'il sait faire.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>Il retient votre dossier</h3>
+            <p>Choisissez un dossier une fois pour toutes. Chaque image y arrive, dans les sous-dossiers que vous nommez, et rien n'est jamais écrasé.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>Il gère le WebP et l'AVIF</h3>
+            <p>Transformez les fichiers WebP et AVIF servis par les sites en PNG ou JPG que toutes les applications ouvrent. Les animations restent animées, en GIF.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>Copier en PNG</h3>
+            <p>Mettez l'image dans le presse-papiers sous forme de vrai PNG, transparence conservée, et collez-la dans une conversation, un document ou un outil de design comme Canva, Figma et Google Slides. <a href="/web-image-into-canva-figma-google-slides/">Comment faire</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>Palette de couleurs</h3>
+            <p>Obtenez les couleurs principales d'une image depuis le menu contextuel. Copiez-en une en HEX, RGB ou HSL, copiez-les toutes en CSS ou Tailwind, ou enregistrez-les pour les applications Adobe ou pour GIMP. <a href="/fr/color-palette-from-image/">Ou déposez une image ici</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>Vos noms de fichiers</h3>
+            <p>Nommez les fichiers avec le nom d'origine, le site, la date ou la taille, par exemple <code>{name}-{w}x{h}</code>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>Il marche là où le clic droit ne marche pas</h3>
+            <p>Sur des sites comme Instagram et Pinterest, les photos se cachent sous une autre couche. Choisissez <strong>Trouver l'image ici</strong> et Imgkeep retrouve la photo dans sa plus grande taille. Désactivé tant que vous ne l'activez pas.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>Redimensionnement et aperçu</h3>
+            <p>Définissez une largeur maximale et les grandes images se réduisent pour tenir dedans. <strong>Plus d'options</strong> affiche le résultat et sa taille de fichier réelle avant l'enregistrement, avec la qualité et l'arrière-plan de votre choix.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF, AVIF, ICO et BMP</h3>
+            <p>Enregistrez une image en PDF d'une page, ou dans Plus d'options en AVIF (souvent deux fois plus léger qu'un JPG), en icône ICO pour les raccourcis et les favicons, ou en BMP.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>Les fichiers que vous avez déjà</h3>
+            <p>Convertissez les images de votre ordinateur ou de votre téléphone avec le <a href="/fr/convert/">convertisseur d'images gratuit</a>. Il fonctionne dans la page, donc rien n'est envoyé.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">Guides des formats d'image</p>
+        <h2 id="guides-title">Un peu de clarté sur les formats d'image.</h2>
+        <p class="intro">Des guides pratiques pour les images que vous enregistrez tous les jours, et pour choisir une extension à laquelle vous pouvez faire confiance.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">Explications</p>
+            <h3><a href="/fr/chrome-saves-images-as-webp/">Pourquoi Chrome enregistre en WebP</a></h3>
+            <p>Chrome enregistre exactement le fichier envoyé par le site, et beaucoup de sites envoient du WebP parce que c'est plus léger. Aucun réglage de Chrome n'y change quoi que ce soit : convertissez l'image au moment de l'enregistrer, ou après coup dans Paint ou Preview.</p>
+            <a class="more" href="/fr/chrome-saves-images-as-webp/">Comprendre le WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/fr/save-webp-as-jpg-png/">Enregistrer un WebP en JPG ou PNG</a></h3>
+            <p>Faites un clic droit sur l'image et enregistrez-la en PNG ou JPG avec un convertisseur qui tourne sur votre ordinateur : rien n'est envoyé en ligne. Choisissez PNG pour les graphiques et la transparence, JPG pour les photos.</p>
+            <a class="more" href="/fr/save-webp-as-jpg-png/">Lire le guide WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/fr/save-avif-as-jpg-png/">Enregistrer un AVIF en JPG ou PNG</a></h3>
+            <p>L'AVIF est plus léger que le WebP, mais beaucoup d'applications et de formulaires d'envoi ne savent toujours pas l'ouvrir. Enregistrez-le en JPG ou PNG au moment du téléchargement, ou exportez-le depuis Preview ou Paint (avec l'extension AV1 gratuite de Microsoft).</p>
+            <a class="more" href="/fr/save-avif-as-jpg-png/">Lire le guide AVIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Explications</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome enregistre en JFIF</a></h3>
+            <p>Un fichier .jfif est un JPEG normal avec une autre extension, imposée par un réglage du registre Windows. Renommez-le en .jpg, corrigez le réglage une bonne fois pour toutes, ou enregistrez directement en JPG.</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">Lire le guide JFIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/save-animated-webp-as-gif/">Un WebP animé en GIF</a></h3>
+            <p>JPG et PNG ne gardent qu'une seule image. Enregistrez l'animation en GIF, qui se lit presque partout, avec son rythme et sa transparence, en une étape ou avec GIMP.</p>
+            <a class="more" href="/save-animated-webp-as-gif/">Lire le guide GIF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/save-image-as-pdf/">Enregistrer une image en PDF</a></h3>
+            <p>L'impression en PDF de Chrome place l'image sur une page au format papier. Vous pouvez aussi créer un PDF d'une page exactement à la taille de l'image, directement depuis le menu clic droit.</p>
+            <a class="more" href="/save-image-as-pdf/">Lire le guide PDF <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Sécurité</p>
+            <h3><a href="/save-image-as-type-alternative/">Une alternative sûre à Save image as Type</a></h3>
+            <p>Google l'a retirée en mars 2026, après qu'un nouveau propriétaire lui a fait insérer des liens d'affiliation sur les sites marchands. Si vous l'avez encore, supprimez-la, et vérifiez les autorisations, les données, le propriétaire et le code source de tout remplaçant.</p>
+            <a class="more" href="/save-image-as-type-alternative/">Lire la liste de vérification <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/fr/save-image-right-click-not-working/">Quand le clic droit n'enregistre pas l'image</a></h3>
+            <p>Sur des sites comme Instagram et Pinterest, les photos sont recouvertes d'une autre couche : votre clic droit ne les atteint jamais. Pourquoi cela arrive, les solutions gratuites, et comment Imgkeep trouve la photo pour vous.</p>
+            <a class="more" href="/fr/save-image-right-click-not-working/">Lire le guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">Comment faire</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">Des images du web dans Canva, Figma ou Slides</a></h3>
+            <p>Copiez une image du web en PNG et collez-la dans votre design ou votre diapositive. Si un outil dit que le type de fichier n'est pas pris en charge, c'est que le site a envoyé du WebP ou de l'AVIF : enregistrez l'image en PNG ou JPG.</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">Lire le guide <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">Des réponses claires.</h2>
+        <dl>
+          <div>
+            <dt>Imgkeep est-il gratuit ?</dt>
+            <dd>Oui. Tout ce que fait Imgkeep aujourd'hui est gratuit, sans publicité ni limite. Une version payante, Imgkeep Pro, avec des fonctionnalités supplémentaires est prévue, et les fonctionnalités actuelles resteront gratuites.</dd>
+          </div>
+          <div>
+            <dt>Imgkeep envoie-t-il mes images en ligne ?</dt>
+            <dd>Non. Chaque image est convertie sur votre ordinateur et enregistrée directement dans votre dossier. La seule chose qu'Imgkeep envoie est un décompte quotidien anonyme des fonctionnalités utilisées et des enregistrements qui ont échoué, et vous pouvez le désactiver dans les options. <a href="/privacy.html">Politique de confidentialité</a>.</dd>
+          </div>
+          <div>
+            <dt>Quels formats peut-il enregistrer ?</dt>
+            <dd>PNG, JPG, WebP, GIF (animation conservée), PDF ou le format d'origine. Il convertit les images WebP et AVIF que servent désormais de nombreux sites, et <strong>Copier en PNG</strong> place une image dans votre presse-papiers.</dd>
+          </div>
+          <div>
+            <dt>Peut-il récupérer la palette de couleurs d'une image ?</dt>
+            <dd>Oui. Faites un clic droit sur l'image, choisissez Imgkeep, puis Obtenir la palette de couleurs. Vous voyez ses 5, 8 ou 12 couleurs principales, de la plus présente à la moins présente. Cliquez sur l'une d'elles pour la copier en HEX, RGB ou HSL, ou copiez-les toutes en variables CSS, Tailwind ou JSON. Enregistrez-les en PNG, en palette GIMP ou en nuancier Adobe. Tout est calculé sur votre ordinateur.</dd>
+          </div>
+          <div>
+            <dt>Peut-il enregistrer les images que les sites recouvrent, comme sur Instagram ou Pinterest ?</dt>
+            <dd>Oui. Faites un clic droit sur la photo et choisissez <strong>Imgkeep : Trouver l'image ici</strong>. Imgkeep examine la page une fois, trouve la photo sous votre clic dans sa plus grande taille et l'ouvre, prête à être enregistrée. C'est désactivé tant que vous ne l'activez pas, et la page n'est jamais modifiée.</dd>
+          </div>
+          <div>
+            <dt>Puis-je convertir des images déjà présentes sur mon ordinateur ?</dt>
+            <dd>Oui. Utilisez le <a href="/fr/convert/">convertisseur d'images gratuit</a> sur imgkeep.app/convert/ : déposez vos fichiers, choisissez PNG, JPG, WebP, AVIF, GIF, PDF ou ICO, puis téléchargez-les ou copiez-les en PNG. Tout se passe dans votre navigateur : rien n'est envoyé en ligne et il n'y a pas d'inscription. Ça marche aussi sur téléphone.</dd>
+          </div>
+          <div>
+            <dt>Dans quels navigateurs fonctionne-t-il ?</dt>
+            <dd>Google Chrome 116 et versions ultérieures, et Microsoft Edge, en 9 langues.</dd>
+          </div>
+          <div>
+            <dt>Peut-il enregistrer toutes les images d'une page d'un coup ?</dt>
+            <dd>Non. Imgkeep enregistre l'image sur laquelle vous faites un clic droit. Pour des pages entières, il vous faut un téléchargeur en masse.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">Prêt à enregistrer vos images à votre façon ?</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Ajouter à Chrome — gratuit</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Aussi pour Edge <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/fr/download/">Firefox et autres navigateurs</a>
+          </div>
+          <p class="trust">Sans compte <span aria-hidden="true">·</span> Sans envoi de fichiers <span aria-hidden="true">·</span> Open source</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/fr/" aria-label="Accueil Imgkeep"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">Vos images restent sur votre ordinateur.</p>
+        <nav aria-label="Pied de page">
+          <a href="/fr/convert/">Convertisseur</a>
+          <a href="/privacy.html">Confidentialité</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">Code source</a>
+          <a href="/support.html">Assistance</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="Plus">
+        <a href="/fr/download/">Télécharger</a>
+        <a href="/ideas.html">Idées</a>
+        <a href="/whats-new.html">Nouveautés</a>
+        <a href="/pro.html">Liste d'attente Imgkeep Pro</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>右クリックで画像を保存できない？原因と対処法</title>
+  <meta name="description" content="InstagramやPinterestなどは写真の上に別のレイヤーを重ねているため、右クリックでは保存できません。その理由と無料の回避策、Chromeで画像を見つける方法を紹介します。">
+  <link rel="canonical" href="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="右クリックで画像を保存できないとき">
+  <meta property="og:description" content="InstagramやPinterestなどは写真の上に別のレイヤーを重ねているため、右クリックでは保存できません。その理由と無料の回避策、Chromeで画像を見つける方法を紹介します。">
+  <meta property="og:url" content="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：どんな画像も、好きな形式で。ChromeやEdgeの右クリックメニューから、ウェブ上の画像をPNG、JPG、WebP、GIF、PDFで保存。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"写真を右クリックしても「名前を付けて画像を保存」が出てこないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"右クリックが画像に当たっていないためです。サイトが画像の上に別の要素（多くは透明なレイヤーやリンク）を重ねているので、ブラウザはその要素のメニューを表示し、「名前を付けて画像を保存」が含まれません。画像はその下にそのままあります。"}},{"@type":"Question","name":"Imgkeepは閲覧したページを読み取りますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Imgkeepがページを調べるのは、そこで画像を探すように指示したときだけで、そのページだけ、そのときだけです。ページを書き換えることはありません。読み取るのは画面上の画像のアドレスだけで、ページの内容が保存されたり送信されたりすることはありません。「ここで画像を探す」は、有効にするまではオフです。"}},{"@type":"Question","name":"Imgkeepはページ上のすべての画像を一度に保存できますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Imgkeepが保存するのは一度に1枚、右クリックまたは選択した画像だけです。ページ上のすべての画像をダウンロードするには、一括ダウンローダーが必要です。"}},{"@type":"Question","name":"右クリックが効かないときに画像を保存するには？","acceptedAnswer":{"@type":"Answer","text":"InstagramやPinterestのようなサイトでは、写真が別のレイヤーの下にあるため、右クリックはそのレイヤーに当たり、「名前を付けて画像を保存」は表示されません。拡張機能なしなら、ブラウザのデベロッパーツールで画像のアドレスを探すか、スクリーンショットを撮ります。Imgkeepがあれば、右クリックして「Imgkeep: ここで画像を探す…」を選ぶだけで、写真が最大サイズで開き、すぐ保存できます。"}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/ja/"},{"@type":"ListItem","position":2,"name":"右クリックで画像を保存できないとき","item":"https://imgkeep.app/ja/save-image-right-click-not-working/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"右クリックで画像を保存できないとき","description":"InstagramやPinterestのようなサイトでは、写真が別のレイヤーの下にあるため、右クリックはそのレイヤーに当たり、「名前を付けて画像を保存」は表示されません。拡張機能なしなら、ブラウザのデベロッパーツールで画像のアドレスを探すか、スクリーンショットを撮ります。Imgkeepがあれば、右クリックして「Imgkeep: ここで画像を探す…」を選ぶだけで、写真が最大サイズで開き、すぐ保存できます。","url":"https://imgkeep.app/ja/save-image-right-click-not-working/","mainEntityOfPage":"https://imgkeep.app/save-image-right-click-not-working/","image":"https://imgkeep.app/media/guides/find-image.jpg","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ja/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ja/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/ja/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="メイン"><a href="/ja/convert/">コンバーター</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">JA</summary><ul><li><a href="/save-image-right-click-not-working/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-image-right-click-not-working/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-image-right-click-not-working/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/save-image-right-click-not-working/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-image-right-click-not-working/" hreflang="ja" lang="ja" aria-current="true">日本語</a></li><li><a href="/ar/save-image-right-click-not-working/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-image-right-click-not-working/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-image-right-click-not-working/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-image-right-click-not-working/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/save-image-right-click-not-working/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/save-image-right-click-not-working/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-image-right-click-not-working/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-image-right-click-not-working/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="パンくずリスト">
+      <a href="/ja/#image-guides">← ホーム</a><span aria-hidden="true">›</span><span aria-current="page">右クリックで画像を保存できないとき</span>
+    </nav>
+
+    <main class="doc">
+      <h1>右クリックで画像を保存できないとき</h1>
+      <div class="answer">
+        <p class="label">簡単な答え</p>
+        <p>InstagramやPinterestのようなサイトでは、写真の上に別のレイヤーが重なっているため、右クリックはそのレイヤーに当たり、<strong>名前を付けて画像を保存</strong>が出てきません。拡張機能なしなら、ブラウザのデベロッパーツールで画像のアドレスを調べるか、スクリーンショットを撮ります。Imgkeepなら、右クリックして<strong>Imgkeep: ここで画像を探す…</strong>を選べば、写真が最大サイズで開き、すぐ保存できます。</p>
+      </div>
+      <p class="updated">更新日 <time datetime="2026-10-13">2026年10月13日</time></p>
+
+      <h2>右クリックしても「名前を付けて画像を保存」が出てこないのはなぜ？</h2>
+      <p>右クリックが画像に当たっていないからです。ブラウザが画像向けの項目（<strong>名前を付けて画像を保存…</strong>、<strong>画像をコピー</strong>、<strong>画像を新しいタブで開く</strong>）を表示するのは、ポインターの真下にあるものが画像のときだけです。メニューに<strong>戻る</strong>、<strong>再読み込み</strong>、<strong>名前を付けて保存…</strong>やリンク向けの項目しか出ない場合は、別の何かが上に重なっています。よくある原因は次のとおりです:</p>
+      <ul>
+        <li><strong>覆いかぶさるレイヤー。</strong>多くのSNSや写真サイトは、写真ごとに透明なレイヤーやリンクを重ねています。見えているのは写真ですが、クリックが当たるのはレイヤーです。</li>
+        <li><strong>背景画像。</strong>写真を画像要素ではなく、ボックスの背景（CSS）として表示しているページもあり、その場合ブラウザは画像として扱いません。</li>
+        <li><strong>ページの中にしか存在しない画像。</strong>アドレスが<code>blob:</code>で始まり、単体で開いたり保存したりできるアドレスがありません。</li>
+        <li><strong>無効にされたメニュー。</strong>右クリックメニュー自体を無効にしているサイトもわずかにあり、その場合はメニューがまったく開きません。</li>
+      </ul>
+
+      <h2>拡張機能なしで保存するには？</h2>
+      <p>できますが、どの方法も少し手間がかかります。</p>
+
+      <h3>写真を単独のページで開く</h3>
+      <p>写真をクリックしてその投稿やページを開き、もう一度右クリックしてみます。サイトによっては大きい表示がただの画像ですが、多くは同じように覆われています。</p>
+
+      <h3>デベロッパーツールでアドレスを調べる</h3>
+      <ol>
+        <li>写真を右クリックして<strong>検証</strong>を選びます。Elementsパネルが開き、クリックした場所にある要素、たいていはかぶさっているレイヤーが選択されます。</li>
+        <li>そのすぐ上か下にある<code>&lt;img&gt;</code>タグを探します。<code>src</code>が画像のアドレスで、<code>srcset</code>があれば、より大きいサイズが並んでいます。</li>
+        <li>アドレスを右クリックして<strong>新しいタブで開く</strong>を選び、そのタブから画像を保存します。</li>
+      </ol>
+      <p>あるいは<strong>Network</strong>パネルを使います: <strong>Img</strong>で絞り込み、ページを再読み込みして、<code>a8f3e…jpg</code>のような名前が並ぶ何十ものアイコンやサムネイルの中から目的の写真を探します。見つけたら右クリックして<strong>新しいタブで開く</strong>を選びます。</p>
+
+      <h3>スクリーンショットを撮る</h3>
+      <p>WindowsではWin+Shift+S、MacではCmd+Shift+4を押します。<code>blob:</code>の画像でも必ず使えますが、得られるのは画面に表示されているサイズだけで、元の画像ではありません。</p>
+
+      <h2>Imgkeepはどうやって画像を見つけるの？</h2>
+      <p>Imgkeepは、右クリックメニューから画像をPNG、JPG、WebP、GIF、PDFで保存できるブラウザ拡張機能です。InstagramやPinterestのように画像をレイヤーで覆っているサイトでは、メニューに<strong>Imgkeep: ここで画像を探す…</strong>を追加します。Imgkeepを作っているのは私たちなので、この項目が何をするのかを正確にお伝えします。</p>
+
+      <div class="option">
+        <p class="label">私たちの拡張機能</p>
+        <h3>Imgkeep: ここで画像を探す…</h3>
+        <ol>
+          <li>写真を右クリックして<strong>Imgkeep: ここで画像を探す…</strong>を選びます</li>
+          <li>Imgkeepはそのページを一度だけ調べ、クリックした場所の画像を、そのページで用意されている最大サイズで見つけます。</li>
+          <li>見つかった画像は<strong>その他のオプション</strong>で開き、形式とサイズを選んでから<strong>保存</strong>または<strong>PNGとしてコピー</strong>します。</li>
+        </ol>
+        <figure class="shot">
+          <img src="/media/guides/find-image.jpg" width="1160" height="576" loading="lazy" decoding="async" alt="架空のサイト photos.example.com の写真グリッド。写真を右クリックすると、ページ用のメニュー（戻る、進む、再読み込み、名前を付けて保存、印刷）が表示され、「Imgkeep: ここで画像を探す…」が強調されています。その横には Imgkeep の「その他のオプション」ウィンドウがあり、見つかった画像と、PNG・JPG・WebP、最大幅、ファイル名、「保存」と「PNGとしてコピー」のボタンが表示されています。">
+          <figcaption>覆われた写真の上で<strong>Imgkeep: ここで画像を探す…</strong>を選ぶと、その写真が「その他のオプション」で開きます。</figcaption>
+        </figure>
+        <p>写真グリッドによくあるように、覆っているものがリンクの場合、Imgkeepは右クリックしたリンクからどの画像のことかを判断します。写真が並んでいてリンクもないなど、確実に判断できないときは、画面上の画像を並べて選べるようにし、可能性の高いものを先頭に表示します。そこに画像がなければ、その旨を知らせます。</p>
+        <p>この機能は、オプションの<strong>サイトが覆っている画像</strong>で有効にするか、初めて使うときに有効にするまではオフのままです。有効にすると、省略可能な権限<code>activeTab</code>と<code>scripting</code>が追加されます。インストール時にImgkeepが求める4つの権限は変わりません。</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-image-right-click-not-working">ImgkeepをChromeに追加 — 無料</a>
+        <span class="cta-note">有効にするまではオフ。Microsoft Edgeにも対応。アップロードなし、アカウントなし。</span>
+      </div>
+
+      <h2>Imgkeepは閲覧したページを読み取りますか？</h2>
+      <p>いいえ。Imgkeepがページを調べるのは、そこで画像を探すように指示したときだけで、そのページだけ、そのときだけです。ページを書き換えることはありません。読み取るのは画面上の画像のアドレスだけで、ページの内容が保存されたり送信されたりすることはありません。それ以外のときにImgkeepが読み取るのは、保存のために右クリックした画像だけです。詳しくは<a href="/privacy.html">プライバシーポリシー</a>をご覧ください。<a href="https://github.com/ybider-tech/imgkeep">ソースコード</a>も公開しています。</p>
+
+      <h2>それでもうまくいかないのはどんなときですか？</h2>
+      <ul>
+        <li><strong>ページがまだ読み込んでいない画像。</strong>多くのサイトは、スクロールして表示されたときに初めて写真を読み込みます。写真が画面に表示されるまでスクロールしてから、もう一度お試しください。</li>
+        <li><strong><code>blob:</code>の画像。</strong>ページの中だけに存在するため、Imgkeepでは保存できません。スクリーンショットなら残せます。</li>
+        <li><strong>保護されたコンテンツ。</strong>動画のフレームなど、DRMで保護されたコンテンツはこの方法では保存できません。</li>
+        <li><strong>一度に1枚ずつ。</strong>Imgkeepが保存するのは右クリックまたは選択した画像で、ページ上のすべての画像ではありません。</li>
+        <li><strong>右クリックメニュー自体が無効なとき。</strong>サイトが右クリックメニューの表示そのものを止めている場合は、Imgkeepの項目も表示できません。デベロッパーツールかスクリーンショットをお使いください。</li>
+      </ul>
+      <p>右クリックが画像に届くその他のサイトでは、「ここで画像を探す」は不要です。画像の上で通常の<strong>Imgkeep</strong>メニューが表示されます。</p>
+
+      <h2>保存した写真は自由に使えますか？</h2>
+      <p>写真を保存しても、それを使う権利が得られるわけではありません。自分用の資料やムードボード、レシピとして手元に残すのと、投稿したり印刷したり仕事で使ったりするのは別の話です。まず撮影した人に許可を求め、クレジットを示してください。</p>
+
+      <h2>関連ガイド</h2>
+      <ul>
+        <li><a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで画像を保存する理由</a></li>
+        <li><a href="/ja/save-webp-as-jpg-png/">WebPをJPGやPNGで保存する方法</a></li>
+        <li><a href="/ja/save-avif-as-jpg-png/">AVIFをJPGやPNGで保存する方法</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">ChromeがJFIFで画像を保存する？ JPGで保存する方法</a></li>
+        <li><a href="/save-animated-webp-as-gif/">アニメーションWebPをGIFで保存する方法</a></li>
+        <li><a href="/save-image-as-pdf/">Chromeで画像をPDFとして保存する方法</a></li>
+        <li><a href="/save-image-as-type-alternative/">Save image as Typeの安全な代替</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">ウェブ上の画像をCanva・Figma・Google Slidesに取り込む方法</a></li>
+      </ul>
+
+      <h2>よくある質問</h2>
+      <h3>写真を右クリックしても「名前を付けて画像を保存」が出てこないのはなぜですか？</h3>
+      <p>右クリックが画像に当たっていないためです。サイトが画像の上に別の要素（多くは透明なレイヤーやリンク）を重ねているので、ブラウザはその要素のメニューを表示し、<strong>名前を付けて画像を保存</strong>が含まれません。画像はその下にそのままあります。</p>
+      <h3>Imgkeepは閲覧したページを読み取りますか？</h3>
+      <p>いいえ。Imgkeepがページを調べるのは、そこで画像を探すように指示したときだけで、そのページだけ、そのときだけです。ページを書き換えることはありません。読み取るのは画面上の画像のアドレスだけで、ページの内容が保存されたり送信されたりすることはありません。<strong>ここで画像を探す</strong>は、有効にするまではオフです。</p>
+      <h3>Imgkeepはページ上のすべての画像を一度に保存できますか？</h3>
+      <p>いいえ。Imgkeepが保存するのは一度に1枚、右クリックまたは選択した画像だけです。ページ上のすべての画像をダウンロードするには、一括ダウンローダーが必要です。</p>
+    </main>
+
+    <footer>
+      <nav aria-label="フッター">
+        <a href="/ja/">ホーム</a>
+        <a href="/ja/convert/">コンバーター</a>
+        <a href="https://github.com/ybider-tech/imgkeep">ソースコード</a>
+        <a href="/ja/download/">ダウンロード</a>
+        <a href="/ideas.html">アイデア</a>
+        <a href="/support.html">サポート</a>
+        <a href="/privacy.html">プライバシー</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="ガイド">
+        <a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで保存する理由</a>
+        <a href="/ja/save-webp-as-jpg-png/">WebPをJPGやPNGで保存する</a>
+        <a href="/ja/save-avif-as-jpg-png/">AVIFをJPGやPNGで保存する</a>
+        <a href="/chrome-saves-images-as-jfif/">ChromeがJFIFで保存してしまう</a>
+        <a href="/save-animated-webp-as-gif/">アニメーションWebPをGIFに</a>
+        <a href="/save-image-as-pdf/">画像をPDFで保存する</a>
+        <a href="/save-image-as-type-alternative/">「Save image as Type」の安全な代替</a>
+        <a href="/ja/save-image-right-click-not-working/">右クリックで画像を保存できないとき</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Web上の画像をCanva・Figma・Slidesへ</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
