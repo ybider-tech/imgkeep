@@ -5,6 +5,8 @@
 //   node scripts/translate-site.mjs --run      translate what's new or changed, then build every page
 //   node scripts/translate-site.mjs --run --batch   the same through the Message Batches API (half price)
 //   node scripts/translate-site.mjs --build    rebuild the pages from the saved translations only (no API)
+//   node scripts/translate-site.mjs --sample   one small request, to measure the real cost of everything to do
+// Every run prints what it really cost (scripts/claude-cost.mjs: Sonnet 5, low effort).
 //
 // How a page is translated: the text of each block (a paragraph, a heading, a list item, a button…) is sent as
 // one segment with its inline HTML, so sentences stay whole; attributes people read (alt, title, aria-label,
@@ -17,6 +19,7 @@
 // visitor's own language when the page has it. The converter's and palette tool's messages (t("…") in their
 // app.js) get a strings block in the translated page.
 import Anthropic from "@anthropic-ai/sdk";
+import { MODEL, EFFORT, tally, estimate } from "./claude-cost.mjs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
@@ -29,7 +32,6 @@ import { parse } from "parse5";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = join(ROOT, "site");
 const CACHE = join(ROOT, "i18n", "site");
-const MODEL = "claude-opus-5";
 const ORIGIN = "https://imgkeep.app";
 const CHUNK = 60;
 
@@ -217,7 +219,7 @@ function request(lang, items, terms, extra = "") {
         ].filter(Boolean).join("\n\n"),
       },
     ],
-    output_config: { format: { type: "json_schema", schema: { type: "object", properties: Object.fromEntries(ids.map((id) => [id, { type: "string" }])), required: ids, additionalProperties: false } } },
+    output_config: { effort: EFFORT, format: { type: "json_schema", schema: { type: "object", properties: Object.fromEntries(ids.map((id) => [id, { type: "string" }])), required: ids, additionalProperties: false } } },
   };
 }
 
@@ -338,9 +340,11 @@ async function sitemap() {
 // ---- Main ----
 
 const args = process.argv.slice(2);
-const run = args.includes("--run");
+const run = args.includes("--run") || args.includes("--sample");
 const batch = args.includes("--batch");
 const buildOnly = args.includes("--build");
+// --sample: one request (the first language's first segments) to measure the real price, then a projection.
+const sample = args.includes("--sample");
 // --only=es,fr: translate and build just these (for trying a change; the hreflang lists still name all).
 const only = args.find((a) => a.startsWith("--only="))?.slice(7).split(",");
 const WORK_LANGS = only ? LANG_LIST.filter((l) => only.includes(l)) : LANG_LIST;
@@ -370,15 +374,16 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const chars = LANG_LIST.reduce((n, l) => n + todo[l].reduce((m, it) => m + it.source.length, 0), 0);
   console.log(`${all.size} English segments on ${SITE_PAGES.length} pages; ${LANG_LIST.length} languages.`);
   for (const l of LANG_LIST) console.log(`  ${l.padEnd(6)} ${String(todo[l].length).padStart(4)} to translate`);
-  const inTok = Math.round(chars / 3.5 + LANG_LIST.length * 3000), outTok = Math.round((chars / 3.5) * 1.5);
-  console.log(`Estimate with ${MODEL}: ~${inTok.toLocaleString()} tokens in, ~${outTok.toLocaleString()} out, about $${((inTok * 5 + outTok * 25) / 1e6).toFixed(2)} (half with --batch).`);
+  const requests = WORK_LANGS.reduce((n, l) => n + Math.ceil(todo[l].length / CHUNK), 0);
+  if (chars) console.log(estimate(chars, requests, { batch }));
+  const COST = tally();
 
   if (run) {
     const client = new Anthropic({ apiKey: await apiKey() });
     const work = [];
-    for (const l of WORK_LANGS) {
+    for (const l of sample ? WORK_LANGS.slice(0, 1) : WORK_LANGS) {
       const terms = await glossary(l);
-      for (let i = 0; i < todo[l].length; i += CHUNK) {
+      for (let i = 0; i < (sample ? Math.min(CHUNK, todo[l].length) : todo[l].length); i += CHUNK) {
         const items = todo[l].slice(i, i + CHUNK);
         work.push({ id: `${l}-${i / CHUNK}`, lang: l, items, terms, params: request(l, items, terms) });
       }
@@ -395,6 +400,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       }
       for await (const r of await client.messages.batches.results(created.id)) {
         if (r.result.type === "succeeded") {
+          COST.add(r.result.message.usage, { batch: true });
           try {
             results.set(r.custom_id, answer(r.result.message));
           } catch (e) {
@@ -403,7 +409,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         }
       }
     }
-    const live = (params) => client.beta.messages.stream({ ...params, betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" }).finalMessage().then(answer);
+    const live = (params) =>
+      client.messages.stream(params).finalMessage().then((message) => (COST.add(message.usage), answer(message)));
     const queue = work.filter((w) => !results.has(w.id));
     await Promise.all(Array.from({ length: 4 }, async () => {
       for (let w; (w = queue.shift()); ) {
@@ -448,6 +455,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const kept = Object.fromEntries(Object.entries(caches[l]).filter(([h]) => all.has(h)).sort(([a], [b]) => a.localeCompare(b)));
       await writeFile(join(CACHE, `${l}.json`), JSON.stringify(kept, null, 1) + "\n");
       caches[l] = kept;
+    }
+  }
+
+  if (run) {
+    console.log(COST.summary());
+    if (sample) {
+      const sent = work.reduce((n, w) => n + w.items.length, 0);
+      const total = WORK_LANGS.reduce((n, l) => n + todo[l].length, 0);
+      if (sent) console.log(`Sample: ${sent} of ${total} segments. Everything would cost about $${((COST.dollars() / sent) * total).toFixed(2)}, or about half that with --batch.`);
     }
   }
 
