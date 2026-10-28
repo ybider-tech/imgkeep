@@ -139,7 +139,7 @@ test.describe("in the extension", () => {
   const counts = () => ctx.sw.evaluate(() => chrome.storage.local.get("counts").then((s) => s.counts?.c || {}));
   const clipboard = async () => {
     await blank.bringToFront();
-    return blank.evaluate(() => navigator.clipboard.readText());
+    return (await blank.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, "\n"); // Windows writes CRLF
   };
   async function download(re) {
     let item;

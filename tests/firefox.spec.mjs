@@ -66,7 +66,7 @@ test.describe("in Firefox", () => {
   test.afterAll(async () => {
     await browser?.close();
     await cors?.close();
-    if (downloads) await rm(downloads, { recursive: true, force: true });
+    if (downloads) await rm(downloads, { recursive: true, force: true }).catch(() => {});
   });
 
   // Extension pages never report "load" over BiDi, so don't wait for it: wait until the page is ready.
@@ -86,15 +86,19 @@ test.describe("in Firefox", () => {
       for (const format of formats) out[format] = await bg.imgkeepRunJob({ url, format }, { interactive: false });
       return JSON.parse(JSON.stringify(out));
     }, url, formats);
+  // A finished download, found through the browser's own downloads list (wherever this OS put it).
   const saved = async (name) => {
-    let files = [];
-    await expect.poll(async () => (files = await readdir(downloads)).includes(name), { timeout: 15_000 }).toBe(true);
-    return readFile(join(downloads, name));
+    let path = null;
+    const re = `(^|[\\\\/])${name.replace(/[.]/g, "\\.")}$`;
+    await expect
+      .poll(async () => (path = await page.evaluate((re) => chrome.downloads.search({ filenameRegex: re, state: "complete" }).then((d) => d[0]?.filename || null), re)), { timeout: 20_000 })
+      .not.toBeNull();
+    return readFile(path);
   };
 
   test("Options: no 'folder you choose', and the anonymous summary off until Firefox allows it", async () => {
     // Options fills itself in after reading the settings.
-    await expect.poll(() => page.evaluate(() => document.querySelector('input[name="saveMode"][value="folder"]').closest("label").hidden)).toBe(true);
+    await expect.poll(() => page.evaluate(() => document.querySelector('input[name="saveMode"][value="folder"]')?.closest("label").hidden).catch(() => false), { timeout: 15_000 }).toBe(true);
     expect(await page.evaluate(() => document.querySelector("#chooseFolder").closest(".row").hidden)).toBe(true);
     expect(await page.evaluate(() => document.querySelector("#usageCounts").checked)).toBe(false);
     // Nothing is counted without the permission, even if the setting is on.
