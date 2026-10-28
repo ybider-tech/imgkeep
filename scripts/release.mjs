@@ -10,12 +10,15 @@
 //   package    dist/imgkeep-<v>.zip and dist/imgkeep-firefox-<v>.zip (scripts/package.sh)
 //   tag        dates the CHANGELOG entry, commits, tags v<version>
 //   push       pushes the branch and tag, then waits for CI to pass (gh)
+//   listing    fills the Chrome Web Store listing in every language and saves a draft (scripts/cws-listing.mjs
+//              --save; needs the signed-in dashboard Chrome, see that file)
 //   chrome     uploads and submits to the Chrome Web Store (scripts/cws-publish.mjs --submit)
 //   edge       uploads and submits to Edge Add-ons (scripts/edge-publish.sh --submit)
 //   firefox    submits to addons.mozilla.org with its listing in every language (scripts/amo-publish.mjs --submit)
 //
-// Not here: the Chrome and Edge store descriptions and screenshots. Neither store's API can change them, so
-// they're filled in their dashboards, from store/i18n/<lang>.json, by browser automation (Claude in Chrome).
+// Edge's descriptions and screenshots: neither store API can change them. Chrome's are filled by the listing
+// step; Edge's are filled in Partner Center by browser automation (Claude in Chrome, reading the texts from
+// scripts/serve-listings.mjs) before the edge step.
 // Submitting needs Yaron's OK for each release, and never while the previous version is still in review.
 import { execFileSync } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
@@ -23,7 +26,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const STEPS = ["translate", "test", "package", "tag", "push", "chrome", "edge", "firefox"];
+const STEPS = ["translate", "test", "package", "tag", "push", "listing", "chrome", "edge", "firefox"];
 const args = process.argv.slice(2);
 const go = args.includes("--go");
 const only = args.find((a) => a.startsWith("--only="))?.slice(7).split(",");
@@ -62,6 +65,7 @@ const RUN = {
     }
     throw new Error("No Tests run appeared for this commit");
   },
+  listing: () => sh(process.execPath, ["scripts/cws-listing.mjs", "--save"]),
   chrome: () => sh(process.execPath, ["scripts/cws-publish.mjs", "--submit"]),
   edge: () => sh("sh", ["scripts/edge-publish.sh", "--submit"]),
   firefox: () => sh(process.execPath, ["scripts/amo-publish.mjs", "--submit"]),
