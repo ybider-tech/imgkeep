@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "ምስልን እንደ PNG, JPG, WebP, GIF ወይም PDF ያስቀምጡ — Imgkeep"
+  },
+  "extDescription": {
+    "message": "ማንኛውንም ምስል በቀኝ ጠቅ አድርገው እንደ PNG, JPG, WebP, GIF ወይም PDF ያስቀምጡ፤ ወይም የቀለም ስብስቡን ያግኙ። በመሣሪያዎ ላይ። የግል መረጃ የለም።"
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (መጨረሻ የተጠቀሙት)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (እንቅስቃሴን ይጠብቃል)"
+  },
+  "menuOriginal": {
+    "message": "ዋናው ቅርጸት"
+  },
+  "menuCopyPng": {
+    "message": "እንደ PNG ይቅዱ"
+  },
+  "menuPalette": {
+    "message": "የቀለም ስብስብ ያግኙ"
+  },
+  "menuMoreOptions": {
+    "message": "ተጨማሪ አማራጮች…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep፦ እዚህ ምስል ያግኙ…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ አዲስ",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep ያስደስትዎታል? ደረጃ ይስጡት…"
+  },
+  "askErrBlocked": {
+    "message": "መዳረሻ ቢፈቀድም ጣቢያው ይህን ምስል አልሰጠም። አገልጋዩ ላይሠራ ይችላል፣ ወይም ምስሉን በራሱ ገጾች ውስጥ ብቻ ያቀርባል።"
+  },
+  "askErrHttp": {
+    "message": "ጣቢያው ምስሉን ከመላክ ይልቅ በስህተት መለሰ።"
+  },
+  "askErrDecode": {
+    "message": "አሳሽዎ ይህን ፋይል እንደ ምስል ማንበብ አልቻለም።"
+  },
+  "askErrUnsupported": {
+    "message": "ይህ የአሳሽ ስሪት ይህን ቅርጸት መፍጠር አይችልም። በምትኩ PNG ይሞክሩ።"
+  },
+  "askErrBlob": {
+    "message": "ይህ ምስል ያለው በገጹ ውስጥ ብቻ ነው (blob: አገናኝ)፣ ስለዚህ Imgkeep ገና ሊያስቀምጠው አይችልም። ቅጽበታዊ ገጽ እይታ ይሠራል።"
+  },
+  "askErrTooLarge": {
+    "message": "ይህ ምስል በአሳሹ ውስጥ ለመለወጥ በጣም ትልቅ ነው።"
+  },
+  "askErrTimeout": {
+    "message": "ይህን ምስል መለወጥ ረጅም ጊዜ ስለወሰደ Imgkeep አቋረጠ። PNG፣ ወይም አጠር ያለ ወይም ያነሰ እንቅስቃሴ ይሞክሩ።"
+  },
+  "askErrDownload": {
+    "message": "አሳሽዎ ማውረዱን መጀመር አልቻለም።"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep ፋይሉን ወደ አቃፊዎ መጻፍ አልቻለም።"
+  },
+  "askErrExpired": {
+    "message": "ይህ ማስቀመጥ ጊዜው አልፎበታል። ምስሉን በቀኝ ጠቅ አድርገው እንደገና ይሞክሩ።"
+  },
+  "askErrUnknown": {
+    "message": "ይህን ምስል በማስቀመጥ ላይ ሳለ የሆነ ችግር ተፈጠረ።"
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ ፍሬሞች። GIFs በ$MAX$ የተገደቡ ናቸው።",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ ፒክስሎች × $COUNT$ ፍሬሞች እዚህ GIF ከሚይዘው በላይ ነው።",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "በዚህ ስም በጣም ብዙ ፋይሎች አሉ።"
+  },
+  "askSaving": {
+    "message": "በማስቀመጥ ላይ…"
+  },
+  "askSaved": {
+    "message": "ተቀምጧል።"
+  },
+  "askSavedAs": {
+    "message": "እንደ $PATH$ ተቀምጧል",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "ወደ $PATH$ ተቀምጧል",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "የሚቀመጥ ነገር የለም"
+  },
+  "askClose": {
+    "message": "ይዝጉ"
+  },
+  "askRetry": {
+    "message": "እንደገና ይሞክሩ"
+  },
+  "askOpenImage": {
+    "message": "ምስሉን ይክፈቱ"
+  },
+  "askCancel": {
+    "message": "ይቅር"
+  },
+  "askHostTitle": {
+    "message": "ከዚህ ጣቢያ የሚገኙ ምስሎች ይፈቀዱ?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ ሌሎች ጣቢያዎች ምስሎቹን እንዳያነቡ ያግዳል፣ ስለዚህ Imgkeep ይህንን ገና መለወጥ አይችልም።",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "መዳረሻው የሚሰጠው ለዚህ አንድ ጣቢያ ብቻ ሲሆን፣ እርስዎ የሚመርጧቸውን ምስሎች ለማምጣት ነው። በማንኛውም ጊዜ ከአማራጮች ውስጥ ማስወገድ ይችላሉ።"
+  },
+  "askAllowAndSave": {
+    "message": "ይፍቀዱና ያስቀምጡ"
+  },
+  "askNotAllowed": {
+    "message": "መዳረሻ አልተፈቀደም። ምንም አልተቀመጠም።"
+  },
+  "askSaveOriginal": {
+    "message": "በምትኩ ዋናውን ፎርማት ያስቀምጡ"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$”ን እንደገና ያገናኙ",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "አቃፊ ይምረጡ"
+  },
+  "askReconnectBody": {
+    "message": "ወደዚህ አቃፊ እንደገና ለማስቀመጥ አሳሽዎ ፈቃድዎን ይፈልጋል።"
+  },
+  "askChooseBody": {
+    "message": "Imgkeep ምስሎችዎን የሚያስቀምጥበትን አቃፊ ይምረጡ።"
+  },
+  "askEveryVisit": {
+    "message": "አሳሽዎ ሲጠይቅ፣ እንደገና እንዳይጠይቅ $OPTION$ ይምረጡ።",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“በእያንዳንዱ ጉብኝት ፍቀድ”"
+  },
+  "askReconnectButton": {
+    "message": "እንደገና አገናኝተው ያስቀምጡ"
+  },
+  "askChooseButton": {
+    "message": "አቃፊ መርጠው ያስቀምጡ"
+  },
+  "askErrorTitle": {
+    "message": "ይህን ምስል ማስቀመጥ አልተቻለም"
+  },
+  "askFolderDenied": {
+    "message": "አሳሽዎ ወደ አቃፊው መድረስ አልፈቀደም። ምንም አልተቀመጠም።"
+  },
+  "askNoFolder": {
+    "message": "ምንም አቃፊ አልተመረጠም። ምንም አልተቀመጠም።"
+  },
+  "optPageTitle": {
+    "message": "የImgkeep አማራጮች"
+  },
+  "optSaved": {
+    "message": "ተቀምጧል"
+  },
+  "optWhereTitle": {
+    "message": "የት እንደሚቀመጥ"
+  },
+  "optSaveMode": {
+    "message": "የማስቀመጫ ሁኔታ"
+  },
+  "optModeDownloads": {
+    "message": "የውርዶች አቃፊ"
+  },
+  "optModeDownloadsHint": {
+    "message": "ወደ አሳሽዎ የውርድ አቃፊ ያስቀምጣል። ምንም ጥያቄ የለም።"
+  },
+  "optModeFolder": {
+    "message": "እርስዎ የሚመርጡት አቃፊ"
+  },
+  "optModeFolderHint": {
+    "message": "በቀጥታ ወደ አቃፊዎ ይጽፋል። አሳሽዎ ከዳግም ማስጀመር በኋላ እንደገና እንዲያገናኙ ሊጠይቅዎት ይችላል።"
+  },
+  "optModeAsk": {
+    "message": "ሁልጊዜ ይጠይቅ"
+  },
+  "optModeAskHint": {
+    "message": "ለእያንዳንዱ ምስል የአሳሹን “በሌላ ስም አስቀምጥ” መስኮት ያሳያል።"
+  },
+  "optChooseFolder": {
+    "message": "አቃፊ ይምረጡ…"
+  },
+  "optChangeFolder": {
+    "message": "አቃፊ ይቀይሩ…"
+  },
+  "optNoFolder": {
+    "message": "እስካሁን ምንም አቃፊ አልተመረጠም።"
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — ተገናኝቷል",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — እንደገና ለማገናኘት ይጠይቃል",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "ንዑስ አቃፊ"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "ለምሳሌ Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "አማራጭ ነው። ለተደራረቡ አቃፊዎች <code>/</code> ይጠቀሙ። ከፋይል ስሞች ጋር ተመሳሳይ ቶከኖች።"
+  },
+  "optNamesTitle": {
+    "message": "የፋይል ስሞች"
+  },
+  "optTemplate": {
+    "message": "የስም አብነት"
+  },
+  "optTokensHint": {
+    "message": "ቶከኖች፦ <code>{name}</code> ዋናው ስም፣ <code>{host}</code> ጣቢያ፣ <code>{date}</code>፣ <code>{time}</code>፣ <code>{w}</code> እና <code>{h}</code> መጠን በፒክሰል። ነባር ፋይሎች በፍጹም አይተኩም።"
+  },
+  "optPreviewLabel": {
+    "message": "ከ shop.example.com የመጣ summer-banner፣ 1600×900፣ እንደ PNG ሲቀመጥ ቅድመ እይታ፦"
+  },
+  "optQualityTitle": {
+    "message": "ጥራትና መጠን"
+  },
+  "optJpgQuality": {
+    "message": "የJPG ጥራት"
+  },
+  "optWebpQuality": {
+    "message": "የWebP ጥራት"
+  },
+  "optJpgBackground": {
+    "message": "የJPG የጀርባ ቀለም"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG ግልጽነትን አይደግፍም፤ ስለዚህ ግልጽ ክፍሎች ይህን ቀለም ይይዛሉ።"
+  },
+  "optMaxWidth": {
+    "message": "ከፍተኛ ስፋት"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "የመጀመሪያው መጠን"
+  },
+  "optMaxWidthHint": {
+    "message": "በአማራጭ፣ በፒክስል። ሰፋ ያሉ ምስሎች ቅርጻቸውን ሳይለቁ እንዲገጥሙ ይቀንሳሉ፤ ያነሱት ፈጽሞ አይለጠጡም። የመጀመሪያው ቅርጸት ሁልጊዜ እንዳለ ይቀመጣል።"
+  },
+  "optSitesTitle": {
+    "message": "የፈቀድካቸው ድረ-ገጾች"
+  },
+  "optSitesEmpty": {
+    "message": "እስካሁን ምንም የለም። Imgkeep የሚጠይቀው አንድ ድረ-ገጽ ልትቀይረው የምትፈልገውን ምስል ሲከለክል ብቻ ነው።"
+  },
+  "optFindTitle": {
+    "message": "ድረ-ገጾች የሚሸፍኗቸው ምስሎች"
+  },
+  "optFindLabel": {
+    "message": "ከሽፋን ንብርብሮች ስር ያሉ ምስሎችን ፈልግ"
+  },
+  "optFindHint": {
+    "message": "እንደ Instagram እና Pinterest ባሉ ድረ-ገጾች ላይ በቀኝ ጠቅ አድርገህ Imgkeep፦ ምስሉን እዚህ ፈልግ የሚለውን ምረጥ። Imgkeep አንድን ገጽ የሚመለከተው እዚያ ምስል እንዲፈልግ ስትጠይቀው ብቻ ነው፤ ያንን ገጽ ብቻ፣ በዚያን ጊዜ ብቻ። ገጽን ፈጽሞ አይለውጥም።"
+  },
+  "optFindOn": {
+    "message": "በርቷል።"
+  },
+  "optFindOff": {
+    "message": "ጠፍቷል።"
+  },
+  "optCountsTitle": {
+    "message": "ማንነት የማይገልጽ የአጠቃቀም ቆጠራ"
+  },
+  "optCountsLabel": {
+    "message": "ማንነት የማይገልጽ የዕለት ማጠቃለያ ላክ"
+  },
+  "optCountsHint": {
+    "message": "በቀን አንድ ጊዜ Imgkeep \"12 በJPG ተቀምጠዋል፣ 1 አልተሳካም\" የሚል ዓይነት ማጠቃለያ በአውሮፓ ኅብረት ውስጥ ለሚስተናገደው ክፍት ምንጭ የትንታኔ አገልግሎት PostHog ይልካል፤ ይህም የትኞቹን ባህሪያት ማሻሻል እንዳለብንና የትኞቹ ቁጠባዎች እንደሚከሽፉ እንድናውቅ ነው። ምስሎችን፣ የገጽ አድራሻዎችን፣ የፋይል ስሞችን ወይም አንተን የሚለይ ማንኛውንም ነገር ፈጽሞ አይልክም።"
+  },
+  "optCountsShow": {
+    "message": "የሚላከውን በትክክል ተመልከት"
+  },
+  "optCountsToday": {
+    "message": "ዛሬ የተቆጠረ (ከዛሬ በኋላ ይላካል)፦"
+  },
+  "optCountsLast": {
+    "message": "መጨረሻ የተላከ ማጠቃለያ፦"
+  },
+  "optCountsNone": {
+    "message": "እስካሁን ምንም የለም።"
+  },
+  "optCountsOff": {
+    "message": "ጠፍቷል። ምንም አይቆጠርም፣ ምንም አይላክም።"
+  },
+  "optRemove": {
+    "message": "አስወግድ"
+  },
+  "optRemoveAccess": {
+    "message": "ለ$SITE$ የተሰጠውን ፈቃድ አስወግድ",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — በቅርቡ ይመጣል"
+  },
+  "optProBody": {
+    "message": "በብዛት ለምትጠቀምባቸው መጠኖችና ቅርጸቶች ቅድመ-ቅንብሮች፣ እንደ \"ከ200 KB በታች\" ያሉ የፋይል መጠን ግቦች፣ የእያንዳንዱን ድረ-ገጽ ምስሎች ወደ ትክክለኛው አቃፊ የሚልኩ ደንቦች፣ እና እያንዳንዱ ምስል ከየት እንደመጣ የሚያሳይ መዝገብ።"
+  },
+  "optProFree": {
+    "message": "ዛሬ የምትጠቀምበት ሁሉ ነፃ ሆኖ ይቀጥላል።"
+  },
+  "optGetNotified": {
+    "message": "ማሳወቂያ ተቀበል"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep ምን ማድረግ እንደሚችልና እንደማይችል"
+  },
+  "optPermissions": {
+    "message": "የሚጠይቃቸው ፈቃዶች፦"
+  },
+  "optOptionalPermissions": {
+    "message": "ምስሎችን ፈልግ የሚለውን ካበራኸው ብቻ፦"
+  },
+  "optPermissionsLabel": {
+    "message": "ፈቃዶች"
+  },
+  "optTrust1": {
+    "message": "ምስሎች በኮምፒውተርህ ላይ ይቀየራሉ፤ ፈጽሞ አይሰቀሉም። Imgkeep ከዚህ ሌላ የሚልከው ከላይ ያለውን ማንነት የማይገልጽ የዕለት ማጠቃለያ ብቻ ነው፤ እሱንም ማጥፋት ትችላለህ።"
+  },
+  "optTrust2": {
+    "message": "ማስታወቂያ የለም፤ የእንኳን ደህና መጣህ ትሮችም የሉም። ትናንሽ መስኮቶች የሚከፈቱት ስትጠይቅ ወይም አንድ ቁጠባ ፈቃድህን ሲፈልግ ብቻ ነው። Imgkeep ደረጃ እንድትሰጠው የሚጠይቀው ለተወሰነ ጊዜ ከተጠቀምክበት በኋላ አንድ ጊዜ ብቻ ነው።"
+  },
+  "optTrust4": {
+    "message": "Imgkeep አንድን ገጽ የሚመለከተው እዚያ ምስል እንዲፈልግ ስትጠይቀው ብቻ ነው፤ ያንን ገጽ ብቻ፣ በዚያን ጊዜ ብቻ። ገጽን ፈጽሞ አይለውጥም።"
+  },
+  "optTrust3": {
+    "message": "እያንዳንዱ ነፃ ባህሪ ነፃ ሆኖ ይቀጥላል።"
+  },
+  "optVersion": {
+    "message": "ስሪት"
+  },
+  "optWhatsNew": {
+    "message": "አዲስ ምን አለ"
+  },
+  "copyWorking": {
+    "message": "ምስሉ እየተገለበጠ ነው…"
+  },
+  "copyDone": {
+    "message": "እንደ PNG ተገልብጧል። የትም ለጥፈው።"
+  },
+  "copyFailed": {
+    "message": "ምስሉን መገልበጥ አልተቻለም"
+  },
+  "copyFailedNote": {
+    "message": "ቅንጥብ ሰሌዳህ አልተቀየረም። እንደገና ሞክር፣ ወይም በምትኩ ምስሉን እንደ PNG ፋይል አስቀምጠው።"
+  },
+  "copySavePng": {
+    "message": "በምትኩ እንደ PNG አስቀምጥ"
+  },
+  "copyAllowAndCopy": {
+    "message": "ፍቀድና ገልብጥ"
+  },
+  "editTitle": {
+    "message": "ተጨማሪ አማራጮች"
+  },
+  "editLoading": {
+    "message": "ምስሉ እየተጫነ ነው…"
+  },
+  "editUpdating": {
+    "message": "ቅድመ ዕይታ እየታደሰ ነው…"
+  },
+  "editPreviewAlt": {
+    "message": "የውጤቱ ቅድመ ዕይታ"
+  },
+  "editOriginal": {
+    "message": "ዋናው"
+  },
+  "editResult": {
+    "message": "ውጤት"
+  },
+  "editFormat": {
+    "message": "ቅርጸት"
+  },
+  "editPngHint": {
+    "message": "PNG እያንዳንዱን ፒክሰል ይጠብቃል። ያነሰ ፋይል ከፈለጉ ከፍተኛውን ወርድ ይቀንሱ ወይም JPG ወይም WebP ይምረጡ።"
+  },
+  "editIcoHint": {
+    "message": "ምስሉን በ16፣ 32 እና 48 ፒክሰል፣ በቂ ትልቅ ከሆነም በ256 ፒክሰል የያዘ የአዶ ፋይል። ካሬ ያልሆኑ ምስሎች ጠርዛቸው ግልጽ ይሆናል።"
+  },
+  "editBmpHint": {
+    "message": "ማንኛውም መተግበሪያ የሚከፍተው ቀላል ቢትማፕ። ፋይሎቹ ትልቅ ናቸው፤ ግልጽ ክፍሎችም የጀርባውን ቀለም ይይዛሉ።"
+  },
+  "editAvifHint": {
+    "message": "ብዙ ጊዜ ተመሳሳይ መልክ ካለው JPG ግማሽ ያህል መጠን አለው። ዘመናዊ አሳሾችና አብዛኞቹ የአሁኑ መተግበሪያዎች ይከፍቱታል፤ አንዳንድ አሮጌ መተግበሪያዎች ግን አይከፍቱትም።"
+  },
+  "editMaxWidthHint": {
+    "message": "በፒክሰል። ቅርጹን ይጠብቃል፤ ፈጽሞ አያሰፋም።"
+  },
+  "editBackground": {
+    "message": "ጀርባ"
+  },
+  "editQuality": {
+    "message": "ጥራት"
+  },
+  "editFileName": {
+    "message": "የፋይል ስም"
+  },
+  "editSave": {
+    "message": "አስቀምጥ"
+  },
+  "editAllow": {
+    "message": "ይህን ጣቢያ ፍቀድ"
+  },
+  "editNeedsOk": {
+    "message": "ይህ ማስቀመጥ ፈቃድዎን ይፈልጋል፦ አሁን የተከፈተውን የImgkeep መስኮት ይመልከቱ።"
+  },
+  "reviewTitle": {
+    "message": "Imgkeep ወዶዎታል?"
+  },
+  "reviewBody": {
+    "message": "በመደብሩ ላይ የሚሰጡት ደረጃ ሌሎች ሰዎች እንዲያገኙት ይረዳል። ጥቂት ሰከንዶች ብቻ ይወስዳል፤ እኛም አንድ ጊዜ ብቻ ነው የምንጠይቀው።"
+  },
+  "reviewRate": {
+    "message": "Imgkeep ደረጃ ይስጡ"
+  },
+  "reviewNo": {
+    "message": "አመሰግናለሁ፣ አልፈልግም"
+  },
+  "reviewThanks": {
+    "message": "እናመሰግናለን!"
+  },
+  "reviewOk": {
+    "message": "ገብቷል። ዳግመኛ አንጠይቅም።"
+  },
+  "findWindowTitle": {
+    "message": "ምስል ፈልግ"
+  },
+  "findEnableTitle": {
+    "message": "ጣቢያዎች የሸፈኗቸውን ምስሎች ፈልግ"
+  },
+  "findEnableBody": {
+    "message": "እንደ Instagram እና Pinterest ያሉ አንዳንድ ጣቢያዎች ምስሎቻቸውን በሌላ ሽፋን ይሸፍናሉ፤ ስለዚህ በቀኝ ጠቅታ ሊደረስባቸው አይቻልም። Imgkeep ከዚያ ሽፋን ስር ያለውን ምስል ሊያገኝልዎ ይችላል።"
+  },
+  "findPromise": {
+    "message": "Imgkeep ገጽን የሚመለከተው በዚያ ገጽ ላይ ምስል እንዲፈልግ ሲጠይቁት ብቻ ነው፤ ያንን ገጽ ብቻ፣ በዚያን ጊዜ ብቻ። ገጽን ፈጽሞ አይቀይርም።"
+  },
+  "findTurnOn": {
+    "message": "አብራ"
+  },
+  "findDenied": {
+    "message": "አልበራም። በ«አማራጮች» ውስጥ በማንኛውም ጊዜ ማብራት ይችላሉ።"
+  },
+  "findOnTitle": {
+    "message": "በርቷል"
+  },
+  "findOnBody": {
+    "message": "ምስሉን እንደገና በቀኝ ጠቅ አድርገው «Imgkeep: ምስል እዚህ ፈልግ» ይምረጡ።"
+  },
+  "findPickTitle": {
+    "message": "የትኛው ምስል?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep የትኛውን ምስል እንዳሰቡ ሊለይ አልቻለም። አንዱን ይምረጡ፦"
+  },
+  "findPickOne": {
+    "message": "ምስል $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "እዚህ ምንም ምስል አልተገኘም"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep በዚህ የገጹ ክፍል ላይ ምስል ማግኘት አልቻለም። በቀጥታ በፎቶው ላይ በቀኝ ጠቅ ያድርጉ፣ ወይም ፎቶውን በራሱ ገጽ ከፍተው እንደገና ይሞክሩ።"
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ይህን ገጽ መመልከት አልቻለም"
+  },
+  "findErrorBody": {
+    "message": "ገጹን እንደገና ይጫኑ፣ ከዚያም ምስሉን በቀኝ ጠቅ አድርገው «ምስል እዚህ ፈልግ» እንደገና ይምረጡ።"
+  },
+  "paletteTitle": {
+    "message": "የቀለም ስብስብ"
+  },
+  "paletteLoading": {
+    "message": "ቀለሞቹ እየተፈለጉ ነው…"
+  },
+  "paletteCount": {
+    "message": "ቀለሞች"
+  },
+  "paletteSwatches": {
+    "message": "የምስሉ ዋና ቀለሞች፣ ትልቁ መጀመሪያ"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ ቅዳ (ከምስሉ $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ ተቀድቷል",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "ሁሉንም ቅዳ እንደ"
+  },
+  "paletteCodeCss": {
+    "message": "CSS ተለዋዋጮች"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "ዝርዝር"
+  },
+  "paletteCopiedAll": {
+    "message": "ሁሉም ቀለሞች እንደ $KIND$ ተቀድተዋል",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "አስቀምጥ እንደ"
+  },
+  "paletteSavePng": {
+    "message": "PNG ቀለም ናሙናዎች"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP ቤተ ቀለም"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe ቀለም ናሙናዎች"
+  },
+  "paletteSavedFallback": {
+    "message": "አቃፊዎ አልተገኘም፤ ስለዚህ ወደ Downloads ሄዷል፦ $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "ይህ ምስል ሙሉ በሙሉ ግልጽ ነው፤ ስለዚህ የሚወሰድ ቀለም የለውም።"
+  },
+  "paletteCopyFailed": {
+    "message": "መቅዳት አልተቻለም። በዚህ መስኮት ውስጥ ጠቅ አድርገው እንደገና ይሞክሩ።"
+  },
+  "paletteNote": {
+    "message": "በኮምፒውተርዎ ላይ ተሰልቷል። ምስሉና ቀለሞቹ ከእሱ አይወጡም።"
+  }
+}

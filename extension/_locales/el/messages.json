@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Αποθήκευση εικόνας ως PNG, JPG, WebP, GIF ή PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Δεξί κλικ για αποθήκευση εικόνας ως PNG, JPG, WebP, GIF ή PDF ή για την παλέτα χρωμάτων της. Τοπικά, χωρίς προσωπικά δεδομένα."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (τελευταία χρήση)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (διατηρεί την κίνηση)"
+  },
+  "menuOriginal": {
+    "message": "Αρχική μορφή"
+  },
+  "menuCopyPng": {
+    "message": "Αντιγραφή ως PNG"
+  },
+  "menuPalette": {
+    "message": "Παλέτα χρωμάτων"
+  },
+  "menuMoreOptions": {
+    "message": "Περισσότερες επιλογές…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Εύρεση εικόνας εδώ…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Νέο",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Σας αρέσει το Imgkeep; Βαθμολογήστε το…"
+  },
+  "askErrBlocked": {
+    "message": "Ο ιστότοπος δεν έδωσε αυτή την εικόνα, παρότι η πρόσβαση έχει επιτραπεί. Ίσως ο διακομιστής δεν λειτουργεί ή η εικόνα εμφανίζεται μόνο μέσα στις δικές του σελίδες."
+  },
+  "askErrHttp": {
+    "message": "Ο ιστότοπος απάντησε με σφάλμα αντί για την εικόνα."
+  },
+  "askErrDecode": {
+    "message": "Το πρόγραμμα περιήγησης δεν μπόρεσε να διαβάσει αυτό το αρχείο ως εικόνα."
+  },
+  "askErrUnsupported": {
+    "message": "Αυτή η έκδοση του προγράμματος περιήγησης δεν μπορεί να δημιουργήσει αυτή τη μορφή. Δοκιμάστε PNG."
+  },
+  "askErrBlob": {
+    "message": "Αυτή η εικόνα υπάρχει μόνο μέσα στη σελίδα (σύνδεσμος blob:), οπότε το Imgkeep δεν μπορεί ακόμη να την αποθηκεύσει. Ένα στιγμιότυπο οθόνης λειτουργεί."
+  },
+  "askErrTooLarge": {
+    "message": "Αυτή η εικόνα είναι πολύ μεγάλη για μετατροπή στο πρόγραμμα περιήγησης."
+  },
+  "askErrTimeout": {
+    "message": "Η μετατροπή αυτής της εικόνας άργησε πολύ και το Imgkeep σταμάτησε. Δοκιμάστε PNG ή πιο σύντομη ή μικρότερη κίνηση."
+  },
+  "askErrDownload": {
+    "message": "Το πρόγραμμα περιήγησης δεν μπόρεσε να ξεκινήσει τη λήψη."
+  },
+  "askErrWrite": {
+    "message": "Το Imgkeep δεν μπόρεσε να γράψει το αρχείο στον φάκελό σας."
+  },
+  "askErrExpired": {
+    "message": "Αυτή η αποθήκευση έληξε. Κάντε δεξί κλικ στην εικόνα και δοκιμάστε ξανά."
+  },
+  "askErrUnknown": {
+    "message": "Κάτι πήγε στραβά κατά την αποθήκευση αυτής της εικόνας."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ καρέ. Τα GIF περιορίζονται σε $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixel × $COUNT$ καρέ είναι περισσότερα από όσα χωράει εδώ ένα GIF.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Πάρα πολλά αρχεία με αυτό το όνομα."
+  },
+  "askSaving": {
+    "message": "Αποθήκευση…"
+  },
+  "askSaved": {
+    "message": "Αποθηκεύτηκε."
+  },
+  "askSavedAs": {
+    "message": "Αποθηκεύτηκε ως $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Αποθηκεύτηκε στο $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Δεν υπάρχει κάτι για αποθήκευση"
+  },
+  "askClose": {
+    "message": "Κλείσιμο"
+  },
+  "askRetry": {
+    "message": "Δοκιμή ξανά"
+  },
+  "askOpenImage": {
+    "message": "Άνοιγμα εικόνας"
+  },
+  "askCancel": {
+    "message": "Άκυρο"
+  },
+  "askHostTitle": {
+    "message": "Να επιτρέπονται εικόνες από αυτόν τον ιστότοπο;"
+  },
+  "askHostBody": {
+    "message": "Το $HOST$ δεν επιτρέπει σε άλλους ιστότοπους να διαβάζουν τις εικόνες του, οπότε το Imgkeep δεν μπορεί ακόμη να μετατρέψει αυτήν την εικόνα.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Η πρόσβαση αφορά μόνο αυτόν τον ιστότοπο, για τη λήψη των εικόνων που επιλέγετε. Μπορείτε να την αφαιρέσετε ανά πάσα στιγμή στις Επιλογές."
+  },
+  "askAllowAndSave": {
+    "message": "Να επιτραπεί και αποθήκευση"
+  },
+  "askNotAllowed": {
+    "message": "Η πρόσβαση δεν επιτράπηκε. Δεν αποθηκεύτηκε τίποτα."
+  },
+  "askSaveOriginal": {
+    "message": "Αποθήκευση στην αρχική μορφή"
+  },
+  "askReconnectTitle": {
+    "message": "Επανασύνδεση του «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Επιλογή φακέλου"
+  },
+  "askReconnectBody": {
+    "message": "Το πρόγραμμα περιήγησης χρειάζεται ξανά την έγκρισή σας για αποθήκευση σε αυτόν τον φάκελο."
+  },
+  "askChooseBody": {
+    "message": "Επιλέξτε τον φάκελο στον οποίο θα αποθηκεύει τις εικόνες το Imgkeep."
+  },
+  "askEveryVisit": {
+    "message": "Όταν σας ρωτήσει το πρόγραμμα περιήγησης, επιλέξτε $OPTION$ για να μην ξαναρωτήσει.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«Να επιτρέπεται σε κάθε επίσκεψη»"
+  },
+  "askReconnectButton": {
+    "message": "Επανασύνδεση και αποθήκευση"
+  },
+  "askChooseButton": {
+    "message": "Επιλογή φακέλου και αποθήκευση"
+  },
+  "askErrorTitle": {
+    "message": "Η εικόνα δεν αποθηκεύτηκε"
+  },
+  "askFolderDenied": {
+    "message": "Το πρόγραμμα περιήγησης δεν επέτρεψε την πρόσβαση στον φάκελο. Δεν αποθηκεύτηκε τίποτα."
+  },
+  "askNoFolder": {
+    "message": "Δεν επιλέχθηκε φάκελος. Δεν αποθηκεύτηκε τίποτα."
+  },
+  "optPageTitle": {
+    "message": "Ρυθμίσεις Imgkeep"
+  },
+  "optSaved": {
+    "message": "Αποθηκεύτηκε"
+  },
+  "optWhereTitle": {
+    "message": "Πού γίνεται η αποθήκευση"
+  },
+  "optSaveMode": {
+    "message": "Τρόπος αποθήκευσης"
+  },
+  "optModeDownloads": {
+    "message": "Φάκελος λήψεων"
+  },
+  "optModeDownloadsHint": {
+    "message": "Αποθηκεύει στον φάκελο λήψεων του προγράμματος περιήγησης. Χωρίς ερωτήσεις."
+  },
+  "optModeFolder": {
+    "message": "Φάκελος της επιλογής σας"
+  },
+  "optModeFolderHint": {
+    "message": "Γράφει απευθείας στον φάκελό σας. Μετά από επανεκκίνηση, το πρόγραμμα περιήγησης μπορεί να ζητήσει επανασύνδεση."
+  },
+  "optModeAsk": {
+    "message": "Να γίνεται κάθε φορά ερώτηση"
+  },
+  "optModeAskHint": {
+    "message": "Εμφανίζει το παράθυρο «Αποθήκευση ως» για κάθε εικόνα."
+  },
+  "optChooseFolder": {
+    "message": "Επιλογή φακέλου…"
+  },
+  "optChangeFolder": {
+    "message": "Αλλαγή φακέλου…"
+  },
+  "optNoFolder": {
+    "message": "Δεν έχει επιλεγεί φάκελος ακόμη."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — συνδεδεμένος",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — θα ζητηθεί επανασύνδεση",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Υποφάκελος"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "π.χ. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Προαιρετικό. Χρησιμοποιήστε <code>/</code> για φακέλους μέσα σε φακέλους. Ισχύουν τα ίδια σύμβολα με τα ονόματα αρχείων."
+  },
+  "optNamesTitle": {
+    "message": "Ονόματα αρχείων"
+  },
+  "optTemplate": {
+    "message": "Πρότυπο ονόματος"
+  },
+  "optTokensHint": {
+    "message": "Σύμβολα: <code>{name}</code> αρχικό όνομα, <code>{host}</code> ιστότοπος, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> και <code>{h}</code> μέγεθος σε pixel. Τα υπάρχοντα αρχεία δεν αντικαθίστανται ποτέ."
+  },
+  "optPreviewLabel": {
+    "message": "Προεπισκόπηση για το summer-banner από το shop.example.com, 1600×900, ως PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Ποιότητα και μέγεθος"
+  },
+  "optJpgQuality": {
+    "message": "Ποιότητα JPG"
+  },
+  "optWebpQuality": {
+    "message": "Ποιότητα WebP"
+  },
+  "optJpgBackground": {
+    "message": "Χρώμα φόντου JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "Το JPG δεν υποστηρίζει διαφάνεια, οπότε οι διαφανείς περιοχές παίρνουν αυτό το χρώμα."
+  },
+  "optMaxWidth": {
+    "message": "Μέγιστο πλάτος"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Αρχικό μέγεθος"
+  },
+  "optMaxWidthHint": {
+    "message": "Προαιρετικό, σε pixel. Οι πιο φαρδιές εικόνες σμικρύνονται ώστε να χωρέσουν, διατηρώντας τις αναλογίες τους· οι μικρότερες δεν μεγεθύνονται ποτέ. Η αρχική μορφή αποθηκεύεται πάντα ως έχει."
+  },
+  "optSitesTitle": {
+    "message": "Ιστότοποι που έχετε επιτρέψει"
+  },
+  "optSitesEmpty": {
+    "message": "Κανένας ακόμη. Το Imgkeep ρωτάει μόνο όταν ένας ιστότοπος μπλοκάρει μια εικόνα που θέλετε να μετατρέψετε."
+  },
+  "optFindTitle": {
+    "message": "Εικόνες που κρύβουν οι ιστότοποι"
+  },
+  "optFindLabel": {
+    "message": "Εύρεση εικόνων κάτω από καλυπτικά επίπεδα"
+  },
+  "optFindHint": {
+    "message": "Σε ιστότοπους όπως το Instagram και το Pinterest, κάντε δεξί κλικ και επιλέξτε «Imgkeep: Εύρεση εικόνας εδώ». Το Imgkeep κοιτάζει μια σελίδα μόνο όταν του ζητήσετε να βρει εικόνα εκεί — μόνο αυτή τη σελίδα, μόνο εκείνη τη στιγμή. Ποτέ δεν αλλάζει μια σελίδα."
+  },
+  "optFindOn": {
+    "message": "Ενεργοποιήθηκε."
+  },
+  "optFindOff": {
+    "message": "Απενεργοποιήθηκε."
+  },
+  "optCountsTitle": {
+    "message": "Ανώνυμες μετρήσεις χρήσης"
+  },
+  "optCountsLabel": {
+    "message": "Αποστολή ανώνυμης ημερήσιας σύνοψης"
+  },
+  "optCountsHint": {
+    "message": "Μία φορά την ημέρα, το Imgkeep στέλνει μια σύνοψη όπως «12 αποθηκεύσεις ως JPG, 1 αποτυχία» στο PostHog, μια υπηρεσία analytics ανοιχτού κώδικα που φιλοξενείται στην ΕΕ, ώστε να ξέρουμε ποιες λειτουργίες να βελτιώσουμε και ποιες αποθηκεύσεις αποτυγχάνουν. Ποτέ εικόνες, διευθύνσεις σελίδων, ονόματα αρχείων ή οτιδήποτε σας ταυτοποιεί."
+  },
+  "optCountsShow": {
+    "message": "Δείτε ακριβώς τι στέλνεται"
+  },
+  "optCountsToday": {
+    "message": "Μετρήθηκαν σήμερα (αποστολή μετά το τέλος της ημέρας):"
+  },
+  "optCountsLast": {
+    "message": "Τελευταία σύνοψη που στάλθηκε:"
+  },
+  "optCountsNone": {
+    "message": "Τίποτα ακόμη."
+  },
+  "optCountsOff": {
+    "message": "Ανενεργό. Τίποτα δεν μετριέται ούτε στέλνεται."
+  },
+  "optRemove": {
+    "message": "Κατάργηση"
+  },
+  "optRemoveAccess": {
+    "message": "Κατάργηση πρόσβασης στο $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — σύντομα"
+  },
+  "optProBody": {
+    "message": "Προεπιλογές για τα μεγέθη και τις μορφές που χρησιμοποιείτε πιο συχνά, στόχοι μεγέθους αρχείου όπως «κάτω από 200 KB», κανόνες που στέλνουν τις εικόνες κάθε ιστότοπου στον σωστό φάκελο, και ιστορικό με το από πού ήρθε κάθε εικόνα."
+  },
+  "optProFree": {
+    "message": "Ό,τι χρησιμοποιείτε σήμερα παραμένει δωρεάν."
+  },
+  "optGetNotified": {
+    "message": "Ενημερώστε με"
+  },
+  "optTrustTitle": {
+    "message": "Τι μπορεί και τι δεν μπορεί να κάνει το Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Δικαιώματα που ζητάει:"
+  },
+  "optOptionalPermissions": {
+    "message": "Μόνο αν ενεργοποιήσετε την Εύρεση εικόνων:"
+  },
+  "optPermissionsLabel": {
+    "message": "Δικαιώματα"
+  },
+  "optTrust1": {
+    "message": "Οι εικόνες μετατρέπονται στον υπολογιστή σας και δεν ανεβαίνουν ποτέ πουθενά. Το μόνο άλλο που στέλνει το Imgkeep είναι η ανώνυμη ημερήσια σύνοψη παραπάνω, την οποία μπορείτε να απενεργοποιήσετε."
+  },
+  "optTrust2": {
+    "message": "Χωρίς διαφημίσεις και χωρίς καρτέλες καλωσορίσματος. Μικρά παράθυρα ανοίγουν μόνο όταν τα ζητήσετε ή όταν μια αποθήκευση χρειάζεται την έγκρισή σας. Το Imgkeep ζητάει αξιολόγηση μία φορά, αφού το έχετε χρησιμοποιήσει για λίγο καιρό."
+  },
+  "optTrust4": {
+    "message": "Το Imgkeep κοιτάζει μια σελίδα μόνο όταν του ζητήσετε να βρει εικόνα εκεί — μόνο αυτή τη σελίδα, μόνο εκείνη τη στιγμή. Ποτέ δεν αλλάζει μια σελίδα."
+  },
+  "optTrust3": {
+    "message": "Κάθε δωρεάν λειτουργία παραμένει δωρεάν."
+  },
+  "optVersion": {
+    "message": "Έκδοση"
+  },
+  "optWhatsNew": {
+    "message": "Τι νέο υπάρχει"
+  },
+  "copyWorking": {
+    "message": "Αντιγραφή της εικόνας…"
+  },
+  "copyDone": {
+    "message": "Αντιγράφηκε ως PNG. Επικολλήστε την όπου θέλετε."
+  },
+  "copyFailed": {
+    "message": "Δεν ήταν δυνατή η αντιγραφή της εικόνας"
+  },
+  "copyFailedNote": {
+    "message": "Το πρόχειρό σας δεν άλλαξε. Δοκιμάστε ξανά ή αποθηκεύστε την εικόνα ως αρχείο PNG."
+  },
+  "copySavePng": {
+    "message": "Αποθήκευση ως PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Να επιτραπεί και αντιγραφή"
+  },
+  "editTitle": {
+    "message": "Περισσότερες επιλογές"
+  },
+  "editLoading": {
+    "message": "Φόρτωση εικόνας…"
+  },
+  "editUpdating": {
+    "message": "Ενημέρωση προεπισκόπησης…"
+  },
+  "editPreviewAlt": {
+    "message": "Προεπισκόπηση του αποτελέσματος"
+  },
+  "editOriginal": {
+    "message": "Πρωτότυπο"
+  },
+  "editResult": {
+    "message": "Αποτέλεσμα"
+  },
+  "editFormat": {
+    "message": "Μορφή"
+  },
+  "editPngHint": {
+    "message": "Το PNG διατηρεί κάθε pixel. Για μικρότερο αρχείο, μειώστε το μέγιστο πλάτος ή επιλέξτε JPG ή WebP."
+  },
+  "editIcoHint": {
+    "message": "Αρχείο εικονιδίου με την εικόνα σε 16, 32 και 48 px, καθώς και 256 px όταν είναι αρκετά μεγάλη. Οι εικόνες που δεν είναι τετράγωνες αποκτούν διαφανή περιθώρια."
+  },
+  "editBmpHint": {
+    "message": "Απλό bitmap που ανοίγει κάθε εφαρμογή. Τα αρχεία είναι μεγάλα και οι διαφανείς περιοχές παίρνουν το χρώμα του φόντου."
+  },
+  "editAvifHint": {
+    "message": "Συχνά το μισό μέγεθος ενός JPG που δείχνει ίδιο. Ανοίγει στα σύγχρονα προγράμματα περιήγησης και στις περισσότερες σημερινές εφαρμογές· σε κάποιες παλιότερες όχι."
+  },
+  "editMaxWidthHint": {
+    "message": "Σε pixel. Διατηρεί τις αναλογίες, δεν μεγεθύνει ποτέ."
+  },
+  "editBackground": {
+    "message": "Φόντο"
+  },
+  "editQuality": {
+    "message": "Ποιότητα"
+  },
+  "editFileName": {
+    "message": "Όνομα αρχείου"
+  },
+  "editSave": {
+    "message": "Αποθήκευση"
+  },
+  "editAllow": {
+    "message": "Να επιτραπεί αυτός ο ιστότοπος"
+  },
+  "editNeedsOk": {
+    "message": "Αυτή η αποθήκευση χρειάζεται την έγκρισή σας: δείτε το παράθυρο του Imgkeep που μόλις άνοιξε."
+  },
+  "reviewTitle": {
+    "message": "Σας αρέσει το Imgkeep;"
+  },
+  "reviewBody": {
+    "message": "Μια βαθμολογία στο κατάστημα βοηθά κι άλλους να το βρουν. Παίρνει λίγα δευτερόλεπτα και θα το ζητήσουμε μόνο μία φορά."
+  },
+  "reviewRate": {
+    "message": "Βαθμολογήστε το Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Όχι, ευχαριστώ"
+  },
+  "reviewThanks": {
+    "message": "Ευχαριστούμε!"
+  },
+  "reviewOk": {
+    "message": "Εντάξει. Δεν θα ξαναρωτήσουμε."
+  },
+  "findWindowTitle": {
+    "message": "Εύρεση εικόνας"
+  },
+  "findEnableTitle": {
+    "message": "Βρείτε εικόνες που κρύβουν οι ιστότοποι"
+  },
+  "findEnableBody": {
+    "message": "Μερικοί ιστότοποι, όπως το Instagram και το Pinterest, καλύπτουν τις εικόνες τους με ένα άλλο στρώμα, οπότε το δεξί κλικ δεν τις φτάνει. Το Imgkeep μπορεί να βρει για εσάς την εικόνα κάτω από αυτό το στρώμα."
+  },
+  "findPromise": {
+    "message": "Το Imgkeep κοιτάζει μια σελίδα μόνο όταν του ζητήσετε να βρει μια εικόνα εκεί, μόνο αυτήν τη σελίδα, μόνο εκείνη τη στιγμή. Ποτέ δεν αλλάζει μια σελίδα."
+  },
+  "findTurnOn": {
+    "message": "Ενεργοποίηση"
+  },
+  "findDenied": {
+    "message": "Δεν ενεργοποιήθηκε. Μπορείτε να το ενεργοποιήσετε όποτε θέλετε στις Επιλογές."
+  },
+  "findOnTitle": {
+    "message": "Ενεργοποιήθηκε"
+  },
+  "findOnBody": {
+    "message": "Κάντε ξανά δεξί κλικ στην εικόνα και επιλέξτε «Imgkeep: Εύρεση εικόνας εδώ»."
+  },
+  "findPickTitle": {
+    "message": "Ποια εικόνα;"
+  },
+  "findPickBody": {
+    "message": "Το Imgkeep δεν κατάλαβε ποια εικόνα εννοούσατε. Διαλέξτε μία:"
+  },
+  "findPickOne": {
+    "message": "Εικόνα $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Δεν βρέθηκε εικόνα εδώ"
+  },
+  "findNothingBody": {
+    "message": "Το Imgkeep δεν βρήκε εικόνα σε αυτό το σημείο της σελίδας. Κάντε δεξί κλικ ακριβώς πάνω στη φωτογραφία ή ανοίξτε τη φωτογραφία σε δική της σελίδα και δοκιμάστε ξανά."
+  },
+  "findErrorTitle": {
+    "message": "Το Imgkeep δεν μπόρεσε να δει αυτήν τη σελίδα"
+  },
+  "findErrorBody": {
+    "message": "Ανανεώστε τη σελίδα, μετά κάντε δεξί κλικ στην εικόνα και επιλέξτε ξανά «Εύρεση εικόνας εδώ»."
+  },
+  "paletteTitle": {
+    "message": "Παλέτα χρωμάτων"
+  },
+  "paletteLoading": {
+    "message": "Αναζήτηση χρωμάτων…"
+  },
+  "paletteCount": {
+    "message": "Χρώματα"
+  },
+  "paletteSwatches": {
+    "message": "Τα κύρια χρώματα της εικόνας, πρώτα τα πιο εκτεταμένα"
+  },
+  "paletteCopyOne": {
+    "message": "Αντιγραφή $VALUE$ ($SHARE$ της εικόνας)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Αντιγράφηκε το $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Αντιγραφή όλων ως"
+  },
+  "paletteCodeCss": {
+    "message": "Μεταβλητές CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Λίστα"
+  },
+  "paletteCopiedAll": {
+    "message": "Όλα τα χρώματα αντιγράφηκαν ως $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Αποθήκευση ως"
+  },
+  "paletteSavePng": {
+    "message": "Δείγματα PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Παλέτα GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Δείγματα Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Ο φάκελός σας δεν ήταν διαθέσιμος, οπότε το αρχείο πήγε στις Λήψεις: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Αυτή η εικόνα είναι εντελώς διαφανής, οπότε δεν έχει χρώματα."
+  },
+  "paletteCopyFailed": {
+    "message": "Η αντιγραφή δεν έγινε. Κάντε κλικ μέσα σε αυτό το παράθυρο και δοκιμάστε ξανά."
+  },
+  "paletteNote": {
+    "message": "Ο υπολογισμός γίνεται στον υπολογιστή σας. Η εικόνα και τα χρώματά της δεν φεύγουν ποτέ από αυτόν."
+  }
+}

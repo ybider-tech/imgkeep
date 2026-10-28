@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Lagre bilde som PNG, JPG, WebP, GIF eller PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Høyreklikk for å lagre et bilde som PNG, JPG, WebP, GIF eller PDF, eller hent fargepaletten. På din enhet. Ingen persondata."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (sist brukt)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (beholder animasjon)"
+  },
+  "menuOriginal": {
+    "message": "Originalformat"
+  },
+  "menuCopyPng": {
+    "message": "Kopier som PNG"
+  },
+  "menuPalette": {
+    "message": "Hent fargepalett"
+  },
+  "menuMoreOptions": {
+    "message": "Flere valg…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Finn bilde her…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nytt",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Liker du Imgkeep? Gi en vurdering…"
+  },
+  "askErrBlocked": {
+    "message": "Nettstedet ga ikke fra seg dette bildet, selv med tilgang gitt. Serveren kan være nede, eller så vises bildet bare på nettstedets egne sider."
+  },
+  "askErrHttp": {
+    "message": "Nettstedet svarte med en feil i stedet for bildet."
+  },
+  "askErrDecode": {
+    "message": "Nettleseren klarte ikke å lese denne filen som et bilde."
+  },
+  "askErrUnsupported": {
+    "message": "Denne nettleserversjonen kan ikke lage dette formatet. Prøv PNG i stedet."
+  },
+  "askErrBlob": {
+    "message": "Dette bildet finnes bare inne i siden (en blob:-lenke), så Imgkeep kan ikke lagre det ennå. Et skjermbilde fungerer."
+  },
+  "askErrTooLarge": {
+    "message": "Dette bildet er for stort til å konverteres i nettleseren."
+  },
+  "askErrTimeout": {
+    "message": "Konverteringen av bildet tok for lang tid, så Imgkeep stoppet. Prøv PNG, eller en kortere eller mindre animasjon."
+  },
+  "askErrDownload": {
+    "message": "Nettleseren klarte ikke å starte nedlastingen."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep klarte ikke å skrive filen til mappen din."
+  },
+  "askErrExpired": {
+    "message": "Denne lagringen er utløpt. Høyreklikk på bildet og prøv igjen."
+  },
+  "askErrUnknown": {
+    "message": "Noe gikk galt under lagring av bildet."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ bilderuter. GIF-er er begrenset til $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ piksler × $COUNT$ bilderuter er mer enn en GIF kan romme her.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "For mange filer med dette navnet."
+  },
+  "askSaving": {
+    "message": "Lagrer…"
+  },
+  "askSaved": {
+    "message": "Lagret."
+  },
+  "askSavedAs": {
+    "message": "Lagret som $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Lagret i $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Ingenting å lagre"
+  },
+  "askClose": {
+    "message": "Lukk"
+  },
+  "askRetry": {
+    "message": "Prøv igjen"
+  },
+  "askOpenImage": {
+    "message": "Åpne bilde"
+  },
+  "askCancel": {
+    "message": "Avbryt"
+  },
+  "askHostTitle": {
+    "message": "Tillate bilder fra dette nettstedet?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ hindrer andre nettsteder i å lese bildene sine, så Imgkeep kan ikke konvertere dette ennå.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Tilgangen gjelder bare dette ene nettstedet, for å hente bildene du velger. Du kan fjerne den når som helst i Innstillinger."
+  },
+  "askAllowAndSave": {
+    "message": "Tillat og lagre"
+  },
+  "askNotAllowed": {
+    "message": "Tilgang ble ikke gitt. Ingenting ble lagret."
+  },
+  "askSaveOriginal": {
+    "message": "Lagre originalformatet i stedet"
+  },
+  "askReconnectTitle": {
+    "message": "Koble til «$FOLDER$» på nytt",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Velg en mappe"
+  },
+  "askReconnectBody": {
+    "message": "Nettleseren trenger ditt samtykke for å lagre i denne mappen igjen."
+  },
+  "askChooseBody": {
+    "message": "Velg mappen der Imgkeep skal lagre bildene dine."
+  },
+  "askEveryVisit": {
+    "message": "Når nettleseren spør, velg $OPTION$ så slipper du å bli spurt igjen.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«Tillat ved hvert besøk»"
+  },
+  "askReconnectButton": {
+    "message": "Koble til og lagre"
+  },
+  "askChooseButton": {
+    "message": "Velg mappe og lagre"
+  },
+  "askErrorTitle": {
+    "message": "Kunne ikke lagre dette bildet"
+  },
+  "askFolderDenied": {
+    "message": "Nettleseren ga ikke tilgang til mappen. Ingenting ble lagret."
+  },
+  "askNoFolder": {
+    "message": "Ingen mappe valgt. Ingenting ble lagret."
+  },
+  "optPageTitle": {
+    "message": "Innstillinger for Imgkeep"
+  },
+  "optSaved": {
+    "message": "Lagret"
+  },
+  "optWhereTitle": {
+    "message": "Hvor bildene lagres"
+  },
+  "optSaveMode": {
+    "message": "Lagringsmåte"
+  },
+  "optModeDownloads": {
+    "message": "Nedlastingsmappen"
+  },
+  "optModeDownloadsHint": {
+    "message": "Lagrer i nettleserens nedlastingsmappe. Uten spørsmål."
+  },
+  "optModeFolder": {
+    "message": "En mappe du velger"
+  },
+  "optModeFolderHint": {
+    "message": "Lagrer rett i mappen din. Nettleseren kan be deg koble til på nytt etter en omstart."
+  },
+  "optModeAsk": {
+    "message": "Spør hver gang"
+  },
+  "optModeAskHint": {
+    "message": "Viser nettleserens «Lagre som»-vindu for hvert bilde."
+  },
+  "optChooseFolder": {
+    "message": "Velg mappe …"
+  },
+  "optChangeFolder": {
+    "message": "Bytt mappe …"
+  },
+  "optNoFolder": {
+    "message": "Ingen mappe valgt ennå."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» – tilkoblet",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» – vil be om ny tilkobling",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Undermappe"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "f.eks. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Valgfritt. Bruk <code>/</code> for mapper i mapper. Samme koder som i filnavn."
+  },
+  "optNamesTitle": {
+    "message": "Filnavn"
+  },
+  "optTemplate": {
+    "message": "Navnemal"
+  },
+  "optTokensHint": {
+    "message": "Koder: <code>{name}</code> opprinnelig navn, <code>{host}</code> nettsted, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> og <code>{h}</code> størrelse i piksler. Eksisterende filer blir aldri overskrevet."
+  },
+  "optPreviewLabel": {
+    "message": "Forhåndsvisning for summer-banner fra shop.example.com, 1600×900, som PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kvalitet og størrelse"
+  },
+  "optJpgQuality": {
+    "message": "JPG-kvalitet"
+  },
+  "optWebpQuality": {
+    "message": "WebP-kvalitet"
+  },
+  "optJpgBackground": {
+    "message": "Bakgrunnsfarge for JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG har ingen gjennomsiktighet, så gjennomsiktige områder får denne fargen."
+  },
+  "optMaxWidth": {
+    "message": "Største bredde"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Originalstørrelse"
+  },
+  "optMaxWidthHint": {
+    "message": "Valgfritt, i piksler. Bredere bilder skaleres ned så de passer, med samme form; mindre bilder forstørres aldri. Originalformat lagres alltid som det er."
+  },
+  "optSitesTitle": {
+    "message": "Nettsteder du har gitt tilgang"
+  },
+  "optSitesEmpty": {
+    "message": "Ingen ennå. Imgkeep spør bare når et nettsted blokkerer et bilde du vil konvertere."
+  },
+  "optFindTitle": {
+    "message": "Bilder som nettsteder dekker til"
+  },
+  "optFindLabel": {
+    "message": "Finn bilder under dekklag"
+  },
+  "optFindHint": {
+    "message": "På nettsteder som Instagram og Pinterest: høyreklikk og velg Imgkeep: Finn bilde her. Imgkeep ser bare på en side når du ber den finne et bilde der – bare den siden, bare da. Den endrer aldri en side."
+  },
+  "optFindOn": {
+    "message": "Slått på."
+  },
+  "optFindOff": {
+    "message": "Slått av."
+  },
+  "optCountsTitle": {
+    "message": "Anonym bruksstatistikk"
+  },
+  "optCountsLabel": {
+    "message": "Send et anonymt daglig sammendrag"
+  },
+  "optCountsHint": {
+    "message": "Én gang om dagen sender Imgkeep et sammendrag som «12 lagringer som JPG, 1 mislyktes» til PostHog, en analysetjeneste med åpen kildekode som driftes i EU, slik at vi vet hvilke funksjoner vi bør forbedre og hvilke lagringer som feiler. Aldri bilder, nettadresser, filnavn eller noe som identifiserer deg."
+  },
+  "optCountsShow": {
+    "message": "Se nøyaktig hva som sendes"
+  },
+  "optCountsToday": {
+    "message": "Talt i dag (sendes etter i dag):"
+  },
+  "optCountsLast": {
+    "message": "Siste sammendrag som ble sendt:"
+  },
+  "optCountsNone": {
+    "message": "Ingenting ennå."
+  },
+  "optCountsOff": {
+    "message": "Av. Ingenting telles eller sendes."
+  },
+  "optRemove": {
+    "message": "Fjern"
+  },
+  "optRemoveAccess": {
+    "message": "Fjern tilgang til $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — kommer snart"
+  },
+  "optProBody": {
+    "message": "Forhåndsinnstillinger for størrelsene og formatene du bruker mest, mål for filstørrelse som «under 200 KB», regler som sender bildene fra hvert nettsted til riktig mappe, og en logg over hvor hvert bilde kom fra."
+  },
+  "optProFree": {
+    "message": "Alt du bruker i dag, forblir gratis."
+  },
+  "optGetNotified": {
+    "message": "Få beskjed"
+  },
+  "optTrustTitle": {
+    "message": "Hva Imgkeep kan og ikke kan gjøre"
+  },
+  "optPermissions": {
+    "message": "Tillatelser den ber om:"
+  },
+  "optOptionalPermissions": {
+    "message": "Bare hvis du slår på Finn bilder:"
+  },
+  "optPermissionsLabel": {
+    "message": "Tillatelser"
+  },
+  "optTrust1": {
+    "message": "Bilder konverteres på din egen maskin og lastes aldri opp. Det eneste andre Imgkeep sender, er det anonyme daglige sammendraget over, som du kan slå av."
+  },
+  "optTrust2": {
+    "message": "Ingen annonser og ingen velkomstfaner. Små vinduer åpnes bare når du ber om det, eller når en lagring trenger ditt OK. Imgkeep ber om en vurdering én gang, etter at du har brukt den en stund."
+  },
+  "optTrust4": {
+    "message": "Imgkeep ser bare på en side når du ber den finne et bilde der – bare den siden, bare da. Den endrer aldri en side."
+  },
+  "optTrust3": {
+    "message": "Alle gratisfunksjoner forblir gratis."
+  },
+  "optVersion": {
+    "message": "Versjon"
+  },
+  "optWhatsNew": {
+    "message": "Nyheter"
+  },
+  "copyWorking": {
+    "message": "Kopierer bildet …"
+  },
+  "copyDone": {
+    "message": "Kopiert som PNG. Lim det inn hvor du vil."
+  },
+  "copyFailed": {
+    "message": "Kunne ikke kopiere bildet"
+  },
+  "copyFailedNote": {
+    "message": "Utklippstavlen ble ikke endret. Prøv igjen, eller lagre bildet som en PNG-fil i stedet."
+  },
+  "copySavePng": {
+    "message": "Lagre som PNG i stedet"
+  },
+  "copyAllowAndCopy": {
+    "message": "Gi tilgang og kopier"
+  },
+  "editTitle": {
+    "message": "Flere valg"
+  },
+  "editLoading": {
+    "message": "Laster inn bildet…"
+  },
+  "editUpdating": {
+    "message": "Oppdaterer forhåndsvisning…"
+  },
+  "editPreviewAlt": {
+    "message": "Forhåndsvisning av resultatet"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Resultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG beholder hver piksel. Vil du ha en mindre fil, senk maksbredden eller velg JPG eller WebP."
+  },
+  "editIcoHint": {
+    "message": "En ikonfil med bildet i 16, 32 og 48 px, og 256 px når bildet er stort nok. Bilder som ikke er kvadratiske, får gjennomsiktige kanter."
+  },
+  "editBmpHint": {
+    "message": "En enkel bitmap som alle programmer åpner. Filene blir store, og gjennomsiktige områder får bakgrunnsfargen."
+  },
+  "editAvifHint": {
+    "message": "Ofte halvparten så stor som en JPG som ser lik ut. Moderne nettlesere og de fleste nyere programmer åpner den, men noen eldre gjør det ikke."
+  },
+  "editMaxWidthHint": {
+    "message": "I piksler. Beholder formen, forstørrer aldri."
+  },
+  "editBackground": {
+    "message": "Bakgrunn"
+  },
+  "editQuality": {
+    "message": "Kvalitet"
+  },
+  "editFileName": {
+    "message": "Filnavn"
+  },
+  "editSave": {
+    "message": "Lagre"
+  },
+  "editAllow": {
+    "message": "Tillat dette nettstedet"
+  },
+  "editNeedsOk": {
+    "message": "Denne lagringen trenger et OK fra deg: se Imgkeep-vinduet som nettopp åpnet seg."
+  },
+  "reviewTitle": {
+    "message": "Liker du Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "En vurdering i nettbutikken hjelper andre med å finne den. Det tar noen sekunder, og vi spør bare denne ene gangen."
+  },
+  "reviewRate": {
+    "message": "Vurder Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Nei takk"
+  },
+  "reviewThanks": {
+    "message": "Tusen takk!"
+  },
+  "reviewOk": {
+    "message": "Greit. Vi spør ikke igjen."
+  },
+  "findWindowTitle": {
+    "message": "Finn bilde"
+  },
+  "findEnableTitle": {
+    "message": "Finn bilder som nettsteder dekker til"
+  },
+  "findEnableBody": {
+    "message": "Noen nettsteder, som Instagram og Pinterest, legger et lag over bildene sine, slik at et høyreklikk ikke når fram. Imgkeep kan finne bildet under det laget for deg."
+  },
+  "findPromise": {
+    "message": "Imgkeep ser bare på en side når du ber den finne et bilde der – bare den siden, bare da. Den endrer aldri en side."
+  },
+  "findTurnOn": {
+    "message": "Slå på"
+  },
+  "findDenied": {
+    "message": "Ikke slått på. Du kan slå det på når som helst under Alternativer."
+  },
+  "findOnTitle": {
+    "message": "Slått på"
+  },
+  "findOnBody": {
+    "message": "Høyreklikk bildet på nytt og velg «Imgkeep: Finn bilde her»."
+  },
+  "findPickTitle": {
+    "message": "Hvilket bilde?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep kunne ikke se hvilket bilde du mente. Velg ett:"
+  },
+  "findPickOne": {
+    "message": "Bilde $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Fant ikke noe bilde her"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep fant ikke noe bilde på denne delen av siden. Høyreklikk rett på bildet, eller åpne bildet på en egen side og prøv igjen."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep kunne ikke se på denne siden"
+  },
+  "findErrorBody": {
+    "message": "Last siden på nytt, høyreklikk så bildet og velg «Finn bilde her» igjen."
+  },
+  "paletteTitle": {
+    "message": "Fargepalett"
+  },
+  "paletteLoading": {
+    "message": "Finner fargene…"
+  },
+  "paletteCount": {
+    "message": "Farger"
+  },
+  "paletteSwatches": {
+    "message": "Bildets hovedfarger, størst først"
+  },
+  "paletteCopyOne": {
+    "message": "Kopier $VALUE$ ($SHARE$ av bildet)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Kopierte $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopier alle som"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-variabler"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Liste"
+  },
+  "paletteCopiedAll": {
+    "message": "Kopierte alle fargene som $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Lagre som"
+  },
+  "paletteSavePng": {
+    "message": "PNG-fargeprøver"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP-palett"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe-fargeprøver"
+  },
+  "paletteSavedFallback": {
+    "message": "Mappen din var ikke tilgjengelig, så filen havnet i Nedlastinger: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Dette bildet er helt gjennomsiktig, så det finnes ingen farger å hente."
+  },
+  "paletteCopyFailed": {
+    "message": "Kunne ikke kopiere. Klikk inne i dette vinduet og prøv igjen."
+  },
+  "paletteNote": {
+    "message": "Regnet ut på din egen maskin. Bildet og fargene forlater den aldri."
+  }
+}

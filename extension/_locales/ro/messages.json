@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Salvează imagini ca PNG, JPG, WebP, GIF sau PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Click dreapta: salvezi orice imagine ca PNG, JPG, WebP, GIF sau PDF ori îi afli paleta de culori. Totul local. Fără date personale."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (folosit ultima dată)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (păstrează animația)"
+  },
+  "menuOriginal": {
+    "message": "Format original"
+  },
+  "menuCopyPng": {
+    "message": "Copiază ca PNG"
+  },
+  "menuPalette": {
+    "message": "Obține paleta de culori"
+  },
+  "menuMoreOptions": {
+    "message": "Mai multe opțiuni…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Caută imaginea aici…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nou",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Îți place Imgkeep? Evaluează-l…"
+  },
+  "askErrBlocked": {
+    "message": "Site-ul nu a predat această imagine, deși accesul e permis. Serverul poate fi oprit sau oferă imaginea doar în propriile pagini."
+  },
+  "askErrHttp": {
+    "message": "Site-ul a răspuns cu o eroare în loc de imagine."
+  },
+  "askErrDecode": {
+    "message": "Browserul nu a putut citi acest fișier ca imagine."
+  },
+  "askErrUnsupported": {
+    "message": "Această versiune de browser nu poate crea formatul acesta. Încearcă PNG."
+  },
+  "askErrBlob": {
+    "message": "Această imagine există doar în pagină (un link blob:), așa că Imgkeep nu o poate salva încă. O captură de ecran funcționează."
+  },
+  "askErrTooLarge": {
+    "message": "Imaginea e prea mare pentru a fi convertită în browser."
+  },
+  "askErrTimeout": {
+    "message": "Conversia imaginii a durat prea mult, așa că Imgkeep s-a oprit. Încearcă PNG sau o animație mai scurtă ori mai mică."
+  },
+  "askErrDownload": {
+    "message": "Browserul nu a putut porni descărcarea."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep nu a putut scrie fișierul în folderul tău."
+  },
+  "askErrExpired": {
+    "message": "Această salvare a expirat. Dă click dreapta pe imagine și încearcă din nou."
+  },
+  "askErrUnknown": {
+    "message": "Ceva nu a mers bine la salvarea acestei imagini."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ cadre. GIF-urile sunt limitate la $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixeli × $COUNT$ cadre depășesc ce poate cuprinde un GIF aici.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Prea multe fișiere cu acest nume."
+  },
+  "askSaving": {
+    "message": "Se salvează…"
+  },
+  "askSaved": {
+    "message": "Salvat."
+  },
+  "askSavedAs": {
+    "message": "Salvat ca $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Salvat în $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nimic de salvat"
+  },
+  "askClose": {
+    "message": "Închide"
+  },
+  "askRetry": {
+    "message": "Încearcă din nou"
+  },
+  "askOpenImage": {
+    "message": "Deschide imaginea"
+  },
+  "askCancel": {
+    "message": "Renunță"
+  },
+  "askHostTitle": {
+    "message": "Permiți imaginile de pe acest site?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ blochează alte site-uri să îi citească imaginile, așa că Imgkeep nu o poate converti încă pe aceasta.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Accesul e doar pentru acest site, ca să poată prelua imaginile pe care le alegi. Îl poți retrage oricând din Opțiuni."
+  },
+  "askAllowAndSave": {
+    "message": "Permite și salvează"
+  },
+  "askNotAllowed": {
+    "message": "Accesul nu a fost permis. Nu s-a salvat nimic."
+  },
+  "askSaveOriginal": {
+    "message": "Salvează în formatul original"
+  },
+  "askReconnectTitle": {
+    "message": "Reconectează „$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Alege un folder"
+  },
+  "askReconnectBody": {
+    "message": "Browserul are nevoie de acordul tău pentru a salva din nou în acest folder."
+  },
+  "askChooseBody": {
+    "message": "Alege folderul în care Imgkeep să salveze imaginile."
+  },
+  "askEveryVisit": {
+    "message": "Când browserul te întreabă, alege $OPTION$, ca să nu mai întrebe data viitoare.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Permite la fiecare vizită”"
+  },
+  "askReconnectButton": {
+    "message": "Reconectează și salvează"
+  },
+  "askChooseButton": {
+    "message": "Alege folderul și salvează"
+  },
+  "askErrorTitle": {
+    "message": "Imaginea nu a putut fi salvată"
+  },
+  "askFolderDenied": {
+    "message": "Browserul nu a permis accesul la folder. Nu s-a salvat nimic."
+  },
+  "askNoFolder": {
+    "message": "Niciun folder ales. Nu s-a salvat nimic."
+  },
+  "optPageTitle": {
+    "message": "Opțiuni Imgkeep"
+  },
+  "optSaved": {
+    "message": "Salvat"
+  },
+  "optWhereTitle": {
+    "message": "Unde se salvează"
+  },
+  "optSaveMode": {
+    "message": "Mod de salvare"
+  },
+  "optModeDownloads": {
+    "message": "Folderul de descărcări"
+  },
+  "optModeDownloadsHint": {
+    "message": "Salvează în folderul de descărcări al browserului. Fără întrebări."
+  },
+  "optModeFolder": {
+    "message": "Un folder ales de tine"
+  },
+  "optModeFolderHint": {
+    "message": "Scrie direct în folderul tău. După o repornire, browserul îți poate cere să reconectezi folderul."
+  },
+  "optModeAsk": {
+    "message": "Întreabă de fiecare dată"
+  },
+  "optModeAskHint": {
+    "message": "Afișează fereastra „Salvare ca” a browserului pentru fiecare imagine."
+  },
+  "optChooseFolder": {
+    "message": "Alege folderul…"
+  },
+  "optChangeFolder": {
+    "message": "Schimbă folderul…"
+  },
+  "optNoFolder": {
+    "message": "Niciun folder ales încă."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$” — conectat",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$” — va cere reconectarea",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subfolder"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "ex. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Opțional. Folosește <code>/</code> pentru foldere imbricate. Aceleași simboluri ca la numele fișierelor."
+  },
+  "optNamesTitle": {
+    "message": "Numele fișierelor"
+  },
+  "optTemplate": {
+    "message": "Model de nume"
+  },
+  "optTokensHint": {
+    "message": "Simboluri: <code>{name}</code> numele original, <code>{host}</code> site-ul, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> și <code>{h}</code> dimensiunea în pixeli. Fișierele existente nu sunt niciodată suprascrise."
+  },
+  "optPreviewLabel": {
+    "message": "Previzualizare pentru summer-banner de pe shop.example.com, 1600×900, ca PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Calitate și dimensiune"
+  },
+  "optJpgQuality": {
+    "message": "Calitate JPG"
+  },
+  "optWebpQuality": {
+    "message": "Calitate WebP"
+  },
+  "optJpgBackground": {
+    "message": "Culoare de fundal pentru JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG nu acceptă transparență, așa că zonele transparente primesc această culoare."
+  },
+  "optMaxWidth": {
+    "message": "Lățime maximă"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Dimensiune originală"
+  },
+  "optMaxWidthHint": {
+    "message": "Opțional, în pixeli. Imaginile mai late sunt micșorate ca să încapă, păstrându-și proporțiile; cele mai mici nu sunt niciodată mărite. Formatul original se salvează întotdeauna ca atare."
+  },
+  "optSitesTitle": {
+    "message": "Site-uri cărora le-ai dat acces"
+  },
+  "optSitesEmpty": {
+    "message": "Niciunul deocamdată. Imgkeep întreabă doar când un site blochează o imagine pe care vrei s-o convertești."
+  },
+  "optFindTitle": {
+    "message": "Imagini pe care site-urile le acoperă"
+  },
+  "optFindLabel": {
+    "message": "Găsește imaginile de sub straturile de acoperire"
+  },
+  "optFindHint": {
+    "message": "Pe site-uri ca Instagram și Pinterest, dă clic dreapta și alege Imgkeep: Găsește imaginea de aici. Imgkeep se uită la o pagină doar când îi ceri să găsească o imagine acolo, doar la acea pagină, doar atunci. Nu modifică niciodată o pagină."
+  },
+  "optFindOn": {
+    "message": "Activat."
+  },
+  "optFindOff": {
+    "message": "Dezactivat."
+  },
+  "optCountsTitle": {
+    "message": "Statistici anonime de utilizare"
+  },
+  "optCountsLabel": {
+    "message": "Trimite un rezumat zilnic anonim"
+  },
+  "optCountsHint": {
+    "message": "O dată pe zi, Imgkeep trimite un rezumat de tipul „12 salvări ca JPG, 1 eșuată” către PostHog, un serviciu de analiză open-source găzduit în UE, ca să știm ce funcții să îmbunătățim și ce salvări eșuează. Niciodată imagini, adrese de pagini, nume de fișiere sau ceva care te identifică."
+  },
+  "optCountsShow": {
+    "message": "Vezi exact ce se trimite"
+  },
+  "optCountsToday": {
+    "message": "Numărate azi (se trimit după azi):"
+  },
+  "optCountsLast": {
+    "message": "Ultimul rezumat trimis:"
+  },
+  "optCountsNone": {
+    "message": "Nimic deocamdată."
+  },
+  "optCountsOff": {
+    "message": "Dezactivat. Nu se numără și nu se trimite nimic."
+  },
+  "optRemove": {
+    "message": "Retrage"
+  },
+  "optRemoveAccess": {
+    "message": "Retrage accesul la $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — în curând"
+  },
+  "optProBody": {
+    "message": "Presetări pentru dimensiunile și formatele pe care le folosești cel mai des, ținte de mărime a fișierului precum „sub 200 KB”, reguli care trimit imaginile fiecărui site în folderul potrivit și un jurnal cu proveniența fiecărei imagini."
+  },
+  "optProFree": {
+    "message": "Tot ce folosești azi rămâne gratuit."
+  },
+  "optGetNotified": {
+    "message": "Anunță-mă"
+  },
+  "optTrustTitle": {
+    "message": "Ce poate și ce nu poate face Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Permisiunile pe care le cere:"
+  },
+  "optOptionalPermissions": {
+    "message": "Doar dacă activezi Găsește imaginile:"
+  },
+  "optPermissionsLabel": {
+    "message": "Permisiuni"
+  },
+  "optTrust1": {
+    "message": "Imaginile sunt convertite pe calculatorul tău și nu sunt încărcate nicăieri. Singurul lucru pe care Imgkeep îl mai trimite este rezumatul zilnic anonim de mai sus, pe care îl poți dezactiva."
+  },
+  "optTrust2": {
+    "message": "Fără reclame și fără file de bun venit. Ferestrele mici se deschid doar când ceri tu una sau când o salvare are nevoie de acordul tău. Imgkeep cere o evaluare o singură dată, după ce l-ai folosit o vreme."
+  },
+  "optTrust4": {
+    "message": "Imgkeep se uită la o pagină doar când îi ceri să găsească o imagine acolo, doar la acea pagină, doar atunci. Nu modifică niciodată o pagină."
+  },
+  "optTrust3": {
+    "message": "Orice funcție gratuită rămâne gratuită."
+  },
+  "optVersion": {
+    "message": "Versiunea"
+  },
+  "optWhatsNew": {
+    "message": "Noutăți"
+  },
+  "copyWorking": {
+    "message": "Se copiază imaginea…"
+  },
+  "copyDone": {
+    "message": "Copiată ca PNG. Lipește-o oriunde."
+  },
+  "copyFailed": {
+    "message": "Imaginea nu a putut fi copiată"
+  },
+  "copyFailedNote": {
+    "message": "Clipboardul nu a fost modificat. Încearcă din nou sau salvează imaginea ca fișier PNG."
+  },
+  "copySavePng": {
+    "message": "Salvează ca PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Permite și copiază"
+  },
+  "editTitle": {
+    "message": "Mai multe opțiuni"
+  },
+  "editLoading": {
+    "message": "Se încarcă imaginea…"
+  },
+  "editUpdating": {
+    "message": "Se actualizează previzualizarea…"
+  },
+  "editPreviewAlt": {
+    "message": "Previzualizare a rezultatului"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Rezultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG păstrează fiecare pixel. Pentru un fișier mai mic, redu lățimea maximă sau alege JPG ori WebP."
+  },
+  "editIcoHint": {
+    "message": "Un fișier de pictogramă cu imaginea la 16, 32 și 48 px, plus 256 px dacă e destul de mare. Imaginile care nu sunt pătrate primesc margini transparente."
+  },
+  "editBmpHint": {
+    "message": "Un bitmap simplu, pe care îl deschide orice aplicație. Fișierele sunt mari, iar zonele transparente primesc culoarea fundalului."
+  },
+  "editAvifHint": {
+    "message": "Deseori pe jumătate cât un JPG care arată la fel. Browserele moderne și majoritatea aplicațiilor actuale îl deschid; unele aplicații mai vechi, nu."
+  },
+  "editMaxWidthHint": {
+    "message": "În pixeli. Păstrează proporțiile, nu mărește niciodată."
+  },
+  "editBackground": {
+    "message": "Fundal"
+  },
+  "editQuality": {
+    "message": "Calitate"
+  },
+  "editFileName": {
+    "message": "Nume fișier"
+  },
+  "editSave": {
+    "message": "Salvează"
+  },
+  "editAllow": {
+    "message": "Permite acest site"
+  },
+  "editNeedsOk": {
+    "message": "Această salvare are nevoie de acordul tău: vezi fereastra Imgkeep care tocmai s-a deschis."
+  },
+  "reviewTitle": {
+    "message": "Îți place Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "O evaluare în magazin îi ajută pe alții să găsească extensia. Durează câteva secunde și te întrebăm o singură dată."
+  },
+  "reviewRate": {
+    "message": "Evaluează Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Nu, mulțumesc"
+  },
+  "reviewThanks": {
+    "message": "Mulțumim!"
+  },
+  "reviewOk": {
+    "message": "Am înțeles. Nu te mai întrebăm."
+  },
+  "findWindowTitle": {
+    "message": "Găsește imaginea"
+  },
+  "findEnableTitle": {
+    "message": "Găsește imaginile pe care site-urile le acoperă"
+  },
+  "findEnableBody": {
+    "message": "Unele site-uri, precum Instagram și Pinterest, își acoperă imaginile cu un alt strat, așa că un clic dreapta nu ajunge la ele. Imgkeep poate găsi pentru tine imaginea de sub acel strat."
+  },
+  "findPromise": {
+    "message": "Imgkeep se uită la o pagină doar atunci când îi ceri să găsească o imagine acolo, doar acea pagină, doar atunci. Nu modifică niciodată o pagină."
+  },
+  "findTurnOn": {
+    "message": "Activează"
+  },
+  "findDenied": {
+    "message": "Nu a fost activat. Îl poți activa oricând în Opțiuni."
+  },
+  "findOnTitle": {
+    "message": "Activat"
+  },
+  "findOnBody": {
+    "message": "Dă din nou clic dreapta pe imagine și alege „Imgkeep: Găsește imaginea aici”."
+  },
+  "findPickTitle": {
+    "message": "Care imagine?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep nu și-a dat seama la ce imagine te refereai. Alege una:"
+  },
+  "findPickOne": {
+    "message": "Imaginea $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Nu s-a găsit nicio imagine aici"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep nu a găsit nicio imagine în această parte a paginii. Dă clic dreapta chiar pe fotografie sau deschide fotografia pe pagina ei și încearcă din nou."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep nu a putut citi această pagină"
+  },
+  "findErrorBody": {
+    "message": "Reîncarcă pagina, apoi dă clic dreapta pe imagine și alege din nou „Găsește imaginea aici”."
+  },
+  "paletteTitle": {
+    "message": "Paletă de culori"
+  },
+  "paletteLoading": {
+    "message": "Se caută culorile…"
+  },
+  "paletteCount": {
+    "message": "Culori"
+  },
+  "paletteSwatches": {
+    "message": "Culorile principale ale imaginii, cele mai prezente primele"
+  },
+  "paletteCopyOne": {
+    "message": "Copiază $VALUE$ ($SHARE$ din imagine)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Ai copiat $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Copiază-le pe toate ca"
+  },
+  "paletteCodeCss": {
+    "message": "Variabile CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Listă"
+  },
+  "paletteCopiedAll": {
+    "message": "Ai copiat toate culorile ca $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Salvează ca"
+  },
+  "paletteSavePng": {
+    "message": "Mostre PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paletă GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Mostre Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Folderul tău nu era disponibil, așa că fișierul a ajuns în Descărcări: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Imaginea este complet transparentă, deci nu are culori de extras."
+  },
+  "paletteCopyFailed": {
+    "message": "Nu am putut copia. Dă clic în această fereastră, apoi încearcă din nou."
+  },
+  "paletteNote": {
+    "message": "Calculat pe computerul tău. Imaginea și culorile ei nu pleacă de aici."
+  }
+}

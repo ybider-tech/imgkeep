@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "ಚಿತ್ರವನ್ನು PNG, JPG, WebP, GIF ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ — Imgkeep"
+  },
+  "extDescription": {
+    "message": "ಚಿತ್ರವನ್ನು ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ PNG, JPG, WebP, GIF ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ, ಅಥವಾ ಬಣ್ಣದ ಪ್ಯಾಲೆಟ್ ಪಡೆಯಿರಿ. ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ. ವೈಯಕ್ತಿಕ ಡೇಟಾ ಇಲ್ಲ."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (ಕೊನೆಯ ಬಾರಿ ಬಳಸಿದ್ದು)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (ಆನಿಮೇಶನ್ ಉಳಿಯುತ್ತದೆ)"
+  },
+  "menuOriginal": {
+    "message": "ಮೂಲ ಸ್ವರೂಪ"
+  },
+  "menuCopyPng": {
+    "message": "PNG ಆಗಿ ನಕಲಿಸಿ"
+  },
+  "menuPalette": {
+    "message": "ಬಣ್ಣದ ಪ್ಯಾಲೆಟ್ ಪಡೆಯಿರಿ"
+  },
+  "menuMoreOptions": {
+    "message": "ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: ಇಲ್ಲಿ ಚಿತ್ರವನ್ನು ಹುಡುಕಿ…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ ಹೊಸದು",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep ಇಷ್ಟವಾಯಿತೇ? ರೇಟ್ ಮಾಡಿ…"
+  },
+  "askErrBlocked": {
+    "message": "ಪ್ರವೇಶ ಅನುಮತಿಸಿದ್ದರೂ ಸೈಟ್ ಈ ಚಿತ್ರವನ್ನು ಕೊಡಲಿಲ್ಲ. ಸರ್ವರ್ ಡೌನ್ ಆಗಿರಬಹುದು, ಅಥವಾ ಅದು ಚಿತ್ರವನ್ನು ತನ್ನ ಪುಟಗಳೊಳಗೆ ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ."
+  },
+  "askErrHttp": {
+    "message": "ಸೈಟ್ ಚಿತ್ರದ ಬದಲು ದೋಷವನ್ನು ಹಿಂತಿರುಗಿಸಿತು."
+  },
+  "askErrDecode": {
+    "message": "ಈ ಫೈಲ್ ಅನ್ನು ಚಿತ್ರವಾಗಿ ಓದಲು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ಗೆ ಆಗಲಿಲ್ಲ."
+  },
+  "askErrUnsupported": {
+    "message": "ಈ ಬ್ರೌಸರ್ ಆವೃತ್ತಿಯಿಂದ ಈ ಸ್ವರೂಪವನ್ನು ರಚಿಸಲು ಆಗುವುದಿಲ್ಲ. ಬದಲಿಗೆ PNG ಪ್ರಯತ್ನಿಸಿ."
+  },
+  "askErrBlob": {
+    "message": "ಈ ಚಿತ್ರ ಪುಟದೊಳಗೆ ಮಾತ್ರ ಇದೆ (blob: ಲಿಂಕ್), ಹಾಗಾಗಿ Imgkeep ಗೆ ಅದನ್ನು ಇನ್ನೂ ಉಳಿಸಲು ಆಗುವುದಿಲ್ಲ. ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಕೆಲಸ ಮಾಡುತ್ತದೆ."
+  },
+  "askErrTooLarge": {
+    "message": "ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಪರಿವರ್ತಿಸಲು ಈ ಚಿತ್ರ ತುಂಬಾ ದೊಡ್ಡದು."
+  },
+  "askErrTimeout": {
+    "message": "ಈ ಚಿತ್ರವನ್ನು ಪರಿವರ್ತಿಸಲು ತುಂಬಾ ಸಮಯ ಹಿಡಿಯಿತು, ಹಾಗಾಗಿ Imgkeep ನಿಲ್ಲಿಸಿತು. PNG ಪ್ರಯತ್ನಿಸಿ, ಅಥವಾ ಚಿಕ್ಕ ಇಲ್ಲವೇ ಕಡಿಮೆ ಅವಧಿಯ ಆನಿಮೇಶನ್ ಬಳಸಿ."
+  },
+  "askErrDownload": {
+    "message": "ನಿಮ್ಮ ಬ್ರೌಸರ್‌ಗೆ ಡೌನ್‌ಲೋಡ್ ಶುರು ಮಾಡಲು ಆಗಲಿಲ್ಲ."
+  },
+  "askErrWrite": {
+    "message": "ನಿಮ್ಮ ಫೋಲ್ಡರ್‌ಗೆ ಫೈಲ್ ಬರೆಯಲು Imgkeep ಗೆ ಆಗಲಿಲ್ಲ."
+  },
+  "askErrExpired": {
+    "message": "ಈ ಉಳಿಸುವಿಕೆಯ ಅವಧಿ ಮೀರಿದೆ. ಚಿತ್ರವನ್ನು ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+  },
+  "askErrUnknown": {
+    "message": "ಈ ಚಿತ್ರವನ್ನು ಉಳಿಸುವಾಗ ಏನೋ ತಪ್ಪಾಯಿತು."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ ಫ್ರೇಮ್‌ಗಳು. GIF ಗೆ $MAX$ ಮಿತಿ.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ ಪಿಕ್ಸೆಲ್ × $COUNT$ ಫ್ರೇಮ್‌ಗಳು ಇಲ್ಲಿ GIF ಹಿಡಿಸಬಹುದಾದ್ದಕ್ಕಿಂತ ಹೆಚ್ಚು.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "ಈ ಹೆಸರಿನ ಫೈಲ್‌ಗಳು ತುಂಬಾ ಇವೆ."
+  },
+  "askSaving": {
+    "message": "ಉಳಿಸಲಾಗುತ್ತಿದೆ…"
+  },
+  "askSaved": {
+    "message": "ಉಳಿಸಲಾಗಿದೆ."
+  },
+  "askSavedAs": {
+    "message": "$PATH$ ಆಗಿ ಉಳಿಸಲಾಗಿದೆ",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ ಗೆ ಉಳಿಸಲಾಗಿದೆ",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "ಉಳಿಸಲು ಏನೂ ಇಲ್ಲ"
+  },
+  "askClose": {
+    "message": "ಮುಚ್ಚಿ"
+  },
+  "askRetry": {
+    "message": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ"
+  },
+  "askOpenImage": {
+    "message": "ಚಿತ್ರ ತೆರೆಯಿರಿ"
+  },
+  "askCancel": {
+    "message": "ರದ್ದುಮಾಡಿ"
+  },
+  "askHostTitle": {
+    "message": "ಈ ಸೈಟ್‌ನ ಚಿತ್ರಗಳಿಗೆ ಅನುಮತಿ ನೀಡಬೇಕೆ?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ ತನ್ನ ಚಿತ್ರಗಳನ್ನು ಬೇರೆ ಸೈಟ್‌ಗಳು ಓದದಂತೆ ತಡೆಯುತ್ತದೆ, ಹಾಗಾಗಿ Imgkeep ಗೆ ಇದನ್ನು ಇನ್ನೂ ಪರಿವರ್ತಿಸಲು ಆಗುವುದಿಲ್ಲ.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "ಈ ಅನುಮತಿ ಈ ಒಂದು ಸೈಟ್‌ಗೆ ಮಾತ್ರ, ನೀವು ಆರಿಸಿದ ಚಿತ್ರಗಳನ್ನು ಪಡೆಯಲು. ಯಾವಾಗ ಬೇಕಾದರೂ ಆಯ್ಕೆಗಳಲ್ಲಿ ಇದನ್ನು ತೆಗೆದುಹಾಕಬಹುದು."
+  },
+  "askAllowAndSave": {
+    "message": "ಅನುಮತಿಸಿ ಮತ್ತು ಉಳಿಸಿ"
+  },
+  "askNotAllowed": {
+    "message": "ಅನುಮತಿ ನೀಡಲಿಲ್ಲ. ಏನೂ ಉಳಿಸಲಾಗಿಲ್ಲ."
+  },
+  "askSaveOriginal": {
+    "message": "ಬದಲಿಗೆ ಮೂಲ ಸ್ವರೂಪದಲ್ಲಿ ಉಳಿಸಿ"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” ಅನ್ನು ಮತ್ತೆ ಸಂಪರ್ಕಿಸಿ",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "ಒಂದು ಫೋಲ್ಡರ್ ಆಯ್ಕೆಮಾಡಿ"
+  },
+  "askReconnectBody": {
+    "message": "ಈ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಮತ್ತೆ ಉಳಿಸಲು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ಗೆ ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಬೇಕು."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep ನಿಮ್ಮ ಚಿತ್ರಗಳನ್ನು ಎಲ್ಲಿ ಉಳಿಸಬೇಕು ಆ ಫೋಲ್ಡರ್ ಆರಿಸಿ."
+  },
+  "askEveryVisit": {
+    "message": "ನಿಮ್ಮ ಬ್ರೌಸರ್ ಕೇಳಿದಾಗ $OPTION$ ಆಯ್ಕೆಮಾಡಿ, ಆಗ ಅದು ಮತ್ತೆ ಕೇಳುವುದಿಲ್ಲ.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“ಪ್ರತಿ ಭೇಟಿಯಲ್ಲೂ ಅನುಮತಿಸಿ”"
+  },
+  "askReconnectButton": {
+    "message": "ಮತ್ತೆ ಸಂಪರ್ಕಿಸಿ ಉಳಿಸಿ"
+  },
+  "askChooseButton": {
+    "message": "ಫೋಲ್ಡರ್ ಆಯ್ಕೆಮಾಡಿ ಉಳಿಸಿ"
+  },
+  "askErrorTitle": {
+    "message": "ಈ ಚಿತ್ರವನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ"
+  },
+  "askFolderDenied": {
+    "message": "ಫೋಲ್ಡರ್‌ಗೆ ಪ್ರವೇಶವನ್ನು ನಿಮ್ಮ ಬ್ರೌಸರ್ ಅನುಮತಿಸಲಿಲ್ಲ. ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ."
+  },
+  "askNoFolder": {
+    "message": "ಯಾವ ಫೋಲ್ಡರ್ ಕೂಡ ಆಯ್ಕೆಯಾಗಿಲ್ಲ. ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep ಆಯ್ಕೆಗಳು"
+  },
+  "optSaved": {
+    "message": "ಉಳಿಸಲಾಗಿದೆ"
+  },
+  "optWhereTitle": {
+    "message": "ಎಲ್ಲಿ ಉಳಿಸಬೇಕು"
+  },
+  "optSaveMode": {
+    "message": "ಉಳಿಸುವ ವಿಧಾನ"
+  },
+  "optModeDownloads": {
+    "message": "ಡೌನ್‌ಲೋಡ್‌ಗಳ ಫೋಲ್ಡರ್"
+  },
+  "optModeDownloadsHint": {
+    "message": "ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನ ಡೌನ್‌ಲೋಡ್ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸುತ್ತದೆ. ಯಾವ ಪ್ರಶ್ನೆಯೂ ಇಲ್ಲ."
+  },
+  "optModeFolder": {
+    "message": "ನೀವು ಆಯ್ಕೆಮಾಡುವ ಫೋಲ್ಡರ್"
+  },
+  "optModeFolderHint": {
+    "message": "ನೇರವಾಗಿ ನಿಮ್ಮ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಬರೆಯುತ್ತದೆ. ಬ್ರೌಸರ್ ಮರುಆರಂಭವಾದ ಮೇಲೆ ಮತ್ತೆ ಸಂಪರ್ಕಿಸಲು ಕೇಳಬಹುದು."
+  },
+  "optModeAsk": {
+    "message": "ಪ್ರತಿ ಬಾರಿಯೂ ಕೇಳಿ"
+  },
+  "optModeAskHint": {
+    "message": "ಪ್ರತಿ ಚಿತ್ರಕ್ಕೂ ಬ್ರೌಸರ್‌ನ Save As ಸಂವಾದವನ್ನು ತೋರಿಸುತ್ತದೆ."
+  },
+  "optChooseFolder": {
+    "message": "ಫೋಲ್ಡರ್ ಆಯ್ಕೆಮಾಡಿ…"
+  },
+  "optChangeFolder": {
+    "message": "ಫೋಲ್ಡರ್ ಬದಲಾಯಿಸಿ…"
+  },
+  "optNoFolder": {
+    "message": "ಇನ್ನೂ ಯಾವ ಫೋಲ್ಡರ್ ಕೂಡ ಆಯ್ಕೆಯಾಗಿಲ್ಲ."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — ಸಂಪರ್ಕಗೊಂಡಿದೆ",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — ಮತ್ತೆ ಸಂಪರ್ಕಿಸಲು ಕೇಳುತ್ತದೆ",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "ಉಪಫೋಲ್ಡರ್"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "ಉದಾ. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "ಐಚ್ಛಿಕ. ಒಳಗಿನ ಫೋಲ್ಡರ್‌ಗಳಿಗೆ <code>/</code> ಬಳಸಿ. ಫೈಲ್ ಹೆಸರುಗಳಲ್ಲಿರುವ ಅದೇ ಟೋಕನ್‌ಗಳು."
+  },
+  "optNamesTitle": {
+    "message": "ಫೈಲ್ ಹೆಸರುಗಳು"
+  },
+  "optTemplate": {
+    "message": "ಹೆಸರಿನ ಟೆಂಪ್ಲೇಟ್"
+  },
+  "optTokensHint": {
+    "message": "ಟೋಕನ್‌ಗಳು: <code>{name}</code> ಮೂಲ ಹೆಸರು, <code>{host}</code> ತಾಣ, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ಮತ್ತು <code>{h}</code> ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ ಗಾತ್ರ. ಇರುವ ಫೈಲ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಮೇಲೆ ಬರೆಯುವುದಿಲ್ಲ."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com ನಿಂದ summer-banner, 1600×900, PNG ಆಗಿ — ಮುನ್ನೋಟ:"
+  },
+  "optQualityTitle": {
+    "message": "ಗುಣಮಟ್ಟ ಮತ್ತು ಗಾತ್ರ"
+  },
+  "optJpgQuality": {
+    "message": "JPG ಗುಣಮಟ್ಟ"
+  },
+  "optWebpQuality": {
+    "message": "WebP ಗುಣಮಟ್ಟ"
+  },
+  "optJpgBackground": {
+    "message": "JPG ಹಿನ್ನೆಲೆ ಬಣ್ಣ"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG ನಲ್ಲಿ ಪಾರದರ್ಶಕತೆ ಇಲ್ಲ, ಹಾಗಾಗಿ ಪಾರದರ್ಶಕ ಭಾಗಗಳಿಗೆ ಈ ಬಣ್ಣ ಸಿಗುತ್ತದೆ."
+  },
+  "optMaxWidth": {
+    "message": "ಗರಿಷ್ಠ ಅಗಲ"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "ಮೂಲ ಗಾತ್ರ"
+  },
+  "optMaxWidthHint": {
+    "message": "ಐಚ್ಛಿಕ, ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ. ಅಗಲವಾದ ಚಿತ್ರಗಳನ್ನು ಅವುಗಳ ಆಕಾರ ಉಳಿಸಿಕೊಂಡು ಹೊಂದುವಂತೆ ಚಿಕ್ಕದಾಗಿಸಲಾಗುತ್ತದೆ; ಸಣ್ಣವುಗಳನ್ನು ಎಂದಿಗೂ ದೊಡ್ಡದಾಗಿಸುವುದಿಲ್ಲ. ಮೂಲ ಫಾರ್ಮ್ಯಾಟ್ ಅನ್ನು ಯಾವಾಗಲೂ ಇದ್ದಂತೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ."
+  },
+  "optSitesTitle": {
+    "message": "ನೀವು ಅನುಮತಿಸಿದ ಸೈಟ್‌ಗಳು"
+  },
+  "optSitesEmpty": {
+    "message": "ಇನ್ನೂ ಯಾವುದೂ ಇಲ್ಲ. ನೀವು ಪರಿವರ್ತಿಸಲು ಬಯಸಿದ ಚಿತ್ರವನ್ನು ಸೈಟ್ ತಡೆದಾಗ ಮಾತ್ರ Imgkeep ಕೇಳುತ್ತದೆ."
+  },
+  "optFindTitle": {
+    "message": "ಸೈಟ್‌ಗಳು ಮುಚ್ಚಿಟ್ಟ ಚಿತ್ರಗಳು"
+  },
+  "optFindLabel": {
+    "message": "ಹೊದಿಕೆ ಪದರಗಳ ಕೆಳಗಿನ ಚಿತ್ರಗಳನ್ನು ಹುಡುಕಿ"
+  },
+  "optFindHint": {
+    "message": "Instagram ಮತ್ತು Pinterest ನಂತಹ ಸೈಟ್‌ಗಳಲ್ಲಿ ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ Imgkeep: ಇಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಿ ಆಯ್ಕೆಮಾಡಿ. ಅಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಲು ನೀವು ಹೇಳಿದಾಗ ಮಾತ್ರ Imgkeep ಆ ಪುಟವನ್ನು ನೋಡುತ್ತದೆ — ಆ ಪುಟವನ್ನಷ್ಟೇ, ಆಗಷ್ಟೇ. ಅದು ಪುಟವನ್ನು ಎಂದಿಗೂ ಬದಲಾಯಿಸುವುದಿಲ್ಲ."
+  },
+  "optFindOn": {
+    "message": "ಆನ್ ಮಾಡಲಾಗಿದೆ."
+  },
+  "optFindOff": {
+    "message": "ಆಫ್ ಮಾಡಲಾಗಿದೆ."
+  },
+  "optCountsTitle": {
+    "message": "ಅನಾಮಧೇಯ ಬಳಕೆ ಎಣಿಕೆಗಳು"
+  },
+  "optCountsLabel": {
+    "message": "ಅನಾಮಧೇಯ ದೈನಂದಿನ ಸಾರಾಂಶ ಕಳುಹಿಸಿ"
+  },
+  "optCountsHint": {
+    "message": "ದಿನಕ್ಕೊಮ್ಮೆ Imgkeep \"JPG ಆಗಿ 12 ಉಳಿಸುವಿಕೆ, 1 ವಿಫಲ\" ಎಂಬಂತಹ ಸಾರಾಂಶವನ್ನು PostHog ಗೆ ಕಳುಹಿಸುತ್ತದೆ — ಇದು EU ನಲ್ಲಿ ಹೋಸ್ಟ್ ಆಗಿರುವ ಮುಕ್ತ-ಮೂಲ ಅನಾಲಿಟಿಕ್ಸ್ ಸೇವೆ. ಯಾವ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಸುಧಾರಿಸಬೇಕು ಮತ್ತು ಯಾವ ಉಳಿಸುವಿಕೆಗಳು ವಿಫಲವಾಗುತ್ತವೆ ಎಂದು ತಿಳಿಯಲು ಇದು ನೆರವಾಗುತ್ತದೆ. ಚಿತ್ರಗಳು, ಪುಟದ ವಿಳಾಸಗಳು, ಫೈಲ್ ಹೆಸರುಗಳು ಅಥವಾ ನಿಮ್ಮನ್ನು ಗುರುತಿಸುವ ಯಾವುದೂ ಎಂದಿಗೂ ಇಲ್ಲ."
+  },
+  "optCountsShow": {
+    "message": "ಏನು ಕಳುಹಿಸಲಾಗುತ್ತದೆ ಎಂದು ಕರಾರುವಾಕ್ಕಾಗಿ ನೋಡಿ"
+  },
+  "optCountsToday": {
+    "message": "ಇಂದು ಎಣಿಸಿದ್ದು (ಇಂದಿನ ನಂತರ ಕಳುಹಿಸಲಾಗುತ್ತದೆ):"
+  },
+  "optCountsLast": {
+    "message": "ಕಳೆದ ಬಾರಿ ಕಳುಹಿಸಿದ ಸಾರಾಂಶ:"
+  },
+  "optCountsNone": {
+    "message": "ಇನ್ನೂ ಏನೂ ಇಲ್ಲ."
+  },
+  "optCountsOff": {
+    "message": "ಆಫ್. ಏನನ್ನೂ ಎಣಿಸುವುದಿಲ್ಲ, ಕಳುಹಿಸುವುದಿಲ್ಲ."
+  },
+  "optRemove": {
+    "message": "ತೆಗೆದುಹಾಕಿ"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ ಗೆ ಇರುವ ಪ್ರವೇಶ ತೆಗೆದುಹಾಕಿ",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — ಶೀಘ್ರದಲ್ಲೇ"
+  },
+  "optProBody": {
+    "message": "ನೀವು ಹೆಚ್ಚು ಬಳಸುವ ಗಾತ್ರ ಮತ್ತು ಫಾರ್ಮ್ಯಾಟ್‌ಗಳಿಗೆ ಪ್ರಿಸೆಟ್‌ಗಳು, \"200 KB ಒಳಗೆ\" ಎಂಬಂತಹ ಫೈಲ್-ಗಾತ್ರದ ಗುರಿಗಳು, ಪ್ರತಿ ಸೈಟ್‌ನ ಚಿತ್ರಗಳನ್ನು ಸರಿಯಾದ ಫೋಲ್ಡರ್‌ಗೆ ಕಳುಹಿಸುವ ನಿಯಮಗಳು, ಮತ್ತು ಪ್ರತಿ ಚಿತ್ರ ಎಲ್ಲಿಂದ ಬಂತು ಎಂಬ ದಾಖಲೆ."
+  },
+  "optProFree": {
+    "message": "ಇಂದು ನೀವು ಬಳಸುವ ಎಲ್ಲವೂ ಉಚಿತವಾಗಿಯೇ ಉಳಿಯುತ್ತದೆ."
+  },
+  "optGetNotified": {
+    "message": "ಸೂಚನೆ ಪಡೆಯಿರಿ"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep ಏನು ಮಾಡಬಲ್ಲದು, ಏನು ಮಾಡಲಾರದು"
+  },
+  "optPermissions": {
+    "message": "ಅದು ಕೇಳುವ ಅನುಮತಿಗಳು:"
+  },
+  "optOptionalPermissions": {
+    "message": "ನೀವು ಚಿತ್ರಗಳನ್ನು ಹುಡುಕಿ ಆನ್ ಮಾಡಿದರೆ ಮಾತ್ರ:"
+  },
+  "optPermissionsLabel": {
+    "message": "ಅನುಮತಿಗಳು"
+  },
+  "optTrust1": {
+    "message": "ಚಿತ್ರಗಳನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರಿನಲ್ಲೇ ಪರಿವರ್ತಿಸಲಾಗುತ್ತದೆ, ಎಂದಿಗೂ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ. Imgkeep ಕಳುಹಿಸುವ ಇನ್ನೊಂದೇ ವಿಷಯ ಎಂದರೆ ಮೇಲಿನ ಅನಾಮಧೇಯ ದೈನಂದಿನ ಸಾರಾಂಶ, ಅದನ್ನೂ ನೀವು ಆಫ್ ಮಾಡಬಹುದು."
+  },
+  "optTrust2": {
+    "message": "ಜಾಹೀರಾತುಗಳಿಲ್ಲ, ಸ್ವಾಗತ ಟ್ಯಾಬ್‌ಗಳಿಲ್ಲ. ನೀವು ಕೇಳಿದಾಗ ಅಥವಾ ಉಳಿಸುವಿಕೆಗೆ ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಬೇಕಾದಾಗ ಮಾತ್ರ ಸಣ್ಣ ವಿಂಡೋಗಳು ತೆರೆಯುತ್ತವೆ. ನೀವು ಸ್ವಲ್ಪ ಕಾಲ ಬಳಸಿದ ನಂತರ Imgkeep ಒಮ್ಮೆ ಮಾತ್ರ ರೇಟಿಂಗ್ ಕೇಳುತ್ತದೆ."
+  },
+  "optTrust4": {
+    "message": "ಅಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಲು ನೀವು ಹೇಳಿದಾಗ ಮಾತ್ರ Imgkeep ಆ ಪುಟವನ್ನು ನೋಡುತ್ತದೆ — ಆ ಪುಟವನ್ನಷ್ಟೇ, ಆಗಷ್ಟೇ. ಅದು ಪುಟವನ್ನು ಎಂದಿಗೂ ಬದಲಾಯಿಸುವುದಿಲ್ಲ."
+  },
+  "optTrust3": {
+    "message": "ಪ್ರತಿ ಉಚಿತ ವೈಶಿಷ್ಟ್ಯವೂ ಉಚಿತವಾಗಿಯೇ ಉಳಿಯುತ್ತದೆ."
+  },
+  "optVersion": {
+    "message": "ಆವೃತ್ತಿ"
+  },
+  "optWhatsNew": {
+    "message": "ಹೊಸದೇನಿದೆ"
+  },
+  "copyWorking": {
+    "message": "ಚಿತ್ರವನ್ನು ನಕಲಿಸಲಾಗುತ್ತಿದೆ…"
+  },
+  "copyDone": {
+    "message": "PNG ಆಗಿ ನಕಲಿಸಲಾಗಿದೆ. ಎಲ್ಲಿ ಬೇಕಾದರೂ ಅಂಟಿಸಿ."
+  },
+  "copyFailed": {
+    "message": "ಚಿತ್ರವನ್ನು ನಕಲಿಸಲು ಆಗಲಿಲ್ಲ"
+  },
+  "copyFailedNote": {
+    "message": "ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಬದಲಾಗಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ, ಅಥವಾ ಬದಲಿಗೆ ಚಿತ್ರವನ್ನು PNG ಫೈಲ್ ಆಗಿ ಉಳಿಸಿ."
+  },
+  "copySavePng": {
+    "message": "ಬದಲಿಗೆ PNG ಆಗಿ ಉಳಿಸಿ"
+  },
+  "copyAllowAndCopy": {
+    "message": "ಅನುಮತಿಸಿ ಮತ್ತು ನಕಲಿಸಿ"
+  },
+  "editTitle": {
+    "message": "ಇನ್ನಷ್ಟು ಆಯ್ಕೆಗಳು"
+  },
+  "editLoading": {
+    "message": "ಚಿತ್ರ ಲೋಡ್ ಆಗುತ್ತಿದೆ…"
+  },
+  "editUpdating": {
+    "message": "ಮುನ್ನೋಟ ನವೀಕರಿಸುತ್ತಿದೆ…"
+  },
+  "editPreviewAlt": {
+    "message": "ಫಲಿತಾಂಶದ ಮುನ್ನೋಟ"
+  },
+  "editOriginal": {
+    "message": "ಮೂಲ"
+  },
+  "editResult": {
+    "message": "ಫಲಿತಾಂಶ"
+  },
+  "editFormat": {
+    "message": "ಸ್ವರೂಪ"
+  },
+  "editPngHint": {
+    "message": "PNG ಪ್ರತಿ ಪಿಕ್ಸೆಲ್ ಅನ್ನೂ ಉಳಿಸಿಕೊಳ್ಳುತ್ತದೆ. ಫೈಲ್ ಸಣ್ಣದಾಗಬೇಕಿದ್ದರೆ ಗರಿಷ್ಠ ಅಗಲವನ್ನು ಕಡಿಮೆ ಮಾಡಿ ಅಥವಾ JPG ಅಥವಾ WebP ಆಯ್ಕೆಮಾಡಿ."
+  },
+  "editIcoHint": {
+    "message": "16, 32 ಮತ್ತು 48 px ನಲ್ಲಿ, ಚಿತ್ರ ಸಾಕಷ್ಟು ದೊಡ್ಡದಿದ್ದರೆ 256 px ನಲ್ಲೂ ಚಿತ್ರವಿರುವ ಐಕಾನ್ ಫೈಲ್. ಚೌಕವಲ್ಲದ ಚಿತ್ರಗಳ ಅಂಚುಗಳು ಪಾರದರ್ಶಕವಾಗಿರುತ್ತವೆ."
+  },
+  "editBmpHint": {
+    "message": "ಎಲ್ಲಾ ಅಪ್ಲಿಕೇಶನ್‌ಗಳೂ ತೆರೆಯುವ ಸರಳ ಬಿಟ್‌ಮ್ಯಾಪ್. ಫೈಲ್‌ಗಳು ದೊಡ್ಡವಾಗಿರುತ್ತವೆ, ಮತ್ತು ಪಾರದರ್ಶಕ ಭಾಗಗಳಿಗೆ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಬರುತ್ತದೆ."
+  },
+  "editAvifHint": {
+    "message": "ಅದೇ ರೀತಿ ಕಾಣುವ JPG ಗಿಂತ ಹಲವು ಬಾರಿ ಅರ್ಧದಷ್ಟೇ ಗಾತ್ರ. ಆಧುನಿಕ ಬ್ರೌಸರ್‌ಗಳು ಮತ್ತು ಇಂದಿನ ಬಹುತೇಕ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಇದನ್ನು ತೆರೆಯುತ್ತವೆ; ಕೆಲವು ಹಳೆಯ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ತೆರೆಯುವುದಿಲ್ಲ."
+  },
+  "editMaxWidthHint": {
+    "message": "ಪಿಕ್ಸೆಲ್‌ಗಳಲ್ಲಿ. ಆಕಾರ ಹಾಗೇ ಉಳಿಯುತ್ತದೆ, ಎಂದಿಗೂ ದೊಡ್ಡದು ಮಾಡುವುದಿಲ್ಲ."
+  },
+  "editBackground": {
+    "message": "ಹಿನ್ನೆಲೆ"
+  },
+  "editQuality": {
+    "message": "ಗುಣಮಟ್ಟ"
+  },
+  "editFileName": {
+    "message": "ಫೈಲ್ ಹೆಸರು"
+  },
+  "editSave": {
+    "message": "ಉಳಿಸಿ"
+  },
+  "editAllow": {
+    "message": "ಈ ಸೈಟ್‌ಗೆ ಅನುಮತಿ ನೀಡಿ"
+  },
+  "editNeedsOk": {
+    "message": "ಈ ಉಳಿಸುವಿಕೆಗೆ ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಬೇಕು: ಈಗ ತೆರೆದ Imgkeep ವಿಂಡೋ ನೋಡಿ."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep ಇಷ್ಟವಾಯಿತೇ?"
+  },
+  "reviewBody": {
+    "message": "ಸ್ಟೋರ್‌ನಲ್ಲಿ ನೀಡುವ ರೇಟಿಂಗ್ ಇದನ್ನು ಹುಡುಕಲು ಇತರರಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಕೆಲವೇ ಸೆಕೆಂಡುಗಳ ಕೆಲಸ, ಮತ್ತು ನಾವು ಇದನ್ನು ಒಮ್ಮೆ ಮಾತ್ರ ಕೇಳುತ್ತೇವೆ."
+  },
+  "reviewRate": {
+    "message": "Imgkeep ಗೆ ರೇಟಿಂಗ್ ನೀಡಿ"
+  },
+  "reviewNo": {
+    "message": "ಬೇಡ, ಧನ್ಯವಾದ"
+  },
+  "reviewThanks": {
+    "message": "ಧನ್ಯವಾದಗಳು!"
+  },
+  "reviewOk": {
+    "message": "ಆಯಿತು. ಮತ್ತೆ ಕೇಳುವುದಿಲ್ಲ."
+  },
+  "findWindowTitle": {
+    "message": "ಚಿತ್ರ ಹುಡುಕಿ"
+  },
+  "findEnableTitle": {
+    "message": "ಸೈಟ್‌ಗಳು ಮುಚ್ಚಿಟ್ಟ ಚಿತ್ರಗಳನ್ನು ಹುಡುಕಿ"
+  },
+  "findEnableBody": {
+    "message": "Instagram ಮತ್ತು Pinterest ನಂತಹ ಕೆಲವು ಸೈಟ್‌ಗಳು ತಮ್ಮ ಚಿತ್ರಗಳ ಮೇಲೆ ಇನ್ನೊಂದು ಪದರವನ್ನು ಹಾಕುತ್ತವೆ, ಹಾಗಾಗಿ ಬಲ-ಕ್ಲಿಕ್ ಆ ಚಿತ್ರವನ್ನು ತಲುಪುವುದಿಲ್ಲ. ಆ ಪದರದ ಕೆಳಗಿರುವ ಚಿತ್ರವನ್ನು Imgkeep ನಿಮಗಾಗಿ ಹುಡುಕಬಲ್ಲದು."
+  },
+  "findPromise": {
+    "message": "ಒಂದು ಪುಟದಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಲು ನೀವು ಹೇಳಿದಾಗ ಮಾತ್ರ Imgkeep ಆ ಪುಟವನ್ನು ನೋಡುತ್ತದೆ, ಆ ಪುಟವನ್ನಷ್ಟೇ, ಆಗಷ್ಟೇ. ಅದು ಪುಟವನ್ನು ಎಂದಿಗೂ ಬದಲಾಯಿಸುವುದಿಲ್ಲ."
+  },
+  "findTurnOn": {
+    "message": "ಆನ್ ಮಾಡಿ"
+  },
+  "findDenied": {
+    "message": "ಆನ್ ಆಗಿಲ್ಲ. ಆಯ್ಕೆಗಳಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ಇದನ್ನು ಆನ್ ಮಾಡಬಹುದು."
+  },
+  "findOnTitle": {
+    "message": "ಆನ್ ಆಗಿದೆ"
+  },
+  "findOnBody": {
+    "message": "ಚಿತ್ರದ ಮೇಲೆ ಮತ್ತೊಮ್ಮೆ ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ, “Imgkeep: ಇಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಿ” ಆಯ್ಕೆಮಾಡಿ."
+  },
+  "findPickTitle": {
+    "message": "ಯಾವ ಚಿತ್ರ?"
+  },
+  "findPickBody": {
+    "message": "ನೀವು ಯಾವ ಚಿತ್ರವನ್ನು ಸೂಚಿಸಿದಿರಿ ಎಂದು Imgkeep ಗೆ ತಿಳಿಯಲಿಲ್ಲ. ಒಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ:"
+  },
+  "findPickOne": {
+    "message": "ಚಿತ್ರ $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "ಇಲ್ಲಿ ಯಾವ ಚಿತ್ರವೂ ಸಿಗಲಿಲ್ಲ"
+  },
+  "findNothingBody": {
+    "message": "ಪುಟದ ಈ ಭಾಗದಲ್ಲಿ Imgkeep ಗೆ ಚಿತ್ರ ಸಿಗಲಿಲ್ಲ. ನೇರವಾಗಿ ಫೋಟೋದ ಮೇಲೆ ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ, ಅಥವಾ ಫೋಟೋವನ್ನು ಅದರದೇ ಪುಟದಲ್ಲಿ ತೆರೆದು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ಗೆ ಈ ಪುಟವನ್ನು ನೋಡಲಾಗಲಿಲ್ಲ"
+  },
+  "findErrorBody": {
+    "message": "ಪುಟವನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ, ನಂತರ ಚಿತ್ರದ ಮೇಲೆ ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತೆ “ಇಲ್ಲಿ ಚಿತ್ರ ಹುಡುಕಿ” ಆಯ್ಕೆಮಾಡಿ."
+  },
+  "paletteTitle": {
+    "message": "ಬಣ್ಣದ ಪ್ಯಾಲೆಟ್"
+  },
+  "paletteLoading": {
+    "message": "ಬಣ್ಣಗಳನ್ನು ಹುಡುಕುತ್ತಿದೆ…"
+  },
+  "paletteCount": {
+    "message": "ಬಣ್ಣಗಳು"
+  },
+  "paletteSwatches": {
+    "message": "ಚಿತ್ರದ ಪ್ರಮುಖ ಬಣ್ಣಗಳು, ದೊಡ್ಡದು ಮೊದಲು"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ ನಕಲಿಸಿ (ಚಿತ್ರದ $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ ನಕಲಾಯಿತು",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "ಎಲ್ಲವನ್ನೂ ಹೀಗೆ ನಕಲಿಸಿ"
+  },
+  "paletteCodeCss": {
+    "message": "CSS ವೇರಿಯಬಲ್‌ಗಳು"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "ಪಟ್ಟಿ"
+  },
+  "paletteCopiedAll": {
+    "message": "ಎಲ್ಲ ಬಣ್ಣಗಳನ್ನು $KIND$ ಆಗಿ ನಕಲಿಸಲಾಗಿದೆ",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "ಹೀಗೆ ಉಳಿಸಿ"
+  },
+  "paletteSavePng": {
+    "message": "PNG ಸ್ವಾಚ್‌ಗಳು"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP ಪ್ಯಾಲೆಟ್"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe ಸ್ವಾಚ್‌ಗಳು"
+  },
+  "paletteSavedFallback": {
+    "message": "ನಿಮ್ಮ ಫೋಲ್ಡರ್ ಲಭ್ಯವಿರಲಿಲ್ಲ, ಹಾಗಾಗಿ ಇದು Downloads ಗೆ ಹೋಯಿತು: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "ಈ ಚಿತ್ರ ಸಂಪೂರ್ಣ ಪಾರದರ್ಶಕವಾಗಿದೆ, ಹಾಗಾಗಿ ತೆಗೆದುಕೊಳ್ಳಲು ಬಣ್ಣಗಳಿಲ್ಲ."
+  },
+  "paletteCopyFailed": {
+    "message": "ನಕಲಿಸಲು ಆಗಲಿಲ್ಲ. ಈ ವಿಂಡೋದ ಒಳಗೆ ಕ್ಲಿಕ್ ಮಾಡಿ, ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+  },
+  "paletteNote": {
+    "message": "ನಿಮ್ಮ ಕಂಪ್ಯೂಟರಿನಲ್ಲೇ ಲೆಕ್ಕ ಹಾಕಲಾಗಿದೆ. ಚಿತ್ರ ಮತ್ತು ಅದರ ಬಣ್ಣಗಳು ಎಂದಿಗೂ ಅಲ್ಲಿಂದ ಹೊರಹೋಗುವುದಿಲ್ಲ."
+  }
+}

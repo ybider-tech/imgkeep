@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Сачувај слику као PNG, JPG, WebP, GIF или PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Десни клик и сачувајте слику као PNG, JPG, WebP, GIF или PDF, или узмите њену палету боја. На вашем уређају. Без личних података."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (као прошли пут)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (задржава анимацију)"
+  },
+  "menuOriginal": {
+    "message": "Изворни формат"
+  },
+  "menuCopyPng": {
+    "message": "Копирај као PNG"
+  },
+  "menuPalette": {
+    "message": "Узми палету боја"
+  },
+  "menuMoreOptions": {
+    "message": "Више опција…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Пронађи слику овде…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Ново",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Свиђа вам се Imgkeep? Оцените га…"
+  },
+  "askErrBlocked": {
+    "message": "Сајт није предао ову слику ни уз одобрен приступ. Можда је сервер недоступан или слику приказује само унутар сопствених страница."
+  },
+  "askErrHttp": {
+    "message": "Сајт је уместо слике вратио грешку."
+  },
+  "askErrDecode": {
+    "message": "Прегледач није могао да прочита ову датотеку као слику."
+  },
+  "askErrUnsupported": {
+    "message": "Ова верзија прегледача не може да направи овај формат. Пробајте PNG."
+  },
+  "askErrBlob": {
+    "message": "Ова слика постоји само унутар странице (blob: веза), па Imgkeep још не може да је сачува. Снимак екрана ће помоћи."
+  },
+  "askErrTooLarge": {
+    "message": "Ова слика је превелика за претварање у прегледачу."
+  },
+  "askErrTimeout": {
+    "message": "Претварање ове слике је трајало предуго, па је Imgkeep стао. Пробајте PNG или краћу или мању анимацију."
+  },
+  "askErrDownload": {
+    "message": "Прегледач није могао да покрене преузимање."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep није могао да упише датотеку у вашу фасциклу."
+  },
+  "askErrExpired": {
+    "message": "Ово чување је истекло. Кликните десним тастером на слику и покушајте поново."
+  },
+  "askErrUnknown": {
+    "message": "Нешто је пошло наопако при чувању ове слике."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ кадрова. GIF је ограничен на $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ пиксела × $COUNT$ кадрова је више него што GIF овде може да прими.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Превише датотека с овим именом."
+  },
+  "askSaving": {
+    "message": "Чување…"
+  },
+  "askSaved": {
+    "message": "Сачувано."
+  },
+  "askSavedAs": {
+    "message": "Сачувано као $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Сачувано у $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Нема шта да се сачува"
+  },
+  "askClose": {
+    "message": "Затвори"
+  },
+  "askRetry": {
+    "message": "Покушај поново"
+  },
+  "askOpenImage": {
+    "message": "Отвори слику"
+  },
+  "askCancel": {
+    "message": "Откажи"
+  },
+  "askHostTitle": {
+    "message": "Дозволити слике с овог сајта?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ не дозвољава другим сајтовима да читају његове слике, па Imgkeep ову још не може да претвори.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Приступ важи само за овај сајт, ради преузимања слика које изаберете. Можете га уклонити у било ком тренутку у Опцијама."
+  },
+  "askAllowAndSave": {
+    "message": "Дозволи и сачувај"
+  },
+  "askNotAllowed": {
+    "message": "Приступ није дозвољен. Ништа није сачувано."
+  },
+  "askSaveOriginal": {
+    "message": "Сачувај у изворном формату"
+  },
+  "askReconnectTitle": {
+    "message": "Поново повежи „$FOLDER$“",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Изаберите фасциклу"
+  },
+  "askReconnectBody": {
+    "message": "Прегледачу треба ваша дозвола да поново чува у ову фасциклу."
+  },
+  "askChooseBody": {
+    "message": "Изаберите фасциклу у коју ће Imgkeep чувати слике."
+  },
+  "askEveryVisit": {
+    "message": "Када прегледач затражи дозволу, изаберите $OPTION$ да не пита поново.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Дозволи при свакој посети“"
+  },
+  "askReconnectButton": {
+    "message": "Повежи поново и сачувај"
+  },
+  "askChooseButton": {
+    "message": "Изабери фасциклу и сачувај"
+  },
+  "askErrorTitle": {
+    "message": "Слика није сачувана"
+  },
+  "askFolderDenied": {
+    "message": "Прегледач није дозволио приступ фасцикли. Ништа није сачувано."
+  },
+  "askNoFolder": {
+    "message": "Фасцикла није изабрана. Ништа није сачувано."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep подешавања"
+  },
+  "optSaved": {
+    "message": "Сачувано"
+  },
+  "optWhereTitle": {
+    "message": "Место чувања"
+  },
+  "optSaveMode": {
+    "message": "Начин чувања"
+  },
+  "optModeDownloads": {
+    "message": "Фасцикла за преузимања"
+  },
+  "optModeDownloadsHint": {
+    "message": "Чува у фасциклу за преузимања вашег прегледача. Без питања."
+  },
+  "optModeFolder": {
+    "message": "Фасцикла по вашем избору"
+  },
+  "optModeFolderHint": {
+    "message": "Уписује право у вашу фасциклу. Прегледач ће можда тражити поновно повезивање након рестарта."
+  },
+  "optModeAsk": {
+    "message": "Питај сваки пут"
+  },
+  "optModeAskHint": {
+    "message": "За сваку слику приказује прегледачев прозор „Сачувај као“."
+  },
+  "optChooseFolder": {
+    "message": "Изабери фасциклу…"
+  },
+  "optChangeFolder": {
+    "message": "Промени фасциклу…"
+  },
+  "optNoFolder": {
+    "message": "Још нема изабране фасцикле."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ — повезано",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ — тражиће поновно повезивање",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Подфасцикла"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "нпр. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Необавезно. Користите <code>/</code> за угнежђене фасцикле. Исте ознаке као код имена датотека."
+  },
+  "optNamesTitle": {
+    "message": "Имена датотека"
+  },
+  "optTemplate": {
+    "message": "Шаблон имена"
+  },
+  "optTokensHint": {
+    "message": "Ознаке: <code>{name}</code> изворно име, <code>{host}</code> сајт, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> и <code>{h}</code> величина у пикселима. Постојеће датотеке се никада не преписују."
+  },
+  "optPreviewLabel": {
+    "message": "Преглед за summer-banner са shop.example.com, 1600×900, као PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Квалитет и величина"
+  },
+  "optJpgQuality": {
+    "message": "JPG квалитет"
+  },
+  "optWebpQuality": {
+    "message": "WebP квалитет"
+  },
+  "optJpgBackground": {
+    "message": "Боја позадине за JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG нема провидност, па провидна подручја добијају ову боју."
+  },
+  "optMaxWidth": {
+    "message": "Највећа ширина"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Оригинална величина"
+  },
+  "optMaxWidthHint": {
+    "message": "Опционо, у пикселима. Шире слике се смањују да стану, уз задржавање пропорција; мање се никада не увећавају. Оригинални формат се увек чува такав какав јесте."
+  },
+  "optSitesTitle": {
+    "message": "Сајтови којима сте дозволили приступ"
+  },
+  "optSitesEmpty": {
+    "message": "Још ниједан. Imgkeep пита само када сајт блокира слику коју желите да конвертујете."
+  },
+  "optFindTitle": {
+    "message": "Слике које сајтови прекривају"
+  },
+  "optFindLabel": {
+    "message": "Пронађи слике испод прекривних слојева"
+  },
+  "optFindHint": {
+    "message": "На сајтовима као што су Instagram и Pinterest, кликните десним тастером и изаберите Imgkeep: Пронађи слику овде. Imgkeep гледа страницу само када затражите да на њој пронађе слику — само ту страницу и само тада. Никада не мења страницу."
+  },
+  "optFindOn": {
+    "message": "Укључено."
+  },
+  "optFindOff": {
+    "message": "Искључено."
+  },
+  "optCountsTitle": {
+    "message": "Анонимно бројање употребе"
+  },
+  "optCountsLabel": {
+    "message": "Шаљи анонимни дневни преглед"
+  },
+  "optCountsHint": {
+    "message": "Једном дневно Imgkeep шаље преглед попут „12 чувања као JPG, 1 неуспело“ сервису PostHog, аналитичком сервису отвореног кода смештеном у ЕУ, да бисмо знали шта да побољшамо и која чувања не успевају. Никада слике, адресе страница, имена фајлова нити било шта што вас идентификује."
+  },
+  "optCountsShow": {
+    "message": "Погледајте тачно шта се шаље"
+  },
+  "optCountsToday": {
+    "message": "Избројано данас (биће послато сутра):"
+  },
+  "optCountsLast": {
+    "message": "Последњи послати преглед:"
+  },
+  "optCountsNone": {
+    "message": "Још ништа."
+  },
+  "optCountsOff": {
+    "message": "Искључено. Ништа се не броји нити шаље."
+  },
+  "optRemove": {
+    "message": "Уклони"
+  },
+  "optRemoveAccess": {
+    "message": "Уклони приступ сајту $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — ускоро"
+  },
+  "optProBody": {
+    "message": "Унапред подешене величине и формати које највише користите, циљане величине фајла попут „мање од 200 KB“, правила која слике сваког сајта шаљу у прави фолдер и евиденција о томе одакле је свака слика дошла."
+  },
+  "optProFree": {
+    "message": "Све што данас користите остаје бесплатно."
+  },
+  "optGetNotified": {
+    "message": "Обавестите ме"
+  },
+  "optTrustTitle": {
+    "message": "Шта Imgkeep може, а шта не"
+  },
+  "optPermissions": {
+    "message": "Дозволе које тражи:"
+  },
+  "optOptionalPermissions": {
+    "message": "Само ако укључите Проналажење слика:"
+  },
+  "optPermissionsLabel": {
+    "message": "Дозволе"
+  },
+  "optTrust1": {
+    "message": "Слике се конвертују на вашем рачунару и никада се не отпремају. Једино друго што Imgkeep шаље јесте горњи анонимни дневни преглед, који можете искључити."
+  },
+  "optTrust2": {
+    "message": "Без реклама и без уводних картица. Мали прозори се отварају само када их затражите или када чување тражи вашу потврду. Imgkeep једном затражи оцену, пошто га неко време користите."
+  },
+  "optTrust4": {
+    "message": "Imgkeep гледа страницу само када затражите да на њој пронађе слику — само ту страницу и само тада. Никада не мења страницу."
+  },
+  "optTrust3": {
+    "message": "Свака бесплатна функција остаје бесплатна."
+  },
+  "optVersion": {
+    "message": "Верзија"
+  },
+  "optWhatsNew": {
+    "message": "Шта је ново"
+  },
+  "copyWorking": {
+    "message": "Копирање слике…"
+  },
+  "copyDone": {
+    "message": "Копирано као PNG. Налепите где год желите."
+  },
+  "copyFailed": {
+    "message": "Није успело копирање слике"
+  },
+  "copyFailedNote": {
+    "message": "Садржај клипборда није промењен. Покушајте поново или сачувајте слику као PNG фајл."
+  },
+  "copySavePng": {
+    "message": "Сачувај као PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Дозволи и копирај"
+  },
+  "editTitle": {
+    "message": "Још опција"
+  },
+  "editLoading": {
+    "message": "Учитавање слике…"
+  },
+  "editUpdating": {
+    "message": "Освежавање приказа…"
+  },
+  "editPreviewAlt": {
+    "message": "Приказ резултата"
+  },
+  "editOriginal": {
+    "message": "Оригинал"
+  },
+  "editResult": {
+    "message": "Резултат"
+  },
+  "editFormat": {
+    "message": "Формат"
+  },
+  "editPngHint": {
+    "message": "PNG чува сваки пиксел. За мању датотеку смањите највећу ширину или изаберите JPG или WebP."
+  },
+  "editIcoHint": {
+    "message": "Датотека иконе са сликом у 16, 32 и 48 px, и у 256 px када је слика довољно велика. Слике које нису квадратне добијају провидне ивице."
+  },
+  "editBmpHint": {
+    "message": "Обична битмапа коју отвара сваки програм. Датотеке су велике, а провидни делови добијају боју позадине."
+  },
+  "editAvifHint": {
+    "message": "Често упола мања од JPG-а истог изгледа. Отварају га савремени прегледачи и већина данашњих програма; неки старији не."
+  },
+  "editMaxWidthHint": {
+    "message": "У пикселима. Чува облик, никада не увећава."
+  },
+  "editBackground": {
+    "message": "Позадина"
+  },
+  "editQuality": {
+    "message": "Квалитет"
+  },
+  "editFileName": {
+    "message": "Назив датотеке"
+  },
+  "editSave": {
+    "message": "Сачувај"
+  },
+  "editAllow": {
+    "message": "Дозволи овај сајт"
+  },
+  "editNeedsOk": {
+    "message": "За ово чување треба ваша потврда: погледајте Imgkeep прозор који се управо отворио."
+  },
+  "reviewTitle": {
+    "message": "Свиђа вам се Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Оцена у продавници помаже другима да га пронађу. Траје неколико секунди, а питаћемо вас само овај пут."
+  },
+  "reviewRate": {
+    "message": "Оцени Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Не, хвала"
+  },
+  "reviewThanks": {
+    "message": "Хвала вам!"
+  },
+  "reviewOk": {
+    "message": "У реду. Нећемо више питати."
+  },
+  "findWindowTitle": {
+    "message": "Пронађи слику"
+  },
+  "findEnableTitle": {
+    "message": "Пронађите слике које сајтови прекривају"
+  },
+  "findEnableBody": {
+    "message": "Неки сајтови, као Instagram и Pinterest, прекривају своје слике другим слојем, па десни клик не може да их дохвати. Imgkeep може да пронађе слику испод тог слоја уместо вас."
+  },
+  "findPromise": {
+    "message": "Imgkeep погледа страницу само када затражите да на њој пронађе слику — само ту страницу и само тада. Никада не мења страницу."
+  },
+  "findTurnOn": {
+    "message": "Укључи"
+  },
+  "findDenied": {
+    "message": "Није укључено. Можете га укључити у било ком тренутку у Подешавањима."
+  },
+  "findOnTitle": {
+    "message": "Укључено"
+  },
+  "findOnBody": {
+    "message": "Поново кликните десним тастером на слику и изаберите Imgkeep: Пронађи слику овде."
+  },
+  "findPickTitle": {
+    "message": "Која слика?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep не може да препозна коју сте слику мислили. Изаберите једну:"
+  },
+  "findPickOne": {
+    "message": "Слика $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Овде нема слике"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep није нашао слику на овом делу странице. Кликните десним тастером тачно на фотографију или је отворите на засебној страници па покушајте поново."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep не може да погледа ову страницу"
+  },
+  "findErrorBody": {
+    "message": "Поново учитајте страницу, па кликните десним тастером на слику и опет изаберите Пронађи слику овде."
+  },
+  "paletteTitle": {
+    "message": "Палета боја"
+  },
+  "paletteLoading": {
+    "message": "Тражење боја…"
+  },
+  "paletteCount": {
+    "message": "Боје"
+  },
+  "paletteSwatches": {
+    "message": "Главне боје слике, од најзаступљеније"
+  },
+  "paletteCopyOne": {
+    "message": "Копирај $VALUE$ ($SHARE$ слике)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Копирано: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Копирај све као"
+  },
+  "paletteCodeCss": {
+    "message": "CSS променљиве"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Списак"
+  },
+  "paletteCopiedAll": {
+    "message": "Све боје копиране као $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Сачувај као"
+  },
+  "paletteSavePng": {
+    "message": "PNG узорци"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP палета"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe узорци"
+  },
+  "paletteSavedFallback": {
+    "message": "Ваша фасцикла није била доступна, па је сачувано у Преузимања: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Ова слика је потпуно прозирна, па нема боја за узимање."
+  },
+  "paletteCopyFailed": {
+    "message": "Копирање није успело. Кликните унутар овог прозора па покушајте поново."
+  },
+  "paletteNote": {
+    "message": "Израчунато на вашем рачунару. Слика и њене боје га никада не напуштају."
+  }
+}

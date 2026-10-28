@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "I-save ang larawan bilang PNG, JPG, WebP, GIF o PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "I-right-click para i-save ang larawan bilang PNG, JPG, WebP, GIF o PDF, o kunin ang palette ng kulay. Walang personal na data."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (huling ginamit)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (pinapanatili ang animation)"
+  },
+  "menuOriginal": {
+    "message": "Orihinal na format"
+  },
+  "menuCopyPng": {
+    "message": "Kopyahin bilang PNG"
+  },
+  "menuPalette": {
+    "message": "Kunin ang palette ng kulay"
+  },
+  "menuMoreOptions": {
+    "message": "Higit pang opsyon…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Hanapin ang larawan dito…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Bago",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Nagugustuhan mo ba ang Imgkeep? I-rate ito…"
+  },
+  "askErrBlocked": {
+    "message": "Hindi ibinigay ng site ang larawang ito, kahit pinayagan ang access. Maaaring down ang server, o sa loob lang ng sarili nitong mga pahina ipinapakita ang larawan."
+  },
+  "askErrHttp": {
+    "message": "Error ang isinagot ng site sa halip na ang larawan."
+  },
+  "askErrDecode": {
+    "message": "Hindi mabasa ng browser mo ang file na ito bilang larawan."
+  },
+  "askErrUnsupported": {
+    "message": "Hindi kayang gawin ng bersyon ng browser na ito ang format na ito. Subukan ang PNG."
+  },
+  "askErrBlob": {
+    "message": "Nasa loob lang ng pahina ang larawang ito (isang blob: na link), kaya hindi pa ito ma-save ng Imgkeep. Puwede ang screenshot."
+  },
+  "askErrTooLarge": {
+    "message": "Masyadong malaki ang larawang ito para i-convert sa browser."
+  },
+  "askErrTimeout": {
+    "message": "Masyadong matagal ang pag-convert ng larawang ito, kaya huminto ang Imgkeep. Subukan ang PNG, o mas maikli o mas maliit na animation."
+  },
+  "askErrDownload": {
+    "message": "Hindi masimulan ng browser mo ang download."
+  },
+  "askErrWrite": {
+    "message": "Hindi maisulat ng Imgkeep ang file sa folder mo."
+  },
+  "askErrExpired": {
+    "message": "Nag-expire na ang pag-save na ito. I-right-click ang larawan at subukang muli."
+  },
+  "askErrUnknown": {
+    "message": "May nangyaring mali habang sine-save ang larawang ito."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ na frame. Limitado sa $MAX$ ang mga GIF.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "Hindi kaya ng GIF dito ang $W$×$H$ na pixel × $COUNT$ na frame.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Masyadong maraming file na may ganitong pangalan."
+  },
+  "askSaving": {
+    "message": "Sine-save…"
+  },
+  "askSaved": {
+    "message": "Na-save."
+  },
+  "askSavedAs": {
+    "message": "Na-save bilang $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Na-save sa $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Walang ma-save"
+  },
+  "askClose": {
+    "message": "Isara"
+  },
+  "askRetry": {
+    "message": "Subukang muli"
+  },
+  "askOpenImage": {
+    "message": "Buksan ang larawan"
+  },
+  "askCancel": {
+    "message": "Kanselahin"
+  },
+  "askHostTitle": {
+    "message": "Payagan ang mga larawan mula sa site na ito?"
+  },
+  "askHostBody": {
+    "message": "Hinaharang ng $HOST$ ang ibang site sa pagbasa ng mga larawan nito, kaya hindi pa ma-convert ng Imgkeep ang isang ito.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Para sa iisang site na ito lang ang access, para makuha ang mga larawang pipiliin mo. Puwede mo itong alisin anumang oras sa Mga Opsyon."
+  },
+  "askAllowAndSave": {
+    "message": "Payagan at i-save"
+  },
+  "askNotAllowed": {
+    "message": "Hindi pinayagan ang access. Walang na-save."
+  },
+  "askSaveOriginal": {
+    "message": "Sa orihinal na format na lang"
+  },
+  "askReconnectTitle": {
+    "message": "Ikonekta ulit ang “$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Pumili ng folder"
+  },
+  "askReconnectBody": {
+    "message": "Kailangan ng browser mo ang pahintulot mo para makapag-save ulit sa folder na ito."
+  },
+  "askChooseBody": {
+    "message": "Piliin ang folder kung saan dapat i-save ng Imgkeep ang mga larawan mo."
+  },
+  "askEveryVisit": {
+    "message": "Kapag nagtanong ang browser mo, piliin ang $OPTION$ para hindi na ito magtanong ulit.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Payagan sa bawat pagbisita”"
+  },
+  "askReconnectButton": {
+    "message": "Ikonekta ulit at i-save"
+  },
+  "askChooseButton": {
+    "message": "Pumili ng folder at i-save"
+  },
+  "askErrorTitle": {
+    "message": "Hindi na-save ang larawang ito"
+  },
+  "askFolderDenied": {
+    "message": "Hindi pinayagan ng browser mo ang pag-access sa folder. Walang na-save."
+  },
+  "askNoFolder": {
+    "message": "Walang napiling folder. Walang na-save."
+  },
+  "optPageTitle": {
+    "message": "Mga opsyon ng Imgkeep"
+  },
+  "optSaved": {
+    "message": "Na-save"
+  },
+  "optWhereTitle": {
+    "message": "Saan ise-save"
+  },
+  "optSaveMode": {
+    "message": "Paraan ng pag-save"
+  },
+  "optModeDownloads": {
+    "message": "Folder ng mga download"
+  },
+  "optModeDownloadsHint": {
+    "message": "Ise-save sa download folder ng browser mo. Walang tanong-tanong."
+  },
+  "optModeFolder": {
+    "message": "Folder na pipiliin mo"
+  },
+  "optModeFolderHint": {
+    "message": "Direktang isusulat sa folder mo. Maaaring hilingin ng browser mo na ikonekta ulit ito pagkatapos ng restart."
+  },
+  "optModeAsk": {
+    "message": "Magtanong sa tuwing magse-save"
+  },
+  "optModeAskHint": {
+    "message": "Ipapakita ang Save As dialog ng browser para sa bawat larawan."
+  },
+  "optChooseFolder": {
+    "message": "Pumili ng folder…"
+  },
+  "optChangeFolder": {
+    "message": "Palitan ang folder…"
+  },
+  "optNoFolder": {
+    "message": "Wala pang napiling folder."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — nakakonekta",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — hihilingin na ikonekta ulit",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subfolder"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "hal. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Opsyonal. Gumamit ng <code>/</code> para sa folder sa loob ng folder. Pareho ang mga token sa mga pangalan ng file."
+  },
+  "optNamesTitle": {
+    "message": "Mga pangalan ng file"
+  },
+  "optTemplate": {
+    "message": "Template ng pangalan"
+  },
+  "optTokensHint": {
+    "message": "Mga token: <code>{name}</code> orihinal na pangalan, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> at <code>{h}</code> sukat sa pixel. Hindi kailanman pinapatungan ang mga file na nandiyan na."
+  },
+  "optPreviewLabel": {
+    "message": "Preview para sa summer-banner mula sa shop.example.com, 1600×900, bilang PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kalidad at sukat"
+  },
+  "optJpgQuality": {
+    "message": "Kalidad ng JPG"
+  },
+  "optWebpQuality": {
+    "message": "Kalidad ng WebP"
+  },
+  "optJpgBackground": {
+    "message": "Kulay ng background ng JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "Walang transparency ang JPG, kaya ang mga bahaging aninag ay magiging ganitong kulay."
+  },
+  "optMaxWidth": {
+    "message": "Pinakamalaking lapad"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Orihinal na sukat"
+  },
+  "optMaxWidthHint": {
+    "message": "Opsyonal, sa pixel. Ang mas malalapad na larawan ay pinapaliit para kumasya, nananatili ang hugis; ang mas maliliit ay hindi kailanman pinapalaki. Ang Original na format ay lagi nang sine-save kung ano ito."
+  },
+  "optSitesTitle": {
+    "message": "Mga site na pinayagan mo"
+  },
+  "optSitesEmpty": {
+    "message": "Wala pa. Nagtatanong lang ang Imgkeep kapag may site na humaharang sa larawang gusto mong i-convert."
+  },
+  "optFindTitle": {
+    "message": "Mga larawang tinatakpan ng mga site"
+  },
+  "optFindLabel": {
+    "message": "Hanapin ang mga larawan sa ilalim ng mga takip"
+  },
+  "optFindHint": {
+    "message": "Sa mga site tulad ng Instagram at Pinterest, mag-right-click at piliin ang Imgkeep: Hanapin ang larawan dito. Tinitingnan lang ng Imgkeep ang isang pahina kapag hiniling mong maghanap ng larawan doon, ang pahinang iyon lang, sa sandaling iyon lang. Hindi nito kailanman binabago ang pahina."
+  },
+  "optFindOn": {
+    "message": "Naka-on."
+  },
+  "optFindOff": {
+    "message": "Naka-off."
+  },
+  "optCountsTitle": {
+    "message": "Anonimong bilang ng paggamit"
+  },
+  "optCountsLabel": {
+    "message": "Magpadala ng anonimong pang-araw-araw na buod"
+  },
+  "optCountsHint": {
+    "message": "Minsan sa isang araw, nagpapadala ang Imgkeep ng buod tulad ng “12 save bilang JPG, 1 nabigo” sa PostHog, isang open-source na serbisyo ng analytics na naka-host sa EU, para malaman namin kung aling mga feature ang dapat pagbutihin at kung aling mga save ang nabibigo. Hindi kailanman mga larawan, address ng pahina, pangalan ng file o anumang nagpapakilala sa iyo."
+  },
+  "optCountsShow": {
+    "message": "Tingnan kung ano talaga ang ipinapadala"
+  },
+  "optCountsToday": {
+    "message": "Nabilang ngayong araw (ipapadala pagkatapos ng araw na ito):"
+  },
+  "optCountsLast": {
+    "message": "Huling buod na ipinadala:"
+  },
+  "optCountsNone": {
+    "message": "Wala pa."
+  },
+  "optCountsOff": {
+    "message": "Naka-off. Walang binibilang o ipinapadala."
+  },
+  "optRemove": {
+    "message": "Alisin"
+  },
+  "optRemoveAccess": {
+    "message": "Alisin ang access sa $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — malapit na"
+  },
+  "optProBody": {
+    "message": "Mga preset para sa mga sukat at format na pinakamadalas mong gamitin, mga target na laki ng file tulad ng “wala pang 200 KB”, mga panuntunang nagpapadala ng mga larawan ng bawat site sa tamang folder, at talaan ng pinanggalingan ng bawat larawan."
+  },
+  "optProFree": {
+    "message": "Mananatiling libre ang lahat ng ginagamit mo ngayon."
+  },
+  "optGetNotified": {
+    "message": "Ipaalam sa akin"
+  },
+  "optTrustTitle": {
+    "message": "Ang kaya at hindi kaya ng Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Mga pahintulot na hinihingi nito:"
+  },
+  "optOptionalPermissions": {
+    "message": "Kapag lang in-on mo ang Hanapin ang mga larawan:"
+  },
+  "optPermissionsLabel": {
+    "message": "Mga pahintulot"
+  },
+  "optTrust1": {
+    "message": "Ang mga larawan ay kino-convert sa iyong computer at hindi kailanman ina-upload. Ang tanging iba pang ipinapadala ng Imgkeep ay ang anonimong pang-araw-araw na buod sa itaas, na puwede mong i-off."
+  },
+  "optTrust2": {
+    "message": "Walang ad at walang welcome tab. May bumubukas na maliliit na window lang kapag humingi ka o kapag kailangan ng save ang pahintulot mo. Minsan lang humihingi ng rating ang Imgkeep, pagkatapos mong gamitin ito nang ilang panahon."
+  },
+  "optTrust4": {
+    "message": "Tinitingnan lang ng Imgkeep ang isang pahina kapag hiniling mong maghanap ng larawan doon, ang pahinang iyon lang, sa sandaling iyon lang. Hindi nito kailanman binabago ang pahina."
+  },
+  "optTrust3": {
+    "message": "Mananatiling libre ang bawat libreng feature."
+  },
+  "optVersion": {
+    "message": "Bersyon"
+  },
+  "optWhatsNew": {
+    "message": "Ano'ng bago"
+  },
+  "copyWorking": {
+    "message": "Kinokopya ang larawan…"
+  },
+  "copyDone": {
+    "message": "Nakopya bilang PNG. I-paste ito kahit saan."
+  },
+  "copyFailed": {
+    "message": "Hindi makopya ang larawan"
+  },
+  "copyFailedNote": {
+    "message": "Hindi nabago ang iyong clipboard. Subukan muli, o i-save na lang ang larawan bilang PNG file."
+  },
+  "copySavePng": {
+    "message": "I-save na lang bilang PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Payagan at kopyahin"
+  },
+  "editTitle": {
+    "message": "Iba pang opsyon"
+  },
+  "editLoading": {
+    "message": "Nilo-load ang larawan…"
+  },
+  "editUpdating": {
+    "message": "Ina-update ang preview…"
+  },
+  "editPreviewAlt": {
+    "message": "Preview ng resulta"
+  },
+  "editOriginal": {
+    "message": "Orihinal"
+  },
+  "editResult": {
+    "message": "Resulta"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "Pinapanatili ng PNG ang bawat pixel. Para sa mas maliit na file, babaan ang maximum na lapad o pumili ng JPG o WebP."
+  },
+  "editIcoHint": {
+    "message": "Isang icon file na may larawan sa 16, 32 at 48 px, at 256 px kapag sapat ang laki. Ang mga larawang hindi parisukat ay magkakaroon ng transparent na gilid."
+  },
+  "editBmpHint": {
+    "message": "Payak na bitmap na nabubuksan ng lahat ng app. Malalaki ang file, at kukunin ng mga transparent na bahagi ang kulay ng background."
+  },
+  "editAvifHint": {
+    "message": "Kadalasang kalahati lang ng laki ng JPG na pareho ang itsura. Nabubuksan ito ng mga modernong browser at ng karamihan sa mga kasalukuyang app; may ilang lumang app na hindi."
+  },
+  "editMaxWidthHint": {
+    "message": "Nasa pixel. Pinapanatili ang hugis, hindi nagpapalaki."
+  },
+  "editBackground": {
+    "message": "Background"
+  },
+  "editQuality": {
+    "message": "Kalidad"
+  },
+  "editFileName": {
+    "message": "Pangalan ng file"
+  },
+  "editSave": {
+    "message": "I-save"
+  },
+  "editAllow": {
+    "message": "Payagan ang site na ito"
+  },
+  "editNeedsOk": {
+    "message": "Kailangan ng pahintulot mo ang pag-save na ito: tingnan ang Imgkeep window na kabubukas lang."
+  },
+  "reviewTitle": {
+    "message": "Nagugustuhan mo ba ang Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Nakakatulong ang rating sa store para matagpuan ito ng iba. Ilang segundo lang, at isang beses lang namin itatanong ito."
+  },
+  "reviewRate": {
+    "message": "I-rate ang Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Huwag na lang"
+  },
+  "reviewThanks": {
+    "message": "Salamat!"
+  },
+  "reviewOk": {
+    "message": "Sige. Hindi na namin itatanong ulit."
+  },
+  "findWindowTitle": {
+    "message": "Maghanap ng larawan"
+  },
+  "findEnableTitle": {
+    "message": "Hanapin ang mga larawang tinatakpan ng mga site"
+  },
+  "findEnableBody": {
+    "message": "May mga site, gaya ng Instagram at Pinterest, na tinatakpan ng ibang layer ang kanilang mga larawan, kaya hindi ito maabot ng right-click. Mahahanap ng Imgkeep ang larawan sa ilalim ng layer na iyon para sa iyo."
+  },
+  "findPromise": {
+    "message": "Tinitingnan lang ng Imgkeep ang isang page kapag pinahanap mo ito ng larawan doon, ang page na iyon lang, sa sandaling iyon lang. Hindi nito kailanman binabago ang page."
+  },
+  "findTurnOn": {
+    "message": "I-on"
+  },
+  "findDenied": {
+    "message": "Hindi na-on. Puwede mo itong i-on anumang oras sa Options."
+  },
+  "findOnTitle": {
+    "message": "Naka-on na"
+  },
+  "findOnBody": {
+    "message": "I-right-click ulit ang larawan at piliin ang Imgkeep: Maghanap ng larawan dito."
+  },
+  "findPickTitle": {
+    "message": "Aling larawan?"
+  },
+  "findPickBody": {
+    "message": "Hindi matukoy ng Imgkeep kung aling larawan ang ibig mong sabihin. Pumili ng isa:"
+  },
+  "findPickOne": {
+    "message": "Larawan $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Walang larawang nakita dito"
+  },
+  "findNothingBody": {
+    "message": "Walang nakitang larawan ang Imgkeep sa bahaging ito ng page. I-right-click mismo ang larawan, o buksan ang larawan sa sarili nitong page at subukan ulit."
+  },
+  "findErrorTitle": {
+    "message": "Hindi matingnan ng Imgkeep ang page na ito"
+  },
+  "findErrorBody": {
+    "message": "I-reload ang page, pagkatapos ay i-right-click ang larawan at piliin ulit ang Maghanap ng larawan dito."
+  },
+  "paletteTitle": {
+    "message": "Palette ng kulay"
+  },
+  "paletteLoading": {
+    "message": "Hinahanap ang mga kulay…"
+  },
+  "paletteCount": {
+    "message": "Mga kulay"
+  },
+  "paletteSwatches": {
+    "message": "Mga pangunahing kulay ng larawan, pinakamalaki muna"
+  },
+  "paletteCopyOne": {
+    "message": "Kopyahin ang $VALUE$ ($SHARE$ ng larawan)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Nakopya ang $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopyahin lahat bilang"
+  },
+  "paletteCodeCss": {
+    "message": "CSS variables"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Listahan"
+  },
+  "paletteCopiedAll": {
+    "message": "Nakopya lahat ng kulay bilang $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "I-save bilang"
+  },
+  "paletteSavePng": {
+    "message": "PNG swatches"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP palette"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe swatches"
+  },
+  "paletteSavedFallback": {
+    "message": "Hindi available ang folder mo, kaya napunta ito sa Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Ganap na transparent ang larawang ito, kaya walang kulay na makukuha."
+  },
+  "paletteCopyFailed": {
+    "message": "Hindi makopya. Mag-click sa loob ng window na ito, tapos subukan ulit."
+  },
+  "paletteNote": {
+    "message": "Ginawa sa computer mo. Hindi ito inaalis dito ang larawan at ang mga kulay nito."
+  }
+}

@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Simpan imej sebagai PNG, JPG, WebP, GIF atau PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Klik kanan untuk simpan imej sebagai PNG, JPG, WebP, GIF atau PDF, atau dapatkan palet warna. Di peranti anda, tanpa data peribadi."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (terakhir digunakan)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (kekalkan animasi)"
+  },
+  "menuOriginal": {
+    "message": "Format asal"
+  },
+  "menuCopyPng": {
+    "message": "Salin sebagai PNG"
+  },
+  "menuPalette": {
+    "message": "Dapatkan palet warna"
+  },
+  "menuMoreOptions": {
+    "message": "Pilihan lain…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Cari imej di sini…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Baharu",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Suka Imgkeep? Beri penilaian…"
+  },
+  "askErrBlocked": {
+    "message": "Laman web ini tidak menyerahkan imej ini, walaupun akses dibenarkan. Pelayannya mungkin tidak berfungsi, atau imej itu hanya disajikan dalam halamannya sendiri."
+  },
+  "askErrHttp": {
+    "message": "Laman web ini membalas dengan ralat, bukan dengan imej."
+  },
+  "askErrDecode": {
+    "message": "Pelayar anda tidak dapat membaca fail ini sebagai imej."
+  },
+  "askErrUnsupported": {
+    "message": "Versi pelayar ini tidak boleh menghasilkan format ini. Cuba PNG."
+  },
+  "askErrBlob": {
+    "message": "Imej ini hanya wujud di dalam halaman (pautan blob:), jadi Imgkeep belum boleh menyimpannya. Tangkapan skrin boleh digunakan."
+  },
+  "askErrTooLarge": {
+    "message": "Imej ini terlalu besar untuk ditukar dalam pelayar."
+  },
+  "askErrTimeout": {
+    "message": "Penukaran imej ini mengambil masa terlalu lama, jadi Imgkeep berhenti. Cuba PNG, atau animasi yang lebih pendek atau lebih kecil."
+  },
+  "askErrDownload": {
+    "message": "Pelayar anda tidak dapat memulakan muat turun."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep tidak dapat menulis fail ke folder anda."
+  },
+  "askErrExpired": {
+    "message": "Simpanan ini telah tamat tempoh. Klik kanan imej dan cuba lagi."
+  },
+  "askErrUnknown": {
+    "message": "Ada sesuatu yang tidak kena semasa menyimpan imej ini."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ bingkai. GIF terhad kepada $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ piksel × $COUNT$ bingkai melebihi had sebuah GIF di sini.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Terlalu banyak fail dengan nama ini."
+  },
+  "askSaving": {
+    "message": "Menyimpan…"
+  },
+  "askSaved": {
+    "message": "Disimpan."
+  },
+  "askSavedAs": {
+    "message": "Disimpan sebagai $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Disimpan ke $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Tiada apa-apa untuk disimpan"
+  },
+  "askClose": {
+    "message": "Tutup"
+  },
+  "askRetry": {
+    "message": "Cuba lagi"
+  },
+  "askOpenImage": {
+    "message": "Buka imej"
+  },
+  "askCancel": {
+    "message": "Batal"
+  },
+  "askHostTitle": {
+    "message": "Benarkan imej daripada laman web ini?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ menghalang laman web lain daripada membaca imejnya, jadi Imgkeep belum boleh menukar imej ini.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Akses ini untuk laman web ini sahaja, bagi mengambil imej yang anda pilih. Anda boleh membuangnya bila-bila masa dalam Pilihan."
+  },
+  "askAllowAndSave": {
+    "message": "Benarkan dan simpan"
+  },
+  "askNotAllowed": {
+    "message": "Akses tidak dibenarkan. Tiada apa-apa disimpan."
+  },
+  "askSaveOriginal": {
+    "message": "Simpan format asal sebagai ganti"
+  },
+  "askReconnectTitle": {
+    "message": "Sambung semula “$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Pilih folder"
+  },
+  "askReconnectBody": {
+    "message": "Pelayar anda perlukan kebenaran anda untuk menyimpan ke dalam folder ini sekali lagi."
+  },
+  "askChooseBody": {
+    "message": "Pilih folder tempat Imgkeep patut menyimpan imej anda."
+  },
+  "askEveryVisit": {
+    "message": "Apabila pelayar anda bertanya, pilih $OPTION$ supaya ia tidak bertanya lagi.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Benarkan pada setiap lawatan”"
+  },
+  "askReconnectButton": {
+    "message": "Sambung semula dan simpan"
+  },
+  "askChooseButton": {
+    "message": "Pilih folder dan simpan"
+  },
+  "askErrorTitle": {
+    "message": "Imej ini tidak dapat disimpan"
+  },
+  "askFolderDenied": {
+    "message": "Pelayar anda tidak membenarkan akses ke folder itu. Tiada apa-apa disimpan."
+  },
+  "askNoFolder": {
+    "message": "Tiada folder dipilih. Tiada apa-apa disimpan."
+  },
+  "optPageTitle": {
+    "message": "Tetapan Imgkeep"
+  },
+  "optSaved": {
+    "message": "Disimpan"
+  },
+  "optWhereTitle": {
+    "message": "Tempat menyimpan"
+  },
+  "optSaveMode": {
+    "message": "Mod simpan"
+  },
+  "optModeDownloads": {
+    "message": "Folder muat turun"
+  },
+  "optModeDownloadsHint": {
+    "message": "Menyimpan ke folder muat turun pelayar anda. Tanpa sebarang soalan."
+  },
+  "optModeFolder": {
+    "message": "Folder pilihan anda"
+  },
+  "optModeFolderHint": {
+    "message": "Menulis terus ke dalam folder anda. Pelayar anda mungkin meminta anda menyambung semula selepas dimulakan semula."
+  },
+  "optModeAsk": {
+    "message": "Tanya setiap kali"
+  },
+  "optModeAskHint": {
+    "message": "Memaparkan dialog Simpan Sebagai pelayar bagi setiap imej."
+  },
+  "optChooseFolder": {
+    "message": "Pilih folder…"
+  },
+  "optChangeFolder": {
+    "message": "Tukar folder…"
+  },
+  "optNoFolder": {
+    "message": "Belum ada folder dipilih."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — bersambung",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — akan minta sambung semula",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subfolder"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "cth. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Pilihan. Guna <code>/</code> untuk folder bersarang. Token yang sama seperti nama fail."
+  },
+  "optNamesTitle": {
+    "message": "Nama fail"
+  },
+  "optTemplate": {
+    "message": "Templat nama"
+  },
+  "optTokensHint": {
+    "message": "Token: <code>{name}</code> nama asal, <code>{host}</code> tapak, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> dan <code>{h}</code> saiz dalam piksel. Fail sedia ada tidak sekali-kali ditulis ganti."
+  },
+  "optPreviewLabel": {
+    "message": "Pratonton untuk summer-banner dari shop.example.com, 1600×900, sebagai PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kualiti dan saiz"
+  },
+  "optJpgQuality": {
+    "message": "Kualiti JPG"
+  },
+  "optWebpQuality": {
+    "message": "Kualiti WebP"
+  },
+  "optJpgBackground": {
+    "message": "Warna latar JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG tiada ketelusan, jadi kawasan lut sinar akan mendapat warna ini."
+  },
+  "optMaxWidth": {
+    "message": "Lebar maksimum"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Saiz asal"
+  },
+  "optMaxWidthHint": {
+    "message": "Pilihan, dalam piksel. Imej yang lebih lebar dikecilkan supaya muat, nisbahnya dikekalkan; imej yang lebih kecil tidak pernah dibesarkan. Format asal sentiasa disimpan seadanya."
+  },
+  "optSitesTitle": {
+    "message": "Tapak yang anda benarkan"
+  },
+  "optSitesEmpty": {
+    "message": "Belum ada. Imgkeep hanya bertanya apabila sesuatu tapak menyekat imej yang anda mahu tukar."
+  },
+  "optFindTitle": {
+    "message": "Imej yang ditutup oleh tapak"
+  },
+  "optFindLabel": {
+    "message": "Cari imej di bawah lapisan penutup"
+  },
+  "optFindHint": {
+    "message": "Di tapak seperti Instagram dan Pinterest, klik kanan dan pilih Imgkeep: Cari imej di sini. Imgkeep hanya melihat sesuatu halaman apabila anda memintanya mencari imej di situ, halaman itu sahaja, ketika itu sahaja. Ia tidak pernah mengubah halaman."
+  },
+  "optFindOn": {
+    "message": "Dihidupkan."
+  },
+  "optFindOff": {
+    "message": "Dimatikan."
+  },
+  "optCountsTitle": {
+    "message": "Kiraan penggunaan tanpa nama"
+  },
+  "optCountsLabel": {
+    "message": "Hantar ringkasan harian tanpa nama"
+  },
+  "optCountsHint": {
+    "message": "Sekali sehari, Imgkeep menghantar ringkasan seperti \"12 simpanan sebagai JPG, 1 gagal\" ke PostHog, perkhidmatan analitik sumber terbuka yang dihoskan di EU, supaya kami tahu ciri mana perlu diperbaik dan simpanan mana yang gagal. Tidak sekali-kali imej, alamat halaman, nama fail atau apa-apa yang mengenal pasti anda."
+  },
+  "optCountsShow": {
+    "message": "Lihat tepat apa yang dihantar"
+  },
+  "optCountsToday": {
+    "message": "Dikira hari ini (dihantar selepas hari ini):"
+  },
+  "optCountsLast": {
+    "message": "Ringkasan terakhir yang dihantar:"
+  },
+  "optCountsNone": {
+    "message": "Belum ada apa-apa."
+  },
+  "optCountsOff": {
+    "message": "Dimatikan. Tiada apa-apa dikira atau dihantar."
+  },
+  "optRemove": {
+    "message": "Buang"
+  },
+  "optRemoveAccess": {
+    "message": "Buang akses ke $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — akan datang"
+  },
+  "optProBody": {
+    "message": "Pratetap untuk saiz dan format yang paling kerap anda guna, sasaran saiz fail seperti \"bawah 200 KB\", peraturan yang menghantar imej setiap tapak ke folder yang betul, dan log asal usul setiap imej."
+  },
+  "optProFree": {
+    "message": "Semua yang anda guna hari ini kekal percuma."
+  },
+  "optGetNotified": {
+    "message": "Dapatkan pemberitahuan"
+  },
+  "optTrustTitle": {
+    "message": "Apa yang Imgkeep boleh dan tidak boleh buat"
+  },
+  "optPermissions": {
+    "message": "Kebenaran yang dimintanya:"
+  },
+  "optOptionalPermissions": {
+    "message": "Hanya jika anda hidupkan Cari imej:"
+  },
+  "optPermissionsLabel": {
+    "message": "Kebenaran"
+  },
+  "optTrust1": {
+    "message": "Imej ditukar pada komputer anda dan tidak pernah dimuat naik. Satu-satunya perkara lain yang Imgkeep hantar ialah ringkasan harian tanpa nama di atas, yang boleh anda matikan."
+  },
+  "optTrust2": {
+    "message": "Tiada iklan dan tiada tab alu-aluan. Tetingkap kecil hanya terbuka apabila anda memintanya atau apabila sesuatu simpanan perlukan kebenaran anda. Imgkeep meminta penilaian sekali sahaja, selepas anda menggunakannya seketika."
+  },
+  "optTrust4": {
+    "message": "Imgkeep hanya melihat sesuatu halaman apabila anda memintanya mencari imej di situ, halaman itu sahaja, ketika itu sahaja. Ia tidak pernah mengubah halaman."
+  },
+  "optTrust3": {
+    "message": "Setiap ciri percuma kekal percuma."
+  },
+  "optVersion": {
+    "message": "Versi"
+  },
+  "optWhatsNew": {
+    "message": "Apa yang baharu"
+  },
+  "copyWorking": {
+    "message": "Menyalin imej…"
+  },
+  "copyDone": {
+    "message": "Disalin sebagai PNG. Tampalkannya di mana-mana."
+  },
+  "copyFailed": {
+    "message": "Tidak dapat menyalin imej"
+  },
+  "copyFailedNote": {
+    "message": "Papan keratan anda tidak diubah. Cuba lagi, atau simpan imej sebagai fail PNG."
+  },
+  "copySavePng": {
+    "message": "Simpan sebagai PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Benarkan dan salin"
+  },
+  "editTitle": {
+    "message": "Lagi pilihan"
+  },
+  "editLoading": {
+    "message": "Memuatkan imej…"
+  },
+  "editUpdating": {
+    "message": "Mengemas kini pratonton…"
+  },
+  "editPreviewAlt": {
+    "message": "Pratonton hasil"
+  },
+  "editOriginal": {
+    "message": "Asal"
+  },
+  "editResult": {
+    "message": "Hasil"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG mengekalkan setiap piksel. Untuk fail yang lebih kecil, kurangkan lebar maksimum atau pilih JPG atau WebP."
+  },
+  "editIcoHint": {
+    "message": "Fail ikon dengan imej pada 16, 32 dan 48 px, serta 256 px apabila imejnya cukup besar. Imej yang bukan segi empat sama akan mendapat tepi lutsinar."
+  },
+  "editBmpHint": {
+    "message": "Bitmap biasa yang boleh dibuka oleh semua aplikasi. Failnya besar, dan kawasan lutsinar akan mengambil warna latar belakang."
+  },
+  "editAvifHint": {
+    "message": "Selalunya separuh saiz JPG yang kelihatan sama. Pelayar moden dan kebanyakan aplikasi terkini boleh membukanya; sesetengah aplikasi lama tidak."
+  },
+  "editMaxWidthHint": {
+    "message": "Dalam piksel. Mengekalkan bentuk, tidak pernah membesarkan."
+  },
+  "editBackground": {
+    "message": "Latar belakang"
+  },
+  "editQuality": {
+    "message": "Kualiti"
+  },
+  "editFileName": {
+    "message": "Nama fail"
+  },
+  "editSave": {
+    "message": "Simpan"
+  },
+  "editAllow": {
+    "message": "Benarkan tapak ini"
+  },
+  "editNeedsOk": {
+    "message": "Simpanan ini perlukan kebenaran anda: lihat tetingkap Imgkeep yang baru dibuka."
+  },
+  "reviewTitle": {
+    "message": "Suka menggunakan Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Penilaian di kedai membantu orang lain menemuinya. Ia hanya mengambil beberapa saat, dan kami akan tanya sekali ini sahaja."
+  },
+  "reviewRate": {
+    "message": "Nilai Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Tak perlu, terima kasih"
+  },
+  "reviewThanks": {
+    "message": "Terima kasih!"
+  },
+  "reviewOk": {
+    "message": "Baik. Kami tidak akan tanya lagi."
+  },
+  "findWindowTitle": {
+    "message": "Cari imej"
+  },
+  "findEnableTitle": {
+    "message": "Cari imej yang ditutup oleh tapak"
+  },
+  "findEnableBody": {
+    "message": "Sesetengah tapak, seperti Instagram dan Pinterest, menutup imejnya dengan satu lapisan lain, jadi klik kanan tidak dapat mencapainya. Imgkeep boleh mencari imej di bawah lapisan itu untuk anda."
+  },
+  "findPromise": {
+    "message": "Imgkeep hanya melihat sesuatu halaman apabila anda memintanya mencari imej di situ, halaman itu sahaja, pada waktu itu sahaja. Ia tidak pernah mengubah halaman."
+  },
+  "findTurnOn": {
+    "message": "Hidupkan"
+  },
+  "findDenied": {
+    "message": "Tidak dihidupkan. Anda boleh hidupkannya bila-bila masa dalam Pilihan."
+  },
+  "findOnTitle": {
+    "message": "Sudah dihidupkan"
+  },
+  "findOnBody": {
+    "message": "Klik kanan imej itu sekali lagi dan pilih Imgkeep: Cari imej di sini."
+  },
+  "findPickTitle": {
+    "message": "Imej yang mana?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep tidak pasti imej mana yang anda maksudkan. Pilih satu:"
+  },
+  "findPickOne": {
+    "message": "Imej $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Tiada imej dijumpai di sini"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep tidak menjumpai imej pada bahagian halaman ini. Klik kanan tepat pada foto itu, atau buka foto itu pada halamannya sendiri dan cuba lagi."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep tidak dapat melihat halaman ini"
+  },
+  "findErrorBody": {
+    "message": "Muat semula halaman, kemudian klik kanan imej itu dan pilih Cari imej di sini sekali lagi."
+  },
+  "paletteTitle": {
+    "message": "Palet warna"
+  },
+  "paletteLoading": {
+    "message": "Mencari warna…"
+  },
+  "paletteCount": {
+    "message": "Warna"
+  },
+  "paletteSwatches": {
+    "message": "Warna utama imej ini, yang terbanyak dahulu"
+  },
+  "paletteCopyOne": {
+    "message": "Salin $VALUE$ ($SHARE$ daripada imej)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ disalin",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Salin semua sebagai"
+  },
+  "paletteCodeCss": {
+    "message": "Pemboleh ubah CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Senarai"
+  },
+  "paletteCopiedAll": {
+    "message": "Semua warna disalin sebagai $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Simpan sebagai"
+  },
+  "paletteSavePng": {
+    "message": "Petak warna PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Palet GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Petak warna Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Folder anda tidak tersedia, jadi fail disimpan ke Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Imej ini lutsinar sepenuhnya, jadi tiada warna untuk diambil."
+  },
+  "paletteCopyFailed": {
+    "message": "Tidak dapat menyalin. Klik di dalam tetingkap ini, kemudian cuba lagi."
+  },
+  "paletteNote": {
+    "message": "Dikira pada komputer anda. Imej dan warnanya tidak pernah keluar daripadanya."
+  }
+}

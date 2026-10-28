@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "將圖片存成 PNG、JPG、WebP、GIF 或 PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "按右鍵就能把任何圖片存成 PNG、JPG、WebP、GIF 或 PDF，或取得它的配色。全在你的裝置上處理，不收集個人資料。"
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$（上次使用）",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF（保留動畫）"
+  },
+  "menuOriginal": {
+    "message": "原始格式"
+  },
+  "menuCopyPng": {
+    "message": "複製為 PNG"
+  },
+  "menuPalette": {
+    "message": "取得配色"
+  },
+  "menuMoreOptions": {
+    "message": "更多選項…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep：在這裡尋找圖片…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ 新功能",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "喜歡 Imgkeep 嗎？給個評分…"
+  },
+  "askErrBlocked": {
+    "message": "即使已允許存取，網站仍未交出這張圖片。可能是伺服器暫時故障，或它只在自己的頁面中提供圖片。"
+  },
+  "askErrHttp": {
+    "message": "網站回傳了錯誤，而不是圖片。"
+  },
+  "askErrDecode": {
+    "message": "瀏覽器無法將這個檔案讀取為圖片。"
+  },
+  "askErrUnsupported": {
+    "message": "這個瀏覽器版本無法產生這種格式。請改用 PNG。"
+  },
+  "askErrBlob": {
+    "message": "這張圖片只存在於頁面之中（blob: 連結），Imgkeep 目前還無法儲存。可以改用螢幕擷圖。"
+  },
+  "askErrTooLarge": {
+    "message": "這張圖片太大，無法在瀏覽器中轉換。"
+  },
+  "askErrTimeout": {
+    "message": "轉換這張圖片花太久，Imgkeep 已停止。請改用 PNG，或較短、較小的動畫。"
+  },
+  "askErrDownload": {
+    "message": "瀏覽器無法開始下載。"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep 無法將檔案寫入你的資料夾。"
+  },
+  "askErrExpired": {
+    "message": "這次儲存已逾期。請在圖片上按右鍵再試一次。"
+  },
+  "askErrUnknown": {
+    "message": "儲存這張圖片時發生問題。"
+  },
+  "detailGifFrames": {
+    "message": "共 $COUNT$ 個影格。GIF 最多 $MAX$ 個。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ 像素 × $COUNT$ 個影格，超過這裡 GIF 能容納的上限。",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "同名檔案太多。"
+  },
+  "askSaving": {
+    "message": "儲存中…"
+  },
+  "askSaved": {
+    "message": "已儲存。"
+  },
+  "askSavedAs": {
+    "message": "已儲存為 $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "已儲存至 $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "沒有可儲存的內容"
+  },
+  "askClose": {
+    "message": "關閉"
+  },
+  "askRetry": {
+    "message": "再試一次"
+  },
+  "askOpenImage": {
+    "message": "開啟圖片"
+  },
+  "askCancel": {
+    "message": "取消"
+  },
+  "askHostTitle": {
+    "message": "允許來自這個網站的圖片？"
+  },
+  "askHostBody": {
+    "message": "$HOST$ 阻止其他網站讀取它的圖片，因此 Imgkeep 目前還無法轉換這一張。",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "存取權僅限這一個網站，只用來取得你挑選的圖片。你隨時可以在「選項」中移除。"
+  },
+  "askAllowAndSave": {
+    "message": "允許並儲存"
+  },
+  "askNotAllowed": {
+    "message": "未允許存取，沒有儲存任何內容。"
+  },
+  "askSaveOriginal": {
+    "message": "改存原始格式"
+  },
+  "askReconnectTitle": {
+    "message": "重新連接「$FOLDER$」",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "選擇資料夾"
+  },
+  "askReconnectBody": {
+    "message": "瀏覽器需要你同意，才能再次存入這個資料夾。"
+  },
+  "askChooseBody": {
+    "message": "選擇 Imgkeep 要用來存放圖片的資料夾。"
+  },
+  "askEveryVisit": {
+    "message": "瀏覽器詢問時，請選 $OPTION$，之後就不會再問。",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "「每次造訪時允許」"
+  },
+  "askReconnectButton": {
+    "message": "重新連接並儲存"
+  },
+  "askChooseButton": {
+    "message": "選擇資料夾並儲存"
+  },
+  "askErrorTitle": {
+    "message": "無法儲存這張圖片"
+  },
+  "askFolderDenied": {
+    "message": "瀏覽器未允許存取該資料夾，沒有儲存任何檔案。"
+  },
+  "askNoFolder": {
+    "message": "未選擇資料夾，沒有儲存任何檔案。"
+  },
+  "optPageTitle": {
+    "message": "Imgkeep 選項"
+  },
+  "optSaved": {
+    "message": "已儲存"
+  },
+  "optWhereTitle": {
+    "message": "儲存位置"
+  },
+  "optSaveMode": {
+    "message": "儲存方式"
+  },
+  "optModeDownloads": {
+    "message": "下載資料夾"
+  },
+  "optModeDownloadsHint": {
+    "message": "存到瀏覽器的下載資料夾，不會多問。"
+  },
+  "optModeFolder": {
+    "message": "自選資料夾"
+  },
+  "optModeFolderHint": {
+    "message": "直接寫入你指定的資料夾。重新啟動後，瀏覽器可能會要求重新連接。"
+  },
+  "optModeAsk": {
+    "message": "每次都詢問"
+  },
+  "optModeAskHint": {
+    "message": "每張圖片都顯示瀏覽器的「另存新檔」對話框。"
+  },
+  "optChooseFolder": {
+    "message": "選擇資料夾…"
+  },
+  "optChangeFolder": {
+    "message": "更換資料夾…"
+  },
+  "optNoFolder": {
+    "message": "尚未選擇資料夾。"
+  },
+  "optFolderConnected": {
+    "message": "「$FOLDER$」— 已連接",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "「$FOLDER$」— 會要求重新連接",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "子資料夾"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "例如 Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "選填。用 <code>/</code> 建立多層資料夾。可用的代碼與檔名相同。"
+  },
+  "optNamesTitle": {
+    "message": "檔案名稱"
+  },
+  "optTemplate": {
+    "message": "命名範本"
+  },
+  "optTokensHint": {
+    "message": "代碼：<code>{name}</code> 原始名稱、<code>{host}</code> 網站、<code>{date}</code>、<code>{time}</code>、<code>{w}</code> 與 <code>{h}</code> 像素尺寸。已存在的檔案絕不會被覆寫。"
+  },
+  "optPreviewLabel": {
+    "message": "預覽：來自 shop.example.com 的 summer-banner，1600×900，存成 PNG："
+  },
+  "optQualityTitle": {
+    "message": "品質與尺寸"
+  },
+  "optJpgQuality": {
+    "message": "JPG 品質"
+  },
+  "optWebpQuality": {
+    "message": "WebP 品質"
+  },
+  "optJpgBackground": {
+    "message": "JPG 背景顏色"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG 不支援透明，透明區域會填上這個顏色。"
+  },
+  "optMaxWidth": {
+    "message": "最大寬度"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "原始尺寸"
+  },
+  "optMaxWidthHint": {
+    "message": "選填，單位為像素。較寬的圖片會等比例縮小以符合設定；較小的圖片不會放大。選擇「原始格式」時一律原樣儲存。"
+  },
+  "optSitesTitle": {
+    "message": "你已允許的網站"
+  },
+  "optSitesEmpty": {
+    "message": "目前沒有。只有當網站擋住你想轉換的圖片時，Imgkeep 才會詢問。"
+  },
+  "optFindTitle": {
+    "message": "被網站遮住的圖片"
+  },
+  "optFindLabel": {
+    "message": "尋找遮罩底下的圖片"
+  },
+  "optFindHint": {
+    "message": "在 Instagram、Pinterest 這類網站上，按右鍵並選擇「Imgkeep：在這裡尋找圖片」。只有在你要求 Imgkeep 在某個頁面尋找圖片時，它才會查看那個頁面，僅限該頁面、僅限當下。它絕不會變更頁面內容。"
+  },
+  "optFindOn": {
+    "message": "已開啟。"
+  },
+  "optFindOff": {
+    "message": "已關閉。"
+  },
+  "optCountsTitle": {
+    "message": "匿名使用次數"
+  },
+  "optCountsLabel": {
+    "message": "每天傳送一次匿名摘要"
+  },
+  "optCountsHint": {
+    "message": "Imgkeep 每天會傳送一次像是「以 JPG 儲存 12 次，失敗 1 次」的摘要給 PostHog（一項代管於歐盟的開源分析服務），讓我們知道該改進哪些功能、哪些儲存會失敗。絕不包含圖片、網頁網址、檔名或任何能識別你的資料。"
+  },
+  "optCountsShow": {
+    "message": "看看實際傳送的內容"
+  },
+  "optCountsToday": {
+    "message": "今天的計數（於今天之後傳送）："
+  },
+  "optCountsLast": {
+    "message": "上次傳送的摘要："
+  },
+  "optCountsNone": {
+    "message": "目前沒有資料。"
+  },
+  "optCountsOff": {
+    "message": "已關閉。不計數，也不傳送。"
+  },
+  "optRemove": {
+    "message": "移除"
+  },
+  "optRemoveAccess": {
+    "message": "移除對 $SITE$ 的存取權",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — 即將推出"
+  },
+  "optProBody": {
+    "message": "為你最常用的尺寸與格式建立預設組合、設定「小於 200 KB」這類檔案大小目標、依網站把圖片存到對應資料夾的規則，以及每張圖片來源的紀錄。"
+  },
+  "optProFree": {
+    "message": "你現在使用的一切，永遠免費。"
+  },
+  "optGetNotified": {
+    "message": "通知我"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep 能做與不能做的事"
+  },
+  "optPermissions": {
+    "message": "它要求的權限："
+  },
+  "optOptionalPermissions": {
+    "message": "只有在你開啟「尋找圖片」時才需要："
+  },
+  "optPermissionsLabel": {
+    "message": "權限"
+  },
+  "optTrust1": {
+    "message": "圖片在你的電腦上轉換，絕不上傳。Imgkeep 唯一另外傳送的，就是上面那份匿名每日摘要，而你可以關閉它。"
+  },
+  "optTrust2": {
+    "message": "沒有廣告，也沒有歡迎分頁。只有在你要求、或儲存需要你確認時，才會開啟小視窗。Imgkeep 只在你用了一段時間後，請你評分一次。"
+  },
+  "optTrust4": {
+    "message": "只有在你要求 Imgkeep 在某個頁面尋找圖片時，它才會查看那個頁面，僅限該頁面、僅限當下。它絕不會變更頁面內容。"
+  },
+  "optTrust3": {
+    "message": "所有免費功能永遠免費。"
+  },
+  "optVersion": {
+    "message": "版本"
+  },
+  "optWhatsNew": {
+    "message": "更新內容"
+  },
+  "copyWorking": {
+    "message": "正在複製圖片…"
+  },
+  "copyDone": {
+    "message": "已複製為 PNG，可以隨處貼上。"
+  },
+  "copyFailed": {
+    "message": "無法複製圖片"
+  },
+  "copyFailedNote": {
+    "message": "剪貼簿內容未變更。請再試一次，或改成將圖片存成 PNG 檔。"
+  },
+  "copySavePng": {
+    "message": "改存成 PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "允許並複製"
+  },
+  "editTitle": {
+    "message": "更多選項"
+  },
+  "editLoading": {
+    "message": "正在載入圖片…"
+  },
+  "editUpdating": {
+    "message": "正在更新預覽…"
+  },
+  "editPreviewAlt": {
+    "message": "結果預覽"
+  },
+  "editOriginal": {
+    "message": "原圖"
+  },
+  "editResult": {
+    "message": "結果"
+  },
+  "editFormat": {
+    "message": "格式"
+  },
+  "editPngHint": {
+    "message": "PNG 會保留每一個像素。想讓檔案小一點，可以調低最大寬度，或改選 JPG 或 WebP。"
+  },
+  "editIcoHint": {
+    "message": "圖示檔，內含 16、32、48 px 的圖；圖夠大時再加上 256 px。非正方形的圖片，邊緣會留成透明。"
+  },
+  "editBmpHint": {
+    "message": "每個程式都開得起來的單純點陣圖。檔案很大，透明的區域會填上背景色。"
+  },
+  "editAvifHint": {
+    "message": "看起來一樣的情況下，檔案通常只有 JPG 的一半大。新版瀏覽器和多數現行程式都能開啟，部分舊程式則不行。"
+  },
+  "editMaxWidthHint": {
+    "message": "以像素為單位。維持原比例，不會放大。"
+  },
+  "editBackground": {
+    "message": "背景"
+  },
+  "editQuality": {
+    "message": "品質"
+  },
+  "editFileName": {
+    "message": "檔名"
+  },
+  "editSave": {
+    "message": "儲存"
+  },
+  "editAllow": {
+    "message": "允許這個網站"
+  },
+  "editNeedsOk": {
+    "message": "這次儲存需要你確認：請看剛開啟的 Imgkeep 視窗。"
+  },
+  "reviewTitle": {
+    "message": "Imgkeep 用得還順手嗎？"
+  },
+  "reviewBody": {
+    "message": "在商店給個評分，可以幫助其他人找到它。只要幾秒鐘，而且我們只問這一次。"
+  },
+  "reviewRate": {
+    "message": "為 Imgkeep 評分"
+  },
+  "reviewNo": {
+    "message": "不用了，謝謝"
+  },
+  "reviewThanks": {
+    "message": "謝謝你！"
+  },
+  "reviewOk": {
+    "message": "知道了，我們不會再問。"
+  },
+  "findWindowTitle": {
+    "message": "尋找圖片"
+  },
+  "findEnableTitle": {
+    "message": "找出被網站蓋住的圖片"
+  },
+  "findEnableBody": {
+    "message": "有些網站，像 Instagram 和 Pinterest，會在圖片上蓋一層東西，讓右鍵點不到圖片。Imgkeep 可以幫你找出那層底下的圖片。"
+  },
+  "findPromise": {
+    "message": "只有在你要求 Imgkeep 在某個頁面找圖片時，它才會查看那個頁面，就只有那一頁、就只有那一次。它絕不會更動頁面。"
+  },
+  "findTurnOn": {
+    "message": "開啟"
+  },
+  "findDenied": {
+    "message": "尚未開啟。你隨時可以在「選項」中開啟。"
+  },
+  "findOnTitle": {
+    "message": "已開啟"
+  },
+  "findOnBody": {
+    "message": "請再對圖片按一次右鍵，選擇「Imgkeep：在這裡尋找圖片」。"
+  },
+  "findPickTitle": {
+    "message": "要哪一張圖片？"
+  },
+  "findPickBody": {
+    "message": "Imgkeep 無法判斷你指的是哪一張圖片。請選一張："
+  },
+  "findPickOne": {
+    "message": "圖片 $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "這裡找不到圖片"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep 在頁面的這個部分找不到圖片。請直接對照片按右鍵，或是把照片單獨開在一個頁面後再試一次。"
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep 無法查看這個頁面"
+  },
+  "findErrorBody": {
+    "message": "請重新整理頁面，然後對圖片按右鍵，再選一次「在這裡尋找圖片」。"
+  },
+  "paletteTitle": {
+    "message": "色彩調色盤"
+  },
+  "paletteLoading": {
+    "message": "正在找出顏色…"
+  },
+  "paletteCount": {
+    "message": "顏色"
+  },
+  "paletteSwatches": {
+    "message": "圖片的主要顏色，占比高的在前"
+  },
+  "paletteCopyOne": {
+    "message": "複製 $VALUE$（占圖片 $SHARE$）",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "已複製 $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "全部複製為"
+  },
+  "paletteCodeCss": {
+    "message": "CSS 變數"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "清單"
+  },
+  "paletteCopiedAll": {
+    "message": "已將所有顏色複製為 $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "儲存為"
+  },
+  "paletteSavePng": {
+    "message": "PNG 色塊"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP 調色盤"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe 色票"
+  },
+  "paletteSavedFallback": {
+    "message": "你指定的資料夾無法使用，已改存到「下載」：$PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "這張圖片完全透明，沒有可取得的顏色。"
+  },
+  "paletteCopyFailed": {
+    "message": "無法複製。請先點一下這個視窗，再試一次。"
+  },
+  "paletteNote": {
+    "message": "全部在你的電腦上運算，圖片和顏色都不會外傳。"
+  }
+}

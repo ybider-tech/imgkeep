@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Görseli PNG, JPG, WebP, GIF veya PDF olarak kaydet — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Sağ tıklayın; görseli PNG, JPG, WebP, GIF veya PDF olarak kaydedin ya da renk paletini alın. Cihazınızda. Kişisel veri yok."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (son kullanılan)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (animasyonu korur)"
+  },
+  "menuOriginal": {
+    "message": "Orijinal biçim"
+  },
+  "menuCopyPng": {
+    "message": "PNG olarak kopyala"
+  },
+  "menuPalette": {
+    "message": "Renk paletini al"
+  },
+  "menuMoreOptions": {
+    "message": "Diğer seçenekler…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Buradaki görseli bul…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Yeni",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep'i beğendiniz mi? Puan verin…"
+  },
+  "askErrBlocked": {
+    "message": "Erişim izni verilmiş olsa da site bu görseli vermedi. Sunucu çalışmıyor olabilir ya da görseli yalnızca kendi sayfalarında sunuyor olabilir."
+  },
+  "askErrHttp": {
+    "message": "Site, görsel yerine bir hata döndürdü."
+  },
+  "askErrDecode": {
+    "message": "Tarayıcınız bu dosyayı görsel olarak okuyamadı."
+  },
+  "askErrUnsupported": {
+    "message": "Bu tarayıcı sürümü bu biçimi oluşturamıyor. Bunun yerine PNG deneyin."
+  },
+  "askErrBlob": {
+    "message": "Bu görsel yalnızca sayfanın içinde var (blob: bağlantısı), bu yüzden Imgkeep onu henüz kaydedemiyor. Ekran görüntüsü işe yarar."
+  },
+  "askErrTooLarge": {
+    "message": "Bu görsel tarayıcıda dönüştürülemeyecek kadar büyük."
+  },
+  "askErrTimeout": {
+    "message": "Bu görseli dönüştürmek çok uzun sürdü, bu yüzden Imgkeep durdu. PNG'yi ya da daha kısa veya küçük bir animasyonu deneyin."
+  },
+  "askErrDownload": {
+    "message": "Tarayıcınız indirmeyi başlatamadı."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep dosyayı klasörünüze yazamadı."
+  },
+  "askErrExpired": {
+    "message": "Bu kaydetme işleminin süresi doldu. Görsele sağ tıklayıp yeniden deneyin."
+  },
+  "askErrUnknown": {
+    "message": "Bu görsel kaydedilirken bir şeyler ters gitti."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ kare. GIF'ler $MAX$ kareyle sınırlı.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ piksel × $COUNT$ kare, burada bir GIF'in taşıyabileceğinden fazla.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Bu adda çok fazla dosya var."
+  },
+  "askSaving": {
+    "message": "Kaydediliyor…"
+  },
+  "askSaved": {
+    "message": "Kaydedildi."
+  },
+  "askSavedAs": {
+    "message": "$PATH$ olarak kaydedildi",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ konumuna kaydedildi",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Kaydedilecek bir şey yok"
+  },
+  "askClose": {
+    "message": "Kapat"
+  },
+  "askRetry": {
+    "message": "Yeniden dene"
+  },
+  "askOpenImage": {
+    "message": "Görseli aç"
+  },
+  "askCancel": {
+    "message": "İptal"
+  },
+  "askHostTitle": {
+    "message": "Bu sitedeki görsellere izin verilsin mi?"
+  },
+  "askHostBody": {
+    "message": "$HOST$, görsellerinin başka siteler tarafından okunmasını engelliyor; bu yüzden Imgkeep bunu henüz dönüştüremiyor.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "İzin yalnızca bu site için geçerlidir ve seçtiğiniz görselleri almak içindir. Seçenekler'den istediğiniz zaman kaldırabilirsiniz."
+  },
+  "askAllowAndSave": {
+    "message": "İzin ver ve kaydet"
+  },
+  "askNotAllowed": {
+    "message": "İzin verilmedi. Hiçbir şey kaydedilmedi."
+  },
+  "askSaveOriginal": {
+    "message": "Bunun yerine özgün biçimde kaydet"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” klasörünü yeniden bağla",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Klasör seçin"
+  },
+  "askReconnectBody": {
+    "message": "Tarayıcınızın bu klasöre yeniden kaydedebilmesi için onayınız gerekiyor."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep'in görselleri kaydedeceği klasörü seçin."
+  },
+  "askEveryVisit": {
+    "message": "Tarayıcınız sorduğunda $OPTION$ seçeneğini işaretleyin; bir daha sormaz.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Her ziyarette izin ver”"
+  },
+  "askReconnectButton": {
+    "message": "Yeniden bağla ve kaydet"
+  },
+  "askChooseButton": {
+    "message": "Klasörü seç ve kaydet"
+  },
+  "askErrorTitle": {
+    "message": "Bu görsel kaydedilemedi"
+  },
+  "askFolderDenied": {
+    "message": "Tarayıcınız klasöre erişime izin vermedi. Hiçbir şey kaydedilmedi."
+  },
+  "askNoFolder": {
+    "message": "Klasör seçilmedi. Hiçbir şey kaydedilmedi."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep seçenekleri"
+  },
+  "optSaved": {
+    "message": "Kaydedildi"
+  },
+  "optWhereTitle": {
+    "message": "Nereye kaydedilsin"
+  },
+  "optSaveMode": {
+    "message": "Kaydetme biçimi"
+  },
+  "optModeDownloads": {
+    "message": "İndirilenler klasörü"
+  },
+  "optModeDownloadsHint": {
+    "message": "Tarayıcınızın indirme klasörüne kaydeder. Hiçbir şey sorulmaz."
+  },
+  "optModeFolder": {
+    "message": "Seçtiğiniz bir klasör"
+  },
+  "optModeFolderHint": {
+    "message": "Doğrudan klasörünüze yazar. Tarayıcınız yeniden başlatmadan sonra yeniden bağlanmanızı isteyebilir."
+  },
+  "optModeAsk": {
+    "message": "Her seferinde sor"
+  },
+  "optModeAskHint": {
+    "message": "Her görsel için tarayıcının Farklı Kaydet penceresini gösterir."
+  },
+  "optChooseFolder": {
+    "message": "Klasör seç…"
+  },
+  "optChangeFolder": {
+    "message": "Klasörü değiştir…"
+  },
+  "optNoFolder": {
+    "message": "Henüz klasör seçilmedi."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — bağlı",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — yeniden bağlanmanızı isteyecek",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Alt klasör"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "örn. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "İsteğe bağlı. İç içe klasörler için <code>/</code> kullanın. Dosya adlarıyla aynı simgeler geçerlidir."
+  },
+  "optNamesTitle": {
+    "message": "Dosya adları"
+  },
+  "optTemplate": {
+    "message": "Ad şablonu"
+  },
+  "optTokensHint": {
+    "message": "Simgeler: <code>{name}</code> özgün ad, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ve <code>{h}</code> piksel cinsinden boyut. Var olan dosyaların üzerine asla yazılmaz."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com adresindeki summer-banner için önizleme, 1600×900, PNG olarak:"
+  },
+  "optQualityTitle": {
+    "message": "Kalite ve boyut"
+  },
+  "optJpgQuality": {
+    "message": "JPG kalitesi"
+  },
+  "optWebpQuality": {
+    "message": "WebP kalitesi"
+  },
+  "optJpgBackground": {
+    "message": "JPG arka plan rengi"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG saydamlığı desteklemez; saydam alanlar bu rengi alır."
+  },
+  "optMaxWidth": {
+    "message": "En fazla genişlik"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Orijinal boyut"
+  },
+  "optMaxWidthHint": {
+    "message": "İsteğe bağlı, piksel cinsinden. Daha geniş görseller oranı korunarak sığacak şekilde küçültülür; küçük olanlar hiçbir zaman büyütülmez. Orijinal format her zaman olduğu gibi kaydedilir."
+  },
+  "optSitesTitle": {
+    "message": "İzin verdiğiniz siteler"
+  },
+  "optSitesEmpty": {
+    "message": "Henüz yok. Imgkeep yalnızca bir site, dönüştürmek istediğiniz görseli engellediğinde izin ister."
+  },
+  "optFindTitle": {
+    "message": "Sitelerin örttüğü görseller"
+  },
+  "optFindLabel": {
+    "message": "Örtü katmanlarının altındaki görselleri bul"
+  },
+  "optFindHint": {
+    "message": "Instagram ve Pinterest gibi sitelerde sağ tıklayıp Imgkeep: Buradaki görseli bul seçeneğini kullanın. Imgkeep bir sayfaya yalnızca orada bir görsel bulmasını istediğinizde bakar; yalnızca o sayfaya, yalnızca o an. Sayfayı asla değiştirmez."
+  },
+  "optFindOn": {
+    "message": "Açıldı."
+  },
+  "optFindOff": {
+    "message": "Kapatıldı."
+  },
+  "optCountsTitle": {
+    "message": "Anonim kullanım sayıları"
+  },
+  "optCountsLabel": {
+    "message": "Anonim günlük özet gönder"
+  },
+  "optCountsHint": {
+    "message": "Imgkeep günde bir kez \"JPG olarak 12 kayıt, 1 başarısız\" gibi bir özeti, AB'de barındırılan açık kaynaklı analiz hizmeti PostHog'a gönderir; böylece hangi özellikleri geliştirmemiz gerektiğini ve hangi kayıtların başarısız olduğunu biliriz. Görseller, sayfa adresleri, dosya adları ya da sizi tanımlayan hiçbir şey gönderilmez."
+  },
+  "optCountsShow": {
+    "message": "Tam olarak ne gönderildiğini görün"
+  },
+  "optCountsToday": {
+    "message": "Bugün sayılanlar (bugünden sonra gönderilir):"
+  },
+  "optCountsLast": {
+    "message": "Gönderilen son özet:"
+  },
+  "optCountsNone": {
+    "message": "Henüz bir şey yok."
+  },
+  "optCountsOff": {
+    "message": "Kapalı. Hiçbir şey sayılmıyor, hiçbir şey gönderilmiyor."
+  },
+  "optRemove": {
+    "message": "Kaldır"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ için erişimi kaldır",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — yakında"
+  },
+  "optProBody": {
+    "message": "En çok kullandığınız boyut ve formatlar için hazır ayarlar, \"200 KB altı\" gibi dosya boyutu hedefleri, her sitenin görsellerini doğru klasöre gönderen kurallar ve her görselin nereden geldiğinin kaydı."
+  },
+  "optProFree": {
+    "message": "Bugün kullandığınız her şey ücretsiz kalacak."
+  },
+  "optGetNotified": {
+    "message": "Haberdar olun"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep ne yapar, ne yapmaz"
+  },
+  "optPermissions": {
+    "message": "İstediği izinler:"
+  },
+  "optOptionalPermissions": {
+    "message": "Yalnızca Görselleri bul'u açarsanız:"
+  },
+  "optPermissionsLabel": {
+    "message": "İzinler"
+  },
+  "optTrust1": {
+    "message": "Görseller kendi bilgisayarınızda dönüştürülür, hiçbir yere yüklenmez. Imgkeep'in gönderdiği tek şey yukarıdaki anonim günlük özettir, onu da kapatabilirsiniz."
+  },
+  "optTrust2": {
+    "message": "Reklam yok, karşılama sekmesi yok. Küçük pencereler yalnızca siz istediğinizde ya da bir kayıt onayınızı gerektirdiğinde açılır. Imgkeep bir süre kullandıktan sonra bir kez puan vermenizi ister."
+  },
+  "optTrust4": {
+    "message": "Imgkeep bir sayfaya yalnızca orada bir görsel bulmasını istediğinizde bakar; yalnızca o sayfaya, yalnızca o an. Sayfayı asla değiştirmez."
+  },
+  "optTrust3": {
+    "message": "Ücretsiz olan her özellik ücretsiz kalır."
+  },
+  "optVersion": {
+    "message": "Sürüm"
+  },
+  "optWhatsNew": {
+    "message": "Yenilikler"
+  },
+  "copyWorking": {
+    "message": "Görsel kopyalanıyor…"
+  },
+  "copyDone": {
+    "message": "PNG olarak kopyalandı. İstediğiniz yere yapıştırın."
+  },
+  "copyFailed": {
+    "message": "Görsel kopyalanamadı"
+  },
+  "copyFailedNote": {
+    "message": "Panonuz değişmedi. Tekrar deneyin ya da görseli PNG dosyası olarak kaydedin."
+  },
+  "copySavePng": {
+    "message": "Bunun yerine PNG olarak kaydet"
+  },
+  "copyAllowAndCopy": {
+    "message": "İzin ver ve kopyala"
+  },
+  "editTitle": {
+    "message": "Diğer seçenekler"
+  },
+  "editLoading": {
+    "message": "Görsel yükleniyor…"
+  },
+  "editUpdating": {
+    "message": "Önizleme güncelleniyor…"
+  },
+  "editPreviewAlt": {
+    "message": "Sonucun önizlemesi"
+  },
+  "editOriginal": {
+    "message": "Orijinal"
+  },
+  "editResult": {
+    "message": "Sonuç"
+  },
+  "editFormat": {
+    "message": "Biçim"
+  },
+  "editPngHint": {
+    "message": "PNG her pikseli korur. Daha küçük bir dosya için en fazla genişliği düşürün ya da JPG veya WebP seçin."
+  },
+  "editIcoHint": {
+    "message": "Görseli 16, 32 ve 48 px boyutlarında, yeterince büyükse 256 px olarak da içeren bir simge dosyası. Kare olmayan görsellerin kenarları saydam olur."
+  },
+  "editBmpHint": {
+    "message": "Her uygulamanın açtığı sade bir bit eşlem. Dosyalar büyüktür ve saydam alanlar arka plan rengini alır."
+  },
+  "editAvifHint": {
+    "message": "Çoğu zaman aynı görünen bir JPG'nin yarısı kadar yer kaplar. Güncel tarayıcılar ve çoğu güncel uygulama açar; bazı eski uygulamalar açmaz."
+  },
+  "editMaxWidthHint": {
+    "message": "Piksel cinsinden. Oranı korur, görseli hiçbir zaman büyütmez."
+  },
+  "editBackground": {
+    "message": "Arka plan"
+  },
+  "editQuality": {
+    "message": "Kalite"
+  },
+  "editFileName": {
+    "message": "Dosya adı"
+  },
+  "editSave": {
+    "message": "Kaydet"
+  },
+  "editAllow": {
+    "message": "Bu siteye izin ver"
+  },
+  "editNeedsOk": {
+    "message": "Bu kaydetme için onayınız gerekiyor: az önce açılan Imgkeep penceresine bakın."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep işinize yarıyor mu?"
+  },
+  "reviewBody": {
+    "message": "Mağazada bırakacağınız bir puan, başkalarının da Imgkeep'i bulmasına yardımcı olur. Birkaç saniye sürer ve bunu yalnızca bir kez soruyoruz."
+  },
+  "reviewRate": {
+    "message": "Imgkeep'e puan ver"
+  },
+  "reviewNo": {
+    "message": "Hayır, teşekkürler"
+  },
+  "reviewThanks": {
+    "message": "Teşekkürler!"
+  },
+  "reviewOk": {
+    "message": "Anlaşıldı. Bir daha sormayacağız."
+  },
+  "findWindowTitle": {
+    "message": "Görsel bul"
+  },
+  "findEnableTitle": {
+    "message": "Sitelerin üstünü örttüğü görselleri bulun"
+  },
+  "findEnableBody": {
+    "message": "Instagram ve Pinterest gibi bazı siteler görsellerinin üstünü başka bir katmanla örter, bu yüzden sağ tık görsele ulaşamaz. Imgkeep o katmanın altındaki görseli sizin için bulabilir."
+  },
+  "findPromise": {
+    "message": "Imgkeep bir sayfaya yalnızca orada görsel bulmasını istediğinizde bakar; sadece o sayfaya, sadece o anda. Sayfayı asla değiştirmez."
+  },
+  "findTurnOn": {
+    "message": "Aç"
+  },
+  "findDenied": {
+    "message": "Açılmadı. Seçenekler'den istediğiniz zaman açabilirsiniz."
+  },
+  "findOnTitle": {
+    "message": "Açıldı"
+  },
+  "findOnBody": {
+    "message": "Görsele yeniden sağ tıklayın ve Imgkeep: Buradaki görseli bul seçeneğini seçin."
+  },
+  "findPickTitle": {
+    "message": "Hangi görsel?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep hangi görseli kastettiğinizi anlayamadı. Birini seçin:"
+  },
+  "findPickOne": {
+    "message": "Görsel $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Burada görsel bulunamadı"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep sayfanın bu bölümünde bir görsel bulamadı. Doğrudan fotoğrafın üzerine sağ tıklayın ya da fotoğrafı kendi sayfasında açıp yeniden deneyin."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep bu sayfaya bakamadı"
+  },
+  "findErrorBody": {
+    "message": "Sayfayı yeniden yükleyin, sonra görsele sağ tıklayıp yeniden Buradaki görseli bul seçeneğini seçin."
+  },
+  "paletteTitle": {
+    "message": "Renk paleti"
+  },
+  "paletteLoading": {
+    "message": "Renkler bulunuyor…"
+  },
+  "paletteCount": {
+    "message": "Renkler"
+  },
+  "paletteSwatches": {
+    "message": "Görselin ana renkleri, en baskın olandan başlayarak"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ kopyala (görselin $SHARE$ kadarı)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ kopyalandı",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Tümünü şu biçimde kopyala"
+  },
+  "paletteCodeCss": {
+    "message": "CSS değişkenleri"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Liste"
+  },
+  "paletteCopiedAll": {
+    "message": "Tüm renkler $KIND$ olarak kopyalandı",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Farklı kaydet"
+  },
+  "paletteSavePng": {
+    "message": "PNG renk kartelası"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP paleti"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe renk kartelası"
+  },
+  "paletteSavedFallback": {
+    "message": "Klasörünüz kullanılamadı, dosya İndirilenler'e kaydedildi: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Bu görsel tamamen saydam, yani alınacak bir rengi yok."
+  },
+  "paletteCopyFailed": {
+    "message": "Kopyalanamadı. Bu pencerenin içine tıklayıp yeniden deneyin."
+  },
+  "paletteNote": {
+    "message": "Kendi bilgisayarınızda hesaplanır. Görsel ve renkleri bilgisayarınızdan çıkmaz."
+  }
+}

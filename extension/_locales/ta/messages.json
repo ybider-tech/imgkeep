@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "படத்தை PNG, JPG, WebP, GIF அல்லது PDF ஆகச் சேமிக்க — Imgkeep"
+  },
+  "extDescription": {
+    "message": "வலது-கிளிக்கில் படத்தை PNG, JPG, WebP, GIF, PDF ஆகச் சேமிக்கலாம், வண்ணத் தட்டைப் பெறலாம். உங்கள் சாதனத்தில்; தனிப்பட்ட தரவு இல்லை."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (கடைசியாகப் பயன்படுத்தியது)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (அசைவைத் தக்கவைக்கும்)"
+  },
+  "menuOriginal": {
+    "message": "அசல் வடிவம்"
+  },
+  "menuCopyPng": {
+    "message": "PNG ஆக நகலெடு"
+  },
+  "menuPalette": {
+    "message": "வண்ணத் தட்டைப் பெறு"
+  },
+  "menuMoreOptions": {
+    "message": "மேலும் விருப்பங்கள்…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: இங்கே படத்தைக் கண்டறி…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ புதியது",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep பிடித்திருக்கிறதா? மதிப்பிடுங்கள்…"
+  },
+  "askErrBlocked": {
+    "message": "அணுகல் அனுமதித்த பிறகும் தளம் இந்தப் படத்தைத் தரவில்லை. சேவையகம் செயலிழந்திருக்கலாம், அல்லது அது தன் பக்கங்களுக்குள் மட்டுமே படத்தைக் காட்டலாம்."
+  },
+  "askErrHttp": {
+    "message": "படத்திற்குப் பதிலாகத் தளம் ஒரு பிழையைத் திருப்பி அனுப்பியது."
+  },
+  "askErrDecode": {
+    "message": "இந்தக் கோப்பைப் படமாக உங்கள் உலாவியால் படிக்க முடியவில்லை."
+  },
+  "askErrUnsupported": {
+    "message": "இந்த உலாவிப் பதிப்பால் இந்த வடிவத்தை உருவாக்க முடியாது. PNG ஐ முயற்சிக்கவும்."
+  },
+  "askErrBlob": {
+    "message": "இந்தப் படம் பக்கத்திற்குள் மட்டுமே உள்ளது (blob: இணைப்பு), எனவே Imgkeep ஆல் இதை இன்னும் சேமிக்க முடியாது. ஸ்கிரீன்ஷாட் எடுக்கலாம்."
+  },
+  "askErrTooLarge": {
+    "message": "உலாவியில் மாற்ற முடியாத அளவுக்கு இந்தப் படம் பெரியது."
+  },
+  "askErrTimeout": {
+    "message": "இந்தப் படத்தை மாற்ற மிக நேரம் ஆனதால் Imgkeep நிறுத்திவிட்டது. PNG ஐ, அல்லது குறுகிய அல்லது சிறிய அசைவூட்டத்தை முயற்சிக்கவும்."
+  },
+  "askErrDownload": {
+    "message": "உங்கள் உலாவியால் பதிவிறக்கத்தைத் தொடங்க முடியவில்லை."
+  },
+  "askErrWrite": {
+    "message": "உங்கள் கோப்புறையில் கோப்பை எழுத Imgkeep ஆல் முடியவில்லை."
+  },
+  "askErrExpired": {
+    "message": "இந்தச் சேமிப்பு காலாவதியாகிவிட்டது. படத்தை வலது-கிளிக் செய்து மீண்டும் முயற்சிக்கவும்."
+  },
+  "askErrUnknown": {
+    "message": "இந்தப் படத்தைச் சேமிக்கும்போது ஏதோ தவறாகிவிட்டது."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ சட்டகங்கள். GIF க்கு வரம்பு $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ பிக்சல்கள் × $COUNT$ சட்டகங்கள் — இங்கு ஒரு GIF தாங்கக்கூடியதை விட அதிகம்.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "இந்தப் பெயரில் மிக அதிகமான கோப்புகள் உள்ளன."
+  },
+  "askSaving": {
+    "message": "சேமிக்கிறது…"
+  },
+  "askSaved": {
+    "message": "சேமிக்கப்பட்டது."
+  },
+  "askSavedAs": {
+    "message": "$PATH$ ஆகச் சேமிக்கப்பட்டது",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ இல் சேமிக்கப்பட்டது",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "சேமிக்க எதுவும் இல்லை"
+  },
+  "askClose": {
+    "message": "மூடு"
+  },
+  "askRetry": {
+    "message": "மீண்டும் முயற்சி"
+  },
+  "askOpenImage": {
+    "message": "படத்தைத் திற"
+  },
+  "askCancel": {
+    "message": "ரத்துசெய்"
+  },
+  "askHostTitle": {
+    "message": "இந்தத் தளத்தின் படங்களை அனுமதிக்கவா?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ தன் படங்களை மற்ற தளங்கள் படிப்பதைத் தடுக்கிறது, எனவே Imgkeep ஆல் இதை இன்னும் மாற்ற முடியாது.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "நீங்கள் தேர்ந்தெடுக்கும் படங்களைப் பெற, இந்த ஒரு தளத்திற்கு மட்டுமே அணுகல். விருப்பங்களில் எப்போது வேண்டுமானாலும் இதை நீக்கலாம்."
+  },
+  "askAllowAndSave": {
+    "message": "அனுமதித்துச் சேமி"
+  },
+  "askNotAllowed": {
+    "message": "அணுகல் அனுமதிக்கப்படவில்லை. எதுவும் சேமிக்கப்படவில்லை."
+  },
+  "askSaveOriginal": {
+    "message": "அசல் வடிவத்தில் சேமி"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” உடன் மீண்டும் இணை",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "ஒரு கோப்புறையைத் தேர்ந்தெடுங்கள்"
+  },
+  "askReconnectBody": {
+    "message": "இந்தக் கோப்புறையில் மீண்டும் சேமிக்க உங்கள் உலாவிக்கு உங்கள் அனுமதி தேவை."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep உங்கள் படங்களைச் சேமிக்க வேண்டிய கோப்புறையைத் தேர்ந்தெடுங்கள்."
+  },
+  "askEveryVisit": {
+    "message": "உலாவி கேட்கும்போது $OPTION$ என்பதைத் தேர்ந்தெடுங்கள்; அப்போது மீண்டும் கேட்காது.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“ஒவ்வொரு முறையும் அனுமதி” (நிரந்தர அனுமதி)"
+  },
+  "askReconnectButton": {
+    "message": "மீண்டும் இணைத்துச் சேமி"
+  },
+  "askChooseButton": {
+    "message": "கோப்புறையைத் தேர்ந்தெடுத்துச் சேமி"
+  },
+  "askErrorTitle": {
+    "message": "இந்தப் படத்தைச் சேமிக்க முடியவில்லை"
+  },
+  "askFolderDenied": {
+    "message": "கோப்புறைக்கான அணுகலை உங்கள் உலாவி அனுமதிக்கவில்லை. எதுவும் சேமிக்கப்படவில்லை."
+  },
+  "askNoFolder": {
+    "message": "கோப்புறை எதுவும் தேர்ந்தெடுக்கப்படவில்லை. எதுவும் சேமிக்கப்படவில்லை."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep விருப்பங்கள்"
+  },
+  "optSaved": {
+    "message": "சேமிக்கப்பட்டது"
+  },
+  "optWhereTitle": {
+    "message": "எங்கே சேமிப்பது"
+  },
+  "optSaveMode": {
+    "message": "சேமிக்கும் முறை"
+  },
+  "optModeDownloads": {
+    "message": "பதிவிறக்கக் கோப்புறை"
+  },
+  "optModeDownloadsHint": {
+    "message": "உங்கள் உலாவியின் பதிவிறக்கக் கோப்புறையில் சேமிக்கும். எதுவும் கேட்காது."
+  },
+  "optModeFolder": {
+    "message": "நீங்கள் தேர்ந்தெடுக்கும் கோப்புறை"
+  },
+  "optModeFolderHint": {
+    "message": "நேரடியாக உங்கள் கோப்புறையில் எழுதும். உலாவியை மீண்டும் தொடங்கிய பிறகு மீண்டும் இணைக்கச் சொல்லலாம்."
+  },
+  "optModeAsk": {
+    "message": "ஒவ்வொரு முறையும் கேள்"
+  },
+  "optModeAskHint": {
+    "message": "ஒவ்வொரு படத்திற்கும் உலாவியின் Save As சாளரத்தைக் காட்டும்."
+  },
+  "optChooseFolder": {
+    "message": "கோப்புறையைத் தேர்ந்தெடு…"
+  },
+  "optChangeFolder": {
+    "message": "கோப்புறையை மாற்று…"
+  },
+  "optNoFolder": {
+    "message": "இதுவரை கோப்புறை எதுவும் தேர்ந்தெடுக்கப்படவில்லை."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — இணைக்கப்பட்டுள்ளது",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — மீண்டும் இணைக்கக் கேட்கும்",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "துணைக் கோப்புறை"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "எ.கா. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "விருப்பத்தேர்வு. உள்ளடங்கிய கோப்புறைகளுக்கு <code>/</code> பயன்படுத்துங்கள். கோப்புப் பெயர்களில் உள்ள அதே டோக்கன்கள்."
+  },
+  "optNamesTitle": {
+    "message": "கோப்புப் பெயர்கள்"
+  },
+  "optTemplate": {
+    "message": "பெயர் வார்ப்புரு"
+  },
+  "optTokensHint": {
+    "message": "டோக்கன்கள்: <code>{name}</code> அசல் பெயர், <code>{host}</code> தளம், <code>{date}</code>, <code>{time}</code>, <code>{w}</code> மற்றும் <code>{h}</code> பிக்சல்களில் அளவு. ஏற்கெனவே உள்ள கோப்புகள் ஒருபோதும் மேலெழுதப்படுவதில்லை."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com இலிருந்து summer-banner, 1600×900, PNG ஆக — முன்னோட்டம்:"
+  },
+  "optQualityTitle": {
+    "message": "தரமும் அளவும்"
+  },
+  "optJpgQuality": {
+    "message": "JPG தரம்"
+  },
+  "optWebpQuality": {
+    "message": "WebP தரம்"
+  },
+  "optJpgBackground": {
+    "message": "JPG பின்னணி நிறம்"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG இல் ஒளிஊடுருவல் கிடையாது; எனவே ஊடுருவும் பகுதிகளுக்கு இந்த நிறம் வரும்."
+  },
+  "optMaxWidth": {
+    "message": "அதிகபட்ச அகலம்"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "அசல் அளவு"
+  },
+  "optMaxWidthHint": {
+    "message": "விருப்பத்திற்குரியது, பிக்சல்களில். அகலமான படங்கள் வடிவம் மாறாமல் சிறிதாக்கப்படும்; சிறிய படங்கள் ஒருபோதும் பெரிதாக்கப்படுவதில்லை. அசல் வடிவம் எப்போதும் அப்படியே சேமிக்கப்படும்."
+  },
+  "optSitesTitle": {
+    "message": "நீங்கள் அனுமதித்த தளங்கள்"
+  },
+  "optSitesEmpty": {
+    "message": "இன்னும் எதுவும் இல்லை. நீங்கள் மாற்ற விரும்பும் படத்தை ஒரு தளம் தடுக்கும்போது மட்டுமே Imgkeep கேட்கும்."
+  },
+  "optFindTitle": {
+    "message": "தளங்கள் மறைக்கும் படங்கள்"
+  },
+  "optFindLabel": {
+    "message": "மறைப்பு அடுக்குகளுக்குக் கீழ் உள்ள படங்களைக் கண்டறி"
+  },
+  "optFindHint": {
+    "message": "Instagram, Pinterest போன்ற தளங்களில், வலது கிளிக் செய்து “Imgkeep: இங்குள்ள படத்தைக் கண்டறி” என்பதைத் தேர்ந்தெடுக்கவும். ஒரு பக்கத்தில் படத்தைக் கண்டறியச் சொன்னால் மட்டுமே Imgkeep அந்தப் பக்கத்தைப் பார்க்கும் — அந்தப் பக்கத்தை மட்டும், அப்போது மட்டும். பக்கத்தை அது ஒருபோதும் மாற்றுவதில்லை."
+  },
+  "optFindOn": {
+    "message": "இயக்கப்பட்டது."
+  },
+  "optFindOff": {
+    "message": "அணைக்கப்பட்டது."
+  },
+  "optCountsTitle": {
+    "message": "அடையாளமில்லா பயன்பாட்டு எண்ணிக்கைகள்"
+  },
+  "optCountsLabel": {
+    "message": "அடையாளமில்லா தினசரி சுருக்கத்தை அனுப்பு"
+  },
+  "optCountsHint": {
+    "message": "நாளுக்கு ஒரு முறை, “JPG ஆக 12 சேமிப்புகள், 1 தோல்வி” போன்ற ஒரு சுருக்கத்தை Imgkeep PostHog-க்கு அனுப்பும் — இது ஐரோப்பிய ஒன்றியத்தில் இயங்கும் திறந்த மூல பகுப்பாய்வுச் சேவை. எந்த அம்சங்களை மேம்படுத்த வேண்டும், எந்தச் சேமிப்புகள் தோல்வியடைகின்றன என்பதை அறியவே இது. படங்கள், பக்க முகவரிகள், கோப்புப் பெயர்கள், உங்களை அடையாளம் காட்டும் எதுவும் ஒருபோதும் அனுப்பப்படுவதில்லை."
+  },
+  "optCountsShow": {
+    "message": "அனுப்பப்படுவதை அப்படியே பாருங்கள்"
+  },
+  "optCountsToday": {
+    "message": "இன்று எண்ணப்பட்டவை (இன்றுக்குப் பிறகு அனுப்பப்படும்):"
+  },
+  "optCountsLast": {
+    "message": "கடைசியாக அனுப்பிய சுருக்கம்:"
+  },
+  "optCountsNone": {
+    "message": "இன்னும் எதுவும் இல்லை."
+  },
+  "optCountsOff": {
+    "message": "அணைக்கப்பட்டுள்ளது. எதுவும் எண்ணப்படுவதுமில்லை, அனுப்பப்படுவதுமில்லை."
+  },
+  "optRemove": {
+    "message": "நீக்கு"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ தளத்திற்கான அனுமதியை நீக்கு",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — விரைவில்"
+  },
+  "optProBody": {
+    "message": "நீங்கள் அதிகம் பயன்படுத்தும் அளவுகளுக்கும் வடிவங்களுக்கும் முன்னமைவுகள், “200 KB-க்குக் கீழ்” போன்ற கோப்பு அளவு இலக்குகள், ஒவ்வொரு தளத்தின் படங்களையும் சரியான கோப்புறைக்கு அனுப்பும் விதிகள், ஒவ்வொரு படமும் எங்கிருந்து வந்தது என்ற பதிவு."
+  },
+  "optProFree": {
+    "message": "இன்று நீங்கள் பயன்படுத்தும் அனைத்தும் இலவசமாகவே இருக்கும்."
+  },
+  "optGetNotified": {
+    "message": "அறிவிப்பு பெறுங்கள்"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep என்ன செய்யும், என்ன செய்யாது"
+  },
+  "optPermissions": {
+    "message": "இது கேட்கும் அனுமதிகள்:"
+  },
+  "optOptionalPermissions": {
+    "message": "“படங்களைக் கண்டறி” அம்சத்தை இயக்கினால் மட்டும்:"
+  },
+  "optPermissionsLabel": {
+    "message": "அனுமதிகள்"
+  },
+  "optTrust1": {
+    "message": "படங்கள் உங்கள் கணினியிலேயே மாற்றப்படுகின்றன; ஒருபோதும் பதிவேற்றப்படுவதில்லை. Imgkeep அனுப்பும் ஒரே விஷயம் மேலே உள்ள அடையாளமில்லா தினசரி சுருக்கம் மட்டுமே — அதையும் நீங்கள் அணைக்கலாம்."
+  },
+  "optTrust2": {
+    "message": "விளம்பரங்கள் இல்லை, வரவேற்புத் தாவல்கள் இல்லை. நீங்கள் கேட்கும்போது அல்லது ஒரு சேமிப்புக்கு உங்கள் சம்மதம் தேவைப்படும்போது மட்டுமே சிறிய சாளரங்கள் திறக்கும். சிறிது காலம் பயன்படுத்திய பிறகு, மதிப்பீடு கேட்டு Imgkeep ஒரே ஒரு முறை கேட்கும்."
+  },
+  "optTrust4": {
+    "message": "ஒரு பக்கத்தில் படத்தைக் கண்டறியச் சொன்னால் மட்டுமே Imgkeep அந்தப் பக்கத்தைப் பார்க்கும் — அந்தப் பக்கத்தை மட்டும், அப்போது மட்டும். பக்கத்தை அது ஒருபோதும் மாற்றுவதில்லை."
+  },
+  "optTrust3": {
+    "message": "இலவச அம்சங்கள் அனைத்தும் இலவசமாகவே இருக்கும்."
+  },
+  "optVersion": {
+    "message": "பதிப்பு"
+  },
+  "optWhatsNew": {
+    "message": "புதியவை"
+  },
+  "copyWorking": {
+    "message": "படம் நகலெடுக்கப்படுகிறது…"
+  },
+  "copyDone": {
+    "message": "PNG ஆக நகலெடுக்கப்பட்டது. எங்கு வேண்டுமானாலும் ஒட்டலாம்."
+  },
+  "copyFailed": {
+    "message": "படத்தை நகலெடுக்க முடியவில்லை"
+  },
+  "copyFailedNote": {
+    "message": "உங்கள் கிளிப்போர்டு மாறவில்லை. மீண்டும் முயலுங்கள், அல்லது படத்தை PNG கோப்பாகச் சேமியுங்கள்."
+  },
+  "copySavePng": {
+    "message": "அதற்குப் பதிலாக PNG ஆகச் சேமி"
+  },
+  "copyAllowAndCopy": {
+    "message": "அனுமதித்து நகலெடு"
+  },
+  "editTitle": {
+    "message": "மேலும் விருப்பங்கள்"
+  },
+  "editLoading": {
+    "message": "படம் ஏற்றப்படுகிறது…"
+  },
+  "editUpdating": {
+    "message": "முன்னோட்டம் புதுப்பிக்கப்படுகிறது…"
+  },
+  "editPreviewAlt": {
+    "message": "முடிவின் முன்னோட்டம்"
+  },
+  "editOriginal": {
+    "message": "அசல்"
+  },
+  "editResult": {
+    "message": "முடிவு"
+  },
+  "editFormat": {
+    "message": "வடிவம்"
+  },
+  "editPngHint": {
+    "message": "PNG ஒவ்வொரு பிக்சலையும் அப்படியே வைத்திருக்கும். கோப்பைச் சிறிதாக்க, அதிகபட்ச அகலத்தைக் குறைக்கவும் அல்லது JPG அல்லது WebP ஐத் தேர்ந்தெடுக்கவும்."
+  },
+  "editIcoHint": {
+    "message": "16, 32, 48 px அளவுகளில் படத்துடன் கூடிய ஐகான் கோப்பு; படம் போதுமான அளவு பெரிதாக இருந்தால் 256 px உம் சேரும். சதுரமாக இல்லாத படங்களின் ஓரங்கள் ஒளிஊடுருவும் பகுதிகளாக இருக்கும்."
+  },
+  "editBmpHint": {
+    "message": "எல்லா செயலிகளும் திறக்கும் எளிய பிட்மேப். கோப்புகள் பெரியவை; ஒளிஊடுருவும் பகுதிகளுக்குப் பின்னணி நிறம் வந்துவிடும்."
+  },
+  "editAvifHint": {
+    "message": "ஒரே மாதிரித் தெரியும் JPG-ஐ விட பெரும்பாலும் பாதி அளவு. நவீன உலாவிகளும் இன்றைய பெரும்பாலான செயலிகளும் இதைத் திறக்கும்; சில பழைய செயலிகள் திறக்காது."
+  },
+  "editMaxWidthHint": {
+    "message": "பிக்சல்களில். படத்தின் வடிவ விகிதம் மாறாது; ஒருபோதும் பெரிதாக்காது."
+  },
+  "editBackground": {
+    "message": "பின்னணி"
+  },
+  "editQuality": {
+    "message": "தரம்"
+  },
+  "editFileName": {
+    "message": "கோப்புப் பெயர்"
+  },
+  "editSave": {
+    "message": "சேமி"
+  },
+  "editAllow": {
+    "message": "இந்தத் தளத்தை அனுமதி"
+  },
+  "editNeedsOk": {
+    "message": "இந்தச் சேமிப்புக்கு உங்கள் ஒப்புதல் தேவை: இப்போது திறந்த Imgkeep சாளரத்தைப் பாருங்கள்."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep பிடித்திருக்கிறதா?"
+  },
+  "reviewBody": {
+    "message": "ஸ்டோரில் ஒரு மதிப்பீடு இட்டால், மற்றவர்களுக்கு இது கிடைக்க உதவும். சில நொடிகள் போதும்; இதை ஒரே ஒரு முறைதான் கேட்போம்."
+  },
+  "reviewRate": {
+    "message": "Imgkeep-க்கு மதிப்பீடு இடு"
+  },
+  "reviewNo": {
+    "message": "வேண்டாம், நன்றி"
+  },
+  "reviewThanks": {
+    "message": "நன்றி!"
+  },
+  "reviewOk": {
+    "message": "சரி. இனி கேட்க மாட்டோம்."
+  },
+  "findWindowTitle": {
+    "message": "படத்தைக் கண்டறி"
+  },
+  "findEnableTitle": {
+    "message": "தளங்கள் மறைக்கும் படங்களைக் கண்டறியுங்கள்"
+  },
+  "findEnableBody": {
+    "message": "Instagram, Pinterest போன்ற சில தளங்கள் தங்கள் படங்களை இன்னொரு அடுக்கால் மறைக்கின்றன; அதனால் வலது-கிளிக் படத்தை அடைய முடிவதில்லை. அந்த அடுக்குக்கு அடியில் உள்ள படத்தை Imgkeep உங்களுக்காகக் கண்டறியும்."
+  },
+  "findPromise": {
+    "message": "ஒரு பக்கத்தில் படத்தைக் கண்டறியச் சொன்னால் மட்டுமே Imgkeep அந்தப் பக்கத்தைப் பார்க்கும், அந்தப் பக்கத்தை மட்டும், அப்போது மட்டும். பக்கத்தை அது ஒருபோதும் மாற்றாது."
+  },
+  "findTurnOn": {
+    "message": "இயக்கு"
+  },
+  "findDenied": {
+    "message": "இயக்கப்படவில்லை. விருப்பங்களில் எப்போது வேண்டுமானாலும் இதை இயக்கலாம்."
+  },
+  "findOnTitle": {
+    "message": "இயக்கப்பட்டது"
+  },
+  "findOnBody": {
+    "message": "படத்தின் மீது மீண்டும் வலது-கிளிக் செய்து, Imgkeep: இங்கே படத்தைக் கண்டறி என்பதைத் தேர்ந்தெடுக்கவும்."
+  },
+  "findPickTitle": {
+    "message": "எந்தப் படம்?"
+  },
+  "findPickBody": {
+    "message": "நீங்கள் எந்தப் படத்தைக் குறிப்பிட்டீர்கள் என்பதை Imgkeep-ஆல் அறிய முடியவில்லை. ஒன்றைத் தேர்ந்தெடுங்கள்:"
+  },
+  "findPickOne": {
+    "message": "படம் $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "இங்கே படம் எதுவும் கிடைக்கவில்லை"
+  },
+  "findNothingBody": {
+    "message": "பக்கத்தின் இந்தப் பகுதியில் Imgkeep-ஆல் படம் எதையும் கண்டறிய முடியவில்லை. புகைப்படத்தின் மீது நேரடியாக வலது-கிளிக் செய்யுங்கள், அல்லது புகைப்படத்தைத் தனிப் பக்கத்தில் திறந்து மீண்டும் முயலுங்கள்."
+  },
+  "findErrorTitle": {
+    "message": "இந்தப் பக்கத்தை Imgkeep-ஆல் பார்க்க முடியவில்லை"
+  },
+  "findErrorBody": {
+    "message": "பக்கத்தை மீண்டும் ஏற்றிவிட்டு, படத்தின் மீது வலது-கிளிக் செய்து இங்கே படத்தைக் கண்டறி என்பதை மீண்டும் தேர்ந்தெடுக்கவும்."
+  },
+  "paletteTitle": {
+    "message": "வண்ணத் தட்டு"
+  },
+  "paletteLoading": {
+    "message": "வண்ணங்கள் கண்டறியப்படுகின்றன…"
+  },
+  "paletteCount": {
+    "message": "வண்ணங்கள்"
+  },
+  "paletteSwatches": {
+    "message": "படத்தின் முதன்மை வண்ணங்கள், பெரியது முதலில்"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ நகலெடு (படத்தில் $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ நகலெடுக்கப்பட்டது",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "அனைத்தையும் இப்படி நகலெடு"
+  },
+  "paletteCodeCss": {
+    "message": "CSS மாறிகள்"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "பட்டியல்"
+  },
+  "paletteCopiedAll": {
+    "message": "அனைத்து வண்ணங்களும் $KIND$ ஆக நகலெடுக்கப்பட்டன",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "இப்படி சேமி"
+  },
+  "paletteSavePng": {
+    "message": "PNG வண்ணத்துண்டுகள்"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP வண்ணத்தட்டு"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe வண்ணத்துண்டுகள்"
+  },
+  "paletteSavedFallback": {
+    "message": "உங்கள் கோப்புறை கிடைக்கவில்லை, எனவே Downloads-இல் சேமிக்கப்பட்டது: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "இந்தப் படம் முழுவதும் வெளிப்படையானது, எனவே எடுக்க வண்ணங்கள் எதுவும் இல்லை."
+  },
+  "paletteCopyFailed": {
+    "message": "நகலெடுக்க முடியவில்லை. இந்தச் சாளரத்துக்குள் சொடுக்கி மீண்டும் முயலுங்கள்."
+  },
+  "paletteNote": {
+    "message": "உங்கள் கணினியிலேயே கணக்கிடப்படுகிறது. படமும் அதன் வண்ணங்களும் அதை விட்டு வெளியே செல்வதில்லை."
+  }
+}

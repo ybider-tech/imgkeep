@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Saglabāt attēlu kā PNG, JPG, WebP, GIF vai PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Ar peles labo pogu saglabā attēlu kā PNG, JPG, WebP, GIF vai PDF vai iegūsti krāsu paleti. Tavā ierīcē. Bez personas datiem."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (kā iepriekš)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (saglabā animāciju)"
+  },
+  "menuOriginal": {
+    "message": "Sākotnējais formāts"
+  },
+  "menuCopyPng": {
+    "message": "Kopēt kā PNG"
+  },
+  "menuPalette": {
+    "message": "Iegūt krāsu paleti"
+  },
+  "menuMoreOptions": {
+    "message": "Vairāk iespēju…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: atrast attēlu šeit…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Jaunums",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Patīk Imgkeep? Novērtē to…"
+  },
+  "askErrBlocked": {
+    "message": "Vietne neiedeva šo attēlu pat ar atļautu piekļuvi. Serveris, iespējams, nedarbojas vai arī rāda attēlu tikai savās lapās."
+  },
+  "askErrHttp": {
+    "message": "Vietne attēla vietā atbildēja ar kļūdu."
+  },
+  "askErrDecode": {
+    "message": "Pārlūks nespēja nolasīt šo failu kā attēlu."
+  },
+  "askErrUnsupported": {
+    "message": "Šī pārlūka versija nevar izveidot šo formātu. Pamēģini PNG."
+  },
+  "askErrBlob": {
+    "message": "Šis attēls pastāv tikai lapas iekšienē (blob: saite), tāpēc Imgkeep to vēl nevar saglabāt. Noder ekrānuzņēmums."
+  },
+  "askErrTooLarge": {
+    "message": "Šis attēls ir par lielu, lai to pārveidotu pārlūkā."
+  },
+  "askErrTimeout": {
+    "message": "Šī attēla pārveide prasīja pārāk ilgu laiku, tāpēc Imgkeep to pārtrauca. Pamēģini PNG vai īsāku vai mazāku animāciju."
+  },
+  "askErrDownload": {
+    "message": "Pārlūks nespēja sākt lejupielādi."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep nevarēja ierakstīt failu tavā mapē."
+  },
+  "askErrExpired": {
+    "message": "Šai saglabāšanai beidzies laiks. Noklikšķini uz attēla ar labo pogu un mēģini vēlreiz."
+  },
+  "askErrUnknown": {
+    "message": "Saglabājot šo attēlu, kaut kas nogāja greizi."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ kadri. GIF ierobežojums ir $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pikseļi × $COUNT$ kadri ir vairāk, nekā GIF šeit var ietilpināt.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Pārāk daudz failu ar šo nosaukumu."
+  },
+  "askSaving": {
+    "message": "Saglabā…"
+  },
+  "askSaved": {
+    "message": "Saglabāts."
+  },
+  "askSavedAs": {
+    "message": "Saglabāts kā $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Saglabāts mapē $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nav ko saglabāt"
+  },
+  "askClose": {
+    "message": "Aizvērt"
+  },
+  "askRetry": {
+    "message": "Mēģināt vēlreiz"
+  },
+  "askOpenImage": {
+    "message": "Atvērt attēlu"
+  },
+  "askCancel": {
+    "message": "Atcelt"
+  },
+  "askHostTitle": {
+    "message": "Atļaut attēlus no šīs vietnes?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ neļauj citām vietnēm nolasīt savus attēlus, tāpēc Imgkeep šo vēl nevar pārveidot.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Piekļuve attiecas tikai uz šo vienu vietni, lai iegūtu tevis izvēlētos attēlus. To jebkurā brīdī vari noņemt Iestatījumos."
+  },
+  "askAllowAndSave": {
+    "message": "Atļaut un saglabāt"
+  },
+  "askNotAllowed": {
+    "message": "Piekļuve netika atļauta. Nekas netika saglabāts."
+  },
+  "askSaveOriginal": {
+    "message": "Tā vietā saglabāt oriģinālformātā"
+  },
+  "askReconnectTitle": {
+    "message": "Atjaunot piekļuvi mapei „$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Izvēlieties mapi"
+  },
+  "askReconnectBody": {
+    "message": "Pārlūkam vajadzīga jūsu atļauja, lai atkal saglabātu šajā mapē."
+  },
+  "askChooseBody": {
+    "message": "Izvēlieties mapi, kurā Imgkeep saglabās jūsu attēlus."
+  },
+  "askEveryVisit": {
+    "message": "Kad pārlūks jautā, izvēlieties $OPTION$, lai tas vairs nejautātu.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Atļaut katrā apmeklējumā”"
+  },
+  "askReconnectButton": {
+    "message": "Atjaunot piekļuvi un saglabāt"
+  },
+  "askChooseButton": {
+    "message": "Izvēlēties mapi un saglabāt"
+  },
+  "askErrorTitle": {
+    "message": "Neizdevās saglabāt šo attēlu"
+  },
+  "askFolderDenied": {
+    "message": "Pārlūks neatļāva piekļuvi mapei. Nekas netika saglabāts."
+  },
+  "askNoFolder": {
+    "message": "Mape nav izvēlēta. Nekas netika saglabāts."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep opcijas"
+  },
+  "optSaved": {
+    "message": "Saglabāts"
+  },
+  "optWhereTitle": {
+    "message": "Kur saglabāt"
+  },
+  "optSaveMode": {
+    "message": "Saglabāšanas režīms"
+  },
+  "optModeDownloads": {
+    "message": "Lejupielāžu mape"
+  },
+  "optModeDownloadsHint": {
+    "message": "Saglabā pārlūka lejupielāžu mapē. Bez jautājumiem."
+  },
+  "optModeFolder": {
+    "message": "Mape pēc jūsu izvēles"
+  },
+  "optModeFolderHint": {
+    "message": "Raksta tieši jūsu mapē. Pēc pārlūka restartēšanas tas var lūgt atjaunot piekļuvi."
+  },
+  "optModeAsk": {
+    "message": "Jautāt katru reizi"
+  },
+  "optModeAskHint": {
+    "message": "Katram attēlam rāda pārlūka dialoglodziņu „Saglabāt kā”."
+  },
+  "optChooseFolder": {
+    "message": "Izvēlēties mapi…"
+  },
+  "optChangeFolder": {
+    "message": "Mainīt mapi…"
+  },
+  "optNoFolder": {
+    "message": "Mape vēl nav izvēlēta."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$” — savienota",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$” — lūgs atjaunot piekļuvi",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Apakšmape"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "piem., Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Nav obligāti. Ligzdotām mapēm izmantojiet <code>/</code>. Tie paši marķieri kā failu nosaukumos."
+  },
+  "optNamesTitle": {
+    "message": "Failu nosaukumi"
+  },
+  "optTemplate": {
+    "message": "Nosaukuma veidne"
+  },
+  "optTokensHint": {
+    "message": "Marķieri: <code>{name}</code> sākotnējais nosaukums, <code>{host}</code> vietne, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> un <code>{h}</code> izmērs pikseļos. Esošie faili nekad netiek pārrakstīti."
+  },
+  "optPreviewLabel": {
+    "message": "Priekšskatījums attēlam summer-banner no shop.example.com, 1600×900, kā PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kvalitāte un izmērs"
+  },
+  "optJpgQuality": {
+    "message": "JPG kvalitāte"
+  },
+  "optWebpQuality": {
+    "message": "WebP kvalitāte"
+  },
+  "optJpgBackground": {
+    "message": "JPG fona krāsa"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG neatbalsta caurspīdīgumu, tāpēc caurspīdīgie apgabali iegūs šo krāsu."
+  },
+  "optMaxWidth": {
+    "message": "Maksimālais platums"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Sākotnējais izmērs"
+  },
+  "optMaxWidthHint": {
+    "message": "Neobligāti, pikseļos. Platāki attēli tiek samazināti, lai ietilptu, saglabājot proporcijas; mazāki nekad netiek palielināti. Sākotnējais formāts vienmēr tiek saglabāts tāds, kāds ir."
+  },
+  "optSitesTitle": {
+    "message": "Atļautās vietnes"
+  },
+  "optSitesEmpty": {
+    "message": "Pagaidām nav nevienas. Imgkeep jautā tikai tad, ja vietne bloķē attēlu, ko vēlaties pārveidot."
+  },
+  "optFindTitle": {
+    "message": "Attēli, ko vietnes nosedz"
+  },
+  "optFindLabel": {
+    "message": "Atrast attēlus zem nosedzošajiem slāņiem"
+  },
+  "optFindHint": {
+    "message": "Tādās vietnēs kā Instagram un Pinterest noklikšķiniet ar peles labo pogu un izvēlieties “Imgkeep: atrast attēlu šeit”. Imgkeep aplūko lapu tikai tad, kad lūdzat tajā atrast attēlu — tikai to lapu un tikai tobrīd. Tas nekad nemaina lapu."
+  },
+  "optFindOn": {
+    "message": "Ieslēgts."
+  },
+  "optFindOff": {
+    "message": "Izslēgts."
+  },
+  "optCountsTitle": {
+    "message": "Anonīma lietojuma uzskaite"
+  },
+  "optCountsLabel": {
+    "message": "Sūtīt anonīmu dienas kopsavilkumu"
+  },
+  "optCountsHint": {
+    "message": "Reizi dienā Imgkeep nosūta kopsavilkumu, piemēram, “12 saglabāšanas JPG formātā, 1 neizdevās”, uz PostHog — atvērtā pirmkoda analītikas pakalpojumu, kas tiek mitināts ES —, lai zinātu, kuras funkcijas uzlabot un kuras saglabāšanas neizdodas. Nekad netiek sūtīti attēli, lapu adreses, failu nosaukumi vai kaut kas, kas jūs identificē."
+  },
+  "optCountsShow": {
+    "message": "Apskatīt, kas tieši tiek sūtīts"
+  },
+  "optCountsToday": {
+    "message": "Šodien saskaitīts (tiks nosūtīts pēc šodienas):"
+  },
+  "optCountsLast": {
+    "message": "Pēdējais nosūtītais kopsavilkums:"
+  },
+  "optCountsNone": {
+    "message": "Pagaidām nekā."
+  },
+  "optCountsOff": {
+    "message": "Izslēgts. Nekas netiek skaitīts un sūtīts."
+  },
+  "optRemove": {
+    "message": "Noņemt"
+  },
+  "optRemoveAccess": {
+    "message": "Noņemt piekļuvi vietnei $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — drīzumā"
+  },
+  "optProBody": {
+    "message": "Sagataves biežāk lietotajiem izmēriem un formātiem, faila izmēra mērķi, piemēram, “zem 200 KB”, noteikumi, kas katras vietnes attēlus saglabā pareizajā mapē, un žurnāls par to, no kurienes nācis katrs attēls."
+  },
+  "optProFree": {
+    "message": "Viss, ko lietojat šodien, paliek bez maksas."
+  },
+  "optGetNotified": {
+    "message": "Saņemt paziņojumu"
+  },
+  "optTrustTitle": {
+    "message": "Ko Imgkeep var un ko nevar"
+  },
+  "optPermissions": {
+    "message": "Pieprasītās atļaujas:"
+  },
+  "optOptionalPermissions": {
+    "message": "Tikai tad, ja ieslēdzat attēlu atrašanu:"
+  },
+  "optPermissionsLabel": {
+    "message": "Atļaujas"
+  },
+  "optTrust1": {
+    "message": "Attēli tiek pārveidoti jūsu datorā un nekad netiek augšupielādēti. Vienīgais, ko Imgkeep vēl nosūta, ir iepriekš minētais anonīmais dienas kopsavilkums, un to varat izslēgt."
+  },
+  "optTrust2": {
+    "message": "Nav reklāmu un sveiciena ciļņu. Nelieli logi atveras tikai tad, kad tos lūdzat vai kad saglabāšanai vajadzīgs jūsu apstiprinājums. Novērtējumu Imgkeep palūdz vienu reizi — pēc tam, kad būsiet to kādu laiku lietojuši."
+  },
+  "optTrust4": {
+    "message": "Imgkeep aplūko lapu tikai tad, kad lūdzat tajā atrast attēlu — tikai to lapu un tikai tobrīd. Tas nekad nemaina lapu."
+  },
+  "optTrust3": {
+    "message": "Katra bezmaksas funkcija paliek bez maksas."
+  },
+  "optVersion": {
+    "message": "Versija"
+  },
+  "optWhatsNew": {
+    "message": "Kas jauns"
+  },
+  "copyWorking": {
+    "message": "Kopē attēlu…"
+  },
+  "copyDone": {
+    "message": "Nokopēts kā PNG. Ielīmējiet, kur vēlaties."
+  },
+  "copyFailed": {
+    "message": "Neizdevās nokopēt attēlu"
+  },
+  "copyFailedNote": {
+    "message": "Starpliktuve netika mainīta. Mēģiniet vēlreiz vai saglabājiet attēlu kā PNG failu."
+  },
+  "copySavePng": {
+    "message": "Saglabāt kā PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Atļaut un kopēt"
+  },
+  "editTitle": {
+    "message": "Vairāk opciju"
+  },
+  "editLoading": {
+    "message": "Ielādē attēlu…"
+  },
+  "editUpdating": {
+    "message": "Atjaunina priekšskatījumu…"
+  },
+  "editPreviewAlt": {
+    "message": "Rezultāta priekšskatījums"
+  },
+  "editOriginal": {
+    "message": "Oriģināls"
+  },
+  "editResult": {
+    "message": "Rezultāts"
+  },
+  "editFormat": {
+    "message": "Formāts"
+  },
+  "editPngHint": {
+    "message": "PNG saglabā katru pikseli. Mazākam failam samaziniet maksimālo platumu vai izvēlieties JPG vai WebP."
+  },
+  "editIcoHint": {
+    "message": "Ikonas fails ar attēlu 16, 32 un 48 px izmērā, kā arī 256 px, ja attēls ir pietiekami liels. Attēliem, kas nav kvadrātveida, malas būs caurspīdīgas."
+  },
+  "editBmpHint": {
+    "message": "Vienkāršs bitkartes attēls, ko atver jebkura lietotne. Faili ir lieli, un caurspīdīgās vietas iegūst fona krāsu."
+  },
+  "editAvifHint": {
+    "message": "Bieži uz pusi mazāks nekā JPG, kas izskatās tāpat. Mūsdienu pārlūki un lielākā daļa jaunāko lietotņu to atver; dažas vecākas — nē."
+  },
+  "editMaxWidthHint": {
+    "message": "Pikseļos. Saglabā proporcijas, nekad nepalielina."
+  },
+  "editBackground": {
+    "message": "Fons"
+  },
+  "editQuality": {
+    "message": "Kvalitāte"
+  },
+  "editFileName": {
+    "message": "Faila nosaukums"
+  },
+  "editSave": {
+    "message": "Saglabāt"
+  },
+  "editAllow": {
+    "message": "Atļaut šo vietni"
+  },
+  "editNeedsOk": {
+    "message": "Šai saglabāšanai vajadzīgs jūsu apstiprinājums: skatiet tikko atvērto Imgkeep logu."
+  },
+  "reviewTitle": {
+    "message": "Vai Imgkeep noder?"
+  },
+  "reviewBody": {
+    "message": "Vērtējums veikalā palīdz citiem to atrast. Tas aizņem dažas sekundes, un mēs to prasīsim tikai vienreiz."
+  },
+  "reviewRate": {
+    "message": "Novērtēt Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Nē, paldies"
+  },
+  "reviewThanks": {
+    "message": "Paldies!"
+  },
+  "reviewOk": {
+    "message": "Sapratām. Vairs neprasīsim."
+  },
+  "findWindowTitle": {
+    "message": "Atrast attēlu"
+  },
+  "findEnableTitle": {
+    "message": "Atrodiet attēlus, ko vietnes nosedz"
+  },
+  "findEnableBody": {
+    "message": "Dažas vietnes, piemēram, Instagram un Pinterest, pārklāj savus attēlus ar vēl vienu slāni, tāpēc ar labo peles klikšķi tiem nevar piekļūt. Imgkeep var atrast attēlu zem šā slāņa."
+  },
+  "findPromise": {
+    "message": "Imgkeep ieskatās lapā tikai tad, kad lūdzat tur atrast attēlu — tikai tajā lapā un tikai tobrīd. Tas nekad lapu nemaina."
+  },
+  "findTurnOn": {
+    "message": "Ieslēgt"
+  },
+  "findDenied": {
+    "message": "Nav ieslēgts. To var ieslēgt jebkurā brīdī sadaļā Iestatījumi."
+  },
+  "findOnTitle": {
+    "message": "Ieslēgts"
+  },
+  "findOnBody": {
+    "message": "Noklikšķiniet uz attēla ar labo peles pogu vēlreiz un izvēlieties Imgkeep: atrast attēlu šeit."
+  },
+  "findPickTitle": {
+    "message": "Kurš attēls?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep nespēja noteikt, kuru attēlu domājāt. Izvēlieties vienu:"
+  },
+  "findPickOne": {
+    "message": "$NUMBER$. attēls",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Šeit nav atrasts neviens attēls"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep neatrada attēlu šajā lapas daļā. Noklikšķiniet ar labo peles pogu tieši uz fotoattēla vai atveriet fotoattēlu atsevišķā lapā un mēģiniet vēlreiz."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep nevarēja ieskatīties šajā lapā"
+  },
+  "findErrorBody": {
+    "message": "Pārlādējiet lapu, tad noklikšķiniet uz attēla ar labo peles pogu un vēlreiz izvēlieties Atrast attēlu šeit."
+  },
+  "paletteTitle": {
+    "message": "Krāsu palete"
+  },
+  "paletteLoading": {
+    "message": "Nosaka krāsas…"
+  },
+  "paletteCount": {
+    "message": "Krāsas"
+  },
+  "paletteSwatches": {
+    "message": "Attēla galvenās krāsas, sākot ar izteiktāko"
+  },
+  "paletteCopyOne": {
+    "message": "Kopēt $VALUE$ ($SHARE$ no attēla)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ nokopēts",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopēt visas kā"
+  },
+  "paletteCodeCss": {
+    "message": "CSS mainīgie"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Saraksts"
+  },
+  "paletteCopiedAll": {
+    "message": "Visas krāsas nokopētas kā $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Saglabāt kā"
+  },
+  "paletteSavePng": {
+    "message": "PNG paraugi"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP palete"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe paraugi"
+  },
+  "paletteSavedFallback": {
+    "message": "Tava mape nebija pieejama, tāpēc fails nonāca mapē Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Šis attēls ir pilnībā caurspīdīgs, tāpēc tajā nav krāsu, ko paņemt."
+  },
+  "paletteCopyFailed": {
+    "message": "Neizdevās nokopēt. Noklikšķini šajā logā un mēģini vēlreiz."
+  },
+  "paletteNote": {
+    "message": "Aprēķināts tavā datorā. Attēls un tā krāsas to nekad nepamet."
+  }
+}

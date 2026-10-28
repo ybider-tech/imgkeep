@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Salvesta pilt PNG, JPG, WebP, GIF või PDF-vormingus — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Paremklõps salvestab iga pildi PNG, JPG, WebP, GIF või PDF-ina või annab värvipaleti. Sinu seadmes. Ilma isikuandmeteta."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (viimati kasutatud)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (säilitab animatsiooni)"
+  },
+  "menuOriginal": {
+    "message": "Algne vorming"
+  },
+  "menuCopyPng": {
+    "message": "Kopeeri PNG-na"
+  },
+  "menuPalette": {
+    "message": "Võta värvipalett"
+  },
+  "menuMoreOptions": {
+    "message": "Rohkem valikuid…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: leia pilt siit…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Uus",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Kas Imgkeep meeldib? Anna hinnang…"
+  },
+  "askErrBlocked": {
+    "message": "Sait ei andnud seda pilti välja ka lubatud juurdepääsuga. Server võib olla maas või pakub pilti ainult oma lehtede sees."
+  },
+  "askErrHttp": {
+    "message": "Sait vastas pildi asemel veateatega."
+  },
+  "askErrDecode": {
+    "message": "Brauser ei suutnud seda faili pildina lugeda."
+  },
+  "askErrUnsupported": {
+    "message": "See brauseri versioon ei oska seda vormingut luua. Proovi PNG-d."
+  },
+  "askErrBlob": {
+    "message": "See pilt on olemas ainult lehe sees (blob: link), nii et Imgkeep ei saa seda veel salvestada. Ekraanipilt töötab."
+  },
+  "askErrTooLarge": {
+    "message": "See pilt on brauseris teisendamiseks liiga suur."
+  },
+  "askErrTimeout": {
+    "message": "Selle pildi teisendamine võttis liiga kaua ja Imgkeep katkestas. Proovi PNG-d või lühemat või väiksemat animatsiooni."
+  },
+  "askErrDownload": {
+    "message": "Brauser ei saanud allalaadimist alustada."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep ei saanud faili sinu kausta kirjutada."
+  },
+  "askErrExpired": {
+    "message": "See salvestus on aegunud. Tee pildil paremklõps ja proovi uuesti."
+  },
+  "askErrUnknown": {
+    "message": "Selle pildi salvestamisel läks midagi valesti."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ kaadrit. GIF-i piir on $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pikslit × $COUNT$ kaadrit on rohkem, kui GIF siin mahutab.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Selle nimega faile on liiga palju."
+  },
+  "askSaving": {
+    "message": "Salvestan…"
+  },
+  "askSaved": {
+    "message": "Salvestatud."
+  },
+  "askSavedAs": {
+    "message": "Salvestatud nimega $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Salvestatud asukohta $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Pole midagi salvestada"
+  },
+  "askClose": {
+    "message": "Sulge"
+  },
+  "askRetry": {
+    "message": "Proovi uuesti"
+  },
+  "askOpenImage": {
+    "message": "Ava pilt"
+  },
+  "askCancel": {
+    "message": "Loobu"
+  },
+  "askHostTitle": {
+    "message": "Kas lubada selle saidi pildid?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ ei luba teistel saitidel oma pilte lugeda, nii et Imgkeep ei saa seda veel teisendada.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Juurdepääs kehtib ainult sellele saidile, et tuua sinu valitud pilte. Saad selle igal ajal valikute lehel eemaldada."
+  },
+  "askAllowAndSave": {
+    "message": "Luba ja salvesta"
+  },
+  "askNotAllowed": {
+    "message": "Juurdepääsu ei lubatud. Midagi ei salvestatud."
+  },
+  "askSaveOriginal": {
+    "message": "Salvesta hoopis algses vormingus"
+  },
+  "askReconnectTitle": {
+    "message": "Ühenda „$FOLDER$“ uuesti",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Vali kaust"
+  },
+  "askReconnectBody": {
+    "message": "Brauser vajab sinu luba, et sellesse kausta uuesti salvestada."
+  },
+  "askChooseBody": {
+    "message": "Vali kaust, kuhu Imgkeep pildid salvestab."
+  },
+  "askEveryVisit": {
+    "message": "Kui brauser küsib, vali $OPTION$, siis rohkem ei küsita.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Luba igal külastusel“"
+  },
+  "askReconnectButton": {
+    "message": "Ühenda uuesti ja salvesta"
+  },
+  "askChooseButton": {
+    "message": "Vali kaust ja salvesta"
+  },
+  "askErrorTitle": {
+    "message": "Pilti ei õnnestunud salvestada"
+  },
+  "askFolderDenied": {
+    "message": "Brauser ei lubanud kaustale ligi pääseda. Midagi ei salvestatud."
+  },
+  "askNoFolder": {
+    "message": "Kausta ei valitud. Midagi ei salvestatud."
+  },
+  "optPageTitle": {
+    "message": "Imgkeepi seaded"
+  },
+  "optSaved": {
+    "message": "Salvestatud"
+  },
+  "optWhereTitle": {
+    "message": "Kuhu salvestada"
+  },
+  "optSaveMode": {
+    "message": "Salvestusviis"
+  },
+  "optModeDownloads": {
+    "message": "Allalaadimiste kaust"
+  },
+  "optModeDownloadsHint": {
+    "message": "Salvestab brauseri allalaadimiste kausta. Midagi ei küsita."
+  },
+  "optModeFolder": {
+    "message": "Sinu valitud kaust"
+  },
+  "optModeFolderHint": {
+    "message": "Salvestab otse sinu kausta. Pärast brauseri taaskäivitamist võidakse paluda see uuesti ühendada."
+  },
+  "optModeAsk": {
+    "message": "Küsi iga kord"
+  },
+  "optModeAskHint": {
+    "message": "Näitab iga pildi puhul brauseri akent „Salvesta kui“."
+  },
+  "optChooseFolder": {
+    "message": "Vali kaust…"
+  },
+  "optChangeFolder": {
+    "message": "Muuda kausta…"
+  },
+  "optNoFolder": {
+    "message": "Kausta pole veel valitud."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ — ühendatud",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ — palub uuesti ühendada",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Alamkaust"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "nt Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Valikuline. Sisemiste kaustade jaoks kasuta <code>/</code>. Samad kohatäited mis failinimedes."
+  },
+  "optNamesTitle": {
+    "message": "Failinimed"
+  },
+  "optTemplate": {
+    "message": "Nimemall"
+  },
+  "optTokensHint": {
+    "message": "Kohatäited: <code>{name}</code> algne nimi, <code>{host}</code> sait, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ja <code>{h}</code> suurus pikslites. Olemasolevaid faile kunagi üle ei kirjutata."
+  },
+  "optPreviewLabel": {
+    "message": "Eelvaade: summer-banner saidilt shop.example.com, 1600×900, PNG-na:"
+  },
+  "optQualityTitle": {
+    "message": "Kvaliteet ja suurus"
+  },
+  "optJpgQuality": {
+    "message": "JPG kvaliteet"
+  },
+  "optWebpQuality": {
+    "message": "WebP kvaliteet"
+  },
+  "optJpgBackground": {
+    "message": "JPG taustavärv"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG-l pole läbipaistvust, seega läbipaistvad alad saavad selle värvi."
+  },
+  "optMaxWidth": {
+    "message": "Suurim laius"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Algne suurus"
+  },
+  "optMaxWidthHint": {
+    "message": "Valikuline, pikslites. Laiemad pildid vähendatakse sobivaks, kuju säilib; väiksemaid ei suurendata kunagi. Algses vormingus salvestatakse pilt alati muutmata kujul."
+  },
+  "optSitesTitle": {
+    "message": "Saidid, millele oled loa andnud"
+  },
+  "optSitesEmpty": {
+    "message": "Veel ühtegi. Imgkeep küsib ainult siis, kui sait blokeerib pildi, mida tahad teisendada."
+  },
+  "optFindTitle": {
+    "message": "Pildid, mida saidid katavad"
+  },
+  "optFindLabel": {
+    "message": "Leia pildid katvate kihtide alt"
+  },
+  "optFindHint": {
+    "message": "Sellistel saitidel nagu Instagram ja Pinterest tee paremklõps ja vali „Imgkeep: leia pilt siit“. Imgkeep vaatab lehte ainult siis, kui palud sealt pildi leida – ainult seda lehte ja ainult siis. Lehte ta kunagi ei muuda."
+  },
+  "optFindOn": {
+    "message": "Sisse lülitatud."
+  },
+  "optFindOff": {
+    "message": "Välja lülitatud."
+  },
+  "optCountsTitle": {
+    "message": "Anonüümne kasutusstatistika"
+  },
+  "optCountsLabel": {
+    "message": "Saada anonüümne päevakokkuvõte"
+  },
+  "optCountsHint": {
+    "message": "Kord päevas saadab Imgkeep kokkuvõtte stiilis „12 salvestust JPG-na, 1 nurjus“ teenusesse PostHog – see on avatud lähtekoodiga analüütikateenus, mida majutatakse EL-is –, et teaksime, milliseid funktsioone parandada ja millised salvestused nurjuvad. Mitte kunagi pilte, lehtede aadresse, failinimesid ega midagi, mis sind tuvastaks."
+  },
+  "optCountsShow": {
+    "message": "Vaata täpselt, mida saadetakse"
+  },
+  "optCountsToday": {
+    "message": "Täna loetud (saadetakse pärast tänast):"
+  },
+  "optCountsLast": {
+    "message": "Viimati saadetud kokkuvõte:"
+  },
+  "optCountsNone": {
+    "message": "Praegu veel midagi."
+  },
+  "optCountsOff": {
+    "message": "Väljas. Midagi ei loeta ega saadeta."
+  },
+  "optRemove": {
+    "message": "Eemalda"
+  },
+  "optRemoveAccess": {
+    "message": "Eemalda juurdepääs saidile $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — tulekul"
+  },
+  "optProBody": {
+    "message": "Eelseaded suurustele ja vormingutele, mida kõige rohkem kasutad, failisuuruse sihid nagu „alla 200 KB“, reeglid, mis saadavad iga saidi pildid õigesse kausta, ja logi selle kohta, kust iga pilt pärineb."
+  },
+  "optProFree": {
+    "message": "Kõik, mida täna kasutad, jääb tasuta."
+  },
+  "optGetNotified": {
+    "message": "Teavita mind"
+  },
+  "optTrustTitle": {
+    "message": "Mida Imgkeep saab ja mida ei saa teha"
+  },
+  "optPermissions": {
+    "message": "Õigused, mida ta küsib:"
+  },
+  "optOptionalPermissions": {
+    "message": "Ainult siis, kui lülitad sisse piltide leidmise:"
+  },
+  "optPermissionsLabel": {
+    "message": "Õigused"
+  },
+  "optTrust1": {
+    "message": "Pildid teisendatakse sinu arvutis ja neid ei laadita kunagi üles. Ainus muu asi, mida Imgkeep saadab, on ülalolev anonüümne päevakokkuvõte, mille saad välja lülitada."
+  },
+  "optTrust2": {
+    "message": "Ei mingeid reklaame ega tervitusvahelehti. Väikesed aknad avanevad ainult siis, kui ise palud või kui salvestamine vajab sinu nõusolekut. Hinnangut küsib Imgkeep ühe korra, kui oled seda mõnda aega kasutanud."
+  },
+  "optTrust4": {
+    "message": "Imgkeep vaatab lehte ainult siis, kui palud sealt pildi leida – ainult seda lehte ja ainult siis. Lehte ta kunagi ei muuda."
+  },
+  "optTrust3": {
+    "message": "Kõik tasuta funktsioonid jäävad tasuta."
+  },
+  "optVersion": {
+    "message": "Versioon"
+  },
+  "optWhatsNew": {
+    "message": "Mis on uut"
+  },
+  "copyWorking": {
+    "message": "Kopeerin pilti…"
+  },
+  "copyDone": {
+    "message": "Kopeeritud PNG-na. Kleebi kuhu tahad."
+  },
+  "copyFailed": {
+    "message": "Pilti ei õnnestunud kopeerida"
+  },
+  "copyFailedNote": {
+    "message": "Lõikelauda ei muudetud. Proovi uuesti või salvesta pilt hoopis PNG-failina."
+  },
+  "copySavePng": {
+    "message": "Salvesta hoopis PNG-na"
+  },
+  "copyAllowAndCopy": {
+    "message": "Luba ja kopeeri"
+  },
+  "editTitle": {
+    "message": "Rohkem valikuid"
+  },
+  "editLoading": {
+    "message": "Pildi laadimine…"
+  },
+  "editUpdating": {
+    "message": "Eelvaate uuendamine…"
+  },
+  "editPreviewAlt": {
+    "message": "Tulemuse eelvaade"
+  },
+  "editOriginal": {
+    "message": "Originaal"
+  },
+  "editResult": {
+    "message": "Tulemus"
+  },
+  "editFormat": {
+    "message": "Vorming"
+  },
+  "editPngHint": {
+    "message": "PNG säilitab iga piksli. Väiksema faili saamiseks vähenda maksimaalset laiust või vali JPG või WebP."
+  },
+  "editIcoHint": {
+    "message": "Ikoonifail, mis sisaldab pilti 16, 32 ja 48 px suuruses ning 256 px suuruses, kui pilt on piisavalt suur. Mitteruudukujulised pildid saavad läbipaistvad servad."
+  },
+  "editBmpHint": {
+    "message": "Lihtne bittrasterpilt, mille avab iga rakendus. Failid on suured ja läbipaistvad alad saavad taustavärvi."
+  },
+  "editAvifHint": {
+    "message": "Sageli poole väiksem kui samasuguse välimusega JPG. Avavad kaasaegsed brauserid ja enamik praeguseid rakendusi; mõni vanem rakendus mitte."
+  },
+  "editMaxWidthHint": {
+    "message": "Pikslites. Säilitab kuju, ei suurenda kunagi."
+  },
+  "editBackground": {
+    "message": "Taust"
+  },
+  "editQuality": {
+    "message": "Kvaliteet"
+  },
+  "editFileName": {
+    "message": "Faili nimi"
+  },
+  "editSave": {
+    "message": "Salvesta"
+  },
+  "editAllow": {
+    "message": "Luba see sait"
+  },
+  "editNeedsOk": {
+    "message": "See salvestamine vajab sinu nõusolekut: vaata äsja avanenud Imgkeepi akent."
+  },
+  "reviewTitle": {
+    "message": "Kas Imgkeep meeldib?"
+  },
+  "reviewBody": {
+    "message": "Hinnang poes aitab teistel seda leida. See võtab paar sekundit ja küsime seda ainult korra."
+  },
+  "reviewRate": {
+    "message": "Hinda Imgkeepi"
+  },
+  "reviewNo": {
+    "message": "Tänan, ei"
+  },
+  "reviewThanks": {
+    "message": "Aitäh!"
+  },
+  "reviewOk": {
+    "message": "Selge. Rohkem me ei küsi."
+  },
+  "findWindowTitle": {
+    "message": "Leia pilt"
+  },
+  "findEnableTitle": {
+    "message": "Leia pildid, mille saidid on kinni katnud"
+  },
+  "findEnableBody": {
+    "message": "Mõni sait, näiteks Instagram ja Pinterest, katab oma pildid teise kihiga, nii et paremklõps nendeni ei ulatu. Imgkeep leiab selle kihi all oleva pildi sinu eest üles."
+  },
+  "findPromise": {
+    "message": "Imgkeep vaatab lehte ainult siis, kui palud tal sealt pildi leida – ainult seda lehte ja ainult siis. Lehte ta kunagi ei muuda."
+  },
+  "findTurnOn": {
+    "message": "Lülita sisse"
+  },
+  "findDenied": {
+    "message": "Sisse lülitamata. Saad selle igal ajal seadetes sisse lülitada."
+  },
+  "findOnTitle": {
+    "message": "Sisse lülitatud"
+  },
+  "findOnBody": {
+    "message": "Tee pildil uuesti paremklõps ja vali „Imgkeep: leia pilt siit“."
+  },
+  "findPickTitle": {
+    "message": "Milline pilt?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep ei saanud aru, millist pilti sa mõtlesid. Vali üks:"
+  },
+  "findPickOne": {
+    "message": "Pilt $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Siit pilti ei leitud"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep ei leidnud sellest lehe osast pilti. Tee paremklõps otse fotol või ava foto eraldi lehel ja proovi uuesti."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ei saanud seda lehte vaadata"
+  },
+  "findErrorBody": {
+    "message": "Laadi leht uuesti, seejärel tee pildil paremklõps ja vali uuesti „Leia pilt siit“."
+  },
+  "paletteTitle": {
+    "message": "Värvipalett"
+  },
+  "paletteLoading": {
+    "message": "Värvide leidmine…"
+  },
+  "paletteCount": {
+    "message": "Värve"
+  },
+  "paletteSwatches": {
+    "message": "Pildi peamised värvid, suurima osakaaluga eespool"
+  },
+  "paletteCopyOne": {
+    "message": "Kopeeri $VALUE$ ($SHARE$ pildist)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ kopeeritud",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopeeri kõik kujul"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-muutujad"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Loend"
+  },
+  "paletteCopiedAll": {
+    "message": "Kõik värvid kopeeritud kujul $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Salvesta kui"
+  },
+  "paletteSavePng": {
+    "message": "PNG-värviruudud"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMPi palett"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe värviruudud"
+  },
+  "paletteSavedFallback": {
+    "message": "Sinu kaust polnud saadaval, seega läks fail kausta Allalaadimised: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "See pilt on täiesti läbipaistev, seega pole sellest värve võtta."
+  },
+  "paletteCopyFailed": {
+    "message": "Kopeerimine ebaõnnestus. Klõpsa selles aknas ja proovi uuesti."
+  },
+  "paletteNote": {
+    "message": "Arvutatud sinu arvutis. Pilt ega selle värvid sealt ei lahku."
+  }
+}

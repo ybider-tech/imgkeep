@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Tallenna kuva: PNG, JPG, WebP, GIF tai PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Tallenna kuva hiiren oikealla PNG-, JPG-, WebP-, GIF- tai PDF-muodossa tai hae väripaletti. Omalla laitteella, ei henkilötietoja."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (viimeksi käytetty)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (säilyttää animaation)"
+  },
+  "menuOriginal": {
+    "message": "Alkuperäinen muoto"
+  },
+  "menuCopyPng": {
+    "message": "Kopioi PNG-muodossa"
+  },
+  "menuPalette": {
+    "message": "Hae väripaletti"
+  },
+  "menuMoreOptions": {
+    "message": "Lisää vaihtoehtoja…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Etsi kuva täältä…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Uusi",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Pidätkö Imgkeepistä? Arvioi se…"
+  },
+  "askErrBlocked": {
+    "message": "Sivusto ei luovuttanut tätä kuvaa, vaikka käyttöoikeus on myönnetty. Palvelin voi olla alhaalla, tai se näyttää kuvan vain omilla sivuillaan."
+  },
+  "askErrHttp": {
+    "message": "Sivusto vastasi virheellä kuvan sijaan."
+  },
+  "askErrDecode": {
+    "message": "Selain ei osannut lukea tätä tiedostoa kuvana."
+  },
+  "askErrUnsupported": {
+    "message": "Tämä selainversio ei osaa luoda tätä muotoa. Kokeile PNG:tä."
+  },
+  "askErrBlob": {
+    "message": "Tämä kuva on olemassa vain sivun sisällä (blob:-linkki), joten Imgkeep ei vielä osaa tallentaa sitä. Kuvakaappaus toimii."
+  },
+  "askErrTooLarge": {
+    "message": "Tämä kuva on liian suuri muunnettavaksi selaimessa."
+  },
+  "askErrTimeout": {
+    "message": "Kuvan muuntaminen kesti liian kauan, joten Imgkeep keskeytti sen. Kokeile PNG:tä tai lyhyempää tai pienempää animaatiota."
+  },
+  "askErrDownload": {
+    "message": "Selain ei saanut latausta käyntiin."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep ei pystynyt kirjoittamaan tiedostoa kansioosi."
+  },
+  "askErrExpired": {
+    "message": "Tämä tallennus on vanhentunut. Napsauta kuvaa hiiren oikealla ja yritä uudelleen."
+  },
+  "askErrUnknown": {
+    "message": "Jokin meni vikaan kuvaa tallennettaessa."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ ruutua. GIF-kuvissa raja on $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pikseliä × $COUNT$ ruutua on enemmän kuin GIF tässä pystyy.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Liian monta samannimistä tiedostoa."
+  },
+  "askSaving": {
+    "message": "Tallennetaan…"
+  },
+  "askSaved": {
+    "message": "Tallennettu."
+  },
+  "askSavedAs": {
+    "message": "Tallennettu nimellä $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Tallennettu kansioon $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Ei tallennettavaa"
+  },
+  "askClose": {
+    "message": "Sulje"
+  },
+  "askRetry": {
+    "message": "Yritä uudelleen"
+  },
+  "askOpenImage": {
+    "message": "Avaa kuva"
+  },
+  "askCancel": {
+    "message": "Peruuta"
+  },
+  "askHostTitle": {
+    "message": "Sallitaanko kuvat tältä sivustolta?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ estää muita sivustoja lukemasta kuviaan, joten Imgkeep ei vielä voi muuntaa tätä kuvaa.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Käyttöoikeus koskee vain tätä sivustoa ja valitsemiesi kuvien hakemista. Voit poistaa sen milloin tahansa asetuksista."
+  },
+  "askAllowAndSave": {
+    "message": "Salli ja tallenna"
+  },
+  "askNotAllowed": {
+    "message": "Käyttöoikeutta ei annettu. Mitään ei tallennettu."
+  },
+  "askSaveOriginal": {
+    "message": "Tallenna sen sijaan alkuperäisessä muodossa"
+  },
+  "askReconnectTitle": {
+    "message": "Yhdistä ”$FOLDER$” uudelleen",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Valitse kansio"
+  },
+  "askReconnectBody": {
+    "message": "Selain tarvitsee luvan tallentaa tähän kansioon uudelleen."
+  },
+  "askChooseBody": {
+    "message": "Valitse kansio, johon Imgkeep tallentaa kuvasi."
+  },
+  "askEveryVisit": {
+    "message": "Kun selain kysyy, valitse $OPTION$, niin se ei kysy uudelleen.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "”Salli joka käynnillä”"
+  },
+  "askReconnectButton": {
+    "message": "Yhdistä ja tallenna"
+  },
+  "askChooseButton": {
+    "message": "Valitse kansio ja tallenna"
+  },
+  "askErrorTitle": {
+    "message": "Kuvaa ei voitu tallentaa"
+  },
+  "askFolderDenied": {
+    "message": "Selain ei antanut pääsyä kansioon. Mitään ei tallennettu."
+  },
+  "askNoFolder": {
+    "message": "Kansiota ei valittu. Mitään ei tallennettu."
+  },
+  "optPageTitle": {
+    "message": "Imgkeepin asetukset"
+  },
+  "optSaved": {
+    "message": "Tallennettu"
+  },
+  "optWhereTitle": {
+    "message": "Tallennuspaikka"
+  },
+  "optSaveMode": {
+    "message": "Tallennustapa"
+  },
+  "optModeDownloads": {
+    "message": "Lataukset-kansio"
+  },
+  "optModeDownloadsHint": {
+    "message": "Tallentaa selaimen latauskansioon. Mitään ei kysytä."
+  },
+  "optModeFolder": {
+    "message": "Valitsemasi kansio"
+  },
+  "optModeFolderHint": {
+    "message": "Kirjoittaa suoraan kansioosi. Selain voi pyytää yhdistämään uudelleen käynnistyksen jälkeen."
+  },
+  "optModeAsk": {
+    "message": "Kysy joka kerta"
+  },
+  "optModeAskHint": {
+    "message": "Näyttää selaimen Tallenna nimellä ‑ikkunan jokaiselle kuvalle."
+  },
+  "optChooseFolder": {
+    "message": "Valitse kansio…"
+  },
+  "optChangeFolder": {
+    "message": "Vaihda kansio…"
+  },
+  "optNoFolder": {
+    "message": "Kansiota ei ole vielä valittu."
+  },
+  "optFolderConnected": {
+    "message": "”$FOLDER$” — yhdistetty",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "”$FOLDER$” — pyytää yhdistämään uudelleen",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Alikansio"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "esim. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Valinnainen. Käytä <code>/</code> sisäkkäisiin kansioihin. Samat muuttujat kuin tiedostonimissä."
+  },
+  "optNamesTitle": {
+    "message": "Tiedostonimet"
+  },
+  "optTemplate": {
+    "message": "Nimimalli"
+  },
+  "optTokensHint": {
+    "message": "Muuttujat: <code>{name}</code> alkuperäinen nimi, <code>{host}</code> sivusto, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ja <code>{h}</code> koko pikseleinä. Olemassa olevia tiedostoja ei koskaan korvata."
+  },
+  "optPreviewLabel": {
+    "message": "Esikatselu: summer-banner sivustolta shop.example.com, 1600×900, PNG-muodossa:"
+  },
+  "optQualityTitle": {
+    "message": "Laatu ja koko"
+  },
+  "optJpgQuality": {
+    "message": "JPG-laatu"
+  },
+  "optWebpQuality": {
+    "message": "WebP-laatu"
+  },
+  "optJpgBackground": {
+    "message": "JPG:n taustaväri"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG ei tue läpinäkyvyyttä, joten läpinäkyvät alueet saavat tämän värin."
+  },
+  "optMaxWidth": {
+    "message": "Enimmäisleveys"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Alkuperäinen koko"
+  },
+  "optMaxWidthHint": {
+    "message": "Valinnainen, pikseleinä. Leveämmät kuvat pienennetään mahtumaan mittasuhteet säilyttäen; pienempiä ei koskaan suurenneta. Alkuperäinen muoto tallennetaan aina sellaisenaan."
+  },
+  "optSitesTitle": {
+    "message": "Sivustot, joille olet antanut luvan"
+  },
+  "optSitesEmpty": {
+    "message": "Ei vielä yhtään. Imgkeep kysyy vain silloin, kun sivusto estää kuvan, jonka haluat muuntaa."
+  },
+  "optFindTitle": {
+    "message": "Sivustojen peittämät kuvat"
+  },
+  "optFindLabel": {
+    "message": "Etsi kuvia peittävien kerrosten alta"
+  },
+  "optFindHint": {
+    "message": "Instagramin ja Pinterestin kaltaisilla sivustoilla napsauta hiiren oikealla ja valitse Imgkeep: Etsi kuva tästä. Imgkeep katsoo sivua vain silloin, kun pyydät sitä etsimään kuvan – vain sitä sivua, vain silloin. Se ei koskaan muuta sivua."
+  },
+  "optFindOn": {
+    "message": "Käytössä."
+  },
+  "optFindOff": {
+    "message": "Pois käytöstä."
+  },
+  "optCountsTitle": {
+    "message": "Nimettömät käyttömäärät"
+  },
+  "optCountsLabel": {
+    "message": "Lähetä nimetön päivittäinen yhteenveto"
+  },
+  "optCountsHint": {
+    "message": "Kerran päivässä Imgkeep lähettää yhteenvedon, kuten ”12 tallennusta JPG-muodossa, 1 epäonnistui”, PostHogiin – avoimen lähdekoodin analytiikkapalveluun, jota ylläpidetään EU:ssa – jotta tiedämme, mitä ominaisuuksia parantaa ja mitkä tallennukset epäonnistuvat. Ei koskaan kuvia, sivujen osoitteita, tiedostonimiä eikä mitään, mistä sinut voisi tunnistaa."
+  },
+  "optCountsShow": {
+    "message": "Katso tarkalleen, mitä lähetetään"
+  },
+  "optCountsToday": {
+    "message": "Laskettu tänään (lähetetään tämän päivän jälkeen):"
+  },
+  "optCountsLast": {
+    "message": "Viimeksi lähetetty yhteenveto:"
+  },
+  "optCountsNone": {
+    "message": "Ei vielä mitään."
+  },
+  "optCountsOff": {
+    "message": "Pois käytöstä. Mitään ei lasketa eikä lähetetä."
+  },
+  "optRemove": {
+    "message": "Poista"
+  },
+  "optRemoveAccess": {
+    "message": "Poista sivuston $SITE$ käyttöoikeus",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — tulossa pian"
+  },
+  "optProBody": {
+    "message": "Esiasetukset useimmin käyttämiisi kokoihin ja muotoihin, tiedostokoon tavoitteet kuten ”alle 200 kt”, säännöt jotka ohjaavat kunkin sivuston kuvat oikeaan kansioon, ja loki siitä mistä jokainen kuva on peräisin."
+  },
+  "optProFree": {
+    "message": "Kaikki, mitä käytät tänään, pysyy ilmaisena."
+  },
+  "optGetNotified": {
+    "message": "Tilaa ilmoitus"
+  },
+  "optTrustTitle": {
+    "message": "Mitä Imgkeep voi ja ei voi tehdä"
+  },
+  "optPermissions": {
+    "message": "Käyttöoikeudet, joita se pyytää:"
+  },
+  "optOptionalPermissions": {
+    "message": "Vain jos otat käyttöön Etsi kuvia:"
+  },
+  "optPermissionsLabel": {
+    "message": "Käyttöoikeudet"
+  },
+  "optTrust1": {
+    "message": "Kuvat muunnetaan omalla koneellasi, eikä niitä koskaan lähetetä verkkoon. Ainoa muu asia, jonka Imgkeep lähettää, on yllä kuvattu nimetön päivittäinen yhteenveto, jonka voit kytkeä pois."
+  },
+  "optTrust2": {
+    "message": "Ei mainoksia eikä tervetulovälilehtiä. Pieniä ikkunoita avautuu vain, kun pyydät sellaista tai kun tallennus tarvitsee hyväksyntäsi. Imgkeep pyytää arviota kerran, kun olet käyttänyt sitä jonkin aikaa."
+  },
+  "optTrust4": {
+    "message": "Imgkeep katsoo sivua vain silloin, kun pyydät sitä etsimään kuvan – vain sitä sivua, vain silloin. Se ei koskaan muuta sivua."
+  },
+  "optTrust3": {
+    "message": "Jokainen ilmainen ominaisuus pysyy ilmaisena."
+  },
+  "optVersion": {
+    "message": "Versio"
+  },
+  "optWhatsNew": {
+    "message": "Mitä uutta"
+  },
+  "copyWorking": {
+    "message": "Kopioidaan kuvaa…"
+  },
+  "copyDone": {
+    "message": "Kopioitu PNG-muodossa. Liitä se minne haluat."
+  },
+  "copyFailed": {
+    "message": "Kuvan kopiointi ei onnistunut"
+  },
+  "copyFailedNote": {
+    "message": "Leikepöytääsi ei muutettu. Yritä uudelleen tai tallenna kuva PNG-tiedostona."
+  },
+  "copySavePng": {
+    "message": "Tallenna PNG-tiedostona"
+  },
+  "copyAllowAndCopy": {
+    "message": "Salli ja kopioi"
+  },
+  "editTitle": {
+    "message": "Lisäasetukset"
+  },
+  "editLoading": {
+    "message": "Ladataan kuvaa…"
+  },
+  "editUpdating": {
+    "message": "Päivitetään esikatselua…"
+  },
+  "editPreviewAlt": {
+    "message": "Esikatselu tuloksesta"
+  },
+  "editOriginal": {
+    "message": "Alkuperäinen"
+  },
+  "editResult": {
+    "message": "Tulos"
+  },
+  "editFormat": {
+    "message": "Muoto"
+  },
+  "editPngHint": {
+    "message": "PNG säilyttää jokaisen pikselin. Jos haluat pienemmän tiedoston, pienennä enimmäisleveyttä tai valitse JPG tai WebP."
+  },
+  "editIcoHint": {
+    "message": "Kuvaketiedosto, jossa kuva on kokoina 16, 32 ja 48 px sekä 256 px, jos kuva on tarpeeksi suuri. Jos kuva ei ole neliö, reunoista tulee läpinäkyvät."
+  },
+  "editBmpHint": {
+    "message": "Pelkistetty bittikartta, jonka jokainen sovellus avaa. Tiedostot ovat suuria, ja läpinäkyvät kohdat saavat taustavärin."
+  },
+  "editAvifHint": {
+    "message": "Usein puolet samannäköisen JPG:n koosta. Nykyselaimet ja useimmat nykyiset sovellukset avaavat sen, osa vanhemmista ei."
+  },
+  "editMaxWidthHint": {
+    "message": "Pikseleinä. Säilyttää mittasuhteet, ei koskaan suurenna."
+  },
+  "editBackground": {
+    "message": "Tausta"
+  },
+  "editQuality": {
+    "message": "Laatu"
+  },
+  "editFileName": {
+    "message": "Tiedostonimi"
+  },
+  "editSave": {
+    "message": "Tallenna"
+  },
+  "editAllow": {
+    "message": "Salli tämä sivusto"
+  },
+  "editNeedsOk": {
+    "message": "Tallennus tarvitsee hyväksyntäsi: katso juuri avautunut Imgkeep-ikkuna."
+  },
+  "reviewTitle": {
+    "message": "Pidätkö Imgkeepistä?"
+  },
+  "reviewBody": {
+    "message": "Arvio kaupassa auttaa muita löytämään sen. Se vie muutaman sekunnin, ja kysymme tämän vain kerran."
+  },
+  "reviewRate": {
+    "message": "Arvioi Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Ei kiitos"
+  },
+  "reviewThanks": {
+    "message": "Kiitos!"
+  },
+  "reviewOk": {
+    "message": "Selvä. Emme kysy uudelleen."
+  },
+  "findWindowTitle": {
+    "message": "Etsi kuva"
+  },
+  "findEnableTitle": {
+    "message": "Löydä kuvat, jotka sivustot peittävät"
+  },
+  "findEnableBody": {
+    "message": "Jotkin sivustot, kuten Instagram ja Pinterest, peittävät kuvansa toisella kerroksella, joten hiiren oikea painike ei yllä niihin. Imgkeep voi etsiä kuvan tuon kerroksen alta."
+  },
+  "findPromise": {
+    "message": "Imgkeep katsoo sivua vain silloin, kun pyydät sitä etsimään kuvan – vain sen sivun ja vain sillä hetkellä. Se ei koskaan muuta sivua."
+  },
+  "findTurnOn": {
+    "message": "Ota käyttöön"
+  },
+  "findDenied": {
+    "message": "Ei otettu käyttöön. Voit ottaa sen käyttöön milloin tahansa Asetuksissa."
+  },
+  "findOnTitle": {
+    "message": "Käytössä"
+  },
+  "findOnBody": {
+    "message": "Napsauta kuvaa uudelleen hiiren oikealla painikkeella ja valitse Imgkeep: Etsi kuva tästä."
+  },
+  "findPickTitle": {
+    "message": "Mikä kuva?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep ei tunnistanut, mitä kuvaa tarkoitit. Valitse yksi:"
+  },
+  "findPickOne": {
+    "message": "Kuva $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Täältä ei löytynyt kuvaa"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep ei löytänyt kuvaa tästä kohdasta sivua. Napsauta oikealla painikkeella suoraan kuvan päältä tai avaa kuva omalle sivulleen ja yritä uudelleen."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ei voinut katsoa tätä sivua"
+  },
+  "findErrorBody": {
+    "message": "Lataa sivu uudelleen, napsauta sitten kuvaa oikealla painikkeella ja valitse uudelleen Etsi kuva tästä."
+  },
+  "paletteTitle": {
+    "message": "Väripaletti"
+  },
+  "paletteLoading": {
+    "message": "Etsitään värejä…"
+  },
+  "paletteCount": {
+    "message": "Värejä"
+  },
+  "paletteSwatches": {
+    "message": "Kuvan päävärit, suurin osuus ensin"
+  },
+  "paletteCopyOne": {
+    "message": "Kopioi $VALUE$ ($SHARE$ kuvasta)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ kopioitu",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopioi kaikki muodossa"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-muuttujat"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Luettelo"
+  },
+  "paletteCopiedAll": {
+    "message": "Kaikki värit kopioitu ($KIND$)",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Tallenna muodossa"
+  },
+  "paletteSavePng": {
+    "message": "PNG-värimallit"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP-paletti"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe-värimallit"
+  },
+  "paletteSavedFallback": {
+    "message": "Kansiosi ei ollut käytettävissä, joten tiedosto meni Lataukset-kansioon: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Tämä kuva on täysin läpinäkyvä, joten siitä ei saa värejä."
+  },
+  "paletteCopyFailed": {
+    "message": "Kopiointi ei onnistunut. Napsauta tätä ikkunaa ja yritä uudelleen."
+  },
+  "paletteNote": {
+    "message": "Laskettu omalla koneellasi. Kuva ja sen värit eivät lähde sieltä minnekään."
+  }
+}

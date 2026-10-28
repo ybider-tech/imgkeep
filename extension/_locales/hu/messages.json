@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Kép mentése PNG, JPG, WebP, GIF vagy PDF formátumban — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Jobb kattintás: kép mentése PNG, JPG, WebP, GIF vagy PDF formátumban, vagy a színpalettája. A gépeden, személyes adatok nélkül."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (legutóbbi)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (animációval)"
+  },
+  "menuOriginal": {
+    "message": "Eredeti formátum"
+  },
+  "menuCopyPng": {
+    "message": "Másolás PNG-ként"
+  },
+  "menuPalette": {
+    "message": "Színpaletta lekérése"
+  },
+  "menuMoreOptions": {
+    "message": "További lehetőségek…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Kép keresése itt…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Új",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Tetszik az Imgkeep? Értékeld…"
+  },
+  "askErrBlocked": {
+    "message": "A webhely az engedély ellenére sem adta át ezt a képet. Lehet, hogy a kiszolgáló nem elérhető, vagy a képet csak a saját oldalain belül mutatja meg."
+  },
+  "askErrHttp": {
+    "message": "A webhely a kép helyett hibával válaszolt."
+  },
+  "askErrDecode": {
+    "message": "A böngésző nem tudta képként beolvasni ezt a fájlt."
+  },
+  "askErrUnsupported": {
+    "message": "Ez a böngészőverzió nem tudja létrehozni ezt a formátumot. Próbáld inkább PNG-ben."
+  },
+  "askErrBlob": {
+    "message": "Ez a kép csak az oldalon belül létezik (blob: hivatkozás), ezért az Imgkeep egyelőre nem tudja menteni. Képernyőkép viszont működik."
+  },
+  "askErrTooLarge": {
+    "message": "Ez a kép túl nagy ahhoz, hogy a böngésző átalakítsa."
+  },
+  "askErrTimeout": {
+    "message": "A kép átalakítása túl sokáig tartott, ezért az Imgkeep leállította. Próbáld PNG-ben, vagy rövidebb, kisebb animációval."
+  },
+  "askErrDownload": {
+    "message": "A böngésző nem tudta elindítani a letöltést."
+  },
+  "askErrWrite": {
+    "message": "Az Imgkeep nem tudta a fájlt a mappádba írni."
+  },
+  "askErrExpired": {
+    "message": "Ez a mentés lejárt. Kattints jobb gombbal a képre, és próbáld újra."
+  },
+  "askErrUnknown": {
+    "message": "Valami hiba történt a kép mentése közben."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ képkocka. A GIF-eknél a határ $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ képpont × $COUNT$ képkocka több, mint amennyi itt egy GIF-be belefér.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Túl sok fájl van ezzel a névvel."
+  },
+  "askSaving": {
+    "message": "Mentés…"
+  },
+  "askSaved": {
+    "message": "Mentve."
+  },
+  "askSavedAs": {
+    "message": "Mentve így: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Mentve ide: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nincs mit menteni"
+  },
+  "askClose": {
+    "message": "Bezárás"
+  },
+  "askRetry": {
+    "message": "Próbáld újra"
+  },
+  "askOpenImage": {
+    "message": "Kép megnyitása"
+  },
+  "askCancel": {
+    "message": "Mégse"
+  },
+  "askHostTitle": {
+    "message": "Engedélyezed a képeket erről a webhelyről?"
+  },
+  "askHostBody": {
+    "message": "A(z) $HOST$ nem engedi, hogy más webhelyek olvassák a képeit, ezért az Imgkeep egyelőre nem tudja átalakítani ezt a képet.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Az engedély csak erre az egy webhelyre szól, és csak az általad kiválasztott képek letöltésére. Bármikor visszavonhatod a Beállításokban."
+  },
+  "askAllowAndSave": {
+    "message": "Engedélyezés és mentés"
+  },
+  "askNotAllowed": {
+    "message": "Az engedély nem lett megadva. Semmi nem lett mentve."
+  },
+  "askSaveOriginal": {
+    "message": "Mentés eredeti formátumban"
+  },
+  "askReconnectTitle": {
+    "message": "„$FOLDER$” újracsatlakoztatása",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Válassz mappát"
+  },
+  "askReconnectBody": {
+    "message": "A böngésződnek újra engedély kell ahhoz, hogy ebbe a mappába mentsen."
+  },
+  "askChooseBody": {
+    "message": "Válaszd ki, melyik mappába mentse az Imgkeep a képeket."
+  },
+  "askEveryVisit": {
+    "message": "Amikor a böngésződ rákérdez, válaszd a $OPTION$ lehetőséget, hogy ne kérdezzen újra.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Engedélyezés minden látogatáskor”"
+  },
+  "askReconnectButton": {
+    "message": "Újracsatlakoztatás és mentés"
+  },
+  "askChooseButton": {
+    "message": "Mappa választása és mentés"
+  },
+  "askErrorTitle": {
+    "message": "A kép mentése nem sikerült"
+  },
+  "askFolderDenied": {
+    "message": "A böngésző nem engedte a hozzáférést a mappához. Semmi nem lett mentve."
+  },
+  "askNoFolder": {
+    "message": "Nincs kiválasztott mappa. Semmi nem lett mentve."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep beállítások"
+  },
+  "optSaved": {
+    "message": "Mentve"
+  },
+  "optWhereTitle": {
+    "message": "Hová mentsen"
+  },
+  "optSaveMode": {
+    "message": "Mentési mód"
+  },
+  "optModeDownloads": {
+    "message": "Letöltések mappa"
+  },
+  "optModeDownloadsHint": {
+    "message": "A böngésző letöltési mappájába ment, kérdés nélkül."
+  },
+  "optModeFolder": {
+    "message": "Általad választott mappa"
+  },
+  "optModeFolderHint": {
+    "message": "Közvetlenül a mappádba ír. A böngésző újraindítás után kérheti az újracsatlakoztatást."
+  },
+  "optModeAsk": {
+    "message": "Kérdezzen mindig"
+  },
+  "optModeAskHint": {
+    "message": "Minden képnél megjeleníti a böngésző Mentés másként ablakát."
+  },
+  "optChooseFolder": {
+    "message": "Mappa választása…"
+  },
+  "optChangeFolder": {
+    "message": "Mappa módosítása…"
+  },
+  "optNoFolder": {
+    "message": "Még nincs kiválasztott mappa."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$” — csatlakoztatva",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$” — újracsatlakoztatást fog kérni",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Almappa"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "pl. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Nem kötelező. Egymásba ágyazott mappákhoz használd a <code>/</code> jelet. Ugyanazok a helyőrzők, mint a fájlneveknél."
+  },
+  "optNamesTitle": {
+    "message": "Fájlnevek"
+  },
+  "optTemplate": {
+    "message": "Névsablon"
+  },
+  "optTokensHint": {
+    "message": "Helyőrzők: <code>{name}</code> eredeti név, <code>{host}</code> webhely, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> és <code>{h}</code> méret képpontban. A meglévő fájlokat soha nem írja felül."
+  },
+  "optPreviewLabel": {
+    "message": "Előnézet a summer-banner képhez a shop.example.com webhelyről, 1600×900, PNG formátumban:"
+  },
+  "optQualityTitle": {
+    "message": "Minőség és méret"
+  },
+  "optJpgQuality": {
+    "message": "JPG minőség"
+  },
+  "optWebpQuality": {
+    "message": "WebP minőség"
+  },
+  "optJpgBackground": {
+    "message": "JPG háttérszín"
+  },
+  "optJpgBackgroundHint": {
+    "message": "A JPG nem kezeli az átlátszóságot, ezért az átlátszó részek ezt a színt kapják."
+  },
+  "optMaxWidth": {
+    "message": "Maximális szélesség"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Eredeti méret"
+  },
+  "optMaxWidthHint": {
+    "message": "Nem kötelező, képpontban. A szélesebb képek arányosan lekicsinyítve férnek bele; a kisebbeket soha nem nagyítja fel. Az eredeti formátum mindig változatlanul mentődik."
+  },
+  "optSitesTitle": {
+    "message": "Engedélyezett oldalak"
+  },
+  "optSitesEmpty": {
+    "message": "Még egy sincs. Az Imgkeep csak akkor kérdez, ha egy oldal blokkol egy képet, amelyet át szeretnél alakítani."
+  },
+  "optFindTitle": {
+    "message": "Oldalak által letakart képek"
+  },
+  "optFindLabel": {
+    "message": "Képek keresése a takaró rétegek alatt"
+  },
+  "optFindHint": {
+    "message": "Az olyan oldalakon, mint az Instagram és a Pinterest, kattints jobb gombbal, és válaszd az Imgkeep: Kép keresése itt menüpontot. Az Imgkeep csak akkor néz bele egy oldalba, amikor megkéred, hogy keressen ott képet – csak abba az oldalba, csak akkor. Az oldalt soha nem módosítja."
+  },
+  "optFindOn": {
+    "message": "Bekapcsolva."
+  },
+  "optFindOff": {
+    "message": "Kikapcsolva."
+  },
+  "optCountsTitle": {
+    "message": "Névtelen használati számlálók"
+  },
+  "optCountsLabel": {
+    "message": "Névtelen napi összesítő küldése"
+  },
+  "optCountsHint": {
+    "message": "Az Imgkeep naponta egyszer elküld egy olyan összesítőt, mint „12 mentés JPG-ként, 1 sikertelen”, a PostHognak, egy nyílt forráskódú, EU-ban üzemeltetett analitikai szolgáltatásnak, hogy tudjuk, mely funkciókat érdemes fejleszteni, és mely mentések hiúsulnak meg. Képeket, oldalcímeket, fájlneveket vagy bármit, ami azonosítana téged, soha."
+  },
+  "optCountsShow": {
+    "message": "Nézd meg pontosan, mit küldünk"
+  },
+  "optCountsToday": {
+    "message": "Ma számolva (a mai nap után küldjük):"
+  },
+  "optCountsLast": {
+    "message": "Utoljára küldött összesítő:"
+  },
+  "optCountsNone": {
+    "message": "Még semmi."
+  },
+  "optCountsOff": {
+    "message": "Kikapcsolva. Semmit nem számolunk és nem küldünk."
+  },
+  "optRemove": {
+    "message": "Eltávolítás"
+  },
+  "optRemoveAccess": {
+    "message": "Hozzáférés eltávolítása ehhez: $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro – hamarosan"
+  },
+  "optProBody": {
+    "message": "Előbeállítások a leggyakrabban használt méretekhez és formátumokhoz, fájlméretcélok, például „200 KB alatt”, szabályok, amelyek minden oldal képeit a megfelelő mappába küldik, és napló arról, honnan jött minden egyes kép."
+  },
+  "optProFree": {
+    "message": "Minden, amit ma használsz, ingyenes marad."
+  },
+  "optGetNotified": {
+    "message": "Kérek értesítést"
+  },
+  "optTrustTitle": {
+    "message": "Mit tud és mit nem tud az Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Kért engedélyek:"
+  },
+  "optOptionalPermissions": {
+    "message": "Csak ha bekapcsolod a Képek keresése funkciót:"
+  },
+  "optPermissionsLabel": {
+    "message": "Engedélyek"
+  },
+  "optTrust1": {
+    "message": "A képek a te számítógépeden alakulnak át, és soha nem töltődnek fel. Az Imgkeep ezen kívül csak a fenti névtelen napi összesítőt küldi el, és azt is kikapcsolhatod."
+  },
+  "optTrust2": {
+    "message": "Nincsenek hirdetések és üdvözlő lapok. Kis ablakok csak akkor nyílnak meg, ha te kérsz egyet, vagy ha egy mentéshez a jóváhagyásod kell. Az Imgkeep egyszer kér értékelést, miután már egy ideje használod."
+  },
+  "optTrust4": {
+    "message": "Az Imgkeep csak akkor néz bele egy oldalba, amikor megkéred, hogy keressen ott képet – csak abba az oldalba, csak akkor. Az oldalt soha nem módosítja."
+  },
+  "optTrust3": {
+    "message": "Minden ingyenes funkció ingyenes marad."
+  },
+  "optVersion": {
+    "message": "Verzió"
+  },
+  "optWhatsNew": {
+    "message": "Újdonságok"
+  },
+  "copyWorking": {
+    "message": "Kép másolása…"
+  },
+  "copyDone": {
+    "message": "PNG-ként másolva. Bárhová beillesztheted."
+  },
+  "copyFailed": {
+    "message": "Nem sikerült a kép másolása"
+  },
+  "copyFailedNote": {
+    "message": "A vágólap nem változott. Próbáld újra, vagy mentsd el inkább a képet PNG-fájlként."
+  },
+  "copySavePng": {
+    "message": "Mentés inkább PNG-ként"
+  },
+  "copyAllowAndCopy": {
+    "message": "Engedélyezés és másolás"
+  },
+  "editTitle": {
+    "message": "További beállítások"
+  },
+  "editLoading": {
+    "message": "Kép betöltése…"
+  },
+  "editUpdating": {
+    "message": "Előnézet frissítése…"
+  },
+  "editPreviewAlt": {
+    "message": "Az eredmény előnézete"
+  },
+  "editOriginal": {
+    "message": "Eredeti"
+  },
+  "editResult": {
+    "message": "Eredmény"
+  },
+  "editFormat": {
+    "message": "Formátum"
+  },
+  "editPngHint": {
+    "message": "A PNG minden képpontot megtart. Kisebb fájlhoz csökkentsd a legnagyobb szélességet, vagy válaszd a JPG vagy a WebP formátumot."
+  },
+  "editIcoHint": {
+    "message": "Ikonfájl, amely a képet 16, 32 és 48 px méretben tartalmazza, és 256 px-ben is, ha elég nagy. A nem négyzetes képek átlátszó széleket kapnak."
+  },
+  "editBmpHint": {
+    "message": "Egyszerű bitkép, amelyet minden program megnyit. A fájlok nagyok, és az átlátszó részek a háttérszínt kapják."
+  },
+  "editAvifHint": {
+    "message": "Gyakran feleakkora, mint egy ugyanúgy kinéző JPG. A modern böngészők és a legtöbb mai program megnyitja, néhány régebbi nem."
+  },
+  "editMaxWidthHint": {
+    "message": "Képpontban. Megtartja az arányokat, nagyítani soha nem nagyít."
+  },
+  "editBackground": {
+    "message": "Háttér"
+  },
+  "editQuality": {
+    "message": "Minőség"
+  },
+  "editFileName": {
+    "message": "Fájlnév"
+  },
+  "editSave": {
+    "message": "Mentés"
+  },
+  "editAllow": {
+    "message": "Oldal engedélyezése"
+  },
+  "editNeedsOk": {
+    "message": "Ehhez a mentéshez jóváhagyás kell: nézd meg a most megnyílt Imgkeep-ablakot."
+  },
+  "reviewTitle": {
+    "message": "Tetszik az Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Egy értékelés a boltban segít másoknak is megtalálni. Csak pár másodperc, és csak egyszer kérjük."
+  },
+  "reviewRate": {
+    "message": "Imgkeep értékelése"
+  },
+  "reviewNo": {
+    "message": "Köszönöm, nem"
+  },
+  "reviewThanks": {
+    "message": "Köszönjük!"
+  },
+  "reviewOk": {
+    "message": "Rendben. Többé nem kérdezzük."
+  },
+  "findWindowTitle": {
+    "message": "Kép keresése"
+  },
+  "findEnableTitle": {
+    "message": "Az oldalak által eltakart képek megtalálása"
+  },
+  "findEnableBody": {
+    "message": "Néhány oldal, például az Instagram és a Pinterest, egy másik réteggel takarja el a képeit, így a jobb kattintás nem éri el őket. Az Imgkeep megkeresi neked a réteg alatti képet."
+  },
+  "findPromise": {
+    "message": "Az Imgkeep csak akkor néz bele egy oldalba, ha megkéred, hogy keressen ott képet – csak abba az oldalba, csak akkor. Oldalt soha nem módosít."
+  },
+  "findTurnOn": {
+    "message": "Bekapcsolás"
+  },
+  "findDenied": {
+    "message": "Nincs bekapcsolva. A Beállításokban bármikor bekapcsolhatod."
+  },
+  "findOnTitle": {
+    "message": "Bekapcsolva"
+  },
+  "findOnBody": {
+    "message": "Kattints újra jobb gombbal a képre, és válaszd az Imgkeep: Kép keresése itt lehetőséget."
+  },
+  "findPickTitle": {
+    "message": "Melyik kép?"
+  },
+  "findPickBody": {
+    "message": "Az Imgkeep nem tudta eldönteni, melyik képre gondoltál. Válassz egyet:"
+  },
+  "findPickOne": {
+    "message": "$NUMBER$. kép",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Itt nem található kép"
+  },
+  "findNothingBody": {
+    "message": "Az Imgkeep nem talált képet az oldalnak ezen a részén. Kattints jobb gombbal pontosan a fotóra, vagy nyisd meg a fotót külön oldalon, és próbáld újra."
+  },
+  "findErrorTitle": {
+    "message": "Az Imgkeep nem tudta megnézni ezt az oldalt"
+  },
+  "findErrorBody": {
+    "message": "Töltsd újra az oldalt, majd kattints jobb gombbal a képre, és válaszd ismét a Kép keresése itt lehetőséget."
+  },
+  "paletteTitle": {
+    "message": "Színpaletta"
+  },
+  "paletteLoading": {
+    "message": "Színek keresése…"
+  },
+  "paletteCount": {
+    "message": "Színek"
+  },
+  "paletteSwatches": {
+    "message": "A kép fő színei, a legnagyobb részaránytól kezdve"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ másolása (a kép $SHARE$-a)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ másolva",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Összes másolása így:"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-változók"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Lista"
+  },
+  "paletteCopiedAll": {
+    "message": "Az összes szín másolva $KIND$ formában",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Mentés így:"
+  },
+  "paletteSavePng": {
+    "message": "PNG színminták"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP-paletta"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe színminták"
+  },
+  "paletteSavedFallback": {
+    "message": "A mappád nem volt elérhető, ezért a Letöltések mappába került: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Ez a kép teljesen átlátszó, így nincs belőle kinyerhető szín."
+  },
+  "paletteCopyFailed": {
+    "message": "Nem sikerült a másolás. Kattints ebbe az ablakba, majd próbáld újra."
+  },
+  "paletteNote": {
+    "message": "A számítás a te gépeden történt. A kép és a színei sosem hagyják el a gépedet."
+  }
+}

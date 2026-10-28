@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Uložit obrázek jako PNG, JPG, WebP, GIF či PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Pravým tlačítkem uložíte obrázek jako PNG, JPG, WebP, GIF nebo PDF či získáte barevnou paletu. Ve vašem zařízení. Bez osobních dat."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (naposledy použito)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (zachová animaci)"
+  },
+  "menuOriginal": {
+    "message": "Původní formát"
+  },
+  "menuCopyPng": {
+    "message": "Kopírovat jako PNG"
+  },
+  "menuPalette": {
+    "message": "Získat barevnou paletu"
+  },
+  "menuMoreOptions": {
+    "message": "Další možnosti…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Najít obrázek zde…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Novinka",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Líbí se vám Imgkeep? Ohodnoťte ho…"
+  },
+  "askErrBlocked": {
+    "message": "Web tento obrázek nevydal, ani když má povolený přístup. Server může být mimo provoz, nebo obrázek nabízí jen uvnitř vlastních stránek."
+  },
+  "askErrHttp": {
+    "message": "Web místo obrázku odpověděl chybou."
+  },
+  "askErrDecode": {
+    "message": "Prohlížeč nedokázal tento soubor přečíst jako obrázek."
+  },
+  "askErrUnsupported": {
+    "message": "Tato verze prohlížeče neumí vytvořit tento formát. Zkuste PNG."
+  },
+  "askErrBlob": {
+    "message": "Tento obrázek existuje jen uvnitř stránky (odkaz blob:), takže ho Imgkeep zatím neumí uložit. Pomůže snímek obrazovky."
+  },
+  "askErrTooLarge": {
+    "message": "Tento obrázek je příliš velký na převod v prohlížeči."
+  },
+  "askErrTimeout": {
+    "message": "Převod tohoto obrázku trval příliš dlouho, a tak jej Imgkeep zastavil. Zkuste PNG nebo kratší či menší animaci."
+  },
+  "askErrDownload": {
+    "message": "Prohlížeč nedokázal spustit stahování."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep nedokázal zapsat soubor do vaší složky."
+  },
+  "askErrExpired": {
+    "message": "Platnost tohoto uložení vypršela. Klikněte na obrázek pravým tlačítkem a zkuste to znovu."
+  },
+  "askErrUnknown": {
+    "message": "Při ukládání tohoto obrázku se něco pokazilo."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ snímků. GIF je omezen na $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixelů × $COUNT$ snímků je víc, než tu GIF zvládne.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Příliš mnoho souborů s tímto názvem."
+  },
+  "askSaving": {
+    "message": "Ukládám…"
+  },
+  "askSaved": {
+    "message": "Uloženo."
+  },
+  "askSavedAs": {
+    "message": "Uloženo jako $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Uloženo do $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Není co uložit"
+  },
+  "askClose": {
+    "message": "Zavřít"
+  },
+  "askRetry": {
+    "message": "Zkusit znovu"
+  },
+  "askOpenImage": {
+    "message": "Otevřít obrázek"
+  },
+  "askCancel": {
+    "message": "Zrušit"
+  },
+  "askHostTitle": {
+    "message": "Povolit obrázky z tohoto webu?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ brání jiným webům ve čtení svých obrázků, takže Imgkeep tento obrázek zatím nepřevede.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Přístup platí jen pro tento jeden web, a to kvůli stažení obrázků, které vyberete. Kdykoli ho můžete odebrat v Možnostech."
+  },
+  "askAllowAndSave": {
+    "message": "Povolit a uložit"
+  },
+  "askNotAllowed": {
+    "message": "Přístup nebyl povolen. Nic se neuložilo."
+  },
+  "askSaveOriginal": {
+    "message": "Uložit v původním formátu"
+  },
+  "askReconnectTitle": {
+    "message": "Znovu připojit „$FOLDER$“",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Vyberte složku"
+  },
+  "askReconnectBody": {
+    "message": "Prohlížeč potřebuje váš souhlas, aby mohl do této složky znovu ukládat."
+  },
+  "askChooseBody": {
+    "message": "Vyberte složku, do které má Imgkeep ukládat obrázky."
+  },
+  "askEveryVisit": {
+    "message": "Až se prohlížeč zeptá, zvolte $OPTION$, aby se už neptal.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Povolit při každé návštěvě“"
+  },
+  "askReconnectButton": {
+    "message": "Připojit a uložit"
+  },
+  "askChooseButton": {
+    "message": "Vybrat složku a uložit"
+  },
+  "askErrorTitle": {
+    "message": "Obrázek se nepodařilo uložit"
+  },
+  "askFolderDenied": {
+    "message": "Prohlížeč nepovolil přístup ke složce. Nic se neuložilo."
+  },
+  "askNoFolder": {
+    "message": "Nebyla vybrána žádná složka. Nic se neuložilo."
+  },
+  "optPageTitle": {
+    "message": "Nastavení Imgkeep"
+  },
+  "optSaved": {
+    "message": "Uloženo"
+  },
+  "optWhereTitle": {
+    "message": "Kam ukládat"
+  },
+  "optSaveMode": {
+    "message": "Režim ukládání"
+  },
+  "optModeDownloads": {
+    "message": "Složka Stažené soubory"
+  },
+  "optModeDownloadsHint": {
+    "message": "Ukládá do složky stažených souborů vašeho prohlížeče. Bez dotazů."
+  },
+  "optModeFolder": {
+    "message": "Složka dle vašeho výběru"
+  },
+  "optModeFolderHint": {
+    "message": "Ukládá přímo do vaší složky. Po restartu může prohlížeč požádat o opětovné připojení."
+  },
+  "optModeAsk": {
+    "message": "Zeptat se pokaždé"
+  },
+  "optModeAskHint": {
+    "message": "U každého obrázku zobrazí dialog prohlížeče Uložit jako."
+  },
+  "optChooseFolder": {
+    "message": "Vybrat složku…"
+  },
+  "optChangeFolder": {
+    "message": "Změnit složku…"
+  },
+  "optNoFolder": {
+    "message": "Zatím není vybrána žádná složka."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ — připojeno",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ — vyžádá si opětovné připojení",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Podsložka"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "např. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Nepovinné. Pro vnořené složky použijte <code>/</code>. Stejné zástupné kódy jako u názvů souborů."
+  },
+  "optNamesTitle": {
+    "message": "Názvy souborů"
+  },
+  "optTemplate": {
+    "message": "Šablona názvu"
+  },
+  "optTokensHint": {
+    "message": "Zástupné kódy: <code>{name}</code> původní název, <code>{host}</code> web, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> a <code>{h}</code> rozměry v pixelech. Existující soubory se nikdy nepřepisují."
+  },
+  "optPreviewLabel": {
+    "message": "Náhled pro summer-banner ze shop.example.com, 1600×900, jako PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kvalita a velikost"
+  },
+  "optJpgQuality": {
+    "message": "Kvalita JPG"
+  },
+  "optWebpQuality": {
+    "message": "Kvalita WebP"
+  },
+  "optJpgBackground": {
+    "message": "Barva pozadí JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG neumí průhlednost, průhledné plochy proto dostanou tuto barvu."
+  },
+  "optMaxWidth": {
+    "message": "Maximální šířka"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Původní velikost"
+  },
+  "optMaxWidthHint": {
+    "message": "Nepovinné, v pixelech. Širší obrázky se zmenší, aby se vešly, se zachováním poměru stran; menší se nikdy nezvětšují. Původní formát se vždy ukládá tak, jak je."
+  },
+  "optSitesTitle": {
+    "message": "Weby, kterým jste udělili přístup"
+  },
+  "optSitesEmpty": {
+    "message": "Zatím žádné. Imgkeep se zeptá jen tehdy, když web blokuje obrázek, který chcete převést."
+  },
+  "optFindTitle": {
+    "message": "Obrázky, které weby zakrývají"
+  },
+  "optFindLabel": {
+    "message": "Najít obrázky pod překryvnými vrstvami"
+  },
+  "optFindHint": {
+    "message": "Na webech jako Instagram nebo Pinterest klikněte pravým tlačítkem a zvolte Imgkeep: Najít obrázek zde. Imgkeep se na stránku podívá jen tehdy, když ho požádáte, aby na ní našel obrázek – jen na tu stránku a jen tehdy. Stránku nikdy nemění."
+  },
+  "optFindOn": {
+    "message": "Zapnuto."
+  },
+  "optFindOff": {
+    "message": "Vypnuto."
+  },
+  "optCountsTitle": {
+    "message": "Anonymní počty použití"
+  },
+  "optCountsLabel": {
+    "message": "Posílat anonymní denní souhrn"
+  },
+  "optCountsHint": {
+    "message": "Jednou denně pošle Imgkeep souhrn jako „12 uložení jako JPG, 1 neúspěch“ službě PostHog, open-source analytice hostované v EU, abychom věděli, které funkce vylepšit a která ukládání selhávají. Nikdy obrázky, adresy stránek, názvy souborů ani nic, co vás identifikuje."
+  },
+  "optCountsShow": {
+    "message": "Podívejte se, co přesně se posílá"
+  },
+  "optCountsToday": {
+    "message": "Spočítáno dnes (odešle se po dnešku):"
+  },
+  "optCountsLast": {
+    "message": "Poslední odeslaný souhrn:"
+  },
+  "optCountsNone": {
+    "message": "Zatím nic."
+  },
+  "optCountsOff": {
+    "message": "Vypnuto. Nic se nepočítá ani neodesílá."
+  },
+  "optRemove": {
+    "message": "Odebrat"
+  },
+  "optRemoveAccess": {
+    "message": "Odebrat přístup k $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — už brzy"
+  },
+  "optProBody": {
+    "message": "Předvolby pro velikosti a formáty, které používáte nejčastěji, cílové velikosti souboru jako „do 200 KB“, pravidla, která obrázky z každého webu ukládají do správné složky, a záznam o tom, odkud každý obrázek pochází."
+  },
+  "optProFree": {
+    "message": "Vše, co používáte dnes, zůstane zdarma."
+  },
+  "optGetNotified": {
+    "message": "Nechte si dát vědět"
+  },
+  "optTrustTitle": {
+    "message": "Co Imgkeep umí a co ne"
+  },
+  "optPermissions": {
+    "message": "Oprávnění, o která žádá:"
+  },
+  "optOptionalPermissions": {
+    "message": "Jen když zapnete Hledání obrázků:"
+  },
+  "optPermissionsLabel": {
+    "message": "Oprávnění"
+  },
+  "optTrust1": {
+    "message": "Obrázky se převádějí ve vašem počítači a nikdy se nikam nenahrávají. Jediné další, co Imgkeep odesílá, je anonymní denní souhrn výše, který můžete vypnout."
+  },
+  "optTrust2": {
+    "message": "Žádné reklamy ani uvítací panely. Malá okna se otevřou, jen když si o ně řeknete nebo když ukládání potřebuje vaše svolení. O hodnocení Imgkeep požádá jednou, až ho chvíli používáte."
+  },
+  "optTrust4": {
+    "message": "Imgkeep se na stránku podívá jen tehdy, když ho požádáte, aby na ní našel obrázek – jen na tu stránku a jen tehdy. Stránku nikdy nemění."
+  },
+  "optTrust3": {
+    "message": "Každá bezplatná funkce zůstane bezplatná."
+  },
+  "optVersion": {
+    "message": "Verze"
+  },
+  "optWhatsNew": {
+    "message": "Novinky"
+  },
+  "copyWorking": {
+    "message": "Kopírování obrázku…"
+  },
+  "copyDone": {
+    "message": "Zkopírováno jako PNG. Můžete ho vložit kamkoli."
+  },
+  "copyFailed": {
+    "message": "Obrázek se nepodařilo zkopírovat"
+  },
+  "copyFailedNote": {
+    "message": "Vaše schránka zůstala beze změny. Zkuste to znovu, nebo obrázek místo toho uložte jako soubor PNG."
+  },
+  "copySavePng": {
+    "message": "Uložit jako PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Povolit a zkopírovat"
+  },
+  "editTitle": {
+    "message": "Další možnosti"
+  },
+  "editLoading": {
+    "message": "Načítám obrázek…"
+  },
+  "editUpdating": {
+    "message": "Aktualizuji náhled…"
+  },
+  "editPreviewAlt": {
+    "message": "Náhled výsledku"
+  },
+  "editOriginal": {
+    "message": "Originál"
+  },
+  "editResult": {
+    "message": "Výsledek"
+  },
+  "editFormat": {
+    "message": "Formát"
+  },
+  "editPngHint": {
+    "message": "PNG zachová každý pixel. Pro menší soubor snižte maximální šířku nebo zvolte JPG či WebP."
+  },
+  "editIcoHint": {
+    "message": "Soubor ikony s obrázkem ve velikosti 16, 32 a 48 px, a při dostatečné velikosti i 256 px. Obrázky, které nejsou čtvercové, dostanou průhledné okraje."
+  },
+  "editBmpHint": {
+    "message": "Obyčejná bitmapa, kterou otevře každá aplikace. Soubory jsou velké a průhledná místa dostanou barvu pozadí."
+  },
+  "editAvifHint": {
+    "message": "Často poloviční velikost oproti JPG, který vypadá stejně. Otevřou ho moderní prohlížeče a většina současných aplikací; některé starší ne."
+  },
+  "editMaxWidthHint": {
+    "message": "V pixelech. Zachová poměr stran, nikdy nezvětšuje."
+  },
+  "editBackground": {
+    "message": "Pozadí"
+  },
+  "editQuality": {
+    "message": "Kvalita"
+  },
+  "editFileName": {
+    "message": "Název souboru"
+  },
+  "editSave": {
+    "message": "Uložit"
+  },
+  "editAllow": {
+    "message": "Povolit tento web"
+  },
+  "editNeedsOk": {
+    "message": "Toto uložení potřebuje vaše potvrzení: podívejte se do okna Imgkeep, které se právě otevřelo."
+  },
+  "reviewTitle": {
+    "message": "Líbí se vám Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Hodnocení v obchodě pomůže ostatním Imgkeep najít. Zabere pár sekund a zeptáme se jen jednou."
+  },
+  "reviewRate": {
+    "message": "Ohodnotit Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Ne, děkuji"
+  },
+  "reviewThanks": {
+    "message": "Děkujeme!"
+  },
+  "reviewOk": {
+    "message": "Rozumíme. Už se ptát nebudeme."
+  },
+  "findWindowTitle": {
+    "message": "Najít obrázek"
+  },
+  "findEnableTitle": {
+    "message": "Najděte obrázky, které weby překrývají"
+  },
+  "findEnableBody": {
+    "message": "Některé weby, třeba Instagram nebo Pinterest, překrývají své obrázky další vrstvou, takže se k nim kliknutím pravým tlačítkem nedostanete. Imgkeep za vás najde obrázek pod touto vrstvou."
+  },
+  "findPromise": {
+    "message": "Imgkeep se na stránku podívá jen tehdy, když ho požádáte, aby na ní našel obrázek – jen na tu stránku a jen v tu chvíli. Stránku nikdy nemění."
+  },
+  "findTurnOn": {
+    "message": "Zapnout"
+  },
+  "findDenied": {
+    "message": "Nezapnuto. Zapnout to můžete kdykoli v Možnostech."
+  },
+  "findOnTitle": {
+    "message": "Zapnuto"
+  },
+  "findOnBody": {
+    "message": "Klikněte na obrázek znovu pravým tlačítkem a zvolte Imgkeep: Najít obrázek zde."
+  },
+  "findPickTitle": {
+    "message": "Který obrázek?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep nepoznal, který obrázek jste měli na mysli. Vyberte jeden:"
+  },
+  "findPickOne": {
+    "message": "Obrázek $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Tady žádný obrázek není"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep na této části stránky nenašel obrázek. Klikněte pravým tlačítkem přímo na fotku, nebo fotku otevřete na vlastní stránce a zkuste to znovu."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep se na tuto stránku nemohl podívat"
+  },
+  "findErrorBody": {
+    "message": "Načtěte stránku znovu, pak klikněte na obrázek pravým tlačítkem a zvolte znovu Najít obrázek zde."
+  },
+  "paletteTitle": {
+    "message": "Barevná paleta"
+  },
+  "paletteLoading": {
+    "message": "Hledám barvy…"
+  },
+  "paletteCount": {
+    "message": "Barvy"
+  },
+  "paletteSwatches": {
+    "message": "Hlavní barvy obrázku, od nejvíce zastoupené"
+  },
+  "paletteCopyOne": {
+    "message": "Kopírovat $VALUE$ ($SHARE$ obrázku)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Zkopírováno: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopírovat vše jako"
+  },
+  "paletteCodeCss": {
+    "message": "Proměnné CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Seznam"
+  },
+  "paletteCopiedAll": {
+    "message": "Všechny barvy zkopírovány jako $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Uložit jako"
+  },
+  "paletteSavePng": {
+    "message": "Vzorník PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paleta GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Vzorník Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Vaše složka nebyla dostupná, soubor se uložil do Stažených souborů: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Tento obrázek je zcela průhledný, nemá tedy žádné barvy."
+  },
+  "paletteCopyFailed": {
+    "message": "Nepodařilo se zkopírovat. Klikněte do tohoto okna a zkuste to znovu."
+  },
+  "paletteNote": {
+    "message": "Spočítáno ve vašem počítači. Obrázek ani jeho barvy ho nikdy neopustí."
+  }
+}

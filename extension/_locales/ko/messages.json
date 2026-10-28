@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "이미지를 PNG, JPG, WebP, GIF, PDF로 저장 — Imgkeep"
+  },
+  "extDescription": {
+    "message": "오른쪽 클릭으로 어떤 이미지든 PNG, JPG, WebP, GIF, PDF로 저장하거나 색상 팔레트를 확인하세요. 내 기기에서 처리, 개인 정보 없음."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (마지막 사용)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (애니메이션 유지)"
+  },
+  "menuOriginal": {
+    "message": "원본 형식"
+  },
+  "menuCopyPng": {
+    "message": "PNG로 복사"
+  },
+  "menuPalette": {
+    "message": "색상 팔레트 보기"
+  },
+  "menuMoreOptions": {
+    "message": "추가 옵션…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: 여기서 이미지 찾기…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ 새 기능",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep이 마음에 드시나요? 평가하기…"
+  },
+  "askErrBlocked": {
+    "message": "액세스를 허용했는데도 사이트가 이 이미지를 넘겨주지 않았습니다. 서버가 작동하지 않거나, 자체 페이지 안에서만 이미지를 제공하는 것일 수 있습니다."
+  },
+  "askErrHttp": {
+    "message": "사이트가 이미지 대신 오류를 반환했습니다."
+  },
+  "askErrDecode": {
+    "message": "브라우저가 이 파일을 이미지로 읽지 못했습니다."
+  },
+  "askErrUnsupported": {
+    "message": "이 브라우저 버전에서는 이 형식을 만들 수 없습니다. PNG로 시도해 보세요."
+  },
+  "askErrBlob": {
+    "message": "이 이미지는 페이지 안에만 존재해서(blob: 링크) Imgkeep이 아직 저장할 수 없습니다. 스크린샷은 가능합니다."
+  },
+  "askErrTooLarge": {
+    "message": "이 이미지는 너무 커서 브라우저에서 변환할 수 없습니다."
+  },
+  "askErrTimeout": {
+    "message": "변환이 너무 오래 걸려 Imgkeep이 중단했습니다. PNG를 쓰거나 더 짧거나 작은 애니메이션으로 시도해 보세요."
+  },
+  "askErrDownload": {
+    "message": "브라우저가 다운로드를 시작하지 못했습니다."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep이 폴더에 파일을 쓰지 못했습니다."
+  },
+  "askErrExpired": {
+    "message": "이 저장 요청은 만료되었습니다. 이미지를 오른쪽 클릭해 다시 시도하세요."
+  },
+  "askErrUnknown": {
+    "message": "이미지를 저장하는 중 문제가 발생했습니다."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$개 프레임. GIF는 최대 $MAX$개까지 가능합니다.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ 픽셀 × $COUNT$개 프레임은 여기서 GIF로 담기에 너무 큽니다.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "같은 이름의 파일이 너무 많습니다."
+  },
+  "askSaving": {
+    "message": "저장 중…"
+  },
+  "askSaved": {
+    "message": "저장했습니다."
+  },
+  "askSavedAs": {
+    "message": "$PATH$(으)로 저장했습니다",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$에 저장했습니다",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "저장할 항목 없음"
+  },
+  "askClose": {
+    "message": "닫기"
+  },
+  "askRetry": {
+    "message": "다시 시도"
+  },
+  "askOpenImage": {
+    "message": "이미지 열기"
+  },
+  "askCancel": {
+    "message": "취소"
+  },
+  "askHostTitle": {
+    "message": "이 사이트의 이미지를 허용할까요?"
+  },
+  "askHostBody": {
+    "message": "$HOST$이(가) 다른 사이트에서 이미지를 읽지 못하도록 막고 있어 Imgkeep이 아직 이 이미지를 변환할 수 없습니다.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "액세스는 선택한 이미지를 가져오기 위해 이 사이트에만 적용됩니다. 옵션에서 언제든 해제할 수 있습니다."
+  },
+  "askAllowAndSave": {
+    "message": "허용하고 저장"
+  },
+  "askNotAllowed": {
+    "message": "액세스가 허용되지 않았습니다. 저장된 항목이 없습니다."
+  },
+  "askSaveOriginal": {
+    "message": "원본 형식으로 저장"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” 다시 연결",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "폴더 선택"
+  },
+  "askReconnectBody": {
+    "message": "이 폴더에 다시 저장하려면 브라우저에서 권한을 허용해야 합니다."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep이 이미지를 저장할 폴더를 선택하세요."
+  },
+  "askEveryVisit": {
+    "message": "브라우저가 물어보면 $OPTION$을 선택하세요. 그러면 다시 묻지 않습니다.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“방문할 때마다 허용”"
+  },
+  "askReconnectButton": {
+    "message": "다시 연결하고 저장"
+  },
+  "askChooseButton": {
+    "message": "폴더 선택하고 저장"
+  },
+  "askErrorTitle": {
+    "message": "이미지를 저장하지 못했습니다"
+  },
+  "askFolderDenied": {
+    "message": "브라우저가 폴더 접근을 허용하지 않았습니다. 저장된 파일은 없습니다."
+  },
+  "askNoFolder": {
+    "message": "선택한 폴더가 없습니다. 저장된 파일은 없습니다."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep 설정"
+  },
+  "optSaved": {
+    "message": "저장됨"
+  },
+  "optWhereTitle": {
+    "message": "저장 위치"
+  },
+  "optSaveMode": {
+    "message": "저장 방식"
+  },
+  "optModeDownloads": {
+    "message": "다운로드 폴더"
+  },
+  "optModeDownloadsHint": {
+    "message": "브라우저의 다운로드 폴더에 바로 저장합니다. 묻지 않습니다."
+  },
+  "optModeFolder": {
+    "message": "직접 선택한 폴더"
+  },
+  "optModeFolderHint": {
+    "message": "선택한 폴더에 바로 저장합니다. 브라우저를 다시 시작하면 다시 연결하라고 할 수 있습니다."
+  },
+  "optModeAsk": {
+    "message": "매번 묻기"
+  },
+  "optModeAskHint": {
+    "message": "이미지마다 브라우저의 다른 이름으로 저장 창을 엽니다."
+  },
+  "optChooseFolder": {
+    "message": "폴더 선택…"
+  },
+  "optChangeFolder": {
+    "message": "폴더 변경…"
+  },
+  "optNoFolder": {
+    "message": "아직 선택한 폴더가 없습니다."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — 연결됨",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — 다시 연결을 묻습니다",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "하위 폴더"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "예: Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "선택 사항입니다. 폴더를 중첩하려면 <code>/</code>를 쓰세요. 파일 이름과 같은 토큰을 쓸 수 있습니다."
+  },
+  "optNamesTitle": {
+    "message": "파일 이름"
+  },
+  "optTemplate": {
+    "message": "이름 형식"
+  },
+  "optTokensHint": {
+    "message": "토큰: <code>{name}</code> 원본 이름, <code>{host}</code> 사이트, <code>{date}</code>, <code>{time}</code>, <code>{w}</code>와 <code>{h}</code> 픽셀 크기. 기존 파일은 덮어쓰지 않습니다."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com의 summer-banner, 1600×900, PNG로 저장할 때 미리보기:"
+  },
+  "optQualityTitle": {
+    "message": "품질과 크기"
+  },
+  "optJpgQuality": {
+    "message": "JPG 품질"
+  },
+  "optWebpQuality": {
+    "message": "WebP 품질"
+  },
+  "optJpgBackground": {
+    "message": "JPG 배경색"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG는 투명도를 지원하지 않아 투명한 부분이 이 색으로 채워집니다."
+  },
+  "optMaxWidth": {
+    "message": "최대 너비"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "원본 크기"
+  },
+  "optMaxWidthHint": {
+    "message": "선택 사항, 단위는 픽셀. 더 넓은 이미지는 비율을 유지한 채 맞게 축소되고, 더 작은 이미지는 확대되지 않습니다. 원본 형식은 언제나 그대로 저장됩니다."
+  },
+  "optSitesTitle": {
+    "message": "허용한 사이트"
+  },
+  "optSitesEmpty": {
+    "message": "아직 없습니다. Imgkeep은 변환하려는 이미지를 사이트가 막을 때만 묻습니다."
+  },
+  "optFindTitle": {
+    "message": "사이트가 가린 이미지"
+  },
+  "optFindLabel": {
+    "message": "가림막 아래 이미지 찾기"
+  },
+  "optFindHint": {
+    "message": "Instagram이나 Pinterest 같은 사이트에서는 마우스 오른쪽 버튼을 클릭하고 'Imgkeep: 여기 이미지 찾기'를 선택하세요. Imgkeep은 이미지를 찾아 달라고 요청할 때만, 그 페이지를, 그때만 살펴봅니다. 페이지를 바꾸는 일은 없습니다."
+  },
+  "optFindOn": {
+    "message": "켜졌습니다."
+  },
+  "optFindOff": {
+    "message": "꺼졌습니다."
+  },
+  "optCountsTitle": {
+    "message": "익명 사용 횟수"
+  },
+  "optCountsLabel": {
+    "message": "익명 일일 요약 보내기"
+  },
+  "optCountsHint": {
+    "message": "하루에 한 번, Imgkeep은 \"JPG로 12회 저장, 1회 실패\" 같은 요약을 EU에서 호스팅되는 오픈소스 분석 서비스 PostHog으로 보냅니다. 어떤 기능을 개선할지, 어떤 저장이 실패하는지 알기 위해서입니다. 이미지, 페이지 주소, 파일 이름, 사용자를 식별하는 정보는 절대 보내지 않습니다."
+  },
+  "optCountsShow": {
+    "message": "보내는 내용 그대로 보기"
+  },
+  "optCountsToday": {
+    "message": "오늘 집계(오늘이 지난 뒤 전송):"
+  },
+  "optCountsLast": {
+    "message": "마지막으로 보낸 요약:"
+  },
+  "optCountsNone": {
+    "message": "아직 없습니다."
+  },
+  "optCountsOff": {
+    "message": "꺼짐. 아무것도 세거나 보내지 않습니다."
+  },
+  "optRemove": {
+    "message": "제거"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ 접근 권한 제거",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — 출시 예정"
+  },
+  "optProBody": {
+    "message": "자주 쓰는 크기와 형식의 프리셋, \"200 KB 미만\" 같은 파일 크기 목표, 사이트마다 이미지를 알맞은 폴더로 보내는 규칙, 모든 이미지의 출처 기록."
+  },
+  "optProFree": {
+    "message": "지금 쓰는 기능은 모두 계속 무료입니다."
+  },
+  "optGetNotified": {
+    "message": "알림 받기"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep이 할 수 있는 일과 할 수 없는 일"
+  },
+  "optPermissions": {
+    "message": "요청하는 권한:"
+  },
+  "optOptionalPermissions": {
+    "message": "'이미지 찾기'를 켠 경우에만:"
+  },
+  "optPermissionsLabel": {
+    "message": "권한"
+  },
+  "optTrust1": {
+    "message": "이미지는 사용자의 컴퓨터에서 변환되며 업로드되지 않습니다. Imgkeep이 그 밖에 보내는 것은 위의 익명 일일 요약뿐이고, 그것도 끌 수 있습니다."
+  },
+  "optTrust2": {
+    "message": "광고도, 환영 탭도 없습니다. 작은 창은 사용자가 요청하거나 저장에 확인이 필요할 때만 열립니다. Imgkeep은 한동안 사용한 뒤 평가를 한 번만 요청합니다."
+  },
+  "optTrust4": {
+    "message": "Imgkeep은 이미지를 찾아 달라고 요청할 때만, 그 페이지를, 그때만 살펴봅니다. 페이지를 바꾸는 일은 없습니다."
+  },
+  "optTrust3": {
+    "message": "무료 기능은 모두 계속 무료입니다."
+  },
+  "optVersion": {
+    "message": "버전"
+  },
+  "optWhatsNew": {
+    "message": "새로운 기능"
+  },
+  "copyWorking": {
+    "message": "이미지를 복사하는 중…"
+  },
+  "copyDone": {
+    "message": "PNG로 복사했습니다. 어디든 붙여넣으세요."
+  },
+  "copyFailed": {
+    "message": "이미지를 복사하지 못했습니다"
+  },
+  "copyFailedNote": {
+    "message": "클립보드는 그대로입니다. 다시 시도하거나, 대신 이미지를 PNG 파일로 저장하세요."
+  },
+  "copySavePng": {
+    "message": "대신 PNG로 저장"
+  },
+  "copyAllowAndCopy": {
+    "message": "허용하고 복사"
+  },
+  "editTitle": {
+    "message": "추가 옵션"
+  },
+  "editLoading": {
+    "message": "이미지를 불러오는 중…"
+  },
+  "editUpdating": {
+    "message": "미리보기를 업데이트하는 중…"
+  },
+  "editPreviewAlt": {
+    "message": "결과 미리보기"
+  },
+  "editOriginal": {
+    "message": "원본"
+  },
+  "editResult": {
+    "message": "결과"
+  },
+  "editFormat": {
+    "message": "형식"
+  },
+  "editPngHint": {
+    "message": "PNG는 모든 픽셀을 그대로 유지합니다. 파일을 더 작게 하려면 최대 너비를 줄이거나 JPG 또는 WebP를 선택하세요."
+  },
+  "editIcoHint": {
+    "message": "16, 32, 48px 이미지가 담긴 아이콘 파일이며, 이미지가 충분히 크면 256px도 들어갑니다. 정사각형이 아닌 이미지는 가장자리가 투명해집니다."
+  },
+  "editBmpHint": {
+    "message": "어떤 앱에서나 열리는 기본 비트맵입니다. 파일이 크고, 투명한 부분은 배경색으로 채워집니다."
+  },
+  "editAvifHint": {
+    "message": "같아 보이는 JPG의 절반 크기인 경우가 많습니다. 최신 브라우저와 요즘 앱 대부분에서 열리지만, 오래된 앱에서는 열리지 않기도 합니다."
+  },
+  "editMaxWidthHint": {
+    "message": "픽셀 단위입니다. 비율은 그대로 두고, 확대하지는 않습니다."
+  },
+  "editBackground": {
+    "message": "배경"
+  },
+  "editQuality": {
+    "message": "품질"
+  },
+  "editFileName": {
+    "message": "파일 이름"
+  },
+  "editSave": {
+    "message": "저장"
+  },
+  "editAllow": {
+    "message": "이 사이트 허용"
+  },
+  "editNeedsOk": {
+    "message": "이번 저장에는 확인이 필요합니다. 방금 열린 Imgkeep 창을 확인하세요."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep이 마음에 드시나요?"
+  },
+  "reviewBody": {
+    "message": "스토어에 남긴 별점은 다른 사람들이 Imgkeep을 찾는 데 도움이 됩니다. 몇 초면 되고, 이 안내는 한 번만 보여 드립니다."
+  },
+  "reviewRate": {
+    "message": "Imgkeep 평가하기"
+  },
+  "reviewNo": {
+    "message": "괜찮습니다"
+  },
+  "reviewThanks": {
+    "message": "감사합니다!"
+  },
+  "reviewOk": {
+    "message": "알겠습니다. 다시 묻지 않을게요."
+  },
+  "findWindowTitle": {
+    "message": "이미지 찾기"
+  },
+  "findEnableTitle": {
+    "message": "사이트가 가려 둔 이미지 찾기"
+  },
+  "findEnableBody": {
+    "message": "Instagram이나 Pinterest 같은 일부 사이트는 이미지를 다른 레이어로 덮어 두기 때문에 마우스 오른쪽 버튼으로는 이미지에 닿을 수 없습니다. Imgkeep이 그 레이어 아래에 있는 이미지를 찾아 드립니다."
+  },
+  "findPromise": {
+    "message": "Imgkeep은 사용자가 어떤 페이지에서 이미지를 찾아 달라고 할 때만, 그 페이지만, 그때만 살펴봅니다. 페이지를 바꾸는 일은 없습니다."
+  },
+  "findTurnOn": {
+    "message": "켜기"
+  },
+  "findDenied": {
+    "message": "켜지지 않았습니다. 옵션에서 언제든 켤 수 있습니다."
+  },
+  "findOnTitle": {
+    "message": "켜졌습니다"
+  },
+  "findOnBody": {
+    "message": "이미지를 다시 마우스 오른쪽 버튼으로 클릭한 다음 ‘Imgkeep: 여기서 이미지 찾기’를 선택하세요."
+  },
+  "findPickTitle": {
+    "message": "어떤 이미지인가요?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep이 어떤 이미지를 말하는지 알 수 없었습니다. 하나를 선택하세요:"
+  },
+  "findPickOne": {
+    "message": "이미지 $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "여기에서 이미지를 찾지 못했습니다"
+  },
+  "findNothingBody": {
+    "message": "페이지의 이 부분에서는 이미지를 찾지 못했습니다. 사진 위에서 바로 오른쪽 버튼을 클릭하거나, 사진을 별도 페이지로 연 다음 다시 시도해 보세요."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep이 이 페이지를 살펴볼 수 없었습니다"
+  },
+  "findErrorBody": {
+    "message": "페이지를 새로고침한 다음, 이미지를 오른쪽 버튼으로 클릭하고 ‘여기서 이미지 찾기’를 다시 선택하세요."
+  },
+  "paletteTitle": {
+    "message": "색상 팔레트"
+  },
+  "paletteLoading": {
+    "message": "색상을 찾는 중…"
+  },
+  "paletteCount": {
+    "message": "색상 수"
+  },
+  "paletteSwatches": {
+    "message": "이미지의 주요 색상, 비중이 큰 순서"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ 복사(이미지의 $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ 복사됨",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "전체 복사 형식"
+  },
+  "paletteCodeCss": {
+    "message": "CSS 변수"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "목록"
+  },
+  "paletteCopiedAll": {
+    "message": "모든 색상을 $KIND$ 형식으로 복사했습니다",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "저장 형식"
+  },
+  "paletteSavePng": {
+    "message": "PNG 색상표"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP 팔레트"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe 스와치"
+  },
+  "paletteSavedFallback": {
+    "message": "지정한 폴더를 사용할 수 없어 다운로드 폴더에 저장했습니다: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "이 이미지는 완전히 투명해서 가져올 색상이 없습니다."
+  },
+  "paletteCopyFailed": {
+    "message": "복사하지 못했습니다. 이 창 안을 클릭한 뒤 다시 시도해 주세요."
+  },
+  "paletteNote": {
+    "message": "내 컴퓨터에서 처리됩니다. 이미지와 색상은 밖으로 나가지 않습니다."
+  }
+}

@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Hifadhi picha kama PNG, JPG, WebP, GIF au PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Bofya kulia uhifadhi picha yoyote kama PNG, JPG, WebP, GIF au PDF, au upate paleti ya rangi. Kwenye kifaa chako. Bila data binafsi."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (iliyotumika mwisho)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (huhifadhi uhuishaji)"
+  },
+  "menuOriginal": {
+    "message": "Umbizo asilia"
+  },
+  "menuCopyPng": {
+    "message": "Nakili kama PNG"
+  },
+  "menuPalette": {
+    "message": "Pata paleti ya rangi"
+  },
+  "menuMoreOptions": {
+    "message": "Chaguo zaidi…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Tafuta picha hapa…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Mpya",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Unafurahia Imgkeep? Ikadirie…"
+  },
+  "askErrBlocked": {
+    "message": "Tovuti haikutoa picha hii, hata baada ya ufikiaji kuruhusiwa. Huenda seva imezimika, au inatoa picha ndani ya kurasa zake tu."
+  },
+  "askErrHttp": {
+    "message": "Tovuti ilijibu kwa hitilafu badala ya picha."
+  },
+  "askErrDecode": {
+    "message": "Kivinjari chako hakikuweza kusoma faili hili kama picha."
+  },
+  "askErrUnsupported": {
+    "message": "Toleo hili la kivinjari haliwezi kutengeneza umbizo hili. Jaribu PNG badala yake."
+  },
+  "askErrBlob": {
+    "message": "Picha hii ipo ndani ya ukurasa pekee (kiungo cha blob:), kwa hiyo Imgkeep haiwezi kuihifadhi bado. Picha ya skrini itafaa."
+  },
+  "askErrTooLarge": {
+    "message": "Picha hii ni kubwa mno kuigeuza ndani ya kivinjari."
+  },
+  "askErrTimeout": {
+    "message": "Kugeuza picha hii kulichukua muda mrefu mno, kwa hiyo Imgkeep ilisimama. Jaribu PNG, au uhuishaji mfupi au mdogo zaidi."
+  },
+  "askErrDownload": {
+    "message": "Kivinjari chako hakikuweza kuanzisha upakuaji."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep haikuweza kuandika faili kwenye folda yako."
+  },
+  "askErrExpired": {
+    "message": "Uhifadhi huu umepitwa na wakati. Bofya kulia kwenye picha ujaribu tena."
+  },
+  "askErrUnknown": {
+    "message": "Hitilafu imetokea wakati wa kuhifadhi picha hii."
+  },
+  "detailGifFrames": {
+    "message": "Fremu $COUNT$. GIF huruhusu $MAX$ pekee.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "Pikseli $W$×$H$ × fremu $COUNT$ ni zaidi ya uwezo wa GIF hapa.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Faili nyingi mno zenye jina hili."
+  },
+  "askSaving": {
+    "message": "Inahifadhi…"
+  },
+  "askSaved": {
+    "message": "Imehifadhiwa."
+  },
+  "askSavedAs": {
+    "message": "Imehifadhiwa kama $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Imehifadhiwa kwenye $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Hakuna cha kuhifadhi"
+  },
+  "askClose": {
+    "message": "Funga"
+  },
+  "askRetry": {
+    "message": "Jaribu tena"
+  },
+  "askOpenImage": {
+    "message": "Fungua picha"
+  },
+  "askCancel": {
+    "message": "Ghairi"
+  },
+  "askHostTitle": {
+    "message": "Ruhusu picha kutoka tovuti hii?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ inazuia tovuti nyingine kusoma picha zake, kwa hiyo Imgkeep haiwezi kuigeuza hii bado.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Ufikiaji ni kwa tovuti hii moja tu, ili kuleta picha unazochagua. Unaweza kuuondoa wakati wowote katika Chaguo."
+  },
+  "askAllowAndSave": {
+    "message": "Ruhusu na uhifadhi"
+  },
+  "askNotAllowed": {
+    "message": "Ufikiaji haukuruhusiwa. Hakuna kilichohifadhiwa."
+  },
+  "askSaveOriginal": {
+    "message": "Hifadhi muundo wa awali badala yake"
+  },
+  "askReconnectTitle": {
+    "message": "Unganisha tena “$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Chagua folda"
+  },
+  "askReconnectBody": {
+    "message": "Kivinjari chako kinahitaji idhini yako ili kuhifadhi tena kwenye folda hii."
+  },
+  "askChooseBody": {
+    "message": "Chagua folda ambapo Imgkeep itahifadhi picha zako."
+  },
+  "askEveryVisit": {
+    "message": "Kivinjari chako kikikuuliza, chagua $OPTION$ ili kisikuulize tena.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Ruhusu kila ziara”"
+  },
+  "askReconnectButton": {
+    "message": "Unganisha tena na uhifadhi"
+  },
+  "askChooseButton": {
+    "message": "Chagua folda na uhifadhi"
+  },
+  "askErrorTitle": {
+    "message": "Imeshindwa kuhifadhi picha hii"
+  },
+  "askFolderDenied": {
+    "message": "Kivinjari chako hakikuruhusu ufikiaji wa folda. Hakuna kilichohifadhiwa."
+  },
+  "askNoFolder": {
+    "message": "Hakuna folda iliyochaguliwa. Hakuna kilichohifadhiwa."
+  },
+  "optPageTitle": {
+    "message": "Mipangilio ya Imgkeep"
+  },
+  "optSaved": {
+    "message": "Imehifadhiwa"
+  },
+  "optWhereTitle": {
+    "message": "Mahali pa kuhifadhi"
+  },
+  "optSaveMode": {
+    "message": "Hali ya kuhifadhi"
+  },
+  "optModeDownloads": {
+    "message": "Folda ya vipakuliwa"
+  },
+  "optModeDownloadsHint": {
+    "message": "Huhifadhi kwenye folda ya vipakuliwa ya kivinjari chako. Bila kuuliza chochote."
+  },
+  "optModeFolder": {
+    "message": "Folda unayochagua"
+  },
+  "optModeFolderHint": {
+    "message": "Huandika moja kwa moja kwenye folda yako. Kivinjari chako kinaweza kukuomba kuunganisha tena baada ya kuanzishwa upya."
+  },
+  "optModeAsk": {
+    "message": "Uliza kila mara"
+  },
+  "optModeAskHint": {
+    "message": "Huonyesha kisanduku cha kivinjari cha Hifadhi Kama kwa kila picha."
+  },
+  "optChooseFolder": {
+    "message": "Chagua folda…"
+  },
+  "optChangeFolder": {
+    "message": "Badilisha folda…"
+  },
+  "optNoFolder": {
+    "message": "Bado hakuna folda iliyochaguliwa."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — imeunganishwa",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — itaomba kuunganisha tena",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Folda ndogo"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "k.m. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Si lazima. Tumia <code>/</code> kwa folda ndani ya folda. Vitambulisho ni vilevile vya majina ya faili."
+  },
+  "optNamesTitle": {
+    "message": "Majina ya faili"
+  },
+  "optTemplate": {
+    "message": "Kiolezo cha jina"
+  },
+  "optTokensHint": {
+    "message": "Vitambulisho: <code>{name}</code> jina asili, <code>{host}</code> tovuti, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> na <code>{h}</code> ukubwa kwa pikseli. Faili zilizopo hazibadilishwi kamwe."
+  },
+  "optPreviewLabel": {
+    "message": "Mfano wa summer-banner kutoka shop.example.com, 1600×900, kama PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Ubora na ukubwa"
+  },
+  "optJpgQuality": {
+    "message": "Ubora wa JPG"
+  },
+  "optWebpQuality": {
+    "message": "Ubora wa WebP"
+  },
+  "optJpgBackground": {
+    "message": "Rangi ya mandharinyuma ya JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG haina uwazi, kwa hivyo sehemu zinazoonyesha nyuma hupewa rangi hii."
+  },
+  "optMaxWidth": {
+    "message": "Upana wa juu zaidi"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Ukubwa wa asili"
+  },
+  "optMaxWidthHint": {
+    "message": "Si lazima, kwa pikseli. Picha pana zaidi hupunguzwa ili zitoshe, umbo lake likibaki vilevile; ndogo zaidi hazikuzwi kamwe. Muundo wa asili huhifadhiwa kama ulivyo kila wakati."
+  },
+  "optSitesTitle": {
+    "message": "Tovuti ulizoruhusu"
+  },
+  "optSitesEmpty": {
+    "message": "Bado hakuna. Imgkeep huuliza pale tu tovuti inapozuia picha unayotaka kubadilisha."
+  },
+  "optFindTitle": {
+    "message": "Picha ambazo tovuti huzifunika"
+  },
+  "optFindLabel": {
+    "message": "Tafuta picha zilizo chini ya tabaka la kufunika"
+  },
+  "optFindHint": {
+    "message": "Kwenye tovuti kama Instagram na Pinterest, bofya kulia kisha uchague Imgkeep: Tafuta picha hapa. Imgkeep huangalia ukurasa pale tu unapoiomba kutafuta picha hapo — ukurasa huo tu, wakati huo tu. Haiwahi kubadilisha ukurasa."
+  },
+  "optFindOn": {
+    "message": "Imewashwa."
+  },
+  "optFindOff": {
+    "message": "Imezimwa."
+  },
+  "optCountsTitle": {
+    "message": "Hesabu za matumizi bila utambulisho"
+  },
+  "optCountsLabel": {
+    "message": "Tuma muhtasari wa kila siku bila utambulisho"
+  },
+  "optCountsHint": {
+    "message": "Mara moja kwa siku, Imgkeep hutuma muhtasari kama \"kuhifadhi mara 12 kama JPG, 1 kushindwa\" kwa PostHog, huduma ya uchanganuzi ya chanzo huria iliyoko Umoja wa Ulaya, ili tujue vipengele vya kuboresha na kuhifadhi kunakoshindwa. Kamwe hakuna picha, anwani za kurasa, majina ya faili au chochote kinachokutambulisha."
+  },
+  "optCountsShow": {
+    "message": "Angalia hasa kinachotumwa"
+  },
+  "optCountsToday": {
+    "message": "Zilizohesabiwa leo (zitatumwa baada ya leo):"
+  },
+  "optCountsLast": {
+    "message": "Muhtasari wa mwisho uliotumwa:"
+  },
+  "optCountsNone": {
+    "message": "Bado hakuna kitu."
+  },
+  "optCountsOff": {
+    "message": "Imezimwa. Hakuna kinachohesabiwa wala kutumwa."
+  },
+  "optRemove": {
+    "message": "Ondoa"
+  },
+  "optRemoveAccess": {
+    "message": "Ondoa ufikiaji wa $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — inakuja hivi karibuni"
+  },
+  "optProBody": {
+    "message": "Mipangilio tayari ya ukubwa na miundo unayotumia zaidi, malengo ya ukubwa wa faili kama \"chini ya KB 200\", kanuni zinazopeleka picha za kila tovuti kwenye folda sahihi, na kumbukumbu ya mahali kila picha ilikotoka."
+  },
+  "optProFree": {
+    "message": "Kila unachotumia leo kitabaki bure."
+  },
+  "optGetNotified": {
+    "message": "Pata taarifa"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep inaweza nini na haiwezi nini"
+  },
+  "optPermissions": {
+    "message": "Ruhusa inazoomba:"
+  },
+  "optOptionalPermissions": {
+    "message": "Ni pale tu unapowasha Tafuta picha:"
+  },
+  "optPermissionsLabel": {
+    "message": "Ruhusa"
+  },
+  "optTrust1": {
+    "message": "Picha hubadilishwa kwenye kompyuta yako na hazipakiwi mtandaoni kamwe. Kitu pekee kingine ambacho Imgkeep hutuma ni muhtasari wa kila siku bila utambulisho ulio hapo juu, ambao unaweza kuuzima."
+  },
+  "optTrust2": {
+    "message": "Hakuna matangazo wala vichupo vya kukukaribisha. Madirisha madogo hufunguka pale tu unapoomba au kuhifadhi kunapohitaji idhini yako. Imgkeep huomba ukadiriaji mara moja tu, baada ya kuitumia kwa muda."
+  },
+  "optTrust4": {
+    "message": "Imgkeep huangalia ukurasa pale tu unapoiomba kutafuta picha hapo — ukurasa huo tu, wakati huo tu. Haiwahi kubadilisha ukurasa."
+  },
+  "optTrust3": {
+    "message": "Kila kipengele cha bure kitabaki bure."
+  },
+  "optVersion": {
+    "message": "Toleo"
+  },
+  "optWhatsNew": {
+    "message": "Mambo mapya"
+  },
+  "copyWorking": {
+    "message": "Inanakili picha…"
+  },
+  "copyDone": {
+    "message": "Imenakiliwa kama PNG. Ibandike popote."
+  },
+  "copyFailed": {
+    "message": "Imeshindwa kunakili picha"
+  },
+  "copyFailedNote": {
+    "message": "Ubao wako wa kunakili haukubadilika. Jaribu tena, au badala yake hifadhi picha kama faili la PNG."
+  },
+  "copySavePng": {
+    "message": "Hifadhi kama PNG badala yake"
+  },
+  "copyAllowAndCopy": {
+    "message": "Ruhusu kisha unakili"
+  },
+  "editTitle": {
+    "message": "Chaguo zaidi"
+  },
+  "editLoading": {
+    "message": "Inapakia picha…"
+  },
+  "editUpdating": {
+    "message": "Inasasisha onyesho…"
+  },
+  "editPreviewAlt": {
+    "message": "Onyesho la matokeo"
+  },
+  "editOriginal": {
+    "message": "Asili"
+  },
+  "editResult": {
+    "message": "Matokeo"
+  },
+  "editFormat": {
+    "message": "Muundo"
+  },
+  "editPngHint": {
+    "message": "PNG huhifadhi kila pikseli. Kwa faili ndogo zaidi, punguza upana wa juu au chagua JPG au WebP."
+  },
+  "editIcoHint": {
+    "message": "Faili ya aikoni yenye picha katika 16, 32 na 48 px, pamoja na 256 px ikiwa ni kubwa vya kutosha. Picha zisizo mraba hupata kingo zinazopitisha mwanga."
+  },
+  "editBmpHint": {
+    "message": "Bitmap ya kawaida ambayo kila programu huifungua. Faili ni kubwa, na sehemu zinazopitisha mwanga hupata rangi ya mandharinyuma."
+  },
+  "editAvifHint": {
+    "message": "Mara nyingi nusu ya ukubwa wa JPG inayoonekana sawa. Vivinjari vya kisasa na programu nyingi za sasa huifungua; baadhi ya programu za zamani hazifungui."
+  },
+  "editMaxWidthHint": {
+    "message": "Kwa pikseli. Huhifadhi umbo, haikuzi kamwe."
+  },
+  "editBackground": {
+    "message": "Mandharinyuma"
+  },
+  "editQuality": {
+    "message": "Ubora"
+  },
+  "editFileName": {
+    "message": "Jina la faili"
+  },
+  "editSave": {
+    "message": "Hifadhi"
+  },
+  "editAllow": {
+    "message": "Ruhusu tovuti hii"
+  },
+  "editNeedsOk": {
+    "message": "Kuhifadhi huku kunahitaji idhini yako: angalia dirisha la Imgkeep lililofunguka sasa hivi."
+  },
+  "reviewTitle": {
+    "message": "Unafurahia Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Ukadiriaji dukani husaidia watu wengine kuipata. Inachukua sekunde chache, na tutauliza mara moja tu."
+  },
+  "reviewRate": {
+    "message": "Kadiria Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Hapana, asante"
+  },
+  "reviewThanks": {
+    "message": "Asante!"
+  },
+  "reviewOk": {
+    "message": "Sawa. Hatutauliza tena."
+  },
+  "findWindowTitle": {
+    "message": "Tafuta picha"
+  },
+  "findEnableTitle": {
+    "message": "Tafuta picha zilizofunikwa na tovuti"
+  },
+  "findEnableBody": {
+    "message": "Baadhi ya tovuti, kama Instagram na Pinterest, hufunika picha zao kwa tabaka lingine, hivyo kubofya kulia hakuzifikii. Imgkeep inaweza kukutafutia picha iliyo chini ya tabaka hilo."
+  },
+  "findPromise": {
+    "message": "Imgkeep huangalia ukurasa pale tu unapoiomba itafute picha hapo — ukurasa huo tu, wakati huo tu. Haibadilishi ukurasa kamwe."
+  },
+  "findTurnOn": {
+    "message": "Washa"
+  },
+  "findDenied": {
+    "message": "Haijawashwa. Unaweza kuiwasha wakati wowote katika Chaguo."
+  },
+  "findOnTitle": {
+    "message": "Imewashwa"
+  },
+  "findOnBody": {
+    "message": "Bofya kulia picha tena kisha chagua Imgkeep: Tafuta picha hapa."
+  },
+  "findPickTitle": {
+    "message": "Picha ipi?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep haikuweza kujua ulimaanisha picha ipi. Chagua moja:"
+  },
+  "findPickOne": {
+    "message": "Picha $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Hakuna picha iliyopatikana hapa"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep haikupata picha katika sehemu hii ya ukurasa. Bofya kulia moja kwa moja juu ya picha, au fungua picha katika ukurasa wake mwenyewe kisha ujaribu tena."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep haikuweza kuangalia ukurasa huu"
+  },
+  "findErrorBody": {
+    "message": "Pakia upya ukurasa, kisha bofya kulia picha na uchague Tafuta picha hapa tena."
+  },
+  "paletteTitle": {
+    "message": "Paleti ya rangi"
+  },
+  "paletteLoading": {
+    "message": "Inatafuta rangi…"
+  },
+  "paletteCount": {
+    "message": "Rangi"
+  },
+  "paletteSwatches": {
+    "message": "Rangi kuu za picha, kubwa kwanza"
+  },
+  "paletteCopyOne": {
+    "message": "Nakili $VALUE$ ($SHARE$ ya picha)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ imenakiliwa",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Nakili zote kama"
+  },
+  "paletteCodeCss": {
+    "message": "Vigeu vya CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Orodha"
+  },
+  "paletteCopiedAll": {
+    "message": "Rangi zote zimenakiliwa kama $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Hifadhi kama"
+  },
+  "paletteSavePng": {
+    "message": "Sampuli za PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paleti ya GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Sampuli za Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Folda yako haikupatikana, kwa hivyo imeenda Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Picha hii ni angavu kabisa, kwa hivyo haina rangi za kuchukua."
+  },
+  "paletteCopyFailed": {
+    "message": "Imeshindwa kunakili. Bofya ndani ya dirisha hili, kisha ujaribu tena."
+  },
+  "paletteNote": {
+    "message": "Imekokotolewa kwenye kompyuta yako. Picha na rangi zake hazitoki humo."
+  }
+}

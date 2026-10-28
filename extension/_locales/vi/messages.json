@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Lưu ảnh dạng PNG, JPG, WebP, GIF hoặc PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Nhấp chuột phải để lưu ảnh bất kỳ dạng PNG, JPG, WebP, GIF hay PDF, hoặc lấy bảng màu. Ngay trên máy bạn. Không dữ liệu cá nhân."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (dùng lần trước)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (giữ ảnh động)"
+  },
+  "menuOriginal": {
+    "message": "Định dạng gốc"
+  },
+  "menuCopyPng": {
+    "message": "Sao chép dạng PNG"
+  },
+  "menuPalette": {
+    "message": "Lấy bảng màu"
+  },
+  "menuMoreOptions": {
+    "message": "Thêm tùy chọn…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Tìm ảnh ở đây…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Mới",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Thấy Imgkeep hữu ích? Đánh giá nhé…"
+  },
+  "askErrBlocked": {
+    "message": "Trang web không trả về ảnh này, dù đã được cấp quyền truy cập. Có thể máy chủ đang gặp sự cố, hoặc chỉ hiển thị ảnh trong trang của chính họ."
+  },
+  "askErrHttp": {
+    "message": "Trang web trả về lỗi thay vì ảnh."
+  },
+  "askErrDecode": {
+    "message": "Trình duyệt không đọc được tệp này như một ảnh."
+  },
+  "askErrUnsupported": {
+    "message": "Phiên bản trình duyệt này không tạo được định dạng đó. Hãy thử PNG."
+  },
+  "askErrBlob": {
+    "message": "Ảnh này chỉ tồn tại bên trong trang (liên kết blob:) nên Imgkeep chưa lưu được. Bạn có thể chụp màn hình."
+  },
+  "askErrTooLarge": {
+    "message": "Ảnh này quá lớn để chuyển đổi trong trình duyệt."
+  },
+  "askErrTimeout": {
+    "message": "Chuyển đổi ảnh này mất quá nhiều thời gian nên Imgkeep đã dừng. Hãy thử PNG, hoặc ảnh động ngắn hơn hay nhỏ hơn."
+  },
+  "askErrDownload": {
+    "message": "Trình duyệt không thể bắt đầu tải xuống."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep không ghi được tệp vào thư mục của bạn."
+  },
+  "askErrExpired": {
+    "message": "Lượt lưu này đã hết hạn. Hãy nhấp chuột phải vào ảnh và thử lại."
+  },
+  "askErrUnknown": {
+    "message": "Đã có lỗi khi lưu ảnh này."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ khung hình. GIF chỉ cho phép tối đa $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixel × $COUNT$ khung hình vượt quá mức một tệp GIF chứa được ở đây.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Quá nhiều tệp trùng tên này."
+  },
+  "askSaving": {
+    "message": "Đang lưu…"
+  },
+  "askSaved": {
+    "message": "Đã lưu."
+  },
+  "askSavedAs": {
+    "message": "Đã lưu thành $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Đã lưu vào $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Không có gì để lưu"
+  },
+  "askClose": {
+    "message": "Đóng"
+  },
+  "askRetry": {
+    "message": "Thử lại"
+  },
+  "askOpenImage": {
+    "message": "Mở ảnh"
+  },
+  "askCancel": {
+    "message": "Hủy"
+  },
+  "askHostTitle": {
+    "message": "Cho phép ảnh từ trang này?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ chặn các trang khác đọc ảnh của mình, nên Imgkeep chưa chuyển đổi được ảnh này.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Quyền truy cập chỉ áp dụng cho riêng trang này, để tải những ảnh bạn chọn. Bạn có thể gỡ bất cứ lúc nào trong Tùy chọn."
+  },
+  "askAllowAndSave": {
+    "message": "Cho phép và lưu"
+  },
+  "askNotAllowed": {
+    "message": "Quyền truy cập chưa được cấp. Không có gì được lưu."
+  },
+  "askSaveOriginal": {
+    "message": "Lưu định dạng gốc"
+  },
+  "askReconnectTitle": {
+    "message": "Kết nối lại “$FOLDER$”",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Chọn thư mục"
+  },
+  "askReconnectBody": {
+    "message": "Trình duyệt cần bạn cho phép để lưu vào thư mục này lần nữa."
+  },
+  "askChooseBody": {
+    "message": "Chọn thư mục mà Imgkeep sẽ lưu ảnh của bạn."
+  },
+  "askEveryVisit": {
+    "message": "Khi trình duyệt hỏi, hãy chọn $OPTION$ để không bị hỏi lại.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“Cho phép mỗi lần truy cập”"
+  },
+  "askReconnectButton": {
+    "message": "Kết nối lại và lưu"
+  },
+  "askChooseButton": {
+    "message": "Chọn thư mục và lưu"
+  },
+  "askErrorTitle": {
+    "message": "Không lưu được ảnh này"
+  },
+  "askFolderDenied": {
+    "message": "Trình duyệt không cho phép truy cập thư mục. Chưa có gì được lưu."
+  },
+  "askNoFolder": {
+    "message": "Chưa chọn thư mục. Chưa có gì được lưu."
+  },
+  "optPageTitle": {
+    "message": "Tùy chọn Imgkeep"
+  },
+  "optSaved": {
+    "message": "Đã lưu"
+  },
+  "optWhereTitle": {
+    "message": "Nơi lưu"
+  },
+  "optSaveMode": {
+    "message": "Chế độ lưu"
+  },
+  "optModeDownloads": {
+    "message": "Thư mục tải xuống"
+  },
+  "optModeDownloadsHint": {
+    "message": "Lưu vào thư mục tải xuống của trình duyệt. Không hỏi gì thêm."
+  },
+  "optModeFolder": {
+    "message": "Thư mục bạn chọn"
+  },
+  "optModeFolderHint": {
+    "message": "Ghi thẳng vào thư mục của bạn. Trình duyệt có thể yêu cầu kết nối lại sau khi khởi động lại."
+  },
+  "optModeAsk": {
+    "message": "Hỏi mỗi lần"
+  },
+  "optModeAskHint": {
+    "message": "Hiện hộp thoại Lưu thành của trình duyệt cho từng ảnh."
+  },
+  "optChooseFolder": {
+    "message": "Chọn thư mục…"
+  },
+  "optChangeFolder": {
+    "message": "Đổi thư mục…"
+  },
+  "optNoFolder": {
+    "message": "Chưa chọn thư mục nào."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — đã kết nối",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — sẽ hỏi để kết nối lại",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Thư mục con"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "ví dụ Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Không bắt buộc. Dùng <code>/</code> để tạo thư mục lồng nhau. Dùng được các token như ở tên tệp."
+  },
+  "optNamesTitle": {
+    "message": "Tên tệp"
+  },
+  "optTemplate": {
+    "message": "Mẫu tên"
+  },
+  "optTokensHint": {
+    "message": "Token: <code>{name}</code> tên gốc, <code>{host}</code> trang web, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> và <code>{h}</code> kích thước tính bằng pixel. Tệp đã có sẽ không bao giờ bị ghi đè."
+  },
+  "optPreviewLabel": {
+    "message": "Xem trước cho summer-banner từ shop.example.com, 1600×900, dạng PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Chất lượng và kích thước"
+  },
+  "optJpgQuality": {
+    "message": "Chất lượng JPG"
+  },
+  "optWebpQuality": {
+    "message": "Chất lượng WebP"
+  },
+  "optJpgBackground": {
+    "message": "Màu nền JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG không hỗ trợ trong suốt, nên những vùng trong suốt sẽ có màu này."
+  },
+  "optMaxWidth": {
+    "message": "Chiều rộng tối đa"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Kích thước gốc"
+  },
+  "optMaxWidthHint": {
+    "message": "Tùy chọn, tính bằng pixel. Ảnh rộng hơn sẽ được thu nhỏ cho vừa, giữ nguyên tỉ lệ; ảnh nhỏ hơn không bao giờ bị phóng to. Định dạng gốc luôn được lưu nguyên trạng."
+  },
+  "optSitesTitle": {
+    "message": "Trang bạn đã cho phép"
+  },
+  "optSitesEmpty": {
+    "message": "Chưa có trang nào. Imgkeep chỉ hỏi khi một trang chặn ảnh bạn muốn chuyển đổi."
+  },
+  "optFindTitle": {
+    "message": "Ảnh bị trang web che"
+  },
+  "optFindLabel": {
+    "message": "Tìm ảnh dưới lớp che"
+  },
+  "optFindHint": {
+    "message": "Trên các trang như Instagram và Pinterest, hãy nhấp chuột phải và chọn Imgkeep: Tìm ảnh ở đây. Imgkeep chỉ xem một trang khi bạn yêu cầu nó tìm ảnh ở đó, đúng trang đó, đúng lúc đó. Nó không bao giờ thay đổi trang."
+  },
+  "optFindOn": {
+    "message": "Đã bật."
+  },
+  "optFindOff": {
+    "message": "Đã tắt."
+  },
+  "optCountsTitle": {
+    "message": "Số lượt dùng ẩn danh"
+  },
+  "optCountsLabel": {
+    "message": "Gửi bản tóm tắt ẩn danh mỗi ngày"
+  },
+  "optCountsHint": {
+    "message": "Mỗi ngày một lần, Imgkeep gửi một bản tóm tắt kiểu “12 lần lưu dưới dạng JPG, 1 lần thất bại” đến PostHog, một dịch vụ phân tích mã nguồn mở đặt tại EU, để chúng tôi biết nên cải thiện tính năng nào và lần lưu nào thất bại. Không bao giờ gồm ảnh, địa chỉ trang, tên tệp hay bất cứ thứ gì nhận dạng bạn."
+  },
+  "optCountsShow": {
+    "message": "Xem chính xác những gì được gửi"
+  },
+  "optCountsToday": {
+    "message": "Đã đếm hôm nay (gửi sau hôm nay):"
+  },
+  "optCountsLast": {
+    "message": "Bản tóm tắt gửi gần nhất:"
+  },
+  "optCountsNone": {
+    "message": "Chưa có gì."
+  },
+  "optCountsOff": {
+    "message": "Đã tắt. Không có gì được đếm hay gửi đi."
+  },
+  "optRemove": {
+    "message": "Xóa"
+  },
+  "optRemoveAccess": {
+    "message": "Xóa quyền truy cập $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — sắp ra mắt"
+  },
+  "optProBody": {
+    "message": "Thiết lập sẵn cho những kích thước và định dạng bạn dùng nhiều nhất, mục tiêu dung lượng kiểu “dưới 200 KB”, quy tắc đưa ảnh của từng trang vào đúng thư mục, và nhật ký ghi lại mỗi ảnh đến từ đâu."
+  },
+  "optProFree": {
+    "message": "Mọi thứ bạn đang dùng hôm nay vẫn miễn phí."
+  },
+  "optGetNotified": {
+    "message": "Nhận thông báo"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep làm được gì và không làm gì"
+  },
+  "optPermissions": {
+    "message": "Các quyền tiện ích yêu cầu:"
+  },
+  "optOptionalPermissions": {
+    "message": "Chỉ khi bạn bật Tìm ảnh:"
+  },
+  "optPermissionsLabel": {
+    "message": "Quyền"
+  },
+  "optTrust1": {
+    "message": "Ảnh được chuyển đổi ngay trên máy bạn và không bao giờ được tải lên. Thứ duy nhất Imgkeep gửi đi là bản tóm tắt ẩn danh mỗi ngày ở trên, và bạn có thể tắt nó."
+  },
+  "optTrust2": {
+    "message": "Không quảng cáo, không tab chào mừng. Cửa sổ nhỏ chỉ mở khi bạn yêu cầu hoặc khi một lần lưu cần bạn đồng ý. Imgkeep xin đánh giá một lần duy nhất, sau khi bạn đã dùng một thời gian."
+  },
+  "optTrust4": {
+    "message": "Imgkeep chỉ xem một trang khi bạn yêu cầu nó tìm ảnh ở đó, đúng trang đó, đúng lúc đó. Nó không bao giờ thay đổi trang."
+  },
+  "optTrust3": {
+    "message": "Mọi tính năng miễn phí sẽ luôn miễn phí."
+  },
+  "optVersion": {
+    "message": "Phiên bản"
+  },
+  "optWhatsNew": {
+    "message": "Có gì mới"
+  },
+  "copyWorking": {
+    "message": "Đang sao chép ảnh…"
+  },
+  "copyDone": {
+    "message": "Đã sao chép dưới dạng PNG. Dán vào bất cứ đâu."
+  },
+  "copyFailed": {
+    "message": "Không sao chép được ảnh"
+  },
+  "copyFailedNote": {
+    "message": "Bảng nhớ tạm của bạn không thay đổi. Hãy thử lại, hoặc lưu ảnh thành tệp PNG."
+  },
+  "copySavePng": {
+    "message": "Lưu thành PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Cho phép và sao chép"
+  },
+  "editTitle": {
+    "message": "Thêm tùy chọn"
+  },
+  "editLoading": {
+    "message": "Đang tải ảnh…"
+  },
+  "editUpdating": {
+    "message": "Đang cập nhật bản xem trước…"
+  },
+  "editPreviewAlt": {
+    "message": "Xem trước kết quả"
+  },
+  "editOriginal": {
+    "message": "Ảnh gốc"
+  },
+  "editResult": {
+    "message": "Kết quả"
+  },
+  "editFormat": {
+    "message": "Định dạng"
+  },
+  "editPngHint": {
+    "message": "PNG giữ nguyên từng điểm ảnh. Muốn tệp nhẹ hơn, hãy giảm chiều rộng tối đa hoặc chọn JPG hay WebP."
+  },
+  "editIcoHint": {
+    "message": "Tệp biểu tượng chứa ảnh ở 16, 32 và 48 px, thêm 256 px nếu ảnh đủ lớn. Ảnh không vuông sẽ có viền trong suốt."
+  },
+  "editBmpHint": {
+    "message": "Ảnh bitmap thường, ứng dụng nào cũng mở được. Tệp khá nặng, và vùng trong suốt sẽ chuyển thành màu nền."
+  },
+  "editAvifHint": {
+    "message": "Thường chỉ nặng bằng một nửa ảnh JPG trông tương đương. Trình duyệt hiện đại và hầu hết ứng dụng mới đều mở được; một số ứng dụng cũ thì không."
+  },
+  "editMaxWidthHint": {
+    "message": "Tính bằng pixel. Giữ nguyên tỉ lệ, không bao giờ phóng to."
+  },
+  "editBackground": {
+    "message": "Nền"
+  },
+  "editQuality": {
+    "message": "Chất lượng"
+  },
+  "editFileName": {
+    "message": "Tên tệp"
+  },
+  "editSave": {
+    "message": "Lưu"
+  },
+  "editAllow": {
+    "message": "Cho phép trang này"
+  },
+  "editNeedsOk": {
+    "message": "Lần lưu này cần bạn xác nhận: xem cửa sổ Imgkeep vừa mở."
+  },
+  "reviewTitle": {
+    "message": "Bạn thấy Imgkeep hữu ích chứ?"
+  },
+  "reviewBody": {
+    "message": "Một đánh giá trên cửa hàng giúp người khác tìm thấy Imgkeep. Chỉ mất vài giây, và chúng tôi chỉ hỏi một lần."
+  },
+  "reviewRate": {
+    "message": "Đánh giá Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Không, cảm ơn"
+  },
+  "reviewThanks": {
+    "message": "Cảm ơn bạn!"
+  },
+  "reviewOk": {
+    "message": "Đã rõ. Chúng tôi sẽ không hỏi lại."
+  },
+  "findWindowTitle": {
+    "message": "Tìm ảnh"
+  },
+  "findEnableTitle": {
+    "message": "Tìm ảnh bị trang web che"
+  },
+  "findEnableBody": {
+    "message": "Một số trang, như Instagram và Pinterest, phủ một lớp lên ảnh nên nhấp chuột phải không chạm tới ảnh được. Imgkeep có thể tìm giúp bạn tấm ảnh nằm dưới lớp đó."
+  },
+  "findPromise": {
+    "message": "Imgkeep chỉ xem một trang khi bạn yêu cầu tìm ảnh ở đó, chỉ trang đó, chỉ lúc đó. Nó không bao giờ thay đổi trang."
+  },
+  "findTurnOn": {
+    "message": "Bật"
+  },
+  "findDenied": {
+    "message": "Chưa bật. Bạn có thể bật bất cứ lúc nào trong Tùy chọn."
+  },
+  "findOnTitle": {
+    "message": "Đã bật"
+  },
+  "findOnBody": {
+    "message": "Hãy nhấp chuột phải vào ảnh lần nữa và chọn Imgkeep: Tìm ảnh ở đây."
+  },
+  "findPickTitle": {
+    "message": "Ảnh nào?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep không rõ bạn muốn ảnh nào. Hãy chọn một:"
+  },
+  "findPickOne": {
+    "message": "Ảnh $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Không tìm thấy ảnh ở đây"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep không tìm thấy ảnh nào ở phần này của trang. Hãy nhấp chuột phải đúng vào tấm ảnh, hoặc mở ảnh ở trang riêng rồi thử lại."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep không xem được trang này"
+  },
+  "findErrorBody": {
+    "message": "Hãy tải lại trang, rồi nhấp chuột phải vào ảnh và chọn Tìm ảnh ở đây lần nữa."
+  },
+  "paletteTitle": {
+    "message": "Bảng màu"
+  },
+  "paletteLoading": {
+    "message": "Đang tìm các màu…"
+  },
+  "paletteCount": {
+    "message": "Màu"
+  },
+  "paletteSwatches": {
+    "message": "Các màu chính của ảnh, nhiều nhất trước"
+  },
+  "paletteCopyOne": {
+    "message": "Sao chép $VALUE$ ($SHARE$ của ảnh)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Đã sao chép $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Sao chép tất cả dưới dạng"
+  },
+  "paletteCodeCss": {
+    "message": "Biến CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Danh sách"
+  },
+  "paletteCopiedAll": {
+    "message": "Đã sao chép tất cả màu dưới dạng $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Lưu dưới dạng"
+  },
+  "paletteSavePng": {
+    "message": "Bảng màu PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Bảng màu GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Bảng màu Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Thư mục của bạn không dùng được nên tệp đã vào Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Ảnh này trong suốt hoàn toàn nên không có màu nào để lấy."
+  },
+  "paletteCopyFailed": {
+    "message": "Không sao chép được. Hãy bấm vào trong cửa sổ này rồi thử lại."
+  },
+  "paletteNote": {
+    "message": "Được xử lý ngay trên máy bạn. Ảnh và màu của nó không bao giờ rời khỏi máy."
+  }
+}

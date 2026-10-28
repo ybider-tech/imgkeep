@@ -11,6 +11,7 @@
 //   node scripts/translate.mjs --run             translate now (a few languages at a time)
 //   node scripts/translate.mjs --run --batch     through the Message Batches API: half the price, done within ~1 hour
 //   node scripts/translate.mjs --run --only=zh_CN,ko   just these languages
+//   node scripts/translate.mjs --run --only=zh_CN --force --kind=store   again, even if up to date
 //
 // Every result is checked before it's written: placeholders ($PATH$), file-name tokens ({name}), the only HTML
 // allowed (<code>, <strong>), store length limits. A string that fails is retried once with the reason.
@@ -28,6 +29,8 @@ const LOCALES_DIR = join(ROOT, "extension", "_locales");
 const STORE_DIR = join(ROOT, "store", "i18n");
 const LOCK = join(ROOT, "i18n", "translations.lock.json");
 const MODEL = "claude-opus-5";
+// Strings per request: one JSON schema with every key would be too large for structured outputs.
+const CHUNK = 40;
 
 // The Chrome Web Store's languages (English variants and es_419, which falls back to es, left out).
 export const LANGUAGES = {
@@ -84,7 +87,7 @@ const STORE_NOTES = {
 };
 
 // What each language needs: keys missing there, or translated from English that has since changed.
-async function plan(only) {
+async function plan(only, { force = false, kinds = ["ui", "store"] } = {}) {
   const src = await sources();
   const lock = await readJson(LOCK, {});
   const jobs = [];
@@ -93,7 +96,9 @@ async function plan(only) {
     const store = await readJson(join(STORE_DIR, `${lang}.json`), {});
     const done = lock[lang] || {};
     const todo = (kind, have) =>
-      Object.entries(src[kind]).filter(([k, v]) => have[k] === undefined || done[`${kind}:${k}`] !== hash(v.text)).map(([k]) => k);
+      !kinds.includes(kind)
+        ? []
+        : Object.entries(src[kind]).filter(([k, v]) => force || have[k] === undefined || done[`${kind}:${k}`] !== hash(v.text)).map(([k]) => k);
     const uiKeys = todo("ui", Object.fromEntries(Object.entries(ui).map(([k, v]) => [k, v.message])));
     const storeKeys = todo("store", store);
     if (uiKeys.length || storeKeys.length) jobs.push({ lang, uiKeys, storeKeys });
@@ -137,7 +142,7 @@ const schema = (keys) => ({
 });
 
 // The interface names a store text must quote exactly, in this language.
-const GLOSSARY_KEYS = ["menuParent", "menuPalette", "menuCopyPng", "menuMoreOptions", "menuFindImage", "menuOriginal", "menuGif", "optCountsTitle", "optModeDownloads", "askSaveOriginal", "askAllowAndSave", "paletteSaveGpl", "paletteSaveAse"];
+const GLOSSARY_KEYS = ["menuParent", "menuPalette", "menuCopyPng", "menuMoreOptions", "menuFindImage", "menuOriginal", "menuGif", "optCountsTitle", "askSaveOriginal", "askAllowAndSave", "paletteSaveGpl", "paletteSaveAse"];
 async function glossaryFor(lang) {
   const ui = await readJson(join(LOCALES_DIR, lang, "messages.json"), {});
   return Object.fromEntries(GLOSSARY_KEYS.filter((k) => ui[k]).map((k) => [k, ui[k].message]));
@@ -177,12 +182,22 @@ async function translateNow(client, params) {
   return textOf(await stream.finalMessage());
 }
 
+// Store texts must quote the interface the way this language's interface says it: every menu name the
+// English text uses must appear, exactly, in the translation.
+export function missingTerms(english, translated, glossary, enGlossary) {
+  return Object.keys(glossary).filter((k) => enGlossary[k] && english.includes(enGlossary[k]) && !translated.includes(glossary[k])).map((k) => glossary[k]);
+}
+
 // Checks every string; returns the good ones and the problems.
-function check(kind, result, keys, src) {
+function check(kind, result, keys, src, glossary, enGlossary) {
   const good = {};
   const bad = {};
   for (const k of keys) {
     const problems = problemsWith(k, result[k], src[kind][k].text);
+    if (kind === "store" && !problems.length) {
+      const missing = missingTerms(src[kind][k].text, result[k], glossary || {}, enGlossary || {});
+      if (missing.length) problems.push(`quote these interface names exactly as written: ${missing.map((m) => `"${m}"`).join(", ")}`);
+    }
     if (problems.length) bad[k] = problems;
     else good[k] = result[k];
   }
@@ -224,9 +239,12 @@ const args = process.argv.slice(2);
 const run = args.includes("--run");
 const batch = args.includes("--batch");
 const only = args.find((a) => a.startsWith("--only="))?.slice(7).split(",");
+const force = args.includes("--force");
+const kinds = args.find((a) => a.startsWith("--kind="))?.slice(7).split(",") || ["ui", "store"];
+if (force && !only) throw new Error("--force needs --only=… (it re-translates even what's up to date)");
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const { src, lock, jobs } = await plan(only);
+  const { src, lock, jobs } = await plan(only, { force, kinds });
   const chars = jobs.reduce((n, j) => n + [...j.uiKeys.map((k) => src.ui[k].text), ...j.storeKeys.map((k) => src.store[k].text)].join("").length, 0);
   console.log(`${jobs.length} languages need work, ${chars.toLocaleString()} English characters in all.`);
   for (const j of jobs) console.log(`  ${j.lang.padEnd(6)} ${String(j.uiKeys.length).padStart(4)} interface strings, ${j.storeKeys.length} store texts`);
@@ -241,17 +259,22 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
 
   const client = new Anthropic({ apiKey: await apiKey() });
+  const enGlossary = await glossaryFor("en");
   // Interface strings first: the store texts quote the interface's names.
   for (const kind of ["ui", "store"]) {
     const work = [];
     for (const j of jobs) {
-      const keys = kind === "ui" ? j.uiKeys : j.storeKeys;
-      if (keys.length) work.push({ lang: j.lang, keys, params: request(j.lang, kind, keys, src, kind === "store" ? await glossaryFor(j.lang) : null) });
+      const all = kind === "ui" ? j.uiKeys : j.storeKeys;
+      const glossary = kind === "store" ? await glossaryFor(j.lang) : null;
+      for (let i = 0; i < all.length; i += CHUNK) {
+        const keys = all.slice(i, i + CHUNK);
+        work.push({ id: `${kind}-${j.lang}-${i / CHUNK}`, lang: j.lang, keys, glossary, params: request(j.lang, kind, keys, src, glossary) });
+      }
     }
     if (!work.length) continue;
     const results = new Map();
     if (batch) {
-      const created = await client.messages.batches.create({ requests: work.map((w) => ({ custom_id: `${kind}-${w.lang}`, params: w.params })) });
+      const created = await client.messages.batches.create({ requests: work.map((w) => ({ custom_id: w.id, params: w.params })) });
       console.log(`Batch ${created.id}: ${work.length} ${kind} requests. Waiting (usually under an hour)…`);
       let b = created;
       while (b.processing_status !== "ended") {
@@ -260,40 +283,39 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         console.log(`  ${b.request_counts.succeeded} done, ${b.request_counts.processing} in progress`);
       }
       for await (const r of await client.messages.batches.results(created.id)) {
-        const lang = r.custom_id.slice(kind.length + 1);
         if (r.result.type === "succeeded") {
           try {
-            results.set(lang, textOf(r.result.message));
+            results.set(r.custom_id, textOf(r.result.message));
           } catch (e) {
-            console.log(`  ${lang}: ${e.message}`);
+            console.log(`  ${r.custom_id}: ${e.message}`);
           }
-        } else console.log(`  ${lang}: ${r.result.type}, will retry live`);
+        } else console.log(`  ${r.custom_id}: ${r.result.type}, will retry live`);
       }
     }
-    // Live (and anything the batch didn't finish), three languages at a time.
-    const queue = work.filter((w) => !results.has(w.lang));
+    // Live (and anything the batch didn't finish), four requests at a time.
+    const queue = work.filter((w) => !results.has(w.id));
     await Promise.all(
-      Array.from({ length: 3 }, async () => {
+      Array.from({ length: 4 }, async () => {
         for (let w; (w = queue.shift()); ) {
           try {
-            results.set(w.lang, await translateNow(client, w.params));
+            results.set(w.id, await translateNow(client, w.params));
           } catch (e) {
-            console.log(`  ${w.lang}: ${e.message}`);
+            console.log(`  ${w.id}: ${e.message}`);
           }
         }
       }),
     );
     for (const w of work) {
-      const result = results.get(w.lang);
+      const result = results.get(w.id);
       if (!result) continue;
-      let { good, bad } = check(kind, result, w.keys, src);
+      let { good, bad } = check(kind, result, w.keys, src, w.glossary, enGlossary);
       if (Object.keys(bad).length) {
         // One more try for the strings that broke a rule, telling Claude why.
         const keys = Object.keys(bad);
         const retry = request(w.lang, kind, keys, src, kind === "store" ? await glossaryFor(w.lang) : null);
         retry.messages[0].content += `\n\nA previous attempt broke these rules; fix them:\n${JSON.stringify(bad, null, 1)}`;
         try {
-          const again = check(kind, await translateNow(client, retry), keys, src);
+          const again = check(kind, await translateNow(client, retry), keys, src, w.glossary, enGlossary);
           good = { ...good, ...again.good };
           bad = again.bad;
         } catch (e) {
@@ -302,7 +324,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       }
       await save(w.lang, kind, good, src, lock);
       const left = Object.keys(bad);
-      console.log(`${kind} ${w.lang}: ${Object.keys(good).length} written${left.length ? `, ${left.length} still failing (kept English fallback): ${left.join(", ")}` : ""}`);
+      console.log(`${w.id}: ${Object.keys(good).length} written${left.length ? `, ${left.length} still failing (kept English fallback): ${left.join(", ")}` : ""}`);
     }
   }
   console.log("Done. Run npm test before committing.");

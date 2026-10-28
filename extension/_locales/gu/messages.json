@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "છબી PNG, JPG, WebP, GIF કે PDF તરીકે સાચવો — Imgkeep"
+  },
+  "extDescription": {
+    "message": "જમણું-ક્લિક કરી કોઈ પણ છબી PNG, JPG, WebP, GIF કે PDF તરીકે સાચવો, કે તેની રંગ પૅલેટ મેળવો. તમારા ઉપકરણ પર. અંગત માહિતી નહીં."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (છેલ્લે વપરાયેલ)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (એનિમેશન જળવાય)"
+  },
+  "menuOriginal": {
+    "message": "મૂળ ફોર્મેટ"
+  },
+  "menuCopyPng": {
+    "message": "PNG તરીકે કૉપિ કરો"
+  },
+  "menuPalette": {
+    "message": "રંગ પૅલેટ મેળવો"
+  },
+  "menuMoreOptions": {
+    "message": "વધુ વિકલ્પો…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: અહીં છબી શોધો…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ નવું",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep ગમે છે? રેટિંગ આપો…"
+  },
+  "askErrBlocked": {
+    "message": "ઍક્સેસની મંજૂરી હોવા છતાં સાઇટે આ છબી આપી નહીં. સર્વર બંધ હોઈ શકે, અથવા તે છબી ફક્ત પોતાનાં પાનાંમાં જ બતાવે છે."
+  },
+  "askErrHttp": {
+    "message": "સાઇટે છબીને બદલે ભૂલનો જવાબ આપ્યો."
+  },
+  "askErrDecode": {
+    "message": "તમારું બ્રાઉઝર આ ફાઇલને છબી તરીકે વાંચી શક્યું નહીં."
+  },
+  "askErrUnsupported": {
+    "message": "આ બ્રાઉઝર આવૃત્તિ આ ફોર્મેટ બનાવી શકતી નથી. તેના બદલે PNG અજમાવો."
+  },
+  "askErrBlob": {
+    "message": "આ છબી ફક્ત પાનાંની અંદર જ છે (blob: લિંક), એટલે Imgkeep તેને હજી સાચવી શકતું નથી. સ્ક્રીનશૉટ કામ કરશે."
+  },
+  "askErrTooLarge": {
+    "message": "આ છબી બ્રાઉઝરમાં રૂપાંતર કરવા માટે ખૂબ મોટી છે."
+  },
+  "askErrTimeout": {
+    "message": "આ છબીનું રૂપાંતર ખૂબ લાંબું ચાલ્યું, એટલે Imgkeep અટક્યું. PNG, કે ટૂંકું અથવા નાનું એનિમેશન અજમાવો."
+  },
+  "askErrDownload": {
+    "message": "તમારું બ્રાઉઝર ડાઉનલોડ શરૂ કરી શક્યું નહીં."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep તમારા ફોલ્ડરમાં ફાઇલ લખી શક્યું નહીં."
+  },
+  "askErrExpired": {
+    "message": "આ સેવની મુદત પૂરી થઈ. છબી પર જમણું-ક્લિક કરી ફરી પ્રયાસ કરો."
+  },
+  "askErrUnknown": {
+    "message": "આ છબી સાચવતી વખતે કંઈક ખોટું થયું."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ ફ્રેમ. GIF માટે મર્યાદા $MAX$ છે.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ પિક્સેલ × $COUNT$ ફ્રેમ અહીં GIF સમાવી શકે તેના કરતાં વધુ છે.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "આ નામની ખૂબ વધુ ફાઇલો છે."
+  },
+  "askSaving": {
+    "message": "સાચવાઈ રહ્યું છે…"
+  },
+  "askSaved": {
+    "message": "સાચવાઈ ગયું."
+  },
+  "askSavedAs": {
+    "message": "$PATH$ તરીકે સાચવ્યું",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ માં સાચવ્યું",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "સાચવવા માટે કંઈ નથી"
+  },
+  "askClose": {
+    "message": "બંધ કરો"
+  },
+  "askRetry": {
+    "message": "ફરી પ્રયાસ કરો"
+  },
+  "askOpenImage": {
+    "message": "છબી ખોલો"
+  },
+  "askCancel": {
+    "message": "રદ કરો"
+  },
+  "askHostTitle": {
+    "message": "આ સાઇટની છબીઓને મંજૂરી આપવી?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ બીજી સાઇટોને પોતાની છબીઓ વાંચતાં રોકે છે, એટલે Imgkeep આ છબીનું રૂપાંતર હજી કરી શકતું નથી.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "ઍક્સેસ ફક્ત આ એક સાઇટ માટે જ છે, તમે પસંદ કરેલી છબીઓ લાવવા માટે. તમે તેને વિકલ્પોમાં ગમે ત્યારે દૂર કરી શકો છો."
+  },
+  "askAllowAndSave": {
+    "message": "મંજૂરી આપો અને સાચવો"
+  },
+  "askNotAllowed": {
+    "message": "ઍક્સેસની મંજૂરી મળી નથી. કંઈ સાચવ્યું નથી."
+  },
+  "askSaveOriginal": {
+    "message": "તેના બદલે મૂળ ફોર્મેટમાં સાચવો"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” ફરી જોડો",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "ફોલ્ડર પસંદ કરો"
+  },
+  "askReconnectBody": {
+    "message": "આ ફોલ્ડરમાં ફરીથી સાચવવા માટે તમારા બ્રાઉઝરને તમારી મંજૂરી જોઈએ છે."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep તમારી છબીઓ ક્યાં સાચવે તે ફોલ્ડર પસંદ કરો."
+  },
+  "askEveryVisit": {
+    "message": "જ્યારે બ્રાઉઝર પૂછે ત્યારે $OPTION$ પસંદ કરો, જેથી તે ફરી ન પૂછે.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“દર મુલાકાતે મંજૂરી આપો”"
+  },
+  "askReconnectButton": {
+    "message": "ફરી જોડો અને સાચવો"
+  },
+  "askChooseButton": {
+    "message": "ફોલ્ડર પસંદ કરો અને સાચવો"
+  },
+  "askErrorTitle": {
+    "message": "આ છબી સાચવી શકાઈ નહીં"
+  },
+  "askFolderDenied": {
+    "message": "તમારા બ્રાઉઝરે ફોલ્ડરનો ઉપયોગ કરવા દીધો નહીં. કંઈ સાચવાયું નથી."
+  },
+  "askNoFolder": {
+    "message": "કોઈ ફોલ્ડર પસંદ કર્યું નથી. કંઈ સાચવાયું નથી."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep વિકલ્પો"
+  },
+  "optSaved": {
+    "message": "સાચવાયું"
+  },
+  "optWhereTitle": {
+    "message": "ક્યાં સાચવવું"
+  },
+  "optSaveMode": {
+    "message": "સાચવવાની રીત"
+  },
+  "optModeDownloads": {
+    "message": "ડાઉનલોડ ફોલ્ડર"
+  },
+  "optModeDownloadsHint": {
+    "message": "તમારા બ્રાઉઝરના ડાઉનલોડ ફોલ્ડરમાં સાચવે છે. કશું પૂછ્યા વગર."
+  },
+  "optModeFolder": {
+    "message": "તમે પસંદ કરેલું ફોલ્ડર"
+  },
+  "optModeFolderHint": {
+    "message": "સીધું તમારા ફોલ્ડરમાં લખે છે. બ્રાઉઝર ફરી શરૂ થયા પછી ફરી જોડવાનું કહી શકે છે."
+  },
+  "optModeAsk": {
+    "message": "દર વખતે પૂછો"
+  },
+  "optModeAskHint": {
+    "message": "દરેક છબી માટે બ્રાઉઝરનો Save As સંવાદ બતાવે છે."
+  },
+  "optChooseFolder": {
+    "message": "ફોલ્ડર પસંદ કરો…"
+  },
+  "optChangeFolder": {
+    "message": "ફોલ્ડર બદલો…"
+  },
+  "optNoFolder": {
+    "message": "હજી કોઈ ફોલ્ડર પસંદ કર્યું નથી."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — જોડાયેલું",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — ફરી જોડવાનું પૂછશે",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "સબફોલ્ડર"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "દા.ત. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "વૈકલ્પિક. અંદરના ફોલ્ડર માટે <code>/</code> વાપરો. ફાઇલનામ જેવા જ ટોકન ચાલે છે."
+  },
+  "optNamesTitle": {
+    "message": "ફાઇલનામ"
+  },
+  "optTemplate": {
+    "message": "નામનો ઢાંચો"
+  },
+  "optTokensHint": {
+    "message": "ટોકન: <code>{name}</code> મૂળ નામ, <code>{host}</code> સાઇટ, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> અને <code>{h}</code> પિક્સેલમાં માપ. હાલની ફાઇલો કદી બદલાતી નથી."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com પરથી summer-banner, 1600×900, PNG તરીકે — પૂર્વાવલોકન:"
+  },
+  "optQualityTitle": {
+    "message": "ગુણવત્તા અને માપ"
+  },
+  "optJpgQuality": {
+    "message": "JPG ગુણવત્તા"
+  },
+  "optWebpQuality": {
+    "message": "WebP ગુણવત્તા"
+  },
+  "optJpgBackground": {
+    "message": "JPG પાછળનો રંગ"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPGમાં પારદર્શકતા હોતી નથી, એટલે આરપાર દેખાતા ભાગોને આ રંગ મળે છે."
+  },
+  "optMaxWidth": {
+    "message": "મહત્તમ પહોળાઈ"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "મૂળ કદ"
+  },
+  "optMaxWidthHint": {
+    "message": "વૈકલ્પિક, પિક્સેલમાં. વધુ પહોળી છબીઓ આકાર જાળવીને સમાય તેટલી નાની કરાય છે; નાની છબીઓ ક્યારેય મોટી થતી નથી. મૂળ ફોર્મેટ હંમેશાં જેમ છે તેમ જ સચવાય છે."
+  },
+  "optSitesTitle": {
+    "message": "તમે મંજૂરી આપી હોય તેવી સાઇટ્સ"
+  },
+  "optSitesEmpty": {
+    "message": "હજી એકેય નહીં. તમે કન્વર્ટ કરવા માગતી હો તે છબીને કોઈ સાઇટ રોકે ત્યારે જ Imgkeep પૂછે છે."
+  },
+  "optFindTitle": {
+    "message": "સાઇટ્સે ઢાંકેલી છબીઓ"
+  },
+  "optFindLabel": {
+    "message": "ઢાંકણ-સ્તર નીચેની છબીઓ શોધો"
+  },
+  "optFindHint": {
+    "message": "Instagram અને Pinterest જેવી સાઇટ્સ પર જમણું-ક્લિક કરીને “Imgkeep: અહીં છબી શોધો” પસંદ કરો. તમે કોઈ પેજ પર છબી શોધવાનું કહો ત્યારે જ Imgkeep એ પેજ જુએ છે — ફક્ત એ પેજ, ફક્ત ત્યારે. એ પેજમાં ક્યારેય ફેરફાર કરતું નથી."
+  },
+  "optFindOn": {
+    "message": "ચાલુ કર્યું."
+  },
+  "optFindOff": {
+    "message": "બંધ કર્યું."
+  },
+  "optCountsTitle": {
+    "message": "અનામી વપરાશ ગણતરી"
+  },
+  "optCountsLabel": {
+    "message": "રોજનો અનામી સારાંશ મોકલો"
+  },
+  "optCountsHint": {
+    "message": "દિવસમાં એક વાર Imgkeep “JPG તરીકે 12 સાચવ્યાં, 1 નિષ્ફળ” જેવો સારાંશ PostHog ને મોકલે છે — EU માં હોસ્ટ થયેલી ઓપન-સોર્સ એનાલિટિક્સ સેવા — જેથી અમને ખબર પડે કે કઈ સુવિધાઓ સુધારવી અને કયાં સેવ નિષ્ફળ જાય છે. છબીઓ, પેજનાં સરનામાં, ફાઇલનાં નામ કે તમારી ઓળખ આપે એવું કશું ક્યારેય નહીં."
+  },
+  "optCountsShow": {
+    "message": "બરાબર શું મોકલાય છે તે જુઓ"
+  },
+  "optCountsToday": {
+    "message": "આજે ગણાયું (આજ પછી મોકલાશે):"
+  },
+  "optCountsLast": {
+    "message": "છેલ્લે મોકલેલો સારાંશ:"
+  },
+  "optCountsNone": {
+    "message": "હજી કશું નહીં."
+  },
+  "optCountsOff": {
+    "message": "બંધ. કશું ગણાતું કે મોકલાતું નથી."
+  },
+  "optRemove": {
+    "message": "દૂર કરો"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ માટેની મંજૂરી દૂર કરો",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — જલદી આવી રહ્યું છે"
+  },
+  "optProBody": {
+    "message": "તમે સૌથી વધુ વાપરતા હો તે કદ અને ફોર્મેટ માટે પ્રીસેટ, “200 KB થી ઓછું” જેવા ફાઇલ-કદના લક્ષ્ય, દરેક સાઇટની છબીઓ યોગ્ય ફોલ્ડરમાં મોકલતા નિયમો, અને દરેક છબી ક્યાંથી આવી તેનો લોગ."
+  },
+  "optProFree": {
+    "message": "આજે તમે જે વાપરો છો તે બધું મફત જ રહેશે."
+  },
+  "optGetNotified": {
+    "message": "જાણ મેળવો"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep શું કરી શકે અને શું નહીં"
+  },
+  "optPermissions": {
+    "message": "તે જે પરવાનગીઓ માગે છે:"
+  },
+  "optOptionalPermissions": {
+    "message": "ફક્ત તમે “છબીઓ શોધો” ચાલુ કરો તો જ:"
+  },
+  "optPermissionsLabel": {
+    "message": "પરવાનગીઓ"
+  },
+  "optTrust1": {
+    "message": "છબીઓ તમારા કમ્પ્યૂટર પર જ કન્વર્ટ થાય છે અને ક્યારેય અપલોડ થતી નથી. Imgkeep બીજું ફક્ત ઉપરનો અનામી રોજનો સારાંશ મોકલે છે, જે તમે બંધ કરી શકો છો."
+  },
+  "optTrust2": {
+    "message": "કોઈ જાહેરાત નહીં, કોઈ સ્વાગત ટેબ નહીં. નાની વિન્ડો ત્યારે જ ખૂલે છે જ્યારે તમે માગો અથવા સેવ માટે તમારી મંજૂરી જરૂરી હોય. થોડો સમય વાપર્યા પછી Imgkeep એક જ વાર રેટિંગ માટે પૂછે છે."
+  },
+  "optTrust4": {
+    "message": "તમે કોઈ પેજ પર છબી શોધવાનું કહો ત્યારે જ Imgkeep એ પેજ જુએ છે — ફક્ત એ પેજ, ફક્ત ત્યારે. એ પેજમાં ક્યારેય ફેરફાર કરતું નથી."
+  },
+  "optTrust3": {
+    "message": "દરેક મફત સુવિધા મફત જ રહેશે."
+  },
+  "optVersion": {
+    "message": "વર્ઝન"
+  },
+  "optWhatsNew": {
+    "message": "નવું શું છે"
+  },
+  "copyWorking": {
+    "message": "છબી કૉપિ થઈ રહી છે…"
+  },
+  "copyDone": {
+    "message": "PNG તરીકે કૉપિ થઈ. ગમે ત્યાં પેસ્ટ કરો."
+  },
+  "copyFailed": {
+    "message": "છબી કૉપિ ન થઈ શકી"
+  },
+  "copyFailedNote": {
+    "message": "તમારું ક્લિપબોર્ડ બદલાયું નથી. ફરી પ્રયાસ કરો, અથવા તેના બદલે છબીને PNG ફાઇલ તરીકે સાચવો."
+  },
+  "copySavePng": {
+    "message": "તેના બદલે PNG તરીકે સાચવો"
+  },
+  "copyAllowAndCopy": {
+    "message": "મંજૂરી આપો અને કૉપિ કરો"
+  },
+  "editTitle": {
+    "message": "વધુ વિકલ્પો"
+  },
+  "editLoading": {
+    "message": "છબી લોડ થઈ રહી છે…"
+  },
+  "editUpdating": {
+    "message": "પૂર્વદર્શન અપડેટ થઈ રહ્યું છે…"
+  },
+  "editPreviewAlt": {
+    "message": "પરિણામનું પૂર્વદર્શન"
+  },
+  "editOriginal": {
+    "message": "મૂળ"
+  },
+  "editResult": {
+    "message": "પરિણામ"
+  },
+  "editFormat": {
+    "message": "ફોર્મેટ"
+  },
+  "editPngHint": {
+    "message": "PNG દરેક પિક્સેલ જાળવી રાખે છે. નાની ફાઇલ જોઈતી હોય તો મહત્તમ પહોળાઈ ઘટાડો અથવા JPG કે WebP પસંદ કરો."
+  },
+  "editIcoHint": {
+    "message": "આઇકન ફાઇલ, જેમાં છબી 16, 32 અને 48 px માં હોય છે, અને પૂરતી મોટી હોય તો 256 px માં પણ. ચોરસ ન હોય તેવી છબીઓની કિનારીઓ પારદર્શક થઈ જાય છે."
+  },
+  "editBmpHint": {
+    "message": "સાદું બિટમેપ, જે દરેક એપ ખોલે છે. ફાઇલો મોટી હોય છે, અને પારદર્શક ભાગોમાં પૃષ્ઠભૂમિનો રંગ આવી જાય છે."
+  },
+  "editAvifHint": {
+    "message": "સરખી દેખાતી JPG કરતાં ઘણી વાર અડધા કદની. આધુનિક બ્રાઉઝર અને મોટા ભાગની હાલની એપ તે ખોલે છે; કેટલીક જૂની એપ નથી ખોલતી."
+  },
+  "editMaxWidthHint": {
+    "message": "પિક્સેલમાં. આકાર જળવાઈ રહે છે, છબી ક્યારેય મોટી થતી નથી."
+  },
+  "editBackground": {
+    "message": "પૃષ્ઠભૂમિ"
+  },
+  "editQuality": {
+    "message": "ગુણવત્તા"
+  },
+  "editFileName": {
+    "message": "ફાઇલનું નામ"
+  },
+  "editSave": {
+    "message": "સાચવો"
+  },
+  "editAllow": {
+    "message": "આ સાઇટને મંજૂરી આપો"
+  },
+  "editNeedsOk": {
+    "message": "આ સાચવવા માટે તમારી મંજૂરી જોઈએ: હમણાં ખૂલેલી Imgkeep વિન્ડો જુઓ."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep ગમે છે?"
+  },
+  "reviewBody": {
+    "message": "સ્ટોરમાં રેટિંગ આપવાથી બીજા લોકોને તે શોધવામાં મદદ મળે છે. થોડી જ સેકન્ડ લાગે છે, અને અમે આ એક જ વાર પૂછીશું."
+  },
+  "reviewRate": {
+    "message": "Imgkeep ને રેટિંગ આપો"
+  },
+  "reviewNo": {
+    "message": "ના, આભાર"
+  },
+  "reviewThanks": {
+    "message": "આભાર!"
+  },
+  "reviewOk": {
+    "message": "સમજ્યા. અમે ફરી નહીં પૂછીએ."
+  },
+  "findWindowTitle": {
+    "message": "છબી શોધો"
+  },
+  "findEnableTitle": {
+    "message": "સાઇટ ઢાંકી દે તેવી છબીઓ શોધો"
+  },
+  "findEnableBody": {
+    "message": "Instagram અને Pinterest જેવી કેટલીક સાઇટ તેમની છબીઓ પર બીજું સ્તર ઢાંકી દે છે, એટલે જમણી-ક્લિકથી તેમના સુધી પહોંચાતું નથી. Imgkeep તમારા માટે એ સ્તર નીચેની છબી શોધી શકે છે."
+  },
+  "findPromise": {
+    "message": "તમે કોઈ પાના પર છબી શોધવાનું કહો ત્યારે જ Imgkeep એ પાનું જુએ છે — માત્ર એ જ પાનું, માત્ર એ જ વખતે. તે પાનામાં ક્યારેય ફેરફાર કરતું નથી."
+  },
+  "findTurnOn": {
+    "message": "ચાલુ કરો"
+  },
+  "findDenied": {
+    "message": "ચાલુ થયું નથી. તમે વિકલ્પોમાં જઈને ગમે ત્યારે ચાલુ કરી શકો છો."
+  },
+  "findOnTitle": {
+    "message": "ચાલુ થયું"
+  },
+  "findOnBody": {
+    "message": "છબી પર ફરી જમણી-ક્લિક કરો અને “Imgkeep: અહીં છબી શોધો” પસંદ કરો."
+  },
+  "findPickTitle": {
+    "message": "કઈ છબી?"
+  },
+  "findPickBody": {
+    "message": "તમે કઈ છબીની વાત કરી રહ્યા છો તે Imgkeep નક્કી કરી શક્યું નહીં. એક પસંદ કરો:"
+  },
+  "findPickOne": {
+    "message": "છબી $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "અહીં કોઈ છબી મળી નહીં"
+  },
+  "findNothingBody": {
+    "message": "પાનાના આ ભાગ પર Imgkeep ને કોઈ છબી મળી નહીં. ફોટા પર બરાબર જમણી-ક્લિક કરો, અથવા ફોટાને તેના પોતાના પાના પર ખોલીને ફરી પ્રયાસ કરો."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep આ પાનું જોઈ શક્યું નહીં"
+  },
+  "findErrorBody": {
+    "message": "પાનું ફરી લોડ કરો, પછી છબી પર જમણી-ક્લિક કરીને ફરીથી “અહીં છબી શોધો” પસંદ કરો."
+  },
+  "paletteTitle": {
+    "message": "રંગ પેલેટ"
+  },
+  "paletteLoading": {
+    "message": "રંગો શોધાઈ રહ્યા છે…"
+  },
+  "paletteCount": {
+    "message": "રંગો"
+  },
+  "paletteSwatches": {
+    "message": "છબીના મુખ્ય રંગો, સૌથી મોટો પહેલાં"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ કૉપિ કરો (છબીનો $SHARE$ ભાગ)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ કૉપિ થયો",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "બધા કૉપિ કરો"
+  },
+  "paletteCodeCss": {
+    "message": "CSS વેરિએબલ"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "યાદી"
+  },
+  "paletteCopiedAll": {
+    "message": "બધા રંગો $KIND$ તરીકે કૉપિ થયા",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "આ રીતે સાચવો"
+  },
+  "paletteSavePng": {
+    "message": "PNG સ્વૉચ"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP પેલેટ"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe સ્વૉચ"
+  },
+  "paletteSavedFallback": {
+    "message": "તમારું ફોલ્ડર ઉપલબ્ધ ન હતું, તેથી તે Downloads માં ગયું: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "આ છબી સંપૂર્ણ પારદર્શક છે, એટલે તેમાંથી લેવા જેવા રંગો નથી."
+  },
+  "paletteCopyFailed": {
+    "message": "કૉપિ ન થઈ શક્યું. આ વિન્ડોમાં ક્લિક કરો, પછી ફરી પ્રયાસ કરો."
+  },
+  "paletteNote": {
+    "message": "તમારા કમ્પ્યુટર પર જ ગણાયું. છબી અને તેના રંગો ક્યારેય બહાર જતા નથી."
+  }
+}

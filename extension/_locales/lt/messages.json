@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Išsaugoti paveikslėlį kaip PNG, JPG, WebP, GIF ar PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Dešiniuoju mygtuku išsaugokite paveikslėlį kaip PNG, JPG, WebP, GIF ar PDF arba gaukite jo spalvų paletę. Jūsų įrenginyje."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (naudota paskiausiai)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (išlaiko animaciją)"
+  },
+  "menuOriginal": {
+    "message": "Originalus formatas"
+  },
+  "menuCopyPng": {
+    "message": "Kopijuoti kaip PNG"
+  },
+  "menuPalette": {
+    "message": "Gauti spalvų paletę"
+  },
+  "menuMoreOptions": {
+    "message": "Daugiau parinkčių…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: rasti paveikslėlį čia…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nauja",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Patinka Imgkeep? Įvertinkite…"
+  },
+  "askErrBlocked": {
+    "message": "Svetainė nepateikė šio paveikslėlio, nors prieiga ir leista. Gali būti, kad serveris neveikia arba paveikslėlis rodomas tik jos pačios puslapiuose."
+  },
+  "askErrHttp": {
+    "message": "Vietoj paveikslėlio svetainė atsakė klaida."
+  },
+  "askErrDecode": {
+    "message": "Naršyklei nepavyko perskaityti šio failo kaip paveikslėlio."
+  },
+  "askErrUnsupported": {
+    "message": "Ši naršyklės versija negali sukurti šio formato. Pabandykite PNG."
+  },
+  "askErrBlob": {
+    "message": "Šis paveikslėlis egzistuoja tik puslapyje (blob: nuoroda), todėl Imgkeep kol kas negali jo išsaugoti. Padės ekrano nuotrauka."
+  },
+  "askErrTooLarge": {
+    "message": "Šis paveikslėlis per didelis konvertuoti naršyklėje."
+  },
+  "askErrTimeout": {
+    "message": "Šio paveikslėlio konvertavimas užtruko per ilgai, todėl Imgkeep sustojo. Pabandykite PNG arba trumpesnę ar mažesnę animaciją."
+  },
+  "askErrDownload": {
+    "message": "Naršyklei nepavyko pradėti atsisiuntimo."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep nepavyko įrašyti failo į jūsų aplanką."
+  },
+  "askErrExpired": {
+    "message": "Šio išsaugojimo galiojimas baigėsi. Spustelėkite paveikslėlį dešiniuoju mygtuku ir bandykite dar kartą."
+  },
+  "askErrUnknown": {
+    "message": "Išsaugant šį paveikslėlį kažkas nepavyko."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ kadrų. GIF riba — $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pikselių × $COUNT$ kadrų — daugiau, nei čia telpa į GIF.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Per daug failų tokiu pavadinimu."
+  },
+  "askSaving": {
+    "message": "Išsaugoma…"
+  },
+  "askSaved": {
+    "message": "Išsaugota."
+  },
+  "askSavedAs": {
+    "message": "Išsaugota kaip $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Išsaugota į $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nėra ko išsaugoti"
+  },
+  "askClose": {
+    "message": "Uždaryti"
+  },
+  "askRetry": {
+    "message": "Bandyti dar kartą"
+  },
+  "askOpenImage": {
+    "message": "Atidaryti paveikslėlį"
+  },
+  "askCancel": {
+    "message": "Atšaukti"
+  },
+  "askHostTitle": {
+    "message": "Leisti paveikslėlius iš šios svetainės?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ neleidžia kitoms svetainėms skaityti savo paveikslėlių, todėl Imgkeep kol kas negali šio konvertuoti.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Prieiga suteikiama tik šiai vienai svetainei, kad būtų galima parsisiųsti jūsų pasirinktus paveikslėlius. Bet kada galite ją panaikinti Parinktyse."
+  },
+  "askAllowAndSave": {
+    "message": "Leisti ir išsaugoti"
+  },
+  "askNotAllowed": {
+    "message": "Prieiga nesuteikta. Nieko neišsaugota."
+  },
+  "askSaveOriginal": {
+    "message": "Išsaugoti originalo formatu"
+  },
+  "askReconnectTitle": {
+    "message": "Iš naujo prijungti „$FOLDER$“",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Pasirinkite aplanką"
+  },
+  "askReconnectBody": {
+    "message": "Naršyklei reikia jūsų leidimo vėl išsaugoti į šį aplanką."
+  },
+  "askChooseBody": {
+    "message": "Pasirinkite aplanką, į kurį Imgkeep išsaugos jūsų paveikslėlius."
+  },
+  "askEveryVisit": {
+    "message": "Kai naršyklė paklaus, pasirinkite $OPTION$ – tada daugiau nebeklaus.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Leisti kiekvieno apsilankymo metu“"
+  },
+  "askReconnectButton": {
+    "message": "Prijungti ir išsaugoti"
+  },
+  "askChooseButton": {
+    "message": "Pasirinkti aplanką ir išsaugoti"
+  },
+  "askErrorTitle": {
+    "message": "Nepavyko išsaugoti šio paveikslėlio"
+  },
+  "askFolderDenied": {
+    "message": "Naršyklė neleido pasiekti aplanko. Nieko neišsaugota."
+  },
+  "askNoFolder": {
+    "message": "Aplankas nepasirinktas. Nieko neišsaugota."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep parinktys"
+  },
+  "optSaved": {
+    "message": "Išsaugota"
+  },
+  "optWhereTitle": {
+    "message": "Kur išsaugoti"
+  },
+  "optSaveMode": {
+    "message": "Išsaugojimo būdas"
+  },
+  "optModeDownloads": {
+    "message": "Atsisiuntimų aplankas"
+  },
+  "optModeDownloadsHint": {
+    "message": "Išsaugo į naršyklės atsisiuntimų aplanką. Jokių klausimų."
+  },
+  "optModeFolder": {
+    "message": "Jūsų pasirinktas aplankas"
+  },
+  "optModeFolderHint": {
+    "message": "Rašo tiesiai į jūsų aplanką. Iš naujo paleidus naršyklę, ji gali paprašyti prijungti jį dar kartą."
+  },
+  "optModeAsk": {
+    "message": "Klausti kiekvieną kartą"
+  },
+  "optModeAskHint": {
+    "message": "Kiekvienam paveikslėliui parodo naršyklės langą „Išsaugoti kaip“."
+  },
+  "optChooseFolder": {
+    "message": "Pasirinkti aplanką…"
+  },
+  "optChangeFolder": {
+    "message": "Keisti aplanką…"
+  },
+  "optNoFolder": {
+    "message": "Aplankas dar nepasirinktas."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ – prijungtas",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ – paprašys prijungti iš naujo",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Poaplankis"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "pvz., Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Nebūtina. Įdėtiniams aplankams naudokite <code>/</code>. Tie patys žymenys kaip ir failų varduose."
+  },
+  "optNamesTitle": {
+    "message": "Failų vardai"
+  },
+  "optTemplate": {
+    "message": "Vardo šablonas"
+  },
+  "optTokensHint": {
+    "message": "Žymenys: <code>{name}</code> – pradinis vardas, <code>{host}</code> – svetainė, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ir <code>{h}</code> – dydis pikseliais. Esami failai niekada neperrašomi."
+  },
+  "optPreviewLabel": {
+    "message": "Peržiūra: summer-banner iš shop.example.com, 1600×900, PNG formatu:"
+  },
+  "optQualityTitle": {
+    "message": "Kokybė ir dydis"
+  },
+  "optJpgQuality": {
+    "message": "JPG kokybė"
+  },
+  "optWebpQuality": {
+    "message": "WebP kokybė"
+  },
+  "optJpgBackground": {
+    "message": "JPG fono spalva"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG neturi skaidrumo, todėl permatomos sritys nuspalvinamos šia spalva."
+  },
+  "optMaxWidth": {
+    "message": "Didžiausias plotis"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Originalus dydis"
+  },
+  "optMaxWidthHint": {
+    "message": "Nebūtina, pikseliais. Platesni paveikslėliai sumažinami, kad tilptų, išlaikant proporcijas; mažesni niekada nedidinami. Pradinis formatas visada įrašomas toks, koks yra."
+  },
+  "optSitesTitle": {
+    "message": "Svetainės, kurioms suteikėte leidimą"
+  },
+  "optSitesEmpty": {
+    "message": "Kol kas nėra nė vienos. Imgkeep paklausia tik tada, kai svetainė blokuoja paveikslėlį, kurį norite konvertuoti."
+  },
+  "optFindTitle": {
+    "message": "Svetainių uždengti paveikslėliai"
+  },
+  "optFindLabel": {
+    "message": "Ieškoti paveikslėlių po dengiančiais sluoksniais"
+  },
+  "optFindHint": {
+    "message": "Tokiose svetainėse kaip Instagram ar Pinterest spustelėkite dešiniuoju pelės mygtuku ir pasirinkite „Imgkeep: rasti paveikslėlį čia“. Imgkeep peržiūri puslapį tik tada, kai paprašote jame rasti paveikslėlį – tik tą puslapį ir tik tuo metu. Puslapio jis niekada nekeičia."
+  },
+  "optFindOn": {
+    "message": "Įjungta."
+  },
+  "optFindOff": {
+    "message": "Išjungta."
+  },
+  "optCountsTitle": {
+    "message": "Anoniminė naudojimo statistika"
+  },
+  "optCountsLabel": {
+    "message": "Siųsti anoniminę dienos suvestinę"
+  },
+  "optCountsHint": {
+    "message": "Kartą per dieną Imgkeep išsiunčia suvestinę, pavyzdžiui, „12 įrašymų JPG formatu, 1 nepavyko“, į PostHog – atvirojo kodo analitikos paslaugą, veikiančią ES. Taip žinome, kurias funkcijas tobulinti ir kurie įrašymai nepavyksta. Niekada nesiunčiami paveikslėliai, puslapių adresai, failų pavadinimai ar kas nors, kas jus identifikuotų."
+  },
+  "optCountsShow": {
+    "message": "Pažiūrėkite, kas tiksliai siunčiama"
+  },
+  "optCountsToday": {
+    "message": "Suskaičiuota šiandien (bus išsiųsta pasibaigus dienai):"
+  },
+  "optCountsLast": {
+    "message": "Paskutinė išsiųsta suvestinė:"
+  },
+  "optCountsNone": {
+    "message": "Kol kas nieko."
+  },
+  "optCountsOff": {
+    "message": "Išjungta. Niekas neskaičiuojama ir nesiunčiama."
+  },
+  "optRemove": {
+    "message": "Pašalinti"
+  },
+  "optRemoveAccess": {
+    "message": "Panaikinti prieigą prie $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro – netrukus"
+  },
+  "optProBody": {
+    "message": "Dažniausiai naudojamų dydžių ir formatų šablonai, failo dydžio tikslai, pavyzdžiui, „mažiau nei 200 KB“, taisyklės, nukreipiančios kiekvienos svetainės paveikslėlius į reikiamą aplanką, ir žurnalas, iš kur kiekvienas paveikslėlis atkeliavo."
+  },
+  "optProFree": {
+    "message": "Viskas, ką naudojate šiandien, liks nemokama."
+  },
+  "optGetNotified": {
+    "message": "Gauti pranešimą"
+  },
+  "optTrustTitle": {
+    "message": "Ką Imgkeep gali ir ko negali"
+  },
+  "optPermissions": {
+    "message": "Prašomi leidimai:"
+  },
+  "optOptionalPermissions": {
+    "message": "Tik jei įjungsite paveikslėlių paiešką:"
+  },
+  "optPermissionsLabel": {
+    "message": "Leidimai"
+  },
+  "optTrust1": {
+    "message": "Paveikslėliai konvertuojami jūsų kompiuteryje ir niekur neįkeliami. Vienintelis kitas dalykas, kurį Imgkeep siunčia, – aukščiau aprašyta anoniminė dienos suvestinė, kurią galite išjungti."
+  },
+  "optTrust2": {
+    "message": "Jokių reklamų ir jokių pasisveikinimo skirtukų. Maži langai atsidaro tik tada, kai jų paprašote arba kai įrašymui reikia jūsų sutikimo. Įvertinti Imgkeep paprašo vieną kartą, kurį laiką juo pasinaudojus."
+  },
+  "optTrust4": {
+    "message": "Imgkeep peržiūri puslapį tik tada, kai paprašote jame rasti paveikslėlį – tik tą puslapį ir tik tuo metu. Puslapio jis niekada nekeičia."
+  },
+  "optTrust3": {
+    "message": "Visos nemokamos funkcijos liks nemokamos."
+  },
+  "optVersion": {
+    "message": "Versija"
+  },
+  "optWhatsNew": {
+    "message": "Kas naujo"
+  },
+  "copyWorking": {
+    "message": "Kopijuojamas paveikslėlis…"
+  },
+  "copyDone": {
+    "message": "Nukopijuota PNG formatu. Įklijuokite bet kur."
+  },
+  "copyFailed": {
+    "message": "Nepavyko nukopijuoti paveikslėlio"
+  },
+  "copyFailedNote": {
+    "message": "Jūsų iškarpinė nepakito. Bandykite dar kartą arba įrašykite paveikslėlį kaip PNG failą."
+  },
+  "copySavePng": {
+    "message": "Įrašyti kaip PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Leisti ir kopijuoti"
+  },
+  "editTitle": {
+    "message": "Daugiau parinkčių"
+  },
+  "editLoading": {
+    "message": "Įkeliamas paveikslėlis…"
+  },
+  "editUpdating": {
+    "message": "Atnaujinama peržiūra…"
+  },
+  "editPreviewAlt": {
+    "message": "Rezultato peržiūra"
+  },
+  "editOriginal": {
+    "message": "Originalas"
+  },
+  "editResult": {
+    "message": "Rezultatas"
+  },
+  "editFormat": {
+    "message": "Formatas"
+  },
+  "editPngHint": {
+    "message": "PNG išsaugo kiekvieną pikselį. Jei norite mažesnio failo, sumažinkite didžiausią plotį arba pasirinkite JPG ar WebP."
+  },
+  "editIcoHint": {
+    "message": "Piktogramos failas su 16, 32 ir 48 px dydžio paveikslėliu, o jei paveikslėlis pakankamai didelis – ir su 256 px. Nekvadratiniams paveikslėliams pridedami permatomi kraštai."
+  },
+  "editBmpHint": {
+    "message": "Paprastas rastrinis failas, kurį atveria bet kuri programa. Failai dideli, o permatomos sritys užpildomos fono spalva."
+  },
+  "editAvifHint": {
+    "message": "Dažnai perpus mažesnis už tokios pat kokybės JPG. Jį atveria šiuolaikinės naršyklės ir dauguma naujesnių programų; kai kurios senesnės – ne."
+  },
+  "editMaxWidthHint": {
+    "message": "Pikseliais. Išlaiko proporcijas, niekada nedidina."
+  },
+  "editBackground": {
+    "message": "Fonas"
+  },
+  "editQuality": {
+    "message": "Kokybė"
+  },
+  "editFileName": {
+    "message": "Failo pavadinimas"
+  },
+  "editSave": {
+    "message": "Išsaugoti"
+  },
+  "editAllow": {
+    "message": "Leisti šią svetainę"
+  },
+  "editNeedsOk": {
+    "message": "Šiam išsaugojimui reikia jūsų patvirtinimo: žiūrėkite ką tik atsidariusį Imgkeep langą."
+  },
+  "reviewTitle": {
+    "message": "Patinka Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Įvertinimas parduotuvėje padeda kitiems jį rasti. Tai užtrunka kelias sekundes, o paklausime tik šį vieną kartą."
+  },
+  "reviewRate": {
+    "message": "Įvertinti Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Ne, ačiū"
+  },
+  "reviewThanks": {
+    "message": "Ačiū!"
+  },
+  "reviewOk": {
+    "message": "Supratome. Daugiau neklausime."
+  },
+  "findWindowTitle": {
+    "message": "Rasti paveikslėlį"
+  },
+  "findEnableTitle": {
+    "message": "Raskite paveikslėlius, kuriuos svetainės uždengia"
+  },
+  "findEnableBody": {
+    "message": "Kai kurios svetainės, pavyzdžiui, Instagram ir Pinterest, uždengia savo paveikslėlius kitu sluoksniu, todėl dešiniuoju pelės mygtuku jų nepasieksite. Imgkeep gali rasti paveikslėlį po tuo sluoksniu."
+  },
+  "findPromise": {
+    "message": "Imgkeep peržiūri puslapį tik tada, kai paprašote jame rasti paveikslėlį – tik tą puslapį ir tik tuo metu. Puslapio jis niekada nekeičia."
+  },
+  "findTurnOn": {
+    "message": "Įjungti"
+  },
+  "findDenied": {
+    "message": "Neįjungta. Galite įjungti bet kada parinktyse."
+  },
+  "findOnTitle": {
+    "message": "Įjungta"
+  },
+  "findOnBody": {
+    "message": "Dar kartą spustelėkite paveikslėlį dešiniuoju pelės mygtuku ir pasirinkite „Imgkeep: rasti paveikslėlį čia“."
+  },
+  "findPickTitle": {
+    "message": "Kuris paveikslėlis?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep nesuprato, kurį paveikslėlį turėjote omenyje. Pasirinkite vieną:"
+  },
+  "findPickOne": {
+    "message": "$NUMBER$ paveikslėlis",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Čia paveikslėlio nerasta"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep nerado paveikslėlio šioje puslapio vietoje. Spustelėkite dešiniuoju pelės mygtuku tiesiai ant nuotraukos arba atverkite nuotrauką atskirame puslapyje ir bandykite dar kartą."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep negalėjo peržiūrėti šio puslapio"
+  },
+  "findErrorBody": {
+    "message": "Įkelkite puslapį iš naujo, tada spustelėkite paveikslėlį dešiniuoju pelės mygtuku ir vėl pasirinkite „Rasti paveikslėlį čia“."
+  },
+  "paletteTitle": {
+    "message": "Spalvų paletė"
+  },
+  "paletteLoading": {
+    "message": "Ieškoma spalvų…"
+  },
+  "paletteCount": {
+    "message": "Spalvos"
+  },
+  "paletteSwatches": {
+    "message": "Pagrindinės paveikslėlio spalvos – pirmos tos, kurių daugiausia"
+  },
+  "paletteCopyOne": {
+    "message": "Kopijuoti $VALUE$ ($SHARE$ paveikslėlio)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Nukopijuota $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopijuoti visas kaip"
+  },
+  "paletteCodeCss": {
+    "message": "CSS kintamuosius"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Sąrašą"
+  },
+  "paletteCopiedAll": {
+    "message": "Visos spalvos nukopijuotos kaip $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Išsaugoti kaip"
+  },
+  "paletteSavePng": {
+    "message": "PNG spalvų pavyzdžius"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP paletę"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe spalvų pavyzdžius"
+  },
+  "paletteSavedFallback": {
+    "message": "Jūsų aplankas buvo nepasiekiamas, todėl failas atsidūrė aplanke „Atsisiuntimai“: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Šis paveikslėlis visiškai permatomas, todėl spalvų iš jo paimti nėra."
+  },
+  "paletteCopyFailed": {
+    "message": "Nepavyko nukopijuoti. Spustelėkite šiame lange ir bandykite dar kartą."
+  },
+  "paletteNote": {
+    "message": "Viskas apskaičiuota jūsų kompiuteryje. Paveikslėlis ir jo spalvos jo niekada nepalieka."
+  }
+}

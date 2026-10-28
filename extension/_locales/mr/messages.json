@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "प्रतिमा PNG, JPG, WebP, GIF किंवा PDF म्हणून सेव्ह करा — Imgkeep"
+  },
+  "extDescription": {
+    "message": "उजवी-क्लिक करून कोणतीही प्रतिमा PNG, JPG, WebP, GIF किंवा PDF म्हणून सेव्ह करा किंवा रंगपटल मिळवा. डिव्हाइसवरच. वैयक्तिक डेटा नाही."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (शेवटी वापरलेला)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (ॲनिमेशन टिकवून)"
+  },
+  "menuOriginal": {
+    "message": "मूळ फॉरमॅट"
+  },
+  "menuCopyPng": {
+    "message": "PNG म्हणून कॉपी करा"
+  },
+  "menuPalette": {
+    "message": "रंगपटल मिळवा"
+  },
+  "menuMoreOptions": {
+    "message": "अधिक पर्याय…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: इथे प्रतिमा शोधा…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ नवीन",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Imgkeep आवडतंय? रेटिंग द्या…"
+  },
+  "askErrBlocked": {
+    "message": "प्रवेश दिल्यानंतरही साइटने ही प्रतिमा दिली नाही. सर्व्हर बंद असू शकतो, किंवा साइट प्रतिमा फक्त स्वतःच्या पानांवरच दाखवते."
+  },
+  "askErrHttp": {
+    "message": "साइटने प्रतिमेऐवजी एरर दिली."
+  },
+  "askErrDecode": {
+    "message": "तुमच्या ब्राउझरला ही फाइल प्रतिमा म्हणून वाचता आली नाही."
+  },
+  "askErrUnsupported": {
+    "message": "ब्राउझरची ही आवृत्ती हा फॉरमॅट तयार करू शकत नाही. त्याऐवजी PNG वापरून पाहा."
+  },
+  "askErrBlob": {
+    "message": "ही प्रतिमा फक्त पानातच आहे (blob: लिंक), त्यामुळे Imgkeep ती अजून सेव्ह करू शकत नाही. स्क्रीनशॉट चालेल."
+  },
+  "askErrTooLarge": {
+    "message": "ब्राउझरमध्ये रूपांतर करण्यासाठी ही प्रतिमा खूप मोठी आहे."
+  },
+  "askErrTimeout": {
+    "message": "ही प्रतिमा रूपांतरित करायला खूप वेळ लागला, म्हणून Imgkeep थांबलं. PNG वापरून पाहा, किंवा आखूड किंवा छोटं ॲनिमेशन."
+  },
+  "askErrDownload": {
+    "message": "तुमच्या ब्राउझरला डाउनलोड सुरू करता आलं नाही."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep ला फाइल तुमच्या फोल्डरमध्ये लिहिता आली नाही."
+  },
+  "askErrExpired": {
+    "message": "ही सेव्ह कालबाह्य झाली आहे. प्रतिमेवर उजवी-क्लिक करून पुन्हा प्रयत्न करा."
+  },
+  "askErrUnknown": {
+    "message": "ही प्रतिमा सेव्ह करताना काहीतरी चुकलं."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ फ्रेम. GIF साठी मर्यादा $MAX$ आहे.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ पिक्सेल × $COUNT$ फ्रेम हे इथे GIF मध्ये मावणार नाही.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "या नावाच्या खूप फाइल आहेत."
+  },
+  "askSaving": {
+    "message": "सेव्ह होत आहे…"
+  },
+  "askSaved": {
+    "message": "सेव्ह झालं."
+  },
+  "askSavedAs": {
+    "message": "$PATH$ म्हणून सेव्ह झालं",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "$PATH$ मध्ये सेव्ह झालं",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "सेव्ह करण्यासारखं काही नाही"
+  },
+  "askClose": {
+    "message": "बंद करा"
+  },
+  "askRetry": {
+    "message": "पुन्हा प्रयत्न करा"
+  },
+  "askOpenImage": {
+    "message": "प्रतिमा उघडा"
+  },
+  "askCancel": {
+    "message": "रद्द करा"
+  },
+  "askHostTitle": {
+    "message": "या साइटवरील प्रतिमांना परवानगी द्यायची?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ इतर साइटना स्वतःच्या प्रतिमा वाचू देत नाही, त्यामुळे Imgkeep ही प्रतिमा अजून रूपांतरित करू शकत नाही.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "ही परवानगी फक्त या एकाच साइटसाठी आहे, तुम्ही निवडलेल्या प्रतिमा आणण्यापुरती. ती तुम्ही कधीही पर्यायांमध्ये काढून टाकू शकता."
+  },
+  "askAllowAndSave": {
+    "message": "परवानगी द्या आणि सेव्ह करा"
+  },
+  "askNotAllowed": {
+    "message": "परवानगी मिळाली नाही. काहीही सेव्ह झालं नाही."
+  },
+  "askSaveOriginal": {
+    "message": "त्याऐवजी मूळ फॉरमॅटमध्ये जतन करा"
+  },
+  "askReconnectTitle": {
+    "message": "“$FOLDER$” पुन्हा जोडा",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "फोल्डर निवडा"
+  },
+  "askReconnectBody": {
+    "message": "या फोल्डरमध्ये पुन्हा जतन करण्यासाठी तुमच्या ब्राउझरला तुमची परवानगी हवी आहे."
+  },
+  "askChooseBody": {
+    "message": "Imgkeep ने तुमच्या प्रतिमा कुठे जतन कराव्यात ते फोल्डर निवडा."
+  },
+  "askEveryVisit": {
+    "message": "ब्राउझर विचारेल तेव्हा $OPTION$ निवडा, म्हणजे तो पुन्हा विचारणार नाही.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“प्रत्येक भेटीत परवानगी द्या”"
+  },
+  "askReconnectButton": {
+    "message": "पुन्हा जोडा आणि जतन करा"
+  },
+  "askChooseButton": {
+    "message": "फोल्डर निवडा आणि जतन करा"
+  },
+  "askErrorTitle": {
+    "message": "ही प्रतिमा जतन करता आली नाही"
+  },
+  "askFolderDenied": {
+    "message": "तुमच्या ब्राउझरने फोल्डरमध्ये प्रवेश दिला नाही. काहीही जतन झाले नाही."
+  },
+  "askNoFolder": {
+    "message": "कोणतेही फोल्डर निवडलेले नाही. काहीही जतन झाले नाही."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep पर्याय"
+  },
+  "optSaved": {
+    "message": "जतन केले"
+  },
+  "optWhereTitle": {
+    "message": "कुठे जतन करायचे"
+  },
+  "optSaveMode": {
+    "message": "जतन करण्याची पद्धत"
+  },
+  "optModeDownloads": {
+    "message": "डाउनलोड फोल्डर"
+  },
+  "optModeDownloadsHint": {
+    "message": "तुमच्या ब्राउझरच्या डाउनलोड फोल्डरमध्ये जतन करते. काहीही न विचारता."
+  },
+  "optModeFolder": {
+    "message": "तुम्ही निवडलेले फोल्डर"
+  },
+  "optModeFolderHint": {
+    "message": "थेट तुमच्या फोल्डरमध्ये लिहिते. ब्राउझर पुन्हा सुरू केल्यावर तो पुन्हा जोडण्यास सांगू शकतो."
+  },
+  "optModeAsk": {
+    "message": "दरवेळी विचारा"
+  },
+  "optModeAskHint": {
+    "message": "प्रत्येक प्रतिमेसाठी ब्राउझरचा Save As संवाद दाखवते."
+  },
+  "optChooseFolder": {
+    "message": "फोल्डर निवडा…"
+  },
+  "optChangeFolder": {
+    "message": "फोल्डर बदला…"
+  },
+  "optNoFolder": {
+    "message": "अद्याप कोणतेही फोल्डर निवडलेले नाही."
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — जोडलेले",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — पुन्हा जोडण्यास विचारेल",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "उपफोल्डर"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "उदा. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "ऐच्छिक. आतल्या फोल्डरसाठी <code>/</code> वापरा. फाइल नावांसारखेच टोकन चालतात."
+  },
+  "optNamesTitle": {
+    "message": "फाइल नावे"
+  },
+  "optTemplate": {
+    "message": "नावाचा साचा"
+  },
+  "optTokensHint": {
+    "message": "टोकन: <code>{name}</code> मूळ नाव, <code>{host}</code> साइट, <code>{date}</code>, <code>{time}</code>, तसेच <code>{w}</code> आणि <code>{h}</code> पिक्सेलमधील आकार. आधीच्या फाइल कधीही खोडल्या जात नाहीत."
+  },
+  "optPreviewLabel": {
+    "message": "shop.example.com वरील summer-banner साठी, 1600×900, PNG म्हणून झलक:"
+  },
+  "optQualityTitle": {
+    "message": "गुणवत्ता आणि आकार"
+  },
+  "optJpgQuality": {
+    "message": "JPG गुणवत्ता"
+  },
+  "optWebpQuality": {
+    "message": "WebP गुणवत्ता"
+  },
+  "optJpgBackground": {
+    "message": "JPG पार्श्वभूमीचा रंग"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG मध्ये पारदर्शकता नसते, त्यामुळे पारदर्शक भागांना हा रंग मिळतो."
+  },
+  "optMaxWidth": {
+    "message": "कमाल रुंदी"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "मूळ आकार"
+  },
+  "optMaxWidthHint": {
+    "message": "ऐच्छिक, पिक्सेलमध्ये. यापेक्षा रुंद प्रतिमा त्यांचे प्रमाण राखून लहान केल्या जातात; लहान प्रतिमा कधीही मोठ्या केल्या जात नाहीत. मूळ स्वरूप नेहमी जसेच्या तसे सेव्ह होते."
+  },
+  "optSitesTitle": {
+    "message": "तुम्ही परवानगी दिलेल्या साइट"
+  },
+  "optSitesEmpty": {
+    "message": "अजून एकही नाही. तुम्हाला रूपांतरित करायची असलेली प्रतिमा एखादी साइट अडवते, तेव्हाच Imgkeep परवानगी विचारते."
+  },
+  "optFindTitle": {
+    "message": "साइटने झाकलेल्या प्रतिमा"
+  },
+  "optFindLabel": {
+    "message": "आवरणाखालील प्रतिमा शोधा"
+  },
+  "optFindHint": {
+    "message": "Instagram आणि Pinterest सारख्या साइटवर उजवी-क्लिक करा आणि “Imgkeep: इथली प्रतिमा शोधा” निवडा. तुम्ही सांगाल तेव्हाच Imgkeep त्या पानाकडे पाहते — फक्त ते पान, फक्त तेवढ्यापुरते. ते पान कधीही बदलत नाही."
+  },
+  "optFindOn": {
+    "message": "चालू केले."
+  },
+  "optFindOff": {
+    "message": "बंद केले."
+  },
+  "optCountsTitle": {
+    "message": "निनावी वापर-मोजणी"
+  },
+  "optCountsLabel": {
+    "message": "दररोज निनावी सारांश पाठवा"
+  },
+  "optCountsHint": {
+    "message": "दिवसातून एकदा Imgkeep “JPG म्हणून 12 सेव्ह, 1 अयशस्वी” असा सारांश PostHog ला पाठवते — ही EU मध्ये होस्ट केलेली ओपन-सोर्स अ‍ॅनालिटिक्स सेवा आहे — जेणेकरून कोणती वैशिष्ट्ये सुधारायची आणि कोणते सेव्ह अयशस्वी होतात हे आम्हाला कळते. प्रतिमा, पानांचे पत्ते, फाइलनावे किंवा तुमची ओळख पटवणारे काहीही कधीही पाठवले जात नाही."
+  },
+  "optCountsShow": {
+    "message": "नेमके काय पाठवले जाते ते पाहा"
+  },
+  "optCountsToday": {
+    "message": "आज मोजले (आजनंतर पाठवले जाईल):"
+  },
+  "optCountsLast": {
+    "message": "शेवटचा पाठवलेला सारांश:"
+  },
+  "optCountsNone": {
+    "message": "अजून काहीही नाही."
+  },
+  "optCountsOff": {
+    "message": "बंद. काहीही मोजले किंवा पाठवले जात नाही."
+  },
+  "optRemove": {
+    "message": "काढा"
+  },
+  "optRemoveAccess": {
+    "message": "$SITE$ साठीचा प्रवेश काढा",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — लवकरच"
+  },
+  "optProBody": {
+    "message": "तुम्ही सर्वाधिक वापरता त्या आकार आणि स्वरूपांसाठी प्रीसेट, “200 KB पेक्षा कमी” अशी फाइल-आकाराची उद्दिष्टे, प्रत्येक साइटच्या प्रतिमा योग्य फोल्डरमध्ये पाठवणारे नियम, आणि प्रत्येक प्रतिमा कुठून आली याची नोंद."
+  },
+  "optProFree": {
+    "message": "तुम्ही आज वापरता ते सर्व मोफतच राहील."
+  },
+  "optGetNotified": {
+    "message": "सूचना मिळवा"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep काय करू शकते आणि काय नाही"
+  },
+  "optPermissions": {
+    "message": "ते मागत असलेल्या परवानग्या:"
+  },
+  "optOptionalPermissions": {
+    "message": "फक्त तुम्ही “प्रतिमा शोधा” चालू केल्यास:"
+  },
+  "optPermissionsLabel": {
+    "message": "परवानग्या"
+  },
+  "optTrust1": {
+    "message": "प्रतिमा तुमच्या संगणकावरच रूपांतरित होतात, त्या कधीही अपलोड होत नाहीत. Imgkeep बाहेर फक्त वरील निनावी दैनिक सारांश पाठवते, तोही तुम्ही बंद करू शकता."
+  },
+  "optTrust2": {
+    "message": "जाहिराती नाहीत, स्वागताचे टॅब नाहीत. तुम्ही मागाल तेव्हा किंवा सेव्हसाठी तुमच्या होकाराची गरज असेल तेव्हाच छोटी विंडो उघडते. काही काळ वापरल्यानंतर Imgkeep एकदाच रेटिंग मागते."
+  },
+  "optTrust4": {
+    "message": "तुम्ही सांगाल तेव्हाच Imgkeep त्या पानाकडे पाहते — फक्त ते पान, फक्त तेवढ्यापुरते. ते पान कधीही बदलत नाही."
+  },
+  "optTrust3": {
+    "message": "प्रत्येक मोफत वैशिष्ट्य मोफतच राहील."
+  },
+  "optVersion": {
+    "message": "आवृत्ती"
+  },
+  "optWhatsNew": {
+    "message": "नवीन काय आहे"
+  },
+  "copyWorking": {
+    "message": "प्रतिमा कॉपी होत आहे…"
+  },
+  "copyDone": {
+    "message": "PNG म्हणून कॉपी केली. कुठेही पेस्ट करा."
+  },
+  "copyFailed": {
+    "message": "प्रतिमा कॉपी करता आली नाही"
+  },
+  "copyFailedNote": {
+    "message": "तुमचा क्लिपबोर्ड बदललेला नाही. पुन्हा प्रयत्न करा, किंवा त्याऐवजी प्रतिमा PNG फाइल म्हणून सेव्ह करा."
+  },
+  "copySavePng": {
+    "message": "त्याऐवजी PNG म्हणून सेव्ह करा"
+  },
+  "copyAllowAndCopy": {
+    "message": "परवानगी द्या आणि कॉपी करा"
+  },
+  "editTitle": {
+    "message": "अधिक पर्याय"
+  },
+  "editLoading": {
+    "message": "इमेज लोड होत आहे…"
+  },
+  "editUpdating": {
+    "message": "प्रिव्ह्यू अपडेट होत आहे…"
+  },
+  "editPreviewAlt": {
+    "message": "निकालाचा प्रिव्ह्यू"
+  },
+  "editOriginal": {
+    "message": "मूळ"
+  },
+  "editResult": {
+    "message": "निकाल"
+  },
+  "editFormat": {
+    "message": "फॉरमॅट"
+  },
+  "editPngHint": {
+    "message": "PNG प्रत्येक पिक्सेल जपते. फाइल लहान हवी असल्यास कमाल रुंदी कमी करा किंवा JPG किंवा WebP निवडा."
+  },
+  "editIcoHint": {
+    "message": "16, 32 आणि 48 px आकारात इमेज असलेली आयकॉन फाइल; इमेज पुरेशी मोठी असल्यास 256 px सुद्धा. चौरस नसलेल्या इमेजच्या कडा पारदर्शक होतात."
+  },
+  "editBmpHint": {
+    "message": "प्रत्येक अ‍ॅपमध्ये उघडणारी साधी बिटमॅप. फाइल मोठ्या असतात आणि पारदर्शक भागांना बॅकग्राउंडचा रंग मिळतो."
+  },
+  "editAvifHint": {
+    "message": "सारखीच दिसणाऱ्या JPG पेक्षा अनेकदा निम्म्या आकाराची. आधुनिक ब्राउझर आणि बहुतेक सध्याची अ‍ॅप्स ती उघडतात; काही जुनी अ‍ॅप्स उघडत नाहीत."
+  },
+  "editMaxWidthHint": {
+    "message": "पिक्सेलमध्ये. आकाराचे प्रमाण कायम राहते, इमेज कधीच मोठी केली जात नाही."
+  },
+  "editBackground": {
+    "message": "बॅकग्राउंड"
+  },
+  "editQuality": {
+    "message": "दर्जा"
+  },
+  "editFileName": {
+    "message": "फाइलचे नाव"
+  },
+  "editSave": {
+    "message": "सेव्ह करा"
+  },
+  "editAllow": {
+    "message": "ही साइट अनुमत करा"
+  },
+  "editNeedsOk": {
+    "message": "या सेव्हसाठी तुमची परवानगी हवी: आत्ताच उघडलेली Imgkeep विंडो पाहा."
+  },
+  "reviewTitle": {
+    "message": "Imgkeep आवडतेय?"
+  },
+  "reviewBody": {
+    "message": "स्टोअरमधील रेटिंगमुळे इतरांना ते सापडायला मदत होते. काही सेकंद लागतात, आणि आम्ही हे एकदाच विचारू."
+  },
+  "reviewRate": {
+    "message": "Imgkeep ला रेटिंग द्या"
+  },
+  "reviewNo": {
+    "message": "नको, धन्यवाद"
+  },
+  "reviewThanks": {
+    "message": "धन्यवाद!"
+  },
+  "reviewOk": {
+    "message": "समजले. आम्ही पुन्हा विचारणार नाही."
+  },
+  "findWindowTitle": {
+    "message": "इमेज शोधा"
+  },
+  "findEnableTitle": {
+    "message": "साइट्सनी झाकलेल्या इमेज शोधा"
+  },
+  "findEnableBody": {
+    "message": "Instagram आणि Pinterest सारख्या काही साइट्स त्यांच्या इमेजवर दुसरा थर ठेवतात, त्यामुळे राइट-क्लिक त्यांच्यापर्यंत पोहोचत नाही. Imgkeep त्या थराखालची इमेज तुमच्यासाठी शोधू शकते."
+  },
+  "findPromise": {
+    "message": "तुम्ही एखाद्या पानावर इमेज शोधायला सांगाल तेव्हाच Imgkeep त्या पानाकडे पाहते — फक्त ते पान, फक्त तेव्हा. ती पान कधीच बदलत नाही."
+  },
+  "findTurnOn": {
+    "message": "सुरू करा"
+  },
+  "findDenied": {
+    "message": "सुरू झाले नाही. तुम्ही ते Options मध्ये कधीही सुरू करू शकता."
+  },
+  "findOnTitle": {
+    "message": "सुरू झाले"
+  },
+  "findOnBody": {
+    "message": "इमेजवर पुन्हा राइट-क्लिक करा आणि Imgkeep: इथे इमेज शोधा निवडा."
+  },
+  "findPickTitle": {
+    "message": "कोणती इमेज?"
+  },
+  "findPickBody": {
+    "message": "तुम्हाला कोणती इमेज हवी हे Imgkeep ला ओळखता आले नाही. एक निवडा:"
+  },
+  "findPickOne": {
+    "message": "इमेज $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "इथे इमेज सापडली नाही"
+  },
+  "findNothingBody": {
+    "message": "पानाच्या या भागात Imgkeep ला इमेज सापडली नाही. थेट फोटोवर राइट-क्लिक करा, किंवा फोटो स्वतंत्र पानावर उघडून पुन्हा प्रयत्न करा."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ला हे पान पाहता आले नाही"
+  },
+  "findErrorBody": {
+    "message": "पान पुन्हा लोड करा, मग इमेजवर राइट-क्लिक करून पुन्हा इथे इमेज शोधा निवडा."
+  },
+  "paletteTitle": {
+    "message": "रंगपट"
+  },
+  "paletteLoading": {
+    "message": "रंग शोधत आहे…"
+  },
+  "paletteCount": {
+    "message": "रंग"
+  },
+  "paletteSwatches": {
+    "message": "प्रतिमेतील मुख्य रंग, सर्वाधिक प्रमाणातील आधी"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ कॉपी करा (प्रतिमेच्या $SHARE$)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ कॉपी केला",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "सर्व कॉपी करा"
+  },
+  "paletteCodeCss": {
+    "message": "CSS व्हेरिएबल्स"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "यादी"
+  },
+  "paletteCopiedAll": {
+    "message": "सर्व रंग $KIND$ म्हणून कॉपी केले",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "असे सेव्ह करा"
+  },
+  "paletteSavePng": {
+    "message": "PNG स्वॅचेस"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP पॅलेट"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe स्वॅचेस"
+  },
+  "paletteSavedFallback": {
+    "message": "तुमचे फोल्डर उपलब्ध नव्हते, म्हणून फाइल Downloads मध्ये गेली: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "ही प्रतिमा पूर्णपणे पारदर्शक आहे, त्यामुळे घेण्यासारखे रंग नाहीत."
+  },
+  "paletteCopyFailed": {
+    "message": "कॉपी होऊ शकले नाही. या विंडोमध्ये क्लिक करा आणि पुन्हा प्रयत्न करा."
+  },
+  "paletteNote": {
+    "message": "तुमच्या संगणकावरच काढले. प्रतिमा आणि तिचे रंग कधीही बाहेर जात नाहीत."
+  }
+}

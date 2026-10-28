@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Gem billede som PNG, JPG, WebP, GIF eller PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Højreklik for at gemme ethvert billede som PNG, JPG, WebP, GIF eller PDF, eller få dets farvepalet. På din enhed. Ingen persondata."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (sidst brugt)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (bevarer animation)"
+  },
+  "menuOriginal": {
+    "message": "Originalformat"
+  },
+  "menuCopyPng": {
+    "message": "Kopiér som PNG"
+  },
+  "menuPalette": {
+    "message": "Hent farvepalet"
+  },
+  "menuMoreOptions": {
+    "message": "Flere muligheder…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Find billede her…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nyhed",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Kan du lide Imgkeep? Giv en bedømmelse…"
+  },
+  "askErrBlocked": {
+    "message": "Siden udleverede ikke billedet, selv med adgang givet. Serveren kan være nede, eller den viser kun billedet på sine egne sider."
+  },
+  "askErrHttp": {
+    "message": "Siden svarede med en fejl i stedet for billedet."
+  },
+  "askErrDecode": {
+    "message": "Din browser kunne ikke læse filen som et billede."
+  },
+  "askErrUnsupported": {
+    "message": "Denne browserversion kan ikke oprette dette format. Prøv PNG i stedet."
+  },
+  "askErrBlob": {
+    "message": "Billedet findes kun inde i siden (et blob:-link), så Imgkeep kan ikke gemme det endnu. Et skærmbillede virker."
+  },
+  "askErrTooLarge": {
+    "message": "Billedet er for stort til at konvertere i browseren."
+  },
+  "askErrTimeout": {
+    "message": "Det tog for lang tid at konvertere billedet, så Imgkeep stoppede. Prøv PNG eller en kortere eller mindre animation."
+  },
+  "askErrDownload": {
+    "message": "Din browser kunne ikke starte downloaden."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep kunne ikke skrive filen til din mappe."
+  },
+  "askErrExpired": {
+    "message": "Denne gemning er udløbet. Højreklik på billedet, og prøv igen."
+  },
+  "askErrUnknown": {
+    "message": "Noget gik galt, da billedet skulle gemmes."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ frames. GIF er begrænset til $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixels × $COUNT$ frames er mere, end en GIF kan rumme her.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "For mange filer med dette navn."
+  },
+  "askSaving": {
+    "message": "Gemmer…"
+  },
+  "askSaved": {
+    "message": "Gemt."
+  },
+  "askSavedAs": {
+    "message": "Gemt som $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Gemt i $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Intet at gemme"
+  },
+  "askClose": {
+    "message": "Luk"
+  },
+  "askRetry": {
+    "message": "Prøv igen"
+  },
+  "askOpenImage": {
+    "message": "Åbn billede"
+  },
+  "askCancel": {
+    "message": "Annuller"
+  },
+  "askHostTitle": {
+    "message": "Tillad billeder fra denne side?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ blokerer, at andre sider læser dens billeder, så Imgkeep kan ikke konvertere dette endnu.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Adgangen gælder kun denne ene side og bruges til at hente de billeder, du vælger. Du kan fjerne den når som helst under Indstillinger."
+  },
+  "askAllowAndSave": {
+    "message": "Tillad og gem"
+  },
+  "askNotAllowed": {
+    "message": "Adgang blev ikke givet. Intet blev gemt."
+  },
+  "askSaveOriginal": {
+    "message": "Gem i originalformat i stedet"
+  },
+  "askReconnectTitle": {
+    "message": "Forbind til »$FOLDER$« igen",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Vælg en mappe"
+  },
+  "askReconnectBody": {
+    "message": "Din browser skal have din accept, før den kan gemme i denne mappe igen."
+  },
+  "askChooseBody": {
+    "message": "Vælg den mappe, Imgkeep skal gemme dine billeder i."
+  },
+  "askEveryVisit": {
+    "message": "Når browseren spørger, så vælg $OPTION$, så du slipper for at blive spurgt igen.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "»Tillad ved hvert besøg«"
+  },
+  "askReconnectButton": {
+    "message": "Forbind igen og gem"
+  },
+  "askChooseButton": {
+    "message": "Vælg mappe og gem"
+  },
+  "askErrorTitle": {
+    "message": "Billedet kunne ikke gemmes"
+  },
+  "askFolderDenied": {
+    "message": "Din browser gav ikke adgang til mappen. Intet blev gemt."
+  },
+  "askNoFolder": {
+    "message": "Ingen mappe valgt. Intet blev gemt."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep-indstillinger"
+  },
+  "optSaved": {
+    "message": "Gemt"
+  },
+  "optWhereTitle": {
+    "message": "Hvor skal der gemmes"
+  },
+  "optSaveMode": {
+    "message": "Gemmetilstand"
+  },
+  "optModeDownloads": {
+    "message": "Overførselsmappen"
+  },
+  "optModeDownloadsHint": {
+    "message": "Gemmer i browserens overførselsmappe. Uden spørgsmål."
+  },
+  "optModeFolder": {
+    "message": "En mappe, du vælger"
+  },
+  "optModeFolderHint": {
+    "message": "Gemmer direkte i din mappe. Browseren beder dig måske forbinde igen efter en genstart."
+  },
+  "optModeAsk": {
+    "message": "Spørg hver gang"
+  },
+  "optModeAskHint": {
+    "message": "Viser browserens Gem som-dialog for hvert billede."
+  },
+  "optChooseFolder": {
+    "message": "Vælg mappe …"
+  },
+  "optChangeFolder": {
+    "message": "Skift mappe …"
+  },
+  "optNoFolder": {
+    "message": "Der er endnu ikke valgt en mappe."
+  },
+  "optFolderConnected": {
+    "message": "»$FOLDER$« — forbundet",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "»$FOLDER$« — beder om at forbinde igen",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Undermappe"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "f.eks. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Valgfrit. Brug <code>/</code> til mapper i flere niveauer. Samme pladsholdere som i filnavne."
+  },
+  "optNamesTitle": {
+    "message": "Filnavne"
+  },
+  "optTemplate": {
+    "message": "Navneskabelon"
+  },
+  "optTokensHint": {
+    "message": "Pladsholdere: <code>{name}</code> oprindeligt navn, <code>{host}</code> websted, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> og <code>{h}</code> størrelse i pixels. Eksisterende filer overskrives aldrig."
+  },
+  "optPreviewLabel": {
+    "message": "Eksempel for summer-banner fra shop.example.com, 1600×900, som PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kvalitet og størrelse"
+  },
+  "optJpgQuality": {
+    "message": "JPG-kvalitet"
+  },
+  "optWebpQuality": {
+    "message": "WebP-kvalitet"
+  },
+  "optJpgBackground": {
+    "message": "Baggrundsfarve for JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG kan ikke være gennemsigtigt, så gennemsigtige områder får denne farve."
+  },
+  "optMaxWidth": {
+    "message": "Største bredde"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Oprindelig størrelse"
+  },
+  "optMaxWidthHint": {
+    "message": "Valgfrit, i pixels. Bredere billeder skaleres ned, så de passer, med samme form; mindre billeder forstørres aldrig. Oprindeligt format gemmes altid, som det er."
+  },
+  "optSitesTitle": {
+    "message": "Websteder, du har tilladt"
+  },
+  "optSitesEmpty": {
+    "message": "Ingen endnu. Imgkeep spørger kun, når et websted blokerer et billede, du vil konvertere."
+  },
+  "optFindTitle": {
+    "message": "Billeder, som websteder dækker"
+  },
+  "optFindLabel": {
+    "message": "Find billeder under dækkende lag"
+  },
+  "optFindHint": {
+    "message": "På websteder som Instagram og Pinterest: højreklik og vælg Imgkeep: Find billede her. Imgkeep kigger kun på en side, når du beder den finde et billede der – kun den side, kun da. Den ændrer aldrig en side."
+  },
+  "optFindOn": {
+    "message": "Slået til."
+  },
+  "optFindOff": {
+    "message": "Slået fra."
+  },
+  "optCountsTitle": {
+    "message": "Anonyme brugstal"
+  },
+  "optCountsLabel": {
+    "message": "Send et anonymt dagligt sammendrag"
+  },
+  "optCountsHint": {
+    "message": "En gang om dagen sender Imgkeep et sammendrag som »12 gemt som JPG, 1 mislykkedes« til PostHog, en open source-analysetjeneste med hosting i EU, så vi ved, hvilke funktioner vi skal forbedre, og hvornår det går galt at gemme. Aldrig billeder, sideadresser, filnavne eller noget, der identificerer dig."
+  },
+  "optCountsShow": {
+    "message": "Se præcis, hvad der sendes"
+  },
+  "optCountsToday": {
+    "message": "Talt i dag (sendes efter i dag):"
+  },
+  "optCountsLast": {
+    "message": "Seneste sammendrag sendt:"
+  },
+  "optCountsNone": {
+    "message": "Ingenting endnu."
+  },
+  "optCountsOff": {
+    "message": "Slået fra. Intet tælles eller sendes."
+  },
+  "optRemove": {
+    "message": "Fjern"
+  },
+  "optRemoveAccess": {
+    "message": "Fjern adgang til $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — på vej"
+  },
+  "optProBody": {
+    "message": "Forudindstillinger til de størrelser og formater, du bruger mest, mål for filstørrelse som »under 200 KB«, regler der sender hvert websteds billeder til den rigtige mappe, og en log over, hvor hvert billede kom fra."
+  },
+  "optProFree": {
+    "message": "Alt, du bruger i dag, forbliver gratis."
+  },
+  "optGetNotified": {
+    "message": "Få besked"
+  },
+  "optTrustTitle": {
+    "message": "Hvad Imgkeep kan og ikke kan"
+  },
+  "optPermissions": {
+    "message": "Tilladelser, den beder om:"
+  },
+  "optOptionalPermissions": {
+    "message": "Kun hvis du slår Find billeder til:"
+  },
+  "optPermissionsLabel": {
+    "message": "Tilladelser"
+  },
+  "optTrust1": {
+    "message": "Billeder konverteres på din computer og uploades aldrig. Det eneste andet, Imgkeep sender, er det anonyme daglige sammendrag ovenfor, som du kan slå fra."
+  },
+  "optTrust2": {
+    "message": "Ingen reklamer og ingen velkomstfaner. Små vinduer åbner kun, når du beder om et, eller når det kræver dit OK at gemme. Imgkeep beder om en bedømmelse én gang, efter du har brugt den et stykke tid."
+  },
+  "optTrust4": {
+    "message": "Imgkeep kigger kun på en side, når du beder den finde et billede der – kun den side, kun da. Den ændrer aldrig en side."
+  },
+  "optTrust3": {
+    "message": "Alle gratis funktioner forbliver gratis."
+  },
+  "optVersion": {
+    "message": "Version"
+  },
+  "optWhatsNew": {
+    "message": "Nyheder"
+  },
+  "copyWorking": {
+    "message": "Kopierer billedet…"
+  },
+  "copyDone": {
+    "message": "Kopieret som PNG. Sæt det ind hvor som helst."
+  },
+  "copyFailed": {
+    "message": "Kunne ikke kopiere billedet"
+  },
+  "copyFailedNote": {
+    "message": "Din udklipsholder blev ikke ændret. Prøv igen, eller gem billedet som en PNG-fil i stedet."
+  },
+  "copySavePng": {
+    "message": "Gem som PNG i stedet"
+  },
+  "copyAllowAndCopy": {
+    "message": "Tillad og kopiér"
+  },
+  "editTitle": {
+    "message": "Flere indstillinger"
+  },
+  "editLoading": {
+    "message": "Indlæser billedet…"
+  },
+  "editUpdating": {
+    "message": "Opdaterer forhåndsvisning…"
+  },
+  "editPreviewAlt": {
+    "message": "Forhåndsvisning af resultatet"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Resultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG bevarer hver eneste pixel. Vil du have en mindre fil, så sænk den maksimale bredde eller vælg JPG eller WebP."
+  },
+  "editIcoHint": {
+    "message": "En ikonfil med billedet i 16, 32 og 48 px – og 256 px, hvis billedet er stort nok. Billeder, der ikke er kvadratiske, får gennemsigtige kanter."
+  },
+  "editBmpHint": {
+    "message": "En almindelig bitmap, som alle programmer kan åbne. Filerne er store, og gennemsigtige områder får baggrundsfarven."
+  },
+  "editAvifHint": {
+    "message": "Ofte halvt så stor som en JPG, der ser ens ud. Moderne browsere og de fleste nyere programmer kan åbne den; nogle ældre kan ikke."
+  },
+  "editMaxWidthHint": {
+    "message": "I pixels. Bevarer billedets proportioner og forstørrer aldrig."
+  },
+  "editBackground": {
+    "message": "Baggrund"
+  },
+  "editQuality": {
+    "message": "Kvalitet"
+  },
+  "editFileName": {
+    "message": "Filnavn"
+  },
+  "editSave": {
+    "message": "Gem"
+  },
+  "editAllow": {
+    "message": "Tillad dette websted"
+  },
+  "editNeedsOk": {
+    "message": "Du skal godkende denne lagring: se Imgkeep-vinduet, der lige er åbnet."
+  },
+  "reviewTitle": {
+    "message": "Kan du lide Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "En bedømmelse i butikken hjælper andre med at finde den. Det tager få sekunder, og vi spørger kun denne ene gang."
+  },
+  "reviewRate": {
+    "message": "Bedøm Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Nej tak"
+  },
+  "reviewThanks": {
+    "message": "Tak!"
+  },
+  "reviewOk": {
+    "message": "Forstået. Vi spørger ikke igen."
+  },
+  "findWindowTitle": {
+    "message": "Find billede"
+  },
+  "findEnableTitle": {
+    "message": "Find billeder, som websteder dækker til"
+  },
+  "findEnableBody": {
+    "message": "Nogle websteder, fx Instagram og Pinterest, dækker deres billeder med et ekstra lag, så et højreklik ikke kan nå dem. Imgkeep kan finde billedet under laget for dig."
+  },
+  "findPromise": {
+    "message": "Imgkeep kigger kun på en side, når du beder den om at finde et billede dér – kun den side, kun lige da. Den ændrer aldrig en side."
+  },
+  "findTurnOn": {
+    "message": "Slå til"
+  },
+  "findDenied": {
+    "message": "Ikke slået til. Du kan slå det til når som helst under Indstillinger."
+  },
+  "findOnTitle": {
+    "message": "Slået til"
+  },
+  "findOnBody": {
+    "message": "Højreklik på billedet igen, og vælg Imgkeep: Find billede her."
+  },
+  "findPickTitle": {
+    "message": "Hvilket billede?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep kunne ikke afgøre, hvilket billede du mente. Vælg et:"
+  },
+  "findPickOne": {
+    "message": "Billede $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Intet billede fundet her"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep kunne ikke finde et billede på denne del af siden. Højreklik direkte på selve fotoet, eller åbn fotoet på sin egen side og prøv igen."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep kunne ikke kigge på denne side"
+  },
+  "findErrorBody": {
+    "message": "Genindlæs siden, højreklik så på billedet og vælg Find billede her igen."
+  },
+  "paletteTitle": {
+    "message": "Farvepalet"
+  },
+  "paletteLoading": {
+    "message": "Finder farverne…"
+  },
+  "paletteCount": {
+    "message": "Farver"
+  },
+  "paletteSwatches": {
+    "message": "Billedets vigtigste farver, største først"
+  },
+  "paletteCopyOne": {
+    "message": "Kopiér $VALUE$ ($SHARE$ af billedet)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ kopieret",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopiér alle som"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-variabler"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Liste"
+  },
+  "paletteCopiedAll": {
+    "message": "Alle farver kopieret som $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Gem som"
+  },
+  "paletteSavePng": {
+    "message": "PNG-farveprøver"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP-palet"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe-farveprøver"
+  },
+  "paletteSavedFallback": {
+    "message": "Din mappe var ikke tilgængelig, så filen gik til Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Billedet er helt gennemsigtigt, så der er ingen farver at hente."
+  },
+  "paletteCopyFailed": {
+    "message": "Kunne ikke kopiere. Klik inde i dette vindue, og prøv igen."
+  },
+  "paletteNote": {
+    "message": "Beregnet på din computer. Billedet og dets farver forlader den aldrig."
+  }
+}

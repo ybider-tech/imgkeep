@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Зберегти зображення як PNG, JPG, WebP, GIF чи PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Клацніть правою кнопкою: зберігайте зображення як PNG, JPG, WebP, GIF чи PDF або беріть палітру. Локально. Без особистих даних."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (востаннє)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (зберігає анімацію)"
+  },
+  "menuOriginal": {
+    "message": "Оригінальний формат"
+  },
+  "menuCopyPng": {
+    "message": "Копіювати як PNG"
+  },
+  "menuPalette": {
+    "message": "Отримати палітру кольорів"
+  },
+  "menuMoreOptions": {
+    "message": "Більше варіантів…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: знайти зображення тут…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Нове",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Подобається Imgkeep? Оцініть…"
+  },
+  "askErrBlocked": {
+    "message": "Сайт не віддав це зображення навіть із наданим доступом. Можливо, сервер не працює або показує зображення лише на власних сторінках."
+  },
+  "askErrHttp": {
+    "message": "Сайт відповів помилкою замість зображення."
+  },
+  "askErrDecode": {
+    "message": "Браузер не зміг прочитати цей файл як зображення."
+  },
+  "askErrUnsupported": {
+    "message": "Ця версія браузера не може створити такий формат. Спробуйте PNG."
+  },
+  "askErrBlob": {
+    "message": "Це зображення існує лише всередині сторінки (посилання blob:), тому Imgkeep поки не може його зберегти. Допоможе знімок екрана."
+  },
+  "askErrTooLarge": {
+    "message": "Це зображення завелике, щоб перетворити його в браузері."
+  },
+  "askErrTimeout": {
+    "message": "Перетворення цього зображення тривало надто довго, тому Imgkeep зупинився. Спробуйте PNG або коротшу чи меншу анімацію."
+  },
+  "askErrDownload": {
+    "message": "Браузер не зміг почати завантаження."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep не зміг записати файл у вашу теку."
+  },
+  "askErrExpired": {
+    "message": "Термін цього збереження минув. Клацніть зображення правою кнопкою й спробуйте ще раз."
+  },
+  "askErrUnknown": {
+    "message": "Щось пішло не так під час збереження цього зображення."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ кадрів. Для GIF ліміт — $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ пікселів × $COUNT$ кадрів — це більше, ніж тут вміщає GIF.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Забагато файлів із такою назвою."
+  },
+  "askSaving": {
+    "message": "Збереження…"
+  },
+  "askSaved": {
+    "message": "Збережено."
+  },
+  "askSavedAs": {
+    "message": "Збережено як $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Збережено в $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Нічого зберігати"
+  },
+  "askClose": {
+    "message": "Закрити"
+  },
+  "askRetry": {
+    "message": "Спробувати ще раз"
+  },
+  "askOpenImage": {
+    "message": "Відкрити зображення"
+  },
+  "askCancel": {
+    "message": "Скасувати"
+  },
+  "askHostTitle": {
+    "message": "Дозволити зображення з цього сайту?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ не дозволяє іншим сайтам читати свої зображення, тому Imgkeep поки не може перетворити це.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Доступ стосується лише цього сайту й потрібен, щоб завантажувати вибрані вами зображення. Ви можете скасувати його будь-коли в Параметрах."
+  },
+  "askAllowAndSave": {
+    "message": "Дозволити й зберегти"
+  },
+  "askNotAllowed": {
+    "message": "Доступ не надано. Нічого не збережено."
+  },
+  "askSaveOriginal": {
+    "message": "Зберегти в оригінальному форматі"
+  },
+  "askReconnectTitle": {
+    "message": "Поновити доступ до «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Виберіть теку"
+  },
+  "askReconnectBody": {
+    "message": "Браузеру потрібен ваш дозвіл, щоб знову зберігати в цю теку."
+  },
+  "askChooseBody": {
+    "message": "Виберіть теку, у яку Imgkeep зберігатиме зображення."
+  },
+  "askEveryVisit": {
+    "message": "Коли браузер запитає, виберіть $OPTION$ — тоді він більше не питатиме.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«Дозволяти щоразу»"
+  },
+  "askReconnectButton": {
+    "message": "Поновити доступ і зберегти"
+  },
+  "askChooseButton": {
+    "message": "Вибрати теку і зберегти"
+  },
+  "askErrorTitle": {
+    "message": "Не вдалося зберегти це зображення"
+  },
+  "askFolderDenied": {
+    "message": "Браузер не надав доступ до теки. Нічого не збережено."
+  },
+  "askNoFolder": {
+    "message": "Теку не вибрано. Нічого не збережено."
+  },
+  "optPageTitle": {
+    "message": "Налаштування Imgkeep"
+  },
+  "optSaved": {
+    "message": "Збережено"
+  },
+  "optWhereTitle": {
+    "message": "Куди зберігати"
+  },
+  "optSaveMode": {
+    "message": "Режим збереження"
+  },
+  "optModeDownloads": {
+    "message": "Тека завантажень"
+  },
+  "optModeDownloadsHint": {
+    "message": "Зберігає в теку завантажень вашого браузера. Без зайвих запитань."
+  },
+  "optModeFolder": {
+    "message": "Тека на ваш вибір"
+  },
+  "optModeFolderHint": {
+    "message": "Зберігає просто у вашу теку. Після перезапуску браузер може попросити поновити доступ."
+  },
+  "optModeAsk": {
+    "message": "Запитувати щоразу"
+  },
+  "optModeAskHint": {
+    "message": "Показує вікно «Зберегти як» для кожного зображення."
+  },
+  "optChooseFolder": {
+    "message": "Вибрати теку…"
+  },
+  "optChangeFolder": {
+    "message": "Змінити теку…"
+  },
+  "optNoFolder": {
+    "message": "Теку ще не вибрано."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — підключено",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — запитає про поновлення доступу",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Підтека"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "напр. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Необов'язково. Для вкладених тек використовуйте <code>/</code>. Ті самі токени, що й в іменах файлів."
+  },
+  "optNamesTitle": {
+    "message": "Імена файлів"
+  },
+  "optTemplate": {
+    "message": "Шаблон імені"
+  },
+  "optTokensHint": {
+    "message": "Токени: <code>{name}</code> — вихідне ім'я, <code>{host}</code> — сайт, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> і <code>{h}</code> — розмір у пікселях. Наявні файли ніколи не перезаписуються."
+  },
+  "optPreviewLabel": {
+    "message": "Приклад для summer-banner із shop.example.com, 1600×900, у PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Якість і розмір"
+  },
+  "optJpgQuality": {
+    "message": "Якість JPG"
+  },
+  "optWebpQuality": {
+    "message": "Якість WebP"
+  },
+  "optJpgBackground": {
+    "message": "Колір тла для JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG не підтримує прозорість, тому прозорі ділянки отримають цей колір."
+  },
+  "optMaxWidth": {
+    "message": "Максимальна ширина"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Початковий розмір"
+  },
+  "optMaxWidthHint": {
+    "message": "Необов'язково, у пікселях. Ширші зображення зменшуються до цієї ширини зі збереженням пропорцій; менші ніколи не збільшуються. Формат «Оригінал» завжди зберігається як є."
+  },
+  "optSitesTitle": {
+    "message": "Сайти, яким ви дозволили доступ"
+  },
+  "optSitesEmpty": {
+    "message": "Поки що жодного. Imgkeep запитує лише тоді, коли сайт блокує зображення, яке ви хочете перетворити."
+  },
+  "optFindTitle": {
+    "message": "Зображення, які приховують сайти"
+  },
+  "optFindLabel": {
+    "message": "Знаходити зображення під шарами-накладками"
+  },
+  "optFindHint": {
+    "message": "На сайтах на кшталт Instagram і Pinterest клацніть правою кнопкою миші й виберіть «Imgkeep: знайти зображення тут». Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення — саме цю сторінку й саме тоді. Він ніколи не змінює сторінку."
+  },
+  "optFindOn": {
+    "message": "Увімкнено."
+  },
+  "optFindOff": {
+    "message": "Вимкнено."
+  },
+  "optCountsTitle": {
+    "message": "Анонімна статистика використання"
+  },
+  "optCountsLabel": {
+    "message": "Надсилати анонімний щоденний підсумок"
+  },
+  "optCountsHint": {
+    "message": "Раз на день Imgkeep надсилає підсумок на кшталт «12 збережень у JPG, 1 невдале» до PostHog — аналітичного сервісу з відкритим кодом, розміщеного в ЄС, — щоб ми знали, які функції покращувати і які збереження не вдаються. Ніколи — зображення, адреси сторінок, назви файлів чи будь-що, що вас ідентифікує."
+  },
+  "optCountsShow": {
+    "message": "Подивитися, що саме надсилається"
+  },
+  "optCountsToday": {
+    "message": "Підраховано сьогодні (надішлеться завтра):"
+  },
+  "optCountsLast": {
+    "message": "Останній надісланий підсумок:"
+  },
+  "optCountsNone": {
+    "message": "Поки що нічого."
+  },
+  "optCountsOff": {
+    "message": "Вимкнено. Нічого не підраховується й не надсилається."
+  },
+  "optRemove": {
+    "message": "Видалити"
+  },
+  "optRemoveAccess": {
+    "message": "Видалити доступ до $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — скоро"
+  },
+  "optProBody": {
+    "message": "Шаблони для розмірів і форматів, якими ви користуєтеся найчастіше, обмеження розміру файлу на кшталт «менше ніж 200 КБ», правила, які зберігають зображення з кожного сайту в потрібну теку, і журнал того, звідки взялося кожне зображення."
+  },
+  "optProFree": {
+    "message": "Усе, чим ви користуєтеся сьогодні, залишиться безкоштовним."
+  },
+  "optGetNotified": {
+    "message": "Повідомити мене"
+  },
+  "optTrustTitle": {
+    "message": "Що Imgkeep може і чого не може"
+  },
+  "optPermissions": {
+    "message": "Дозволи, які він запитує:"
+  },
+  "optOptionalPermissions": {
+    "message": "Лише якщо ви увімкнете пошук зображень:"
+  },
+  "optPermissionsLabel": {
+    "message": "Дозволи"
+  },
+  "optTrust1": {
+    "message": "Зображення перетворюються на вашому комп'ютері й ніколи не завантажуються в мережу. Єдине, що Imgkeep ще надсилає, — це анонімний щоденний підсумок вище, який можна вимкнути."
+  },
+  "optTrust2": {
+    "message": "Без реклами й вітальних вкладок. Невеликі вікна відкриваються, лише коли ви самі про це просите або коли збереження потребує вашого підтвердження. Оцінити розширення Imgkeep просить один раз, коли ви вже трохи ним покористувалися."
+  },
+  "optTrust4": {
+    "message": "Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення — саме цю сторінку й саме тоді. Він ніколи не змінює сторінку."
+  },
+  "optTrust3": {
+    "message": "Усі безкоштовні функції залишаться безкоштовними."
+  },
+  "optVersion": {
+    "message": "Версія"
+  },
+  "optWhatsNew": {
+    "message": "Що нового"
+  },
+  "copyWorking": {
+    "message": "Копіюємо зображення…"
+  },
+  "copyDone": {
+    "message": "Скопійовано як PNG. Вставте будь-де."
+  },
+  "copyFailed": {
+    "message": "Не вдалося скопіювати зображення"
+  },
+  "copyFailedNote": {
+    "message": "Буфер обміну не змінився. Спробуйте ще раз або збережіть зображення як файл PNG."
+  },
+  "copySavePng": {
+    "message": "Натомість зберегти як PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Дозволити й скопіювати"
+  },
+  "editTitle": {
+    "message": "Більше параметрів"
+  },
+  "editLoading": {
+    "message": "Завантажуємо зображення…"
+  },
+  "editUpdating": {
+    "message": "Оновлюємо попередній перегляд…"
+  },
+  "editPreviewAlt": {
+    "message": "Попередній перегляд результату"
+  },
+  "editOriginal": {
+    "message": "Оригінал"
+  },
+  "editResult": {
+    "message": "Результат"
+  },
+  "editFormat": {
+    "message": "Формат"
+  },
+  "editPngHint": {
+    "message": "PNG зберігає кожен піксель. Щоб файл був менший, зменште максимальну ширину або виберіть JPG чи WebP."
+  },
+  "editIcoHint": {
+    "message": "Файл піктограми із зображенням розміром 16, 32 і 48 px, а також 256 px, якщо зображення достатньо велике. У неквадратних зображень краї стануть прозорими."
+  },
+  "editBmpHint": {
+    "message": "Звичайний растровий файл, який відкриває будь-яка програма. Файли великі, а прозорі ділянки отримують колір тла."
+  },
+  "editAvifHint": {
+    "message": "Часто вдвічі менший за JPG такого самого вигляду. Сучасні браузери й більшість нинішніх програм його відкривають; деякі старіші — ні."
+  },
+  "editMaxWidthHint": {
+    "message": "У пікселях. Зберігає пропорції, ніколи не збільшує."
+  },
+  "editBackground": {
+    "message": "Тло"
+  },
+  "editQuality": {
+    "message": "Якість"
+  },
+  "editFileName": {
+    "message": "Назва файлу"
+  },
+  "editSave": {
+    "message": "Зберегти"
+  },
+  "editAllow": {
+    "message": "Дозволити цей сайт"
+  },
+  "editNeedsOk": {
+    "message": "Це збереження потребує вашого підтвердження: погляньте на вікно Imgkeep, що щойно відкрилося."
+  },
+  "reviewTitle": {
+    "message": "Подобається Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Оцінка в магазині допомагає іншим знайти розширення. Це займе кілька секунд, і ми запитаємо лише раз."
+  },
+  "reviewRate": {
+    "message": "Оцінити Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Ні, дякую"
+  },
+  "reviewThanks": {
+    "message": "Дякуємо!"
+  },
+  "reviewOk": {
+    "message": "Зрозуміло. Більше не запитуватимемо."
+  },
+  "findWindowTitle": {
+    "message": "Знайти зображення"
+  },
+  "findEnableTitle": {
+    "message": "Знаходьте зображення, які сайти закривають"
+  },
+  "findEnableBody": {
+    "message": "Деякі сайти, як-от Instagram і Pinterest, накривають свої зображення ще одним шаром, тож правий клік до них не дістається. Imgkeep може знайти зображення під цим шаром."
+  },
+  "findPromise": {
+    "message": "Imgkeep переглядає сторінку лише тоді, коли ви просите знайти на ній зображення, — лише ту сторінку й лише тоді. Він ніколи не змінює сторінку."
+  },
+  "findTurnOn": {
+    "message": "Увімкнути"
+  },
+  "findDenied": {
+    "message": "Не ввімкнено. Ви можете ввімкнути це будь-коли в налаштуваннях."
+  },
+  "findOnTitle": {
+    "message": "Увімкнено"
+  },
+  "findOnBody": {
+    "message": "Клацніть зображення правою кнопкою ще раз і виберіть «Imgkeep: знайти зображення тут»."
+  },
+  "findPickTitle": {
+    "message": "Яке зображення?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep не зміг визначити, яке зображення ви мали на увазі. Виберіть одне:"
+  },
+  "findPickOne": {
+    "message": "Зображення $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Тут не знайдено зображення"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep не знайшов зображення в цій частині сторінки. Клацніть правою кнопкою просто на фото або відкрийте фото на окремій сторінці й спробуйте ще раз."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep не зміг переглянути цю сторінку"
+  },
+  "findErrorBody": {
+    "message": "Перезавантажте сторінку, потім клацніть зображення правою кнопкою й знову виберіть «Знайти зображення тут»."
+  },
+  "paletteTitle": {
+    "message": "Палітра кольорів"
+  },
+  "paletteLoading": {
+    "message": "Визначаємо кольори…"
+  },
+  "paletteCount": {
+    "message": "Кольорів"
+  },
+  "paletteSwatches": {
+    "message": "Основні кольори зображення, починаючи з найбільшої частки"
+  },
+  "paletteCopyOne": {
+    "message": "Копіювати $VALUE$ ($SHARE$ зображення)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Скопійовано $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Копіювати всі як"
+  },
+  "paletteCodeCss": {
+    "message": "Змінні CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Список"
+  },
+  "paletteCopiedAll": {
+    "message": "Усі кольори скопійовано як $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Зберегти як"
+  },
+  "paletteSavePng": {
+    "message": "Зразки PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Палітра GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Зразки Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Вашу теку не вдалося використати, тож файл зберігся в «Завантаженнях»: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Це зображення повністю прозоре, тож кольорів для палітри немає."
+  },
+  "paletteCopyFailed": {
+    "message": "Не вдалося скопіювати. Клацніть у цьому вікні й спробуйте ще раз."
+  },
+  "paletteNote": {
+    "message": "Обчислено на вашому комп’ютері. Зображення та його кольори нікуди не надсилаються."
+  }
+}

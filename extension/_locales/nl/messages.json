@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Afbeelding opslaan als PNG, JPG, WebP, GIF of PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Rechtsklik: sla elke afbeelding op als PNG, JPG, WebP, GIF of PDF, of haal het kleurenpalet op. Lokaal, geen persoonsgegevens."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (laatst gebruikt)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (behoudt animatie)"
+  },
+  "menuOriginal": {
+    "message": "Origineel formaat"
+  },
+  "menuCopyPng": {
+    "message": "Kopiëren als PNG"
+  },
+  "menuPalette": {
+    "message": "Kleurenpalet ophalen"
+  },
+  "menuMoreOptions": {
+    "message": "Meer opties…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: afbeelding hier zoeken…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nieuw",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Blij met Imgkeep? Geef een beoordeling…"
+  },
+  "askErrBlocked": {
+    "message": "De site gaf deze afbeelding niet vrij, ook al is toegang toegestaan. Misschien is de server offline, of levert de site de afbeelding alleen binnen de eigen pagina's."
+  },
+  "askErrHttp": {
+    "message": "De site antwoordde met een foutmelding in plaats van de afbeelding."
+  },
+  "askErrDecode": {
+    "message": "Je browser kon dit bestand niet als afbeelding lezen."
+  },
+  "askErrUnsupported": {
+    "message": "Deze browserversie kan dit formaat niet maken. Probeer PNG."
+  },
+  "askErrBlob": {
+    "message": "Deze afbeelding bestaat alleen in de pagina (een blob:-link), dus Imgkeep kan die nog niet opslaan. Een schermafbeelding werkt wel."
+  },
+  "askErrTooLarge": {
+    "message": "Deze afbeelding is te groot om in de browser om te zetten."
+  },
+  "askErrTimeout": {
+    "message": "Het omzetten van deze afbeelding duurde te lang, dus Imgkeep is gestopt. Probeer PNG, of een kortere of kleinere animatie."
+  },
+  "askErrDownload": {
+    "message": "Je browser kon de download niet starten."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep kon het bestand niet in je map schrijven."
+  },
+  "askErrExpired": {
+    "message": "Deze opslagactie is verlopen. Rechtsklik op de afbeelding en probeer het opnieuw."
+  },
+  "askErrUnknown": {
+    "message": "Er ging iets mis bij het opslaan van deze afbeelding."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ frames. Het maximum voor GIF is $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixels × $COUNT$ frames is meer dan een GIF hier aankan.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Te veel bestanden met deze naam."
+  },
+  "askSaving": {
+    "message": "Opslaan…"
+  },
+  "askSaved": {
+    "message": "Opgeslagen."
+  },
+  "askSavedAs": {
+    "message": "Opgeslagen als $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Opgeslagen in $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Niets om op te slaan"
+  },
+  "askClose": {
+    "message": "Sluiten"
+  },
+  "askRetry": {
+    "message": "Opnieuw proberen"
+  },
+  "askOpenImage": {
+    "message": "Afbeelding openen"
+  },
+  "askCancel": {
+    "message": "Annuleren"
+  },
+  "askHostTitle": {
+    "message": "Afbeeldingen van deze site toestaan?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ blokkeert dat andere sites zijn afbeeldingen lezen, dus Imgkeep kan deze nog niet omzetten.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "De toegang geldt alleen voor deze ene site, om afbeeldingen op te halen die jij kiest. Je kunt die altijd weer intrekken in Opties."
+  },
+  "askAllowAndSave": {
+    "message": "Toestaan en opslaan"
+  },
+  "askNotAllowed": {
+    "message": "Toegang is niet gegeven. Er is niets opgeslagen."
+  },
+  "askSaveOriginal": {
+    "message": "Toch origineel formaat opslaan"
+  },
+  "askReconnectTitle": {
+    "message": "Opnieuw verbinden met ‘$FOLDER$’",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Kies een map"
+  },
+  "askReconnectBody": {
+    "message": "Je browser heeft je toestemming nodig om weer in deze map op te slaan."
+  },
+  "askChooseBody": {
+    "message": "Kies de map waarin Imgkeep je afbeeldingen opslaat."
+  },
+  "askEveryVisit": {
+    "message": "Kies $OPTION$ als je browser het vraagt, dan vraagt hij het niet opnieuw.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "‘Toestaan bij elk bezoek’"
+  },
+  "askReconnectButton": {
+    "message": "Opnieuw verbinden en opslaan"
+  },
+  "askChooseButton": {
+    "message": "Map kiezen en opslaan"
+  },
+  "askErrorTitle": {
+    "message": "Deze afbeelding kon niet worden opgeslagen"
+  },
+  "askFolderDenied": {
+    "message": "Je browser gaf geen toegang tot de map. Er is niets opgeslagen."
+  },
+  "askNoFolder": {
+    "message": "Geen map gekozen. Er is niets opgeslagen."
+  },
+  "optPageTitle": {
+    "message": "Imgkeep-opties"
+  },
+  "optSaved": {
+    "message": "Opgeslagen"
+  },
+  "optWhereTitle": {
+    "message": "Waar opslaan"
+  },
+  "optSaveMode": {
+    "message": "Opslagmodus"
+  },
+  "optModeDownloads": {
+    "message": "Downloadmap"
+  },
+  "optModeDownloadsHint": {
+    "message": "Slaat op in de downloadmap van je browser. Zonder vragen."
+  },
+  "optModeFolder": {
+    "message": "Een map die je kiest"
+  },
+  "optModeFolderHint": {
+    "message": "Schrijft rechtstreeks in je map. Je browser kan na een herstart vragen om opnieuw te verbinden."
+  },
+  "optModeAsk": {
+    "message": "Elke keer vragen"
+  },
+  "optModeAskHint": {
+    "message": "Toont het venster ‘Opslaan als’ van je browser voor elke afbeelding."
+  },
+  "optChooseFolder": {
+    "message": "Map kiezen…"
+  },
+  "optChangeFolder": {
+    "message": "Map wijzigen…"
+  },
+  "optNoFolder": {
+    "message": "Nog geen map gekozen."
+  },
+  "optFolderConnected": {
+    "message": "‘$FOLDER$’ — verbonden",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "‘$FOLDER$’ — vraagt om opnieuw te verbinden",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Submap"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "bijv. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Optioneel. Gebruik <code>/</code> voor mappen in mappen. Dezelfde tokens als bij bestandsnamen."
+  },
+  "optNamesTitle": {
+    "message": "Bestandsnamen"
+  },
+  "optTemplate": {
+    "message": "Naamsjabloon"
+  },
+  "optTokensHint": {
+    "message": "Tokens: <code>{name}</code> oorspronkelijke naam, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> en <code>{h}</code> grootte in pixels. Bestaande bestanden worden nooit overschreven."
+  },
+  "optPreviewLabel": {
+    "message": "Voorbeeld voor summer-banner van shop.example.com, 1600×900, als PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kwaliteit en grootte"
+  },
+  "optJpgQuality": {
+    "message": "JPG-kwaliteit"
+  },
+  "optWebpQuality": {
+    "message": "WebP-kwaliteit"
+  },
+  "optJpgBackground": {
+    "message": "Achtergrondkleur JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG kent geen transparantie, dus doorzichtige delen krijgen deze kleur."
+  },
+  "optMaxWidth": {
+    "message": "Maximale breedte"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Oorspronkelijke grootte"
+  },
+  "optMaxWidthHint": {
+    "message": "Optioneel, in pixels. Bredere afbeeldingen worden passend verkleind met behoud van de verhoudingen; kleinere worden nooit vergroot. ‘Origineel’ wordt altijd opgeslagen zoals het is."
+  },
+  "optSitesTitle": {
+    "message": "Sites die je hebt toegestaan"
+  },
+  "optSitesEmpty": {
+    "message": "Nog geen. Imgkeep vraagt het alleen als een site een afbeelding blokkeert die je wilt omzetten."
+  },
+  "optFindTitle": {
+    "message": "Afbeeldingen die sites afdekken"
+  },
+  "optFindLabel": {
+    "message": "Afbeeldingen onder afdeklagen vinden"
+  },
+  "optFindHint": {
+    "message": "Op sites als Instagram en Pinterest klik je met de rechtermuisknop en kies je ‘Imgkeep: afbeelding hier zoeken’. Imgkeep kijkt alleen naar een pagina als je het vraagt om daar een afbeelding te vinden, alleen die pagina, alleen op dat moment. Het verandert nooit iets aan een pagina."
+  },
+  "optFindOn": {
+    "message": "Ingeschakeld."
+  },
+  "optFindOff": {
+    "message": "Uitgeschakeld."
+  },
+  "optCountsTitle": {
+    "message": "Anonieme gebruikstellingen"
+  },
+  "optCountsLabel": {
+    "message": "Een anonieme dagelijkse samenvatting sturen"
+  },
+  "optCountsHint": {
+    "message": "Eén keer per dag stuurt Imgkeep een samenvatting als ‘12 keer opgeslagen als JPG, 1 mislukt’ naar PostHog, een opensource-analysedienst met servers in de EU, zodat we weten welke functies we moeten verbeteren en welke opslagacties mislukken. Nooit afbeeldingen, pagina-adressen, bestandsnamen of iets wat jou identificeert."
+  },
+  "optCountsShow": {
+    "message": "Bekijk precies wat er wordt verstuurd"
+  },
+  "optCountsToday": {
+    "message": "Vandaag geteld (wordt na vandaag verstuurd):"
+  },
+  "optCountsLast": {
+    "message": "Laatst verstuurde samenvatting:"
+  },
+  "optCountsNone": {
+    "message": "Nog niets."
+  },
+  "optCountsOff": {
+    "message": "Uit. Er wordt niets geteld of verstuurd."
+  },
+  "optRemove": {
+    "message": "Verwijderen"
+  },
+  "optRemoveAccess": {
+    "message": "Toegang tot $SITE$ verwijderen",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — binnenkort"
+  },
+  "optProBody": {
+    "message": "Voorinstellingen voor de maten en formaten die je het meest gebruikt, doelen voor bestandsgrootte zoals ‘onder 200 KB’, regels die de afbeeldingen van elke site naar de juiste map sturen, en een logboek van waar elke afbeelding vandaan komt."
+  },
+  "optProFree": {
+    "message": "Alles wat je nu gebruikt, blijft gratis."
+  },
+  "optGetNotified": {
+    "message": "Houd me op de hoogte"
+  },
+  "optTrustTitle": {
+    "message": "Wat Imgkeep wel en niet kan"
+  },
+  "optPermissions": {
+    "message": "Machtigingen die het vraagt:"
+  },
+  "optOptionalPermissions": {
+    "message": "Alleen als je ‘Afbeeldingen vinden’ inschakelt:"
+  },
+  "optPermissionsLabel": {
+    "message": "Machtigingen"
+  },
+  "optTrust1": {
+    "message": "Afbeeldingen worden op je eigen computer omgezet en nooit geüpload. Het enige andere wat Imgkeep verstuurt, is de anonieme dagelijkse samenvatting hierboven, die je kunt uitschakelen."
+  },
+  "optTrust2": {
+    "message": "Geen advertenties en geen welkomsttabbladen. Kleine vensters gaan alleen open als je erom vraagt of als een opslagactie je goedkeuring nodig heeft. Imgkeep vraagt één keer om een beoordeling, nadat je het een tijdje hebt gebruikt."
+  },
+  "optTrust4": {
+    "message": "Imgkeep kijkt alleen naar een pagina als je het vraagt om daar een afbeelding te vinden, alleen die pagina, alleen op dat moment. Het verandert nooit iets aan een pagina."
+  },
+  "optTrust3": {
+    "message": "Elke gratis functie blijft gratis."
+  },
+  "optVersion": {
+    "message": "Versie"
+  },
+  "optWhatsNew": {
+    "message": "Wat is er nieuw"
+  },
+  "copyWorking": {
+    "message": "Afbeelding wordt gekopieerd…"
+  },
+  "copyDone": {
+    "message": "Gekopieerd als PNG. Plak hem waar je wilt."
+  },
+  "copyFailed": {
+    "message": "Kon de afbeelding niet kopiëren"
+  },
+  "copyFailedNote": {
+    "message": "Je klembord is niet gewijzigd. Probeer het opnieuw of sla de afbeelding op als PNG-bestand."
+  },
+  "copySavePng": {
+    "message": "Opslaan als PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Toestaan en kopiëren"
+  },
+  "editTitle": {
+    "message": "Meer opties"
+  },
+  "editLoading": {
+    "message": "Afbeelding laden…"
+  },
+  "editUpdating": {
+    "message": "Voorbeeld bijwerken…"
+  },
+  "editPreviewAlt": {
+    "message": "Voorbeeld van het resultaat"
+  },
+  "editOriginal": {
+    "message": "Origineel"
+  },
+  "editResult": {
+    "message": "Resultaat"
+  },
+  "editFormat": {
+    "message": "Bestandsformaat"
+  },
+  "editPngHint": {
+    "message": "PNG behoudt elke pixel. Wil je een kleiner bestand? Verlaag de maximale breedte of kies JPG of WebP."
+  },
+  "editIcoHint": {
+    "message": "Een icoonbestand met de afbeelding op 16, 32 en 48 px, en op 256 px als de afbeelding groot genoeg is. Afbeeldingen die niet vierkant zijn, krijgen transparante randen."
+  },
+  "editBmpHint": {
+    "message": "Een eenvoudige bitmap die elke app opent. De bestanden zijn groot en transparante delen krijgen de achtergrondkleur."
+  },
+  "editAvifHint": {
+    "message": "Vaak half zo groot als een JPG die er hetzelfde uitziet. Moderne browsers en de meeste actuele apps openen het; sommige oudere apps niet."
+  },
+  "editMaxWidthHint": {
+    "message": "In pixels. Behoudt de verhoudingen, vergroot nooit."
+  },
+  "editBackground": {
+    "message": "Achtergrond"
+  },
+  "editQuality": {
+    "message": "Kwaliteit"
+  },
+  "editFileName": {
+    "message": "Bestandsnaam"
+  },
+  "editSave": {
+    "message": "Opslaan"
+  },
+  "editAllow": {
+    "message": "Deze site toestaan"
+  },
+  "editNeedsOk": {
+    "message": "Voor dit opslaan is je akkoord nodig: zie het Imgkeep-venster dat net is geopend."
+  },
+  "reviewTitle": {
+    "message": "Bevalt Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Een beoordeling in de store helpt anderen om Imgkeep te vinden. Het kost een paar seconden en we vragen dit maar één keer."
+  },
+  "reviewRate": {
+    "message": "Imgkeep beoordelen"
+  },
+  "reviewNo": {
+    "message": "Nee, bedankt"
+  },
+  "reviewThanks": {
+    "message": "Bedankt!"
+  },
+  "reviewOk": {
+    "message": "Duidelijk. We vragen het niet nog eens."
+  },
+  "findWindowTitle": {
+    "message": "Afbeelding zoeken"
+  },
+  "findEnableTitle": {
+    "message": "Afbeeldingen vinden die sites afdekken"
+  },
+  "findEnableBody": {
+    "message": "Sommige sites, zoals Instagram en Pinterest, leggen een extra laag over hun afbeeldingen, waardoor je er met een rechtermuisklik niet bij komt. Imgkeep kan de afbeelding onder die laag voor je vinden."
+  },
+  "findPromise": {
+    "message": "Imgkeep bekijkt een pagina alleen als je vraagt om daar een afbeelding te zoeken: alleen die pagina, alleen op dat moment. Imgkeep wijzigt nooit een pagina."
+  },
+  "findTurnOn": {
+    "message": "Inschakelen"
+  },
+  "findDenied": {
+    "message": "Niet ingeschakeld. Je kunt het altijd alsnog inschakelen bij Opties."
+  },
+  "findOnTitle": {
+    "message": "Ingeschakeld"
+  },
+  "findOnBody": {
+    "message": "Klik opnieuw met de rechtermuisknop op de afbeelding en kies Imgkeep: Afbeelding hier zoeken."
+  },
+  "findPickTitle": {
+    "message": "Welke afbeelding?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep kon niet bepalen welke afbeelding je bedoelde. Kies er een:"
+  },
+  "findPickOne": {
+    "message": "Afbeelding $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Hier geen afbeelding gevonden"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep kon op dit deel van de pagina geen afbeelding vinden. Klik met de rechtermuisknop precies op de foto, of open de foto op een eigen pagina en probeer het opnieuw."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep kon deze pagina niet bekijken"
+  },
+  "findErrorBody": {
+    "message": "Laad de pagina opnieuw, klik dan met de rechtermuisknop op de afbeelding en kies nogmaals Afbeelding hier zoeken."
+  },
+  "paletteTitle": {
+    "message": "Kleurenpalet"
+  },
+  "paletteLoading": {
+    "message": "Kleuren zoeken…"
+  },
+  "paletteCount": {
+    "message": "Kleuren"
+  },
+  "paletteSwatches": {
+    "message": "De belangrijkste kleuren van de afbeelding, grootste eerst"
+  },
+  "paletteCopyOne": {
+    "message": "$VALUE$ kopiëren ($SHARE$ van de afbeelding)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ gekopieerd",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Alles kopiëren als"
+  },
+  "paletteCodeCss": {
+    "message": "CSS-variabelen"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Lijst"
+  },
+  "paletteCopiedAll": {
+    "message": "Alle kleuren gekopieerd als $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Opslaan als"
+  },
+  "paletteSavePng": {
+    "message": "PNG-stalen"
+  },
+  "paletteSaveGpl": {
+    "message": "GIMP-palet"
+  },
+  "paletteSaveAse": {
+    "message": "Adobe-stalen"
+  },
+  "paletteSavedFallback": {
+    "message": "Je map was niet beschikbaar, dus het bestand staat in Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Deze afbeelding is volledig transparant en heeft dus geen kleuren."
+  },
+  "paletteCopyFailed": {
+    "message": "Kopiëren lukte niet. Klik in dit venster en probeer het opnieuw."
+  },
+  "paletteNote": {
+    "message": "Berekend op je eigen computer. De afbeelding en de kleuren verlaten die nooit."
+  }
+}

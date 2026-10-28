@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Salva immagini come PNG, JPG, WebP, GIF o PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Clic destro: salva ogni immagine come PNG, JPG, WebP, GIF o PDF o ricavarne la palette. Sul tuo dispositivo, senza dati personali."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (ultimo usato)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (mantiene l'animazione)"
+  },
+  "menuOriginal": {
+    "message": "Formato originale"
+  },
+  "menuCopyPng": {
+    "message": "Copia come PNG"
+  },
+  "menuPalette": {
+    "message": "Ricava la palette di colori"
+  },
+  "menuMoreOptions": {
+    "message": "Altre opzioni…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: trova l'immagine qui…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Novità",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Ti piace Imgkeep? Lascia una valutazione…"
+  },
+  "askErrBlocked": {
+    "message": "Il sito non ha fornito questa immagine, nemmeno con l'accesso consentito. Il server potrebbe essere offline, oppure mostra l'immagine solo all'interno delle sue pagine."
+  },
+  "askErrHttp": {
+    "message": "Il sito ha risposto con un errore invece di inviare l'immagine."
+  },
+  "askErrDecode": {
+    "message": "Il browser non è riuscito a leggere questo file come immagine."
+  },
+  "askErrUnsupported": {
+    "message": "Questa versione del browser non può creare questo formato. Prova con PNG."
+  },
+  "askErrBlob": {
+    "message": "Questa immagine esiste solo all'interno della pagina (un link blob:), quindi Imgkeep non può ancora salvarla. Uno screenshot funziona."
+  },
+  "askErrTooLarge": {
+    "message": "Questa immagine è troppo grande per essere convertita nel browser."
+  },
+  "askErrTimeout": {
+    "message": "La conversione di questa immagine ha richiesto troppo tempo e Imgkeep si è fermato. Prova con PNG o con un'animazione più corta o più piccola."
+  },
+  "askErrDownload": {
+    "message": "Il browser non è riuscito ad avviare il download."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep non è riuscito a scrivere il file nella tua cartella."
+  },
+  "askErrExpired": {
+    "message": "Questo salvataggio è scaduto. Fai clic destro sull'immagine e riprova."
+  },
+  "askErrUnknown": {
+    "message": "Qualcosa è andato storto durante il salvataggio di questa immagine."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ fotogrammi. Le GIF sono limitate a $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ pixel × $COUNT$ fotogrammi superano la capacità di una GIF qui.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Troppi file con questo nome."
+  },
+  "askSaving": {
+    "message": "Salvataggio…"
+  },
+  "askSaved": {
+    "message": "Salvata."
+  },
+  "askSavedAs": {
+    "message": "Salvata come $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Salvata in $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Niente da salvare"
+  },
+  "askClose": {
+    "message": "Chiudi"
+  },
+  "askRetry": {
+    "message": "Riprova"
+  },
+  "askOpenImage": {
+    "message": "Apri immagine"
+  },
+  "askCancel": {
+    "message": "Annulla"
+  },
+  "askHostTitle": {
+    "message": "Consentire le immagini da questo sito?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ impedisce ad altri siti di leggere le sue immagini, quindi Imgkeep non può ancora convertire questa.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "L'accesso vale solo per questo sito, per scaricare le immagini che scegli. Puoi revocarlo in qualsiasi momento in Opzioni."
+  },
+  "askAllowAndSave": {
+    "message": "Consenti e salva"
+  },
+  "askNotAllowed": {
+    "message": "Accesso non consentito. Non è stato salvato nulla."
+  },
+  "askSaveOriginal": {
+    "message": "Salva invece nel formato originale"
+  },
+  "askReconnectTitle": {
+    "message": "Riconnetti «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Scegli una cartella"
+  },
+  "askReconnectBody": {
+    "message": "Il browser ha bisogno del tuo consenso per salvare di nuovo in questa cartella."
+  },
+  "askChooseBody": {
+    "message": "Scegli la cartella in cui Imgkeep deve salvare le immagini."
+  },
+  "askEveryVisit": {
+    "message": "Quando il browser te lo chiede, scegli $OPTION$ per non doverlo ripetere.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«Consenti a ogni visita»"
+  },
+  "askReconnectButton": {
+    "message": "Riconnetti e salva"
+  },
+  "askChooseButton": {
+    "message": "Scegli cartella e salva"
+  },
+  "askErrorTitle": {
+    "message": "Impossibile salvare l'immagine"
+  },
+  "askFolderDenied": {
+    "message": "Il browser non ha consentito l'accesso alla cartella. Non è stato salvato nulla."
+  },
+  "askNoFolder": {
+    "message": "Nessuna cartella scelta. Non è stato salvato nulla."
+  },
+  "optPageTitle": {
+    "message": "Opzioni di Imgkeep"
+  },
+  "optSaved": {
+    "message": "Salvato"
+  },
+  "optWhereTitle": {
+    "message": "Dove salvare"
+  },
+  "optSaveMode": {
+    "message": "Modalità di salvataggio"
+  },
+  "optModeDownloads": {
+    "message": "Cartella dei download"
+  },
+  "optModeDownloadsHint": {
+    "message": "Salva nella cartella dei download del browser, senza chiedere nulla."
+  },
+  "optModeFolder": {
+    "message": "Una cartella a tua scelta"
+  },
+  "optModeFolderHint": {
+    "message": "Scrive direttamente nella tua cartella. Dopo un riavvio il browser potrebbe chiederti di riconnetterla."
+  },
+  "optModeAsk": {
+    "message": "Chiedi ogni volta"
+  },
+  "optModeAskHint": {
+    "message": "Mostra la finestra «Salva con nome» del browser per ogni immagine."
+  },
+  "optChooseFolder": {
+    "message": "Scegli cartella…"
+  },
+  "optChangeFolder": {
+    "message": "Cambia cartella…"
+  },
+  "optNoFolder": {
+    "message": "Nessuna cartella scelta."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — connessa",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — chiederà di riconnetterla",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Sottocartella"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "es. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Facoltativo. Usa <code>/</code> per le cartelle annidate. Stessi token dei nomi file."
+  },
+  "optNamesTitle": {
+    "message": "Nomi dei file"
+  },
+  "optTemplate": {
+    "message": "Modello di nome"
+  },
+  "optTokensHint": {
+    "message": "Token: <code>{name}</code> nome originale, <code>{host}</code> sito, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> e <code>{h}</code> dimensioni in pixel. I file esistenti non vengono mai sovrascritti."
+  },
+  "optPreviewLabel": {
+    "message": "Anteprima per summer-banner da shop.example.com, 1600×900, in PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Qualità e dimensioni"
+  },
+  "optJpgQuality": {
+    "message": "Qualità JPG"
+  },
+  "optWebpQuality": {
+    "message": "Qualità WebP"
+  },
+  "optJpgBackground": {
+    "message": "Colore di sfondo JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "Il JPG non supporta la trasparenza: le aree trasparenti assumono questo colore."
+  },
+  "optMaxWidth": {
+    "message": "Larghezza massima"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Dimensione originale"
+  },
+  "optMaxWidthHint": {
+    "message": "Facoltativo, in pixel. Le immagini più larghe vengono ridotte per rientrare, mantenendo le proporzioni; quelle più piccole non vengono mai ingrandite. Il formato originale viene sempre salvato com'è."
+  },
+  "optSitesTitle": {
+    "message": "Siti che hai autorizzato"
+  },
+  "optSitesEmpty": {
+    "message": "Nessuno per ora. Imgkeep te lo chiede solo quando un sito blocca un'immagine che vuoi convertire."
+  },
+  "optFindTitle": {
+    "message": "Immagini coperte dai siti"
+  },
+  "optFindLabel": {
+    "message": "Trova immagini sotto gli strati di copertura"
+  },
+  "optFindHint": {
+    "message": "Su siti come Instagram e Pinterest, fai clic con il tasto destro e scegli Imgkeep: Trova immagine qui. Imgkeep guarda una pagina solo quando gli chiedi di trovarci un'immagine: solo quella pagina, solo in quel momento. Non modifica mai una pagina."
+  },
+  "optFindOn": {
+    "message": "Attivo."
+  },
+  "optFindOff": {
+    "message": "Disattivato."
+  },
+  "optCountsTitle": {
+    "message": "Conteggi d'uso anonimi"
+  },
+  "optCountsLabel": {
+    "message": "Invia un riepilogo anonimo giornaliero"
+  },
+  "optCountsHint": {
+    "message": "Una volta al giorno Imgkeep invia un riepilogo tipo «12 salvataggi in JPG, 1 non riuscito» a PostHog, un servizio di analisi open source ospitato nell'UE, così sappiamo quali funzioni migliorare e quali salvataggi non riescono. Mai immagini, indirizzi di pagine, nomi di file o dati che ti identificano."
+  },
+  "optCountsShow": {
+    "message": "Vedi esattamente cosa viene inviato"
+  },
+  "optCountsToday": {
+    "message": "Conteggiato oggi (inviato dopo oggi):"
+  },
+  "optCountsLast": {
+    "message": "Ultimo riepilogo inviato:"
+  },
+  "optCountsNone": {
+    "message": "Ancora niente."
+  },
+  "optCountsOff": {
+    "message": "Disattivato. Non viene conteggiato né inviato nulla."
+  },
+  "optRemove": {
+    "message": "Rimuovi"
+  },
+  "optRemoveAccess": {
+    "message": "Rimuovi l'accesso a $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — in arrivo"
+  },
+  "optProBody": {
+    "message": "Preimpostazioni per le dimensioni e i formati che usi di più, obiettivi di peso come «sotto i 200 KB», regole che mandano le immagini di ogni sito nella cartella giusta e un registro della provenienza di ogni immagine."
+  },
+  "optProFree": {
+    "message": "Tutto quello che usi oggi resta gratis."
+  },
+  "optGetNotified": {
+    "message": "Avvisami"
+  },
+  "optTrustTitle": {
+    "message": "Cosa può e cosa non può fare Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Autorizzazioni richieste:"
+  },
+  "optOptionalPermissions": {
+    "message": "Solo se attivi Trova immagini:"
+  },
+  "optPermissionsLabel": {
+    "message": "Autorizzazioni"
+  },
+  "optTrust1": {
+    "message": "Le immagini vengono convertite sul tuo computer e non vengono mai caricate online. L'unica altra cosa che Imgkeep invia è il riepilogo anonimo giornaliero qui sopra, che puoi disattivare."
+  },
+  "optTrust2": {
+    "message": "Niente pubblicità né schede di benvenuto. Le finestrelle si aprono solo quando le chiedi tu o quando un salvataggio ha bisogno del tuo OK. Imgkeep chiede una valutazione una volta sola, dopo che lo usi da un po'."
+  },
+  "optTrust4": {
+    "message": "Imgkeep guarda una pagina solo quando gli chiedi di trovarci un'immagine: solo quella pagina, solo in quel momento. Non modifica mai una pagina."
+  },
+  "optTrust3": {
+    "message": "Ogni funzione gratuita resta gratuita."
+  },
+  "optVersion": {
+    "message": "Versione"
+  },
+  "optWhatsNew": {
+    "message": "Novità"
+  },
+  "copyWorking": {
+    "message": "Copia dell'immagine in corso…"
+  },
+  "copyDone": {
+    "message": "Copiata come PNG. Incollala dove vuoi."
+  },
+  "copyFailed": {
+    "message": "Impossibile copiare l'immagine"
+  },
+  "copyFailedNote": {
+    "message": "Gli appunti non sono stati modificati. Riprova oppure salva l'immagine come file PNG."
+  },
+  "copySavePng": {
+    "message": "Salva invece come PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Autorizza e copia"
+  },
+  "editTitle": {
+    "message": "Altre opzioni"
+  },
+  "editLoading": {
+    "message": "Caricamento dell'immagine…"
+  },
+  "editUpdating": {
+    "message": "Aggiornamento dell'anteprima…"
+  },
+  "editPreviewAlt": {
+    "message": "Anteprima del risultato"
+  },
+  "editOriginal": {
+    "message": "Originale"
+  },
+  "editResult": {
+    "message": "Risultato"
+  },
+  "editFormat": {
+    "message": "Formato"
+  },
+  "editPngHint": {
+    "message": "Il PNG conserva ogni pixel. Per un file più piccolo, riduci la larghezza massima o scegli JPG o WebP."
+  },
+  "editIcoHint": {
+    "message": "Un file icona con l'immagine a 16, 32 e 48 px, più 256 px se è abbastanza grande. Le immagini non quadrate ricevono bordi trasparenti."
+  },
+  "editBmpHint": {
+    "message": "Una semplice bitmap che si apre con qualsiasi app. I file sono grandi e le aree trasparenti prendono il colore di sfondo."
+  },
+  "editAvifHint": {
+    "message": "Spesso pesa la metà di un JPG dall'aspetto identico. I browser moderni e quasi tutte le app attuali lo aprono; alcune app più vecchie no."
+  },
+  "editMaxWidthHint": {
+    "message": "In pixel. Mantiene le proporzioni, non ingrandisce mai."
+  },
+  "editBackground": {
+    "message": "Sfondo"
+  },
+  "editQuality": {
+    "message": "Qualità"
+  },
+  "editFileName": {
+    "message": "Nome del file"
+  },
+  "editSave": {
+    "message": "Salva"
+  },
+  "editAllow": {
+    "message": "Consenti questo sito"
+  },
+  "editNeedsOk": {
+    "message": "Questo salvataggio ha bisogno del tuo OK: guarda la finestra di Imgkeep che si è appena aperta."
+  },
+  "reviewTitle": {
+    "message": "Ti piace Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Una valutazione nello store aiuta altre persone a trovarlo. Bastano pochi secondi e te lo chiediamo una volta sola."
+  },
+  "reviewRate": {
+    "message": "Valuta Imgkeep"
+  },
+  "reviewNo": {
+    "message": "No, grazie"
+  },
+  "reviewThanks": {
+    "message": "Grazie!"
+  },
+  "reviewOk": {
+    "message": "Va bene. Non te lo chiederemo più."
+  },
+  "findWindowTitle": {
+    "message": "Trova immagine"
+  },
+  "findEnableTitle": {
+    "message": "Trova le immagini coperte dai siti"
+  },
+  "findEnableBody": {
+    "message": "Alcuni siti, come Instagram e Pinterest, coprono le immagini con un altro livello, così il clic destro non le raggiunge. Imgkeep può trovare per te l'immagine sotto quel livello."
+  },
+  "findPromise": {
+    "message": "Imgkeep guarda una pagina solo quando gli chiedi di trovarci un'immagine: solo quella pagina, solo in quel momento. Non modifica mai una pagina."
+  },
+  "findTurnOn": {
+    "message": "Attiva"
+  },
+  "findDenied": {
+    "message": "Non attivato. Puoi attivarlo quando vuoi nelle Opzioni."
+  },
+  "findOnTitle": {
+    "message": "Attivato"
+  },
+  "findOnBody": {
+    "message": "Fai di nuovo clic destro sull'immagine e scegli Imgkeep: Trova immagine qui."
+  },
+  "findPickTitle": {
+    "message": "Quale immagine?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep non ha capito quale immagine intendevi. Scegline una:"
+  },
+  "findPickOne": {
+    "message": "Immagine $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Nessuna immagine trovata qui"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep non ha trovato immagini in questo punto della pagina. Fai clic destro proprio sulla foto, oppure aprila in una pagina a sé e riprova."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep non è riuscito a guardare questa pagina"
+  },
+  "findErrorBody": {
+    "message": "Ricarica la pagina, poi fai clic destro sull'immagine e scegli di nuovo Trova immagine qui."
+  },
+  "paletteTitle": {
+    "message": "Palette di colori"
+  },
+  "paletteLoading": {
+    "message": "Ricerca dei colori…"
+  },
+  "paletteCount": {
+    "message": "Colori"
+  },
+  "paletteSwatches": {
+    "message": "I colori principali dell'immagine, dal più presente al meno"
+  },
+  "paletteCopyOne": {
+    "message": "Copia $VALUE$ ($SHARE$ dell'immagine)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ copiato",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Copia tutti come"
+  },
+  "paletteCodeCss": {
+    "message": "Variabili CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Elenco"
+  },
+  "paletteCopiedAll": {
+    "message": "Tutti i colori copiati come $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Salva come"
+  },
+  "paletteSavePng": {
+    "message": "Campioni PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Palette GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Campioni Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "La tua cartella non era disponibile, quindi il file è finito in Download: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Questa immagine è del tutto trasparente: non ci sono colori da estrarre."
+  },
+  "paletteCopyFailed": {
+    "message": "Copia non riuscita. Fai clic in questa finestra e riprova."
+  },
+  "paletteNote": {
+    "message": "Calcolato sul tuo computer. L'immagine e i suoi colori non lo lasciano mai."
+  }
+}

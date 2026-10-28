@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "บันทึกรูปเป็น PNG, JPG, WebP, GIF หรือ PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "คลิกขวาเพื่อบันทึกรูปใดก็ได้เป็น PNG, JPG, WebP, GIF หรือ PDF หรือดึงชุดสีของรูป ทำงานบนเครื่องคุณ ไม่เก็บข้อมูลส่วนตัว"
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (ใช้ล่าสุด)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (คงภาพเคลื่อนไหว)"
+  },
+  "menuOriginal": {
+    "message": "รูปแบบต้นฉบับ"
+  },
+  "menuCopyPng": {
+    "message": "คัดลอกเป็น PNG"
+  },
+  "menuPalette": {
+    "message": "ดึงชุดสี"
+  },
+  "menuMoreOptions": {
+    "message": "ตัวเลือกเพิ่มเติม…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: ค้นหารูปตรงนี้…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ ใหม่",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "ชอบ Imgkeep ไหม ให้คะแนนหน่อย…"
+  },
+  "askErrBlocked": {
+    "message": "เว็บไซต์ไม่ส่งรูปนี้มาให้ แม้จะอนุญาตการเข้าถึงแล้ว เซิร์ฟเวอร์อาจล่ม หรือเว็บไซต์ให้ดูรูปได้เฉพาะในหน้าเว็บของตัวเองเท่านั้น"
+  },
+  "askErrHttp": {
+    "message": "เว็บไซต์ตอบกลับมาเป็นข้อผิดพลาดแทนที่จะเป็นรูป"
+  },
+  "askErrDecode": {
+    "message": "เบราว์เซอร์อ่านไฟล์นี้เป็นรูปไม่ได้"
+  },
+  "askErrUnsupported": {
+    "message": "เบราว์เซอร์เวอร์ชันนี้สร้างรูปแบบนี้ไม่ได้ ลองใช้ PNG แทน"
+  },
+  "askErrBlob": {
+    "message": "รูปนี้มีอยู่แค่ในหน้าเว็บ (ลิงก์ blob:) Imgkeep จึงยังบันทึกไม่ได้ ใช้ภาพหน้าจอแทนได้"
+  },
+  "askErrTooLarge": {
+    "message": "รูปนี้ใหญ่เกินกว่าจะแปลงในเบราว์เซอร์ได้"
+  },
+  "askErrTimeout": {
+    "message": "การแปลงรูปนี้ใช้เวลานานเกินไป Imgkeep จึงหยุดทำงาน ลองใช้ PNG หรือภาพเคลื่อนไหวที่สั้นลงหรือเล็กลง"
+  },
+  "askErrDownload": {
+    "message": "เบราว์เซอร์เริ่มดาวน์โหลดไม่ได้"
+  },
+  "askErrWrite": {
+    "message": "Imgkeep เขียนไฟล์ลงโฟลเดอร์ของคุณไม่ได้"
+  },
+  "askErrExpired": {
+    "message": "การบันทึกนี้หมดอายุแล้ว คลิกขวาที่รูปแล้วลองใหม่อีกครั้ง"
+  },
+  "askErrUnknown": {
+    "message": "มีบางอย่างผิดพลาดขณะบันทึกรูปนี้"
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ เฟรม GIF จำกัดไว้ที่ $MAX$ เฟรม",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ พิกเซล × $COUNT$ เฟรม มากเกินกว่าที่ GIF จะรองรับตรงนี้",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "มีไฟล์ชื่อนี้มากเกินไป"
+  },
+  "askSaving": {
+    "message": "กำลังบันทึก…"
+  },
+  "askSaved": {
+    "message": "บันทึกแล้ว"
+  },
+  "askSavedAs": {
+    "message": "บันทึกเป็น $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "บันทึกไปที่ $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "ไม่มีอะไรให้บันทึก"
+  },
+  "askClose": {
+    "message": "ปิด"
+  },
+  "askRetry": {
+    "message": "ลองใหม่"
+  },
+  "askOpenImage": {
+    "message": "เปิดรูป"
+  },
+  "askCancel": {
+    "message": "ยกเลิก"
+  },
+  "askHostTitle": {
+    "message": "อนุญาตรูปจากเว็บไซต์นี้ไหม"
+  },
+  "askHostBody": {
+    "message": "$HOST$ ไม่ให้เว็บไซต์อื่นอ่านรูปของตัวเอง Imgkeep จึงยังแปลงรูปนี้ไม่ได้",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "การเข้าถึงใช้กับเว็บไซต์นี้เท่านั้น เพื่อดึงรูปที่คุณเลือก คุณเอาออกได้ทุกเมื่อในตัวเลือก"
+  },
+  "askAllowAndSave": {
+    "message": "อนุญาตและบันทึก"
+  },
+  "askNotAllowed": {
+    "message": "ไม่ได้อนุญาตการเข้าถึง จึงไม่มีการบันทึกใด ๆ"
+  },
+  "askSaveOriginal": {
+    "message": "บันทึกเป็นรูปแบบต้นฉบับแทน"
+  },
+  "askReconnectTitle": {
+    "message": "เชื่อมต่อ “$FOLDER$” อีกครั้ง",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "เลือกโฟลเดอร์"
+  },
+  "askReconnectBody": {
+    "message": "เบราว์เซอร์ต้องให้คุณอนุญาตอีกครั้ง เพื่อบันทึกลงโฟลเดอร์นี้ต่อไป"
+  },
+  "askChooseBody": {
+    "message": "เลือกโฟลเดอร์ที่ให้ Imgkeep บันทึกรูปภาพของคุณ"
+  },
+  "askEveryVisit": {
+    "message": "เมื่อเบราว์เซอร์ถาม ให้เลือก $OPTION$ เพื่อไม่ให้ถามอีก",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "“อนุญาตทุกครั้งที่เข้าชม”"
+  },
+  "askReconnectButton": {
+    "message": "เชื่อมต่ออีกครั้งแล้วบันทึก"
+  },
+  "askChooseButton": {
+    "message": "เลือกโฟลเดอร์แล้วบันทึก"
+  },
+  "askErrorTitle": {
+    "message": "บันทึกรูปภาพนี้ไม่ได้"
+  },
+  "askFolderDenied": {
+    "message": "เบราว์เซอร์ไม่อนุญาตให้เข้าถึงโฟลเดอร์ จึงไม่ได้บันทึกอะไรเลย"
+  },
+  "askNoFolder": {
+    "message": "ยังไม่ได้เลือกโฟลเดอร์ จึงไม่ได้บันทึกอะไรเลย"
+  },
+  "optPageTitle": {
+    "message": "ตัวเลือกของ Imgkeep"
+  },
+  "optSaved": {
+    "message": "บันทึกแล้ว"
+  },
+  "optWhereTitle": {
+    "message": "ตำแหน่งที่บันทึก"
+  },
+  "optSaveMode": {
+    "message": "โหมดการบันทึก"
+  },
+  "optModeDownloads": {
+    "message": "โฟลเดอร์ดาวน์โหลด"
+  },
+  "optModeDownloadsHint": {
+    "message": "บันทึกลงโฟลเดอร์ดาวน์โหลดของเบราว์เซอร์ โดยไม่ถามอะไรเลย"
+  },
+  "optModeFolder": {
+    "message": "โฟลเดอร์ที่คุณเลือก"
+  },
+  "optModeFolderHint": {
+    "message": "เขียนลงโฟลเดอร์ของคุณโดยตรง เบราว์เซอร์อาจขอให้เชื่อมต่ออีกครั้งหลังเปิดใหม่"
+  },
+  "optModeAsk": {
+    "message": "ถามทุกครั้ง"
+  },
+  "optModeAskHint": {
+    "message": "แสดงกล่องบันทึกเป็นของเบราว์เซอร์สำหรับรูปภาพแต่ละรูป"
+  },
+  "optChooseFolder": {
+    "message": "เลือกโฟลเดอร์…"
+  },
+  "optChangeFolder": {
+    "message": "เปลี่ยนโฟลเดอร์…"
+  },
+  "optNoFolder": {
+    "message": "ยังไม่ได้เลือกโฟลเดอร์"
+  },
+  "optFolderConnected": {
+    "message": "“$FOLDER$” — เชื่อมต่อแล้ว",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "“$FOLDER$” — จะขอให้เชื่อมต่ออีกครั้ง",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "โฟลเดอร์ย่อย"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "เช่น Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "ไม่บังคับ ใช้ <code>/</code> เพื่อสร้างโฟลเดอร์ซ้อนกัน ใช้โทเค็นชุดเดียวกับชื่อไฟล์"
+  },
+  "optNamesTitle": {
+    "message": "ชื่อไฟล์"
+  },
+  "optTemplate": {
+    "message": "รูปแบบชื่อ"
+  },
+  "optTokensHint": {
+    "message": "โทเค็น: <code>{name}</code> ชื่อเดิม, <code>{host}</code> เว็บไซต์, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> และ <code>{h}</code> ขนาดเป็นพิกเซล ไฟล์ที่มีอยู่แล้วจะไม่ถูกเขียนทับ"
+  },
+  "optPreviewLabel": {
+    "message": "ตัวอย่างสำหรับ summer-banner จาก shop.example.com ขนาด 1600×900 เป็น PNG:"
+  },
+  "optQualityTitle": {
+    "message": "คุณภาพและขนาด"
+  },
+  "optJpgQuality": {
+    "message": "คุณภาพ JPG"
+  },
+  "optWebpQuality": {
+    "message": "คุณภาพ WebP"
+  },
+  "optJpgBackground": {
+    "message": "สีพื้นหลังของ JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG ไม่รองรับความโปร่งใส พื้นที่โปร่งใสจึงกลายเป็นสีนี้"
+  },
+  "optMaxWidth": {
+    "message": "ความกว้างสูงสุด"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "ขนาดเดิม"
+  },
+  "optMaxWidthHint": {
+    "message": "ไม่บังคับ หน่วยเป็นพิกเซล รูปที่กว้างกว่านี้จะถูกย่อให้พอดีโดยคงสัดส่วนเดิม ส่วนรูปที่เล็กกว่าจะไม่ถูกขยาย ตัวเลือกรูปแบบเดิมจะบันทึกไฟล์ตามเดิมเสมอ"
+  },
+  "optSitesTitle": {
+    "message": "เว็บไซต์ที่คุณอนุญาตไว้"
+  },
+  "optSitesEmpty": {
+    "message": "ยังไม่มี Imgkeep จะถามก็ต่อเมื่อเว็บไซต์บล็อกรูปที่คุณต้องการแปลง"
+  },
+  "optFindTitle": {
+    "message": "รูปภาพที่เว็บไซต์บังไว้"
+  },
+  "optFindLabel": {
+    "message": "ค้นหารูปภาพใต้เลเยอร์ที่บังอยู่"
+  },
+  "optFindHint": {
+    "message": "บนเว็บไซต์อย่าง Instagram และ Pinterest ให้คลิกขวาแล้วเลือก Imgkeep: ค้นหารูปภาพตรงนี้ Imgkeep จะดูหน้าเว็บเฉพาะตอนที่คุณสั่งให้ค้นหารูปในหน้านั้น เฉพาะหน้านั้น เฉพาะตอนนั้น และไม่แก้ไขหน้าเว็บเลย"
+  },
+  "optFindOn": {
+    "message": "เปิดอยู่"
+  },
+  "optFindOff": {
+    "message": "ปิดอยู่"
+  },
+  "optCountsTitle": {
+    "message": "ยอดการใช้งานแบบไม่ระบุตัวตน"
+  },
+  "optCountsLabel": {
+    "message": "ส่งสรุปรายวันแบบไม่ระบุตัวตน"
+  },
+  "optCountsHint": {
+    "message": "วันละครั้ง Imgkeep จะส่งสรุปอย่างเช่น “บันทึกเป็น JPG 12 ครั้ง ล้มเหลว 1 ครั้ง” ไปยัง PostHog บริการวิเคราะห์ข้อมูลโอเพนซอร์สที่ตั้งอยู่ในสหภาพยุโรป เพื่อให้เรารู้ว่าควรปรับปรุงฟีเจอร์ใดและการบันทึกแบบใดล้มเหลว ไม่มีรูปภาพ ที่อยู่หน้าเว็บ ชื่อไฟล์ หรือสิ่งที่ระบุตัวคุณได้"
+  },
+  "optCountsShow": {
+    "message": "ดูว่าส่งอะไรออกไปบ้าง"
+  },
+  "optCountsToday": {
+    "message": "นับได้วันนี้ (ส่งหลังจบวันนี้):"
+  },
+  "optCountsLast": {
+    "message": "สรุปที่ส่งล่าสุด:"
+  },
+  "optCountsNone": {
+    "message": "ยังไม่มี"
+  },
+  "optCountsOff": {
+    "message": "ปิดอยู่ ไม่มีการนับหรือส่งข้อมูลใด ๆ"
+  },
+  "optRemove": {
+    "message": "นำออก"
+  },
+  "optRemoveAccess": {
+    "message": "นำสิทธิ์เข้าถึง $SITE$ ออก",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — เร็ว ๆ นี้"
+  },
+  "optProBody": {
+    "message": "ค่าที่ตั้งไว้ล่วงหน้าสำหรับขนาดและรูปแบบที่คุณใช้บ่อย เป้าหมายขนาดไฟล์อย่าง “ไม่เกิน 200 KB” กฎที่ส่งรูปของแต่ละเว็บไซต์ไปยังโฟลเดอร์ที่ถูกต้อง และบันทึกว่ารูปแต่ละรูปมาจากที่ใด"
+  },
+  "optProFree": {
+    "message": "ทุกอย่างที่คุณใช้อยู่ตอนนี้ยังคงฟรีต่อไป"
+  },
+  "optGetNotified": {
+    "message": "รับแจ้งเตือน"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep ทำอะไรได้และทำอะไรไม่ได้"
+  },
+  "optPermissions": {
+    "message": "สิทธิ์ที่ขอ:"
+  },
+  "optOptionalPermissions": {
+    "message": "เฉพาะเมื่อคุณเปิดค้นหารูปภาพ:"
+  },
+  "optPermissionsLabel": {
+    "message": "สิทธิ์"
+  },
+  "optTrust1": {
+    "message": "รูปภาพถูกแปลงบนเครื่องของคุณ และไม่ถูกอัปโหลดไปไหน สิ่งเดียวที่ Imgkeep ส่งออกไปคือสรุปรายวันแบบไม่ระบุตัวตนด้านบน ซึ่งคุณปิดได้"
+  },
+  "optTrust2": {
+    "message": "ไม่มีโฆษณาและไม่มีแท็บต้อนรับ หน้าต่างเล็ก ๆ จะเปิดเฉพาะตอนที่คุณเรียก หรือเมื่อการบันทึกต้องการคำยืนยันจากคุณ Imgkeep จะขอคะแนนรีวิวเพียงครั้งเดียว หลังจากที่คุณใช้งานมาสักพัก"
+  },
+  "optTrust4": {
+    "message": "Imgkeep จะดูหน้าเว็บเฉพาะตอนที่คุณสั่งให้ค้นหารูปในหน้านั้น เฉพาะหน้านั้น เฉพาะตอนนั้น และไม่แก้ไขหน้าเว็บเลย"
+  },
+  "optTrust3": {
+    "message": "ทุกฟีเจอร์ที่ฟรีอยู่จะฟรีต่อไป"
+  },
+  "optVersion": {
+    "message": "เวอร์ชัน"
+  },
+  "optWhatsNew": {
+    "message": "มีอะไรใหม่"
+  },
+  "copyWorking": {
+    "message": "กำลังคัดลอกรูปภาพ…"
+  },
+  "copyDone": {
+    "message": "คัดลอกเป็น PNG แล้ว วางได้ทุกที่"
+  },
+  "copyFailed": {
+    "message": "คัดลอกรูปภาพไม่สำเร็จ"
+  },
+  "copyFailedNote": {
+    "message": "คลิปบอร์ดของคุณไม่มีการเปลี่ยนแปลง ลองอีกครั้ง หรือบันทึกรูปเป็นไฟล์ PNG แทน"
+  },
+  "copySavePng": {
+    "message": "บันทึกเป็น PNG แทน"
+  },
+  "copyAllowAndCopy": {
+    "message": "อนุญาตแล้วคัดลอก"
+  },
+  "editTitle": {
+    "message": "ตัวเลือกเพิ่มเติม"
+  },
+  "editLoading": {
+    "message": "กำลังโหลดภาพ…"
+  },
+  "editUpdating": {
+    "message": "กำลังอัปเดตตัวอย่าง…"
+  },
+  "editPreviewAlt": {
+    "message": "ตัวอย่างผลลัพธ์"
+  },
+  "editOriginal": {
+    "message": "ต้นฉบับ"
+  },
+  "editResult": {
+    "message": "ผลลัพธ์"
+  },
+  "editFormat": {
+    "message": "รูปแบบไฟล์"
+  },
+  "editPngHint": {
+    "message": "PNG เก็บทุกพิกเซลไว้ครบ ถ้าต้องการไฟล์เล็กลง ให้ลดความกว้างสูงสุด หรือเลือก JPG หรือ WebP"
+  },
+  "editIcoHint": {
+    "message": "ไฟล์ไอคอนที่มีภาพขนาด 16, 32 และ 48 px และเพิ่ม 256 px เมื่อภาพใหญ่พอ ภาพที่ไม่เป็นสี่เหลี่ยมจัตุรัสจะมีขอบโปร่งใส"
+  },
+  "editBmpHint": {
+    "message": "บิตแมปธรรมดาที่ทุกแอปเปิดได้ ไฟล์มีขนาดใหญ่ และพื้นที่โปร่งใสจะกลายเป็นสีพื้นหลัง"
+  },
+  "editAvifHint": {
+    "message": "มักมีขนาดราวครึ่งหนึ่งของ JPG ที่ดูเหมือนกัน เบราว์เซอร์สมัยใหม่และแอปรุ่นปัจจุบันส่วนใหญ่เปิดได้ แต่แอปรุ่นเก่าบางตัวเปิดไม่ได้"
+  },
+  "editMaxWidthHint": {
+    "message": "หน่วยเป็นพิกเซล คงสัดส่วนเดิม และไม่ขยายภาพให้ใหญ่ขึ้น"
+  },
+  "editBackground": {
+    "message": "พื้นหลัง"
+  },
+  "editQuality": {
+    "message": "คุณภาพ"
+  },
+  "editFileName": {
+    "message": "ชื่อไฟล์"
+  },
+  "editSave": {
+    "message": "บันทึก"
+  },
+  "editAllow": {
+    "message": "อนุญาตเว็บไซต์นี้"
+  },
+  "editNeedsOk": {
+    "message": "การบันทึกนี้ต้องให้คุณยืนยัน ดูที่หน้าต่าง Imgkeep ที่เพิ่งเปิดขึ้น"
+  },
+  "reviewTitle": {
+    "message": "ชอบ Imgkeep ไหม"
+  },
+  "reviewBody": {
+    "message": "การให้คะแนนในสโตร์ช่วยให้คนอื่นค้นเจอส่วนขยายนี้ ใช้เวลาไม่กี่วินาที และเราจะถามเพียงครั้งเดียว"
+  },
+  "reviewRate": {
+    "message": "ให้คะแนน Imgkeep"
+  },
+  "reviewNo": {
+    "message": "ไม่เป็นไร ขอบคุณ"
+  },
+  "reviewThanks": {
+    "message": "ขอบคุณ!"
+  },
+  "reviewOk": {
+    "message": "รับทราบ เราจะไม่ถามอีก"
+  },
+  "findWindowTitle": {
+    "message": "ค้นหาภาพ"
+  },
+  "findEnableTitle": {
+    "message": "ค้นหาภาพที่เว็บไซต์ปิดบังไว้"
+  },
+  "findEnableBody": {
+    "message": "บางเว็บไซต์ เช่น Instagram และ Pinterest ปิดทับภาพไว้ด้วยอีกชั้นหนึ่ง การคลิกขวาจึงเข้าไม่ถึงภาพนั้น Imgkeep ช่วยค้นหาภาพที่อยู่ใต้ชั้นนั้นให้คุณได้"
+  },
+  "findPromise": {
+    "message": "Imgkeep จะดูหน้าเว็บก็ต่อเมื่อคุณสั่งให้ค้นหาภาพในหน้านั้น เฉพาะหน้านั้น เฉพาะตอนนั้น และจะไม่แก้ไขหน้าเว็บเลย"
+  },
+  "findTurnOn": {
+    "message": "เปิดใช้งาน"
+  },
+  "findDenied": {
+    "message": "ยังไม่ได้เปิดใช้งาน คุณเปิดได้ทุกเมื่อในหน้าตัวเลือก"
+  },
+  "findOnTitle": {
+    "message": "เปิดใช้งานแล้ว"
+  },
+  "findOnBody": {
+    "message": "คลิกขวาที่ภาพอีกครั้ง แล้วเลือก Imgkeep: ค้นหาภาพตรงนี้"
+  },
+  "findPickTitle": {
+    "message": "ภาพไหน"
+  },
+  "findPickBody": {
+    "message": "Imgkeep ไม่แน่ใจว่าคุณหมายถึงภาพไหน เลือกสักภาพ:"
+  },
+  "findPickOne": {
+    "message": "ภาพที่ $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "ไม่พบภาพตรงนี้"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep ไม่พบภาพในส่วนนี้ของหน้าเว็บ ลองคลิกขวาลงบนรูปโดยตรง หรือเปิดรูปในหน้าของตัวเองแล้วลองใหม่"
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep ดูหน้าเว็บนี้ไม่ได้"
+  },
+  "findErrorBody": {
+    "message": "โหลดหน้าเว็บใหม่ แล้วคลิกขวาที่ภาพและเลือก ค้นหาภาพตรงนี้ อีกครั้ง"
+  },
+  "paletteTitle": {
+    "message": "ชุดสี"
+  },
+  "paletteLoading": {
+    "message": "กำลังหาสี…"
+  },
+  "paletteCount": {
+    "message": "จำนวนสี"
+  },
+  "paletteSwatches": {
+    "message": "สีหลักของภาพ เรียงจากมากไปน้อย"
+  },
+  "paletteCopyOne": {
+    "message": "คัดลอก $VALUE$ ($SHARE$ ของภาพ)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "คัดลอก $VALUE$ แล้ว",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "คัดลอกทั้งหมดเป็น"
+  },
+  "paletteCodeCss": {
+    "message": "ตัวแปร CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "รายการ"
+  },
+  "paletteCopiedAll": {
+    "message": "คัดลอกสีทั้งหมดเป็น $KIND$ แล้ว",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "บันทึกเป็น"
+  },
+  "paletteSavePng": {
+    "message": "แผ่นสี PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "จานสี GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "แผ่นสี Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "โฟลเดอร์ของคุณใช้ไม่ได้ ไฟล์จึงไปอยู่ใน Downloads: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "ภาพนี้โปร่งใสทั้งหมด จึงไม่มีสีให้ดึงออกมา"
+  },
+  "paletteCopyFailed": {
+    "message": "คัดลอกไม่สำเร็จ คลิกในหน้าต่างนี้แล้วลองอีกครั้ง"
+  },
+  "paletteNote": {
+    "message": "คำนวณบนเครื่องของคุณ ภาพและสีของภาพไม่ถูกส่งออกไปไหน"
+  }
+}

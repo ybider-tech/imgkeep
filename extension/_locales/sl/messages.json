@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Shrani sliko kot PNG, JPG, WebP, GIF ali PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Z desnim klikom shranite sliko kot PNG, JPG, WebP, GIF ali PDF ali dobite barvno paleto. Na vaši napravi. Brez osebnih podatkov."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (nazadnje uporabljeno)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (ohrani animacijo)"
+  },
+  "menuOriginal": {
+    "message": "Izvirni format"
+  },
+  "menuCopyPng": {
+    "message": "Kopiraj kot PNG"
+  },
+  "menuPalette": {
+    "message": "Pridobi barvno paleto"
+  },
+  "menuMoreOptions": {
+    "message": "Več možnosti…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Najdi sliko tukaj…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Novo",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "Vam je Imgkeep všeč? Ocenite ga…"
+  },
+  "askErrBlocked": {
+    "message": "Spletno mesto te slike ni posredovalo, čeprav je dostop dovoljen. Strežnik morda ne deluje ali pa sliko ponuja samo znotraj svojih strani."
+  },
+  "askErrHttp": {
+    "message": "Spletno mesto je namesto slike vrnilo napako."
+  },
+  "askErrDecode": {
+    "message": "Brskalnik te datoteke ni mogel prebrati kot sliko."
+  },
+  "askErrUnsupported": {
+    "message": "Ta različica brskalnika ne zna ustvariti tega formata. Poskusite s PNG."
+  },
+  "askErrBlob": {
+    "message": "Ta slika obstaja samo znotraj strani (povezava blob:), zato je Imgkeep še ne more shraniti. Pomaga posnetek zaslona."
+  },
+  "askErrTooLarge": {
+    "message": "Ta slika je prevelika za pretvorbo v brskalniku."
+  },
+  "askErrTimeout": {
+    "message": "Pretvarjanje te slike je trajalo predolgo, zato je Imgkeep prekinil pretvorbo. Poskusite s PNG ali s krajšo oziroma manjšo animacijo."
+  },
+  "askErrDownload": {
+    "message": "Brskalnik ni mogel začeti prenosa."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep ni mogel zapisati datoteke v vašo mapo."
+  },
+  "askErrExpired": {
+    "message": "Ta shranitev je potekla. Z desnim klikom na sliko poskusite znova."
+  },
+  "askErrUnknown": {
+    "message": "Pri shranjevanju te slike je šlo nekaj narobe."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ sličic. GIF je omejen na $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ slikovnih pik × $COUNT$ sličic je več, kot zmore GIF.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Preveč datotek s tem imenom."
+  },
+  "askSaving": {
+    "message": "Shranjevanje…"
+  },
+  "askSaved": {
+    "message": "Shranjeno."
+  },
+  "askSavedAs": {
+    "message": "Shranjeno kot $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Shranjeno v $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "Nič za shraniti"
+  },
+  "askClose": {
+    "message": "Zapri"
+  },
+  "askRetry": {
+    "message": "Poskusi znova"
+  },
+  "askOpenImage": {
+    "message": "Odpri sliko"
+  },
+  "askCancel": {
+    "message": "Prekliči"
+  },
+  "askHostTitle": {
+    "message": "Dovolite slike s tega spletnega mesta?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ drugim spletnim mestom preprečuje branje svojih slik, zato Imgkeep te slike še ne more pretvoriti.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "Dostop velja samo za to eno spletno mesto, in sicer za prenos slik, ki jih izberete. Kadar koli ga lahko odstranite v Možnostih."
+  },
+  "askAllowAndSave": {
+    "message": "Dovoli in shrani"
+  },
+  "askNotAllowed": {
+    "message": "Dostop ni bil dovoljen. Nič ni bilo shranjeno."
+  },
+  "askSaveOriginal": {
+    "message": "Shrani v izvirnem formatu"
+  },
+  "askReconnectTitle": {
+    "message": "Znova poveži „$FOLDER$“",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Izberite mapo"
+  },
+  "askReconnectBody": {
+    "message": "Brskalnik potrebuje vaše dovoljenje, da lahko znova shranjuje v to mapo."
+  },
+  "askChooseBody": {
+    "message": "Izberite mapo, v katero naj Imgkeep shranjuje slike."
+  },
+  "askEveryVisit": {
+    "message": "Ko brskalnik vpraša, izberite $OPTION$, da ne bo spraševal znova.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "„Dovoli ob vsakem obisku“"
+  },
+  "askReconnectButton": {
+    "message": "Znova poveži in shrani"
+  },
+  "askChooseButton": {
+    "message": "Izberi mapo in shrani"
+  },
+  "askErrorTitle": {
+    "message": "Slike ni bilo mogoče shraniti"
+  },
+  "askFolderDenied": {
+    "message": "Brskalnik ni dovolil dostopa do mape. Nič ni bilo shranjeno."
+  },
+  "askNoFolder": {
+    "message": "Mapa ni izbrana. Nič ni bilo shranjeno."
+  },
+  "optPageTitle": {
+    "message": "Nastavitve Imgkeep"
+  },
+  "optSaved": {
+    "message": "Shranjeno"
+  },
+  "optWhereTitle": {
+    "message": "Kam shraniti"
+  },
+  "optSaveMode": {
+    "message": "Način shranjevanja"
+  },
+  "optModeDownloads": {
+    "message": "Mapa za prenose"
+  },
+  "optModeDownloadsHint": {
+    "message": "Shrani v mapo za prenose vašega brskalnika. Brez vprašanj."
+  },
+  "optModeFolder": {
+    "message": "Mapa po vaši izbiri"
+  },
+  "optModeFolderHint": {
+    "message": "Shranjuje neposredno v vašo mapo. Brskalnik bo morda po ponovnem zagonu zahteval ponovno povezavo."
+  },
+  "optModeAsk": {
+    "message": "Vprašaj vsakič"
+  },
+  "optModeAskHint": {
+    "message": "Za vsako sliko pokaže brskalnikovo okno Shrani kot."
+  },
+  "optChooseFolder": {
+    "message": "Izberi mapo…"
+  },
+  "optChangeFolder": {
+    "message": "Zamenjaj mapo…"
+  },
+  "optNoFolder": {
+    "message": "Mapa še ni izbrana."
+  },
+  "optFolderConnected": {
+    "message": "„$FOLDER$“ – povezano",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "„$FOLDER$“ – potrebna bo ponovna povezava",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Podmapa"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "npr. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Neobvezno. Za ugnezdene mape uporabite <code>/</code>. Iste oznake kot pri imenih datotek."
+  },
+  "optNamesTitle": {
+    "message": "Imena datotek"
+  },
+  "optTemplate": {
+    "message": "Predloga imena"
+  },
+  "optTokensHint": {
+    "message": "Oznake: <code>{name}</code> izvirno ime, <code>{host}</code> spletno mesto, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> in <code>{h}</code> velikost v slikovnih pikah. Obstoječe datoteke se nikoli ne prepišejo."
+  },
+  "optPreviewLabel": {
+    "message": "Predogled za summer-banner s spletnega mesta shop.example.com, 1600×900, kot PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Kakovost in velikost"
+  },
+  "optJpgQuality": {
+    "message": "Kakovost JPG"
+  },
+  "optWebpQuality": {
+    "message": "Kakovost WebP"
+  },
+  "optJpgBackground": {
+    "message": "Barva ozadja JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG ne pozna prosojnosti, zato prosojna območja dobijo to barvo."
+  },
+  "optMaxWidth": {
+    "message": "Največja širina"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Izvirna velikost"
+  },
+  "optMaxWidthHint": {
+    "message": "Neobvezno, v slikovnih pikah. Širše slike se pomanjšajo, da se prilegajo, razmerje stranic pa ostane enako; manjših nikoli ne poveča. Izvirni format se vedno shrani takšen, kot je."
+  },
+  "optSitesTitle": {
+    "message": "Spletna mesta, ki ste jih dovolili"
+  },
+  "optSitesEmpty": {
+    "message": "Zaenkrat nobenega. Imgkeep vpraša le, kadar spletno mesto blokira sliko, ki jo želite pretvoriti."
+  },
+  "optFindTitle": {
+    "message": "Slike, ki jih spletna mesta prekrivajo"
+  },
+  "optFindLabel": {
+    "message": "Poišči slike pod prekrivnimi sloji"
+  },
+  "optFindHint": {
+    "message": "Na spletnih mestih, kot sta Instagram in Pinterest, kliknite z desno tipko in izberite Imgkeep: Najdi sliko tukaj. Imgkeep pogleda stran samo takrat, ko ga prosite, naj na njej poišče sliko – samo tisto stran in samo takrat. Strani nikoli ne spremeni."
+  },
+  "optFindOn": {
+    "message": "Vklopljeno."
+  },
+  "optFindOff": {
+    "message": "Izklopljeno."
+  },
+  "optCountsTitle": {
+    "message": "Anonimno štetje uporabe"
+  },
+  "optCountsLabel": {
+    "message": "Pošiljaj anonimni dnevni povzetek"
+  },
+  "optCountsHint": {
+    "message": "Enkrat na dan Imgkeep pošlje povzetek, kot je »12 shranjevanj v JPG, 1 neuspešno«, storitvi PostHog, odprtokodni analitiki, ki gostuje v EU, da vemo, katere funkcije izboljšati in katera shranjevanja spodletijo. Nikoli slik, naslovov strani, imen datotek ali česar koli, kar bi vas identificiralo."
+  },
+  "optCountsShow": {
+    "message": "Poglejte, kaj točno se pošlje"
+  },
+  "optCountsToday": {
+    "message": "Prešteto danes (poslano ob koncu dneva):"
+  },
+  "optCountsLast": {
+    "message": "Nazadnje poslani povzetek:"
+  },
+  "optCountsNone": {
+    "message": "Zaenkrat nič."
+  },
+  "optCountsOff": {
+    "message": "Izklopljeno. Nič se ne šteje in nič ne pošilja."
+  },
+  "optRemove": {
+    "message": "Odstrani"
+  },
+  "optRemoveAccess": {
+    "message": "Odstrani dostop do $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — kmalu"
+  },
+  "optProBody": {
+    "message": "Prednastavitve za velikosti in formate, ki jih uporabljate najpogosteje, ciljne velikosti datotek, kot je »pod 200 KB«, pravila, ki slike vsakega spletnega mesta pošljejo v pravo mapo, in dnevnik, od kod je prišla vsaka slika."
+  },
+  "optProFree": {
+    "message": "Vse, kar uporabljate danes, ostane brezplačno."
+  },
+  "optGetNotified": {
+    "message": "Obvestite me"
+  },
+  "optTrustTitle": {
+    "message": "Kaj Imgkeep zmore in česa ne"
+  },
+  "optPermissions": {
+    "message": "Dovoljenja, ki jih zahteva:"
+  },
+  "optOptionalPermissions": {
+    "message": "Samo če vklopite iskanje slik:"
+  },
+  "optPermissionsLabel": {
+    "message": "Dovoljenja"
+  },
+  "optTrust1": {
+    "message": "Slike se pretvorijo na vašem računalniku in se nikoli ne naložijo v splet. Edino drugo, kar Imgkeep pošlje, je zgornji anonimni dnevni povzetek, ki ga lahko izklopite."
+  },
+  "optTrust2": {
+    "message": "Brez oglasov in brez pozdravnih zavihkov. Majhna okna se odprejo le, ko jih sami zahtevate ali ko shranjevanje potrebuje vašo potrditev. Imgkeep enkrat prosi za oceno, potem ko ga nekaj časa uporabljate."
+  },
+  "optTrust4": {
+    "message": "Imgkeep pogleda stran samo takrat, ko ga prosite, naj na njej poišče sliko – samo tisto stran in samo takrat. Strani nikoli ne spremeni."
+  },
+  "optTrust3": {
+    "message": "Vse brezplačne funkcije ostanejo brezplačne."
+  },
+  "optVersion": {
+    "message": "Različica"
+  },
+  "optWhatsNew": {
+    "message": "Kaj je novega"
+  },
+  "copyWorking": {
+    "message": "Kopiranje slike…"
+  },
+  "copyDone": {
+    "message": "Kopirano kot PNG. Prilepite jo kamor koli."
+  },
+  "copyFailed": {
+    "message": "Slike ni bilo mogoče kopirati"
+  },
+  "copyFailedNote": {
+    "message": "Odložišče ni bilo spremenjeno. Poskusite znova ali pa sliko raje shranite kot datoteko PNG."
+  },
+  "copySavePng": {
+    "message": "Raje shrani kot PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Dovoli in kopiraj"
+  },
+  "editTitle": {
+    "message": "Več možnosti"
+  },
+  "editLoading": {
+    "message": "Nalaganje slike…"
+  },
+  "editUpdating": {
+    "message": "Posodabljanje predogleda…"
+  },
+  "editPreviewAlt": {
+    "message": "Predogled rezultata"
+  },
+  "editOriginal": {
+    "message": "Izvirnik"
+  },
+  "editResult": {
+    "message": "Rezultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "PNG ohrani vsak piksel. Za manjšo datoteko zmanjšajte največjo širino ali izberite JPG oziroma WebP."
+  },
+  "editIcoHint": {
+    "message": "Datoteka z ikono, ki vsebuje sliko v velikostih 16, 32 in 48 px, pri dovolj veliki sliki pa še 256 px. Slike, ki niso kvadratne, dobijo prozorne robove."
+  },
+  "editBmpHint": {
+    "message": "Preprosta bitna slika, ki jo odpre vsak program. Datoteke so velike, prozorna območja pa dobijo barvo ozadja."
+  },
+  "editAvifHint": {
+    "message": "Pogosto za polovico manjša od JPG, ki izgleda enako. Odprejo jo sodobni brskalniki in večina novejših programov, nekateri starejši pa ne."
+  },
+  "editMaxWidthHint": {
+    "message": "V pikslih. Ohrani razmerje, slike nikoli ne poveča."
+  },
+  "editBackground": {
+    "message": "Ozadje"
+  },
+  "editQuality": {
+    "message": "Kakovost"
+  },
+  "editFileName": {
+    "message": "Ime datoteke"
+  },
+  "editSave": {
+    "message": "Shrani"
+  },
+  "editAllow": {
+    "message": "Dovoli to spletno mesto"
+  },
+  "editNeedsOk": {
+    "message": "Za to shranjevanje je potrebna vaša potrditev: poglejte okno Imgkeep, ki se je pravkar odprlo."
+  },
+  "reviewTitle": {
+    "message": "Vam je Imgkeep všeč?"
+  },
+  "reviewBody": {
+    "message": "Ocena v trgovini pomaga drugim, da ga najdejo. Vzame le nekaj sekund, vprašali pa vas bomo samo enkrat."
+  },
+  "reviewRate": {
+    "message": "Oceni Imgkeep"
+  },
+  "reviewNo": {
+    "message": "Ne, hvala"
+  },
+  "reviewThanks": {
+    "message": "Hvala!"
+  },
+  "reviewOk": {
+    "message": "Velja. Ne bomo več vprašali."
+  },
+  "findWindowTitle": {
+    "message": "Najdi sliko"
+  },
+  "findEnableTitle": {
+    "message": "Poiščite slike, ki jih strani prekrivajo"
+  },
+  "findEnableBody": {
+    "message": "Nekatere strani, na primer Instagram in Pinterest, slike prekrijejo z drugo plastjo, zato desni klik ne pride do njih. Imgkeep lahko najde sliko pod to plastjo."
+  },
+  "findPromise": {
+    "message": "Imgkeep pogleda stran samo takrat, ko ga prosite, naj na njej najde sliko – samo to stran in samo takrat. Strani nikoli ne spremeni."
+  },
+  "findTurnOn": {
+    "message": "Vklopi"
+  },
+  "findDenied": {
+    "message": "Ni vklopljeno. Vklopite ga lahko kadar koli v možnostih."
+  },
+  "findOnTitle": {
+    "message": "Vklopljeno"
+  },
+  "findOnBody": {
+    "message": "Znova z desno tipko kliknite sliko in izberite Imgkeep: Najdi sliko tukaj."
+  },
+  "findPickTitle": {
+    "message": "Katera slika?"
+  },
+  "findPickBody": {
+    "message": "Imgkeep ni mogel ugotoviti, katero sliko ste mislili. Izberite eno:"
+  },
+  "findPickOne": {
+    "message": "Slika $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Tu ni nobene slike"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep na tem delu strani ni našel slike. Kliknite z desno tipko natanko na fotografijo ali jo odprite na svoji strani in poskusite znova."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep te strani ni mogel pogledati"
+  },
+  "findErrorBody": {
+    "message": "Znova naložite stran, nato z desno tipko kliknite sliko in spet izberite Najdi sliko tukaj."
+  },
+  "paletteTitle": {
+    "message": "Barvna paleta"
+  },
+  "paletteLoading": {
+    "message": "Iskanje barv…"
+  },
+  "paletteCount": {
+    "message": "Barve"
+  },
+  "paletteSwatches": {
+    "message": "Glavne barve slike, od največjega deleža naprej"
+  },
+  "paletteCopyOne": {
+    "message": "Kopiraj $VALUE$ ($SHARE$ slike)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "Kopirano: $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Kopiraj vse kot"
+  },
+  "paletteCodeCss": {
+    "message": "Spremenljivke CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Seznam"
+  },
+  "paletteCopiedAll": {
+    "message": "Vse barve kopirane kot $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Shrani kot"
+  },
+  "paletteSavePng": {
+    "message": "Vzorci PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paleta GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Vzorci Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "Vaša mapa ni bila na voljo, zato je datoteka shranjena v Prenosi: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Ta slika je povsem prosojna, zato iz nje ni mogoče vzeti barv."
+  },
+  "paletteCopyFailed": {
+    "message": "Kopiranje ni uspelo. Kliknite v to okno in poskusite znova."
+  },
+  "paletteNote": {
+    "message": "Izračunano na vašem računalniku. Slika in njene barve ga nikoli ne zapustijo."
+  }
+}

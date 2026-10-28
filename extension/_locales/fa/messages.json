@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "ذخیرهٔ تصویر به‌صورت PNG، JPG، WebP، GIF یا PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "با راست‌کلیک، هر تصویر را با فرمت PNG، JPG، WebP، GIF یا PDF ذخیره کنید یا پالت رنگش را بگیرید. روی دستگاه خودتان. بدون داده شخصی."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (آخرین استفاده)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (با حفظ انیمیشن)"
+  },
+  "menuOriginal": {
+    "message": "فرمت اصلی"
+  },
+  "menuCopyPng": {
+    "message": "کپی به‌صورت PNG"
+  },
+  "menuPalette": {
+    "message": "گرفتن پالت رنگ"
+  },
+  "menuMoreOptions": {
+    "message": "گزینه‌های بیشتر…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: پیدا کردن تصویر اینجا…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ جدید",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "از Imgkeep راضی هستید؟ امتیاز بدهید…"
+  },
+  "askErrBlocked": {
+    "message": "سایت این تصویر را تحویل نداد، با اینکه دسترسی اجازه داده شده بود. ممکن است سرور از کار افتاده باشد یا تصویر را فقط داخل صفحه‌های خودش نشان دهد."
+  },
+  "askErrHttp": {
+    "message": "سایت به‌جای تصویر، خطا برگرداند."
+  },
+  "askErrDecode": {
+    "message": "مرورگر نتوانست این فایل را به‌عنوان تصویر بخواند."
+  },
+  "askErrUnsupported": {
+    "message": "این نسخهٔ مرورگر نمی‌تواند این فرمت را بسازد. PNG را امتحان کنید."
+  },
+  "askErrBlob": {
+    "message": "این تصویر فقط داخل صفحه وجود دارد (پیوند blob:)، برای همین Imgkeep فعلاً نمی‌تواند ذخیره‌اش کند. اسکرین‌شات جواب می‌دهد."
+  },
+  "askErrTooLarge": {
+    "message": "این تصویر بزرگ‌تر از آن است که در مرورگر تبدیل شود."
+  },
+  "askErrTimeout": {
+    "message": "تبدیل این تصویر خیلی طول کشید و Imgkeep متوقف شد. PNG یا انیمیشنی کوتاه‌تر یا کوچک‌تر را امتحان کنید."
+  },
+  "askErrDownload": {
+    "message": "مرورگر نتوانست دانلود را شروع کند."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep نتوانست فایل را در پوشهٔ شما بنویسد."
+  },
+  "askErrExpired": {
+    "message": "این ذخیره منقضی شده است. روی تصویر راست‌کلیک کنید و دوباره امتحان کنید."
+  },
+  "askErrUnknown": {
+    "message": "هنگام ذخیرهٔ این تصویر مشکلی پیش آمد."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ فریم. GIF حداکثر $MAX$ فریم می‌پذیرد.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ پیکسل × $COUNT$ فریم بیشتر از چیزی است که یک GIF اینجا جا می‌دهد.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "فایل‌های زیادی با این نام وجود دارد."
+  },
+  "askSaving": {
+    "message": "در حال ذخیره…"
+  },
+  "askSaved": {
+    "message": "ذخیره شد."
+  },
+  "askSavedAs": {
+    "message": "با نام $PATH$ ذخیره شد",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "در $PATH$ ذخیره شد",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "چیزی برای ذخیره نیست"
+  },
+  "askClose": {
+    "message": "بستن"
+  },
+  "askRetry": {
+    "message": "تلاش دوباره"
+  },
+  "askOpenImage": {
+    "message": "باز کردن تصویر"
+  },
+  "askCancel": {
+    "message": "انصراف"
+  },
+  "askHostTitle": {
+    "message": "تصویرهای این سایت مجاز باشند؟"
+  },
+  "askHostBody": {
+    "message": "$HOST$ اجازه نمی‌دهد سایت‌های دیگر تصویرهایش را بخوانند، برای همین Imgkeep فعلاً نمی‌تواند این یکی را تبدیل کند.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "دسترسی فقط برای همین یک سایت است، آن هم برای گرفتن تصویرهایی که خودتان انتخاب می‌کنید. هر وقت بخواهید می‌توانید آن را در «گزینه‌ها» حذف کنید."
+  },
+  "askAllowAndSave": {
+    "message": "اجازه دادن و ذخیره"
+  },
+  "askNotAllowed": {
+    "message": "دسترسی داده نشد. چیزی ذخیره نشد."
+  },
+  "askSaveOriginal": {
+    "message": "ذخیره با قالب اصلی"
+  },
+  "askReconnectTitle": {
+    "message": "اتصال دوباره به «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "انتخاب پوشه"
+  },
+  "askReconnectBody": {
+    "message": "مرورگر برای ذخیرهٔ دوباره در این پوشه به اجازهٔ شما نیاز دارد."
+  },
+  "askChooseBody": {
+    "message": "پوشه‌ای را انتخاب کنید که Imgkeep تصویرها را در آن ذخیره کند."
+  },
+  "askEveryVisit": {
+    "message": "وقتی مرورگر پرسید، $OPTION$ را انتخاب کنید تا دیگر نپرسد.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«اجازه در هر بازدید»"
+  },
+  "askReconnectButton": {
+    "message": "اتصال دوباره و ذخیره"
+  },
+  "askChooseButton": {
+    "message": "انتخاب پوشه و ذخیره"
+  },
+  "askErrorTitle": {
+    "message": "این تصویر ذخیره نشد"
+  },
+  "askFolderDenied": {
+    "message": "مرورگر اجازهٔ دسترسی به پوشه را نداد. چیزی ذخیره نشد."
+  },
+  "askNoFolder": {
+    "message": "هیچ پوشه‌ای انتخاب نشد. چیزی ذخیره نشد."
+  },
+  "optPageTitle": {
+    "message": "تنظیمات Imgkeep"
+  },
+  "optSaved": {
+    "message": "ذخیره شد"
+  },
+  "optWhereTitle": {
+    "message": "محل ذخیره"
+  },
+  "optSaveMode": {
+    "message": "حالت ذخیره"
+  },
+  "optModeDownloads": {
+    "message": "پوشهٔ بارگیری‌ها"
+  },
+  "optModeDownloadsHint": {
+    "message": "در پوشهٔ بارگیری مرورگر ذخیره می‌شود، بدون هیچ پرسشی."
+  },
+  "optModeFolder": {
+    "message": "پوشه‌ای که خودتان انتخاب می‌کنید"
+  },
+  "optModeFolderHint": {
+    "message": "مستقیم در پوشهٔ شما می‌نویسد. ممکن است مرورگر پس از راه‌اندازی دوباره، اتصال مجدد بخواهد."
+  },
+  "optModeAsk": {
+    "message": "هر بار بپرس"
+  },
+  "optModeAskHint": {
+    "message": "برای هر تصویر پنجرهٔ «ذخیره به‌نام» مرورگر را نشان می‌دهد."
+  },
+  "optChooseFolder": {
+    "message": "انتخاب پوشه…"
+  },
+  "optChangeFolder": {
+    "message": "تغییر پوشه…"
+  },
+  "optNoFolder": {
+    "message": "هنوز پوشه‌ای انتخاب نشده است."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — متصل",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — اتصال دوباره لازم می‌شود",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "زیرپوشه"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "مثلاً Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "اختیاری. برای پوشه‌های تودرتو از <code>/</code> استفاده کنید. همان نشانه‌های نام فایل اینجا هم کار می‌کنند."
+  },
+  "optNamesTitle": {
+    "message": "نام فایل‌ها"
+  },
+  "optTemplate": {
+    "message": "الگوی نام"
+  },
+  "optTokensHint": {
+    "message": "نشانه‌ها: <code>{name}</code> نام اصلی، <code>{host}</code> سایت، <code>{date}</code>، <code>{time}</code>، <code>{w}</code> و <code>{h}</code> اندازه به پیکسل. فایل‌های موجود هرگز بازنویسی نمی‌شوند."
+  },
+  "optPreviewLabel": {
+    "message": "پیش‌نمایش برای summer-banner از shop.example.com، ۱۶۰۰×۹۰۰، به‌صورت PNG:"
+  },
+  "optQualityTitle": {
+    "message": "کیفیت و اندازه"
+  },
+  "optJpgQuality": {
+    "message": "کیفیت JPG"
+  },
+  "optWebpQuality": {
+    "message": "کیفیت WebP"
+  },
+  "optJpgBackground": {
+    "message": "رنگ پس‌زمینهٔ JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "JPG شفافیت ندارد، پس بخش‌های شفاف این رنگ را می‌گیرند."
+  },
+  "optMaxWidth": {
+    "message": "بیشینهٔ عرض"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "اندازهٔ اصلی"
+  },
+  "optMaxWidthHint": {
+    "message": "اختیاری، به پیکسل. تصویرهای پهن‌تر تا همین اندازه کوچک می‌شوند و نسبت ابعادشان حفظ می‌ماند؛ تصویرهای کوچک‌تر هرگز بزرگ نمی‌شوند. قالب اصلی همیشه همان‌طور که هست ذخیره می‌شود."
+  },
+  "optSitesTitle": {
+    "message": "سایت‌هایی که اجازه داده‌اید"
+  },
+  "optSitesEmpty": {
+    "message": "هنوز هیچ‌کدام. Imgkeep فقط وقتی می‌پرسد که سایتی جلوی تبدیل تصویری را که می‌خواهید بگیرد."
+  },
+  "optFindTitle": {
+    "message": "تصویرهایی که سایت‌ها می‌پوشانند"
+  },
+  "optFindLabel": {
+    "message": "پیدا کردن تصویرهای زیر لایه‌های پوششی"
+  },
+  "optFindHint": {
+    "message": "در سایت‌هایی مثل Instagram و Pinterest، راست‌کلیک کنید و «Imgkeep: پیدا کردن تصویر در اینجا» را انتخاب کنید. Imgkeep فقط وقتی به صفحه‌ای نگاه می‌کند که از آن بخواهید تصویری را آنجا پیدا کند؛ فقط همان صفحه، فقط همان لحظه. هرگز صفحه‌ای را تغییر نمی‌دهد."
+  },
+  "optFindOn": {
+    "message": "روشن شد."
+  },
+  "optFindOff": {
+    "message": "خاموش شد."
+  },
+  "optCountsTitle": {
+    "message": "شمارش ناشناس استفاده"
+  },
+  "optCountsLabel": {
+    "message": "ارسال خلاصهٔ روزانهٔ ناشناس"
+  },
+  "optCountsHint": {
+    "message": "روزی یک بار، Imgkeep خلاصه‌ای مثل «۱۲ ذخیره با JPG، ۱ ناموفق» به PostHog می‌فرستد؛ سرویس تحلیل متن‌باز که در اتحادیهٔ اروپا میزبانی می‌شود. این‌طور می‌دانیم کدام امکانات را بهتر کنیم و کدام ذخیره‌ها شکست می‌خورند. هرگز تصویر، نشانی صفحه، نام فایل یا هر چیزی که شما را شناسایی کند فرستاده نمی‌شود."
+  },
+  "optCountsShow": {
+    "message": "ببینید دقیقاً چه چیزی فرستاده می‌شود"
+  },
+  "optCountsToday": {
+    "message": "شمارش امروز (بعد از امروز فرستاده می‌شود):"
+  },
+  "optCountsLast": {
+    "message": "آخرین خلاصهٔ فرستاده‌شده:"
+  },
+  "optCountsNone": {
+    "message": "هنوز چیزی نیست."
+  },
+  "optCountsOff": {
+    "message": "خاموش. چیزی شمرده یا فرستاده نمی‌شود."
+  },
+  "optRemove": {
+    "message": "حذف"
+  },
+  "optRemoveAccess": {
+    "message": "حذف دسترسی به $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — به‌زودی"
+  },
+  "optProBody": {
+    "message": "پیش‌تنظیم برای اندازه‌ها و قالب‌هایی که بیشتر استفاده می‌کنید، هدف حجم فایل مثل «کمتر از ۲۰۰ کیلوبایت»، قاعده‌هایی که تصویرهای هر سایت را به پوشهٔ درست می‌فرستند، و سیاهه‌ای از اینکه هر تصویر از کجا آمده است."
+  },
+  "optProFree": {
+    "message": "هر چه امروز استفاده می‌کنید رایگان می‌ماند."
+  },
+  "optGetNotified": {
+    "message": "خبرم کنید"
+  },
+  "optTrustTitle": {
+    "message": "Imgkeep چه کاری می‌کند و چه کاری نمی‌کند"
+  },
+  "optPermissions": {
+    "message": "دسترسی‌هایی که می‌خواهد:"
+  },
+  "optOptionalPermissions": {
+    "message": "فقط اگر «پیدا کردن تصویر» را روشن کنید:"
+  },
+  "optPermissionsLabel": {
+    "message": "دسترسی‌ها"
+  },
+  "optTrust1": {
+    "message": "تصویرها روی رایانهٔ خودتان تبدیل می‌شوند و هرگز جایی بارگذاری نمی‌شوند. تنها چیز دیگری که Imgkeep می‌فرستد همان خلاصهٔ روزانهٔ ناشناس بالاست که می‌توانید خاموشش کنید."
+  },
+  "optTrust2": {
+    "message": "بدون تبلیغ و بدون تب خوشامد. پنجره‌های کوچک فقط وقتی باز می‌شوند که خودتان بخواهید یا ذخیره‌ای به تأیید شما نیاز داشته باشد. Imgkeep یک بار، بعد از مدتی که از آن استفاده کردید، درخواست امتیاز می‌کند."
+  },
+  "optTrust4": {
+    "message": "Imgkeep فقط وقتی به صفحه‌ای نگاه می‌کند که از آن بخواهید تصویری را آنجا پیدا کند؛ فقط همان صفحه، فقط همان لحظه. هرگز صفحه‌ای را تغییر نمی‌دهد."
+  },
+  "optTrust3": {
+    "message": "هر امکان رایگانی رایگان می‌ماند."
+  },
+  "optVersion": {
+    "message": "نسخه"
+  },
+  "optWhatsNew": {
+    "message": "تازه‌ها"
+  },
+  "copyWorking": {
+    "message": "در حال کپی کردن تصویر…"
+  },
+  "copyDone": {
+    "message": "به صورت PNG کپی شد. هر جا بخواهید بچسبانید."
+  },
+  "copyFailed": {
+    "message": "تصویر کپی نشد"
+  },
+  "copyFailedNote": {
+    "message": "کلیپ‌بورد شما تغییری نکرد. دوباره امتحان کنید یا به جایش تصویر را به صورت فایل PNG ذخیره کنید."
+  },
+  "copySavePng": {
+    "message": "ذخیره به صورت PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "اجازه دادن و کپی"
+  },
+  "editTitle": {
+    "message": "گزینه‌های بیشتر"
+  },
+  "editLoading": {
+    "message": "در حال بارگذاری تصویر…"
+  },
+  "editUpdating": {
+    "message": "در حال به‌روزرسانی پیش‌نمایش…"
+  },
+  "editPreviewAlt": {
+    "message": "پیش‌نمایش نتیجه"
+  },
+  "editOriginal": {
+    "message": "اصلی"
+  },
+  "editResult": {
+    "message": "نتیجه"
+  },
+  "editFormat": {
+    "message": "فرمت"
+  },
+  "editPngHint": {
+    "message": "PNG همهٔ پیکسل‌ها را نگه می‌دارد. برای فایل کوچک‌تر، بیشینهٔ عرض را کم کنید یا JPG یا WebP را انتخاب کنید."
+  },
+  "editIcoHint": {
+    "message": "یک فایل آیکون با تصویر در اندازه‌های ۱۶، ۳۲ و ۴۸ پیکسل، به‌علاوهٔ ۲۵۶ پیکسل اگر تصویر به‌اندازهٔ کافی بزرگ باشد. تصویرهایی که مربع نیستند، لبه‌های شفاف می‌گیرند."
+  },
+  "editBmpHint": {
+    "message": "یک بیت‌مپ ساده که هر برنامه‌ای بازش می‌کند. فایل‌ها بزرگ‌اند و بخش‌های شفاف، رنگ پس‌زمینه می‌گیرند."
+  },
+  "editAvifHint": {
+    "message": "معمولاً نصف حجم JPGای با همان ظاهر. مرورگرهای امروزی و بیشتر برنامه‌های به‌روز بازش می‌کنند؛ بعضی برنامه‌های قدیمی نه."
+  },
+  "editMaxWidthHint": {
+    "message": "به پیکسل. نسبت تصویر حفظ می‌شود و هیچ‌وقت بزرگ‌تر نمی‌شود."
+  },
+  "editBackground": {
+    "message": "پس‌زمینه"
+  },
+  "editQuality": {
+    "message": "کیفیت"
+  },
+  "editFileName": {
+    "message": "نام فایل"
+  },
+  "editSave": {
+    "message": "ذخیره"
+  },
+  "editAllow": {
+    "message": "اجازه به این سایت"
+  },
+  "editNeedsOk": {
+    "message": "این ذخیره به تأیید شما نیاز دارد: پنجرهٔ Imgkeep را که همین حالا باز شد ببینید."
+  },
+  "reviewTitle": {
+    "message": "از Imgkeep راضی هستید؟"
+  },
+  "reviewBody": {
+    "message": "یک امتیاز در فروشگاه کمک می‌کند بقیه هم آن را پیدا کنند. چند ثانیه بیشتر طول نمی‌کشد و فقط همین یک بار می‌پرسیم."
+  },
+  "reviewRate": {
+    "message": "امتیاز به Imgkeep"
+  },
+  "reviewNo": {
+    "message": "نه، ممنون"
+  },
+  "reviewThanks": {
+    "message": "ممنون!"
+  },
+  "reviewOk": {
+    "message": "باشد. دیگر نمی‌پرسیم."
+  },
+  "findWindowTitle": {
+    "message": "پیدا کردن تصویر"
+  },
+  "findEnableTitle": {
+    "message": "تصویرهایی را پیدا کنید که سایت‌ها رویشان را پوشانده‌اند"
+  },
+  "findEnableBody": {
+    "message": "بعضی سایت‌ها، مثل Instagram و Pinterest، روی تصویرهایشان یک لایهٔ دیگر می‌گذارند، برای همین راست‌کلیک به تصویر نمی‌رسد. Imgkeep می‌تواند تصویر زیر آن لایه را برایتان پیدا کند."
+  },
+  "findPromise": {
+    "message": "Imgkeep فقط وقتی به یک صفحه نگاه می‌کند که خودتان از آن بخواهید تصویری را همان‌جا پیدا کند؛ فقط همان صفحه، فقط همان لحظه. هیچ‌وقت صفحه را تغییر نمی‌دهد."
+  },
+  "findTurnOn": {
+    "message": "روشن کردن"
+  },
+  "findDenied": {
+    "message": "روشن نشد. هر وقت خواستید می‌توانید از تنظیمات روشنش کنید."
+  },
+  "findOnTitle": {
+    "message": "روشن شد"
+  },
+  "findOnBody": {
+    "message": "دوباره روی تصویر راست‌کلیک کنید و «Imgkeep: پیدا کردن تصویر اینجا» را انتخاب کنید."
+  },
+  "findPickTitle": {
+    "message": "کدام تصویر؟"
+  },
+  "findPickBody": {
+    "message": "Imgkeep نفهمید کدام تصویر را می‌خواستید. یکی را انتخاب کنید:"
+  },
+  "findPickOne": {
+    "message": "تصویر $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "اینجا تصویری پیدا نشد"
+  },
+  "findNothingBody": {
+    "message": "Imgkeep در این بخش از صفحه تصویری پیدا نکرد. درست روی خود عکس راست‌کلیک کنید، یا عکس را در صفحهٔ خودش باز کنید و دوباره امتحان کنید."
+  },
+  "findErrorTitle": {
+    "message": "Imgkeep نتوانست به این صفحه نگاه کند"
+  },
+  "findErrorBody": {
+    "message": "صفحه را دوباره بارگذاری کنید، بعد روی تصویر راست‌کلیک کنید و دوباره «پیدا کردن تصویر اینجا» را انتخاب کنید."
+  },
+  "paletteTitle": {
+    "message": "پالت رنگ"
+  },
+  "paletteLoading": {
+    "message": "در حال پیدا کردن رنگ‌ها…"
+  },
+  "paletteCount": {
+    "message": "رنگ‌ها"
+  },
+  "paletteSwatches": {
+    "message": "رنگ‌های اصلی تصویر، از بیشترین سهم به کمترین"
+  },
+  "paletteCopyOne": {
+    "message": "کپی $VALUE$ ($SHARE$ از تصویر)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "$VALUE$ کپی شد",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "کپی همه به صورت"
+  },
+  "paletteCodeCss": {
+    "message": "متغیرهای CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "فهرست"
+  },
+  "paletteCopiedAll": {
+    "message": "همهٔ رنگ‌ها به صورت $KIND$ کپی شد",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "ذخیره به صورت"
+  },
+  "paletteSavePng": {
+    "message": "نمونه‌رنگ‌های PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "پالت GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "نمونه‌رنگ‌های Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "پوشهٔ شما در دسترس نبود، پس در Downloads ذخیره شد: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "این تصویر کاملاً شفاف است و رنگی برای برداشتن ندارد."
+  },
+  "paletteCopyFailed": {
+    "message": "کپی نشد. داخل این پنجره کلیک کنید و دوباره امتحان کنید."
+  },
+  "paletteNote": {
+    "message": "همه‌چیز روی رایانهٔ خودتان حساب می‌شود. تصویر و رنگ‌هایش هرگز از آن بیرون نمی‌روند."
+  }
+}

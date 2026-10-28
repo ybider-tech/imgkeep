@@ -1,0 +1,654 @@
+{
+  "extName": {
+    "message": "Desa imatges com a PNG, JPG, WebP, GIF o PDF — Imgkeep"
+  },
+  "extDescription": {
+    "message": "Clic dret per desar imatges com a PNG, JPG, WebP, GIF o PDF, o obtenir-ne la paleta. Al teu dispositiu, sense dades personals."
+  },
+  "menuParent": {
+    "message": "Imgkeep"
+  },
+  "menuLastUsed": {
+    "message": "$FORMAT$ (darrer ús)",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
+  "menuGif": {
+    "message": "GIF (manté l'animació)"
+  },
+  "menuOriginal": {
+    "message": "Format original"
+  },
+  "menuCopyPng": {
+    "message": "Copia com a PNG"
+  },
+  "menuPalette": {
+    "message": "Obtén la paleta de colors"
+  },
+  "menuMoreOptions": {
+    "message": "Més opcions…"
+  },
+  "menuFindImage": {
+    "message": "Imgkeep: Cerca la imatge aquí…"
+  },
+  "menuNew": {
+    "message": "$ITEM$ ✨ Nou",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "Copy as PNG"
+      }
+    }
+  },
+  "menuRate": {
+    "message": "T'agrada Imgkeep? Valora'l…"
+  },
+  "askErrBlocked": {
+    "message": "El lloc no ha lliurat aquesta imatge, ni tan sols amb l'accés permès. Pot ser que el servidor no funcioni o que només serveixi la imatge dins les seves pàgines."
+  },
+  "askErrHttp": {
+    "message": "El lloc ha respost amb un error en lloc de la imatge."
+  },
+  "askErrDecode": {
+    "message": "El navegador no ha pogut llegir aquest fitxer com a imatge."
+  },
+  "askErrUnsupported": {
+    "message": "Aquesta versió del navegador no pot crear aquest format. Prova amb PNG."
+  },
+  "askErrBlob": {
+    "message": "Aquesta imatge només existeix dins la pàgina (un enllaç blob:), així que Imgkeep encara no la pot desar. Una captura de pantalla sí que funciona."
+  },
+  "askErrTooLarge": {
+    "message": "Aquesta imatge és massa grossa per convertir-la al navegador."
+  },
+  "askErrTimeout": {
+    "message": "La conversió d'aquesta imatge ha trigat massa i Imgkeep s'ha aturat. Prova amb PNG o amb una animació més curta o petita."
+  },
+  "askErrDownload": {
+    "message": "El navegador no ha pogut iniciar la baixada."
+  },
+  "askErrWrite": {
+    "message": "Imgkeep no ha pogut escriure el fitxer a la teva carpeta."
+  },
+  "askErrExpired": {
+    "message": "Aquest desament ha caducat. Fes clic dret a la imatge i torna-ho a provar."
+  },
+  "askErrUnknown": {
+    "message": "Alguna cosa ha anat malament mentre es desava aquesta imatge."
+  },
+  "detailGifFrames": {
+    "message": "$COUNT$ fotogrames. Els GIF estan limitats a $MAX$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "601"
+      },
+      "max": {
+        "content": "$2",
+        "example": "600"
+      }
+    }
+  },
+  "detailGifPixels": {
+    "message": "$W$×$H$ píxels × $COUNT$ fotogrames és més del que pot contenir un GIF aquí.",
+    "placeholders": {
+      "w": {
+        "content": "$1",
+        "example": "4000"
+      },
+      "h": {
+        "content": "$2",
+        "example": "3000"
+      },
+      "count": {
+        "content": "$3",
+        "example": "40"
+      }
+    }
+  },
+  "detailTooManyFiles": {
+    "message": "Hi ha massa fitxers amb aquest nom."
+  },
+  "askSaving": {
+    "message": "S'està desant…"
+  },
+  "askSaved": {
+    "message": "Desat."
+  },
+  "askSavedAs": {
+    "message": "Desat com a $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Imgkeep/photo.png"
+      }
+    }
+  },
+  "askSavedTo": {
+    "message": "Desat a $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "Pictures/photo.png"
+      }
+    }
+  },
+  "askNothingTitle": {
+    "message": "No hi ha res per desar"
+  },
+  "askClose": {
+    "message": "Tanca"
+  },
+  "askRetry": {
+    "message": "Torna-ho a provar"
+  },
+  "askOpenImage": {
+    "message": "Obre la imatge"
+  },
+  "askCancel": {
+    "message": "Cancel·la"
+  },
+  "askHostTitle": {
+    "message": "Vols permetre les imatges d'aquest lloc?"
+  },
+  "askHostBody": {
+    "message": "$HOST$ impedeix que altres llocs llegeixin les seves imatges, així que Imgkeep encara no pot convertir aquesta.",
+    "placeholders": {
+      "host": {
+        "content": "$1",
+        "example": "images.example.net"
+      }
+    }
+  },
+  "askHostNote": {
+    "message": "L'accés és només per a aquest lloc, per obtenir les imatges que triïs. El pots retirar quan vulguis a Opcions."
+  },
+  "askAllowAndSave": {
+    "message": "Permet i desa"
+  },
+  "askNotAllowed": {
+    "message": "No s'ha permès l'accés. No s'ha desat res."
+  },
+  "askSaveOriginal": {
+    "message": "Desa en el format original"
+  },
+  "askReconnectTitle": {
+    "message": "Torna a connectar «$FOLDER$»",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "askChooseTitle": {
+    "message": "Trieu una carpeta"
+  },
+  "askReconnectBody": {
+    "message": "El navegador necessita el vostre permís per tornar a desar en aquesta carpeta."
+  },
+  "askChooseBody": {
+    "message": "Trieu la carpeta on l'Imgkeep ha de desar les imatges."
+  },
+  "askEveryVisit": {
+    "message": "Quan el navegador us ho demani, trieu $OPTION$ perquè no us ho torni a demanar.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "“Allow on every visit”"
+      }
+    }
+  },
+  "askEveryVisitOption": {
+    "message": "«Permet-ho a cada visita»"
+  },
+  "askReconnectButton": {
+    "message": "Torna a connectar i desa"
+  },
+  "askChooseButton": {
+    "message": "Tria la carpeta i desa"
+  },
+  "askErrorTitle": {
+    "message": "No s'ha pogut desar la imatge"
+  },
+  "askFolderDenied": {
+    "message": "El navegador no ha permès l'accés a la carpeta. No s'ha desat res."
+  },
+  "askNoFolder": {
+    "message": "No heu triat cap carpeta. No s'ha desat res."
+  },
+  "optPageTitle": {
+    "message": "Opcions de l'Imgkeep"
+  },
+  "optSaved": {
+    "message": "Desat"
+  },
+  "optWhereTitle": {
+    "message": "On desar"
+  },
+  "optSaveMode": {
+    "message": "Mode de desament"
+  },
+  "optModeDownloads": {
+    "message": "Carpeta de baixades"
+  },
+  "optModeDownloadsHint": {
+    "message": "Desa a la carpeta de baixades del navegador. Sense preguntes."
+  },
+  "optModeFolder": {
+    "message": "Una carpeta que trieu"
+  },
+  "optModeFolderHint": {
+    "message": "Escriu directament a la vostra carpeta. És possible que el navegador us demani tornar-la a connectar després de reiniciar-lo."
+  },
+  "optModeAsk": {
+    "message": "Pregunta sempre"
+  },
+  "optModeAskHint": {
+    "message": "Mostra el diàleg «Anomena i desa» del navegador per a cada imatge."
+  },
+  "optChooseFolder": {
+    "message": "Tria una carpeta…"
+  },
+  "optChangeFolder": {
+    "message": "Canvia de carpeta…"
+  },
+  "optNoFolder": {
+    "message": "Encara no heu triat cap carpeta."
+  },
+  "optFolderConnected": {
+    "message": "«$FOLDER$» — connectada",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optFolderReconnect": {
+    "message": "«$FOLDER$» — us demanarà tornar a connectar",
+    "placeholders": {
+      "folder": {
+        "content": "$1",
+        "example": "Pictures"
+      }
+    }
+  },
+  "optSubfolder": {
+    "message": "Subcarpeta"
+  },
+  "optSubfolderPlaceholder": {
+    "message": "p. ex. Imgkeep/{host}"
+  },
+  "optSubfolderHint": {
+    "message": "Opcional. Feu servir <code>/</code> per a carpetes niades. Els mateixos comodins que als noms de fitxer."
+  },
+  "optNamesTitle": {
+    "message": "Noms de fitxer"
+  },
+  "optTemplate": {
+    "message": "Plantilla de nom"
+  },
+  "optTokensHint": {
+    "message": "Comodins: <code>{name}</code> nom original, <code>{host}</code> lloc web, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> i <code>{h}</code> mida en píxels. Els fitxers existents mai no se sobreescriuen."
+  },
+  "optPreviewLabel": {
+    "message": "Vista prèvia de summer-banner de shop.example.com, 1600×900, en PNG:"
+  },
+  "optQualityTitle": {
+    "message": "Qualitat i mida"
+  },
+  "optJpgQuality": {
+    "message": "Qualitat del JPG"
+  },
+  "optWebpQuality": {
+    "message": "Qualitat del WebP"
+  },
+  "optJpgBackground": {
+    "message": "Color de fons del JPG"
+  },
+  "optJpgBackgroundHint": {
+    "message": "El JPG no té transparència, així que les àrees transparents prenen aquest color."
+  },
+  "optMaxWidth": {
+    "message": "Amplada màxima"
+  },
+  "optMaxWidthPlaceholder": {
+    "message": "Mida original"
+  },
+  "optMaxWidthHint": {
+    "message": "Opcional, en píxels. Les imatges més amples es redueixen perquè hi càpiguen, mantenint-ne la proporció; les més petites no s'amplien mai. El format original sempre es desa tal com és."
+  },
+  "optSitesTitle": {
+    "message": "Llocs que has permès"
+  },
+  "optSitesEmpty": {
+    "message": "Cap encara. Imgkeep només t'ho demana quan un lloc bloqueja una imatge que vols convertir."
+  },
+  "optFindTitle": {
+    "message": "Imatges que els llocs tapen"
+  },
+  "optFindLabel": {
+    "message": "Cerca imatges sota capes superposades"
+  },
+  "optFindHint": {
+    "message": "En llocs com Instagram i Pinterest, fes clic dret i tria Imgkeep: Cerca la imatge aquí. Imgkeep només mira una pàgina quan li demanes que hi cerqui una imatge: només aquella pàgina, només en aquell moment. Mai no modifica cap pàgina."
+  },
+  "optFindOn": {
+    "message": "Activat."
+  },
+  "optFindOff": {
+    "message": "Desactivat."
+  },
+  "optCountsTitle": {
+    "message": "Recompte d'ús anònim"
+  },
+  "optCountsLabel": {
+    "message": "Envia un resum diari anònim"
+  },
+  "optCountsHint": {
+    "message": "Un cop al dia, Imgkeep envia un resum com ara «12 desades com a JPG, 1 de fallida» a PostHog, un servei d'analítica de codi obert allotjat a la UE, perquè sapiguem quines funcions cal millorar i quines desades fallen. Mai imatges, adreces de pàgines, noms de fitxers ni res que t'identifiqui."
+  },
+  "optCountsShow": {
+    "message": "Mira exactament què s'envia"
+  },
+  "optCountsToday": {
+    "message": "Comptat avui (s'enviarà després d'avui):"
+  },
+  "optCountsLast": {
+    "message": "Últim resum enviat:"
+  },
+  "optCountsNone": {
+    "message": "Res encara."
+  },
+  "optCountsOff": {
+    "message": "Desactivat. No es compta ni s'envia res."
+  },
+  "optRemove": {
+    "message": "Treu"
+  },
+  "optRemoveAccess": {
+    "message": "Treu l'accés a $SITE$",
+    "placeholders": {
+      "site": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "optProTitle": {
+    "message": "Imgkeep Pro — ben aviat"
+  },
+  "optProBody": {
+    "message": "Ajustos predefinits per a les mides i els formats que més fas servir, objectius de mida de fitxer com ara «menys de 200 KB», regles que envien les imatges de cada lloc a la carpeta correcta i un registre d'on prové cada imatge."
+  },
+  "optProFree": {
+    "message": "Tot el que fas servir avui continuarà sent gratuït."
+  },
+  "optGetNotified": {
+    "message": "Avisa'm"
+  },
+  "optTrustTitle": {
+    "message": "Què pot fer i què no pot fer Imgkeep"
+  },
+  "optPermissions": {
+    "message": "Permisos que demana:"
+  },
+  "optOptionalPermissions": {
+    "message": "Només si actives Cerca imatges:"
+  },
+  "optPermissionsLabel": {
+    "message": "Permisos"
+  },
+  "optTrust1": {
+    "message": "Les imatges es converteixen al teu ordinador i no es pugen mai enlloc. L'única altra cosa que Imgkeep envia és el resum diari anònim de més amunt, que pots desactivar."
+  },
+  "optTrust2": {
+    "message": "Sense anuncis ni pestanyes de benvinguda. Les finestretes només s'obren quan en demanes una o quan una desada necessita el teu vistiplau. Imgkeep demana una valoració un sol cop, després d'un temps d'ús."
+  },
+  "optTrust4": {
+    "message": "Imgkeep només mira una pàgina quan li demanes que hi cerqui una imatge: només aquella pàgina, només en aquell moment. Mai no modifica cap pàgina."
+  },
+  "optTrust3": {
+    "message": "Totes les funcions gratuïtes continuaran sent gratuïtes."
+  },
+  "optVersion": {
+    "message": "Versió"
+  },
+  "optWhatsNew": {
+    "message": "Novetats"
+  },
+  "copyWorking": {
+    "message": "S'està copiant la imatge…"
+  },
+  "copyDone": {
+    "message": "Copiada com a PNG. Enganxa-la on vulguis."
+  },
+  "copyFailed": {
+    "message": "No s'ha pogut copiar la imatge"
+  },
+  "copyFailedNote": {
+    "message": "El porta-retalls no ha canviat. Torna-ho a provar o desa la imatge com a fitxer PNG."
+  },
+  "copySavePng": {
+    "message": "Desa com a PNG"
+  },
+  "copyAllowAndCopy": {
+    "message": "Permet i copia"
+  },
+  "editTitle": {
+    "message": "Més opcions"
+  },
+  "editLoading": {
+    "message": "S'està carregant la imatge…"
+  },
+  "editUpdating": {
+    "message": "S'està actualitzant la previsualització…"
+  },
+  "editPreviewAlt": {
+    "message": "Previsualització del resultat"
+  },
+  "editOriginal": {
+    "message": "Original"
+  },
+  "editResult": {
+    "message": "Resultat"
+  },
+  "editFormat": {
+    "message": "Format"
+  },
+  "editPngHint": {
+    "message": "El PNG conserva tots els píxels. Si vols un fitxer més petit, redueix l'amplada màxima o tria JPG o WebP."
+  },
+  "editIcoHint": {
+    "message": "Un fitxer d'icona amb la imatge a 16, 32 i 48 px, i també a 256 px si és prou gran. Les imatges que no són quadrades queden amb les vores transparents."
+  },
+  "editBmpHint": {
+    "message": "Un mapa de bits senzill que obre qualsevol aplicació. Els fitxers són grans i les zones transparents prenen el color de fons."
+  },
+  "editAvifHint": {
+    "message": "Sovint ocupa la meitat que un JPG amb el mateix aspecte. L'obren els navegadors moderns i la majoria d'aplicacions actuals; algunes de més antigues, no."
+  },
+  "editMaxWidthHint": {
+    "message": "En píxels. Manté la proporció i mai no amplia la imatge."
+  },
+  "editBackground": {
+    "message": "Fons"
+  },
+  "editQuality": {
+    "message": "Qualitat"
+  },
+  "editFileName": {
+    "message": "Nom del fitxer"
+  },
+  "editSave": {
+    "message": "Desa"
+  },
+  "editAllow": {
+    "message": "Permet aquest lloc"
+  },
+  "editNeedsOk": {
+    "message": "Aquest desament necessita la teva confirmació: mira la finestra de l'Imgkeep que s'acaba d'obrir."
+  },
+  "reviewTitle": {
+    "message": "T'agrada l'Imgkeep?"
+  },
+  "reviewBody": {
+    "message": "Una valoració a la botiga ajuda altres persones a trobar-lo. Trigues uns segons i només t'ho demanarem una vegada."
+  },
+  "reviewRate": {
+    "message": "Valora l'Imgkeep"
+  },
+  "reviewNo": {
+    "message": "No, gràcies"
+  },
+  "reviewThanks": {
+    "message": "Gràcies!"
+  },
+  "reviewOk": {
+    "message": "Entesos. No t'ho tornarem a demanar."
+  },
+  "findWindowTitle": {
+    "message": "Cerca la imatge"
+  },
+  "findEnableTitle": {
+    "message": "Troba imatges que els llocs tapen"
+  },
+  "findEnableBody": {
+    "message": "Alguns llocs, com Instagram i Pinterest, tapen les imatges amb una altra capa i el clic dret no hi arriba. L'Imgkeep pot trobar la imatge que hi ha a sota."
+  },
+  "findPromise": {
+    "message": "L'Imgkeep només mira una pàgina quan li demanes que hi cerqui una imatge: només aquella pàgina i només en aquell moment. Mai no modifica cap pàgina."
+  },
+  "findTurnOn": {
+    "message": "Activa"
+  },
+  "findDenied": {
+    "message": "No s'ha activat. Pots activar-ho quan vulguis a les Opcions."
+  },
+  "findOnTitle": {
+    "message": "Activat"
+  },
+  "findOnBody": {
+    "message": "Torna a fer clic dret sobre la imatge i tria «Imgkeep: Cerca la imatge aquí»."
+  },
+  "findPickTitle": {
+    "message": "Quina imatge?"
+  },
+  "findPickBody": {
+    "message": "L'Imgkeep no ha sabut quina imatge volies. Tria'n una:"
+  },
+  "findPickOne": {
+    "message": "Imatge $NUMBER$",
+    "placeholders": {
+      "number": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "findNothingTitle": {
+    "message": "Aquí no s'ha trobat cap imatge"
+  },
+  "findNothingBody": {
+    "message": "L'Imgkeep no ha trobat cap imatge en aquesta part de la pàgina. Fes clic dret just damunt de la foto, o obre la foto en una pàgina a part i torna-ho a provar."
+  },
+  "findErrorTitle": {
+    "message": "L'Imgkeep no ha pogut mirar aquesta pàgina"
+  },
+  "findErrorBody": {
+    "message": "Torna a carregar la pàgina i després fes clic dret sobre la imatge i tria «Cerca la imatge aquí» un altre cop."
+  },
+  "paletteTitle": {
+    "message": "Paleta de colors"
+  },
+  "paletteLoading": {
+    "message": "S'estan cercant els colors…"
+  },
+  "paletteCount": {
+    "message": "Colors"
+  },
+  "paletteSwatches": {
+    "message": "Els colors principals de la imatge, de més a menys presència"
+  },
+  "paletteCopyOne": {
+    "message": "Copia $VALUE$ ($SHARE$ de la imatge)",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      },
+      "share": {
+        "content": "$2",
+        "example": "32%"
+      }
+    }
+  },
+  "paletteCopied": {
+    "message": "S'ha copiat $VALUE$",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "#C8A27A"
+      }
+    }
+  },
+  "paletteCopyAll": {
+    "message": "Copia-ho tot com a"
+  },
+  "paletteCodeCss": {
+    "message": "Variables CSS"
+  },
+  "paletteCodeTailwind": {
+    "message": "Tailwind"
+  },
+  "paletteCodeJson": {
+    "message": "JSON"
+  },
+  "paletteCodeList": {
+    "message": "Llista"
+  },
+  "paletteCopiedAll": {
+    "message": "S'han copiat tots els colors com a $KIND$",
+    "placeholders": {
+      "kind": {
+        "content": "$1",
+        "example": "CSS variables"
+      }
+    }
+  },
+  "paletteSaveAs": {
+    "message": "Desa com a"
+  },
+  "paletteSavePng": {
+    "message": "Mostres PNG"
+  },
+  "paletteSaveGpl": {
+    "message": "Paleta de GIMP"
+  },
+  "paletteSaveAse": {
+    "message": "Mostres d'Adobe"
+  },
+  "paletteSavedFallback": {
+    "message": "La teva carpeta no estava disponible, així que s'ha desat a Baixades: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1",
+        "example": "photo-palette.gpl"
+      }
+    }
+  },
+  "paletteEmpty": {
+    "message": "Aquesta imatge és del tot transparent: no en podem treure cap color."
+  },
+  "paletteCopyFailed": {
+    "message": "No s'ha pogut copiar. Fes clic dins d'aquesta finestra i torna-ho a provar."
+  },
+  "paletteNote": {
+    "message": "Calculat al teu ordinador. Ni la imatge ni els seus colors en surten mai."
+  }
+}
