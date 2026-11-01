@@ -50,7 +50,9 @@ test.describe("in Firefox", () => {
       browser: "firefox",
       executablePath: FIREFOX,
       headless: true,
-      args: ["--remote-allow-system-access"], // lets the test open the extension's own pages
+      // Both let the test open the extension's own pages: the flag up to Firefox 158, the variable from 159.
+      args: ["--remote-allow-system-access"],
+      env: { ...process.env, MOZ_REMOTE_ALLOW_SYSTEM_ACCESS: "1" },
       extraPrefsFirefox: {
         "extensions.webextensions.uuids": JSON.stringify({ [GECKO_ID]: UUID }),
         "browser.download.dir": downloads,
