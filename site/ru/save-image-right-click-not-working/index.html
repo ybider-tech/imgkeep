@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правый клик не сохраняет изображение? Причина и решение</title>
+  <meta name="description" content="Некоторые сайты закрывают фото ещё одним слоем, и правый клик их не сохраняет. Почему так, бесплатные обходные пути и способ найти изображение в Chrome.">
+  <link rel="canonical" href="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Когда правый клик не сохраняет изображение">
+  <meta property="og:description" content="Некоторые сайты закрывают фото ещё одним слоем, и правый клик их не сохраняет. Почему так, бесплатные обходные пути и способ найти изображение в Chrome.">
+  <meta property="og:url" content="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: любое изображение. Ваш формат. Сохраняйте изображения из интернета в PNG, JPG, WebP, GIF или PDF прямо из контекстного меню в Chrome или Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему при нажатии правой кнопкой на фото нет пункта «Сохранить изображение как»?","acceptedAnswer":{"@type":"Answer","text":"Нажатие пришлось не на изображение. Сайт разместил поверх него другой элемент — часто прозрачный слой или ссылку, — поэтому браузер показывает меню для этого элемента, без пункта «Сохранить изображение как». Само изображение по-прежнему на странице, под этим слоем."}},{"@type":"Question","name":"Читает ли Imgkeep страницы, которые я открываю?","acceptedAnswer":{"@type":"Answer","text":"Нет. Imgkeep просматривает страницу только тогда, когда вы просите найти на ней изображение — только эту страницу и только в этот момент. Он никогда не меняет страницу. Он считывает только адреса изображений на экране, и ничего со страницы не сохраняется и не отправляется. Функция «найти изображение здесь» выключена, пока вы её не включите."}},{"@type":"Question","name":"Может ли Imgkeep сохранить все изображения со страницы сразу?","acceptedAnswer":{"@type":"Answer","text":"Нет. Imgkeep сохраняет по одному изображению за раз — то, на которое вы нажали или которое выбрали. Чтобы скачать все изображения со страницы, нужен массовый загрузчик."}},{"@type":"Question","name":"Как сохранить изображение, если правая кнопка мыши не работает?","acceptedAnswer":{"@type":"Answer","text":"На сайтах вроде Instagram и Pinterest фото находится под дополнительным слоем, поэтому нажатие правой кнопкой попадает на слой, и пункт «Сохранить изображение как» не появляется. Без расширения придётся найти адрес изображения в инструментах разработчика браузера или сделать скриншот. С Imgkeep достаточно нажать правой кнопкой и выбрать «Imgkeep: найти изображение здесь…», чтобы открыть фото в максимальном размере и сразу сохранить."}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/ru/"},{"@type":"ListItem","position":2,"name":"Когда правый клик не сохраняет изображение","item":"https://imgkeep.app/ru/save-image-right-click-not-working/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Когда правый клик не сохраняет изображение","description":"На сайтах вроде Instagram и Pinterest фото находится под дополнительным слоем, поэтому нажатие правой кнопкой попадает на слой, и пункт «Сохранить изображение как» не появляется. Без расширения придётся найти адрес изображения в инструментах разработчика браузера или сделать скриншот. С Imgkeep достаточно нажать правой кнопкой и выбрать «Imgkeep: найти изображение здесь…», чтобы открыть фото в максимальном размере и сразу сохранить.","url":"https://imgkeep.app/ru/save-image-right-click-not-working/","mainEntityOfPage":"https://imgkeep.app/save-image-right-click-not-working/","image":"https://imgkeep.app/media/guides/find-image.jpg","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ru/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ru/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/ru/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Основная навигация"><a href="/ru/convert/">Конвертер</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">RU</summary><ul><li><a href="/save-image-right-click-not-working/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-image-right-click-not-working/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-image-right-click-not-working/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/save-image-right-click-not-working/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-image-right-click-not-working/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/save-image-right-click-not-working/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-image-right-click-not-working/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-image-right-click-not-working/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-image-right-click-not-working/" hreflang="ru" lang="ru" aria-current="true">Русский</a></li><li><a href="/uk/save-image-right-click-not-working/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/save-image-right-click-not-working/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-image-right-click-not-working/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-image-right-click-not-working/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="Навигационная цепочка">
+      <a href="/ru/#image-guides">← На главную</a><span aria-hidden="true">›</span><span aria-current="page">Когда правый клик не сохраняет изображение</span>
+    </nav>
+
+    <main class="doc">
+      <h1>Когда правый клик не сохраняет изображение</h1>
+      <div class="answer">
+        <p class="label">Коротко</p>
+        <p>На сайтах вроде Instagram и Pinterest фотография лежит под другим слоем, поэтому правый клик попадает по слою, и пункт <strong>Сохранить изображение как</strong> не появляется. Без расширения придётся найти адрес изображения в инструментах разработчика браузера или сделать снимок экрана. С Imgkeep достаточно щёлкнуть правой кнопкой и выбрать <strong>Imgkeep: найти изображение здесь…</strong> — фотография откроется в максимальном размере, готовая к сохранению.</p>
+      </div>
+      <p class="updated">Обновлено <time datetime="2026-10-13">13 октября 2026</time></p>
+
+      <h2>Почему при правом клике нет пункта «Сохранить изображение как»?</h2>
+      <p>Потому что клик пришёлся не на изображение. Браузер показывает пункты для изображений (<strong>Сохранить изображение как…</strong>, <strong>Копировать изображение</strong>, <strong>Открыть изображение в новой вкладке</strong>) только тогда, когда прямо под указателем находится изображение. Если в меню есть только <strong>Назад</strong>, <strong>Обновить</strong> и <strong>Сохранить как…</strong> или пункты для ссылки, значит, сверху лежит что-то ещё. Обычные причины:</p>
+      <ul>
+        <li><strong>Перекрывающий слой.</strong> Многие соцсети и фотосайты кладут поверх каждого фото прозрачный слой или ссылку. Вы видите фото, а клик попадает по слою.</li>
+        <li><strong>Фоновое изображение.</strong> Некоторые страницы рисуют фото как фон блока (CSS), а не как элемент изображения, поэтому браузер не считает его изображением.</li>
+        <li><strong>Изображение, которое существует только внутри страницы.</strong> Его адрес начинается с <code>blob:</code>, и отдельного адреса, который можно открыть или сохранить, у него нет.</li>
+        <li><strong>Отключённое меню.</strong> Отдельные сайты полностью отключают меню правого клика, поэтому оно просто не открывается.</li>
+      </ul>
+
+      <h2>Как сохранить изображение без расширения?</h2>
+      <p>Это возможно, но все способы немного неудобные.</p>
+
+      <h3>Откройте фотографию на её собственной странице</h3>
+      <p>Нажмите на фотографию, чтобы открыть её пост или страницу, и попробуйте правый клик снова. На одних сайтах увеличенный вид — это обычное изображение, на многих других оно закрыто точно так же.</p>
+
+      <h3>Найдите адрес в инструментах разработчика</h3>
+      <ol>
+        <li>Щёлкните по фотографии правой кнопкой и выберите <strong>Просмотреть код</strong>. Панель Elements откроется на элементе под вашим кликом — обычно это перекрывающий слой.</li>
+        <li>Посмотрите чуть выше или ниже: там должен быть тег <code>&lt;img&gt;</code>. Его <code>src</code> — это адрес изображения, а <code>srcset</code>, если он есть, перечисляет размеры побольше.</li>
+        <li>Щёлкните по адресу правой кнопкой, выберите <strong>Открыть в новой вкладке</strong> и сохраните изображение из этой вкладки.</li>
+      </ol>
+      <p>Или используйте панель <strong>Network</strong>: включите фильтр <strong>Img</strong>, перезагрузите страницу и найдите фотографию среди десятков иконок и миниатюр с именами вроде <code>a8f3e…jpg</code>. Щёлкните по ней правой кнопкой и выберите <strong>Открыть в новой вкладке</strong>.</p>
+
+      <h3>Сделайте снимок экрана</h3>
+      <p>В Windows нажмите Win+Shift+S, на Mac — Cmd+Shift+4. Это работает всегда, даже с изображениями <code>blob:</code>, но фотография получится только того размера, в каком она показана на экране, а не оригинального.</p>
+
+      <h2>Как Imgkeep находит изображение?</h2>
+      <p>Imgkeep — расширение для браузера, которое сохраняет изображения в PNG, JPG, WebP, GIF или PDF прямо из меню правого клика. На сайтах, которые перекрывают свои изображения, вроде Instagram и Pinterest, оно добавляет в меню пункт <strong>Imgkeep: найти изображение здесь…</strong>. Мы делаем Imgkeep и ниже рассказываем, что именно делает этот пункт.</p>
+
+      <div class="option">
+        <p class="label">Наше расширение</p>
+        <h3>Imgkeep: найти изображение здесь…</h3>
+        <ol>
+          <li>Нажмите на фото правой кнопкой и выберите <strong>Imgkeep: найти изображение здесь…</strong></li>
+          <li>Imgkeep один раз просматривает страницу и находит изображение под курсором — в самом большом размере, который доступен на странице.</li>
+          <li>Оно открывается в окне <strong>Дополнительные параметры</strong>, где вы выбираете формат и размер, а затем нажимаете <strong>Сохранить</strong> или <strong>Копировать как PNG</strong>.</li>
+        </ol>
+        <figure class="shot">
+          <img src="/media/guides/find-image.jpg" width="1160" height="576" loading="lazy" decoding="async" alt="Сетка фотографий на вымышленном сайте photos.example.com. При нажатии правой кнопкой на фото открывается меню страницы (Назад, Вперёд, Обновить, Сохранить как, Печать), где выделен пункт «Imgkeep: найти изображение здесь…». Рядом — окно «Дополнительные параметры» Imgkeep с найденным изображением, вариантами PNG, JPG и WebP, максимальной шириной, именем файла и кнопками «Сохранить» и «Копировать как PNG».">
+          <figcaption>Для перекрытого фото выберите <strong>Imgkeep: найти изображение здесь…</strong> — и фото откроется в «Дополнительных параметрах».</figcaption>
+        </figure>
+        <p>В лентах, где обложка является ссылкой (как во многих сетках фотографий), Imgkeep определяет нужное изображение по ссылке, на которую вы нажали. Когда уверенности нет — например, если фото стоят рядом и ссылок нет, — Imgkeep показывает изображения на экране, чтобы вы выбрали нужное, а наиболее вероятное ставит первым. Если изображения там нет, он так и сообщит.</p>
+        <p>Функция выключена, пока вы её не включите — в настройках, в разделе <strong>Изображения, перекрытые сайтами</strong>, или при первом использовании. Включение добавляет два необязательных разрешения: <code>activeTab</code> и <code>scripting</code>. Четыре разрешения, которые Imgkeep запрашивает при установке, остаются прежними.</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-image-right-click-not-working">Установить Imgkeep в Chrome — бесплатно</a>
+        <span class="cta-note">Выключено, пока вы не включите. Есть и для Microsoft Edge. Без загрузки на сервер и без аккаунта.</span>
+      </div>
+
+      <h2>Читает ли Imgkeep страницы, которые я открываю?</h2>
+      <p>Нет. Imgkeep просматривает страницу только тогда, когда вы просите найти на ней изображение — только эту страницу и только в этот момент. Он никогда не меняет страницу. Он считывает только адреса изображений на экране, и ничего со страницы не сохраняется и не отправляется. В остальное время Imgkeep считывает только то изображение, на которое вы нажали правой кнопкой. Подробности — в <a href="/privacy.html">политике конфиденциальности</a>, а <a href="https://github.com/ybider-tech/imgkeep">исходный код</a> открыт.</p>
+
+      <h2>Что всё же не получится?</h2>
+      <ul>
+        <li><strong>Изображения, которые страница ещё не загрузила.</strong> Многие сайты подгружают фото только по мере прокрутки. Прокрутите страницу так, чтобы фото было на экране, и попробуйте снова.</li>
+        <li><strong>Изображения <code>blob:</code>.</strong> Они существуют только внутри страницы, и Imgkeep не может их сохранить. Поможет скриншот.</li>
+        <li><strong>Защищённый контент.</strong> Кадры видео и другой контент с DRM-защитой так сохранить нельзя.</li>
+        <li><strong>По одному изображению за раз.</strong> Imgkeep сохраняет то изображение, на которое вы нажали или которое выбрали, а не все изображения на странице.</li>
+        <li><strong>Отключённое меню.</strong> Если сайт вообще не даёт открыть меню правой кнопки, пункт Imgkeep тоже не появится. Используйте инструменты разработчика или скриншот.</li>
+      </ul>
+      <p>На других сайтах, где нажатие правой кнопкой попадает на само изображение, «найти изображение здесь» не нужно: обычное меню <strong>Imgkeep</strong> появляется прямо на изображении.</p>
+
+      <h2>Можно ли использовать сохранённые фотографии?</h2>
+      <p>Сохранение фотографии не даёт права её переиспользовать. Одно дело — оставить картинку для себя, для мудборда или рецепта; другое — опубликовать её, напечатать или использовать в работе. Сначала спросите у автора и укажите его имя.</p>
+
+      <h2>Похожие руководства</h2>
+      <ul>
+        <li><a href="/ru/chrome-saves-images-as-webp/">Почему Chrome сохраняет изображения в WebP</a></li>
+        <li><a href="/ru/save-webp-as-jpg-png/">Как сохранить WebP в JPG или PNG</a></li>
+        <li><a href="/ru/save-avif-as-jpg-png/">Как сохранить AVIF в JPG или PNG</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">Chrome сохраняет изображения как JFIF? Как получить JPG</a></li>
+        <li><a href="/save-animated-webp-as-gif/">Как сохранить анимированный WebP как GIF</a></li>
+        <li><a href="/save-image-as-pdf/">Как сохранить изображение в PDF в Chrome</a></li>
+        <li><a href="/save-image-as-type-alternative/">Безопасная замена Save image as Type</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">Как перенести изображение из интернета в Canva, Figma или Google Slides</a></li>
+      </ul>
+
+      <h2>Вопросы</h2>
+      <h3>Почему при нажатии правой кнопкой на фото нет пункта «Сохранить изображение как»?</h3>
+      <p>Нажатие пришлось не на изображение. Сайт разместил поверх него другой элемент — часто прозрачный слой или ссылку, — поэтому браузер показывает меню для этого элемента, без пункта <strong>Сохранить изображение как</strong>. Само изображение по-прежнему на странице, под этим слоем.</p>
+      <h3>Читает ли Imgkeep страницы, которые я открываю?</h3>
+      <p>Нет. Imgkeep просматривает страницу только тогда, когда вы просите найти на ней изображение — только эту страницу и только в этот момент. Он никогда не меняет страницу. Он считывает только адреса изображений на экране, и ничего со страницы не сохраняется и не отправляется. Функция <strong>«найти изображение здесь»</strong> выключена, пока вы её не включите.</p>
+      <h3>Может ли Imgkeep сохранить все изображения со страницы сразу?</h3>
+      <p>Нет. Imgkeep сохраняет по одному изображению за раз — то, на которое вы нажали или которое выбрали. Чтобы скачать все изображения со страницы, нужен массовый загрузчик.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Подвал сайта">
+        <a href="/ru/">Главная</a>
+        <a href="/ru/convert/">Конвертер</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Исходный код</a>
+        <a href="/ru/download/">Скачать</a>
+        <a href="/ideas.html">Идеи</a>
+        <a href="/support.html">Поддержка</a>
+        <a href="/privacy.html">Конфиденциальность</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Руководства">
+        <a href="/ru/chrome-saves-images-as-webp/">Почему Chrome сохраняет WebP</a>
+        <a href="/ru/save-webp-as-jpg-png/">Сохранить WebP как JPG или PNG</a>
+        <a href="/ru/save-avif-as-jpg-png/">Сохранить AVIF как JPG или PNG</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome сохраняет JFIF</a>
+        <a href="/save-animated-webp-as-gif/">Анимированный WebP в GIF</a>
+        <a href="/save-image-as-pdf/">Сохранить изображение в PDF</a>
+        <a href="/save-image-as-type-alternative/">Безопасная альтернатива расширению Save image as Type</a>
+        <a href="/ru/save-image-right-click-not-working/">Когда правый клик не сохраняет изображение</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Изображения из интернета в Canva, Figma или Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

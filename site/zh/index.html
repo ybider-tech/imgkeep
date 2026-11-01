@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>将图片保存为 PNG、JPG、WebP、GIF 或 PDF — Imgkeep</title>
+  <meta name="description" content="在 Chrome 或 Edge 中右键点击任意图片，即可保存为 PNG、JPG、WebP、GIF 或 PDF，或提取配色。全部在你的电脑上完成转换。免费、开源。">
+  <link rel="canonical" href="https://imgkeep.app/zh/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — 任意图片，你的格式。">
+  <meta property="og:description" content="一个免费的 Chrome 和 Edge 扩展：右键点击任意图片，即可保存为 PNG、JPG、WebP、GIF 或 PDF。在你的电脑上转换，保存到你的文件夹。开源。">
+  <meta property="og:url" content="https://imgkeep.app/zh/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：任意图片，你的格式。在 Chrome 或 Edge 的右键菜单中，把网页图片保存为 PNG、JPG、WebP、GIF 或 PDF。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep 是一款免费的 Chrome 和 Edge 扩展，可从右键菜单把网页图片保存为 PNG、JPG、WebP、GIF（含动画）或 PDF，复制为 PNG，或显示图片的配色。每张图片都在你的电脑上转换，并保存到你选择的文件夹。","url":"https://imgkeep.app/zh/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["把图片保存为 PNG、JPG、WebP、GIF 或 PDF","把 WebP 和 AVIF 转换为 JPG 或 PNG","存成 GIF 时保留动画","复制为 PNG","提取图片的配色：复制 HEX、RGB 或 HSL，或保存 .ase 和 .gpl 文件","保存到你选择的文件夹","自定义文件名","在你的电脑上转换，不上传"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"在 Chrome 里右键一下，把 WebP 保存为 JPG、PNG 或 GIF","description":"Imgkeep 的 28 秒演示：从右键菜单把动态 WebP 保存为 GIF，动画照常播放；把 WebP 照片保存为 JPG。","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/zh/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/zh/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep 免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费。Imgkeep 现有的所有功能都免费，没有广告，也没有限制。我们计划推出带附加功能的付费版 Imgkeep Pro，现有功能将继续免费。"}},{"@type":"Question","name":"Imgkeep 会上传我的图片吗？","acceptedAnswer":{"@type":"Answer","text":"不会。每张图片都在你的电脑上转换，并直接保存到你选择的文件夹。Imgkeep 唯一会发送的，是每天一次的匿名统计：用了哪些功能、哪些保存失败了，你可以在选项里关掉它。"}},{"@type":"Question","name":"可以保存哪些格式？","acceptedAnswer":{"@type":"Answer","text":"PNG、JPG、WebP、GIF（保留动画）、PDF 或原始格式。现在很多网站提供的 WebP 和 AVIF 图片都能转换，复制为 PNG 还能把图片放进剪贴板。"}},{"@type":"Question","name":"能提取图片的配色吗？","acceptedAnswer":{"@type":"Answer","text":"可以。右键点击图片，选择 Imgkeep，然后选择提取配色。你会看到它的 5、8 或 12 种主色，按占比从大到小排列。点击某个颜色即可复制为 HEX、RGB 或 HSL，也可以把全部颜色复制为 CSS 变量、Tailwind 或 JSON，还能保存为 PNG、GIMP 调色板或 Adobe 色板。全部在你的电脑上计算。"}},{"@type":"Question","name":"能保存被网站遮住的图片吗，比如 Instagram 或 Pinterest 上的？","acceptedAnswer":{"@type":"Answer","text":"可以。右键点击照片，选择 Imgkeep：在此处查找图片。Imgkeep 会读取该页面一次，找到你点击处那张照片的最大尺寸版本，并打开以便保存。该功能默认关闭，需要你手动开启，而且它从不改动页面。"}},{"@type":"Question","name":"能转换我电脑里已有的图片吗？","acceptedAnswer":{"@type":"Answer","text":"可以。使用 imgkeep.app/convert/ 上的免费图片转换器：拖入文件，选择 PNG、JPG、WebP、AVIF、GIF、PDF 或 ICO，然后下载，或复制为 PNG。它在你的浏览器里运行，所以不会上传任何内容，也无需注册。手机上同样可用。"}},{"@type":"Question","name":"支持哪些浏览器？","acceptedAnswer":{"@type":"Answer","text":"Google Chrome 116 及更高版本，以及 Microsoft Edge，提供 9 种语言。"}},{"@type":"Question","name":"能一次保存页面上的所有图片吗？","acceptedAnswer":{"@type":"Answer","text":"不能。Imgkeep 只保存你右键点击的那一张图片。要保存整页图片，需要批量下载工具。"}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">跳到正文</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/zh/" aria-label="Imgkeep 首页"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/zh/convert/">转换器</a>
+        <a href="/zh/color-palette-from-image/">配色</a>
+        <a href="#how-it-works">工作原理</a>
+        <a href="#image-guides">指南</a>
+        <a href="/privacy.html">隐私</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">获取 Imgkeep <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">ZH</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">将图片保存为 PNG、JPG、WebP、GIF 或 PDF</span> <span class="display">任意图片。<span class="accent">你的格式。</span></span></h1>
+        <p class="lead">Imgkeep 是一个免费的 Chrome 和 Edge 扩展，可以把网页图片保存为 PNG、JPG、WebP、GIF 或 PDF。右键点击即可在你的设备上转换，并保存到你指定的文件夹。</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">免费添加到 Chrome</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">也支持 Edge <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/zh/download/">Firefox 和其他浏览器</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="在 Chrome Web Store 上获得 5.0 分，满分 5 分"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · 来自 Chrome Web Store</a></p>
+        <p class="trust">无需账号 <span aria-hidden="true">·</span> 不上传 <span aria-hidden="true">·</span> 开源</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">在 YouTube 上观看 28 秒演示</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">无法播放？在 YouTube 上观看 <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">28 秒无声演示：右键点击一张动态 WebP 图片，打开 Imgkeep，选择 GIF（保留动画）。保存下来的 GIF 依然会动。接着用同样的方法把一张 WebP 照片保存为 JPG。</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">工作原理</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>右键点击图片</h3>
+            <p>在网上找到一张图片，然后右键点击它。</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>选择格式</h3>
+            <p>选择 PNG、JPG、WebP、GIF（保留动画）、PDF 或原始格式。也可以复制为 PNG，或提取配色。</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>保存到你的文件夹</h3>
+            <p>Imgkeep 在你的电脑上完成转换，每次都保存到你想要的位置。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">无需安装，不上传</p>
+        <h2 id="convert-title">转换你已有的图片。</h2>
+        <p>拖入 WebP、AVIF、PNG 或 JPG 文件，直接在浏览器里得到 PNG、JPG、AVIF、GIF、PDF 或 ICO。不上传，不注册。</p>
+        <p><a class="band-link" href="/zh/convert/">打开转换器 <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>热门：</span> <a href="/zh/webp-to-jpg/">WebP 转 JPG</a> · <a href="/zh/webp-to-png/">WebP 转 PNG</a> · <a href="/zh/avif-to-jpg/">AVIF 转 JPG</a> · <a href="/zh/png-to-jpg/">PNG 转 JPG</a> · <a href="/zh/png-to-ico/">PNG 转 ICO</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">功能</p>
+        <h2 id="features-title">它能做的一切。</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>记住你的文件夹</h3>
+            <p>文件夹只需选一次。此后每张图片都会保存到那里，可以放进你命名的子文件夹，而且不会覆盖任何已有文件。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>支持 WebP 和 AVIF</h3>
+            <p>把网站提供的 WebP 和 AVIF 文件，转成任何应用都能打开的 PNG 或 JPG。动图存为 GIF 后依然会动。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>复制为 PNG</h3>
+            <p>把图片以真正的 PNG 放进剪贴板，保留透明背景，再粘贴到聊天、文档或 Canva、Figma、Google Slides 等设计工具里。<a href="/web-image-into-canva-figma-google-slides/">具体方法</a>。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>配色</h3>
+            <p>在右键菜单里获取图片的主要颜色。可以把单个颜色复制为 HEX、RGB 或 HSL，把全部颜色复制为 CSS 或 Tailwind，也可以保存给 Adobe 应用或 GIMP 使用。<a href="/zh/color-palette-from-image/">也可以把图片拖到这里</a>。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>你的文件名</h3>
+            <p>用原始名称、网站、日期或尺寸来命名文件，例如 <code>{name}-{w}x{h}</code>。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>右键用不了的地方也能用</h3>
+            <p>在 Instagram、Pinterest 这类网站上，照片被盖在另一层下面。选择 <strong>在此处查找图片</strong>，Imgkeep 就会找到最大尺寸的那张照片。该功能默认关闭，需要你手动开启。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>调整尺寸并预览</h3>
+            <p>设置最大宽度后，过大的图片会自动缩小。<strong>更多选项</strong> 会在保存前显示效果和真实文件大小，质量和背景也由你决定。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF、AVIF、ICO 和 BMP</h3>
+            <p>把图片保存为单页 PDF，或者在更多选项中保存为 AVIF（通常只有 JPG 的一半大小）、用作快捷方式和网站图标的 ICO，或者 BMP。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>你已有的文件</h3>
+            <p>用<a href="/zh/convert/">免费图片转换器</a>转换电脑或手机上的图片。它在网页里运行，所以不会上传任何内容。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">图片格式指南</p>
+        <h2 id="guides-title">把图片格式讲清楚。</h2>
+        <p class="intro">为你每天保存的图片，以及为挑选一个值得信任的扩展，提供实用的指南。</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">详解</p>
+            <h3><a href="/zh/chrome-saves-images-as-webp/">Chrome 为什么保存成 WebP</a></h3>
+            <p>Chrome 保存的就是网站发来的那个文件，而很多网站发来的是 WebP，因为它更小。没有哪个 Chrome 设置能改变这一点：要么在保存时就转换图片，要么事后用 Paint 或 Preview 转换。</p>
+            <a class="more" href="/zh/chrome-saves-images-as-webp/">了解 WebP <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/zh/save-webp-as-jpg-png/">把 WebP 存成 JPG 或 PNG</a></h3>
+            <p>右键点击图片，用在你电脑上运行的转换工具存成 PNG 或 JPG，不会上传任何内容。图形和需要透明的选 PNG，照片选 JPG。</p>
+            <a class="more" href="/zh/save-webp-as-jpg-png/">阅读 WebP 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/zh/save-avif-as-jpg-png/">把 AVIF 存成 JPG 或 PNG</a></h3>
+            <p>AVIF 比 WebP 更小，但许多应用和上传表单仍然打不开。下载时直接存成 JPG 或 PNG，或者用 Preview、Paint（需装微软的免费 AV1 扩展）导出。</p>
+            <a class="more" href="/zh/save-avif-as-jpg-png/">阅读 AVIF 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">详解</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome 保存成 JFIF</a></h3>
+            <p>.jfif 文件其实就是普通的 JPEG，只是扩展名不同，由 Windows 注册表的一项设置决定。把它改名为 .jpg、一次性修改该设置，或者直接存成 JPG。</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">阅读 JFIF 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/save-animated-webp-as-gif/">动态 WebP 转 GIF</a></h3>
+            <p>JPG 和 PNG 只会保留一帧。把动画存成几乎处处都能播放的 GIF，保留播放节奏和透明效果，一步完成，或者用 GIMP 处理。</p>
+            <a class="more" href="/save-animated-webp-as-gif/">阅读 GIF 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/save-image-as-pdf/">把图片存成 PDF</a></h3>
+            <p>Chrome 的打印成 PDF 会把图片放在纸张大小的页面上。你也可以直接从右键菜单生成一个与图片尺寸完全一致的单页 PDF。</p>
+            <a class="more" href="/save-image-as-pdf/">阅读 PDF 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">安全</p>
+            <h3><a href="/save-image-as-type-alternative/">Save image as Type 的安全替代</a></h3>
+            <p>新东家让它在购物网站插入联盟链接后，Google 于 2026 年 3 月将其下架。如果你还装着，请卸载，并检查任何替代扩展的权限、数据、所有者和源代码。</p>
+            <a class="more" href="/save-image-as-type-alternative/">查看检查清单 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/zh/save-image-right-click-not-working/">右键无法保存图片时</a></h3>
+            <p>在 Instagram、Pinterest 这类网站上，照片被另一层盖住，右键点击根本碰不到它。这里讲清原因、免费的变通办法，以及 Imgkeep 如何帮你找到照片。</p>
+            <a class="more" href="/zh/save-image-right-click-not-working/">阅读指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">操作指南</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">把网页图片放进 Canva、Figma 或 Slides</a></h3>
+            <p>把网页图片复制为 PNG，再粘贴到设计稿或幻灯片里。如果工具提示文件类型不支持，说明网站发来的是 WebP 或 AVIF：把它存成 PNG 或 JPG。</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">阅读指南 <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">常见问题</p>
+        <h2 id="faq-title">直接的回答。</h2>
+        <dl>
+          <div>
+            <dt>Imgkeep 免费吗？</dt>
+            <dd>免费。Imgkeep 现有的所有功能都免费，没有广告，也没有限制。我们计划推出带附加功能的付费版 Imgkeep Pro，现有功能将继续免费。</dd>
+          </div>
+          <div>
+            <dt>Imgkeep 会上传我的图片吗？</dt>
+            <dd>不会。每张图片都在你的电脑上转换，并直接保存到你的文件夹。Imgkeep 唯一发送的，是每天一次的匿名统计：用了哪些功能、哪些保存失败，你可以在选项中关闭。<a href="/privacy.html">隐私政策</a>。</dd>
+          </div>
+          <div>
+            <dt>可以保存哪些格式？</dt>
+            <dd>PNG、JPG、WebP、GIF（保留动画）、PDF 或原始格式。它能转换如今许多网站提供的 WebP 和 AVIF 图片，<strong>复制为 PNG</strong> 还能把图片放进剪贴板。</dd>
+          </div>
+          <div>
+            <dt>能提取图片的配色吗？</dt>
+            <dd>可以。右键点击图片，选择 Imgkeep，然后选择提取配色。你会看到它的 5、8 或 12 种主色，按占比从大到小排列。点击某个颜色即可复制为 HEX、RGB 或 HSL，也可以把全部颜色复制为 CSS 变量、Tailwind 或 JSON，还能保存为 PNG、GIMP 调色板或 Adobe 色板。全部在你的电脑上计算。</dd>
+          </div>
+          <div>
+            <dt>能保存被网站遮住的图片吗，比如 Instagram 或 Pinterest 上的？</dt>
+            <dd>可以。右键点击照片，选择 <strong>Imgkeep：在此处查找图片</strong>。Imgkeep 会查看该页面一次，找到你点击位置下方那张照片的最大尺寸版本，并打开它供你保存。该功能默认关闭，需要你手动开启，而且它从不改动页面。</dd>
+          </div>
+          <div>
+            <dt>能转换我电脑里已有的图片吗？</dt>
+            <dd>可以。使用 imgkeep.app/convert/ 上的<a href="/zh/convert/">免费图片转换器</a>：拖入文件，选择 PNG、JPG、WebP、AVIF、GIF、PDF 或 ICO，然后下载，或复制为 PNG。它在你的浏览器里运行，不上传任何内容，也无需注册。手机上同样可用。</dd>
+          </div>
+          <div>
+            <dt>支持哪些浏览器？</dt>
+            <dd>Google Chrome 116 及更高版本，以及 Microsoft Edge，提供 9 种语言。</dd>
+          </div>
+          <div>
+            <dt>能一次保存页面上的所有图片吗？</dt>
+            <dd>不能。Imgkeep 只保存你右键点击的那一张图片。要保存整页图片，需要批量下载工具。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">准备好按你的方式保存了吗？</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">免费添加到 Chrome</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">也支持 Edge <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/zh/download/">Firefox 和其他浏览器</a>
+          </div>
+          <p class="trust">无需账号 <span aria-hidden="true">·</span> 不上传 <span aria-hidden="true">·</span> 开源</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/zh/" aria-label="Imgkeep 首页"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">你的图片始终留在你的电脑上。</p>
+        <nav aria-label="页脚">
+          <a href="/zh/convert/">转换器</a>
+          <a href="/privacy.html">隐私</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">源代码</a>
+          <a href="/support.html">支持</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="更多">
+        <a href="/zh/download/">下载</a>
+        <a href="/ideas.html">建议</a>
+        <a href="/whats-new.html">更新内容</a>
+        <a href="/pro.html">Imgkeep Pro 候补名单</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

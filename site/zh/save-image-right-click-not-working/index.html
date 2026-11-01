@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>右键无法保存图片？原因和解决办法</title>
+  <meta name="description" content="有些网站会在照片上盖一层，让右键无法保存。本文讲清原因、免费的变通办法，以及在 Chrome 里找到原图的方法。">
+  <link rel="canonical" href="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/save-image-right-click-not-working/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/save-image-right-click-not-working/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="右键菜单保存不了图片时">
+  <meta property="og:description" content="有些网站会在照片上盖一层，让右键无法保存。本文讲清原因、免费的变通办法，以及在 Chrome 里找到原图的方法。">
+  <meta property="og:url" content="https://imgkeep.app/zh/save-image-right-click-not-working/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：任意图片，你的格式。在 Chrome 或 Edge 的右键菜单中，把网页图片保存为 PNG、JPG、WebP、GIF 或 PDF。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"为什么我右键点击照片时没有“图片另存为”？","acceptedAnswer":{"@type":"Answer","text":"你的右键没有点到图片上。网站在图片上方放了另一个元素，通常是一层透明图层或一个链接，所以浏览器显示的是那个元素的菜单，其中没有“图片另存为”。图片仍在页面上，只是被盖在下面。"}},{"@type":"Question","name":"Imgkeep 会读取我浏览的页面吗？","acceptedAnswer":{"@type":"Answer","text":"不会。只有当你要求 Imgkeep 在某个页面查找图片时，它才会查看那个页面，而且仅限当时那一次。它从不修改页面。它只读取屏幕上图片的地址，页面中的任何内容都不会被保存或发送。“在此处查找图片”默认关闭，需要你手动开启。"}},{"@type":"Question","name":"Imgkeep 能一次保存页面上的所有图片吗？","acceptedAnswer":{"@type":"Answer","text":"不能。Imgkeep 一次保存一张图片，也就是你右键点击或挑选的那张。要下载页面上的所有图片，你需要批量下载工具。"}},{"@type":"Question","name":"右键没反应时，怎么保存图片？","acceptedAnswer":{"@type":"Answer","text":"在 Instagram、Pinterest 这类网站上，照片被盖在另一层下面，所以右键点到的是那一层，“图片另存为”始终不会出现。如果不用扩展，可以在浏览器的开发者工具中找到图片地址，或者截图。用 Imgkeep 时，右键点击并选择“Imgkeep：在此处查找图片…”，就能以最大尺寸打开照片，随时可以保存。"}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/zh/"},{"@type":"ListItem","position":2,"name":"右键菜单保存不了图片时","item":"https://imgkeep.app/zh/save-image-right-click-not-working/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"右键菜单保存不了图片时","description":"在 Instagram、Pinterest 这类网站上，照片被盖在另一层下面，所以右键点到的是那一层，“图片另存为”始终不会出现。如果不用扩展，可以在浏览器的开发者工具中找到图片地址，或者截图。用 Imgkeep 时，右键点击并选择“Imgkeep：在此处查找图片…”，就能以最大尺寸打开照片，随时可以保存。","url":"https://imgkeep.app/zh/save-image-right-click-not-working/","mainEntityOfPage":"https://imgkeep.app/save-image-right-click-not-working/","image":"https://imgkeep.app/media/guides/find-image.jpg","datePublished":"2026-10-13","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/zh/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/zh/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/zh/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="主导航"><a href="/zh/convert/">转换器</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">ZH</summary><ul><li><a href="/save-image-right-click-not-working/" hreflang="en" lang="en">English</a></li><li><a href="/es/save-image-right-click-not-working/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/save-image-right-click-not-working/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a></li><li><a href="/pt-br/save-image-right-click-not-working/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/save-image-right-click-not-working/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/save-image-right-click-not-working/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/save-image-right-click-not-working/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/save-image-right-click-not-working/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/save-image-right-click-not-working/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/save-image-right-click-not-working/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/save-image-right-click-not-working/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/save-image-right-click-not-working/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/save-image-right-click-not-working/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="面包屑导航">
+      <a href="/zh/#image-guides">← 首页</a><span aria-hidden="true">›</span><span aria-current="page">右键菜单保存不了图片时</span>
+    </nav>
+
+    <main class="doc">
+      <h1>右键菜单保存不了图片时</h1>
+      <div class="answer">
+        <p class="label">简短回答</p>
+        <p>在 Instagram、Pinterest 这类网站上，照片位于另一层下面，所以你的右键点到的是那一层，<strong>图片另存为</strong>根本不会出现。不用扩展的话，可以在浏览器开发者工具里找到图片地址，或者直接截图。用 Imgkeep 的话，右键点击并选择 <strong>Imgkeep：在此处查找图片…</strong>，就能以最大尺寸打开这张照片，随时可以保存。</p>
+      </div>
+      <p class="updated">更新于 <time datetime="2026-10-13">2026 年 10 月 13 日</time></p>
+
+      <h2>为什么右键点击后没有出现“图片另存为”？</h2>
+      <p>因为你的右键没有点在图片上。只有当指针正下方的东西是图片时，浏览器才会显示图片相关的选项（<strong>图片另存为…</strong>、<strong>复制图片</strong>、<strong>在新标签页中打开图片</strong>）。如果菜单里只有<strong>返回</strong>、<strong>重新加载</strong>、<strong>另存为…</strong>，或者只有链接相关的选项，说明有别的东西盖在上面。常见原因有：</p>
+      <ul>
+        <li><strong>覆盖层。</strong>许多社交和图片网站会在每张照片上放一个透明图层或链接。你看到的是照片，点到的却是那一层。</li>
+        <li><strong>背景图。</strong>有些页面是把照片当作某个容器的背景（CSS）来显示的，而不是图片元素，所以浏览器不会把它当成图片。</li>
+        <li><strong>只存在于页面内部的图片。</strong>它的地址以 <code>blob:</code> 开头，没有可以单独打开或保存的地址。</li>
+        <li><strong>被关掉的右键菜单。</strong>少数网站完全禁用了右键菜单，所以根本不会弹出菜单。</li>
+      </ul>
+
+      <h2>不用扩展怎么保存？</h2>
+      <p>办法是有的，但每一种都有点麻烦。</p>
+
+      <h3>单独打开这张照片的页面</h3>
+      <p>点击照片，打开它自己的帖子或页面，再试一次右键。在有些网站上，放大后的视图是一张普通图片；但在很多网站上，它同样被盖住了。</p>
+
+      <h3>在开发者工具里找地址</h3>
+      <ol>
+        <li>右键点击照片，选择<strong>检查</strong>。“元素”面板会定位到你点击位置下方的元素，通常就是那个覆盖层。</li>
+        <li>在它的上方或下方找一个 <code>&lt;img&gt;</code> 标签。它的 <code>src</code> 就是图片地址；如果有 <code>srcset</code>，里面会列出更大的尺寸。</li>
+        <li>右键点击该地址，选择<strong>在新标签页中打开</strong>，然后从那个标签页保存图片。</li>
+      </ol>
+      <p>也可以用<strong>网络</strong>面板：按 <strong>Img</strong> 筛选，重新加载页面，然后在几十个图标和缩略图中找到那张照片，它的名字可能类似 <code>a8f3e…jpg</code>。右键点击它，选择<strong>在新标签页中打开</strong>。</p>
+
+      <h3>截图</h3>
+      <p>在 Windows 上按 Win+Shift+S，在 Mac 上按 Cmd+Shift+4。这个方法总是有效，连 <code>blob:</code> 图片也能搞定，但你得到的只是屏幕显示尺寸的照片，不是原图。</p>
+
+      <h2>Imgkeep 是怎么找到图片的？</h2>
+      <p>Imgkeep 是一个浏览器扩展，可以通过右键菜单把图片保存为 PNG、JPG、WebP、GIF 或 PDF。在 Instagram、Pinterest 这类会给图片加覆盖层的网站上，它会在菜单里加入 <strong>Imgkeep：在此处查找图片…</strong>。Imgkeep 是我们做的，下面就说清楚这一项到底做了什么。</p>
+
+      <div class="option">
+        <p class="label">我们的扩展</p>
+        <h3>Imgkeep：在此处查找图片…</h3>
+        <ol>
+          <li>右键点击照片，选择 <strong>Imgkeep：在此处查找图片…</strong></li>
+          <li>Imgkeep 会查看该页面一次，找到你点击位置下方的图片，并取页面所提供的最大尺寸。</li>
+          <li>图片会在<strong>更多选项</strong>中打开，你可以在那里选择格式和尺寸，然后<strong>保存</strong>或<strong>复制为 PNG</strong>。</li>
+        </ol>
+        <figure class="shot">
+          <img src="/media/guides/find-image.jpg" width="1160" height="576" loading="lazy" decoding="async" alt="虚构网站 photos.example.com 上的照片网格。右键点击一张照片后出现页面菜单（后退、前进、重新加载、另存为、打印），其中“Imgkeep：在此处查找图片…”被高亮显示。旁边是 Imgkeep 的“更多选项”窗口，显示找到的图片，以及 PNG、JPG 和 WebP 选项、最大宽度、文件名，还有“保存”和“复制为 PNG”按钮。">
+          <figcaption>在被遮挡的照片上选择 <strong>Imgkeep：在此处查找图片…</strong>，照片就会在“更多选项”中打开。</figcaption>
+        </figure>
+        <p>在封面是链接的信息流上（很多照片网格就是这样），Imgkeep 会根据你右键点击的链接判断你想要哪张图片。如果无法确定，比如几张照片并排且没有链接时，它会列出屏幕上的图片供你挑选，并把最可能的那张放在前面。如果那里没有图片，它会告诉你。</p>
+        <p>该功能默认关闭，需要你手动开启：在“选项”的<strong>被网站遮挡的图片</strong>中开启，或在首次使用时开启。开启会添加两项可选权限：<code>activeTab</code> 和 <code>scripting</code>。Imgkeep 安装时请求的四项权限保持不变。</p>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=save-image-right-click-not-working">把 Imgkeep 添加到 Chrome — 免费</a>
+        <span class="cta-note">默认关闭，需手动开启。同样支持 Microsoft Edge。不上传，无需账号。</span>
+      </div>
+
+      <h2>Imgkeep 会读取我浏览的页面吗？</h2>
+      <p>不会。只有当你要求 Imgkeep 在某个页面查找图片时，它才会查看那个页面，而且仅限当时那一次。它从不修改页面。它只读取屏幕上图片的地址，页面中的任何内容都不会被保存或发送。其余时候，Imgkeep 只读取你右键点击要保存的那张图片。详情见<a href="/privacy.html">隐私政策</a>，<a href="https://github.com/ybider-tech/imgkeep">源代码</a>也是公开的。</p>
+
+      <h2>还有哪些情况仍然不行？</h2>
+      <ul>
+        <li><strong>页面尚未加载的图片。</strong>很多网站只在你滚动到照片时才加载它。先滚动到照片出现在屏幕上，再试一次。</li>
+        <li><strong><code>blob:</code> 图片。</strong>它们只存在于页面内部，Imgkeep 无法保存。可以截图。</li>
+        <li><strong>受保护的内容。</strong>视频画面和其他受 DRM 保护的内容无法用这种方式保存。</li>
+        <li><strong>一次一张图片。</strong>Imgkeep 保存的是你右键点击或挑选的那张图片，而不是页面上的每一张图片。</li>
+        <li><strong>被禁用的右键菜单。</strong>如果网站完全禁止右键菜单打开，Imgkeep 的菜单项也无法出现。这时可以使用开发者工具或截图。</li>
+      </ul>
+      <p>在其他网站上，只要右键能点到图片，你就不需要“在此处查找图片”：常规的 <strong>Imgkeep</strong> 菜单会直接出现在图片上。</p>
+
+      <h2>我可以使用保存下来的照片吗？</h2>
+      <p>保存照片并不等于获得了再次使用它的权利。留一张图片作为自己的参考、灵感板或菜谱是一回事；发布、打印或用于工作则是另一回事。请先征得拍摄者同意，并标注来源。</p>
+
+      <h2>相关指南</h2>
+      <ul>
+        <li><a href="/zh/chrome-saves-images-as-webp/">Chrome 为什么把图片保存为 WebP</a></li>
+        <li><a href="/zh/save-webp-as-jpg-png/">如何把 WebP 保存为 JPG 或 PNG</a></li>
+        <li><a href="/zh/save-avif-as-jpg-png/">如何把 AVIF 保存为 JPG 或 PNG</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">Chrome 把图片保存成 JFIF？如何得到 JPG</a></li>
+        <li><a href="/save-animated-webp-as-gif/">如何把动态 WebP 保存为 GIF</a></li>
+        <li><a href="/save-image-as-pdf/">如何在 Chrome 里把图片保存为 PDF</a></li>
+        <li><a href="/save-image-as-type-alternative/">Save image as Type 的安全替代方案</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">如何把网页上的图片放进 Canva、Figma 或 Google Slides</a></li>
+      </ul>
+
+      <h2>常见问题</h2>
+      <h3>为什么我右键点击照片时没有“图片另存为”？</h3>
+      <p>你的右键没有点到图片上。网站在图片上方放了另一个元素，通常是一层透明图层或一个链接，所以浏览器显示的是那个元素的菜单，其中没有<strong>图片另存为</strong>。图片仍在页面上，只是被盖在下面。</p>
+      <h3>Imgkeep 会读取我浏览的页面吗？</h3>
+      <p>不会。只有当你要求 Imgkeep 在某个页面查找图片时，它才会查看那个页面，而且仅限当时那一次。它从不修改页面。它只读取屏幕上图片的地址，页面中的任何内容都不会被保存或发送。<strong>在此处查找图片</strong>默认关闭，需要你手动开启。</p>
+      <h3>Imgkeep 能一次保存页面上的所有图片吗？</h3>
+      <p>不能。Imgkeep 一次保存一张图片，也就是你右键点击或挑选的那张。要下载页面上的所有图片，你需要批量下载工具。</p>
+    </main>
+
+    <footer>
+      <nav aria-label="页脚">
+        <a href="/zh/">首页</a>
+        <a href="/zh/convert/">转换器</a>
+        <a href="https://github.com/ybider-tech/imgkeep">源代码</a>
+        <a href="/zh/download/">下载</a>
+        <a href="/ideas.html">建议</a>
+        <a href="/support.html">支持</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="指南">
+        <a href="/zh/chrome-saves-images-as-webp/">Chrome 为什么保存为 WebP</a>
+        <a href="/zh/save-webp-as-jpg-png/">把 WebP 保存为 JPG 或 PNG</a>
+        <a href="/zh/save-avif-as-jpg-png/">把 AVIF 保存为 JPG 或 PNG</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome 把图片存成 JFIF</a>
+        <a href="/save-animated-webp-as-gif/">把动态 WebP 存成 GIF</a>
+        <a href="/save-image-as-pdf/">把图片保存为 PDF</a>
+        <a href="/save-image-as-type-alternative/">Save image as Type 的安全替代品</a>
+        <a href="/zh/save-image-right-click-not-working/">右键菜单保存不了图片时</a>
+        <a href="/web-image-into-canva-figma-google-slides/">把网页图片放进 Canva、Figma 或 Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

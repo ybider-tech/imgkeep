@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이미지를 PNG, JPG, WebP, GIF, PDF로 저장 — Imgkeep</title>
+  <meta name="description" content="Chrome이나 Edge에서 이미지를 우클릭해 PNG, JPG, WebP, GIF, PDF로 저장하거나 색상 팔레트를 확인하세요. 변환은 내 컴퓨터에서 이뤄집니다. 무료 오픈소스.">
+  <link rel="canonical" href="https://imgkeep.app/ko/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — 모든 이미지를, 원하는 형식으로.">
+  <meta property="og:description" content="무료 Chrome·Edge 확장 프로그램: 이미지를 우클릭해 PNG, JPG, WebP, GIF, PDF로 저장하세요. 내 컴퓨터에서 변환해 내가 정한 폴더에 저장합니다. 오픈소스.">
+  <meta property="og:url" content="https://imgkeep.app/ko/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: 모든 이미지를, 원하는 형식으로. Chrome이나 Edge의 우클릭 메뉴에서 웹 이미지를 PNG, JPG, WebP, GIF, PDF로 저장하세요.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeep은 오른쪽 클릭 메뉴에서 웹 이미지를 PNG, JPG, WebP, GIF(애니메이션 포함), PDF로 저장하고, PNG로 복사하거나 색상 팔레트를 보여주는 무료 Chrome·Edge 확장 프로그램입니다. 각 이미지를 내 컴퓨터에서 변환해 직접 선택한 폴더에 저장합니다.","url":"https://imgkeep.app/ko/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["이미지를 PNG, JPG, WebP, GIF, PDF로 저장","WebP와 AVIF를 JPG나 PNG로 변환","GIF로 저장할 때 애니메이션 유지","PNG로 복사","이미지의 색상 팔레트 보기: HEX, RGB, HSL 복사 또는 .ase와 .gpl 파일 저장","직접 선택한 폴더에 저장","파일 이름 직접 지정","업로드 없이 내 컴퓨터에서 변환"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"Chrome에서 오른쪽 클릭 한 번으로 WebP를 JPG, PNG, GIF로 저장","description":"28초 분량의 Imgkeep 데모: 오른쪽 클릭 메뉴에서 움직이는 WebP를 애니메이션이 그대로 유지되는 GIF로 저장하고, WebP 사진을 JPG로 저장하는 모습.","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/ko/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/ko/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep은 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 지금 Imgkeep이 제공하는 모든 기능은 무료이며, 광고도 제한도 없습니다. 추가 기능을 담은 유료 Imgkeep Pro를 준비 중이지만, 지금의 기능은 계속 무료입니다."}},{"@type":"Question","name":"Imgkeep이 제 이미지를 업로드하나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 이미지는 사용자의 컴퓨터에서 변환되어 지정한 폴더에 바로 저장됩니다. Imgkeep이 보내는 것은 어떤 기능을 사용했고 어떤 저장이 실패했는지에 대한 하루 한 번의 익명 횟수뿐이며, 옵션에서 끌 수 있습니다."}},{"@type":"Question","name":"어떤 형식으로 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, GIF(애니메이션 유지), PDF, 그리고 원본 형식입니다. 요즘 많은 사이트가 제공하는 WebP와 AVIF 이미지도 변환하며, PNG로 복사를 쓰면 이미지가 클립보드에 담깁니다."}},{"@type":"Question","name":"이미지에서 색상 팔레트를 뽑을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 이미지를 오른쪽 버튼으로 클릭하고 Imgkeep, 색상 팔레트 보기를 차례로 고르세요. 주요 색상 5개, 8개, 12개를 비중이 큰 순서대로 보여줍니다. 색을 클릭하면 HEX, RGB, HSL로 복사할 수 있고, 전체를 CSS 변수, Tailwind, JSON으로도 복사할 수 있습니다. PNG 색상표, GIMP 팔레트, Adobe 스와치로 저장할 수도 있습니다. 모든 계산은 내 컴퓨터에서 이루어집니다."}},{"@type":"Question","name":"Instagram이나 Pinterest처럼 사이트가 가려 놓은 이미지도 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 사진을 오른쪽 클릭하고 Imgkeep: 여기서 이미지 찾기를 선택하세요. Imgkeep이 그 페이지를 한 번 살펴보고 클릭한 자리의 사진을 가장 큰 크기로 찾아 바로 저장할 수 있게 엽니다. 직접 켜기 전까지는 꺼져 있고, 페이지를 바꾸는 일은 없습니다."}},{"@type":"Question","name":"이미 컴퓨터에 있는 이미지도 변환할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. imgkeep.app/convert/의 무료 이미지 변환기를 사용하세요. 파일을 끌어다 놓고 PNG, JPG, WebP, AVIF, GIF, PDF, ICO 중에서 고른 다음 다운로드하거나 PNG로 복사하면 됩니다. 브라우저에서 실행되므로 업로드가 없고 가입도 필요 없습니다. 휴대폰에서도 작동합니다."}},{"@type":"Question","name":"어떤 브라우저에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Google Chrome 116 이상과 Microsoft Edge에서 9개 언어로 쓸 수 있습니다."}},{"@type":"Question","name":"페이지의 모든 이미지를 한 번에 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. Imgkeep은 오른쪽 버튼으로 클릭한 이미지 하나를 저장합니다. 페이지 전체를 받으려면 일괄 다운로더가 필요합니다."}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/ko/" aria-label="Imgkeep 홈"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="메인">
+        <a href="/ko/convert/">변환기</a>
+        <a href="/ko/color-palette-from-image/">색상 팔레트</a>
+        <a href="#how-it-works">사용 방법</a>
+        <a href="#image-guides">가이드</a>
+        <a href="/privacy.html">개인정보</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Imgkeep 받기 <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">KO</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">이미지를 PNG, JPG, WebP, GIF, PDF로 저장</span> <span class="display">모든 이미지를. <span class="accent">원하는 형식으로.</span></span></h1>
+        <p class="lead">Imgkeep은 웹 이미지를 PNG, JPG, WebP, GIF, PDF로 저장하는 무료 Chrome·Edge 확장 프로그램입니다. 우클릭하면 내 기기에서 변환해 내가 고른 폴더에 저장합니다.</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chrome에 추가 — 무료</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge용도 있습니다 <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/ko/download/">Firefox와 다른 브라우저</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Chrome Web Store에서 5점 만점에 5.0점"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · Chrome Web Store 평점</a></p>
+        <p class="trust">계정 불필요 <span aria-hidden="true">·</span> 업로드 없음 <span aria-hidden="true">·</span> 오픈소스</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">28초 데모를 YouTube에서 보기</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">재생이 안 되나요? YouTube에서 보기 <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">28초 분량의 무음 데모: 움직이는 WebP 이미지를 우클릭하고 Imgkeep을 열어 GIF (애니메이션 유지)를 선택합니다. 저장된 GIF는 그대로 움직입니다. 이어서 WebP 사진을 같은 방법으로 JPG로 저장합니다.</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">사용 방법</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>이미지를 우클릭하세요</h3>
+            <p>웹에서 이미지를 찾아 우클릭하세요.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>형식을 고르세요</h3>
+            <p>PNG, JPG, WebP, GIF (애니메이션 유지), PDF, 원본 형식 중에서 고르세요. PNG로 복사하거나 색상 팔레트를 볼 수도 있습니다.</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>원하는 폴더에 저장</h3>
+            <p>Imgkeep이 내 컴퓨터에서 변환해 매번 원하는 위치에 저장합니다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">설치도, 업로드도 필요 없습니다</p>
+        <h2 id="convert-title">이미 가지고 있는 이미지를 변환하세요.</h2>
+        <p>WebP, AVIF, PNG, JPG 파일을 끌어다 놓으면 브라우저 안에서 바로 PNG, JPG, AVIF, GIF, PDF, ICO로 바꿔 줍니다. 업로드도, 가입도 없습니다.</p>
+        <p><a class="band-link" href="/ko/convert/">변환기 열기 <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>많이 찾는 변환:</span> <a href="/ko/webp-to-jpg/">WebP를 JPG로</a> · <a href="/ko/webp-to-png/">WebP를 PNG로</a> · <a href="/ko/avif-to-jpg/">AVIF를 JPG로</a> · <a href="/ko/png-to-jpg/">PNG를 JPG로</a> · <a href="/ko/png-to-ico/">PNG를 ICO로</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">기능</p>
+        <h2 id="features-title">Imgkeep이 하는 일 전부.</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>폴더를 기억합니다</h3>
+            <p>폴더를 한 번만 정해 두면 모든 이미지가 그곳에, 직접 이름 붙인 하위 폴더에 저장됩니다. 기존 파일을 덮어쓰는 일도 없습니다.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>WebP와 AVIF도 문제없이</h3>
+            <p>사이트가 내려주는 WebP·AVIF 파일을 어떤 앱에서나 열리는 PNG나 JPG로 바꿉니다. 움직이는 이미지는 GIF로 저장해 그대로 움직입니다.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>PNG로 복사</h3>
+            <p>투명도를 유지한 진짜 PNG로 클립보드에 담아 채팅, 문서, 또는 Canva, Figma, Google Slides 같은 디자인 도구에 붙여넣으세요. <a href="/web-image-into-canva-figma-google-slides/">방법 보기</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>색상 팔레트</h3>
+            <p>우클릭 메뉴에서 이미지의 주요 색상을 확인하세요. 색 하나를 HEX, RGB, HSL로 복사하거나, 전체를 CSS나 Tailwind로 복사하거나, Adobe 앱과 GIMP용으로 저장할 수 있습니다. <a href="/ko/color-palette-from-image/">여기에 이미지를 끌어다 놓아도 됩니다</a>.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>내가 정하는 파일 이름</h3>
+            <p>원본 이름, 사이트, 날짜, 크기로 파일 이름을 만드세요. 예를 들면 <code>{name}-{w}x{h}</code>처럼요.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>우클릭이 안 되는 곳에서도</h3>
+            <p>Instagram이나 Pinterest 같은 사이트에서는 사진이 다른 레이어 아래에 숨어 있습니다. <strong>여기서 이미지 찾기</strong>를 선택하면 Imgkeep이 가장 큰 크기의 사진을 찾아냅니다. 직접 켜기 전까지는 꺼져 있습니다.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>크기 조절과 미리보기</h3>
+            <p>최대 너비를 정해 두면 큰 이미지가 거기에 맞춰 줄어듭니다. <strong>추가 옵션</strong>에서는 저장하기 전에 결과물과 실제 파일 크기를 보여주고, 품질과 배경도 직접 고를 수 있습니다.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF, AVIF, ICO, BMP</h3>
+            <p>이미지를 한 장짜리 PDF로 저장하거나, 추가 옵션에서 AVIF(보통 JPG의 절반 크기), 바로 가기와 파비콘에 쓰는 ICO 아이콘, BMP로 저장하세요.</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>이미 가지고 있는 파일</h3>
+            <p>컴퓨터나 휴대폰에 있는 이미지는 <a href="/ko/convert/">무료 이미지 변환기</a>로 변환하세요. 페이지 안에서 실행되므로 아무것도 업로드되지 않습니다.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">이미지 형식 가이드</p>
+        <h2 id="guides-title">이미지 형식, 어렵지 않게.</h2>
+        <p class="intro">매일 저장하는 이미지에 바로 쓸 수 있고, 믿을 만한 확장 프로그램을 고르는 데도 도움이 되는 가이드입니다.</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">설명</p>
+            <h3><a href="/ko/chrome-saves-images-as-webp/">Chrome이 WebP로 저장하는 이유</a></h3>
+            <p>Chrome은 사이트가 보낸 파일을 그대로 저장하는데, 많은 사이트가 용량이 작다는 이유로 WebP를 보냅니다. 이를 바꾸는 Chrome 설정은 없습니다. 저장할 때 바로 변환하거나, 저장한 뒤 Paint나 Preview에서 변환하세요.</p>
+            <a class="more" href="/ko/chrome-saves-images-as-webp/">WebP 알아보기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/ko/save-webp-as-jpg-png/">WebP를 JPG나 PNG로 저장하기</a></h3>
+            <p>이미지를 오른쪽 버튼으로 클릭해 PNG나 JPG로 저장하세요. 변환은 내 컴퓨터에서 이루어지므로 아무것도 업로드되지 않습니다. 그래픽과 투명 배경에는 PNG, 사진에는 JPG를 고르세요.</p>
+            <a class="more" href="/ko/save-webp-as-jpg-png/">WebP 가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/ko/save-avif-as-jpg-png/">AVIF를 JPG나 PNG로 저장하기</a></h3>
+            <p>AVIF는 WebP보다 용량이 작지만, 아직 많은 앱과 업로드 양식에서 열리지 않습니다. 내려받을 때 바로 JPG나 PNG로 저장하거나, Preview 또는 Paint(Microsoft의 무료 AV1 확장 설치)에서 내보내세요.</p>
+            <a class="more" href="/ko/save-avif-as-jpg-png/">AVIF 가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">설명</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">Chrome이 JFIF로 저장할 때</a></h3>
+            <p>.jfif 파일은 확장자만 다른 평범한 JPEG이며, Windows 레지스트리 설정 때문에 생깁니다. 확장자를 .jpg로 바꾸거나, 설정을 한 번 고치거나, 처음부터 JPG로 저장하세요.</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">JFIF 가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/save-animated-webp-as-gif/">움직이는 WebP를 GIF로</a></h3>
+            <p>JPG와 PNG는 한 프레임만 남깁니다. 거의 모든 곳에서 재생되는 GIF로 애니메이션을 저장하면 속도와 투명도도 그대로 유지됩니다. 한 번에 저장하거나 GIMP로 할 수 있습니다.</p>
+            <a class="more" href="/save-animated-webp-as-gif/">GIF 가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/save-image-as-pdf/">이미지를 PDF로 저장하기</a></h3>
+            <p>Chrome의 PDF로 인쇄는 이미지를 종이 크기 페이지에 올립니다. 오른쪽 클릭 메뉴에서 바로 이미지 크기에 딱 맞는 한 쪽짜리 PDF를 만들 수도 있습니다.</p>
+            <a class="more" href="/save-image-as-pdf/">PDF 가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">안전</p>
+            <h3><a href="/save-image-as-type-alternative/">Save image as Type의 안전한 대안</a></h3>
+            <p>새 소유자가 쇼핑 사이트에 제휴 링크를 넣기 시작하면서 Google이 2026년 3월에 삭제했습니다. 아직 설치되어 있다면 제거하고, 대신 쓸 확장 프로그램의 권한, 데이터, 소유자, 소스 코드를 확인하세요.</p>
+            <a class="more" href="/save-image-as-type-alternative/">체크리스트 보기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/ko/save-image-right-click-not-working/">오른쪽 클릭으로 이미지가 저장되지 않을 때</a></h3>
+            <p>Instagram이나 Pinterest 같은 사이트에서는 사진이 다른 레이어 아래에 있어서 오른쪽 클릭이 사진에 닿지 않습니다. 왜 그런지, 무료로 해결하는 방법, 그리고 Imgkeep이 어떻게 사진을 찾아주는지 알아보세요.</p>
+            <a class="more" href="/ko/save-image-right-click-not-working/">가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">사용 방법</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">웹 이미지를 Canva, Figma, Slides로</a></h3>
+            <p>웹 이미지를 PNG로 복사해 디자인이나 슬라이드에 붙여넣으세요. 지원하지 않는 파일 형식이라는 메시지가 뜬다면 사이트가 WebP나 AVIF를 보낸 것이니 PNG나 JPG로 저장하세요.</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">가이드 읽기 <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">질문</p>
+        <h2 id="faq-title">군더더기 없는 답변.</h2>
+        <dl>
+          <div>
+            <dt>Imgkeep은 무료인가요?</dt>
+            <dd>네. 지금 Imgkeep이 제공하는 모든 기능은 무료이며, 광고도 제한도 없습니다. 추가 기능을 담은 유료 Imgkeep Pro를 준비 중이지만, 지금의 기능은 계속 무료입니다.</dd>
+          </div>
+          <div>
+            <dt>Imgkeep이 제 이미지를 업로드하나요?</dt>
+            <dd>아니요. 모든 이미지는 내 컴퓨터에서 변환되어 지정한 폴더에 바로 저장됩니다. Imgkeep이 보내는 것은 어떤 기능을 썼고 어떤 저장이 실패했는지에 대한 하루 한 번의 익명 집계뿐이며, 옵션에서 끌 수 있습니다. <a href="/privacy.html">개인정보처리방침</a>.</dd>
+          </div>
+          <div>
+            <dt>어떤 형식으로 저장할 수 있나요?</dt>
+            <dd>PNG, JPG, WebP, GIF(애니메이션 유지), PDF 또는 원본 형식입니다. 요즘 많은 사이트가 제공하는 WebP와 AVIF 이미지도 변환하며, <strong>PNG로 복사</strong>를 쓰면 이미지가 클립보드에 담깁니다.</dd>
+          </div>
+          <div>
+            <dt>이미지에서 색상 팔레트를 뽑을 수 있나요?</dt>
+            <dd>네. 이미지를 오른쪽 버튼으로 클릭하고 Imgkeep, 색상 팔레트 보기를 차례로 고르세요. 주요 색상 5개, 8개, 12개를 비중이 큰 순서대로 보여줍니다. 색을 클릭하면 HEX, RGB, HSL로 복사할 수 있고, 전체를 CSS 변수, Tailwind, JSON으로도 복사할 수 있습니다. PNG 색상표, GIMP 팔레트, Adobe 스와치로 저장할 수도 있습니다. 모든 계산은 내 컴퓨터에서 이루어집니다.</dd>
+          </div>
+          <div>
+            <dt>Instagram이나 Pinterest처럼 사이트가 가려 놓은 이미지도 저장할 수 있나요?</dt>
+            <dd>네. 사진을 오른쪽 버튼으로 클릭하고 <strong>Imgkeep: 여기서 이미지 찾기</strong>를 고르세요. Imgkeep이 그 페이지를 한 번 살펴보고 클릭한 자리 아래에 있는 사진을 가장 큰 크기로 찾아 바로 저장할 수 있게 엽니다. 직접 켜기 전에는 꺼져 있으며, 페이지를 바꾸지 않습니다.</dd>
+          </div>
+          <div>
+            <dt>이미 컴퓨터에 있는 이미지도 변환할 수 있나요?</dt>
+            <dd>네. imgkeep.app/convert/에 있는 <a href="/ko/convert/">무료 이미지 변환기</a>를 쓰세요. 파일을 끌어다 놓고 PNG, JPG, WebP, AVIF, GIF, PDF, ICO 중에서 고른 뒤 내려받거나 PNG로 복사하면 됩니다. 브라우저에서 실행되므로 업로드도 가입도 없습니다. 휴대폰에서도 됩니다.</dd>
+          </div>
+          <div>
+            <dt>어떤 브라우저에서 쓸 수 있나요?</dt>
+            <dd>Google Chrome 116 이상과 Microsoft Edge에서 9개 언어로 쓸 수 있습니다.</dd>
+          </div>
+          <div>
+            <dt>페이지의 모든 이미지를 한 번에 저장할 수 있나요?</dt>
+            <dd>아니요. Imgkeep은 오른쪽 버튼으로 클릭한 이미지 하나를 저장합니다. 페이지 전체를 받으려면 일괄 다운로더가 필요합니다.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">원하는 형식으로 저장해 볼까요?</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chrome에 추가 — 무료</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge용도 있습니다 <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/ko/download/">Firefox와 다른 브라우저</a>
+          </div>
+          <p class="trust">계정 불필요 <span aria-hidden="true">·</span> 업로드 없음 <span aria-hidden="true">·</span> 오픈소스</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/ko/" aria-label="Imgkeep 홈"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">이미지는 내 컴퓨터에 그대로 남습니다.</p>
+        <nav aria-label="바닥글">
+          <a href="/ko/convert/">변환기</a>
+          <a href="/privacy.html">개인정보</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">소스 코드</a>
+          <a href="/support.html">지원</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="더 보기">
+        <a href="/ko/download/">다운로드</a>
+        <a href="/ideas.html">아이디어</a>
+        <a href="/whats-new.html">새로운 소식</a>
+        <a href="/pro.html">Imgkeep Pro 대기자 명단</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

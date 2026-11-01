@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { startServer } from "./servers.mjs";
+import { SITE_LANGS, SITE_PAGES, urlPath } from "../scripts/translate-site.mjs";
+import { existsSync } from "node:fs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 let server;
@@ -27,6 +29,7 @@ const PAGES = [
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
   ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
   ["download/", "download/index.html"],
+  ["color-palette-from-image/", "color-palette-from-image/index.html"],
 ];
 
 for (const [page] of PAGES) {
@@ -65,11 +68,22 @@ test("no third-party analytics or trackers on the site", async () => {
     // The one script: the site's own anonymous counter (count.js, tested below), exactly once per page.
     expect(raw.split('<script src="/count.js" defer></script>').length - 1, `${file}: count.js once`).toBe(1);
     raw = raw.replace('<script src="/count.js" defer></script>', "");
+    // Pages that have translations also load lang.js (offers the visitor's language; tested below).
+    if (SITE_PAGES.includes(file)) {
+      expect(raw.split('<script src="/lang.js" defer></script>').length - 1, `${file}: lang.js once`).toBe(1);
+      raw = raw.replace('<script src="/lang.js" defer></script>', "");
+    }
     // Converter pages also load the converter, from this site only (it converts in the page; nothing is uploaded).
     if (CONVERTERS.some((c) => file === `${c}/index.html`)) {
       const app = c => c === "convert/index.html" ? '<script type="module" src="app.js"></script>' : '<script type="module" src="../convert/app.js"></script>';
       expect(raw.split(app(file)).length - 1, `${file}: the converter script once`).toBe(1);
       raw = raw.replace(app(file), "");
+    }
+    // The palette tool loads its own script, from this site only (it reads the image in the page).
+    if (file === "color-palette-from-image/index.html") {
+      const tool = '<script type="module" src="app.js"></script>';
+      expect(raw.split(tool).length - 1, `${file}: the palette script once`).toBe(1);
+      raw = raw.replace(tool, "");
     }
     expect(raw).not.toMatch(/gtag\(|googletagmanager|google-analytics|plausible\.io|segment\.com|hotjar|clarity\.ms/i);
     // Deliberate, narrow exception: JSON-LD structured data (<script type="application/ld+json">) is
@@ -99,7 +113,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
     "pro.html": "https://imgkeep.app/pro.html", "whats-new.html": "https://imgkeep.app/whats-new.html",
     ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
     ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])),
-    "download/index.html": "https://imgkeep.app/download/" };
+    "download/index.html": "https://imgkeep.app/download/",
+    "color-palette-from-image/index.html": "https://imgkeep.app/color-palette-from-image/" };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
@@ -122,7 +137,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
   }
   expect(titles.size).toBe(Object.keys(pages).length);
   expect(descriptions.size).toBe(Object.keys(pages).length);
-  expect(sitemap.match(/<loc>/g).length).toBe(Object.keys(pages).length);
+  // English pages, plus every translated page (checked below).
+  expect(sitemap.match(/<loc>/g).length).toBe(Object.keys(pages).length + Object.keys(SITE_LANGS).length * SITE_PAGES.length);
   expect(await readFile(join(ROOT, "site", "404.html"), "utf8")).toContain('<meta name="robots" content="noindex">');
 });
 
@@ -244,13 +260,12 @@ test("home page links the Microsoft Edge listing too, and the download page for 
   expect(links).toEqual([EDGE, "download/", EDGE, "download/"]);
 });
 
-test("the download page links both live stores, and Firefox only once it's listed", async ({ page }) => {
+test("the download page links all three stores", async ({ page }) => {
   await page.goto(`${server.url}/download/`);
   await expect(page.locator('.store a[href^="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl"]')).toHaveCount(1);
   await expect(page.locator(`.store a[href^="${EDGE}"]`)).toHaveCount(1);
-  // While Mozilla reviews it, no link (it would be a dead end). Switch the card to a link on approval.
-  await expect(page.locator('a[href*="addons.mozilla.org"]')).toHaveCount(0);
-  await expect(page.locator(".store").nth(2)).toContainText("In review at Mozilla");
+  await expect(page.locator('.store a.cta[href^="https://addons.mozilla.org/firefox/addon/imgkeep/"]')).toHaveText("Add to Firefox");
+  await expect(page.locator("main")).not.toContainText("In review");
 });
 
 test("home links to Product Hunt from the footer, not the header (it would compete with Get Imgkeep)", async ({ page }) => {
@@ -440,5 +455,51 @@ test("count.js sends nothing when the browser asks sites not to track (Global Pr
   await page.goto("https://imgkeep.app/");
   await page.waitForTimeout(500);
   expect(sent).toEqual([]);
+  await context.close();
+});
+
+// The translated pages (scripts/translate-site.mjs): one per language and key page, each one complete.
+test("translated pages: language, canonical, hreflang, links and scripts", async () => {
+  const langs = Object.keys(SITE_LANGS);
+  const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
+  for (const file of SITE_PAGES) {
+    const path = urlPath(file);
+    const en = await readFile(join(ROOT, "site", file), "utf8");
+    for (const l of langs) expect(en, `${file} lists ${l}`).toContain(`hreflang="${SITE_LANGS[l].hreflang}" href="https://imgkeep.app/${l}${path}"`);
+    for (const l of langs) {
+      const f = `${l}/${file}`;
+      const html = await readFile(join(ROOT, "site", f), "utf8");
+      const url = `https://imgkeep.app/${l}${path}`;
+      expect(html, f).toContain(`<html lang="${SITE_LANGS[l].hreflang}"${SITE_LANGS[l].rtl ? ' dir="rtl"' : ""}>`);
+      expect(html, f).toContain(`<link rel="canonical" href="${url}">`);
+      expect(html, f).toContain(`<meta property="og:url" content="${url}">`);
+      expect(html, f).toContain('hreflang="x-default"');
+      expect(sitemap, `${url} in sitemap`).toContain(`<loc>${url}</loc>`);
+      expect(html, f).not.toContain("Imgkeep: Save image as");
+      // Every link to this site goes to a file that exists (translated page, or the English one).
+      for (const [, value] of html.matchAll(/\b(?:href|src|poster)="(\/[^"#?]*)/g)) {
+        const target = value.endsWith("/") ? `${value}index.html` : value;
+        expect(existsSync(join(ROOT, "site", target)), `${f}: ${value}`).toBe(true);
+      }
+      // The same scripts as the English page: count.js, lang.js, JSON-LD (valid), and the tool's own.
+      let raw = html.replace('<script src="/count.js" defer></script>', "").replace('<script src="/lang.js" defer></script>', "");
+      raw = raw.replace(/<script type="module" src="\/(convert|color-palette-from-image)\/app\.js"><\/script>/, "");
+      raw = raw.replace(/<script type="application\/json" id="strings">([\s\S]*?)<\/script>/, (_, json) => (JSON.parse(json), ""));
+      raw = raw.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (_, json) => (JSON.parse(json), ""));
+      expect(raw, `${f}: no other scripts`).not.toMatch(/<script/i);
+    }
+  }
+});
+
+test("a translated converter works in its language, and lang.js offers the visitor's language", async ({ browser }) => {
+  const context = await browser.newContext({ locale: "es-ES" });
+  const page = await context.newPage();
+  await page.goto(`${server.url}/es/convert/`);
+  await expect(page.locator("#dropTitle")).toContainText("PNG");
+  await expect(page.locator("#dropTitle")).not.toContainText("Drop images");
+  await page.goto(`${server.url}/`);
+  await expect(page.locator(".lang-hint a")).toHaveAttribute("href", "https://imgkeep.app/es/");
+  await page.goto(`${server.url}/es/`);
+  await expect(page.locator(".lang-hint")).toHaveCount(0); // already in the visitor's language
   await context.close();
 });

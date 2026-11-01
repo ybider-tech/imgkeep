@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Почему Chrome сохраняет изображения в WebP и как получить JPG или PNG</title>
+  <meta name="description" content="Chrome сохраняет тот файл, который прислал сайт, а многие сайты теперь отдают WebP. Настройки для этого нет. Вот четыре способа получить JPG или PNG.">
+  <link rel="canonical" href="https://imgkeep.app/ru/chrome-saves-images-as-webp/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/chrome-saves-images-as-webp/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/chrome-saves-images-as-webp/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Почему Chrome сохраняет изображения в WebP (и как получить JPG или PNG)">
+  <meta property="og:description" content="Chrome сохраняет тот файл, который прислал сайт, а многие сайты теперь отдают WebP. Настройки для этого нет. Вот четыре способа получить JPG или PNG.">
+  <meta property="og:url" content="https://imgkeep.app/ru/chrome-saves-images-as-webp/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: любое изображение. Ваш формат. Сохраняйте изображения из интернета в PNG, JPG, WebP, GIF или PDF прямо из контекстного меню в Chrome или Edge.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно просто переименовать файл .webp в .jpg?","acceptedAnswer":{"@type":"Answer","text":"Переименование меняет имя, а не сам файл. Внутри это по-прежнему WebP. Некоторые программы заглядывают внутрь и всё равно открывают его, но многие — нет. Лучше сконвертировать."}},{"@type":"Question","name":"WebP — это плохо?","acceptedAnswer":{"@type":"Answer","text":"Нет. Это хороший формат: страницы с ним загружаются быстрее, а современные браузеры и операционные системы его показывают. Проблема в старых программах, некоторых формах загрузки и отдельных инструментах для печати и дизайна, которые по-прежнему ждут JPG или PNG."}},{"@type":"Question","name":"JPG или PNG?","acceptedAnswer":{"@type":"Answer","text":"PNG сохраняет каждый пиксель и прозрачность, но файлы получаются крупнее. JPG меньше и хорошо подходит для фотографий, но прозрачности в нём нет."}},{"@type":"Question","name":"Почему Chrome сохраняет изображения в WebP?","acceptedAnswer":{"@type":"Answer","text":"Chrome сохраняет ровно тот файл, который прислал сайт, а многие сайты теперь отдают WebP, потому что при том же качестве он меньше JPG или PNG. Настройки, чтобы это изменить, в Chrome нет. Чтобы получить JPG или PNG, изображение нужно сконвертировать: при сохранении, с помощью расширения, или потом в Paint (Windows) либо Preview (Mac)."}}]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/ru/"},{"@type":"ListItem","position":2,"name":"Почему Chrome сохраняет WebP","item":"https://imgkeep.app/ru/chrome-saves-images-as-webp/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TechArticle","headline":"Почему Chrome сохраняет изображения в WebP и как получить JPG или PNG","description":"Chrome сохраняет ровно тот файл, который прислал сайт, а многие сайты теперь отдают WebP, потому что при том же качестве он меньше JPG или PNG. Настройки, чтобы это изменить, в Chrome нет. Чтобы получить JPG или PNG, изображение нужно сконвертировать: при сохранении, с помощью расширения, или потом в Paint (Windows) либо Preview (Mac).","url":"https://imgkeep.app/ru/chrome-saves-images-as-webp/","mainEntityOfPage":"https://imgkeep.app/chrome-saves-images-as-webp/","image":"https://imgkeep.app/media/guides/menu-png.jpg","datePublished":"2026-09-27","dateModified":"2026-10-28","inLanguage":"en","author":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ru/"},"publisher":{"@type":"Organization","name":"Imgkeep","url":"https://imgkeep.app/ru/","logo":{"@type":"ImageObject","url":"https://imgkeep.app/icon128.png"}}}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/ru/"><img src="/icon128.png" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="mini-nav" aria-label="Основная навигация"><a href="/ru/convert/">Конвертер</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">RU</summary><ul><li><a href="/chrome-saves-images-as-webp/" hreflang="en" lang="en">English</a></li><li><a href="/es/chrome-saves-images-as-webp/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/chrome-saves-images-as-webp/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/chrome-saves-images-as-webp/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/chrome-saves-images-as-webp/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ar/chrome-saves-images-as-webp/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/chrome-saves-images-as-webp/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/chrome-saves-images-as-webp/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/chrome-saves-images-as-webp/" hreflang="ru" lang="ru" aria-current="true">Русский</a></li><li><a href="/uk/chrome-saves-images-as-webp/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/chrome-saves-images-as-webp/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/chrome-saves-images-as-webp/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/chrome-saves-images-as-webp/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <nav class="crumbs" aria-label="Навигационная цепочка">
+      <a href="/ru/#image-guides">← На главную</a><span aria-hidden="true">›</span><span aria-current="page">Почему Chrome сохраняет WebP</span>
+    </nav>
+
+    <main class="doc">
+      <h1>Почему Chrome сохраняет изображения в WebP (и как получить JPG или PNG)</h1>
+      <div class="answer">
+        <p class="label">Коротко</p>
+        <p>Chrome сохраняет ровно тот файл, который прислал сайт, а многие сайты теперь отдают WebP, потому что при том же качестве он меньше JPG или PNG. Настройки, чтобы это изменить, в Chrome нет. Чтобы получить JPG или PNG, изображение нужно сконвертировать: при сохранении, с помощью расширения, или потом в Paint (Windows) либо Preview (Mac).</p>
+      </div>
+      <p class="updated">Обновлено <time datetime="2026-10-28">28 октября 2026</time></p>
+
+      <h2>Почему Chrome сохраняет изображения в WebP?</h2>
+      <p>Каждый раз, запрашивая у сайта изображение, Chrome сообщает, какие форматы он умеет показывать. Актуальные версии Chrome называют первыми AVIF и WebP. Многие сайты и сервисы изображений используют это, чтобы отдать вам файл поменьше, ведь WebP и AVIF при том же качестве обычно заметно легче JPG или PNG. Страницы загружаются быстрее.</p>
+      <p>Когда вы выбираете <strong>Сохранить изображение как…</strong>, Chrome сохраняет именно полученный файл. Он ничего не конвертирует. Отсюда два следствия:</p>
+      <ul>
+        <li>Адрес изображения может заканчиваться на <code>.jpg</code> и всё равно отдавать WebP. Сайт решает это по тому, что принимает браузер, а не по имени файла.</li>
+        <li>То же изображение может прийти и в AVIF. См. <a href="/ru/save-avif-as-jpg-png/">как сохранить AVIF в JPG или PNG</a>.</li>
+        <li>В Windows JPG может сохраниться как <code>.jfif</code>. Это проблема только имени файла: <a href="/chrome-saves-images-as-jfif/">Chrome сохраняет изображения как JFIF</a>.</li>
+      </ul>
+
+      <h2>Есть ли в Chrome настройка, чтобы это отключить?</h2>
+      <p>Нет. В Chrome нет ни настройки формата сохраняемых изображений, ни способа сообщить сайтам, что вам не нужен WebP. Поэтому все решения ниже работают с самим изображением: конвертируют его при сохранении или после.</p>
+
+      <h2>Как получить JPG или PNG вместо этого?</h2>
+      <p>Уже сохранили WebP? Конвертируйте имеющиеся файлы прямо в браузере, без загрузки на сервер: <a href="/ru/webp-to-jpg/">WebP в JPG</a>.</p>
+
+      <h3>1. Скопировать и вставить в графический редактор</h3>
+      <p>Щёлкните по изображению правой кнопкой и выберите <strong>Копировать изображение</strong>. В Windows вставьте его в Paint (Ctrl+V) и воспользуйтесь командой <strong>Файл › Сохранить как</strong>. На Mac откройте Preview, выберите <strong>Файл › Новое из буфера обмена</strong>, затем <strong>Файл › Экспортировать</strong>. Ничего устанавливать не нужно. Минус: несколько шагов на каждое изображение, а прозрачный фон может не сохраниться.</p>
+
+      <h3>2. Сохранить, а потом сконвертировать</h3>
+      <p>Сохраните WebP как обычно, откройте его в Paint (Windows) или Preview (Mac) и сохраните или экспортируйте в JPEG или PNG. Тоже ничего не нужно устанавливать, но в итоге остаются два файла и несколько лишних кликов каждый раз. Пошагово: <a href="/ru/save-webp-as-jpg-png/">как сохранить WebP в JPG или PNG</a>.</p>
+
+      <h3>3. Сделать снимок экрана</h3>
+      <p>Нажмите Win+Shift+S в Windows или Cmd+Shift+4 на Mac и выделите изображение. Работает со всем, что видно на экране. Минус: вы получаете то, что на экране, а не исходный файл, так что изображение часто меньше и в него могут попасть части страницы. Если в контекстном меню изображения вообще нет, см. <a href="/ru/save-image-right-click-not-working/">когда правый клик не сохраняет изображение</a>.</p>
+
+      <h3>4. Использовать расширение, которое конвертирует при сохранении</h3>
+      <p>Расширение может добавить в контекстное меню пункт «сохранить как PNG или JPG» и сконвертировать изображение за вас — в полном размере и за один шаг. Минус: вы доверяете коду, который работает в вашем браузере, поэтому выбирайте внимательно (см. список проверок ниже).</p>
+
+      <div class="option">
+        <p class="label">Наше расширение</p>
+        <h3>Imgkeep</h3>
+        <p>Мы делаем Imgkeep — бесплатное расширение для Chrome именно для этого. Щёлкните по любому изображению правой кнопкой, выберите <strong>Imgkeep</strong>, затем <strong>PNG</strong>, <strong>JPG</strong>, <strong>WebP</strong>, <strong>GIF</strong>, <strong>PDF</strong> или <strong>Исходный формат</strong>. Оно конвертирует на вашем компьютере и сохраняет в «Загрузки», в выбранную вами папку или туда, куда вы укажете каждый раз. Оно обращается к странице только тогда, когда вы просите найти на ней изображение, никогда её не меняет, и у него открытый исходный код.</p>
+        <figure class="shot">
+          <img src="/media/guides/menu-png.jpg" width="1120" height="560" loading="lazy" decoding="async" alt="Фотография товара на веб-странице с открытым меню правого клика. В меню виден пункт Imgkeep, в подменю — PNG, JPG, WebP, GIF (с анимацией), PDF, Исходный формат, Копировать как PNG, Получить палитру цветов и Другие варианты…. Выделен PNG.">
+          <figcaption>Нажмите на изображение правой кнопкой, выберите <strong>Imgkeep</strong>, затем формат.</figcaption>
+        </figure>
+        <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=landing&amp;utm_campaign=chrome-saves-images-as-webp">Установить Imgkeep в Chrome — бесплатно</a>
+        <span class="cta-note">Четыре разрешения. Никаких загрузок на сервер и аккаунтов.</span>
+      </div>
+
+      <h2>Как оценить расширение для работы с изображениями?</h2>
+      <p>Старые статьи часто советуют «Save image as Type». Google удалил его из Chrome Web Store в марте 2026 года, после смены владельца, когда выяснилось, что оно подставляет партнёрские ссылки на сайтах магазинов (<a href="https://9to5google.com/2026/03/16/image-saving-chrome-extension-removed-as-malware/">9to5Google</a>). Если оно у вас ещё стоит, удалите его. Что бы вы ни устанавливали, проверьте:</p>
+      <ul>
+        <li><strong>Разрешения.</strong> Просит ли расширение «читать и изменять все ваши данные» на всех сайтах? Для сохранения изображения, по которому вы щёлкнули, это не нужно.</li>
+        <li><strong>Данные.</strong> Прочитайте раздел «Конфиденциальность» на странице в магазине. Указано ли там, что расширение что-то собирает?</li>
+        <li><strong>Владелец и обновления.</strong> Поддерживается ли расширение до сих пор? Не менялся ли недавно разработчик?</li>
+        <li><strong>Исходный код.</strong> Открыт ли код, чтобы другие могли проверить, что делает расширение?</li>
+      </ul>
+      <p>Полный список проверок и история Save image as Type: <a href="/save-image-as-type-alternative/">безопасная замена Save image as Type</a>.</p>
+
+      <h2>Похожие руководства</h2>
+      <ul>
+        <li><a href="/ru/save-webp-as-jpg-png/">Как сохранить WebP в JPG или PNG</a></li>
+        <li><a href="/ru/save-avif-as-jpg-png/">Как сохранить AVIF в JPG или PNG</a></li>
+        <li><a href="/chrome-saves-images-as-jfif/">Chrome сохраняет изображения как JFIF? Как получить JPG</a></li>
+        <li><a href="/save-animated-webp-as-gif/">Как сохранить анимированный WebP как GIF</a></li>
+        <li><a href="/save-image-as-pdf/">Как сохранить изображение в PDF в Chrome</a></li>
+        <li><a href="/save-image-as-type-alternative/">Безопасная замена Save image as Type</a></li>
+        <li><a href="/ru/save-image-right-click-not-working/">Когда правый клик не сохраняет изображение</a></li>
+        <li><a href="/web-image-into-canva-figma-google-slides/">Как перенести изображение из интернета в Canva, Figma или Google Slides</a></li>
+      </ul>
+
+      <h2>Вопросы</h2>
+      <h3>Можно просто переименовать файл .webp в .jpg?</h3>
+      <p>Переименование меняет имя, а не сам файл. Внутри это по-прежнему WebP. Некоторые программы заглядывают внутрь и всё равно открывают его, но многие — нет. Лучше сконвертировать.</p>
+      <h3>WebP — это плохо?</h3>
+      <p>Нет. Это хороший формат: страницы с ним загружаются быстрее, а современные браузеры и операционные системы его показывают. Проблема в старых программах, некоторых формах загрузки и отдельных инструментах для печати и дизайна, которые по-прежнему ждут JPG или PNG.</p>
+      <h3>JPG или PNG?</h3>
+      <p>PNG сохраняет каждый пиксель и прозрачность, но файлы получаются крупнее. JPG меньше и хорошо подходит для фотографий, но прозрачности в нём нет. Подробнее — в <a href="/ru/save-webp-as-jpg-png/">руководстве по WebP</a>.</p>
+    </main>
+
+    <footer>
+      <nav aria-label="Подвал сайта">
+        <a href="/ru/">Главная</a>
+        <a href="/ru/convert/">Конвертер</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Исходный код</a>
+        <a href="/ru/download/">Скачать</a>
+        <a href="/ideas.html">Идеи</a>
+        <a href="/support.html">Поддержка</a>
+        <a href="/privacy.html">Конфиденциальность</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Руководства">
+        <a href="/ru/chrome-saves-images-as-webp/">Почему Chrome сохраняет WebP</a>
+        <a href="/ru/save-webp-as-jpg-png/">Сохранить WebP как JPG или PNG</a>
+        <a href="/ru/save-avif-as-jpg-png/">Сохранить AVIF как JPG или PNG</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome сохраняет JFIF</a>
+        <a href="/save-animated-webp-as-gif/">Анимированный WebP в GIF</a>
+        <a href="/save-image-as-pdf/">Сохранить изображение в PDF</a>
+        <a href="/save-image-as-type-alternative/">Безопасная альтернатива расширению Save image as Type</a>
+        <a href="/ru/save-image-right-click-not-working/">Когда правый клик не сохраняет изображение</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Изображения из интернета в Canva, Figma или Slides</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

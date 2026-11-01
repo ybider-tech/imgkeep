@@ -6,7 +6,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-export const SITE_LIB = ["convert", "image", "gif", "gifenc", "pdf", "ico", "bmp", "avif", "settings", "job-error"].map((f) => `lib/${f}.js`);
+export const SITE_LIB = ["convert", "image", "gif", "gifenc", "pdf", "ico", "bmp", "avif", "settings", "job-error", "palette"].map((f) => `lib/${f}.js`);
 export const SITE_VENDOR = ["vendor/avif/avif_enc.js", "vendor/avif/avif_enc.wasm", "vendor/avif/LICENSE-jsquash", "vendor/avif/LICENSE-libavif", "vendor/avif/LICENSE-libaom", "vendor/avif/PATENTS-libaom", "vendor/avif/README"];
 
 if (import.meta.url === `file://${process.argv[1]}`) {

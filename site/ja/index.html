@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画像をPNG・JPG・WebP・GIF・PDFで保存 — Imgkeep</title>
+  <meta name="description" content="ChromeやEdgeで画像を右クリックして、PNG・JPG・WebP・GIF・PDFで保存したり、カラーパレットを取得したり。変換はお使いのパソコン上で。無料・オープンソース。">
+  <link rel="canonical" href="https://imgkeep.app/ja/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/">
+  <link rel="alternate" hreflang="pt-BR" href="https://imgkeep.app/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/">
+  <link rel="alternate" hreflang="fr" href="https://imgkeep.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/">
+  <link rel="alternate" hreflang="he" href="https://imgkeep.app/he/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="Imgkeep — どんな画像も、好きな形式で。">
+  <meta property="og:description" content="無料のChrome・Edge拡張機能。どんな画像も右クリックするだけで、PNG、JPG、WebP、GIF、PDFで保存できます。変換はお使いのパソコン上で行い、指定したフォルダに保存。オープンソースです。">
+  <meta property="og:url" content="https://imgkeep.app/ja/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=2">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep：どんな画像も、好きな形式で。ChromeやEdgeの右クリックメニューから、ウェブ上の画像をPNG、JPG、WebP、GIF、PDFで保存。">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Imgkeep","description":"Imgkeepは、右クリックメニューからウェブ上の画像をPNG、JPG、WebP、GIF（アニメーション付き）、PDFで保存したり、PNGとしてコピーしたり、カラーパレットを表示したりできる、ChromeとEdge用の無料拡張機能です。画像はあなたのパソコン上で変換され、選んだフォルダに保存されます。","url":"https://imgkeep.app/ja/","image":"https://imgkeep.app/icon128.png","applicationCategory":"BrowserApplication","operatingSystem":"Chrome, Microsoft Edge","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"installUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","downloadUrl":"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl","license":"https://opensource.org/licenses/MIT","featureList":["画像をPNG、JPG、WebP、GIF、PDFで保存","WebPやAVIFをJPGまたはPNGに変換","GIFで保存してもアニメーションを保持","PNGとしてコピー","画像のカラーパレットを取得：HEX、RGB、HSLでコピー、.aseや.gplファイルで保存","選んだフォルダに保存","ファイル名のカスタマイズ","お使いのパソコン上で変換、アップロードなし"],"publisher":{"@id":"https://imgkeep.app/#org"},"sameAs":["https://github.com/ybider-tech/imgkeep","https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]}
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/icon128.png">
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/style.css?v=f2fd186bf3">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"ChromeでWebPを右クリック一回でJPG・PNG・GIFとして保存","description":"Imgkeepの28秒のデモ。右クリックメニューから、アニメーションWebPを動きを保ったままGIFとして保存し、WebPの写真をJPGとして保存する様子。","thumbnailUrl":"https://imgkeep.app/media/imgkeep-demo-poster.jpg","uploadDate":"2026-09-29","duration":"PT28S","contentUrl":"https://imgkeep.app/media/imgkeep-demo.webm","embedUrl":"https://www.youtube.com/embed/QZfq5xLYdmo"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/ja/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/ja/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeepは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。現在Imgkeepができることはすべて無料で、広告も制限もありません。追加機能を備えた有料のImgkeep Proを予定していますが、今の機能はこれからも無料のままです。"}},{"@type":"Question","name":"Imgkeepは画像をアップロードしますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。画像はすべてお使いのパソコン上で変換され、そのまま選んだフォルダに保存されます。Imgkeepが送信するのは、どの機能が使われ、どの保存が失敗したかを示す匿名の1日1回の集計だけで、これもオプションでオフにできます。"}},{"@type":"Question","name":"どの形式で保存できますか？","acceptedAnswer":{"@type":"Answer","text":"PNG、JPG、WebP、GIF（アニメーションを保持）、PDF、または元の形式です。多くのサイトが配信するようになったWebPやAVIFの画像も変換でき、「PNGとしてコピー」で画像をクリップボードに入れられます。"}},{"@type":"Question","name":"画像からカラーパレットを取得できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。画像を右クリックしてImgkeepを選び、カラーパレットを取得を開きます。主要な5色、8色、12色が面積の大きい順に表示されます。色をクリックするとHEX、RGB、HSLでコピーでき、まとめてCSS変数、Tailwind、JSONとしてコピーすることもできます。PNG、GIMPパレット、Adobeスウォッチとして保存も可能です。すべてあなたのパソコン上で計算されます。"}},{"@type":"Question","name":"InstagramやPinterestのように、サイトが覆っている画像も保存できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。写真を右クリックして「Imgkeep: ここで画像を探す」を選びます。Imgkeepはそのページを一度だけ調べ、クリックした場所にある写真を最大サイズで見つけて、保存できる状態で開きます。オンにするまで動作せず、ページを書き換えることもありません。"}},{"@type":"Question","name":"すでにパソコンにある画像を変換できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。imgkeep.app/convert/ の無料画像コンバーターをお使いください。ファイルをドロップして、PNG、JPG、WebP、AVIF、GIF、PDF、ICOから形式を選び、ダウンロードするか、PNGとしてコピーします。ブラウザ上で動くので、アップロードはなく、登録も不要です。スマートフォンでも使えます。"}},{"@type":"Question","name":"どのブラウザで使えますか？","acceptedAnswer":{"@type":"Answer","text":"Google Chrome 116以降とMicrosoft Edgeで、9言語に対応しています。"}},{"@type":"Question","name":"ページ上のすべての画像を一度に保存できますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Imgkeepは右クリックした1枚の画像を保存します。ページ全体をまとめて保存するには一括ダウンローダーが必要です。"}}]}]}
+  </script>
+  <script src="/count.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip" href="#main">本文へスキップ</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/ja/" aria-label="Imgkeep ホーム"><img src="/icon128.png" alt="" width="40" height="40">Imgkeep</a>
+      <nav class="site-nav" aria-label="メイン">
+        <a href="/ja/convert/">コンバーター</a>
+        <a href="/ja/color-palette-from-image/">カラーパレット</a>
+        <a href="#how-it-works">使い方</a>
+        <a href="#image-guides">ガイド</a>
+        <a href="/privacy.html">プライバシー</a>
+      </nav>
+      <!-- Store links by extension ID, so they keep working if the listing name changes. Each placement has its own
+           utm_campaign: the Chrome Web Store dashboard shows which one brings installs, alongside the site's own anonymous counts (count.js). -->
+      <a class="get" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=header">Imgkeepを入手 <span aria-hidden="true">↗</span></a>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">JA</summary><ul><li><a href="/" hreflang="en" lang="en">English</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja" aria-current="true">日本語</a></li><li><a href="/ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/ru/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/uk/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/he/" hreflang="he" lang="he">עברית</a></li></ul></details><!-- /lang-menu -->
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title"><span class="eyebrow">画像をPNG、JPG、WebP、GIF、PDFで保存</span> <span class="display">どんな画像も。<span class="accent">好きな形式で。</span></span></h1>
+        <p class="lead">Imgkeepは、ウェブ上の画像をPNG、JPG、WebP、GIF、PDFで保存できる無料のChrome・Edge拡張機能です。右クリックするだけで、お使いのデバイス上で変換し、選んだフォルダに保存します。</p>
+        <div class="install">
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chromeに追加 — 無料</a>
+          <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge版もあります <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="/ja/download/">Firefoxなどのブラウザについて</a>
+        </div>
+        <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
+        <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Chrome Web Storeで5点満点中5.0の評価"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · Chrome Web Storeでの評価</a></p>
+        <p class="trust">アカウント不要 <span aria-hidden="true">·</span> アップロードなし <span aria-hidden="true">·</span> オープンソース</p>
+      </section>
+
+      <figure class="demo">
+        <video controls preload="none" playsinline width="1280" height="720" poster="/media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
+          <source src="/media/imgkeep-demo.webm" type="video/webm">
+          <a href="https://youtu.be/QZfq5xLYdmo">28秒のデモをYouTubeで見る</a>
+        </video>
+        <figcaption>
+          <a href="https://youtu.be/QZfq5xLYdmo">再生できない場合はYouTubeで <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">28秒の音声なしデモ：アニメーションのWebP画像を右クリックしてImgkeepを開き、GIF（アニメーションを保持）を選びます。保存したGIFはそのまま動きます。続いて、WebPの写真を同じ手順でJPGとして保存します。</span>
+        </figcaption>
+      </figure>
+
+      <section class="steps" id="how-it-works" aria-labelledby="steps-title">
+        <h2 class="sr-only" id="steps-title">使い方</h2>
+        <ol>
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <h3>画像を右クリック</h3>
+            <p>ウェブ上で画像を見つけて右クリックします。</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <h3>形式を選ぶ</h3>
+            <p>PNG、JPG、WebP、GIF（アニメーションを保持）、PDF、元の形式から選べます。PNGとしてコピーしたり、カラーパレットを取得したりもできます。</p>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <h3>フォルダに保存</h3>
+            <p>Imgkeepがお使いのパソコン上で変換し、毎回あなたの指定した場所に保存します。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="convert-band" id="converter" aria-labelledby="convert-title">
+        <p class="eyebrow">インストール不要、アップロードなし</p>
+        <h2 id="convert-title">手元にある画像を変換。</h2>
+        <p>WebP、AVIF、PNG、JPGのファイルをドロップすれば、ブラウザの中でPNG、JPG、AVIF、GIF、PDF、ICOに変換できます。アップロードも登録も不要です。</p>
+        <p><a class="band-link" href="/ja/convert/">コンバーターを開く <span aria-hidden="true">→</span></a></p>
+        <p class="popular"><span>よく使われる変換：</span> <a href="/ja/webp-to-jpg/">WebPからJPGへ</a> · <a href="/ja/webp-to-png/">WebPからPNGへ</a> · <a href="/ja/avif-to-jpg/">AVIFからJPGへ</a> · <a href="/ja/png-to-jpg/">PNGからJPGへ</a> · <a href="/ja/png-to-ico/">PNGからICOへ</a></p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">機能</p>
+        <h2 id="features-title">できること、すべて。</h2>
+        <ul>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+            <h3>フォルダを覚えています</h3>
+            <p>フォルダを一度選ぶだけ。すべての画像が、自分で名前を付けたサブフォルダも含めてそこに保存され、既存のファイルが上書きされることはありません。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+            <h3>WebPとAVIFに対応</h3>
+            <p>サイトが配信するWebPやAVIFを、どのアプリでも開けるPNGやJPGに変換します。アニメーションはGIFとしてそのまま動きます。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></span>
+            <h3>PNGとしてコピー</h3>
+            <p>透過を保ったまま、本物のPNGとしてクリップボードにコピー。チャットや文書、Canva、Figma、Google Slidesなどのデザインツールにそのまま貼り付けられます。<a href="/web-image-into-canva-figma-google-slides/">方法はこちら</a>。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.7 5.7 0 0 0 22 9.7C22 5.4 17.5 2 12 2z"/></svg></span>
+            <h3>カラーパレット</h3>
+            <p>右クリックメニューから、画像の主な色を取得できます。1色をHEX、RGB、HSLでコピーしたり、全色をCSSやTailwindとしてコピーしたり、AdobeアプリやGIMP用に保存したり。<a href="/ja/color-palette-from-image/">ここに画像をドロップしても使えます</a>。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span>
+            <h3>ファイル名は自由に</h3>
+            <p>元のファイル名、サイト名、日付、サイズを使って名前を付けられます。たとえば <code>{name}-{w}x{h}</code> のように。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>
+            <h3>右クリックが効かないサイトでも</h3>
+            <p>InstagramやPinterestのようなサイトでは、写真が別のレイヤーの下に隠れています。<strong>ここで画像を探す</strong>を選べば、Imgkeepが最大サイズの写真を見つけます。この機能は、自分でオンにするまで無効です。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            <h3>リサイズとプレビュー</h3>
+            <p>最大幅を設定しておけば、大きな画像は収まるサイズに縮小されます。<strong>その他のオプション</strong>では、画質や背景を選びながら、保存前に仕上がりと実際のファイルサイズを確認できます。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>
+            <h3>PDF、AVIF、ICO、BMP</h3>
+            <p>画像を1ページのPDFとして保存できます。その他のオプションからは、AVIF（JPGの半分ほどのサイズになることも）、ショートカットやファビコン用のICOアイコン、BMPも選べます。</p>
+          </li>
+          <li>
+            <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m16 15 3 3-3 3"/></svg></span>
+            <h3>すでに持っているファイル</h3>
+            <p>パソコンやスマートフォンにある画像は<a href="/ja/convert/">無料画像コンバーター</a>で変換できます。ページ内で動くので、どこにもアップロードされません。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guides" id="image-guides" aria-labelledby="guides-title">
+        <p class="eyebrow">画像形式のガイド</p>
+        <h2 id="guides-title">画像形式を、すこし分かりやすく。</h2>
+        <p class="intro">毎日保存する画像のための実用的なガイドと、信頼できる拡張機能の選び方。</p>
+        <div class="guide-list">
+          <article>
+            <p class="cat">解説</p>
+            <h3><a href="/ja/chrome-saves-images-as-webp/">ChromeがWebPで保存する理由</a></h3>
+            <p>Chromeはサイトが送ってきたファイルをそのまま保存します。多くのサイトは、サイズが小さいWebPを送っているためです。Chromeの設定では変えられないので、保存するときに変換するか、後からPaintやPreviewで変換しましょう。</p>
+            <a class="more" href="/ja/chrome-saves-images-as-webp/">WebPを理解する <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/ja/save-webp-as-jpg-png/">WebPをJPGまたはPNGで保存する</a></h3>
+            <p>画像を右クリックして、パソコン上で動くコンバーターでPNGまたはJPGとして保存します。アップロードは一切ありません。図やロゴ、透過にはPNG、写真にはJPGを選びましょう。</p>
+            <a class="more" href="/ja/save-webp-as-jpg-png/">WebPガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/ja/save-avif-as-jpg-png/">AVIFをJPGまたはPNGで保存する</a></h3>
+            <p>AVIFはWebPよりファイルが小さくなりますが、多くのアプリやアップロードフォームはまだ開けません。ダウンロードするときにJPGやPNGとして保存するか、PreviewやPaint（Microsoftの無料のAV1拡張機能を入れたもの）から書き出しましょう。</p>
+            <a class="more" href="/ja/save-avif-as-jpg-png/">AVIFガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">解説</p>
+            <h3><a href="/chrome-saves-images-as-jfif/">ChromeがJFIFで保存する</a></h3>
+            <p>.jfifファイルは拡張子が違うだけの普通のJPEGで、Windowsのレジストリ設定によってそうなります。.jpgに名前を変えるか、設定を一度だけ直すか、最初からJPGとして保存しましょう。</p>
+            <a class="more" href="/chrome-saves-images-as-jfif/">JFIFガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/save-animated-webp-as-gif/">アニメーションWebPをGIFで保存</a></h3>
+            <p>JPGとPNGでは1フレームしか残りません。タイミングと透過を保ったまま、ほぼどこでも再生できるGIFとしてアニメーションを保存します。ワンステップで、またはGIMPを使って。</p>
+            <a class="more" href="/save-animated-webp-as-gif/">GIFガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/save-image-as-pdf/">画像をPDFで保存する</a></h3>
+            <p>ChromeのPDFに印刷では、画像が用紙サイズのページに配置されます。右クリックメニューから、画像とぴったり同じサイズの1ページのPDFを作ることもできます。</p>
+            <a class="more" href="/save-image-as-pdf/">PDFガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">安全性</p>
+            <h3><a href="/save-image-as-type-alternative/">Save image as Typeの安全な代替</a></h3>
+            <p>新しい所有者がショッピングサイトでアフィリエイトリンクを挿入するようにしたため、Googleが2026年3月に削除しました。まだ入っているなら削除し、代わりに入れる拡張機能は権限、データ、所有者、ソースコードを確認してください。</p>
+            <a class="more" href="/save-image-as-type-alternative/">チェックリストを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/ja/save-image-right-click-not-working/">右クリックで画像を保存できないとき</a></h3>
+            <p>InstagramやPinterestなどのサイトでは、写真の上に別のレイヤーが重なっているため、右クリックが写真まで届きません。その理由と無料の回避策、そしてImgkeepが写真を見つける仕組みを解説します。</p>
+            <a class="more" href="/ja/save-image-right-click-not-working/">ガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article>
+            <p class="cat">使い方</p>
+            <h3><a href="/web-image-into-canva-figma-google-slides/">ウェブ画像をCanva、Figma、Slidesへ</a></h3>
+            <p>ウェブ上の画像をPNGとしてコピーして、デザインやスライドに貼り付けます。ツールにファイル形式が未対応だと言われたら、サイトがWebPやAVIFを配信しています。PNGかJPGとして保存しましょう。</p>
+            <a class="more" href="/web-image-into-canva-figma-google-slides/">ガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">よくある質問</p>
+        <h2 id="faq-title">率直にお答えします。</h2>
+        <dl>
+          <div>
+            <dt>Imgkeepは無料ですか？</dt>
+            <dd>はい。現在Imgkeepができることはすべて無料で、広告も制限もありません。追加機能を備えた有料のImgkeep Proを予定していますが、今の機能はこれからも無料のままです。</dd>
+          </div>
+          <div>
+            <dt>Imgkeepは画像をアップロードしますか？</dt>
+            <dd>いいえ。画像はあなたのパソコン上で変換され、指定したフォルダに直接保存されます。Imgkeepが送信するのは、どの機能が使われ、どの保存が失敗したかという匿名の1日1回のカウントだけで、オプションでオフにできます。<a href="/privacy.html">プライバシーポリシー</a>。</dd>
+          </div>
+          <div>
+            <dt>どの形式で保存できますか？</dt>
+            <dd>PNG、JPG、WebP、GIF（アニメーションを保持）、PDF、または元の形式です。多くのサイトが配信するようになったWebPやAVIFの画像も変換でき、<strong>PNGとしてコピー</strong>で画像をクリップボードに入れられます。</dd>
+          </div>
+          <div>
+            <dt>画像からカラーパレットを取得できますか？</dt>
+            <dd>はい。画像を右クリックしてImgkeepを選び、カラーパレットを取得を開きます。主要な5色、8色、12色が面積の大きい順に表示されます。色をクリックするとHEX、RGB、HSLでコピーでき、まとめてCSS変数、Tailwind、JSONとしてコピーすることもできます。PNG、GIMPパレット、Adobeスウォッチとして保存も可能です。すべてあなたのパソコン上で計算されます。</dd>
+          </div>
+          <div>
+            <dt>InstagramやPinterestのように、サイトが覆っている画像も保存できますか？</dt>
+            <dd>はい。写真を右クリックして<strong>Imgkeep: ここで画像を探す</strong>を選びます。Imgkeepはそのページを一度だけ調べ、クリックした場所の下にある写真を最大サイズで見つけて、保存できる状態で開きます。自分でオンにするまで無効で、ページを書き換えることはありません。</dd>
+          </div>
+          <div>
+            <dt>すでにパソコンにある画像を変換できますか？</dt>
+            <dd>はい。imgkeep.app/convert/ の<a href="/ja/convert/">無料の画像コンバーター</a>を使ってください。ファイルをドロップして、PNG、JPG、WebP、AVIF、GIF、PDF、ICOから選び、ダウンロードするかPNGとしてコピーします。ブラウザ上で動くので、アップロードも登録もありません。スマートフォンでも使えます。</dd>
+          </div>
+          <div>
+            <dt>どのブラウザで使えますか？</dt>
+            <dd>Google Chrome 116以降とMicrosoft Edgeで、9言語に対応しています。</dd>
+          </div>
+          <div>
+            <dt>ページ上のすべての画像を一度に保存できますか？</dt>
+            <dd>いいえ。Imgkeepは右クリックした1枚の画像を保存します。ページ全体をまとめて保存するには一括ダウンローダーが必要です。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="final" aria-labelledby="final-title">
+        <h2 id="final-title">好きな形式で保存しませんか？</h2>
+        <div>
+          <div class="install">
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chromeに追加 — 無料</a>
+            <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge版もあります <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="/ja/download/">Firefoxなどのブラウザについて</a>
+          </div>
+          <p class="trust">アカウント不要 <span aria-hidden="true">·</span> アップロードなし <span aria-hidden="true">·</span> オープンソース</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a class="brand" href="/ja/" aria-label="Imgkeep ホーム"><img src="/icon128.png" alt="" width="30" height="30">Imgkeep</a>
+        <p class="statement">画像はあなたのパソコンから出ません。</p>
+        <nav aria-label="フッター">
+          <a href="/ja/convert/">コンバーター</a>
+          <a href="/privacy.html">プライバシー</a>
+          <a href="https://github.com/ybider-tech/imgkeep" id="source">ソースコード</a>
+          <a href="/support.html">サポート</a>
+          <a href="https://www.producthunt.com/products/imgkeep">Product Hunt <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+      <nav class="footer-more" aria-label="その他">
+        <a href="/ja/download/">ダウンロード</a>
+        <a href="/ideas.html">アイデア</a>
+        <a href="/whats-new.html">更新情報</a>
+        <a href="/pro.html">Imgkeep Proのウェイトリスト</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
