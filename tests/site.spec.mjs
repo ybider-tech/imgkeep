@@ -260,13 +260,12 @@ test("home page links the Microsoft Edge listing too, and the download page for 
   expect(links).toEqual([EDGE, "download/", EDGE, "download/"]);
 });
 
-test("the download page links both live stores, and Firefox only once it's listed", async ({ page }) => {
+test("the download page links all three stores", async ({ page }) => {
   await page.goto(`${server.url}/download/`);
   await expect(page.locator('.store a[href^="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl"]')).toHaveCount(1);
   await expect(page.locator(`.store a[href^="${EDGE}"]`)).toHaveCount(1);
-  // While Mozilla reviews it, no link (it would be a dead end). Switch the card to a link on approval.
-  await expect(page.locator('a[href*="addons.mozilla.org"]')).toHaveCount(0);
-  await expect(page.locator(".store").nth(2)).toContainText("In review at Mozilla");
+  await expect(page.locator('.store a.cta[href^="https://addons.mozilla.org/firefox/addon/imgkeep/"]')).toHaveText("Add to Firefox");
+  await expect(page.locator("main")).not.toContainText("In review");
 });
 
 test("home links to Product Hunt from the footer, not the header (it would compete with Get Imgkeep)", async ({ page }) => {
