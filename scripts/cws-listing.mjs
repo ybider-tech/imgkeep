@@ -140,6 +140,10 @@ else {
 // ---- Single purpose (Privacy practices): reached from the sidebar (its address isn't stable) ----
 await open("edit");
 await page.getByRole("link", { name: "Privacy", exact: true }).click();
+// Wait for the address to leave the listing page: its description box is a textarea too, and filling
+// that one with the single purpose once overwrote the last language's description.
+await page.waitForURL((u) => !String(u).endsWith(`/${ITEM}/edit`), { timeout: 30_000 });
+await page.waitForTimeout(3000);
 await page.locator("textarea").first().waitFor({ timeout: 30_000 });
 const purpose = await singlePurpose();
 const purposeBox = page.locator("textarea").first();

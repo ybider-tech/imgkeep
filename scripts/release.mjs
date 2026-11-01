@@ -9,10 +9,12 @@
 //   test       the static check and every test, Chrome and Firefox (npm test)
 //   package    dist/imgkeep-<v>.zip and dist/imgkeep-firefox-<v>.zip (scripts/package.sh)
 //   tag        dates the CHANGELOG entry, commits, tags v<version>
-//   push       pushes the branch and tag, then waits for CI to pass (gh)
+//   push       pushes the release to main (CI runs only there) and the tag, then waits for CI to pass (gh)
+//   upload     uploads the package to the Chrome Web Store without submitting (scripts/cws-publish.mjs
+//              --upload-only), so the dashboard offers any new languages before the listing step
 //   listing    fills the Chrome Web Store listing in every language and saves a draft (scripts/cws-listing.mjs
 //              --save; needs the signed-in dashboard Chrome, see that file)
-//   chrome     uploads and submits to the Chrome Web Store (scripts/cws-publish.mjs --submit)
+//   chrome     submits the uploaded package for review (scripts/cws-publish.mjs --submit-uploaded)
 //   edge       uploads and submits to Edge Add-ons (scripts/edge-publish.sh --submit)
 //   firefox    submits to addons.mozilla.org with its listing in every language (scripts/amo-publish.mjs --submit)
 //
@@ -26,7 +28,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const STEPS = ["translate", "test", "package", "tag", "push", "listing", "chrome", "edge", "firefox"];
+const STEPS = ["translate", "test", "package", "tag", "push", "upload", "listing", "chrome", "edge", "firefox"];
 const args = process.argv.slice(2);
 const go = args.includes("--go");
 const only = args.find((a) => a.startsWith("--only="))?.slice(7).split(",");
@@ -54,7 +56,7 @@ const RUN = {
     sh("git", ["tag", tag]);
   },
   push() {
-    sh("git", ["push", "-q", "origin", "HEAD", tag]);
+    sh("git", ["push", "-q", "origin", "HEAD:main", tag]);
     const sha = out("git", ["rev-parse", "HEAD"]);
     // Wait for the Tests workflow on this commit (Windows CI once caught what macOS didn't).
     for (let i = 0; i < 60; i++) {
@@ -66,7 +68,8 @@ const RUN = {
     throw new Error("No Tests run appeared for this commit");
   },
   listing: () => sh(process.execPath, ["scripts/cws-listing.mjs", "--save"]),
-  chrome: () => sh(process.execPath, ["scripts/cws-publish.mjs", "--submit"]),
+  upload: () => sh(process.execPath, ["scripts/cws-publish.mjs", "--upload-only"]),
+  chrome: () => sh(process.execPath, ["scripts/cws-publish.mjs", "--submit-uploaded"]),
   edge: () => sh("sh", ["scripts/edge-publish.sh", "--submit"]),
   firefox: () => sh(process.execPath, ["scripts/amo-publish.mjs", "--submit"]),
 };

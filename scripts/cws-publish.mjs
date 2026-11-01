@@ -2,12 +2,14 @@
 // Uploads dist/imgkeep-<version>.zip to the Chrome Web Store and submits it for review (API v2).
 // Credentials live outside the repo in ~/.config/imgkeep/: cws.env (CWS_PUBLISHER_ID, CWS_EXTENSION_ID)
 // and cws-service-account.json (the service account key linked in the developer dashboard).
-// Usage: node scripts/cws-publish.mjs [--status | --submit | --staged | --upload-only]
+// Usage: node scripts/cws-publish.mjs [--status | --submit | --staged | --upload-only | --submit-uploaded | --cancel]
 //   (no option)    same as --status: nothing is uploaded or submitted unless you ask for it
 //   --status       only show the store's current published and submitted versions
 //   --submit       upload and submit for review; the store publishes it automatically once approved
 //   --staged       upload and submit, but after approval wait for a manual Publish in the dashboard
 //   --upload-only  upload the package but don't submit it (finish in the dashboard)
+//   --submit-uploaded  submit what's already uploaded (after --upload-only and the listing), no new upload
+//   --cancel       withdraw the version that's in review (it stays uploaded; submit it again later)
 // Only the package is uploaded: descriptions, privacy answers and images are edited in the dashboard.
 import { createSign } from 'node:crypto';
 import { readFileSync, existsSync } from 'node:fs';
@@ -20,7 +22,7 @@ const API = 'https://chromewebstore.googleapis.com';
 const SCOPE = 'https://www.googleapis.com/auth/chromewebstore';
 
 const mode = process.argv[2] || '--status';
-if (!['--status', '--submit', '--upload-only', '--staged'].includes(mode)) {
+if (!['--status', '--submit', '--upload-only', '--staged', '--submit-uploaded', '--cancel'].includes(mode)) {
   console.error(`Unknown option ${mode}`);
   process.exit(1);
 }
@@ -89,11 +91,18 @@ if (mode === '--status') {
   process.exit(0);
 }
 
+if (mode === '--cancel') {
+  await call('POST', `${API}/v2/${item}:cancelSubmission`);
+  console.log('Submission withdrawn.\n' + describe(await status()));
+  process.exit(0);
+}
+
 process.chdir(join(dirname(fileURLToPath(import.meta.url)), '..'));
 const version = JSON.parse(readFileSync('extension/manifest.json', 'utf8')).version;
 const zip = `dist/imgkeep-${version}.zip`;
 if (!existsSync(zip)) fail(`No ${zip}. Run: sh scripts/package.sh`);
 
+if (mode !== '--submit-uploaded') {
 console.log(`Uploading ${zip} to the Chrome Web Store…`);
 let upload = await call('POST', `${API}/upload/v2/${item}:upload`, readFileSync(zip), 'application/zip');
 for (let i = 0; upload.uploadState === 'IN_PROGRESS' && i < 60; i++) {
@@ -103,6 +112,7 @@ for (let i = 0; upload.uploadState === 'IN_PROGRESS' && i < 60; i++) {
 if (upload.uploadState !== 'SUCCEEDED') fail(`Upload did not succeed: ${JSON.stringify(upload)}`);
 if (upload.crxVersion && upload.crxVersion !== version) fail(`Store read version ${upload.crxVersion}, manifest says ${version}`);
 console.log('Upload succeeded.');
+}
 
 if (mode === '--upload-only') {
   console.log('Package uploaded, not submitted. Finish in the developer dashboard.');
