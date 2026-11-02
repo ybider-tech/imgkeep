@@ -1,6 +1,6 @@
 # Imgkeep privacy policy
 
-Last updated: 28 October 2026
+Last updated: 2 November 2026
 
 Imgkeep is a browser extension for Chrome, Microsoft Edge and Firefox that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
@@ -49,7 +49,7 @@ If you remove Imgkeep, your browser opens a short, optional Google Form asking w
 
 ## The imgkeep.app website
 
-The website counts, anonymously, which pages are visited and which pages lead people to the Chrome Web Store or Edge Add-ons, so we know which guides help. For each page view it sends the page's path, the name of the site you came from (for example "google.com", never the full address) and the kind of device (phone, tablet or computer, worked out in the page; your browser's details aren't sent); for each click on a store button, the page and which store; on the Free Image Converter, which formats were converted (for example "webp → jpg", or "→ clipboard" for Copy as PNG) and how many files, never the images, their names or sizes. It sends this to PostHog, the same EU analytics service as the extension's daily summary, with one direct request and no PostHog code. It sets no cookies and stores nothing in your browser, every event gets a new random number so visits can't be linked to each other or to you, no IP address is stored and no location is looked up. Nothing is sent if your browser asks sites not to track you (Global Privacy Control or Do Not Track). The code is short and public: imgkeep.app/count.js
+The website counts, anonymously, which pages are visited and which pages lead people to the Chrome Web Store, Edge Add-ons or Firefox Add-ons, so we know which guides help. For each page view it sends the page's path, the name of the site you came from (for example "google.com", never the full address), what kind of site that is (a search engine, an AI assistant, a browser's add-on store, a social site, another site, another imgkeep.app page or none) and the kind of device (phone, tablet or computer, worked out in the page; your browser's details aren't sent); for each click on a store button, the page, which store and that same kind of site; on the Free Image Converter, which formats were converted (for example "webp → jpg", or "→ clipboard" for Copy as PNG) and how many files, with that same kind of site, never the images, their names or sizes. It sends this to PostHog, the same EU analytics service as the extension's daily summary, with one direct request and no PostHog code. It sets no cookies and stores nothing in your browser, every event gets a new random number so visits can't be linked to each other or to you, no IP address is stored and no location is looked up. Nothing is sent if your browser asks sites not to track you (Global Privacy Control or Do Not Track). The code is short and public: imgkeep.app/count.js
 
 ## What Imgkeep never does
 

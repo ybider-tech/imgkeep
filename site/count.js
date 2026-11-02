@@ -3,6 +3,9 @@
 //   site_pageview     the page's path, and the referring site's name only (e.g. "google.com")
 //   site_store_click  the page's path, which store (chrome, edge or firefox), and the link's utm_campaign
 //   site_convert      on the Free Image Converter: the format pair and how many files (e.g. webp → jpg, 3)
+// Each event also says what kind of place led to this page (source): "search", "ai", "store", "social",
+// "other", "internal" (another imgkeep.app page) or "direct", from the same referring site. It's worked out
+// per page, so a store click after moving between pages says "internal"; nothing is kept to link them.
 // Each event also says the kind of device: "mobile", "tablet" or "desktop", worked out here; the browser's
 // details never leave the page.
 // No cookies, no local storage, a new random id for every event, no person profile, no location lookup;
@@ -23,6 +26,23 @@
         ? "mobile"
         : "desktop";
 
+  // The referring site's name, never its full address; nothing when it's this site or unknown.
+  const bare = (host) => host.replace(/^www\./, "");
+  let from = "";
+  try {
+    from = bare(new window.URL(document.referrer).hostname);
+  } catch {}
+  const internal = from === bare(location.hostname);
+  const referrer = internal ? "" : from;
+  // Google's own other sites (gemini, the store, its reviewers) aren't searches: only google.com, google.co.uk…
+  const SOURCES = [
+    ["ai", /(^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|gemini\.google\.com|copilot\.microsoft\.com|you\.com|phind\.com)$/],
+    ["search", /^google(\.com?)?\.[a-z]{2,3}$|(^|\.)(bing\.com|duckduckgo\.com|yahoo\.[a-z.]+|yandex\.[a-z.]+|baidu\.com|ecosia\.org|search\.brave\.com|startpage\.com|naver\.com|qwant\.com)$/],
+    ["store", /^(chromewebstore\.google\.com|microsoftedge\.microsoft\.com|addons\.mozilla\.org)$/],
+    ["social", /(^|\.)(reddit\.com|com\.reddit\.frontpage|t\.co|x\.com|twitter\.com|facebook\.com|instagram\.com|linkedin\.com|youtube\.com|news\.ycombinator\.com|producthunt\.com|threads\.net|bsky\.app|mastodon\.social)$/],
+  ];
+  const source = internal ? "internal" : !referrer ? "direct" : SOURCES.find(([, re]) => re.test(referrer))?.[0] || "other";
+
   const randomId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}${Math.random()}`.replace(".", ""));
   const send = (event, props) =>
     fetch(URL, {
@@ -38,6 +58,7 @@
         properties: {
           ...props,
           path: location.pathname,
+          source,
           device,
           $process_person_profile: false,
           $geoip_disable: true,
@@ -46,12 +67,6 @@
       }),
     }).catch(() => {});
 
-  // The referring site's name, never its full address; nothing when it's this site or unknown.
-  let referrer = "";
-  try {
-    const host = new window.URL(document.referrer).hostname.replace(/^www\./, "");
-    if (host && host !== location.hostname.replace(/^www\./, "")) referrer = host;
-  } catch {}
   send("site_pageview", { referrer });
 
   // Called by the converter (site/convert/app.js) after a batch: only the formats and the number of files.

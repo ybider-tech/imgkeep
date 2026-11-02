@@ -414,6 +414,7 @@ test("count.js on imgkeep.app: one anonymous page view, and a store click with i
   expect(view.properties).toEqual({
     referrer: "google.com", // the referring site only: never its full address or search words
     path: "/save-webp-as-jpg-png/",
+    source: "search", // the kind of place it came from, also sent with the store click
     device: "desktop", // only the kind of device: never the browser's details
     $process_person_profile: false,
     $geoip_disable: true,
@@ -421,9 +422,32 @@ test("count.js on imgkeep.app: one anonymous page view, and a store click with i
   });
   await page.locator('a[href^="https://chromewebstore.google.com/"]').first().click();
   await expect.poll(() => sent.length).toBe(2);
-  expect(sent[1]).toMatchObject({ event: "site_store_click", properties: { store: "chrome", campaign: "save-webp-as-jpg-png", path: "/save-webp-as-jpg-png/" } });
+  expect(sent[1]).toMatchObject({ event: "site_store_click", properties: { store: "chrome", campaign: "save-webp-as-jpg-png", path: "/save-webp-as-jpg-png/", source: "search" } });
   expect(sent[1].distinct_id).not.toBe(view.distinct_id); // a new random id every time: events can't be linked
   expect(await context.cookies()).toEqual([]);
+  await context.close();
+});
+
+test("count.js says what kind of place led to the page: AI, search, store, social, other, another page here, or nothing", async ({ browser }) => {
+  const context = await browser.newContext();
+  const sent = await onImgkeepApp(context);
+  const page = await context.newPage();
+  const cases = [
+    ["https://chatgpt.com/c/abc", "ai", "chatgpt.com"],
+    ["https://gemini.google.com/app", "ai", "gemini.google.com"],
+    ["https://www.google.co.uk/", "search", "google.co.uk"],
+    ["https://chromewebstore.google.com/detail/x", "store", "chromewebstore.google.com"],
+    ["https://www.reddit.com/r/chrome/", "social", "reddit.com"],
+    ["https://alternativeto.net/software/x/", "other", "alternativeto.net"],
+    ["https://imgkeep.app/", "internal", ""],
+  ];
+  for (const [referer, source, referrer] of cases) {
+    await page.goto("https://imgkeep.app/save-webp-as-jpg-png/", { referer });
+    await expect.poll(() => sent.at(-1)?.properties.referrer === referrer && sent.at(-1).properties.source).toBe(source);
+  }
+  const fresh = await context.newPage();
+  await fresh.goto("https://imgkeep.app/save-webp-as-jpg-png/");
+  await expect.poll(() => sent.at(-1)?.properties.source).toBe("direct");
   await context.close();
 });
 
