@@ -11,7 +11,7 @@ import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
 import { readBlobInPage } from "./lib/read-blob.js";
-import { FOLDERS, countsAllowed } from "./lib/browser.js";
+import { FOLDERS, countsAllowed, isStoreSite } from "./lib/browser.js";
 import { cleanHexes } from "./lib/palette.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
@@ -429,8 +429,10 @@ function convertJob(job, settings, want) {
   });
 }
 
-// A failed conversion → what the window should show. Blocked sites get the "allow this site?" question.
+// A failed conversion → what the window should show. Blocked sites get the "allow this site?" question,
+// except the browser's own add-on store, which no access can open.
 async function failure(job, conv) {
+  if (conv.code === "blocked" && isStoreSite(job.url)) return { ok: false, reason: "error", code: "store" };
   if (conv.code === "blocked" && /^https?:/.test(job.url)) {
     const origin = originPattern(job.url);
     const allowed = await chrome.permissions.contains({ origins: [origin] });

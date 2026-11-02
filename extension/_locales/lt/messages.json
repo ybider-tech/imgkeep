@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Svetainė nepateikė šio paveikslėlio, nors prieiga ir leista. Gali būti, kad serveris neveikia arba paveikslėlis rodomas tik jos pačios puslapiuose."
   },
+  "askErrStore": {
+    "message": "Naršyklė neleidžia plėtiniams gauti paveikslėlių iš savo priedų parduotuvės, todėl „Imgkeep“ negali išsaugoti šio paveikslėlio. Spustelėkite paveikslėlį dešiniuoju pelės mygtuku ir naudokite naršyklės komandą „Įrašyti paveikslėlį kaip“."
+  },
   "askErrHttp": {
     "message": "Vietoj paveikslėlio svetainė atsakė klaida."
   },

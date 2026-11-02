@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Sivusto ei luovuttanut tätä kuvaa, vaikka käyttöoikeus on myönnetty. Palvelin voi olla alhaalla, tai se näyttää kuvan vain omilla sivuillaan."
   },
+  "askErrStore": {
+    "message": "Selaimesi ei anna laajennusten hakea kuvia omasta lisäosakaupastaan, joten Imgkeep ei voi tallentaa tätä kuvaa. Napsauta kuvaa hiiren kakkospainikkeella ja käytä sen sijaan selaimen omaa Tallenna kuva nimellä -toimintoa."
+  },
   "askErrHttp": {
     "message": "Sivusto vastasi virheellä kuvan sijaan."
   },

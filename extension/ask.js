@@ -152,7 +152,8 @@ function render() {
       await afterRetry(await toBackground("retry"));
     });
   }
-  if (isHttp(job.url) && job.format !== "original") add(t("askSaveOriginal"), saveOriginal);
+  // On the browser's own add-on store the message points to the browser's Save Image As instead.
+  if (isHttp(job.url) && job.format !== "original" && job.code !== "store") add(t("askSaveOriginal"), saveOriginal);
   if (isHttp(job.url)) add(t("askOpenImage"), () => toBackground("openSource"));
   add(t("askClose"), cancel);
 }

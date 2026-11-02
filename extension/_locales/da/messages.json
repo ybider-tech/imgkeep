@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Siden udleverede ikke billedet, selv med adgang givet. Serveren kan være nede, eller den viser kun billedet på sine egne sider."
   },
+  "askErrStore": {
+    "message": "Din browser lader ikke udvidelser hente billeder fra dens egen butik med tilføjelser, så Imgkeep kan ikke gemme dette. Højreklik på billedet, og brug browserens egen \"Gem billede som\" i stedet."
+  },
   "askErrHttp": {
     "message": "Siden svarede med en fejl i stedet for billedet."
   },

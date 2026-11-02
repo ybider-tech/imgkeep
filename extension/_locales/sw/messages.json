@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Tovuti haikutoa picha hii, hata baada ya ufikiaji kuruhusiwa. Huenda seva imezimika, au inatoa picha ndani ya kurasa zake tu."
   },
+  "askErrStore": {
+    "message": "Kivinjari chako hakiruhusu viendelezi kupata picha kutoka kwenye duka lake la viongezi, kwa hivyo Imgkeep haiwezi kuhifadhi picha hii. Bofya kulia kwenye picha na utumie \"Hifadhi Picha Kama\" ya kivinjari chenyewe badala yake."
+  },
   "askErrHttp": {
     "message": "Tovuti ilijibu kwa hitilafu badala ya picha."
   },

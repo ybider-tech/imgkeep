@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "A webhely az engedély ellenére sem adta át ezt a képet. Lehet, hogy a kiszolgáló nem elérhető, vagy a képet csak a saját oldalain belül mutatja meg."
   },
+  "askErrStore": {
+    "message": "A böngésző nem engedi, hogy a bővítmények képeket kérjenek le a saját bővítményboltjából, ezért az Imgkeep ezt nem tudja menteni. Kattintson a jobb gombbal a képre, és használja helyette a böngésző saját „Kép mentése másként” parancsát."
+  },
   "askErrHttp": {
     "message": "A webhely a kép helyett hibával válaszolt."
   },

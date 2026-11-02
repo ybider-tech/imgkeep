@@ -5,6 +5,7 @@ import { t, richText } from "./i18n.js";
 // Error codes → message keys in _locales/*/messages.json.
 const ERRORS = {
   blocked: "askErrBlocked",
+  store: "askErrStore",
   http: "askErrHttp",
   decode: "askErrDecode",
   unsupported: "askErrUnsupported",

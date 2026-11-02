@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Vietne neiedeva šo attēlu pat ar atļautu piekļuvi. Serveris, iespējams, nedarbojas vai arī rāda attēlu tikai savās lapās."
   },
+  "askErrStore": {
+    "message": "Jūsu pārlūks neļauj paplašinājumiem iegūt attēlus no sava papildinājumu veikala, tāpēc Imgkeep nevar saglabāt šo attēlu. Ar peles labo pogu noklikšķiniet uz attēla un tā vietā izmantojiet pārlūka komandu “Saglabāt attēlu kā”."
+  },
   "askErrHttp": {
     "message": "Vietne attēla vietā atbildēja ar kļūdu."
   },

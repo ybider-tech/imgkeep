@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Spletno mesto te slike ni posredovalo, čeprav je dostop dovoljen. Strežnik morda ne deluje ali pa sliko ponuja samo znotraj svojih strani."
   },
+  "askErrStore": {
+    "message": "Brskalnik razširitvam ne dovoli pridobivanja slik iz lastne trgovine z dodatki, zato Imgkeep te slike ne more shraniti. Z desno tipko miške kliknite sliko in namesto tega uporabite brskalnikov ukaz »Shrani sliko kot«."
+  },
   "askErrHttp": {
     "message": "Spletno mesto je namesto slike vrnilo napako."
   },

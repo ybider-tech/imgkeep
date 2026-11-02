@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Webbplatsen lämnade inte ut bilden, trots beviljad åtkomst. Servern kan vara nere, eller så visas bilden bara på webbplatsens egna sidor."
   },
+  "askErrStore": {
+    "message": "Webbläsaren låter inte tillägg hämta bilder från sin egen butik för tillägg, så Imgkeep kan inte spara den här. Högerklicka på bilden och använd webbläsarens egen ”Spara bild som” i stället."
+  },
   "askErrHttp": {
     "message": "Webbplatsen svarade med ett fel i stället för bilden."
   },

@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "De site gaf deze afbeelding niet vrij, ook al is toegang toegestaan. Misschien is de server offline, of levert de site de afbeelding alleen binnen de eigen pagina's."
   },
+  "askErrStore": {
+    "message": "Je browser laat extensies geen afbeeldingen ophalen uit zijn eigen add-onwinkel, dus Imgkeep kan deze niet opslaan. Klik met de rechtermuisknop op de afbeelding en gebruik in plaats daarvan ‘Afbeelding opslaan als’ van de browser."
+  },
   "askErrHttp": {
     "message": "De site antwoordde met een foutmelding in plaats van de afbeelding."
   },

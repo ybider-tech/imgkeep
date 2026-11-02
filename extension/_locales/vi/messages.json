@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Trang web không trả về ảnh này, dù đã được cấp quyền truy cập. Có thể máy chủ đang gặp sự cố, hoặc chỉ hiển thị ảnh trong trang của chính họ."
   },
+  "askErrStore": {
+    "message": "Trình duyệt không cho phép tiện ích lấy hình ảnh từ cửa hàng tiện ích của chính nó, nên Imgkeep không thể lưu ảnh này. Hãy nhấp chuột phải vào ảnh và dùng \"Lưu hình ảnh thành\" của trình duyệt."
+  },
   "askErrHttp": {
     "message": "Trang web trả về lỗi thay vì ảnh."
   },

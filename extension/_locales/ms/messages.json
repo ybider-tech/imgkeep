@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Laman web ini tidak menyerahkan imej ini, walaupun akses dibenarkan. Pelayannya mungkin tidak berfungsi, atau imej itu hanya disajikan dalam halamannya sendiri."
   },
+  "askErrStore": {
+    "message": "Pelayar anda tidak membenarkan sambungan mengambil imej dari kedai tambahannya sendiri, jadi Imgkeep tidak dapat menyimpan imej ini. Klik kanan imej itu dan gunakan \"Simpan Imej Sebagai\" pelayar sendiri."
+  },
   "askErrHttp": {
     "message": "Laman web ini membalas dengan ralat, bukan dengan imej."
   },

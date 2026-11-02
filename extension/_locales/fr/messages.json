@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Le site n'a pas fourni cette image, même avec l'accès autorisé. Le serveur est peut-être indisponible, ou il n'affiche l'image que dans ses propres pages."
   },
+  "askErrStore": {
+    "message": "Votre navigateur ne laisse pas les extensions récupérer les images de sa propre boutique de modules, donc Imgkeep ne peut pas enregistrer celle-ci. Faites un clic droit sur l’image et utilisez plutôt « Enregistrer l’image sous » du navigateur."
+  },
   "askErrHttp": {
     "message": "Le site a renvoyé une erreur au lieu de l'image."
   },

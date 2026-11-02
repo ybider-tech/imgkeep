@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Web tento obrázek nevydal, ani když má povolený přístup. Server může být mimo provoz, nebo obrázek nabízí jen uvnitř vlastních stránek."
   },
+  "askErrStore": {
+    "message": "Váš prohlížeč nedovolí rozšířením získávat obrázky z vlastního obchodu s doplňky, takže Imgkeep tento obrázek uložit nemůže. Klikněte na obrázek pravým tlačítkem a použijte raději „Uložit obrázek jako“ přímo v prohlížeči."
+  },
   "askErrHttp": {
     "message": "Web místo obrázku odpověděl chybou."
   },

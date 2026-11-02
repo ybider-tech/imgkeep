@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Sait ei andnud seda pilti välja ka lubatud juurdepääsuga. Server võib olla maas või pakub pilti ainult oma lehtede sees."
   },
+  "askErrStore": {
+    "message": "Sinu brauser ei luba laiendustel oma lisade poest pilte võtta, seega ei saa Imgkeep seda pilti salvestada. Paremklõpsa pildil ja kasuta selle asemel brauseri enda valikut „Salvesta pilt kui“."
+  },
   "askErrHttp": {
     "message": "Sait vastas pildi asemel veateatega."
   },

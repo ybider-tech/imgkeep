@@ -63,6 +63,10 @@
     "message": "The site didn't hand over this image, even with access allowed. The server may be down, or it only serves the image inside its own pages.",
     "description": "Error"
   },
+  "askErrStore": {
+    "message": "Your browser doesn't let extensions get images from its own add-on store, so Imgkeep can't save this one. Right-click the image and use your browser's own Save Image As instead.",
+    "description": "Error: the image is on the browser's add-on store (addons.mozilla.org, the Chrome Web Store), which browsers keep extensions away from. 'Save Image As' is the browser's own right-click item: use its name in your language."
+  },
   "askErrHttp": {
     "message": "The site answered with an error instead of the image.",
     "description": "Error"

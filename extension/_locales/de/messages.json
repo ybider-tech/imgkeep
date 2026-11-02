@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Die Website hat das Bild nicht herausgegeben, auch nicht mit erlaubtem Zugriff. Vielleicht ist der Server nicht erreichbar oder zeigt das Bild nur auf seinen eigenen Seiten."
   },
+  "askErrStore": {
+    "message": "Dein Browser lässt Erweiterungen keine Bilder aus seinem eigenen Add-on-Store abrufen, daher kann Imgkeep dieses Bild nicht speichern. Klicke mit der rechten Maustaste auf das Bild und nutze stattdessen „Bild speichern unter“ des Browsers."
+  },
   "askErrHttp": {
     "message": "Die Website hat statt des Bildes einen Fehler gemeldet."
   },

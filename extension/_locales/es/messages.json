@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "El sitio no entregó esta imagen, ni siquiera con acceso permitido. Puede que el servidor no esté disponible o que solo muestre la imagen dentro de sus propias páginas."
   },
+  "askErrStore": {
+    "message": "Tu navegador no deja que las extensiones obtengan imágenes de su propia tienda de complementos, así que Imgkeep no puede guardar esta. Haz clic derecho en la imagen y usa «Guardar imagen como» del propio navegador."
+  },
   "askErrHttp": {
     "message": "El sitio respondió con un error en lugar de la imagen."
   },

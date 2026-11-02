@@ -21,7 +21,7 @@ export const ANALYTICS = {
 // Every count that can be sent. Anything else is dropped before sending.
 const FORMATS = ["png", "jpg", "webp", "avif", "gif", "pdf", "ico", "bmp", "original"];
 const MODES = ["downloads", "folder", "ask"];
-const FAILURES = ["blocked", "http", "decode", "unsupported", "blob", "too_large", "timeout", "download", "write", "expired", "unknown", "copy"];
+const FAILURES = ["blocked", "store", "http", "decode", "unsupported", "blob", "too_large", "timeout", "download", "write", "expired", "unknown", "copy"];
 // Conversions: the original image's format (from its bytes) → the format it was saved as.
 const SOURCES = ["jpg", "png", "webp", "avif", "gif", "svg", "bmp", "ico", "other"];
 const TARGETS = FORMATS.filter((f) => f !== "original");

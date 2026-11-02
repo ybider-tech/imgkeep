@@ -240,7 +240,8 @@ export function handle(msg) {
   if (!Object.hasOwn(handlers, msg?.type)) return Promise.resolve({ ok: false, code: "unknown", detail: `Unknown request ${msg?.type}` });
   return handlers[msg.type](msg)
     .then((result) => ({ ok: true, ...result }))
-    .catch((e) => ({ ok: false, code: e.code || "unknown", detail: e.detail || e.message || "", subs: e.subs }));
+    // A JobError's message is its code, so only other errors show their message as the detail.
+    .catch((e) => ({ ok: false, code: e.code || "unknown", detail: e instanceof JobError ? e.detail : e.message || "", subs: e.subs }));
 }
 
 // Chrome and Edge: requests arrive as messages from the service worker. (Firefox's background page imports

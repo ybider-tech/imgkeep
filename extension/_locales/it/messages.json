@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Il sito non ha fornito questa immagine, nemmeno con l'accesso consentito. Il server potrebbe essere offline, oppure mostra l'immagine solo all'interno delle sue pagine."
   },
+  "askErrStore": {
+    "message": "Il browser non permette alle estensioni di prendere immagini dal suo negozio di componenti aggiuntivi, quindi Imgkeep non può salvare questa. Fai clic con il tasto destro sull’immagine e usa invece «Salva immagine con nome» del browser."
+  },
   "askErrHttp": {
     "message": "Il sito ha risposto con un errore invece di inviare l'immagine."
   },

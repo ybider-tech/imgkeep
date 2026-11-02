@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Stránka tento obrázok nevydala, hoci má povolený prístup. Server môže byť nedostupný alebo obrázok poskytuje len vo vlastných stránkach."
   },
+  "askErrStore": {
+    "message": "Váš prehliadač nedovolí rozšíreniam získavať obrázky z vlastného obchodu s doplnkami, takže Imgkeep tento obrázok uložiť nemôže. Kliknite na obrázok pravým tlačidlom a použite radšej „Uložiť obrázok ako“ priamo v prehliadači."
+  },
   "askErrHttp": {
     "message": "Stránka namiesto obrázka odpovedala chybou."
   },

@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "El lloc no ha lliurat aquesta imatge, ni tan sols amb l'accés permès. Pot ser que el servidor no funcioni o que només serveixi la imatge dins les seves pàgines."
   },
+  "askErrStore": {
+    "message": "El navegador no permet que les extensions obtinguin imatges de la seva pròpia botiga de complements, així que Imgkeep no pot desar aquesta. Feu clic amb el botó dret a la imatge i utilitzeu «Desa la imatge com a» del navegador."
+  },
   "askErrHttp": {
     "message": "El lloc ha respost amb un error en lloc de la imatge."
   },

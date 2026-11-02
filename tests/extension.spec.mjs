@@ -207,6 +207,23 @@ test("An HTTP error opens the ask window with a plain message", async () => {
   await ask.close();
 });
 
+test("An image on the browser's add-on store gets its own message, not the site question", async () => {
+  // Browsers keep extensions away from their stores (Firefox refuses the fetch); here the request is refused.
+  await ctx.context.route("https://addons.mozilla.org/**", (route) => route.abort());
+  const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/ask.html") });
+  const result = await run("https://addons.mozilla.org/user-media/addon_icons/3110/3110551-64.png", "png");
+  expect(result).toMatchObject({ ok: false, reason: "error", code: "store" });
+  const ask = await opened;
+  await expect(ask.locator("#title")).toHaveText("Couldn't save this image");
+  await expect(ask.getByText("doesn't let extensions get images from its own add-on store")).toBeVisible();
+  await expect(ask.locator(".detail")).toHaveCount(0); // no raw "blocked" under it
+  await expect(ask.getByRole("button", { name: "Try again" })).toHaveCount(0);
+  await expect(ask.getByRole("button", { name: "Save original format instead" })).toHaveCount(0);
+  await expect(ask.getByRole("button", { name: "Open image" })).toBeVisible();
+  await ask.close();
+  await ctx.context.unroute("https://addons.mozilla.org/**");
+});
+
 test("Folder mode with no folder chosen asks for one", async () => {
   await ctx.sw.evaluate(() => chrome.storage.sync.set({ saveMode: "folder" }));
   const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/ask.html") });

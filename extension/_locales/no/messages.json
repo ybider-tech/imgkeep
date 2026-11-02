@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Nettstedet ga ikke fra seg dette bildet, selv med tilgang gitt. Serveren kan være nede, eller så vises bildet bare på nettstedets egne sider."
   },
+  "askErrStore": {
+    "message": "Nettleseren lar ikke utvidelser hente bilder fra sin egen butikk for utvidelser, så Imgkeep kan ikke lagre dette. Høyreklikk på bildet og bruk nettleserens egen «Lagre bilde som» i stedet."
+  },
   "askErrHttp": {
     "message": "Nettstedet svarte med en feil i stedet for bildet."
   },

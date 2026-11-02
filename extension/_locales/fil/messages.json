@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Hindi ibinigay ng site ang larawang ito, kahit pinayagan ang access. Maaaring down ang server, o sa loob lang ng sarili nitong mga pahina ipinapakita ang larawan."
   },
+  "askErrStore": {
+    "message": "Hindi pinapayagan ng iyong browser ang mga extension na kumuha ng mga larawan mula sa sarili nitong add-on store, kaya hindi ito ma-save ng Imgkeep. I-right-click ang larawan at gamitin na lang ang sariling \"I-save ang Larawan Bilang\" ng iyong browser."
+  },
   "askErrHttp": {
     "message": "Error ang isinagot ng site sa halip na ang larawan."
   },

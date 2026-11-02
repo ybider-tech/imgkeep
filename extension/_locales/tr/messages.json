@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Erişim izni verilmiş olsa da site bu görseli vermedi. Sunucu çalışmıyor olabilir ya da görseli yalnızca kendi sayfalarında sunuyor olabilir."
   },
+  "askErrStore": {
+    "message": "Tarayıcınız, uzantıların kendi eklenti mağazasından resim almasına izin vermiyor, bu yüzden Imgkeep bu resmi kaydedemez. Resme sağ tıklayın ve bunun yerine tarayıcının kendi \"Resmi Farklı Kaydet\" seçeneğini kullanın."
+  },
   "askErrHttp": {
     "message": "Site, görsel yerine bir hata döndürdü."
   },

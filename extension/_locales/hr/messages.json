@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Stranica nije predala ovu sliku ni uz odobren pristup. Poslužitelj je možda nedostupan ili sliku prikazuje samo unutar vlastitih stranica."
   },
+  "askErrStore": {
+    "message": "Vaš preglednik ne dopušta proširenjima da dohvaćaju slike iz njegove vlastite trgovine dodataka, pa Imgkeep ne može spremiti ovu sliku. Desnom tipkom miša kliknite sliku i umjesto toga upotrijebite preglednikovo „Spremi sliku kao”."
+  },
   "askErrHttp": {
     "message": "Stranica je umjesto slike odgovorila pogreškom."
   },

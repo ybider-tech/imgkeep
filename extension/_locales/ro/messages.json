@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Site-ul nu a predat această imagine, deși accesul e permis. Serverul poate fi oprit sau oferă imaginea doar în propriile pagini."
   },
+  "askErrStore": {
+    "message": "Browserul nu le permite extensiilor să preia imagini din propriul magazin de suplimente, așa că Imgkeep nu o poate salva pe aceasta. Fă clic dreapta pe imagine și folosește în schimb „Salvează imaginea ca” din browser."
+  },
   "askErrHttp": {
     "message": "Site-ul a răspuns cu o eroare în loc de imagine."
   },

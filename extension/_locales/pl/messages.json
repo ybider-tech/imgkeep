@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Strona nie udostępniła tego obrazu, mimo przyznanego dostępu. Serwer może nie działać albo udostępnia obraz tylko na własnych stronach."
   },
+  "askErrStore": {
+    "message": "Przeglądarka nie pozwala rozszerzeniom pobierać obrazów z własnego sklepu z dodatkami, więc Imgkeep nie może zapisać tego obrazu. Kliknij obraz prawym przyciskiem myszy i użyj zamiast tego opcji przeglądarki „Zapisz obraz jako”."
+  },
   "askErrHttp": {
     "message": "Zamiast obrazu strona zwróciła błąd."
   },

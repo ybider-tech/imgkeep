@@ -50,6 +50,9 @@
   "askErrBlocked": {
     "message": "Situs ini tidak memberikan gambarnya, meski akses sudah diizinkan. Servernya mungkin sedang mati, atau gambar hanya ditampilkan di halamannya sendiri."
   },
+  "askErrStore": {
+    "message": "Browser Anda tidak mengizinkan ekstensi mengambil gambar dari toko add-on miliknya sendiri, jadi Imgkeep tidak bisa menyimpan gambar ini. Klik kanan gambar dan gunakan \"Simpan Gambar Sebagai\" milik browser."
+  },
   "askErrHttp": {
     "message": "Situs ini membalas dengan error, bukan dengan gambarnya."
   },
