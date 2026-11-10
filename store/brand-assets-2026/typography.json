@@ -1,0 +1,53 @@
+{
+  "canvas": [
+    1280,
+    800
+  ],
+  "font": "Schibsted Grotesk Bold",
+  "title_px": 72,
+  "title_xy": [
+    40,
+    110
+  ],
+  "body_font": "Arial",
+  "body_px": 28,
+  "body_xy": [
+    40,
+    202
+  ],
+  "brand_px": 34,
+  "result_px": 22,
+  "footer_px": 16,
+  "native_ui": "System fonts unchanged inside captured source-rendered windows",
+  "colour": {
+    "cobalt": "#2347F7",
+    "mint": "#ADFFCD"
+  },
+  "screens": [
+    {
+      "file": "01-save-formats-1280x800.png",
+      "title": "Save it in your format.",
+      "description": "PNG, JPG, WebP and more. Pick before you save. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites."
+    },
+    {
+      "file": "02-pinterest-1280x800.png",
+      "title": "Save from Pinterest.",
+      "description": "Use Find image here. Choose your image and format. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites."
+    },
+    {
+      "file": "03-instagram-1280x800.png",
+      "title": "Keep the inspiration.",
+      "description": "Find an Instagram image. Save it for your moodboard. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites."
+    },
+    {
+      "file": "04-animated-gif-1280x800.png",
+      "title": "Keep every frame.",
+      "description": "Save an animated GIF with its animation intact. Animated GIF demo, shown as three still frames."
+    },
+    {
+      "file": "05-colour-palette-1280x800.png",
+      "title": "Copy the colours.",
+      "description": "Find your palette. Copy HEX, RGB, HSL or CSS. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites."
+    }
+  ]
+}
