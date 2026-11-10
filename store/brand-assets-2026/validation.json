@@ -1,0 +1,318 @@
+{
+  "passed": true,
+  "assets": [
+    {
+      "file": "chrome/screenshots/01-save-formats-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "add891a39e170933d7b62f3d1953dffeb0f8fdf2d668f8165b7c4adf15b19940"
+    },
+    {
+      "file": "chrome/screenshots/02-pinterest-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "48e3b3377a25bcdd74703abd23c626b959b02d33ae4e6e3efbe1f20aee57807e"
+    },
+    {
+      "file": "chrome/screenshots/03-instagram-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "2fd76eb018bdcbee5f1202b5f46d0d67ead50b7e520417381ec788faebb4edc7"
+    },
+    {
+      "file": "chrome/screenshots/04-animated-gif-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "37939e2ce129964784c848dc93eed52774d8f035f8811fc16e184efebaf0e66d"
+    },
+    {
+      "file": "chrome/screenshots/05-colour-palette-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "0e655d2ddfa1714eb05747e8981f1923ae400f179e78c87ff97797e77bf82a89"
+    },
+    {
+      "file": "edge/screenshots/01-save-formats-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "add891a39e170933d7b62f3d1953dffeb0f8fdf2d668f8165b7c4adf15b19940"
+    },
+    {
+      "file": "edge/screenshots/02-pinterest-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "48e3b3377a25bcdd74703abd23c626b959b02d33ae4e6e3efbe1f20aee57807e"
+    },
+    {
+      "file": "edge/screenshots/03-instagram-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "2fd76eb018bdcbee5f1202b5f46d0d67ead50b7e520417381ec788faebb4edc7"
+    },
+    {
+      "file": "edge/screenshots/04-animated-gif-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "37939e2ce129964784c848dc93eed52774d8f035f8811fc16e184efebaf0e66d"
+    },
+    {
+      "file": "edge/screenshots/05-colour-palette-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "0e655d2ddfa1714eb05747e8981f1923ae400f179e78c87ff97797e77bf82a89"
+    },
+    {
+      "file": "firefox/screenshots/01-save-formats-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "4d7d66399b3bcdb59a4481acb21f205b623312eec4f219177048eacc4673df81"
+    },
+    {
+      "file": "firefox/screenshots/02-pinterest-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "da389bdc10fb1a06b6fce33a3bbbb9b9e86766db266abce61f84151f27a3eb84"
+    },
+    {
+      "file": "firefox/screenshots/03-instagram-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "b5012187194a4dcdf4e979883f16ff8024ac282c8f48a3e81116f71e8cae3c85"
+    },
+    {
+      "file": "firefox/screenshots/04-animated-gif-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "c07503ce1d441741491bf49ad573c756a130407a92eb33be7e21b60acc15ec11"
+    },
+    {
+      "file": "firefox/screenshots/05-colour-palette-1280x800.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "sha256": "e27153bdba5fa481c22bfed13d593a2ca1a076771a4f9825f895d4a67e928bb7"
+    },
+    {
+      "file": "chrome/small-promo-440x280.png",
+      "dimensions": [
+        440,
+        280
+      ],
+      "sha256": "552aad00d85079f60f4e1cd9efb7ba6f7a8c4fc5e57579b0edd6972cd257c7ac"
+    },
+    {
+      "file": "chrome/marquee-1400x560.png",
+      "dimensions": [
+        1400,
+        560
+      ],
+      "sha256": "adc8a14b105827913c628d80e56c48bb8ee78688310e48d67ea0c1cfe6f20e63"
+    },
+    {
+      "file": "edge/small-promo-440x280.png",
+      "dimensions": [
+        440,
+        280
+      ],
+      "sha256": "552aad00d85079f60f4e1cd9efb7ba6f7a8c4fc5e57579b0edd6972cd257c7ac"
+    },
+    {
+      "file": "edge/marquee-1400x560.png",
+      "dimensions": [
+        1400,
+        560
+      ],
+      "sha256": "adc8a14b105827913c628d80e56c48bb8ee78688310e48d67ea0c1cfe6f20e63"
+    },
+    {
+      "file": "chrome/icon-128.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "1f63f314139477a941ad2a76826fb9a184d289975d42a9c6d1587b0bcf62bb44"
+    },
+    {
+      "file": "edge/logo-300.png",
+      "dimensions": [
+        300,
+        300
+      ],
+      "sha256": "22aa18e976c167e1326eaaa496da8cba90e30abe4c70a84ff8d294290a68bb58"
+    },
+    {
+      "file": "firefox/icon-32.png",
+      "dimensions": [
+        32,
+        32
+      ],
+      "sha256": "fbde58f0d8138054ea230b9c69ae0e1b4398f1c0c9c4dfdb059b3459e4f01e14"
+    },
+    {
+      "file": "firefox/icon-64.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "930aaf33b59a2c7898341330c03c392686db6a25dfd442071bdf06c81b059620"
+    },
+    {
+      "file": "firefox/icon-128.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "517276d82624a71acf1f9955f77d139cf998dc979a38f1c7dc7cc0f53704697c"
+    },
+    {
+      "file": "extension-icons/icon16.png",
+      "dimensions": [
+        16,
+        16
+      ],
+      "sha256": "c5fdfe43fb9c8a44442a16639a5d4ea2a5a12c6876adf075341acd16b87f0cec"
+    },
+    {
+      "file": "extension-icons/icon32.png",
+      "dimensions": [
+        32,
+        32
+      ],
+      "sha256": "fbde58f0d8138054ea230b9c69ae0e1b4398f1c0c9c4dfdb059b3459e4f01e14"
+    },
+    {
+      "file": "extension-icons/icon48.png",
+      "dimensions": [
+        48,
+        48
+      ],
+      "sha256": "c85ec8c50eb64666e5dce44a91083fed5d08d4bd241a1e567a2819a90f127d6b"
+    },
+    {
+      "file": "extension-icons/icon64.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "930aaf33b59a2c7898341330c03c392686db6a25dfd442071bdf06c81b059620"
+    },
+    {
+      "file": "extension-icons/icon128.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "1f63f314139477a941ad2a76826fb9a184d289975d42a9c6d1587b0bcf62bb44"
+    },
+    {
+      "file": "website/favicon.png",
+      "dimensions": [
+        32,
+        32
+      ],
+      "sha256": "fbde58f0d8138054ea230b9c69ae0e1b4398f1c0c9c4dfdb059b3459e4f01e14"
+    },
+    {
+      "file": "website/icon128.png",
+      "dimensions": [
+        128,
+        128
+      ],
+      "sha256": "517276d82624a71acf1f9955f77d139cf998dc979a38f1c7dc7cc0f53704697c"
+    },
+    {
+      "file": "website/apple-touch-icon.png",
+      "dimensions": [
+        180,
+        180
+      ],
+      "sha256": "a11a29100602c2b4ae74cfe99e2a5554fca12c8aeca59ffe736eb1169817768f"
+    },
+    {
+      "file": "website/icon192.png",
+      "dimensions": [
+        192,
+        192
+      ],
+      "sha256": "a3b3200b543079114b29f375af2ef73473dff7ae5a225c5254545b2034562589"
+    },
+    {
+      "file": "website/icon512.png",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "36f71f0d47e3a38b95f24343d66603eef69d52aacf86a273431b047ab930543a"
+    },
+    {
+      "file": "website/og-image.png",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "sha256": "6be4173dca359b73cdc09918128948b3b48e3ca6f38a3419724962fd769bb7e5"
+    }
+  ],
+  "chrome_icon_alpha_bbox": [
+    16,
+    17,
+    112,
+    110
+  ],
+  "website_pages_checked": 180,
+  "website_asset_links_checked": 386,
+  "css_version": "726f889611",
+  "text_contrast": {
+    "light CTA": 6.33,
+    "light link": 6.11,
+    "dark CTA": 9.2,
+    "dark link": 9.44
+  },
+  "gif": {
+    "frames": 3,
+    "loops": true,
+    "saved_bytes_unchanged": true
+  },
+  "verification": [
+    "Exact dimensions and image modes",
+    "Chrome icon padding",
+    "Website brand asset paths across all pages",
+    "180px opaque touch icon",
+    "Cache-busted CSS",
+    "AA normal-text contrast for changed accent pairs",
+    "GIF output keeps all input bytes and frames"
+  ],
+  "limitations": [
+    "Store screenshots render current repository UI with local demo photos; they are not live Pinterest or Instagram captures.",
+    "Only existing animated GIF preservation is claimed across all three stores."
+  ]
+}

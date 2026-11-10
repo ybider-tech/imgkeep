@@ -42,9 +42,9 @@
 }
 
 :root {
-  --accent: #0f6b5c;
-  --accent-strong: #0b5347;
-  --accent-soft: #e4f1ee;
+  --accent: #2347f7;
+  --accent-strong: #1936c7;
+  --accent-soft: #e9eeff;
   --on-accent: #ffffff;
   --bg: #fbfbf9;
   --surface: #ffffff;
@@ -62,10 +62,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent: #43b8a3;
-    --accent-strong: #62cbb8;
-    --accent-soft: #16332e;
-    --on-accent: #06201b;
+    --accent: #a3b7ff;
+    --accent-strong: #c2cfff;
+    --accent-soft: #1d294e;
+    --on-accent: #081536;
     --bg: #111514;
     --surface: #1a201e;
     --text: #e9efed;
@@ -473,11 +473,12 @@ footer .guides { margin-top: 12px; }
   .page { padding: 0 20px; }
   .home { font-size: 1rem; }
   .final .trust { text-align: center; }
-  /* Two rows: logo and install link, then the nav links and the Product Hunt badge. */
-  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand get" "nav badge"; }
+  /* Logo/install, wrapping navigation, then the language picker. */
+  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand get" "nav nav" "language language"; }
   .site-header .brand { grid-area: brand; }
   .site-header .get { grid-area: get; }
-  .site-nav { grid-area: nav; margin-left: 0; }
+  .site-nav { grid-area: nav; margin-left: 0; min-width: 0; flex-wrap: wrap; }
+  .site-header .lang-menu { grid-area: language; justify-self: start; margin-inline-start: 0; }
   .site-header .ph-badge { grid-area: badge; }
   .site-nav { gap: 4px 16px; white-space: nowrap; }
   .site-header { column-gap: 12px; }

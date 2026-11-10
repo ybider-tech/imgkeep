@@ -1,0 +1,19 @@
+01-save-formats-1280x800.png
+Save it in your format.
+PNG, JPG, WebP and more. Pick before you save. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites.
+
+02-pinterest-1280x800.png
+Save from Pinterest.
+Use Find image here. Choose your image and format. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites.
+
+03-instagram-1280x800.png
+Keep the inspiration.
+Find an Instagram image. Save it for your moodboard. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites.
+
+04-animated-gif-1280x800.png
+Keep every frame.
+Save an animated GIF with its animation intact. Animated GIF demo, shown as three still frames.
+
+05-colour-palette-1280x800.png
+Copy the colours.
+Find your palette. Copy HEX, RGB, HSL or CSS. Current Imgkeep interface rendered from source with a local demo image. Pinterest and Instagram examples are illustrative workflows, not captures of those websites.

@@ -1,0 +1,10 @@
+{
+  "input": "cat-yawn.gif",
+  "output": "cat-yawn.gif",
+  "bytesUnchanged": true,
+  "sha256": "e526a9029bef94fc16e1101afe83b6bf2e2dfecce38061077b7d376d0fb9ba83",
+  "width": 220,
+  "height": 320,
+  "source": "extension/lib/convert.js",
+  "notes": "Pure conversion helper, without an installed extension. Existing animated GIF bytes are preserved."
+}
