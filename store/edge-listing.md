@@ -108,7 +108,9 @@ New in 0.9.0: More options can save as ICO (16/32/48/256 px PNGs in one icon fil
 
 New in 0.7.1: after an uninstall, the browser opens a short, optional Google Form asking why (chrome.runtime.setUninstallURL). Only the extension version is in the form's address; the form collects no email addresses. No new permission.
 
-Imgkeep is also on the Chrome Web Store (0.8.0 live, 0.8.1 in review there): https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
+Imgkeep is also on the Chrome Web Store (https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) and Firefox Add-ons (https://addons.mozilla.org/firefox/addon/imgkeep/), both at 0.12.0.
 
 New in 0.11.0: "Get colour palette" in the right-click menu (and as a button in More options). It opens the extension's own window with the image's main colours, worked out locally from the same image fetch and offscreen canvas the conversions use. Clicking a colour copies its value to the clipboard from that focused window (no clipboard permission); palettes can be saved as a PNG, a .gpl or an .ase file through downloads. No new permission and no new network request. The menu's name is now just "Imgkeep". The daily summary counts palettes opened, copied and saved (never the colours), listed in the privacy policy.
+
+New in 0.12.0 (resubmission after the 2026-11-03 certification report, policy 1.1.2, "The title contains excessive search terms"): the Edge title is now shorter in every language, "Save image as PNG, JPG or WebP - Imgkeep" (it listed five formats before). Also: the extension and its listing are in 50 languages; images that exist only inside their page (blob: links, as on WhatsApp Web) can be saved by reading that one image in the page, using the optional scripting permission plus access to that one site, both asked for only when the user clicks "Allow" in Imgkeep's window. No new required permission. New listing images.
 ```
