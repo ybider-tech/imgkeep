@@ -1,7 +1,7 @@
 // The extension in another language: Chromium started in that language (LANGUAGE on Linux). macOS takes
 // the language from the system, so there these tests skip themselves. On Linux (GitHub Actions) they must run.
 import { test, expect } from "@playwright/test";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { rm } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -64,3 +64,17 @@ for (const [lang, dir] of [["he", "rtl"], ["ja", "ltr"]]) {
     });
   });
 }
+
+// Edge's name (scripts/build-edge.mjs): three formats instead of five, a hyphen before the brand, every language.
+test("the Edge name in every language: PNG, JPG and WebP, no GIF or PDF, ends with - Imgkeep", async () => {
+  const { edgeName } = await import("../scripts/build-edge.mjs");
+  for (const lang of await readdir(LOCALES)) {
+    const { extName } = JSON.parse(await readFile(join(LOCALES, lang, "messages.json"), "utf8"));
+    const name = edgeName(extName.message);
+    expect(name, lang).toMatch(/PNG.*JPG.*WebP/u);
+    expect(name, lang).not.toMatch(/GIF|PDF|—/u);
+    expect(name.endsWith(" - Imgkeep"), lang).toBe(true);
+    expect(name.length, lang).toBeLessThanOrEqual(75);
+  }
+  expect(edgeName("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep")).toBe("Save image as PNG, JPG or WebP - Imgkeep");
+});

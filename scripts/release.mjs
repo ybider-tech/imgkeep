@@ -7,7 +7,8 @@
 // Steps (stops at the first failure):
 //   translate  new and changed strings into every language (scripts/translate.mjs --run --batch)
 //   test       the static check and every test, Chrome and Firefox (npm test)
-//   package    dist/imgkeep-<v>.zip and dist/imgkeep-firefox-<v>.zip (scripts/package.sh)
+//   package    dist/imgkeep-<v>.zip, dist/imgkeep-edge-<v>.zip (Edge's shorter name) and
+//              dist/imgkeep-firefox-<v>.zip (scripts/package.sh)
 //   tag        dates the CHANGELOG entry, commits, tags v<version>
 //   push       pushes the release to main (CI runs only there) and the tag, then waits for CI to pass (gh)
 //   upload     uploads the package to the Chrome Web Store without submitting (scripts/cws-publish.mjs

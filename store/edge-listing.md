@@ -12,7 +12,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 - **Mature content:** No
 
 ## Store listing (English)
-- **Display name:** comes from the manifest: Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
+- **Display name:** comes from the Edge package (`scripts/build-edge.mjs`): Save image as PNG, JPG or WebP - Imgkeep. Since 0.12.0: Edge rejected 0.11.0 on 2026-11-03 under policy 1.1.2, "The title contains excessive search terms", for the five-format name Chrome and Firefox keep. If this one is rejected too, the fallback is "Save and convert images - Imgkeep".
 - **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`

@@ -15,3 +15,6 @@ unzip -l "$OUT"
 
 # The same code for Firefox (only the manifest differs): dist/imgkeep-firefox-<version>.zip
 node scripts/build-firefox.mjs
+
+# The same package for Edge, with Edge's shorter name: dist/imgkeep-edge-<version>.zip
+node scripts/build-edge.mjs

@@ -1,5 +1,6 @@
 #!/bin/sh
-# Uploads dist/imgkeep-<version>.zip to the Edge Add-ons listing and submits it for review.
+# Uploads dist/imgkeep-edge-<version>.zip (scripts/build-edge.mjs: Chrome's package with Edge's shorter name)
+# to the Edge Add-ons listing and submits it for review.
 # Credentials live outside the repo in ~/.config/imgkeep/edge.env (EDGE_CLIENT_ID, EDGE_API_KEY, EDGE_PRODUCT_ID).
 # Usage: sh scripts/edge-publish.sh --submit ["notes for certification"] | --upload-only
 #   --submit       upload and submit for certification. Notes default to the "Notes for certification"
@@ -38,8 +39,8 @@ for k in EDGE_CLIENT_ID EDGE_API_KEY EDGE_PRODUCT_ID; do
 done
 
 VERSION=$(node -p "require('./extension/manifest.json').version")
-ZIP="dist/imgkeep-$VERSION.zip"
-[ -f "$ZIP" ] || { echo "No $ZIP. Run: sh scripts/package.sh" >&2; exit 1; }
+ZIP="dist/imgkeep-edge-$VERSION.zip"
+[ -f "$ZIP" ] || { echo "No $ZIP. Run: sh scripts/package.sh (or node scripts/build-edge.mjs)" >&2; exit 1; }
 ZIP_VERSION=$(unzip -p "$ZIP" manifest.json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).version))')
 [ "$ZIP_VERSION" = "$VERSION" ] || { echo "$ZIP contains $ZIP_VERSION, manifest says $VERSION" >&2; exit 1; }
 
