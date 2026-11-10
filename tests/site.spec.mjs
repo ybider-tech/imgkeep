@@ -234,15 +234,15 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   const video = page.locator("figure.demo video");
   await expect(video).toHaveAttribute("preload", "none");
   expect(await video.getAttribute("autoplay")).toBeNull();
-  // The poster is shown (and is the fallback where WebM can't play); the video file isn't fetched until play.
-  expect(requests.some((u) => u.endsWith("/media/imgkeep-demo-poster.jpg"))).toBe(true);
-  expect(requests.some((u) => u.endsWith("/media/imgkeep-demo.webm"))).toBe(false);
-  await expect(page.locator("figure.demo video source")).toHaveAttribute("type", "video/webm");
-  for (const file of ["media/imgkeep-demo.webm", "media/imgkeep-demo-poster.jpg"]) {
+  // The poster is shown (and is the fallback where the video can't play); the video file isn't fetched until play.
+  expect(requests.some((u) => u.endsWith("/media/imgkeep-tour-poster.jpg"))).toBe(true);
+  expect(requests.some((u) => u.endsWith("/media/imgkeep-tour.mp4"))).toBe(false);
+  await expect(page.locator("figure.demo video source")).toHaveAttribute("type", "video/mp4");
+  for (const file of ["media/imgkeep-tour.mp4", "media/imgkeep-tour-poster.jpg"]) {
     const res = await page.request.get(`${server.url}/${file}`);
     expect(res.status(), file).toBe(200);
   }
-  await expect(page.locator("figure.demo figcaption a")).toHaveAttribute("href", "https://youtu.be/QZfq5xLYdmo");
+  await expect(page.locator("figure.demo figcaption a")).toHaveAttribute("href", "https://youtu.be/A0kO0Whgqhs");
   // It actually plays in Chromium.
   const playable = await video.evaluate(async (v) => {
     v.muted = true;
@@ -251,7 +251,7 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
     return { t: v.currentTime, w: v.videoWidth, h: v.videoHeight };
   });
   expect(playable.t).toBeGreaterThan(0.2);
-  expect([playable.w, playable.h]).toEqual([1280, 720]);
+  expect([playable.w, playable.h]).toEqual([1920, 1080]);
 });
 
 test("home page links the Microsoft Edge listing too, and the download page for other browsers", async ({ page }) => {

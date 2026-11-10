@@ -1,6 +1,8 @@
 # YouTube: Imgkeep demo video
 
-**Live:** https://youtu.be/QZfq5xLYdmo (uploaded 2026-09-29, channel "Imgkeep")
+**Live now:** https://youtu.be/A0kO0Whgqhs, "Save Images, Keep GIFs Moving & Copy Colours | Imgkeep" (30 s brand tour, uploaded 2026-11-10, channel "Imgkeep"). Used on the Chrome listing and imgkeep.app (self-hosted copy: `site/media/imgkeep-tour.mp4`, poster `site/media/imgkeep-tour-poster.jpg`). Its title and description were written on YouTube; the notes below are for the earlier demo.
+
+**Earlier demo:** https://youtu.be/QZfq5xLYdmo (uploaded 2026-09-29)
 
 - **Video file:** `store/imgkeep-demo.webm` (28 s, 1280×720). Regenerate with `npm run video`.
 - **Thumbnail:** `store/youtube-thumb-a.png` (what it does) or `store/youtube-thumb-b.png` (the problem it solves). Regenerate with `node store/video/render.mjs --thumbs`. Custom thumbnails need a phone-verified YouTube channel.

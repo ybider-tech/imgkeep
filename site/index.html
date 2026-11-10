@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep</title>
-  <meta name="description" content="Right-click any image in Chrome or Edge to save it as PNG, JPG, WebP, GIF or PDF, or get its colour palette. Converted on your computer. Free and open source.">
+  <meta name="description" content="Right-click any image in Chrome, Edge or Firefox to save it as PNG, JPG, WebP, GIF or PDF, or get its colour palette. Converted on your computer. Free.">
   <link rel="canonical" href="https://imgkeep.app/">
   <!-- hreflang -->
   <link rel="alternate" hreflang="en" href="https://imgkeep.app/">
@@ -26,7 +26,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Imgkeep">
   <meta property="og:title" content="Imgkeep — Any image. Your format.">
-  <meta property="og:description" content="A free Chrome and Edge extension: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder. Open source.">
+  <meta property="og:description" content="A free extension for Chrome, Edge and Firefox: right-click any image to save it as PNG, JPG, WebP, GIF or PDF. Converted on your computer, saved to your folder.">
   <meta property="og:url" content="https://imgkeep.app/">
   <meta property="og:image" content="https://imgkeep.app/og-image.png?v=brand20261110">
   <meta property="og:image:width" content="1200">
@@ -38,11 +38,11 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Imgkeep",
-    "description": "Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, copies them as PNG, or shows their colour palette. It converts each image on your computer and saves it to your chosen folder.",
+    "description": "Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, copies them as PNG, or shows their colour palette. It converts each image on your computer and saves it to your chosen folder.",
     "url": "https://imgkeep.app/",
     "image": "https://imgkeep.app/icon128.png",
     "applicationCategory": "BrowserApplication",
-    "operatingSystem": "Chrome, Microsoft Edge",
+    "operatingSystem": "Chrome, Microsoft Edge, Firefox",
     "isAccessibleForFree": true,
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "installUrl": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
@@ -50,26 +50,26 @@
     "license": "https://opensource.org/licenses/MIT",
     "featureList": ["Save images as PNG, JPG, WebP, GIF or PDF", "Convert WebP and AVIF to JPG or PNG", "Keep animation when saving as GIF", "Copy as PNG", "Get an image's colour palette: copy HEX, RGB or HSL, or save .ase and .gpl files", "Save to a folder you choose", "Custom file names", "Converts on your computer, no uploads"],
     "publisher": { "@id": "https://imgkeep.app/#org" },
-    "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd"]
+    "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd", "https://addons.mozilla.org/firefox/addon/imgkeep/"]
   }
   </script>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=brand20261110">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=brand20261110">
   <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="media/imgkeep-demo-poster.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="media/imgkeep-tour-poster.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="style.css?v=726f889611">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "Save WebP as JPG, PNG or GIF in Chrome with one right-click",
-    "description": "A 28-second demo of Imgkeep: an animated WebP saved as a GIF that keeps moving, and a WebP photo saved as JPG, from the right-click menu.",
-    "thumbnailUrl": "https://imgkeep.app/media/imgkeep-demo-poster.jpg",
-    "uploadDate": "2026-09-29",
-    "duration": "PT28S",
-    "contentUrl": "https://imgkeep.app/media/imgkeep-demo.webm",
-    "embedUrl": "https://www.youtube.com/embed/QZfq5xLYdmo"
+    "name": "Save images, keep GIFs moving and copy colours with Imgkeep",
+    "description": "A 30-second tour of Imgkeep: save an image in your format, find and save images from Pinterest and Instagram, keep animated GIFs moving and copy an image's colour palette.",
+    "thumbnailUrl": "https://imgkeep.app/media/imgkeep-tour-poster.jpg",
+    "uploadDate": "2026-11-10",
+    "duration": "PT30S",
+    "contentUrl": "https://imgkeep.app/media/imgkeep-tour.mp4",
+    "embedUrl": "https://www.youtube.com/embed/A0kO0Whgqhs"
   }
   </script>
   <script type="application/ld+json">
@@ -85,7 +85,7 @@
         { "@type": "Question", "name": "Can it get the colour palette from an image?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the image, choose Imgkeep, then Get colour palette. You see its 5, 8 or 12 main colours, largest first. Click one to copy it as HEX, RGB or HSL, or copy them all as CSS variables, Tailwind or JSON. Save them as a PNG, a GIMP palette or Adobe swatches. It's all worked out on your computer." } },
         { "@type": "Question", "name": "Can it save images that sites cover, like on Instagram or Pinterest?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the photo and choose Imgkeep: Find image here. Imgkeep looks at that page once, finds the photo under your click at its largest size, and opens it ready to save. It's off until you turn it on, and it never changes a page." } },
         { "@type": "Question", "name": "Can I convert images I already have on my computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the Free Image Converter at imgkeep.app/convert/: drop your files, pick PNG, JPG, WebP, AVIF, GIF, PDF or ICO, then download them or copy them as PNG. It runs in your browser, so nothing is uploaded and there's no sign-up. It works on phones too." } },
-        { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Google Chrome 116 and newer, and Microsoft Edge, in 9 languages." } },
+        { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages." } },
         { "@type": "Question", "name": "Can it save every image on a page at once?", "acceptedAnswer": { "@type": "Answer", "text": "No. Imgkeep saves the one image you right-click. For whole pages you need a bulk downloader." } }
       ] }
     ]
@@ -114,7 +114,7 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title"><span class="eyebrow">Save image as PNG, JPG, WebP, GIF or PDF</span> <span class="display">Any image. <span class="accent">Your format.</span></span></h1>
-        <p class="lead">Imgkeep is a free Chrome and Edge extension that saves web images as PNG, JPG, WebP, GIF or PDF. Right-click to convert on your device and save to your chosen folder.</p>
+        <p class="lead">Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF or PDF. Right-click to convert on your device and save to your chosen folder.</p>
         <div class="install">
           <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Add to Chrome — free</a>
           <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Edge <span aria-hidden="true">↗</span></a>
@@ -126,13 +126,13 @@
       </section>
 
       <figure class="demo">
-        <video controls preload="none" playsinline width="1280" height="720" poster="media/imgkeep-demo-poster.jpg" aria-describedby="demo-desc">
-          <source src="media/imgkeep-demo.webm" type="video/webm">
-          <a href="https://youtu.be/QZfq5xLYdmo">Watch the 28-second demo on YouTube</a>
+        <video controls preload="none" playsinline width="1920" height="1080" poster="media/imgkeep-tour-poster.jpg" aria-describedby="demo-desc">
+          <source src="media/imgkeep-tour.mp4" type="video/mp4">
+          <a href="https://youtu.be/A0kO0Whgqhs">Watch the 30-second tour on YouTube</a>
         </video>
         <figcaption>
-          <a href="https://youtu.be/QZfq5xLYdmo">Can't play it? Watch on YouTube <span aria-hidden="true">↗</span></a>
-          <span class="sr-only" id="demo-desc">A 28-second silent demo: right-click an animated WebP image, open Imgkeep, and choose GIF (keeps animation). The saved GIF still moves. Then a WebP photo is saved as a JPG the same way.</span>
+          <a href="https://youtu.be/A0kO0Whgqhs">Can't play it? Watch on YouTube <span aria-hidden="true">↗</span></a>
+          <span class="sr-only" id="demo-desc">A 30-second animated tour of Imgkeep. An image is saved in the format you pick, such as PNG, JPG or WebP, with a preview first. Photos from Pinterest and Instagram are found with Find image here and saved. An animated GIF of a yawning cat is saved and keeps moving. An image's colour palette is copied as HEX, RGB, HSL or CSS. It ends with where to get Imgkeep: imgkeep.app, for Chrome, Edge and Firefox.</span>
         </figcaption>
       </figure>
 
@@ -309,7 +309,7 @@
           </div>
           <div>
             <dt>Which browsers does it work in?</dt>
-            <dd>Google Chrome 116 and newer, and Microsoft Edge, in 9 languages.</dd>
+            <dd>Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages.</dd>
           </div>
           <div>
             <dt>Can it save every image on a page at once?</dt>

@@ -6,7 +6,7 @@ Right-click any image and save it as PNG, JPG, WebP, GIF (animation included) or
 
 **Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
 
-▶ [Watch the 28-second demo](https://youtu.be/QZfq5xLYdmo)
+▶ [Watch the 30-second tour](https://youtu.be/A0kO0Whgqhs)
 
 ## Why
 
@@ -136,7 +136,7 @@ Other scripts:
 | `npm run fixtures` | Regenerates test images (AVIF needs macOS `sips`; the file is checked in) |
 | `npm run version-css` | After editing `site/style.css`: stamps every page's stylesheet link (`style.css?v=…`) so visitors get the new styles at once. A test fails if you forget. |
 | `npm run store` | Renders `store/*.png` from `store/scenes.html`, with real captures of the options page and ask window |
-| `npm run video` | Renders the 28-second demo video `store/imgkeep-demo.webm` (1280×720) and its poster from `store/video/demo.html`, using the ffmpeg Playwright installs. `--stills` saves a few frames to check first. |
+| `npm run video` | Renders the earlier 28-second demo video (2026-09; the site and stores now use the 30-second brand tour, `site/media/imgkeep-tour.mp4`) `store/imgkeep-demo.webm` (1280×720) and its poster from `store/video/demo.html`, using the ffmpeg Playwright installs. `--stills` saves a few frames to check first. |
 | `sh scripts/package.sh` | Runs the tests, then builds `dist/imgkeep-<version>.zip` |
 
 ### Translations

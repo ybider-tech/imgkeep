@@ -134,6 +134,6 @@ Certifications (tick all three):
 | `store/screenshot-7-palette.png` | 1280×800 | Screenshot 7 (new in 0.11.0): Get colour palette on a made-up interior photo (`store/palette-room.svg`), one colour just copied. Chrome allows 5: menu, find, palette, GIF, trust (options moves out; Edge keeps all). |
 | `store/promo-tile-440x280.png` | 440×280 | Small promo tile |
 | `store/marquee-1400x560.png` | 1400×560 | Marquee promo tile (needed to be eligible for the homepage carousel) |
-| Promo video (YouTube link field) | https://youtu.be/QZfq5xLYdmo | Demo video, 28 s. Add after the marquee tile's review is done. |
+| Promo video (YouTube link field) | https://youtu.be/A0kO0Whgqhs | Brand tour, 30 s (2026-11-10, replaced the 28 s demo https://youtu.be/QZfq5xLYdmo). Submitted with the brand images on 2026-11-10. |
 
 Regenerate them with `npm run store` (renders `store/scenes.html` with Playwright).
