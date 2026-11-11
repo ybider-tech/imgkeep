@@ -746,7 +746,8 @@ header:has(.cv-nav) { display: flex; align-items: center; flex-wrap: wrap; gap: 
 .pal-label { font-weight: 700; margin-right: 4px; }
 .pal-status { min-height: 1.5em; margin: 14px 0 0; font-weight: 700; }
 .pal-status.error { color: var(--danger, #a4302a); }
-.doc .pal-table { min-width: 0; } /* two short columns fit any screen */
+.doc .pal-table, .doc .browsers-table { min-width: 0; } /* two short columns fit any screen */
+.doc .browsers-table th, .doc .browsers-table td { padding: 8px 6px; hyphens: auto; overflow-wrap: break-word; } /* four columns: long words (German) hyphenate on phones */
 
 
 /* Languages: the header menu (no script) and lang.js's one-line hint. */

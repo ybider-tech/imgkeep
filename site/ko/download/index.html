@@ -40,12 +40,12 @@
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/ko/"},{"@type":"ListItem","position":2,"name":"다운로드","item":"https://imgkeep.app/ko/download/"}]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep은 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. Imgkeep은 무료 오픈 소스(MIT)이며 계정도, 광고도, 사용 제한도 없습니다. 지금 제공되는 모든 기능은 계속 무료입니다."}},{"@type":"Question","name":"Imgkeep은 어떤 브라우저에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Google Chrome(Windows, macOS, Linux, ChromeOS), Microsoft Edge와 Firefox(둘 다 Windows, macOS, Linux)에서 사용할 수 있습니다."}},{"@type":"Question","name":"Imgkeep은 모든 브라우저에서 똑같이 작동하나요?","acceptedAnswer":{"@type":"Answer","text":"거의 같습니다. Firefox는 직접 지정한 폴더에 파일을 쓸 수 없어서, 이미지는 다운로드 폴더에 저장되거나 저장할 때마다 위치를 선택하게 됩니다. 또 익명 일일 사용 요약은 설치할 때 허용하지 않는 한 Firefox에서는 꺼져 있습니다."}},{"@type":"Question","name":"휴대폰에서도 Imgkeep을 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"확장 프로그램은 데스크톱 브라우저용입니다. 휴대폰이나 태블릿에서는 imgkeep.app의 무료 이미지 변환기를 사용하세요. 업로드 없이 브라우저에서 이미지를 변환합니다."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep은 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. Imgkeep은 무료 오픈 소스(MIT)이며 계정도, 광고도, 사용 제한도 없습니다. 지금 제공되는 모든 기능은 계속 무료입니다."}},{"@type":"Question","name":"Imgkeep은 어떤 브라우저에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Imgkeep은 Google Chrome 116 이상(Windows, macOS, Linux, ChromeOS), Microsoft Edge(Windows, macOS, Linux), Firefox 140 이상(Windows, macOS, Linux)에서 51개 언어로 쓸 수 있습니다. 세 브라우저 모두 각자의 부가 기능 스토어에서 무료입니다. 휴대폰에서는 imgkeep.app의 무료 이미지 변환기를 쓰세요."}},{"@type":"Question","name":"Imgkeep은 모든 브라우저에서 똑같이 작동하나요?","acceptedAnswer":{"@type":"Answer","text":"거의 같습니다. Firefox는 직접 지정한 폴더에 파일을 쓸 수 없어서, 이미지는 다운로드 폴더에 저장되거나 저장할 때마다 위치를 선택하게 됩니다. 또 익명 일일 사용 요약은 설치할 때 허용하지 않는 한 Firefox에서는 꺼져 있습니다."}},{"@type":"Question","name":"휴대폰에서도 Imgkeep을 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"확장 프로그램은 데스크톱 브라우저용입니다. 휴대폰이나 태블릿에서는 imgkeep.app의 무료 이미지 변환기를 사용하세요. 업로드 없이 브라우저에서 이미지를 변환합니다."}}]}
   </script>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=brand20261110">
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=726f889611">
+  <link rel="stylesheet" href="/style.css?v=7d2641670e">
   <script src="/count.js" defer></script>
 </head>
 <body>
@@ -78,6 +78,17 @@
         </li>
       </ul>
 
+      <h2>브라우저별 Imgkeep의 차이</h2>
+      <div class="table-wrap"><table class="browsers-table">
+        <thead><tr><th scope="col"></th><th scope="col">Chrome</th><th scope="col">Edge</th><th scope="col">Firefox</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">최소 버전</th><td>116</td><td>최신 버전</td><td>140</td></tr>
+          <tr><th scope="row">고른 폴더에 저장</th><td>예</td><td>예</td><td>아니요: 다운로드 폴더 또는 매번 묻기</td></tr>
+          <tr><th scope="row">익명 일일 요약</th><td>켜짐, 끌 수 있음</td><td>켜짐, 끌 수 있음</td><td>허용하지 않으면 꺼짐</td></tr>
+          <tr><th scope="row">움직이는 GIF가 그대로 움직임</th><td>예</td><td>예</td><td>예</td></tr>
+        </tbody>
+      </table></div>
+
       <h2>휴대폰이나 태블릿을 쓰고 계신가요?</h2>
       <p>확장 프로그램은 데스크톱 브라우저용입니다. 휴대폰에서는 <a href="/ko/convert/">무료 이미지 변환기</a>로 이미 가지고 있는 이미지를 업로드 없이 브라우저에서 바로 변환할 수 있습니다.</p>
 
@@ -86,7 +97,7 @@
         <dt>Imgkeep은 무료인가요?</dt>
         <dd>네. Imgkeep은 무료 오픈 소스(MIT)이며 계정도, 광고도, 사용 제한도 없습니다. 지금 제공되는 모든 기능은 계속 무료입니다.</dd>
         <dt>Imgkeep은 어떤 브라우저에서 쓸 수 있나요?</dt>
-        <dd>Google Chrome(Windows, macOS, Linux, ChromeOS), Microsoft Edge와 Firefox(둘 다 Windows, macOS, Linux)에서 사용할 수 있습니다.</dd>
+        <dd>Imgkeep은 Google Chrome 116 이상(Windows, macOS, Linux, ChromeOS), Microsoft Edge(Windows, macOS, Linux), Firefox 140 이상(Windows, macOS, Linux)에서 51개 언어로 쓸 수 있습니다. 세 브라우저 모두 각자의 부가 기능 스토어에서 무료입니다. 휴대폰에서는 imgkeep.app의 무료 이미지 변환기를 쓰세요.</dd>
         <dt>Imgkeep은 모든 브라우저에서 똑같이 작동하나요?</dt>
         <dd>거의 같습니다. Firefox는 직접 지정한 폴더에 파일을 쓸 수 없어서, 이미지는 다운로드 폴더에 저장되거나 저장할 때마다 위치를 선택하게 됩니다. 또 익명 일일 사용 요약은 설치할 때 허용하지 않는 한 Firefox에서는 꺼져 있습니다.</dd>
         <dt>휴대폰에서도 Imgkeep을 쓸 수 있나요?</dt>

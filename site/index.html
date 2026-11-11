@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Imgkeep",
-    "description": "Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, copies them as PNG, or shows their colour palette. It converts each image on your computer and saves it to your chosen folder.",
+    "description": "Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF (animation included) or PDF from the right-click menu, copies them as PNG, or shows their colour palette. It converts each image on your computer and saves it to Downloads or a folder you choose.",
     "url": "https://imgkeep.app/",
     "image": "https://imgkeep.app/icon128.png",
     "applicationCategory": "BrowserApplication",
@@ -58,7 +58,7 @@
   <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="media/imgkeep-tour-poster.jpg" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="style.css?v=726f889611">
+  <link rel="stylesheet" href="style.css?v=7d2641670e">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,7 +76,7 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": "https://imgkeep.app/#org", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": "https://imgkeep.app/icon128.png", "email": "helloimgkeep@gmail.com", "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://www.producthunt.com/products/imgkeep"] },
+      { "@type": "Organization", "@id": "https://imgkeep.app/#org", "name": "Imgkeep", "url": "https://imgkeep.app/", "logo": "https://imgkeep.app/icon128.png", "email": "helloimgkeep@gmail.com", "sameAs": ["https://github.com/ybider-tech/imgkeep", "https://www.producthunt.com/products/imgkeep", "https://www.youtube.com/@Imgkeep"] },
       { "@type": "WebSite", "@id": "https://imgkeep.app/#site", "name": "Imgkeep", "url": "https://imgkeep.app/", "publisher": { "@id": "https://imgkeep.app/#org" } },
       { "@type": "FAQPage", "mainEntity": [
         { "@type": "Question", "name": "Is Imgkeep free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything Imgkeep does today is free, with no ads and no limits. A paid Imgkeep Pro with extra features is planned, and the current features stay free." } },
@@ -85,7 +85,7 @@
         { "@type": "Question", "name": "Can it get the colour palette from an image?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the image, choose Imgkeep, then Get colour palette. You see its 5, 8 or 12 main colours, largest first. Click one to copy it as HEX, RGB or HSL, or copy them all as CSS variables, Tailwind or JSON. Save them as a PNG, a GIMP palette or Adobe swatches. It's all worked out on your computer." } },
         { "@type": "Question", "name": "Can it save images that sites cover, like on Instagram or Pinterest?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Right-click the photo and choose Imgkeep: Find image here. Imgkeep looks at that page once, finds the photo under your click at its largest size, and opens it ready to save. It's off until you turn it on, and it never changes a page." } },
         { "@type": "Question", "name": "Can I convert images I already have on my computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the Free Image Converter at imgkeep.app/convert/: drop your files, pick PNG, JPG, WebP, AVIF, GIF, PDF or ICO, then download them or copy them as PNG. It runs in your browser, so nothing is uploaded and there's no sign-up. It works on phones too." } },
-        { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages." } },
+        { "@type": "Question", "name": "Which browsers does it work in?", "acceptedAnswer": { "@type": "Answer", "text": "Imgkeep works in Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages, free from each browser's add-on store. In Firefox, images go to Downloads or wherever you choose each time, because Firefox can't save into a folder picked in advance." } },
         { "@type": "Question", "name": "Can it save every image on a page at once?", "acceptedAnswer": { "@type": "Answer", "text": "No. Imgkeep saves the one image you right-click. For whole pages you need a bulk downloader." } }
       ] }
     ]
@@ -114,11 +114,11 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title"><span class="eyebrow">Save image as PNG, JPG, WebP, GIF or PDF</span> <span class="display">Any image. <span class="accent">Your format.</span></span></h1>
-        <p class="lead">Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF or PDF. Right-click to convert on your device and save to your chosen folder.</p>
+        <p class="lead">Imgkeep is a free extension for Chrome, Edge and Firefox that saves web images as PNG, JPG, WebP, GIF or PDF. Right-click to convert on your device and save to Downloads or a folder you choose.</p>
         <div class="install">
           <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Add to Chrome — free</a>
           <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Edge <span aria-hidden="true">↗</span></a>
-          <a class="cta-alt" href="download/">Firefox and other browsers</a>
+          <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Also for Firefox <span aria-hidden="true">↗</span></a>
         </div>
         <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
         <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Rated 5.0 out of 5 on the Chrome Web Store"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · on the Chrome Web Store</a></p>
@@ -309,7 +309,7 @@
           </div>
           <div>
             <dt>Which browsers does it work in?</dt>
-            <dd>Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages.</dd>
+            <dd>Imgkeep works in Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages, free from each browser's add-on store. In Firefox, images go to Downloads or wherever you choose each time, because Firefox can't save into a folder picked in advance.</dd>
           </div>
           <div>
             <dt>Can it save every image on a page at once?</dt>
@@ -324,7 +324,7 @@
           <div class="install">
             <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Add to Chrome — free</a>
             <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Also for Edge <span aria-hidden="true">↗</span></a>
-            <a class="cta-alt" href="download/">Firefox and other browsers</a>
+            <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Also for Firefox <span aria-hidden="true">↗</span></a>
           </div>
           <p class="trust">No account <span aria-hidden="true">·</span> No uploads <span aria-hidden="true">·</span> Open source</p>
         </div>

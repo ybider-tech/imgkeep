@@ -10,6 +10,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { startServer } from "./servers.mjs";
 import { firefoxManifest, GECKO_ID } from "../scripts/build-firefox.mjs";
+import { findImageInPage } from "../extension/lib/find-image.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const UUID = "6f2a3c1e-1111-4222-8333-944455556666"; // fixed, so the test knows the extension's pages
@@ -125,6 +126,37 @@ test.describe("in Firefox", () => {
     expect((await saved("photo.avif")).subarray(4, 12).toString()).toBe("ftypavif");
     expect((await saved("photo.bmp")).subarray(0, 2).toString()).toBe("BM");
     expect([...(await saved("photo.ico")).subarray(0, 4)]).toEqual([0, 0, 1, 0]);
+  });
+
+  test("Find image here: in a Firefox page, the finder picks the photo under a cover layer", async () => {
+    const tab = await browser.newPage();
+    try {
+      const findAt = async (file, selector, link = null) => {
+        await tab.goto(`${cors.url}/covered/${file}`);
+        const box = await (await tab.$(selector)).boundingBox();
+        await tab.mouse.move(box.x + 70, box.y + 60);
+        const r = await tab.evaluate(`(${findImageInPage.toString()})(${JSON.stringify(link)})`);
+        return (r.found || r.guess)?.url?.split("/").pop();
+      };
+      expect(await findAt("instagram.html", "#t1")).toBe("wide.webp"); // the largest srcset entry
+      expect(await findAt("pinterest.html", "#q2")).toBe("photo.jpg");
+      expect(await findAt("pinterest-signed-in.html", "#q2", new URL("/pin/111/", cors.url).href)).toBe("wide.webp"); // the right-clicked pin
+    } finally {
+      await tab.close();
+    }
+  });
+
+  test("Find image here: what the finder found opens in More options", async () => {
+    // Only a real right-click grants activeTab, so the test stands in for that one call, as in find.spec.mjs.
+    const windowsBefore = await page.evaluate(() => chrome.windows.getAll().then((w) => w.length));
+    await page.evaluate(async (url, found) => {
+      const bg = await browser.runtime.getBackgroundPage();
+      bg.chrome.permissions.contains = async () => true;
+      bg.chrome.scripting = { ...(bg.chrome.scripting || {}), executeScript: async () => [{ result: { found: { url: found, kind: "img", width: 300, height: 300 }, onScreen: [] } }] };
+      await bg.imgkeepFindImage(1, url);
+    }, `${cors.url}/covered/instagram.html`, `${cors.url}/wide.webp`);
+    // The More options window opens (BiDi doesn't hand popups to the test, and tab addresses need "tabs").
+    await expect.poll(() => page.evaluate(() => chrome.windows.getAll().then((w) => w.length))).toBe(windowsBefore + 1);
   });
 
   test("Get colour palette: the window shows the colours, and saves a GIMP palette", async () => {

@@ -254,10 +254,11 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   expect([playable.w, playable.h]).toEqual([1920, 1080]);
 });
 
-test("home page links the Microsoft Edge listing too, and the download page for other browsers", async ({ page }) => {
+test("home page links the Microsoft Edge and Firefox listings too", async ({ page }) => {
   await page.goto(`${server.url}/index.html`);
   const links = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-  expect(links).toEqual([EDGE, "download/", EDGE, "download/"]);
+  const FIREFOX = (campaign) => `https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${campaign}`;
+  expect(links).toEqual([EDGE, FIREFOX("hero"), EDGE, FIREFOX("final")]);
 });
 
 test("the download page links all three stores", async ({ page }) => {
