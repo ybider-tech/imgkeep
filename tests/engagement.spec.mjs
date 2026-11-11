@@ -227,13 +227,15 @@ test.describe("in the extension", () => {
     expect((await store).url()).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\/(.+\/)?fkclfgbmjaafglfifenonfcahfdmajbl\/reviews$/);
     expect((await usage()).ask).toBe("done");
     await (await store).close();
+    if (!win.isClosed()) await win.waitForEvent("close", { timeout: 5000 }); // it closes itself after the answer
   });
 
   test("a quick save from the menu, when it's due, asks once in its own small window (0.12.1)", async () => {
     const counts = () => ctx.sw.evaluate(() => globalThis.imgkeepCount().then(() => chrome.storage.local.get("counts")).then((s) => s.counts?.c || {}));
     const quickSave = () =>
       ctx.sw.evaluate((url) => globalThis.imgkeepMenuClicked({ menuItemId: "imgkeep-png", srcUrl: url, pageUrl: url }), `${cors.url}/photo.png`);
-    const rateWindows = () => ctx.context.pages().filter((p) => p.url().includes("/rate.html")).length;
+    const rateWindows = () => ctx.context.pages().filter((p) => !p.isClosed() && p.url().includes("/rate.html")).length;
+    expect(rateWindows()).toBe(0); // nothing left over from an earlier test
     // Not due yet: a quick save opens nothing.
     await installed({ reason: "install" });
     expect(await quickSave()).toMatchObject({ ok: true });
