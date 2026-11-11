@@ -40,7 +40,7 @@
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/zh/"},{"@type":"ListItem","position":2,"name":"从图片提取配色","item":"https://imgkeep.app/zh/color-palette-from-image/"}]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"这个配色工具免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费。无需账号，没有次数限制，没有水印，也没有广告。"}},{"@type":"Question","name":"我的图片会被上传吗？","acceptedAnswer":{"@type":"Answer","text":"不会。颜色在你的浏览器中计算，图片不会离开你的设备。页面只会发送一次匿名的页面访问计数，如果你点击前往应用商店的链接，会再发送一次，绝不会发送图片、颜色或文件名。"}},{"@type":"Question","name":"为什么得到的颜色比我选的少？","acceptedAnswer":{"@type":"Answer","text":"因为图片中不同的颜色本来就更少。看起来几乎一样的颜色会被合并，所以一个只有三种纯色的标志，即使你选了 8 种，也只会得到三种。"}},{"@type":"Question","name":"可以复制或保存成哪些格式？","acceptedAnswer":{"@type":"Answer","text":"单个颜色可复制为 HEX、RGB 或 HSL。整组配色可复制为 CSS 变量、Tailwind 颜色代码片段、JSON 或纯列表。保存为文件时可选：PNG 色块条、GIMP 调色板（.gpl，Inkscape 和 Krita 也能读取）或 Adobe 色板（.ase，适用于 Illustrator、Photoshop 和 InDesign）。"}},{"@type":"Question","name":"能直接提取网页上图片的配色吗？","acceptedAnswer":{"@type":"Answer","text":"可以，使用免费的 Imgkeep 扩展（适用于 Chrome 和 Edge）：右键点击图片，选择 Imgkeep，再选 提取配色。在 Instagram、Pinterest 这类照片被盖在另一层下面的网站上，选择 Imgkeep：在此处查找图片…，再选 更多选项，然后选 提取配色。"}},{"@type":"Question","name":"在手机上能用吗？","acceptedAnswer":{"@type":"Answer","text":"可以，在手机浏览器中也能用。Imgkeep 扩展则适用于桌面版 Chrome 和 Edge。"}},{"@type":"Question","name":"不上传图片，怎么提取它的配色？","acceptedAnswer":{"@type":"Answer","text":"把图片拖到本页面，就能看到它的 5、8 或 12 种主要颜色，按占比从高到低排列，并显示每种颜色的占比。点击某个颜色可复制它的 HEX、RGB 或 HSL 值，也可以把全部颜色复制为 CSS 变量或 Tailwind 格式。图片在你的浏览器中读取，不会上传。无需注册，没有广告。"}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"这个配色工具免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费。无需账号，没有次数限制，没有水印，也没有广告。"}},{"@type":"Question","name":"我的图片会被上传吗？","acceptedAnswer":{"@type":"Answer","text":"不会。颜色在你的浏览器中计算，图片不会离开你的设备。页面只会发送一次匿名的页面访问计数，如果你点击前往应用商店的链接，会再发送一次，绝不会发送图片、颜色或文件名。"}},{"@type":"Question","name":"为什么得到的颜色比我选的少？","acceptedAnswer":{"@type":"Answer","text":"因为图片中不同的颜色本来就更少。看起来几乎一样的颜色会被合并，所以一个只有三种纯色的标志，即使你选了 8 种，也只会得到三种。"}},{"@type":"Question","name":"可以复制或保存成哪些格式？","acceptedAnswer":{"@type":"Answer","text":"单个颜色可复制为 HEX、RGB 或 HSL。整组配色可复制为 CSS 变量、Tailwind 颜色代码片段、JSON 或纯列表。保存为文件时可选：PNG 色块条、GIMP 调色板（.gpl，Inkscape 和 Krita 也能读取）或 Adobe 色板（.ase，适用于 Illustrator、Photoshop 和 InDesign）。"}},{"@type":"Question","name":"能直接提取网页上图片的配色吗？","acceptedAnswer":{"@type":"Answer","text":"可以，使用免费的 Imgkeep 扩展（适用于 Chrome、Edge 和 Firefox）：右键点击图片，选择 Imgkeep，再选 提取配色。在 Instagram、Pinterest 这类照片被盖在另一层下面的网站上，选择 Imgkeep：在此处查找图片…，再选 更多选项，然后选 提取配色。"}},{"@type":"Question","name":"在手机上能用吗？","acceptedAnswer":{"@type":"Answer","text":"可以，在手机浏览器中也能用。Imgkeep 扩展则适用于桌面版 Chrome、Edge 和 Firefox。"}},{"@type":"Question","name":"不上传图片，怎么提取它的配色？","acceptedAnswer":{"@type":"Answer","text":"把图片拖到本页面，就能看到它的 5、8 或 12 种主要颜色，按占比从高到低排列，并显示每种颜色的占比。点击某个颜色可复制它的 HEX、RGB 或 HSL 值，也可以把全部颜色复制为 CSS 变量或 Tailwind 格式。图片在你的浏览器中读取，不会上传。无需注册，没有广告。"}}]}
   </script>
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -134,7 +134,7 @@
       </ul>
 
       <h2>提取网页上图片的配色</h2>
-      <p>适用于 Chrome 和 Edge 的 <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">Imgkeep</a> 扩展右键一下就能完成，不用先把图片存下来：右键点击任意图片，选择 <strong>Imgkeep</strong>，再选 <strong>提取配色</strong>。对于 Instagram、Pinterest 这类把照片盖在另一层下面的网站，同样可用。</p>
+      <p>适用于 Chrome、Edge 和 Firefox 的 <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">Imgkeep</a> 扩展右键一下就能完成，不用先把图片存下来：右键点击任意图片，选择 <strong>Imgkeep</strong>，再选 <strong>提取配色</strong>。对于 Instagram、Pinterest 这类把照片盖在另一层下面的网站，同样可用。</p>
 
       <h2>常见问题</h2>
       <h3>这个配色工具免费吗？</h3>
@@ -146,13 +146,13 @@
       <h3>可以复制或保存成哪些格式？</h3>
       <p>单个颜色可复制为 HEX、RGB 或 HSL。整组配色可复制为 CSS 变量、Tailwind 颜色代码片段、JSON 或纯列表。保存为文件时可选：PNG 色块条、GIMP 调色板（.gpl，Inkscape 和 Krita 也能读取）或 Adobe 色板（.ase，适用于 Illustrator、Photoshop 和 InDesign）。</p>
       <h3>能直接提取网页上图片的配色吗？</h3>
-      <p>可以，使用免费的 Imgkeep 扩展（适用于 Chrome 和 Edge）：右键点击图片，选择 Imgkeep，再选 提取配色。在 Instagram、Pinterest 这类照片被盖在另一层下面的网站上，选择 Imgkeep：在此处查找图片…，再选 更多选项，然后选 提取配色。</p>
+      <p>可以，使用免费的 Imgkeep 扩展（适用于 Chrome、Edge 和 Firefox）：右键点击图片，选择 Imgkeep，再选 提取配色。在 Instagram、Pinterest 这类照片被盖在另一层下面的网站上，选择 Imgkeep：在此处查找图片…，再选 更多选项，然后选 提取配色。</p>
       <h3>在手机上能用吗？</h3>
-      <p>可以，在手机浏览器中也能用。Imgkeep 扩展则适用于桌面版 Chrome 和 Edge。</p>
+      <p>可以，在手机浏览器中也能用。Imgkeep 扩展则适用于桌面版 Chrome、Edge 和 Firefox。</p>
       <section class="cv-ext" aria-labelledby="extTitle">
         <h2 id="extTitle">直接从网页上取色。</h2>
-        <p>使用适用于 Chrome 或 Edge 的 Imgkeep：右键点击图片即可获取配色，或按你需要的格式保存。</p>
-        <p class="cv-ext-links"><a class="cv-ext-cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">获取免费扩展</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">也支持 Edge</a></p>
+        <p>使用适用于 Chrome、Edge 或 Firefox 的 Imgkeep：右键点击图片即可获取配色，或按你需要的格式保存。</p>
+        <p class="cv-ext-links"><a class="cv-ext-cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">获取免费扩展</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">也支持 Edge</a> <a href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=palette&amp;utm_campaign=palette-tool">也支持 Firefox</a></p>
       </section>
     </main>
     <footer>

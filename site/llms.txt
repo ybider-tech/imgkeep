@@ -1,18 +1,18 @@
 # Imgkeep
 
-> Imgkeep is a free browser extension for Google Chrome and Microsoft Edge that saves web images as PNG, JPG, WebP, GIF or PDF from the right-click menu, and can show an image's colour palette. It converts each image on the user's computer (nothing is uploaded) and saves it to Downloads, a folder the user picks, or wherever they choose each time. It is open source under the MIT licence.
+> Imgkeep is a free browser extension for Google Chrome, Microsoft Edge and Firefox that saves web images as PNG, JPG, WebP, GIF or PDF from the right-click menu, and can show an image's colour palette. It converts each image on the user's computer (nothing is uploaded) and saves it to Downloads, a folder the user picks (Chrome and Edge), or wherever they choose each time. It is open source under the MIT licence.
 
 Key facts:
 
 - Use: right-click an image, choose "Imgkeep", then PNG, JPG, WebP, GIF (keeps animation), PDF or Original format. "Copy as PNG" puts the image on the clipboard. "Get colour palette" shows its main colours.
 - Colour palette: "Get colour palette" shows an image's 5, 8 or 12 main colours, largest first, with each one's share. Click one to copy it as HEX, RGB or HSL; copy all as CSS variables, Tailwind, JSON or a list; or save a PNG swatch strip, a GIMP palette (.gpl) or Adobe swatches (.ase). Worked out on the device. It also works on images found with Find image here (through More options).
 - Converts the WebP and AVIF images many sites now serve into PNG or JPG files that every app opens. Animated WebP can be saved as an animated GIF.
-- Privacy: images are converted on the device and never uploaded. No account. One anonymous daily count of which features were used and which saves failed is sent (never images, addresses or file names), and it can be turned off in Options.
+- Privacy: images are converted on the device and never uploaded. No account. One anonymous daily count of which features were used and which saves failed is sent (never images, addresses or file names), and it can be turned off in Options. In Firefox the daily count is off unless the user allows it when Firefox asks at install.
 - Find image here: on sites that cover their photos with another layer (like Instagram and Pinterest), a right-click can't reach the image. "Imgkeep: Find image here" looks at that page once, finds the photo under the click at its largest size, and opens it ready to save. Off until the user turns it on.
-- Permissions: contextMenus, downloads, storage, offscreen. Two optional ones, activeTab and scripting, only if the user turns on Find image here. Imgkeep doesn't read the sites the user visits, except that one page when asked to find an image there, and it never changes a page. If a site blocks an image, Imgkeep asks for access to that one site, only after the user clicks to allow it.
+- Permissions: contextMenus, downloads, storage, offscreen (Chrome and Edge; Firefox doesn't need offscreen). Two optional ones, activeTab and scripting, only if the user turns on Find image here. Imgkeep doesn't read the sites the user visits, except that one page when asked to find an image there, and it never changes a page. If a site blocks an image, Imgkeep asks for access to that one site, only after the user clicks to allow it.
 - Price: free, no ads. A paid Imgkeep Pro with extra features is planned; current features stay free.
 - Saves one image at a time (the one right-clicked), not every image on a page.
-- Works in Chrome 116 and newer and in Microsoft Edge, in 9 languages.
+- Works in Google Chrome 116 and newer, Microsoft Edge, and Firefox 140 and newer, in 51 languages. In Firefox, images are saved to Downloads or wherever the user chooses each time, because Firefox can't save into a folder picked in advance.
 - Free Image Converter at imgkeep.app/convert/: the same conversion code in a web page, for files already on a computer or phone. No uploads, no sign-up.
 
 ## Free Image Converter
@@ -32,6 +32,7 @@ Key facts:
 
 - [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl)
 - [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd)
+- [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/imgkeep/)
 - [Download page](https://imgkeep.app/download/): every store link in one place: Chrome Web Store, Microsoft Edge Add-ons and Firefox Add-ons (addons.mozilla.org).
 
 ## Guides

@@ -26,7 +26,7 @@ const HELPER = {
   jpg: t("JPG works well for photos. Transparent areas use your background colour."),
   webp: t("WebP makes compact web images and can keep transparency."),
   avif: t("AVIF makes very small files for the web and keeps transparency. Some older apps can't open it."),
-  gif: t("For animations: animated WebP, AVIF and APNG keep moving in Chrome and Edge. GIFs are at most 800 px wide."),
+  gif: t("For animations: animated WebP, AVIF and APNG keep moving in Chrome, Edge and Firefox. GIFs are at most 800 px wide."),
   pdf: t("Creates a one-page PDF for each image."),
   ico: t("Creates one icon file with 16, 32 and 48 px, plus 256 px when the image is at least that big."),
   bmp: t("For software that needs BMP. Transparent areas use your background colour."),

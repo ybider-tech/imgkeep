@@ -25,7 +25,7 @@ A summary contains only:
 - how often a colour palette was opened (and whether for an image Find image here found), and how often one colour or all of them were copied or saved as a PNG, GIMP or Adobe file (since 0.11.0), never the colours themselves;
 - how often a site-access or folder question was shown and a site was allowed, whether the one rating question was shown in the right-click menu or in a window, whether its menu item was clicked (since 0.11.0) and how it was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
 - whether Imgkeep was installed that day (a count of 1, since 0.10.2), so we know how many people install it;
-- the extension's version, the browser (Chrome or Edge) and its language.
+- the extension's version, the browser (Chrome, Edge or Firefox) and its language.
 
 It never contains images, image or page addresses, site names, file or folder names, the text of your settings, or any identifier for you or your device. Each summary carries a new random number, so summaries can't be linked to each other.
 
