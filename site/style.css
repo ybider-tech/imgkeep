@@ -362,6 +362,7 @@ footer .guides { margin-top: 12px; }
 .home .cta { margin: 0; min-height: 48px; padding: 13px 28px; border-radius: 8px; font-size: 1.05rem; }
 .home .cta:hover { text-decoration: none; }
 .home .cta-alt { margin: 0; padding: 12px 0; font-weight: 600; }
+.install [hidden] { display: none !important; } /* the other browser's install links (lang.js shows the right ones) */
 .home .ph-badge { margin: 0; flex-shrink: 0; }
 .home .ph-badge img { width: 133px; height: 36px; }
 .rating { margin: 20px 0 0; font-size: 0.95rem; }

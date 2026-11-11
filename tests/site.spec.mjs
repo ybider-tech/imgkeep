@@ -156,7 +156,8 @@ test("Add to Chrome points to the live store listing", async ({ page }) => {
   // Header, hero and closing CTA each tag their own utm_campaign, so the store dashboard shows which one brings installs.
   await expect(page.locator("#install")).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=hero`);
   const home = await page.locator(`a[href^="${STORE}"]`).evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-  expect(home).toEqual(["header", "hero", "rating", "final"].map((c) => `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${c}`));
+  // (hero-firefox and final-firefox: the "Also for Chrome" links that Firefox visitors see instead.)
+  expect(home).toEqual(["header", "hero", "hero-firefox", "rating", "final", "final-firefox"].map((c) => `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${c}`));
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const ld = blocks.map((b) => JSON.parse(b)).find((d) => d["@type"] === "SoftwareApplication");
   expect(ld.installUrl).toBe(STORE);
@@ -258,7 +259,23 @@ test("home page links the Microsoft Edge and Firefox listings too", async ({ pag
   await page.goto(`${server.url}/index.html`);
   const links = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
   const FIREFOX = (campaign) => `https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${campaign}`;
-  expect(links).toEqual([EDGE, FIREFOX("hero"), EDGE, FIREFOX("final")]);
+  const CHROME = (campaign) => `https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${campaign}`;
+  expect(links).toEqual([EDGE, FIREFOX("hero"), CHROME("hero-firefox"), EDGE, FIREFOX("final"), CHROME("final-firefox")]);
+  // In Chrome (and every browser but Firefox) the Chrome button shows; the Firefox ones stay hidden.
+  const shown = () => page.locator(".install a:visible").evaluateAll((as) => as.map((a) => a.textContent.trim()));
+  expect(await shown()).toEqual(["Add to Chrome — free", "Also for Edge ↗", "Also for Firefox ↗", "Add to Chrome — free", "Also for Edge ↗", "Also for Firefox ↗"]);
+});
+
+test("in Firefox, the home page offers Add to Firefox first, and Chrome as the other link", async ({ browser }) => {
+  const context = await browser.newContext({ userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.0; rv:140.0) Gecko/20100101 Firefox/140.0" });
+  const page = await context.newPage();
+  await page.goto(`${server.url}/index.html`);
+  const shown = () => page.locator(".install a:visible").evaluateAll((as) => as.map((a) => [a.textContent.trim(), new URL(a.href).hostname]));
+  await expect.poll(shown).toEqual([
+    ["Add to Firefox — free", "addons.mozilla.org"], ["Also for Edge ↗", "microsoftedge.microsoft.com"], ["Also for Chrome ↗", "chromewebstore.google.com"],
+    ["Add to Firefox — free", "addons.mozilla.org"], ["Also for Edge ↗", "microsoftedge.microsoft.com"], ["Also for Chrome ↗", "chromewebstore.google.com"],
+  ]);
+  await context.close();
 });
 
 test("the download page links all three stores", async ({ page }) => {

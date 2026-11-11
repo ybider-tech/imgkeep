@@ -51,7 +51,7 @@ Right-click an image → **Imgkeep** → **PNG**, **JPG**, **WebP**, **GIF (keep
 - **"Last used" first:** the format of your last save from the menu is offered again as the top item ("JPG (last used)"), above a separator, so it's always in the same spot. Stored in local storage.
 - **"New" labels and one rating ask:** items added since your previous version say "New" in the menu for 30 days after an update. After real use (15 successful saves or copies, 7 days, last 3 saves worked) Imgkeep asks once for a rating: after a copy or a save in More options, and as a menu item for up to 14 days. Any answer, or none, ends it for good. Counted in local storage only (`extension/lib/review.js`). Options always has a quiet "Rate Imgkeep" link.
 - **More options…:** a window with a live preview and the result's real dimensions and file size (1 kB = 1,000 bytes), plus format (PNG, JPG, WebP), maximum width, quality (JPG and WebP), JPG background and file name. **Save** uses your save mode and folder like any other save; **Copy as PNG** copies at the chosen width.
-- **Nine languages:** English, Arabic, French, German, Hebrew, Hindi, Japanese, Portuguese (Brazil) and Spanish, following the browser's language. Arabic and Hebrew are laid out right to left.
+- **51 languages:** every language the Chrome Web Store offers, from Amharic to Vietnamese, following the browser's language. Arabic, Hebrew and Persian are laid out right to left.
 
 ## Save modes
 

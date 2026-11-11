@@ -19,7 +19,7 @@ Right-click any image to save it as PNG, JPG, WebP or GIF (animations keep movin
 - **Topics** (pick 3): Chrome Extensions, Open Source, Privacy (alternatives: Productivity, Design Tools)
 - **Pricing:** Free
 - **Thumbnail:** `thumbnail-240.png`
-- **Gallery, in order:** YouTube video https://youtu.be/QZfq5xLYdmo, then `gallery-1-menu.png`, `gallery-2-trust.png`, `gallery-3-options.png`, `gallery-4-site-access.png`
+- **Gallery, in order:** YouTube video https://youtu.be/A0kO0Whgqhs (the 30 s brand tour, 2026-11-10; the launch used the earlier demo https://youtu.be/QZfq5xLYdmo), then `gallery-1-menu.png`, `gallery-2-trust.png`, `gallery-3-options.png`, `gallery-4-site-access.png`
 - **Makers:** you ("I worked on this product").
 
 ## Maker's first comment (post as soon as the launch goes live)
