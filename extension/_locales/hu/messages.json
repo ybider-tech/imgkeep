@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Tetszik az Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Az Imgkeep már $COUNT$ képet intézett el helyetted.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Egy értékelés a boltban segít másoknak is megtalálni. Csak pár másodperc, és csak egyszer kérjük."
+    "message": "Ez rengeteg kitérő konvertáló oldalakra, amit nem kellett megtenned. Az Imgkeepet egyetlen ember készíti, és az értékelésekből találnak rá új emberek. Egy mondat arról, mire használod, bőven elég. Csak egyszer kérdez."
   },
   "reviewRate": {
     "message": "Imgkeep értékelése"
+  },
+  "reviewWrite": {
+    "message": "Értékelés írása"
   },
   "reviewNo": {
     "message": "Köszönöm, nem"

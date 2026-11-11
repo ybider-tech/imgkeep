@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Unafurahia Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep imeshughulikia picha $COUNT$ kwa ajili yako.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Ukadiriaji dukani husaidia watu wengine kuipata. Inachukua sekunde chache, na tutauliza mara moja tu."
+    "message": "Hiyo ni safari nyingi kwenye tovuti za kubadilisha ambazo hukuhitaji kufanya. Imgkeep imetengenezwa na mtu mmoja, na maoni ndiyo njia ambayo watu wapya huipata. Sentensi moja kuhusu unachoitumia inatosha. Inauliza mara moja tu."
   },
   "reviewRate": {
     "message": "Kadiria Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Andika maoni"
   },
   "reviewNo": {
     "message": "Hapana, asante"

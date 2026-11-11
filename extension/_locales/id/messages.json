@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Suka dengan Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep sudah mengurus $COUNT$ gambar untuk Anda.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Rating di toko membantu orang lain menemukannya. Hanya perlu beberapa detik, dan kami cuma menanyakan ini sekali."
+    "message": "Artinya banyak kunjungan ke situs konverter yang tidak perlu Anda lakukan. Imgkeep dibuat oleh satu orang, dan ulasan adalah cara orang baru menemukannya. Satu kalimat tentang kegunaannya bagi Anda sudah cukup. Ini hanya ditanyakan sekali."
   },
   "reviewRate": {
     "message": "Beri rating Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Tulis ulasan"
   },
   "reviewNo": {
     "message": "Tidak, terima kasih"

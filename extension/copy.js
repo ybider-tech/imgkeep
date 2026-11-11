@@ -73,10 +73,11 @@ async function writeClipboard() {
   await toBackground("done").catch(() => {});
   await toBackground("copied").catch(() => {});
   // The one rating ask, if it's due: the window then stays open until it's answered or closed.
-  if (await maybeReviewAsk()) {
-    $("body").append(reviewAsk(() => setTimeout(() => window.close(), 1200)));
+  const uses = await maybeReviewAsk();
+  if (uses) {
+    $("body").append(reviewAsk(() => setTimeout(() => window.close(), 1200), uses));
     // Make room for it.
-    chrome.windows.getCurrent().then((w) => chrome.windows.update(w.id, { height: w.height + 110 })).catch(() => {});
+    chrome.windows.getCurrent().then((w) => chrome.windows.update(w.id, { height: w.height + 160 })).catch(() => {});
     return;
   }
   setTimeout(() => window.close(), 1200);

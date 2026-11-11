@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Imgkeep を気に入りましたか？"
   },
+  "reviewCount": {
+    "message": "Imgkeep はこれまでに $COUNT$ 枚の画像を処理しました。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "ストアでの評価は、ほかの人が見つけるきっかけになります。数秒で終わります。このお願いは一度だけです。"
+    "message": "変換サイトに行く手間が、それだけ省けたことになります。Imgkeep は個人で開発しています。新しい人に見つけてもらえるのは、レビューのおかげです。何に使っているか、一言だけで十分です。このお願いは一度だけです。"
   },
   "reviewRate": {
     "message": "Imgkeep を評価"
+  },
+  "reviewWrite": {
+    "message": "レビューを書く"
   },
   "reviewNo": {
     "message": "結構です"

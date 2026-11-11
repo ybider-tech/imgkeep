@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Pidätkö Imgkeepistä?"
   },
+  "reviewCount": {
+    "message": "Imgkeep on käsitellyt puolestasi $COUNT$ kuvaa.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Arvio kaupassa auttaa muita löytämään sen. Se vie muutaman sekunnin, ja kysymme tämän vain kerran."
+    "message": "Se on monta käyntiä muunnossivustoilla, joita sinun ei tarvinnut tehdä. Imgkeepiä tekee yksi ihminen, ja arvostelujen kautta uudet käyttäjät löytävät sen. Yksi lause siitä, mihin käytät sitä, riittää hyvin. Se kysyy vain kerran."
   },
   "reviewRate": {
     "message": "Arvioi Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Kirjoita arvostelu"
   },
   "reviewNo": {
     "message": "Ei kiitos"

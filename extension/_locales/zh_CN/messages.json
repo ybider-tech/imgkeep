@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "用得还顺手吗？"
   },
+  "reviewCount": {
+    "message": "Imgkeep 已经帮你处理了 $COUNT$ 张图片。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "在商店里评个分，能帮更多人找到 Imgkeep。只需几秒钟，我们只会问这一次。"
+    "message": "也就是说，你少跑了很多趟格式转换网站。Imgkeep 由一个人独立开发，新用户主要是通过评价找到它的。用一句话说说你用它做什么就够了。这个请求只会出现一次。"
   },
   "reviewRate": {
     "message": "给 Imgkeep 评分"
+  },
+  "reviewWrite": {
+    "message": "写评价"
   },
   "reviewNo": {
     "message": "不用了"

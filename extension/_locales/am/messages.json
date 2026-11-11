@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Imgkeep ወዶዎታል?"
   },
+  "reviewCount": {
+    "message": "Imgkeep እስካሁን የያዘልዎት ምስሎች: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "በመደብሩ ላይ የሚሰጡት ደረጃ ሌሎች ሰዎች እንዲያገኙት ይረዳል። ጥቂት ሰከንዶች ብቻ ይወስዳል፤ እኛም አንድ ጊዜ ብቻ ነው የምንጠይቀው።"
+    "message": "ይህ ወደ መቀየሪያ ድረ-ገጾች ያልሄዱባቸው ብዙ ጉዞዎች ማለት ነው። Imgkeep በአንድ ሰው ነው የተሠራው፤ አዳዲስ ሰዎች የሚያገኙት በግምገማዎች ነው። ለምን እንደሚጠቀሙበት አንድ ዓረፍተ ነገር በቂ ነው። አንድ ጊዜ ብቻ ነው የሚጠይቀው።"
   },
   "reviewRate": {
     "message": "Imgkeep ደረጃ ይስጡ"
+  },
+  "reviewWrite": {
+    "message": "ግምገማ ይጻፉ"
   },
   "reviewNo": {
     "message": "አመሰግናለሁ፣ አልፈልግም"

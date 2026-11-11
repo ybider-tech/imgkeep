@@ -650,13 +650,27 @@
     "message": "Enjoying Imgkeep?",
     "description": "Heading of the one rating ask"
   },
+  "reviewCount": {
+    "message": "Imgkeep has handled $COUNT$ images for you.",
+    "description": "First line of the one rating ask, in bold. $COUNT$ is how many images this person has saved or copied with Imgkeep (always 10 or more). If the plural form depends on the number in your language, use a form that works for any number, for example \"Images handled by Imgkeep for you: $COUNT$\".",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "A rating in the store helps other people find it. It takes a few seconds, and we'll only ask this once.",
-    "description": "Text of the one rating ask"
+    "message": "That's a lot of trips to converter sites you didn't need to make. Imgkeep is made by one person, and reviews are how new people find it. One sentence about what you use it for is plenty. It only asks once.",
+    "description": "Text of the one rating ask, after the first line"
   },
   "reviewRate": {
     "message": "Rate Imgkeep",
     "description": "Button and Options link: opens the store's review page"
+  },
+  "reviewWrite": {
+    "message": "Leave a review",
+    "description": "Button in the one rating ask: opens the store page where people write a review"
   },
   "reviewNo": {
     "message": "No thanks",

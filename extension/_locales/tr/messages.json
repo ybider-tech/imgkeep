@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Imgkeep işinize yarıyor mu?"
   },
+  "reviewCount": {
+    "message": "Imgkeep sizin için şimdiye kadar $COUNT$ görseli halletti.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Mağazada bırakacağınız bir puan, başkalarının da Imgkeep'i bulmasına yardımcı olur. Birkaç saniye sürer ve bunu yalnızca bir kez soruyoruz."
+    "message": "Bu, gitmek zorunda kalmadığınız pek çok dönüştürme sitesi demek. Imgkeep'i tek bir kişi geliştiriyor ve yeni kullanıcılar onu yorumlar sayesinde buluyor. Ne için kullandığınıza dair tek bir cümle yeterli. Bunu yalnızca bir kez soruyor."
   },
   "reviewRate": {
     "message": "Imgkeep'e puan ver"
+  },
+  "reviewWrite": {
+    "message": "Yorum yaz"
   },
   "reviewNo": {
     "message": "Hayır, teşekkürler"

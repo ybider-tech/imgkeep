@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Imgkeep 用得還順手嗎？"
   },
+  "reviewCount": {
+    "message": "Imgkeep 已經幫你處理了 $COUNT$ 張圖片。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "在商店給個評分，可以幫助其他人找到它。只要幾秒鐘，而且我們只問這一次。"
+    "message": "也就是說，你少跑了很多趟格式轉換網站。Imgkeep 由一個人獨立開發，新使用者主要是透過評論找到它的。用一句話說說你用它做什麼就夠了。這個請求只會出現一次。"
   },
   "reviewRate": {
     "message": "為 Imgkeep 評分"
+  },
+  "reviewWrite": {
+    "message": "撰寫評論"
   },
   "reviewNo": {
     "message": "不用了，謝謝"

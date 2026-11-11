@@ -175,7 +175,9 @@ async function copy() {
 
 // The one rating ask, under the status line, if it's due.
 async function offerReview() {
-  if (!$("review").childElementCount && (await maybeReviewAsk())) $("review").append(reviewAsk());
+  if ($("review").childElementCount) return;
+  const uses = await maybeReviewAsk();
+  if (uses) $("review").append(reviewAsk(undefined, uses));
 }
 
 async function close() {

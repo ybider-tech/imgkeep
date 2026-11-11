@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Bevalt Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep heeft al $COUNT$ afbeeldingen voor je afgehandeld.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Een beoordeling in de store helpt anderen om Imgkeep te vinden. Het kost een paar seconden en we vragen dit maar één keer."
+    "message": "Dat zijn heel wat omwegen via conversiesites die je niet hoefde te maken. Imgkeep wordt door één persoon gemaakt, en via reviews vinden nieuwe mensen het. Eén zin over waarvoor je het gebruikt is genoeg. Het vraagt dit maar één keer."
   },
   "reviewRate": {
     "message": "Imgkeep beoordelen"
+  },
+  "reviewWrite": {
+    "message": "Review schrijven"
   },
   "reviewNo": {
     "message": "Nee, bedankt"

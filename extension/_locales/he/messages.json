@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "נהנים מ-Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep כבר טיפל בשבילכם ב-$COUNT$ תמונות.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "דירוג בחנות עוזר לאנשים אחרים למצוא אותו. זה לוקח כמה שניות, ונשאל את זה רק פעם אחת."
+    "message": "אלה הרבה ביקורים באתרי המרה שלא הייתם צריכים לעשות. את Imgkeep מפתח אדם אחד, וביקורות הן הדרך שבה אנשים חדשים מוצאים אותו. מספיק משפט אחד על מה אתם משתמשים בו. הבקשה הזאת מופיעה רק פעם אחת."
   },
   "reviewRate": {
     "message": "דירוג Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "כתיבת ביקורת"
   },
   "reviewNo": {
     "message": "לא תודה"

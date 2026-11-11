@@ -66,9 +66,10 @@ export async function copyPng(blob) {
   await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
 }
 
-// The one rating ask: a short note with "Rate Imgkeep" and "No thanks". Either answer ends it for good.
+// The one rating ask: what Imgkeep has done for this person (uses: saves and copies, counted on this computer),
+// a short note, then "Leave a review" and "No thanks". Either answer ends it for good.
 // onAnswer(action) runs after the answer is recorded ("rate" also opened the store's review page).
-export function reviewAsk(onAnswer) {
+export function reviewAsk(onAnswer, uses = 0) {
   const box = el("div", { className: "review" });
   box.setAttribute("role", "group");
   box.setAttribute("aria-label", t("reviewTitle"));
@@ -78,16 +79,23 @@ export function reviewAsk(onAnswer) {
     box.replaceChildren(el("p", { textContent: action === "rate" ? t("reviewThanks") : t("reviewOk") }));
     onAnswer?.(action);
   };
-  const rate = el("button", { type: "button", className: "primary", textContent: t("reviewRate") });
+  const rate = el("button", { type: "button", className: "primary", textContent: t("reviewWrite") });
   const no = el("button", { type: "button", textContent: t("reviewNo") });
   rate.addEventListener("click", answer("rate"));
   no.addEventListener("click", answer("no"));
-  box.append(el("p", {}, el("strong", { textContent: t("reviewTitle") }), " ", t("reviewBody")), el("div", { className: "actions" }, rate, no));
+  const lead = uses > 0 ? t("reviewCount", [String(uses)]) : t("reviewTitle");
+  box.append(el("p", {}, el("strong", { textContent: lead }), " ", t("reviewBody")), el("div", { className: "actions" }, rate, no));
   return box;
 }
 
-// Asks the service worker whether this is the moment for the one rating ask.
+// Asks the service worker whether this is the moment for the one rating ask: 0 if not, otherwise the uses so far.
 export async function maybeReviewAsk() {
   const res = await chrome.runtime.sendMessage({ target: "background", type: "shouldAskRating" }).catch(() => null);
-  return Boolean(res?.show);
+  return res?.show ? Math.max(1, res.uses || 0) : 0;
+}
+
+// The uses so far, for the ask's own window (rate.html).
+export async function reviewUses() {
+  const res = await chrome.runtime.sendMessage({ target: "background", type: "ratingUses" }).catch(() => null);
+  return res?.uses || 0;
 }

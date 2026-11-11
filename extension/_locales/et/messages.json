@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Kas Imgkeep meeldib?"
   },
+  "reviewCount": {
+    "message": "Imgkeep on sinu eest käsitlenud $COUNT$ pilti.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Hinnang poes aitab teistel seda leida. See võtab paar sekundit ja küsime seda ainult korra."
+    "message": "See on palju käike teisendussaitidele, mida sa ei pidanud tegema. Imgkeepi teeb üks inimene ja arvustuste kaudu leiavad selle uued kasutajad. Piisab ühest lausest selle kohta, milleks sa seda kasutad. See küsib ainult korra."
   },
   "reviewRate": {
     "message": "Hinda Imgkeepi"
+  },
+  "reviewWrite": {
+    "message": "Kirjuta arvustus"
   },
   "reviewNo": {
     "message": "Tänan, ei"

@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "T'agrada l'Imgkeep?"
   },
+  "reviewCount": {
+    "message": "L'Imgkeep ha gestionat $COUNT$ imatges per a tu.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Una valoració a la botiga ajuda altres persones a trobar-lo. Trigues uns segons i només t'ho demanarem una vegada."
+    "message": "Són moltes visites a webs de conversió que t'has estalviat. L'Imgkeep el fa una sola persona, i les ressenyes són la manera com la gent nova el troba. N'hi ha prou amb una frase sobre per a què el fas servir. Només ho demana una vegada."
   },
   "reviewRate": {
     "message": "Valora l'Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Escriu una ressenya"
   },
   "reviewNo": {
     "message": "No, gràcies"

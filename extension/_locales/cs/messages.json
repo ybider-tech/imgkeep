@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Líbí se vám Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Obrázky, které za vás Imgkeep zpracoval: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Hodnocení v obchodě pomůže ostatním Imgkeep najít. Zabere pár sekund a zeptáme se jen jednou."
+    "message": "To je spousta cest na převodní weby, které jste nemuseli podniknout. Imgkeep dělá jeden člověk a recenze jsou způsob, jak ho najdou noví lidé. Stačí jedna věta o tom, k čemu ho používáte. Ptá se jen jednou."
   },
   "reviewRate": {
     "message": "Ohodnotit Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Napsat recenzi"
   },
   "reviewNo": {
     "message": "Ne, děkuji"

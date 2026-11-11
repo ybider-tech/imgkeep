@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Patinka Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Vaizdai, kuriuos Imgkeep apdorojo už jus: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Įvertinimas parduotuvėje padeda kitiems jį rasti. Tai užtrunka kelias sekundes, o paklausime tik šį vieną kartą."
+    "message": "Tai daug apsilankymų konvertavimo svetainėse, kurių jums neprireikė. Imgkeep kuria vienas žmogus, o atsiliepimai yra būdas naujiems žmonėms jį rasti. Užtenka vieno sakinio apie tai, kam jį naudojate. Klausiama tik vieną kartą."
   },
   "reviewRate": {
     "message": "Įvertinti Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Parašyti atsiliepimą"
   },
   "reviewNo": {
     "message": "Ne, ačiū"

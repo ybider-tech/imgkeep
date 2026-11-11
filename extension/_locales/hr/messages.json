@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Sviđa vam se Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Slike koje je Imgkeep obradio za vas: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Ocjena u trgovini pomaže drugima da ga pronađu. Traje nekoliko sekundi, a pitat ćemo samo jednom."
+    "message": "To je puno odlazaka na stranice za pretvaranje koje niste morali obaviti. Imgkeep radi jedna osoba, a recenzije su način na koji ga novi ljudi pronalaze. Dovoljna je jedna rečenica o tome za što ga koristite. Pita samo jednom."
   },
   "reviewRate": {
     "message": "Ocijeni Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Napiši recenziju"
   },
   "reviewNo": {
     "message": "Ne, hvala"

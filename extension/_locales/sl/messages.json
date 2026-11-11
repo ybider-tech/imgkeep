@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Vam je Imgkeep všeč?"
   },
+  "reviewCount": {
+    "message": "Slike, ki jih je Imgkeep obdelal za vas: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Ocena v trgovini pomaga drugim, da ga najdejo. Vzame le nekaj sekund, vprašali pa vas bomo samo enkrat."
+    "message": "To je veliko obiskov strani za pretvarjanje, ki jih niste potrebovali. Imgkeep ustvarja ena oseba, mnenja pa so način, kako ga najdejo novi ljudje. Dovolj je en stavek o tem, za kaj ga uporabljate. Vpraša samo enkrat."
   },
   "reviewRate": {
     "message": "Oceni Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Napišite mnenje"
   },
   "reviewNo": {
     "message": "Ne, hvala"

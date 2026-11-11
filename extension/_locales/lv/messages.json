@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Vai Imgkeep noder?"
   },
+  "reviewCount": {
+    "message": "Attēli, ko Imgkeep jūsu vietā apstrādājis: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Vērtējums veikalā palīdz citiem to atrast. Tas aizņem dažas sekundes, un mēs to prasīsim tikai vienreiz."
+    "message": "Tas ir daudz apmeklējumu konvertēšanas vietnēs, kas jums nebija vajadzīgi. Imgkeep veido viens cilvēks, un atsauksmes ir veids, kā to atrod jauni cilvēki. Pietiek ar vienu teikumu par to, kam jūs to izmantojat. Tas jautā tikai vienreiz."
   },
   "reviewRate": {
     "message": "Novērtēt Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Uzrakstīt atsauksmi"
   },
   "reviewNo": {
     "message": "Nē, paldies"

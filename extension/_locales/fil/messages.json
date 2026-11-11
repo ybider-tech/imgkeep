@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Nagugustuhan mo ba ang Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Nakapag-asikaso na ang Imgkeep ng $COUNT$ larawan para sa iyo.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Nakakatulong ang rating sa store para matagpuan ito ng iba. Ilang segundo lang, at isang beses lang namin itatanong ito."
+    "message": "Ibig sabihin, maraming beses kang hindi na kinailangang pumunta sa mga converter site. Iisang tao lang ang gumagawa ng Imgkeep, at sa mga review ito natutuklasan ng mga bagong user. Sapat na ang isang pangungusap kung saan mo ito ginagamit. Isang beses lang itong magtatanong."
   },
   "reviewRate": {
     "message": "I-rate ang Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Mag-iwan ng review"
   },
   "reviewNo": {
     "message": "Huwag na lang"

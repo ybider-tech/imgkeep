@@ -2,6 +2,11 @@
 
 ## 0.12.1 — unreleased
 
+- **The one rating ask, reworded and seen by more people.** It now opens with what Imgkeep has done for you ("Imgkeep has handled 12 images for you."), says it's made by one person and that reviews are how new people find it, and asks for one sentence about what you use it for; the button says "Leave a review". The number is the local count the ask already kept (saves and copies), shown, never sent. Idea from r/chrome_extensions.
+- **Asked after quick saves too.** Until now the note only appeared after a copy or a save in More options, and most saves are quick saves from the menu, which open no window: only the easy-to-miss "Rate it" menu item reached them (9 people reached the ask by late October, none answered). Now, when the ask is due after a quick save, it opens once in its own small window (`rate.html`). Still one ask, ever: whichever window shows first is the only one, and any answer, or none, ends it.
+- **Due a little sooner:** after 10 successful saves or copies and 5 days (was 15 and 7), still only when the last 3 saves worked.
+- The anonymous daily summary counts where the ask appeared after a quick save (`rating_popup_shown`), next to `rating_menu_shown` and `rating_window_shown`, so the next release can compare. Listed in the privacy policy.
+- README: no longer says Imgkeep never asks for a review (it has asked once since 0.6.1).
 - **A clear message for images on the browser's own add-on store.** Browsers keep extensions away from their stores (Firefox refuses every request to addons.mozilla.org and Mozilla's other protected sites), so saving an image there can't work. Instead of "The server may be down" with the raw code "blocked" under it, the window now says the browser doesn't allow it and points to the browser's own Save Image As, with Open image and no Try again or Save original format (`isStoreSite` in `lib/browser.js`). Counted as `fail_store`, apart from `fail_blocked`.
 - **No raw error code under an error.** Errors Imgkeep raised itself showed their code ("blocked") as the detail line; now only real details show (an HTTP status, the browser's own error text).
 

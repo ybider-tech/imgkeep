@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Îți place Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imagini procesate de Imgkeep pentru tine: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "O evaluare în magazin îi ajută pe alții să găsească extensia. Durează câteva secunde și te întrebăm o singură dată."
+    "message": "Înseamnă multe drumuri pe site-uri de conversie pe care nu a mai trebuit să le faci. Imgkeep este făcut de o singură persoană, iar recenziile sunt felul în care îl găsesc oameni noi. Ajunge o propoziție despre la ce îl folosești. Întreabă o singură dată."
   },
   "reviewRate": {
     "message": "Evaluează Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Scrie o recenzie"
   },
   "reviewNo": {
     "message": "Nu, mulțumesc"

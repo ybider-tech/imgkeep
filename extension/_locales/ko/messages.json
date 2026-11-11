@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Imgkeep이 마음에 드시나요?"
   },
+  "reviewCount": {
+    "message": "Imgkeep이 지금까지 이미지 $COUNT$개를 처리했습니다.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "스토어에 남긴 별점은 다른 사람들이 Imgkeep을 찾는 데 도움이 됩니다. 몇 초면 되고, 이 안내는 한 번만 보여 드립니다."
+    "message": "그만큼 변환 사이트를 들를 필요가 없었던 셈입니다. Imgkeep은 한 사람이 만들고 있으며, 새로운 사람들은 리뷰를 보고 Imgkeep을 찾습니다. 어디에 쓰시는지 한 문장이면 충분합니다. 이 요청은 한 번만 표시됩니다."
   },
   "reviewRate": {
     "message": "Imgkeep 평가하기"
+  },
+  "reviewWrite": {
+    "message": "리뷰 남기기"
   },
   "reviewNo": {
     "message": "괜찮습니다"

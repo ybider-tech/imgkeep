@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Bạn thấy Imgkeep hữu ích chứ?"
   },
+  "reviewCount": {
+    "message": "Imgkeep đã xử lý $COUNT$ hình ảnh cho bạn.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Một đánh giá trên cửa hàng giúp người khác tìm thấy Imgkeep. Chỉ mất vài giây, và chúng tôi chỉ hỏi một lần."
+    "message": "Tức là bạn đã đỡ được rất nhiều lần phải vào trang chuyển đổi. Imgkeep do một người làm, và đánh giá là cách người mới tìm thấy nó. Chỉ cần một câu về việc bạn dùng nó để làm gì là đủ. Lời nhờ này chỉ xuất hiện một lần."
   },
   "reviewRate": {
     "message": "Đánh giá Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Viết đánh giá"
   },
   "reviewNo": {
     "message": "Không, cảm ơn"

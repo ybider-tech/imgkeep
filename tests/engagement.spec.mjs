@@ -22,12 +22,12 @@ test.describe("rules", () => {
   test("the rating ask: after real use, never during failures, once", async () => {
     const r = await import("../extension/lib/review.js");
     const now = 100 * DAY;
-    let u = r.newUsage(now - 8 * DAY);
-    for (let i = 0; i < 14; i++) u = r.recordUse(u, true);
-    expect(r.readyToAsk(u, now)).toBe(false); // 14 uses
+    let u = r.newUsage(now - 6 * DAY);
+    for (let i = 0; i < 9; i++) u = r.recordUse(u, true);
+    expect(r.readyToAsk(u, now)).toBe(false); // 9 uses
     u = r.recordUse(u, true);
-    expect(r.readyToAsk(u, now)).toBe(true); // 15 uses, 8 days
-    expect(r.readyToAsk({ ...u, firstSeen: now - 6 * DAY }, now)).toBe(false); // too soon
+    expect(r.readyToAsk(u, now)).toBe(true); // 10 uses, 6 days (0.12.1: was 15 and 7)
+    expect(r.readyToAsk({ ...u, firstSeen: now - 4 * DAY }, now)).toBe(false); // too soon
     expect(r.readyToAsk(r.recordUse(u, false), now)).toBe(false); // a failure among the last 3
     expect(r.recordUse(r.recordUse(r.recordUse(r.recordUse(u, false), true), true), true).recent).toEqual([true, true, true]);
     // One window ask, ever; the menu item for 14 days at most.
@@ -164,7 +164,8 @@ test.describe("in the extension", () => {
     expect(await titles()).toHaveProperty("imgkeep-rate", "Enjoying Imgkeep? Rate it…");
     const win = await copyWindow();
     await expect(win.getByRole("group", { name: "Enjoying Imgkeep?" })).toBeVisible();
-    await expect(win.getByText("we'll only ask this once", { exact: false })).toBeVisible();
+    await expect(win.getByText("Imgkeep has handled 21 images for you.")).toBeVisible(); // the local count, shown (20, plus this copy)
+    await expect(win.getByText("One sentence about what you use it for is plenty. It only asks once.", { exact: false })).toBeVisible();
     await win.getByRole("button", { name: "No thanks" }).click();
     await expect(win.getByText("Got it. We won't ask again.")).toBeVisible();
     await win.waitForEvent("close", { timeout: 5000 });
@@ -181,7 +182,7 @@ test.describe("in the extension", () => {
     await ctx.sw.evaluate(() => globalThis.imgkeepRefreshMenus()); // shown again: still counted once
     expect(await counts()).toEqual({ rating_asked: 1, rating_menu_shown: 1 });
     const win = await copyWindow();
-    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
     await win.close();
     expect(await counts()).toMatchObject({ rating_asked: 1, rating_menu_shown: 1, rating_window_shown: 1 });
     const rate = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/rate.html") });
@@ -193,7 +194,7 @@ test.describe("in the extension", () => {
   test("a window asks only once, even if it was closed without an answer", async () => {
     await setUsage(ready());
     const first = await copyWindow();
-    await expect(first.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
+    await expect(first.getByRole("button", { name: "Leave a review" })).toBeVisible();
     await first.close();
     const second = await copyWindow();
     await second.waitForEvent("close", { timeout: 5000 }); // no ask this time
@@ -221,11 +222,40 @@ test.describe("in the extension", () => {
     await ctx.sw.evaluate(() => globalThis.imgkeepOpenRateWindow());
     const win = await opened;
     const store = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("chromewebstore.google.com") });
-    await win.getByRole("button", { name: "Rate Imgkeep" }).click();
+    await win.getByRole("button", { name: "Leave a review" }).click();
     // The store may redirect to a URL with the listing's name in it; it's still Imgkeep's reviews.
     expect((await store).url()).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\/(.+\/)?fkclfgbmjaafglfifenonfcahfdmajbl\/reviews$/);
     expect((await usage()).ask).toBe("done");
     await (await store).close();
+  });
+
+  test("a quick save from the menu, when it's due, asks once in its own small window (0.12.1)", async () => {
+    const counts = () => ctx.sw.evaluate(() => globalThis.imgkeepCount().then(() => chrome.storage.local.get("counts")).then((s) => s.counts?.c || {}));
+    const quickSave = () =>
+      ctx.sw.evaluate((url) => globalThis.imgkeepMenuClicked({ menuItemId: "imgkeep-png", srcUrl: url, pageUrl: url }), `${cors.url}/photo.png`);
+    const rateWindows = () => ctx.context.pages().filter((p) => p.url().includes("/rate.html")).length;
+    // Not due yet: a quick save opens nothing.
+    await installed({ reason: "install" });
+    expect(await quickSave()).toMatchObject({ ok: true });
+    await new Promise((r) => setTimeout(r, 800));
+    expect(rateWindows()).toBe(0);
+    // Due (9 uses; this save makes 10): the ask opens by itself, with the count.
+    await setUsage({ ...ready(), uses: 9 });
+    const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/rate.html") });
+    expect(await quickSave()).toMatchObject({ ok: true });
+    const win = await opened;
+    await expect(win.getByText("Imgkeep has handled 10 images for you.")).toBeVisible();
+    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    expect(await counts()).toMatchObject({ rating_asked: 1, rating_popup_shown: 1 });
+    expect(await usage()).toMatchObject({ ask: "asking", windowAsked: true });
+    await win.close();
+    // Closed without an answer: the next quick save doesn't ask again, and neither does a window.
+    await quickSave();
+    await new Promise((r) => setTimeout(r, 800));
+    expect(rateWindows()).toBe(0);
+    const copy = await copyWindow();
+    await copy.waitForEvent("close", { timeout: 5000 });
+    expect((await counts()).rating_popup_shown).toBe(1);
   });
 
   test("More options asks after a save, when it's due", async () => {
@@ -237,7 +267,8 @@ test.describe("in the extension", () => {
     await expect(win.locator("#review")).toBeEmpty();
     await win.getByRole("button", { name: "Save" }).click();
     await expect(win.locator("#status")).toContainText("Saved as");
-    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    expect(ctx.context.pages().some((p) => p.url().includes("/rate.html"))).toBe(false); // no second ask window
     await win.close();
   });
 

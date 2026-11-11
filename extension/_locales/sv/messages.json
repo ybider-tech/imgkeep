@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Gillar du Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep har hanterat $COUNT$ bilder åt dig.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Ett betyg i butiken hjälper andra att hitta tillägget. Det tar några sekunder, och vi frågar bara en gång."
+    "message": "Det är många vändor till konverteringssajter som du sluppit. Imgkeep görs av en enda person, och recensioner är hur nya människor hittar tillägget. En mening om vad du använder det till räcker gott. Det frågar bara en gång."
   },
   "reviewRate": {
     "message": "Betygsätt Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Skriv en recension"
   },
   "reviewNo": {
     "message": "Nej tack"

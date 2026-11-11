@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Suka menggunakan Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep telah mengendalikan $COUNT$ imej untuk anda.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Penilaian di kedai membantu orang lain menemuinya. Ia hanya mengambil beberapa saat, dan kami akan tanya sekali ini sahaja."
+    "message": "Itu bermakna banyak kali anda tidak perlu ke laman penukar. Imgkeep dibuat oleh seorang sahaja, dan ulasan ialah cara orang baharu menemuinya. Satu ayat tentang kegunaannya bagi anda sudah memadai. Ia hanya bertanya sekali."
   },
   "reviewRate": {
     "message": "Nilai Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Tulis ulasan"
   },
   "reviewNo": {
     "message": "Tak perlu, terima kasih"

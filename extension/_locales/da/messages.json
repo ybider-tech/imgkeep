@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Kan du lide Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep har klaret $COUNT$ billeder for dig.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "En bedømmelse i butikken hjælper andre med at finde den. Det tager få sekunder, og vi spørger kun denne ene gang."
+    "message": "Det er mange ture til konverteringssider, du ikke behøvede at tage. Imgkeep er lavet af én person, og anmeldelser er sådan, nye folk finder den. Én sætning om, hvad du bruger den til, er rigeligt. Den spørger kun én gang."
   },
   "reviewRate": {
     "message": "Bedøm Imgkeep"
+  },
+  "reviewWrite": {
+    "message": "Skriv en anmeldelse"
   },
   "reviewNo": {
     "message": "Nej tak"

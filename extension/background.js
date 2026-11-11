@@ -174,7 +174,7 @@ globalThis.imgkeepRefreshMenus = refreshMenus;
 globalThis.imgkeepOpenRateWindow = () => openRateWindow();
 
 function openRateWindow() {
-  return chrome.windows.create({ url: chrome.runtime.getURL("rate.html"), type: "popup", width: 440, height: 240, focused: true });
+  return chrome.windows.create({ url: chrome.runtime.getURL("rate.html"), type: "popup", width: 440, height: 300, focused: true });
 }
 
 // Remembers the format of a save made from the menu, and puts it at the top of the menu.
@@ -524,7 +524,21 @@ async function runJob(input, { interactive = true } = {}) {
   if (result.ok || result.reason === "error") await countUse(result.ok).catch(() => {});
   await countJob(job, result); // counted before the result is returned, so the order is always the same
   if (!result.ok && interactive) await openAsk({ ...job, ...result });
+  // A quick save from the menu opens no window, so when the one ask is due it gets a small window of its own.
+  if (result.ok && interactive && !job.sourceId && !job.origin) askAfterQuickSave().catch(() => {});
   return result;
+}
+
+// The one rating ask after a quick save: once, ever (the same "once" as the note in Imgkeep's windows).
+async function askAfterQuickSave() {
+  await usageQueue;
+  const now = Date.now();
+  const usage = await getUsage();
+  if (!windowCanAsk(usage, now)) return;
+  count(...(usage.ask === "waiting" ? ["rating_asked", "rating_popup_shown"] : ["rating_popup_shown"]));
+  await chrome.storage.local.set({ usage: markWindowAsked(usage, now) });
+  await refreshMenus();
+  await openRateWindow();
 }
 
 // For automated tests only.
@@ -850,7 +864,13 @@ const reviewHandlers = {
     count(...(usage.ask === "waiting" ? ["rating_asked", "rating_window_shown"] : ["rating_window_shown"]));
     await chrome.storage.local.set({ usage: markWindowAsked(usage, Date.now()) });
     await refreshMenus();
-    return { ok: true, show: true };
+    return { ok: true, show: true, uses: usage.uses };
+  },
+
+  // How many images Imgkeep has saved or copied here (for the ask's first line). A number, nothing else.
+  async ratingUses() {
+    await usageQueue;
+    return { ok: true, uses: (await getUsage()).uses || 0 };
   },
 
   // "rate" opens the store's review page for this browser; "no" just closes the ask. Either way it's done.

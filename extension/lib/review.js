@@ -6,8 +6,8 @@ export const DAY = 24 * 60 * 60 * 1000;
 
 // When Imgkeep asks for a rating: after real use, once, and never during a failure streak.
 export const REVIEW = {
-  minUses: 15, // successful saves and copies
-  minDays: 7, // since install (or since the update that added this, for existing users)
+  minUses: 10, // successful saves and copies (15 until 0.12.1)
+  minDays: 5, // since install, or since the update that added this for existing users (7 until 0.12.1)
   cleanStreak: 3, // the last few saves all worked
   menuDays: 14, // how long the "Rate it" menu item stays if it's never answered
 };
@@ -53,7 +53,7 @@ export const markAsked = (usage, now) => (usage.ask === "asking" ? usage : { ...
 // The "Rate it" menu item: from the moment it's ready until answered, for menuDays at most.
 export const menuAskVisible = (usage, now) => readyToAsk(usage, now) || asking(usage, now);
 
-// In a window (after a copy or a save in More options): only once, ever.
+// In a window (after a copy or a save in More options, or on its own after a quick save from the menu): only once, ever.
 export const windowCanAsk = (usage, now) => (readyToAsk(usage, now) || asking(usage, now)) && !usage.windowAsked;
 export const markWindowAsked = (usage, now) => ({ ...markAsked(usage, now), windowAsked: true });
 

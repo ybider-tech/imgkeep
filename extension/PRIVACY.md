@@ -1,6 +1,6 @@
 # Imgkeep privacy policy
 
-Last updated: 2 November 2026
+Last updated: 11 November 2026
 
 Imgkeep is a browser extension for Chrome, Microsoft Edge and Firefox that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
@@ -23,7 +23,7 @@ A summary contains only:
 - failed saves per type of error (for example "the site blocked it" or "couldn't read the image"), and failed copies;
 - how many images were copied, how often More options was opened and used to save;
 - how often a colour palette was opened (and whether for an image Find image here found), and how often one colour or all of them were copied or saved as a PNG, GIMP or Adobe file (since 0.11.0), never the colours themselves;
-- how often a site-access or folder question was shown and a site was allowed, whether the one rating question was shown in the right-click menu or in a window, whether its menu item was clicked (since 0.11.0) and how it was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
+- how often a site-access or folder question was shown and a site was allowed, whether the one rating question was shown in the right-click menu, in one of Imgkeep's windows or in its own small window after a save (since 0.12.1), whether its menu item was clicked (since 0.11.0) and how it was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
 - whether Imgkeep was installed that day (a count of 1, since 0.10.2), so we know how many people install it;
 - the extension's version, the browser (Chrome, Edge or Firefox) and its language.
 
@@ -33,7 +33,7 @@ Like any service your browser connects to, PostHog receives your IP address when
 
 ## Where your settings live
 
-Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in your browser, it copies them across your devices. If you choose a folder (Chrome and Edge only), the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating and to label new menu items after an update.
+Your settings (save mode, subfolder, file-name template, quality, background colour, maximum width and whether the daily summary is on) are stored in your browser's sync storage. If sync is on in your browser, it copies them across your devices. If you choose a folder (Chrome and Edge only), the browser's handle to that folder is stored locally in the extension's IndexedDB and never leaves your computer. The extension's local storage on this computer keeps the format and width you last used in More options, today's counts until they are summarised, and a count of saves that worked or failed, used only to decide when to ask you once for a rating (the question says how many images Imgkeep has saved or copied for you, from this count) and to label new menu items after an update.
 
 ## The clipboard
 

@@ -54,6 +54,7 @@ export const COUNT_KEYS = [
   "rating_menu_shown", // … as the "Rate it" item in the right-click menu (since 0.11.0)
   "rating_window_shown", // … as the note in one of Imgkeep's windows (since 0.11.0)
   "rating_menu_clicked", // the "Rate it" menu item was clicked (since 0.11.0)
+  "rating_popup_shown", // … in its own small window, after a quick save from the menu (since 0.12.1)
   "rating_rate",
   "rating_no",
 ];

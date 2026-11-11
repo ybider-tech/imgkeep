@@ -512,11 +512,23 @@
   "reviewTitle": {
     "message": "Gefällt dir Imgkeep?"
   },
+  "reviewCount": {
+    "message": "Imgkeep hat schon $COUNT$ Bilder für dich erledigt.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
   "reviewBody": {
-    "message": "Eine Bewertung im Store hilft anderen, es zu finden. Das dauert ein paar Sekunden, und wir fragen nur dieses eine Mal."
+    "message": "Das sind viele Umwege über Konverter-Websites, die du dir gespart hast. Imgkeep wird von einer einzigen Person gemacht, und über Bewertungen finden neue Leute es. Ein Satz dazu, wofür du es nutzt, reicht völlig. Es fragt nur ein einziges Mal."
   },
   "reviewRate": {
     "message": "Imgkeep bewerten"
+  },
+  "reviewWrite": {
+    "message": "Bewertung schreiben"
   },
   "reviewNo": {
     "message": "Nein, danke"
