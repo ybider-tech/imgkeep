@@ -9,6 +9,7 @@
     "pretest": "node tests/make-fixtures.mjs",
     "test": "node tests/static-check.mjs && playwright test",
     "check": "node tests/static-check.mjs",
+    "lint": "eslint .",
     "fixtures": "node tests/make-fixtures.mjs --force",
     "icons": "python3 scripts/make-icons.py",
     "store": "node store/render.mjs",
@@ -24,7 +25,10 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.55.0",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
     "parse5": "^8.0.1",
     "puppeteer-core": "^25.16.0"
   }

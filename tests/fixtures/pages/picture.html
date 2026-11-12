@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><title>Picture and srcset</title>
+<h1>Picture</h1>
+<picture id="pic">
+  <source type="image/avif" srcset="../photo.avif 320w, ../wide.webp 1080w" sizes="320px">
+  <source type="image/webp" srcset="../photo.webp 320w, ../wide.webp 1080w" sizes="320px">
+  <img id="photo" alt="Photo" width="320" height="200" src="../photo.jpg" srcset="../photo.jpg 320w, ../photo.png 640w" sizes="320px">
+</picture>

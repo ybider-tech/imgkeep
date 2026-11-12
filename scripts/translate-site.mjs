@@ -378,9 +378,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (chars) console.log(estimate(chars, requests, { batch }));
   const COST = tally();
 
+  const work = []; // also read by the --sample summary below
   if (run) {
     const client = new Anthropic({ apiKey: await apiKey() });
-    const work = [];
     for (const l of sample ? WORK_LANGS.slice(0, 1) : WORK_LANGS) {
       const terms = await glossary(l);
       for (let i = 0; i < (sample ? Math.min(CHUNK, todo[l].length) : todo[l].length); i += CHUNK) {

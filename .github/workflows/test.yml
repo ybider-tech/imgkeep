@@ -16,6 +16,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Fast checks that don't need a browser: lint, and that the Chrome, Edge and Firefox packages all build
+  # from the same extension/ folder with the same version.
+  lint-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Build the Edge and Firefox packages
+        run: |
+          node scripts/build-edge.mjs
+          node scripts/build-firefox.mjs
+      - name: Check that every package carries the manifest version
+        run: |
+          V=$(node -p "require('./extension/manifest.json').version")
+          for f in dist/imgkeep-edge-$V.zip dist/imgkeep-firefox-$V.zip; do
+            test -s "$f" || { echo "missing $f"; exit 1; }
+            unzip -p "$f" manifest.json | node -e "const m=JSON.parse(require('fs').readFileSync(0,'utf8')); if (m.version !== '$V') { console.error('$f has version ' + m.version); process.exit(1) }"
+          done
+          echo "All packages are $V"
+
   test:
     strategy:
       fail-fast: false

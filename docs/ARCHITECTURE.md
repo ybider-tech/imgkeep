@@ -106,8 +106,8 @@ Legend: DONE · PART (partly) · TODO · SKIP (decided not to do). Decisions are
 | 0.1 | ARCHITECTURE.md | DONE | this file |
 | 0.2 | Vite, per-browser dist | SKIP | no-build-step promise; per-browser zips already exist |
 | 0.3 | Platform adapter | PART | `lib/browser.js`; widen only if a feature needs it |
-| 0.4 | Test harness | PART | Playwright + fixtures exist; no Vitest (skipped); missing fixtures: hotlink (checks Referer/cookie), no-CORS cross-origin, srcset/picture, lazy-loaded, CSS background, right-click-blocked |
-| 0.5 | CI | PART | add lint and per-browser package build; release artefact on tags |
+| 0.4 | Test harness | DONE | Playwright + fixtures; Vitest skipped. 2026-11-12: `tests/servers.mjs` serves `/guarded/` routes (hotlink Referer check, cookie check, empty 200, HTML-as-image) and logs each request's Referer/Cookie; pages in `tests/fixtures/pages/` (hotlink, cookie, picture, lazy, CSS background, right-click-blocked, cross-origin); `tests/fixtures.spec.mjs` proves each and pins what 0.12 does today. Two `test.fixme` entries are Phase 1 targets (Referer fallback, screenshot fallback) |
+| 0.5 | CI | PART | 2026-11-12: `lint-and-build` job (ESLint errors-only config, Edge + Firefox package build, version check). Still missing: release artefact with SHA-256 on tags (1.11) |
 | 1.1 | Fetch ladder | PART | steps 1 (page canvas) and 3 (content-script fetch) need page access: only via existing optional `scripting`. Step 2 Referer rule: see decision A. Step 4 `captureVisibleTab`: needs `activeTab`, only after a gesture on the tab |
 | 1.2 | Largest-source resolver + CDN rules | TODO | fetches a different URL than the one clicked: privacy text and `PERMISSIONS.md` change first (decision B) |
 | 1.3 | Targeting CSS backgrounds / overlays | PART | Find image here covers listed sites; wider coverage needs a decision on page access (decision C) |

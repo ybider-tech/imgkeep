@@ -67,12 +67,43 @@ function big() {
   return bigPng;
 }
 
+// Routes under /guarded/ behave like sites that protect their images (0.4 fixtures, for the fetch ladder):
+//   /guarded/hotlink.jpg    403 unless the Referer is a page on this same server (a hotlink-protected CDN)
+//   /guarded/cookie.jpg     403 unless the request carries the cookie set by /guarded/login (a signed-in site)
+//   /guarded/login          sets that cookie, answers 204
+//   /guarded/empty.jpg      200 with no bytes at all (some protected sites answer like this; never save it)
+//   /guarded/not-image.jpg  200 with an HTML page labelled image/jpeg (a login wall in place of the image)
+export const GUARD_COOKIE = "imgkeep_fixture=signed-in";
+
 export function startServer({ cors, root = FIXTURES, port = 0 }) {
+  // Every request's Referer and Cookie headers, so tests can see what a fetch really sent.
+  const requests = [];
   const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, "http://x").pathname);
     const headers = cors ? { "Access-Control-Allow-Origin": "*" } : {};
+    requests.push({ path, referer: req.headers.referer ?? null, cookie: req.headers.cookie ?? null });
     try {
       let body;
+      if (path.startsWith("/guarded/")) {
+        const origin = `http://${req.headers.host}/`;
+        const jpeg = { ...headers, "Content-Type": "image/jpeg", "Cache-Control": "no-store" };
+        const deny = () => {
+          res.writeHead(403, { ...headers, "Content-Type": "text/plain" });
+          res.end("forbidden");
+        };
+        if (path === "/guarded/login") {
+          res.writeHead(204, { ...headers, "Set-Cookie": `${GUARD_COOKIE}; Path=/` });
+          return res.end();
+        }
+        if (path === "/guarded/hotlink.jpg" && !(req.headers.referer || "").startsWith(origin)) return deny();
+        if (path === "/guarded/cookie.jpg" && !(req.headers.cookie || "").includes(GUARD_COOKIE)) return deny();
+        if (path === "/guarded/empty.jpg") body = Buffer.alloc(0);
+        else if (path === "/guarded/not-image.jpg") body = Buffer.from("<!doctype html><title>Sign in</title><p>Please sign in to see this image.");
+        else if (path === "/guarded/hotlink.jpg" || path === "/guarded/cookie.jpg") body = await readFile(join(root, "photo.jpg"));
+        else throw new Error("unknown guarded route");
+        res.writeHead(200, jpeg);
+        return res.end(body);
+      }
       if (path === "/big.png") body = big();
       else if (path.includes("..")) throw new Error("bad path");
       // A folder URL ("/guide/") serves its index.html, like GitHub Pages; the type comes from the file served.
@@ -88,7 +119,7 @@ export function startServer({ cors, root = FIXTURES, port = 0 }) {
   return new Promise((resolve) => {
     server.listen(port, "127.0.0.1", () => {
       const { port } = server.address();
-      resolve({ url: `http://127.0.0.1:${port}`, close: () => new Promise((r) => server.close(r)) });
+      resolve({ url: `http://127.0.0.1:${port}`, requests, close: () => new Promise((r) => server.close(r)) });
     });
   });
 }

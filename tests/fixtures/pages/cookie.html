@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>Signed-in image</title>
+<!-- "Signs in" (sets the cookie), then shows the image that only signed-in requests may fetch. -->
+<h1>Signed in</h1>
+<img id="photo" alt="Members-only photo" width="320" height="200">
+<script>
+  fetch("/guarded/login", { credentials: "include" }).then(() => {
+    document.getElementById("photo").src = "/guarded/cookie.jpg";
+  });
+</script>

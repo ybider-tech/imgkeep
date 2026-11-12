@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><title>Lazy-loaded images</title>
+<style>body{margin:0} .gap{height:12000px;background:#eee} img{display:block;margin:20px}</style>
+<h1>Lazy</h1>
+<!-- 1: native lazy loading, below the fold, real src. 2: a script-driven lazy image: only data-src until visible. -->
+<div class="gap"></div>
+<img id="native" alt="Native lazy" width="320" height="200" loading="lazy" src="../photo.jpg">
+<img id="scripted" alt="Scripted lazy" width="320" height="200" data-src="../wide.webp" data-srcset="../photo.webp 320w, ../wide.webp 1080w">
+<script>
+  new IntersectionObserver((entries, obs) => {
+    for (const e of entries) if (e.isIntersecting) {
+      const img = e.target; img.src = img.dataset.src; img.srcset = img.dataset.srcset; obs.unobserve(img);
+    }
+  }).observe(document.getElementById("scripted"));
+</script>

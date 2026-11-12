@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><title>Cross-origin image, no CORS</title>
+<!-- Pass the other server in the address: ?img=http://127.0.0.1:PORT/photo.png (that server sends no CORS headers). -->
+<h1>Cross-origin</h1>
+<img id="photo" alt="Cross-origin photo" width="320" height="200">
+<script>
+  document.getElementById("photo").src = new URLSearchParams(location.search).get("img") || "";
+</script>
