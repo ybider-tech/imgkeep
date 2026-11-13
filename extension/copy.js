@@ -43,18 +43,27 @@ async function close() {
 
 async function convertAndCopy() {
   show({ status: t("copyWorking") });
-  if (!png) {
-    const res = await toBackground("copy");
-    if (!res?.ok) return showFailure(res || { code: "unknown" });
+  if (png) return writeClipboard();
+  // Start the clipboard write now, while this window is focused, and hand it the image when it is ready.
+  let failure = null;
+  const ready = toBackground("copy").then((res) => {
+    if (!res?.ok) {
+      failure = res || { code: "unknown" };
+      throw new Error(failure.code || "unknown");
+    }
     png = dataUrlToBlob(res.dataUrl);
-  }
-  await writeClipboard();
+    return png;
+  });
+  await writeClipboard(ready, () => failure);
 }
 
-async function writeClipboard() {
+async function writeClipboard(source = png, conversionFailure = () => null) {
   try {
-    await copyPng(png);
+    await copyPng(source);
   } catch (e) {
+    // The conversion itself failed (site access, network): that has its own explanation and is not a clipboard failure.
+    const failed = conversionFailure();
+    if (failed) return showFailure(failed);
     // Most often the window lost focus while converting. The clipboard was not changed.
     toBackground("count", { key: "fail_copy" }).catch(() => {});
     return show({
@@ -62,7 +71,7 @@ async function writeClipboard() {
       error: true,
       body: [el("p", { textContent: t("copyFailedNote") }), el("p", { className: "muted detail", textContent: e.message || "" })],
       actions: [
-        [t("askRetry"), writeClipboard],
+        [t("askRetry"), () => writeClipboard()],
         [t("copySavePng"), savePng],
         [t("askClose"), close],
       ],

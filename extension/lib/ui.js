@@ -62,8 +62,10 @@ export { dataUrlToBlob } from "./folder.js";
 
 // Puts a PNG on the clipboard. The clipboard is only touched by this one write, so on failure it keeps
 // whatever was there. Needs a focused window: the extension's own windows open focused.
-export async function copyPng(blob) {
-  await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+// Accepts a Blob or a Promise of one: with a promise the write starts at once, while the window still has focus,
+// and the image is filled in when the conversion finishes (a click elsewhere during a slow conversion is then harmless).
+export async function copyPng(blobOrPromise) {
+  await navigator.clipboard.write([new ClipboardItem({ "image/png": blobOrPromise })]);
 }
 
 // The one rating ask: what Imgkeep has done for this person (uses: saves and copies, counted on this computer),

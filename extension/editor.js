@@ -156,12 +156,24 @@ async function copy() {
   setBusy(true);
   status(t("copyWorking"));
   try {
-    const res = await toBackground("copy", { options: { maxWidth: options().maxWidth } });
-    if (!res?.ok) {
-      showProblem(problemFor(res || { code: "unknown" }));
-      return status("");
+    // The clipboard write starts now, while the window is focused; the image fills in when converted.
+    let failed = null;
+    const ready = toBackground("copy", { options: { maxWidth: options().maxWidth } }).then((res) => {
+      if (!res?.ok) {
+        failed = res || { code: "unknown" };
+        throw new Error(failed.code || "unknown");
+      }
+      return dataUrlToBlob(res.dataUrl);
+    });
+    try {
+      await copyPng(ready);
+    } catch (e) {
+      if (failed) {
+        showProblem(problemFor(failed));
+        return status("");
+      }
+      throw e;
     }
-    await copyPng(dataUrlToBlob(res.dataUrl));
     status(t("copyDone"));
     await toBackground("copied").catch(() => {});
     offerReview();
