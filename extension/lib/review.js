@@ -6,8 +6,8 @@ export const DAY = 24 * 60 * 60 * 1000;
 
 // When Imgkeep asks for a rating: after real use, once, and never during a failure streak.
 export const REVIEW = {
-  minUses: 10, // successful saves and copies (15 until 0.12.1)
-  minDays: 5, // since install, or since the update that added this for existing users (7 until 0.12.1)
+  minUses: 5, // successful saves and copies (15 until 0.12.1, 10 in the first 0.12.1 build)
+  minDays: 2, // since install, or since the update that added this for existing users (7 until 0.12.1, 5 in the first 0.12.1 build)
   cleanStreak: 3, // the last few saves all worked
   menuDays: 14, // how long the "Rate it" menu item stays if it's never answered
 };

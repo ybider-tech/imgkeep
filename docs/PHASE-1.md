@@ -30,7 +30,7 @@ Step 0 ranks the work by real failure data (anonymous counts in PostHog) before 
 
 | Release | Contents | Gate |
 |---|---|---|
-| 0.12.1 (built, unreleased) | + 1.17 rating threshold (5 uses) | none new |
+| 0.12.1 (built, unreleased) | + 1.17 rating threshold (5 uses, 2 days), Copy as PNG fix | none new |
 | 0.13.0 "Protected sites" | 1.1 fetch ladder (steps 2 and 3), stricter validation, "Report site" link | announce first: new optional permission, new network wording |
 | 0.14.0 "Original size" | 1.2 resolver and CDN rules with an Options toggle; 1.8 tokens | announce first: "or its full-size version on the same site" |
 | 0.15.0 "Control" | 1.10 Alt+S and toolbar path, 1.3 extension, 1.5 APNG and animation hint, 1.6 AVIF slider | none |
@@ -101,10 +101,13 @@ Consequences for the order:
    fetch only if the cookie fixture shows the extension fetch really lacks the cookie.
 4. Treat the fixture-based tests as the proof for these cases until real counts exist.
 
-## Open decisions (Yaron)
+## Decisions (Yaron, 2026-11-13: "go with your suggestions on all four")
 
-1. Screenshot fallback: skip, or opt-in button later?
-2. "Original size" toggle: on by default?
-3. Rating threshold: 5 uses, days gate lowered from 5 to 2?
-4. New anonymous count keys for ladder steps (would be listed in the privacy policy), or no new telemetry?
-5. Merge `chore/phase-0` to `main` now, so it also feeds 0.12.1?
+1. Screenshot fallback: **skipped.** It stays out; at most a later, explicit "Save what's on screen" button.
+2. "Original size" toggle (1.2): **off by default**, so existing users' files don't change; Options toggle, announced in What's new.
+3. Rating threshold: **5 uses and 2 days** (done in 0.12.1, `lib/review.js`, tests and README updated).
+4. New anonymous count keys: **yes**: `fail_http_403`, `fail_http_404`, `fail_http_other` and the winning ladder step.
+   Added in 0.13.0 with the privacy policy updated first.
+5. Merge `chore/phase-0` to `main`: done and pushed (2026-11-13).
+
+Still open: why the Edge 0.9.0 cohort is so large (Step 0), and whether the Copy as PNG fix (0.12.1) brings `fail_copy` down.

@@ -22,12 +22,12 @@ test.describe("rules", () => {
   test("the rating ask: after real use, never during failures, once", async () => {
     const r = await import("../extension/lib/review.js");
     const now = 100 * DAY;
-    let u = r.newUsage(now - 6 * DAY);
-    for (let i = 0; i < 9; i++) u = r.recordUse(u, true);
-    expect(r.readyToAsk(u, now)).toBe(false); // 9 uses
+    let u = r.newUsage(now - 3 * DAY);
+    for (let i = 0; i < 4; i++) u = r.recordUse(u, true);
+    expect(r.readyToAsk(u, now)).toBe(false); // 4 uses
     u = r.recordUse(u, true);
-    expect(r.readyToAsk(u, now)).toBe(true); // 10 uses, 6 days (0.12.1: was 15 and 7)
-    expect(r.readyToAsk({ ...u, firstSeen: now - 4 * DAY }, now)).toBe(false); // too soon
+    expect(r.readyToAsk(u, now)).toBe(true); // 5 uses, 3 days (0.12.1: was 15 and 7)
+    expect(r.readyToAsk({ ...u, firstSeen: now - 1 * DAY }, now)).toBe(false); // too soon
     expect(r.readyToAsk(r.recordUse(u, false), now)).toBe(false); // a failure among the last 3
     expect(r.recordUse(r.recordUse(r.recordUse(r.recordUse(u, false), true), true), true).recent).toEqual([true, true, true]);
     // One window ask, ever; the menu item for 14 days at most.
@@ -241,12 +241,12 @@ test.describe("in the extension", () => {
     expect(await quickSave()).toMatchObject({ ok: true });
     await new Promise((r) => setTimeout(r, 800));
     expect(rateWindows()).toBe(0);
-    // Due (9 uses; this save makes 10): the ask opens by itself, with the count.
-    await setUsage({ ...ready(), uses: 9 });
+    // Due (4 uses; this save makes 5): the ask opens by itself, with the count.
+    await setUsage({ ...ready(), uses: 4 });
     const opened = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/rate.html") });
     expect(await quickSave()).toMatchObject({ ok: true });
     const win = await opened;
-    await expect(win.getByText("Imgkeep has handled 10 images for you.")).toBeVisible();
+    await expect(win.getByText("Imgkeep has handled 5 images for you.")).toBeVisible();
     await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
     expect(await counts()).toMatchObject({ rating_asked: 1, rating_popup_shown: 1 });
     expect(await usage()).toMatchObject({ ask: "asking", windowAsked: true });

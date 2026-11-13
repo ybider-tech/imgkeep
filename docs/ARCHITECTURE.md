@@ -124,7 +124,7 @@ Legend: DONE · PART (partly) · TODO · SKIP (decided not to do). Decisions are
 | 1.14 | Toasts and UX | DONE | |
 | 1.15 | i18n | DONE | 50 languages |
 | 1.16 | Listing assets | SKIP | current listings stand; keep the "no long format lists" rule (CWS keyword-spam rejection, 2026-10-15) |
-| 1.17 | Review prompt | PART | one ask exists (10 uses / 5 days). Decision D: test 5 uses |
+| 1.17 | Review prompt | PART | DONE in 0.12.1: one ask, after 5 uses / 2 days (decision D) |
 | 2.x | Pro | TODO | merge with `Output/Decisions/Imgkeep Pro.md` at the Phase 2 gate; new telemetry layer with accounts/pricing (decision E) |
 | 3.0 | Fake-door test | TODO | honest "Studio waitlist" form on the Send-to buttons; Yaron decides go/no-go from the data |
 | 3.1 | Opt-in encrypted sync | SKIP (for now) | decision F; revisit only if the waitlist asks for cross-device sync |
