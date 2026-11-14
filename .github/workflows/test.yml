@@ -30,14 +30,17 @@ jobs:
       - run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Build the Edge and Firefox packages
+      - name: Build the Chrome, Edge and Firefox packages
         run: |
+          V=$(node -p "require('./extension/manifest.json').version")
+          mkdir -p dist
+          (cd extension && zip -r -X -q "../dist/imgkeep-$V.zip" . -x '.*' -x '*/.*' -x '*.test.*' -x 'tests/*')
           node scripts/build-edge.mjs
           node scripts/build-firefox.mjs
       - name: Check that every package carries the manifest version
         run: |
           V=$(node -p "require('./extension/manifest.json').version")
-          for f in dist/imgkeep-edge-$V.zip dist/imgkeep-firefox-$V.zip; do
+          for f in dist/imgkeep-$V.zip dist/imgkeep-edge-$V.zip dist/imgkeep-firefox-$V.zip; do
             test -s "$f" || { echo "missing $f"; exit 1; }
             unzip -p "$f" manifest.json | node -e "const m=JSON.parse(require('fs').readFileSync(0,'utf8')); if (m.version !== '$V') { console.error('$f has version ' + m.version); process.exit(1) }"
           done
