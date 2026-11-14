@@ -101,6 +101,11 @@ Consequences for the order:
    fetch only if the cookie fixture shows the extension fetch really lacks the cookie.
 4. Treat the fixture-based tests as the proof for these cases until real counts exist.
 
+## Update 2026-11-14
+
+0.12.1 submitted to the three stores; 0.13.0 built (Referer retry, new counts). "Report site" skipped for 0.13.0: revisit
+in 0.14.0 with host-only pre-fill if the new `fail_http_403` counts show hotlinking matters.
+
 ## Decisions (Yaron, 2026-11-13: "go with your suggestions on all four")
 
 1. Screenshot fallback: **skipped.** It stays out; at most a later, explicit "Save what's on screen" button.
