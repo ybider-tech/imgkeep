@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.12.1 — unreleased
+## 0.12.1 — 2026-11-14
 
 - **The new Cobalt Pop icon:** an orange poppy in a white image frame with a mint download arrow, on cobalt (replaces the green mountain picture). The same flower at every size (16 to 128 px), in the right-click menu, the browser's extensions page, Imgkeep's own windows and the stores. Files in `store/icon-pack/`, copied by `scripts/make-icons.py`; store listing packs in `store/brand-assets-2026/`.
 - **The one rating ask, reworded and seen by more people.** It now opens with what Imgkeep has done for you ("Imgkeep has handled 12 images for you."), says it's made by one person and that reviews are how new people find it, and asks for one sentence about what you use it for; the button says "Leave a review". The number is the local count the ask already kept (saves and copies), shown, never sent. Idea from r/chrome_extensions.
