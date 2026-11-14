@@ -68,6 +68,9 @@ test("no third-party analytics or trackers on the site", async () => {
     // The one script: the site's own anonymous counter (count.js, tested below), exactly once per page.
     expect(raw.split('<script src="/count.js" defer></script>').length - 1, `${file}: count.js once`).toBe(1);
     raw = raw.replace('<script src="/count.js" defer></script>', "");
+    // And stores.js (the right store for Firefox and Edge visitors; tested below), exactly once per page.
+    expect(raw.split('<script src="/stores.js" defer></script>').length - 1, `${file}: stores.js once`).toBe(1);
+    raw = raw.replace('<script src="/stores.js" defer></script>', "");
     // Pages that have translations also load lang.js (offers the visitor's language; tested below).
     if (SITE_PAGES.includes(file)) {
       expect(raw.split('<script src="/lang.js" defer></script>').length - 1, `${file}: lang.js once`).toBe(1);
@@ -156,8 +159,7 @@ test("Add to Chrome points to the live store listing", async ({ page }) => {
   // Header, hero and closing CTA each tag their own utm_campaign, so the store dashboard shows which one brings installs.
   await expect(page.locator("#install")).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=hero`);
   const home = await page.locator(`a[href^="${STORE}"]`).evaluateAll((as) => as.map((a) => a.getAttribute("href")));
-  // (hero-firefox and final-firefox: the "Also for Chrome" links that Firefox visitors see instead.)
-  expect(home).toEqual(["header", "hero", "hero-firefox", "rating", "final", "final-firefox"].map((c) => `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${c}`));
+  expect(home).toEqual(["header", "hero", "rating", "final"].map((c) => `${STORE}?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${c}`));
   const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
   const ld = blocks.map((b) => JSON.parse(b)).find((d) => d["@type"] === "SoftwareApplication");
   expect(ld.installUrl).toBe(STORE);
@@ -259,24 +261,58 @@ test("home page links the Microsoft Edge and Firefox listings too", async ({ pag
   await page.goto(`${server.url}/index.html`);
   const links = await page.locator("a.cta-alt").evaluateAll((as) => as.map((a) => a.getAttribute("href")));
   const FIREFOX = (campaign) => `https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${campaign}`;
-  const CHROME = (campaign) => `https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&utm_medium=home&utm_campaign=${campaign}`;
-  expect(links).toEqual([EDGE, FIREFOX("hero"), CHROME("hero-firefox"), EDGE, FIREFOX("final"), CHROME("final-firefox")]);
-  // In Chrome (and every browser but Firefox) the Chrome button shows; the Firefox ones stay hidden.
+  expect(links).toEqual([EDGE, FIREFOX("hero"), EDGE, FIREFOX("final")]);
+  // In Chrome (and every browser but Firefox and Edge) the page shows as written.
   const shown = () => page.locator(".install a:visible").evaluateAll((as) => as.map((a) => a.textContent.trim()));
   expect(await shown()).toEqual(["Add to Chrome — free", "Also for Edge ↗", "Also for Firefox ↗", "Add to Chrome — free", "Also for Edge ↗", "Also for Firefox ↗"]);
 });
 
-test("in Firefox, the home page offers Add to Firefox first, and Chrome as the other link", async ({ browser }) => {
-  const context = await browser.newContext({ userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.0; rv:140.0) Gecko/20100101 Firefox/140.0" });
-  const page = await context.newPage();
-  await page.goto(`${server.url}/index.html`);
-  const shown = () => page.locator(".install a:visible").evaluateAll((as) => as.map((a) => [a.textContent.trim(), new URL(a.href).hostname]));
-  await expect.poll(shown).toEqual([
-    ["Add to Firefox — free", "addons.mozilla.org"], ["Also for Edge ↗", "microsoftedge.microsoft.com"], ["Also for Chrome ↗", "chromewebstore.google.com"],
-    ["Add to Firefox — free", "addons.mozilla.org"], ["Also for Edge ↗", "microsoftedge.microsoft.com"], ["Also for Chrome ↗", "chromewebstore.google.com"],
-  ]);
-  await context.close();
-});
+// stores.js: Firefox and Edge visitors get their own store, on every page and in every language.
+for (const [browserName, userAgent, host] of [
+  ["Firefox", "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.0; rv:140.0) Gecko/20100101 Firefox/140.0", "addons.mozilla.org"],
+  ["Edge", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0", "microsoftedge.microsoft.com"],
+]) {
+  test(`in ${browserName}, install links go to its own store, with Chrome as the other link`, async ({ browser }) => {
+    const other = browserName === "Firefox" ? "Edge" : "Firefox";
+    const otherHost = browserName === "Firefox" ? "microsoftedge.microsoft.com" : "addons.mozilla.org";
+    const tag = browserName.toLowerCase();
+    const context = await browser.newContext({ userAgent });
+    const page = await context.newPage();
+    const links = (selector) =>
+      page.locator(selector).evaluateAll((as) => as.map((a) => [a.textContent.trim(), new URL(a.href).hostname, new URL(a.href).searchParams.get("utm_campaign")]));
+    await page.goto(`${server.url}/index.html`);
+    // The header's Get Imgkeep.
+    await expect.poll(() => links("header a.get")).toEqual([["Get Imgkeep ↗", host, `header-${tag}`]]);
+    // Hero and closing buttons: this browser first, then the third one, then Chrome.
+    // (The home page's Edge link carries no campaign, so neither does the Chrome link Edge visitors get from it.)
+    const alsoOther = (c) => [`Also for ${other} ↗`, otherHost, other === "Edge" ? null : c];
+    const alsoChrome = (c) => ["Also for Chrome ↗", "chromewebstore.google.com", browserName === "Edge" ? null : `${c}-${tag}`];
+    expect(await links(".install a")).toEqual(["hero", "final"].flatMap((c) => [
+      [`Add to ${browserName} — free`, host, `${c}-${tag}`],
+      // The links keep their places: "Also for Edge" became "Also for Chrome" in Edge, "Also for Firefox" in Firefox.
+      ...(browserName === "Edge" ? [alsoChrome(c), alsoOther(c)] : [alsoOther(c), alsoChrome(c)]),
+    ]));
+    // The rating is the Chrome Web Store's, so it stays as it is.
+    expect(await links(".rating a")).toEqual([["★★★★★ 5.0 · on the Chrome Web Store", "chromewebstore.google.com", "rating"]]);
+    // A guide page (no language menu), a converter and a translated home page.
+    await page.goto(`${server.url}/chrome-saves-images-as-jfif/index.html`);
+    await expect.poll(() => links("a.cta")).toEqual([[`Add Imgkeep to ${browserName} — free`, host, `chrome-saves-images-as-jfif-${tag}`]]);
+    await page.goto(`${server.url}/color-palette-from-image/index.html`);
+    const cvOther = [`Also for ${other}`, otherHost, "palette-tool"];
+    const cvChrome = ["Also for Chrome", "chromewebstore.google.com", `palette-tool-${tag}`];
+    await expect.poll(() => links(".cv-ext-links a")).toEqual([
+      ["Get the free extension", host, `palette-tool-${tag}`],
+      ...(browserName === "Edge" ? [cvChrome, cvOther] : [cvOther, cvChrome]),
+    ]);
+    await page.goto(`${server.url}/de/index.html`);
+    await expect.poll(() => page.locator("#install").textContent()).toContain(browserName);
+    expect(new URL(await page.locator("#install").evaluate((a) => a.href)).hostname).toBe(host);
+    // The download page lists all three stores and is left alone.
+    await page.goto(`${server.url}/download/`);
+    await expect(page.locator('.store a[href^="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl"]')).toHaveCount(1);
+    await context.close();
+  });
+}
 
 test("the download page links all three stores", async ({ page }) => {
   await page.goto(`${server.url}/download/`);
@@ -523,8 +559,8 @@ test("translated pages: language, canonical, hreflang, links and scripts", async
         const target = value.endsWith("/") ? `${value}index.html` : value;
         expect(existsSync(join(ROOT, "site", target)), `${f}: ${value}`).toBe(true);
       }
-      // The same scripts as the English page: count.js, lang.js, JSON-LD (valid), and the tool's own.
-      let raw = html.replace('<script src="/count.js" defer></script>', "").replace('<script src="/lang.js" defer></script>', "");
+      // The same scripts as the English page: count.js, stores.js, lang.js, JSON-LD (valid), and the tool's own.
+      let raw = html.replace('<script src="/count.js" defer></script>', "").replace('<script src="/lang.js" defer></script>', "").replace('<script src="/stores.js" defer></script>', "");
       raw = raw.replace(/<script type="module" src="\/(convert|color-palette-from-image)\/app\.js"><\/script>/, "");
       raw = raw.replace(/<script type="application\/json" id="strings">([\s\S]*?)<\/script>/, (_, json) => (JSON.parse(json), ""));
       raw = raw.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (_, json) => (JSON.parse(json), ""));
