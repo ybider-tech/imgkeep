@@ -4,7 +4,7 @@
 
 import { t, localisePage } from "./lib/i18n.js";
 import { colourText, paletteCode } from "./lib/palette.js";
-import { ask, detailText, el, errorText, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
+import { ask, detailText, el, errorText, hostExplanation, isHttp, maybeReviewAsk, requestSite, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
@@ -100,13 +100,13 @@ function showProblem(res) {
   if (res.reason === "host") {
     const allow = el("button", { type: "button", className: "primary", textContent: t("editAllow") });
     allow.addEventListener("click", async () => {
-      const granted = await chrome.permissions.request({ origins: [res.origin] });
+      const granted = await requestSite(res);
       if (granted) toBackground("count", { key: "site_access_allowed" }).catch(() => {});
       if (!granted) return status(t("askNotAllowed"), true);
       $("problem").hidden = true;
       load();
     });
-    nodes.push(el("h2", { textContent: t("askHostTitle") }), ...hostExplanation(res.host), allow);
+    nodes.push(el("h2", { textContent: t("askHostTitle") }), ...hostExplanation(res.host, res.referer), allow);
   } else {
     nodes.push(el("h2", { className: "error", textContent: t("askErrorTitle") }), el("p", { textContent: errorText(res.code) }));
     const extra = detailText(res);

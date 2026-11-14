@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Web-mjesto je odbilo sliku kad ju je Imgkeep izravno zatražio. Ako to dopustite, Imgkeep je može zatražiti i onako kako to čini vaš preglednik, javljajući web-mjestu na kojem ste mjestu bili, samo za ovu jednu sliku."
+  },
   "askHostNote": {
     "message": "Samo za ovu stranicu i samo za slike koje odlučite spremiti. To možete ukloniti bilo kada u Opcijama."
   },

@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Site-ul a refuzat imaginea când Imgkeep a cerut-o direct. Dacă permiți, Imgkeep o poate cere și așa cum o face browserul tău, spunând site-ului pe ce site te aflai, doar pentru această imagine."
+  },
   "askHostNote": {
     "message": "Doar pentru acest site și doar pentru imaginile pe care alegi să le salvezi. Poți elimina oricând acest acces din Opțiuni."
   },

@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Tinanggihan ng site ang larawan nang direkta itong hingin ng Imgkeep. Kapag pinayagan mo ito, makakahingi rin ang Imgkeep tulad ng ginagawa ng browser mo, sa pagsasabi sa site kung saang site ka galing, para lang sa isang larawang ito."
+  },
   "askHostNote": {
     "message": "Para lang sa site na ito, at para lang sa mga larawang pipiliin mong i-save. Maaari mo itong alisin anumang oras sa Options."
   },

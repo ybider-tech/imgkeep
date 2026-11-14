@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Imgkeep görseli doğrudan istediğinde site reddetti. İzin verirseniz Imgkeep, tarayıcınızın yaptığı gibi, hangi sitede olduğunuzu siteye bildirerek yalnızca bu tek görsel için isteyebilir."
+  },
   "askHostNote": {
     "message": "Yalnızca bu site için ve yalnızca kaydetmeyi seçtiğiniz görseller için. Bunu istediğiniz zaman Seçenekler'den kaldırabilirsiniz."
   },

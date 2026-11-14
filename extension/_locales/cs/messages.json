@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Web obrázek odmítl, když o něj Imgkeep požádal přímo. Pokud to povolíte, Imgkeep o něj smí požádat i tak, jak to dělá váš prohlížeč: sdělí webu, na jakém webu jste byli, a to jen pro tento jeden obrázek."
+  },
   "askHostNote": {
     "message": "Jen pro tento web a jen pro obrázky, které se rozhodnete uložit. Kdykoli to můžete odebrat v Možnostech."
   },

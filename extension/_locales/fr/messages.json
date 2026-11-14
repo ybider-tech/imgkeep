@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Le site a refusé l'image quand Imgkeep l'a demandée directement. En autorisant cela, Imgkeep pourra aussi la demander comme le fait votre navigateur, en indiquant au site sur quel site vous étiez, pour cette seule image."
+  },
   "askHostNote": {
     "message": "Uniquement pour ce site, et uniquement pour les images que vous choisissez d'enregistrer. Vous pouvez le retirer à tout moment dans les Options."
   },

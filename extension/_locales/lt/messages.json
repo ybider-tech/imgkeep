@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Svetainė atmetė vaizdą, kai Imgkeep paprašė jo tiesiogiai. Leisdami, leisite Imgkeep paprašyti ir taip, kaip tai daro jūsų naršyklė, pasakant svetainei, kurioje svetainėje buvote, tik šiam vienam vaizdui."
+  },
   "askHostNote": {
     "message": "Tik šiai svetainei ir tik vaizdams, kuriuos nuspręsite išsaugoti. Bet kada galite tai pašalinti Parinktyse."
   },

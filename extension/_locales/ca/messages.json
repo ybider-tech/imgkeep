@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "El lloc ha rebutjat la imatge quan Imgkeep l'ha demanada directament. Si ho permets, Imgkeep també podrà demanar-la com ho fa el teu navegador, dient al lloc des de quin lloc venies, només per a aquesta imatge."
+  },
   "askHostNote": {
     "message": "Només per a aquest lloc i només per a les imatges que triïs desar. Ho pots treure quan vulguis a Opcions."
   },

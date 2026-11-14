@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Tovuti ilikataa picha Imgkeep ilipoiomba moja kwa moja. Ukiruhusu hili, Imgkeep pia itaweza kuiomba kama kivinjari chako kinavyofanya, kwa kuiambia tovuti ulikuwa kwenye tovuti gani, kwa picha hii moja tu."
+  },
   "askHostNote": {
     "message": "Kwa tovuti hii pekee, na kwa picha unazochagua kuhifadhi pekee. Unaweza kuiondoa wakati wowote katika Chaguo."
   },

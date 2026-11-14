@@ -55,8 +55,10 @@ const optional = [...(manifest.optional_host_permissions || [])].sort();
 if (JSON.stringify(optional) !== JSON.stringify(ALLOWED_OPTIONAL_HOSTS)) {
   fail(`optional_host_permissions must be exactly ${ALLOWED_OPTIONAL_HOSTS.join(", ")}`);
 }
-// "Find image here" only: off until the user turns it on, and neither comes with an install warning.
-const ALLOWED_OPTIONAL = ["activeTab", "scripting"];
+// Off until the user turns them on, and none comes with an install warning. activeTab and scripting: Find image
+// here (and reading a blob: image). declarativeNetRequestWithHostAccess (0.13.0): sending the page's address as
+// the Referer with one image request, on a site the user allowed, for sites that refuse hotlinked images.
+const ALLOWED_OPTIONAL = ["activeTab", "declarativeNetRequestWithHostAccess", "scripting"];
 if (JSON.stringify([...(manifest.optional_permissions || [])].sort()) !== JSON.stringify(ALLOWED_OPTIONAL)) {
   fail(`optional_permissions must be exactly ${ALLOWED_OPTIONAL.join(", ")}`);
 }
@@ -169,4 +171,4 @@ if (problems.length) {
   console.error(`Static check failed:\n- ${problems.join("\n- ")}`);
   process.exit(1);
 }
-console.log("Static check passed: 4 permissions (+ activeTab, scripting optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one PostHog URL), no other outside URLs; one compiled part (AVIF encoder), pinned.");
+console.log("Static check passed: 4 permissions (+ activeTab, scripting, declarativeNetRequestWithHostAccess optional), no host access, network only in offscreen.js (your image) and lib/telemetry.js (one PostHog URL), no other outside URLs; one compiled part (AVIF encoder), pinned.");

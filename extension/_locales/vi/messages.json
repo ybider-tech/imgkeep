@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Trang web đã từ chối hình ảnh khi Imgkeep yêu cầu trực tiếp. Nếu bạn cho phép, Imgkeep cũng có thể yêu cầu theo cách trình duyệt của bạn làm, bằng cách cho trang web biết bạn đang ở trang nào, chỉ cho một hình ảnh này."
+  },
   "askHostNote": {
     "message": "Chỉ cho trang web này, và chỉ cho những ảnh bạn chọn lưu. Bạn có thể gỡ quyền này bất cứ lúc nào trong Tùy chọn."
   },

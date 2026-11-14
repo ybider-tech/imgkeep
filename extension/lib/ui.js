@@ -39,8 +39,17 @@ export const isHttp = (url) => /^https?:/i.test(url || "");
 export const ask = (jobId, type, extra = {}) => chrome.runtime.sendMessage({ target: "background", type, jobId, ...extra });
 
 // "Allow images from this site?" — the explanation, for windows that show it inline.
-export function hostExplanation(host) {
-  return [el("p", {}, ...richText("askHostBody", host)), el("p", { className: "muted", textContent: t("askHostNote") })];
+export function hostExplanation(host, referer = false) {
+  return [
+    el("p", {}, ...richText("askHostBody", host)),
+    ...(referer ? [el("p", { textContent: t("askHostReferer") })] : []),
+    el("p", { className: "muted", textContent: t("askHostNote") }),
+  ];
+}
+
+// Asks for one site, plus what its result says is also needed (the Referer permission, 0.13.0).
+export function requestSite({ origin, permissions }) {
+  return chrome.permissions.request({ origins: [origin], ...(permissions?.length ? { permissions } : {}) });
 }
 
 // 123456 bytes → "123 KB" in the browser's language. 1 KB = 1,000 bytes, 1 MB = 1,000,000 bytes.

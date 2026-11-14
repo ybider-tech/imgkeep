@@ -2,8 +2,10 @@
 //   A. The fixture pages and /guarded/ routes behave the way real sites do (plain Chromium, no extension).
 //   B. What the real extension does with them TODAY: the baseline the Phase 1 fetch ladder improves on.
 import { test, expect } from "@playwright/test";
-import { readdir, rm } from "node:fs/promises";
-import { launchWithExtension } from "./launch.mjs";
+import { cp, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { launchWithExtension, EXTENSION_DIR } from "./launch.mjs";
 import { startServer, GUARD_COOKIE } from "./servers.mjs";
 
 let cors, plain;
@@ -185,7 +187,74 @@ test.describe("B. the extension on protected sites, as of 0.12", () => {
     expect(result).toMatchObject({ ok: false, reason: "host" });
   });
 
-  // Targets for Phase 1 (fetch ladder, 1.1). Turn each into a real test when its step lands.
-  test.fixme("a hotlink-protected image saves once the Referer fallback is allowed (1.1 step 2)", async () => {});
-  test.fixme("a screenshot of the visible image is saved, and flagged as screenshot quality, when every fetch fails (1.1 step 4)", async () => {});
+  // Fetch ladder step 2 needs the page's address: a request that says which page it is on gets the image.
+  test("without the Referer permission, a hotlink-protected image asks for it, in the same question as the site", async () => {
+    const page = `${cors.url}/pages/hotlink.html`;
+    const result = await ctx.sw.evaluate(
+      ({ url, pageUrl }) => globalThis.imgkeepRunJob({ url, pageUrl, format: "png" }, { interactive: false }),
+      { url: `${cors.url}/guarded/hotlink.jpg`, pageUrl: page },
+    );
+    expect(result).toMatchObject({ ok: false, reason: "host", referer: true, permissions: ["declarativeNetRequestWithHostAccess"] });
+    expect(result.origin).toContain("127.0.0.1");
+  });
+
+  // The screenshot fallback (1.1 step 4) was decided against: it breaks "no blurry output" (docs/PHASE-1.md).
+});
+
+// With the optional permissions granted: a copy of the extension that has them from the start, since a test
+// can't click the browser's permission prompt.
+test.describe("B2. the Referer retry, with the permission granted", () => {
+  test.describe.configure({ mode: "serial" });
+  let ctx, dir;
+
+  test.beforeAll(async () => {
+    dir = await mkdtemp(join(tmpdir(), "imgkeep-ext-"));
+    await cp(EXTENSION_DIR, dir, { recursive: true });
+    const m = JSON.parse(await readFile(join(dir, "manifest.json"), "utf8"));
+    m.permissions.push("declarativeNetRequestWithHostAccess");
+    m.optional_permissions = m.optional_permissions.filter((p) => p !== "declarativeNetRequestWithHostAccess");
+    m.host_permissions = ["http://127.0.0.1/*"];
+    await writeFile(join(dir, "manifest.json"), JSON.stringify(m));
+    ctx = await launchWithExtension({ extensionDir: dir });
+  });
+
+  test.afterAll(async () => {
+    await ctx?.context.close();
+    if (ctx) await rm(ctx.userDataDir, { recursive: true, force: true });
+    if (dir) await rm(dir, { recursive: true, force: true });
+  });
+
+  const run = (url, pageUrl) =>
+    ctx.sw.evaluate(({ url, pageUrl }) => globalThis.imgkeepRunJob({ url, pageUrl, format: "png" }, { interactive: false }), { url, pageUrl });
+  const rules = () => ctx.sw.evaluate(() => chrome.declarativeNetRequest.getSessionRules());
+  const savedFiles = async () => (await readdir(ctx.downloadsDir, { recursive: true })).length;
+
+  test("a hotlink-protected image saves, with the page's site as the Referer", async () => {
+    const before = await savedFiles();
+    const result = await run(`${cors.url}/guarded/hotlink.jpg`, `${cors.url}/pages/hotlink.html`);
+    expect(result).toMatchObject({ ok: true, viaReferer: true });
+    await expect.poll(savedFiles).toBe(before + 1);
+    const sent = cors.requests.filter((r) => r.path === "/guarded/hotlink.jpg").at(-1);
+    expect(sent.referer).toBe(`${cors.url}/`); // the site, not the page
+    expect(await rules()).toEqual([]); // the temporary rule is gone
+  });
+
+  test("it is tried once: a page on another site doesn't unlock it, and the first answer is explained", async () => {
+    const result = await run(`${cors.url}/guarded/hotlink.jpg`, "https://elsewhere.example/page");
+    expect(result).toMatchObject({ ok: false, reason: "error", code: "http", detail: "403" });
+    expect(await rules()).toEqual([]);
+  });
+
+  test("a save with no page address can't use it", async () => {
+    expect(await run(`${cors.url}/guarded/hotlink.jpg`, "")).toMatchObject({ ok: false, code: "http", detail: "403" });
+  });
+
+  test("the counts say which kind of answer failed and how many saves the Referer rescued", async () => {
+    const counts = await ctx.sw.evaluate(async () => (await chrome.storage.local.get("counts")).counts?.c || {});
+    expect(counts).toMatchObject({ referer_saved: 1, fail_http: 2, fail_http_403: 2 });
+  });
+});
+
+test.describe("B3. the fixmes left for later steps", () => {
+  test.fixme("a cookie-protected image saves when the site's cookie is in the page, not the extension (1.1 step 3, only if needed)", async () => {});
 });

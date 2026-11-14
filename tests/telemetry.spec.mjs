@@ -109,7 +109,7 @@ test.describe("in the extension", () => {
     await run(`${cors.url}/photo.png`, "webp");
     const counts = await local("counts");
     expect(counts.c).toEqual({
-      save_png: 1, save_jpg: 1, save_webp: 1, mode_downloads: 3, resized: 1, fail_http: 1,
+      save_png: 1, save_jpg: 1, save_webp: 1, mode_downloads: 3, resized: 1, fail_http: 1, fail_http_404: 1,
       // What was converted into what, from the original's bytes (not its address or name).
       webp_to_png: 1, png_to_jpg: 1, png_to_webp: 1,
     });
@@ -158,7 +158,7 @@ test.describe("in the extension", () => {
     expect(req.body).toMatchObject({ api_key: "phc_test", event: "daily_counts" });
     const { version } = await ctx.sw.evaluate(() => chrome.runtime.getManifest());
     expect(req.body.properties).toEqual({
-      save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome",
+      save_png: 1, mode_downloads: 1, fail_http: 1, fail_http_404: 1, webp_to_png: 1, browser: "chrome",
       app_version: version,
       locale: expect.any(String),
       debug: true, // loaded unpacked (no update_url): kept out of the real numbers
@@ -168,7 +168,7 @@ test.describe("in the extension", () => {
     });
     // No address, file or site name anywhere in what's sent.
     expect(JSON.stringify(req.body)).not.toMatch(/127\.0\.0\.1|photo|missing|http:/);
-    expect(await local("countsLastSent")).toMatchObject({ props: { save_png: 1, mode_downloads: 1, fail_http: 1, webp_to_png: 1, browser: "chrome" } });
+    expect(await local("countsLastSent")).toMatchObject({ props: { save_png: 1, mode_downloads: 1, fail_http: 1, fail_http_404: 1, webp_to_png: 1, browser: "chrome" } });
     expect(await local("countsOutbox")).toBeUndefined();
   });
 

@@ -11,6 +11,7 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 | `offscreen` | Required | A hidden extension page with a canvas, to decode and re-encode the image on your computer and write into your chosen folder. Service workers have no canvas. | 0.3.0 |
 | `activeTab` | Optional, off until turned on | Only for **Find image here** on sites that cover their images (Instagram, Pinterest…). When you click that menu item, Chrome lets Imgkeep look at that one tab, at that moment. Turned on in Options → Images that sites cover, or the first time you use it. No install warning. | 0.8.0 |
 | `scripting` | Optional, off until turned on | Runs the small finder (`extension/lib/find-image.js`) once in that tab, using the access above. It only reads the addresses of the images on screen; it never changes the page. Since 0.12.0 also: when you right-click an image that only exists inside its page (a `blob:` link, as on some web apps), runs `extension/lib/read-blob.js` once in that tab to read that one image, on a site you allowed (or right after Find image here's activeTab). No install warning. | 0.8.0 |
+| `declarativeNetRequestWithHostAccess` | Optional, off until turned on | Only when a site refuses an image that Imgkeep asked for directly (HTTP 401 or 403, usually hotlink protection). Imgkeep then repeats that one request with the address of the site you were on as its `Referer`, as your browser would have sent it, using a temporary rule that matches only that image address and only requests made by Imgkeep's own pages (never the page's). The rule is removed as soon as the request ends. Asked together with the site question, only for that site, and only after you click Allow. It cannot see or change any other request. No install warning. | 0.13.0 |
 | `http://*/*`, `https://*/*` | Optional, per site | Not granted at install. Asked for one site at a time (`https://that-site/*`), only when that site blocks cross-site image reads, and only after you click "Allow and save". Removable in Options → Sites you've allowed. | 0.3.0 |
 
 ## What Imgkeep does not ask for
@@ -19,7 +20,7 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 - No content scripts (nothing runs on pages by itself), no `tabs`. `scripting` is only optional, for Find image here. ("Open image" uses `chrome.tabs.create`, which needs no permission.)
 - No `clipboardWrite` or `clipboardRead`. Copy as PNG writes the image from Imgkeep's own small window, which has focus, so the browser allows it without a permission (and without the install warning a new permission would bring). Get colour palette copies colour values the same way. Imgkeep never reads the clipboard.
 - Get colour palette (0.11.0) needs no permission of its own: it uses the same image fetch, the offscreen canvas and the downloads above, and the colours are worked out on your computer.
-- No `unlimitedStorage`, `history`, `cookies`, `webRequest` or `identity`.
+- No `unlimitedStorage`, `history`, `cookies`, `webRequest` (the optional `declarativeNetRequestWithHostAccess` above sets one header and can read nothing) or `identity`.
 
 ## Network use
 

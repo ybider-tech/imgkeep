@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Witryna odrzuciła obraz, gdy Imgkeep zażądał go bezpośrednio. Jeśli na to pozwolisz, Imgkeep będzie mógł zażądać go także tak, jak robi to Twoja przeglądarka, informując witrynę, na jakiej witrynie byłeś, tylko dla tego jednego obrazu."
+  },
   "askHostNote": {
     "message": "Tylko dla tej witryny i tylko dla obrazów, które zdecydujesz się zapisać. Możesz to usunąć w każdej chwili w Opcjach."
   },

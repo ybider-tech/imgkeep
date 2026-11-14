@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Az oldal elutasította a képet, amikor az Imgkeep közvetlenül kérte. Ha engedélyezed, az Imgkeep úgy is kérheti, ahogy a böngésződ teszi: megmondja az oldalnak, melyik oldalon jártál, csak ennél az egy képnél."
+  },
   "askHostNote": {
     "message": "Csak erre a webhelyre, és csak a mentésre kiválasztott képekre. Bármikor eltávolíthatod a Beállításokban."
   },

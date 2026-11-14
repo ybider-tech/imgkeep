@@ -6,7 +6,7 @@ import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
 import { AVIF_DEFAULT_QUALITY } from "./lib/avif.js";
-import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
+import { ANALYTICS, addCount, conversionKey, dayIsOver, dayOf, failureKey, httpClassKey, summaryEvent, summaryProps, sendSummary, COUNT_KEYS } from "./lib/telemetry.js";
 import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
@@ -417,7 +417,51 @@ function choicesFor(job, settings) {
   };
 }
 
-function convertJob(job, settings, want) {
+// Fetch ladder, step 2 (0.13.0): a site that answers 401 or 403 to Imgkeep's own request often serves the same
+// image to a request that says which page it is on, as the browser does (hotlink protection). So retry once with
+// that page's address as the Referer, set by a session rule that exists only for this one request. Needs the
+// optional declarativeNetRequestWithHostAccess permission and access to that site: asked in the same window as
+// the site question. The Referer is the page's origin, as the browser itself would send to another site.
+const REFERER_PERMISSIONS = ["declarativeNetRequestWithHostAccess"];
+let refererRuleCount = 0;
+
+async function refererStep(job, run) {
+  if (!chrome.declarativeNetRequest && !chrome.permissions) return null;
+  if (!/^https?:/.test(job.url) || !/^https?:/.test(job.pageUrl || "") || isStoreSite(job.url)) return null;
+  if (/[*^|]/.test(job.url)) return null; // would be read as a filter pattern, not an address
+  const origin = originPattern(job.url);
+  const allowed = await chrome.permissions.contains({ permissions: REFERER_PERMISSIONS, origins: [origin] }).catch(() => false);
+  if (!allowed) return { ask: { origin, host: new URL(job.url).hostname } };
+  const id = 1000 + (refererRuleCount++ % 1000);
+  try {
+    await chrome.declarativeNetRequest.updateSessionRules({
+      removeRuleIds: [id],
+      addRules: [
+        {
+          id,
+          priority: 1,
+          action: { type: "modifyHeaders", requestHeaders: [{ header: "referer", operation: "set", value: `${new URL(job.pageUrl).origin}/` }] },
+          // Only this address, and only requests Imgkeep's own pages make, never the page's.
+          condition: { urlFilter: `|${job.url}|`, resourceTypes: ["xmlhttprequest"], initiatorDomains: [chrome.runtime.id] },
+        },
+      ],
+    });
+    return { conv: await run() };
+  } finally {
+    await chrome.declarativeNetRequest.updateSessionRules({ removeRuleIds: [id] }).catch(() => {});
+  }
+}
+
+async function convertJob(job, settings, want) {
+  const conv = await convertOnce(job, settings, want);
+  if (conv.ok || conv.code !== "http" || !["401", "403"].includes(String(conv.detail))) return conv;
+  const step = await refererStep(job, () => convertOnce(job, settings, want)).catch(() => null);
+  if (!step) return conv;
+  if (step.ask) return { ok: false, code: "referer", ...step.ask };
+  return step.conv.ok ? { ...step.conv, viaReferer: true } : conv; // the first answer is the one to explain
+}
+
+function convertOnce(job, settings, want) {
   return toOffscreen({
     type: "convert",
     jobId: job.id,
@@ -432,6 +476,7 @@ function convertJob(job, settings, want) {
 // A failed conversion → what the window should show. Blocked sites get the "allow this site?" question,
 // except the browser's own add-on store, which no access can open.
 async function failure(job, conv) {
+  if (conv.code === "referer") return { ok: false, reason: "host", origin: conv.origin, host: conv.host, permissions: REFERER_PERMISSIONS, referer: true };
   if (conv.code === "blocked" && isStoreSite(job.url)) return { ok: false, reason: "error", code: "store" };
   if (conv.code === "blocked" && /^https?:/.test(job.url)) {
     const origin = originPattern(job.url);
@@ -470,6 +515,7 @@ async function attempt(job) {
     bytes: conv.size,
     resized: conv.width < conv.sourceWidth,
     sourceType: conv.sourceType,
+    viaReferer: Boolean(conv.viaReferer),
   };
 
   if (mode === "folder") {
@@ -603,13 +649,16 @@ function countJob(job, result) {
   if (result.ok) {
     const keys = [`save_${job.format}`, `mode_${result.mode}`];
     if (result.resized) keys.push("resized");
+    if (result.viaReferer) keys.push("referer_saved");
     const conversion = conversionKey(result.sourceType, job.format);
     if (conversion) keys.push(conversion);
     if (job.origin === "editor") keys.push("more_options_save");
     return count(...keys);
   }
+  if (result.reason === "host" && result.referer) return count("site_access_asked", "referer_asked");
   if (result.reason === "host" || result.reason === "page") return count("site_access_asked");
   if (result.reason === "no-folder" || result.reason === "folder-permission") return count("folder_asked");
+  if (result.code === "http") return count("fail_http", httpClassKey(result.detail));
   return count(failureKey(result.code));
 }
 
@@ -686,7 +735,7 @@ async function convertForWindow(jobId, format, options) {
   if (!WINDOW_FORMATS.includes(format)) throw new JobError("unknown", `Unknown format ${format}`);
   const job = await loadJob(jobId);
   if (job.url.startsWith("blob:")) return { ok: false, reason: "error", code: "blob" };
-  const run = { id: crypto.randomUUID(), sourceId: jobId, url: job.url, format, options: cleanOptions(options) };
+  const run = { id: crypto.randomUUID(), sourceId: jobId, url: job.url, pageUrl: job.pageUrl, format, options: cleanOptions(options) };
   const conv = await convertJob(run, await getSettings(), "data");
   releaseIfOpen(run.id);
   return conv.ok ? conv : failure(job, conv);

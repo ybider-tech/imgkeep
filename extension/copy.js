@@ -3,7 +3,7 @@
 // which avoids asking for the clipboardWrite permission.
 
 import { t, localisePage } from "./lib/i18n.js";
-import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
+import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, hostExplanation, isHttp, maybeReviewAsk, requestSite, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
@@ -110,10 +110,10 @@ function showFailure(res) {
   if (res.reason === "host") {
     return show({
       title: t("askHostTitle"),
-      body: hostExplanation(res.host),
+      body: hostExplanation(res.host, res.referer),
       actions: [
         [t("copyAllowAndCopy"), async () => {
-          const granted = await chrome.permissions.request({ origins: [res.origin] });
+          const granted = await requestSite(res);
           if (granted) toBackground("count", { key: "site_access_allowed" }).catch(() => {});
           if (!granted) {
             showFailure(res);

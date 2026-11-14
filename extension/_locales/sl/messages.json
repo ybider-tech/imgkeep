@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Spletno mesto je zavrnilo sliko, ko jo je Imgkeep zahteval neposredno. Če to dovolite, jo lahko Imgkeep zahteva tudi tako kot vaš brskalnik, tako da spletnemu mestu sporoči, na katerem mestu ste bili, samo za to eno sliko."
+  },
   "askHostNote": {
     "message": "Samo za to spletno mesto in samo za slike, ki jih izberete za shranjevanje. To lahko kadar koli odstranite v Možnostih."
   },

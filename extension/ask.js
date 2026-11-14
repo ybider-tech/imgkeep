@@ -3,7 +3,7 @@
 import { getFolder, setFolder, writeUnique, dataUrlToBlob } from "./lib/folder.js";
 import { FORMATS } from "./lib/settings.js";
 import { t, localisePage, richText } from "./lib/i18n.js";
-import { errorText, detailText, el, isHttp } from "./lib/ui.js";
+import { errorText, detailText, el, hostExplanation, isHttp, requestSite } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const key = `job:${jobId}`;
@@ -90,12 +90,11 @@ function render() {
   if (reason === "host") {
     $("title").textContent = t("askHostTitle");
     body.append(
-      el("p", {}, ...richText("askHostBody", job.host)),
-      el("p", { className: "muted", textContent: t("askHostNote") }),
+      ...hostExplanation(job.host, job.referer),
     );
     actions.append(
       button(t("askAllowAndSave"), async () => {
-        const granted = await chrome.permissions.request({ origins: [job.origin] });
+        const granted = await requestSite(job);
         if (granted) chrome.runtime.sendMessage({ target: "background", type: "count", jobId, key: "site_access_allowed" }).catch(() => {});
         if (!granted) return status(t("askNotAllowed"), true);
         status(t("askSaving"));

@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Tapak menolak imej itu apabila Imgkeep memintanya secara langsung. Jika anda membenarkannya, Imgkeep juga boleh memintanya seperti yang dilakukan pelayar anda, dengan memberitahu tapak itu anda datang dari tapak mana, hanya untuk satu imej ini."
+  },
   "askHostNote": {
     "message": "Hanya untuk tapak ini, dan hanya untuk imej yang anda pilih untuk disimpan. Anda boleh membuangnya bila-bila masa dalam Pilihan."
   },

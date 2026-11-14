@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Sivusto hylkäsi kuvan, kun Imgkeep pyysi sitä suoraan. Kun sallit tämän, Imgkeep voi pyytää kuvaa myös samalla tavalla kuin selaimesi kertomalla sivustolle, millä sivustolla olit, vain tätä yhtä kuvaa varten."
+  },
   "askHostNote": {
     "message": "Vain tälle sivustolle ja vain kuville, jotka päätät tallentaa. Voit poistaa luvan milloin tahansa asetuksista."
   },

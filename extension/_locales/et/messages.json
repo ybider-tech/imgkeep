@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Sait keeldus pildist, kui Imgkeep seda otse küsis. Kui lubad, võib Imgkeep seda küsida ka nii, nagu su brauser teeb, öeldes saidile, millisel saidil sa olid, ainult selle ühe pildi jaoks."
+  },
   "askHostNote": {
     "message": "Ainult selle saidi jaoks ja ainult piltide jaoks, mille otsustad salvestada. Saad selle igal ajal seadetes eemaldada."
   },

@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Situs menolak gambar saat Imgkeep memintanya langsung. Jika Anda mengizinkan, Imgkeep juga dapat memintanya seperti yang dilakukan browser Anda, dengan memberi tahu situs bahwa Anda berasal dari situs mana, hanya untuk satu gambar ini."
+  },
   "askHostNote": {
     "message": "Hanya untuk situs ini, dan hanya untuk gambar yang Anda pilih untuk disimpan. Anda bisa menghapusnya kapan saja di Opsi."
   },

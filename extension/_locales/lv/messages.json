@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Vietne noraidīja attēlu, kad Imgkeep to pieprasīja tieši. Ja atļausiet, Imgkeep varēs to pieprasīt arī tā, kā to dara jūsu pārlūks, pasakot vietnei, kurā vietnē atradāties, tikai šim vienam attēlam."
+  },
   "askHostNote": {
     "message": "Tikai šai vietnei un tikai attēliem, kurus izvēlaties saglabāt. To jebkurā laikā var noņemt Opcijās."
   },

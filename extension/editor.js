@@ -7,7 +7,7 @@ import { buildTarget, cleanColour } from "./lib/settings.js";
 import { cleanMaxWidth } from "./lib/image.js";
 import { icoSizes } from "./lib/ico.js";
 import { AVIF_DEFAULT_QUALITY } from "./lib/avif.js";
-import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp, maybeReviewAsk, reviewAsk } from "./lib/ui.js";
+import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, formatSize, hostExplanation, isHttp, maybeReviewAsk, requestSite, reviewAsk } from "./lib/ui.js";
 
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
@@ -67,13 +67,13 @@ function problemFor(res) {
   if (res.reason === "host") {
     const allow = el("button", { type: "button", className: "primary", textContent: t("editAllow") });
     allow.addEventListener("click", async () => {
-      const granted = await chrome.permissions.request({ origins: [res.origin] });
+      const granted = await requestSite(res);
       if (granted) toBackground("count", { key: "site_access_allowed" }).catch(() => {});
       if (!granted) return status(t("askNotAllowed"), true);
       showProblem([]);
       preview();
     });
-    return [el("h2", { textContent: t("askHostTitle") }), ...hostExplanation(res.host), allow];
+    return [el("h2", { textContent: t("askHostTitle") }), ...hostExplanation(res.host, res.referer), allow];
   }
   const nodes = [el("h2", { className: "error", textContent: t("askErrorTitle") }), el("p", { textContent: errorText(res.code) })];
   const extra = detailText(res);

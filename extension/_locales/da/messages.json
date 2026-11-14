@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Webstedet afviste billedet, da Imgkeep bad om det direkte. Hvis du tillader det, kan Imgkeep også bede om det på samme måde som din browser, ved at fortælle webstedet, hvilket websted du kom fra, kun for dette ene billede."
+  },
   "askHostNote": {
     "message": "Kun for dette websted og kun for de billeder, du vælger at gemme. Du kan fjerne det når som helst under Indstillinger."
   },

@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Webbplatsen avvisade bilden när Imgkeep bad om den direkt. Om du tillåter det kan Imgkeep också be om den på samma sätt som din webbläsare, genom att tala om för webbplatsen vilken webbplats du kom från, bara för den här bilden."
+  },
   "askHostNote": {
     "message": "Bara för den här webbplatsen och bara för bilderna du väljer att spara. Du kan ta bort det när som helst under Alternativ."
   },

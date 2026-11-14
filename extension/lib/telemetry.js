@@ -30,6 +30,11 @@ export const COUNT_KEYS = [
   ...SOURCES.flatMap((s) => TARGETS.map((t) => `${s}_to_${t}`)),
   ...MODES.map((m) => `mode_${m}`),
   ...FAILURES.map((f) => `fail_${f}`),
+  "fail_http_403", // a failed save where the site answered 403 or 401 (refused: hotlink or sign-in protection; since 0.13.0), also counted in fail_http
+  "fail_http_404", // … 404 or 410 (the image is gone)
+  "fail_http_other", // … any other answer
+  "referer_asked", // Imgkeep asked to send the page's address along, for a site that refused the image (since 0.13.0)
+  "referer_saved", // a save that only worked after sending the page's address along (since 0.13.0)
   "resized", // a save made smaller by the maximum width
   "last_used", // a save from the "last used" item at the top of the menu
   "installed", // Imgkeep was installed (counted once, on the day of the install; since 0.10.2)
@@ -74,6 +79,12 @@ const SOURCE_BY_TYPE = {
 };
 export const conversionKey = (sourceType, format) =>
   TARGETS.includes(format) ? `${SOURCE_BY_TYPE[String(sourceType || "").toLowerCase()] || "other"}_to_${format}` : null;
+
+// The kind of answer behind an "http" failure: "403", "404" or "other" (never the address).
+export const httpClassKey = (status) => {
+  const n = Number(status);
+  return n === 401 || n === 403 ? "fail_http_403" : n === 404 || n === 410 ? "fail_http_404" : "fail_http_other";
+};
 
 export const failureKey = (code) => {
   const key = `fail_${String(code || "unknown").replace(/-/g, "_")}`;

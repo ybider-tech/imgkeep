@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "Die Website hat das Bild abgelehnt, als Imgkeep es direkt angefordert hat. Mit deiner Erlaubnis kann Imgkeep es auch so anfordern wie dein Browser, indem es der Website mitteilt, auf welcher Website du warst, nur für dieses eine Bild."
+  },
   "askHostNote": {
     "message": "Nur für diese Website und nur für die Bilder, die du speichern willst. Du kannst das jederzeit in den Optionen entfernen."
   },

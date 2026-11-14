@@ -167,6 +167,9 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "De site weigerde de afbeelding toen Imgkeep er rechtstreeks om vroeg. Als je dit toestaat, kan Imgkeep er ook om vragen zoals je browser dat doet, door de site te vertellen op welke site je was, alleen voor deze ene afbeelding."
+  },
   "askHostNote": {
     "message": "Alleen voor deze site, en alleen voor de afbeeldingen die je wilt opslaan. Je kunt het altijd intrekken in Opties."
   },

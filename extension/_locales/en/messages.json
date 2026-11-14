@@ -205,6 +205,10 @@
       }
     }
   },
+  "askHostReferer": {
+    "message": "The site refused the image when Imgkeep asked for it directly. Allowing this also lets Imgkeep ask the way your browser does, by telling the site which site you were on, for this one image.",
+    "description": "Shown in the site question when the site refused the first request (hotlink protection). Imgkeep then repeats the request with the site's address as the Referer."
+  },
   "askHostNote": {
     "message": "Only for this site, and only the images you choose to save. You can remove it any time in Options.",
     "description": "Note"
