@@ -1,15 +1,6 @@
 // Offers this page in the visitor's own language, when imgkeep.app has it: one line at the top, never a
 // redirect. It only reads the page's <link rel="alternate" hreflang> list and the browser's languages, and
 // stores nothing (so a closed hint can show again on the next page).
-//
-// Also: in Firefox, the home page's install buttons point to Firefox Add-ons first ("Add to Firefox"),
-// with "Also for Chrome" instead of "Also for Firefox". The page is written for Chrome; this only swaps
-// which of its links are shown. It reads the browser's name in the page and sends or stores nothing.
-(() => {
-  if (!/\bFirefox\//.test(navigator.userAgent)) return;
-  for (const el of document.querySelectorAll(".install [data-for]")) el.hidden = el.dataset.for !== "firefox";
-})();
-
 (() => {
   const SAY = {
     en: ["This page is also in English.", "Close"],

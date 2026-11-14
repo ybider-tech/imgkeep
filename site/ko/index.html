@@ -48,6 +48,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/ko/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep","https://www.youtube.com/@Imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/ko/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeep은 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 지금 Imgkeep이 제공하는 모든 기능은 무료이며, 광고도 제한도 없습니다. 추가 기능을 담은 유료 Imgkeep Pro를 준비 중이지만, 지금의 기능은 계속 무료입니다."}},{"@type":"Question","name":"Imgkeep이 제 이미지를 업로드하나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 이미지는 사용자의 컴퓨터에서 변환되어 지정한 폴더에 바로 저장됩니다. Imgkeep이 보내는 것은 어떤 기능을 사용했고 어떤 저장이 실패했는지에 대한 하루 한 번의 익명 횟수뿐이며, 옵션에서 끌 수 있습니다."}},{"@type":"Question","name":"어떤 형식으로 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, GIF(애니메이션 유지), PDF, 그리고 원본 형식입니다. 요즘 많은 사이트가 제공하는 WebP와 AVIF 이미지도 변환하며, PNG로 복사를 쓰면 이미지가 클립보드에 담깁니다."}},{"@type":"Question","name":"이미지에서 색상 팔레트를 뽑을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 이미지를 오른쪽 버튼으로 클릭하고 Imgkeep, 색상 팔레트 보기를 차례로 고르세요. 주요 색상 5개, 8개, 12개를 비중이 큰 순서대로 보여줍니다. 색을 클릭하면 HEX, RGB, HSL로 복사할 수 있고, 전체를 CSS 변수, Tailwind, JSON으로도 복사할 수 있습니다. PNG 색상표, GIMP 팔레트, Adobe 스와치로 저장할 수도 있습니다. 모든 계산은 내 컴퓨터에서 이루어집니다."}},{"@type":"Question","name":"Instagram이나 Pinterest처럼 사이트가 가려 놓은 이미지도 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 사진을 오른쪽 클릭하고 Imgkeep: 여기서 이미지 찾기를 선택하세요. Imgkeep이 그 페이지를 한 번 살펴보고 클릭한 자리의 사진을 가장 큰 크기로 찾아 바로 저장할 수 있게 엽니다. 직접 켜기 전까지는 꺼져 있고, 페이지를 바꾸는 일은 없습니다."}},{"@type":"Question","name":"이미 컴퓨터에 있는 이미지도 변환할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. imgkeep.app/convert/의 무료 이미지 변환기를 사용하세요. 파일을 끌어다 놓고 PNG, JPG, WebP, AVIF, GIF, PDF, ICO 중에서 고른 다음 다운로드하거나 PNG로 복사하면 됩니다. 브라우저에서 실행되므로 업로드가 없고 가입도 필요 없습니다. 휴대폰에서도 작동합니다."}},{"@type":"Question","name":"어떤 브라우저에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"Imgkeep은 Google Chrome 116 이상, Microsoft Edge, Firefox 140 이상에서 51개 언어로 쓸 수 있으며, 각 브라우저의 부가 기능 스토어에서 무료로 받을 수 있습니다. Firefox는 미리 고른 폴더에 저장할 수 없어서, 이미지가 다운로드 폴더나 매번 고른 위치에 저장됩니다."}},{"@type":"Question","name":"페이지의 모든 이미지를 한 번에 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. Imgkeep은 오른쪽 버튼으로 클릭한 이미지 하나를 저장합니다. 페이지 전체를 받으려면 일괄 다운로더가 필요합니다."}}]}]}
   </script>
+  <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
 </head>
 <body class="home">
@@ -73,11 +74,9 @@
         <h1 id="hero-title"><span class="eyebrow">이미지를 PNG, JPG, WebP, GIF, PDF로 저장</span> <span class="display">모든 이미지를. <span class="accent">원하는 형식으로.</span></span></h1>
         <p class="lead">Imgkeep은 웹 이미지를 PNG, JPG, WebP, GIF, PDF로 저장하는 무료 Chrome·Edge·Firefox 확장 프로그램입니다. 우클릭하면 내 기기에서 변환해 다운로드 폴더나 내가 고른 폴더에 저장합니다.</p>
         <div class="install">
-          <a class="cta" id="install" data-for="chrome" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chrome에 추가 — 무료</a>
-          <a class="cta" data-for="firefox" hidden href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero-firefox">Firefox에 추가 — 무료</a>
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chrome에 추가 — 무료</a>
           <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge용도 있습니다 <span aria-hidden="true">↗</span></a>
-          <a class="cta-alt" data-for="chrome" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Firefox용도 있습니다 <span aria-hidden="true">↗</span></a>
-          <a class="cta-alt" data-for="firefox" hidden href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero-firefox">Chrome용도 있습니다 <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Firefox용도 있습니다 <span aria-hidden="true">↗</span></a>
         </div>
         <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
         <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Chrome Web Store에서 5점 만점에 5.0점"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · Chrome Web Store 평점</a></p>
@@ -281,11 +280,9 @@
         <h2 id="final-title">원하는 형식으로 저장해 볼까요?</h2>
         <div>
           <div class="install">
-            <a class="cta" data-for="chrome" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chrome에 추가 — 무료</a>
-            <a class="cta" data-for="firefox" hidden href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final-firefox">Firefox에 추가 — 무료</a>
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chrome에 추가 — 무료</a>
             <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge용도 있습니다 <span aria-hidden="true">↗</span></a>
-            <a class="cta-alt" data-for="chrome" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Firefox용도 있습니다 <span aria-hidden="true">↗</span></a>
-            <a class="cta-alt" data-for="firefox" hidden href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final-firefox">Chrome용도 있습니다 <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Firefox용도 있습니다 <span aria-hidden="true">↗</span></a>
           </div>
           <p class="trust">계정 불필요 <span aria-hidden="true">·</span> 업로드 없음 <span aria-hidden="true">·</span> 오픈소스</p>
         </div>

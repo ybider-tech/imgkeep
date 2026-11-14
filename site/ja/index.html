@@ -48,6 +48,7 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://imgkeep.app/#org","name":"Imgkeep","url":"https://imgkeep.app/ja/","logo":"https://imgkeep.app/icon128.png","email":"helloimgkeep@gmail.com","sameAs":["https://github.com/ybider-tech/imgkeep","https://www.producthunt.com/products/imgkeep","https://www.youtube.com/@Imgkeep"]},{"@type":"WebSite","@id":"https://imgkeep.app/#site","name":"Imgkeep","url":"https://imgkeep.app/ja/","publisher":{"@id":"https://imgkeep.app/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Imgkeepは無料ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。現在Imgkeepができることはすべて無料で、広告も制限もありません。追加機能を備えた有料のImgkeep Proを予定していますが、今の機能はこれからも無料のままです。"}},{"@type":"Question","name":"Imgkeepは画像をアップロードしますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。画像はすべてお使いのパソコン上で変換され、そのまま選んだフォルダに保存されます。Imgkeepが送信するのは、どの機能が使われ、どの保存が失敗したかを示す匿名の1日1回の集計だけで、これもオプションでオフにできます。"}},{"@type":"Question","name":"どの形式で保存できますか？","acceptedAnswer":{"@type":"Answer","text":"PNG、JPG、WebP、GIF（アニメーションを保持）、PDF、または元の形式です。多くのサイトが配信するようになったWebPやAVIFの画像も変換でき、「PNGとしてコピー」で画像をクリップボードに入れられます。"}},{"@type":"Question","name":"画像からカラーパレットを取得できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。画像を右クリックしてImgkeepを選び、カラーパレットを取得を開きます。主要な5色、8色、12色が面積の大きい順に表示されます。色をクリックするとHEX、RGB、HSLでコピーでき、まとめてCSS変数、Tailwind、JSONとしてコピーすることもできます。PNG、GIMPパレット、Adobeスウォッチとして保存も可能です。すべてあなたのパソコン上で計算されます。"}},{"@type":"Question","name":"InstagramやPinterestのように、サイトが覆っている画像も保存できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。写真を右クリックして「Imgkeep: ここで画像を探す」を選びます。Imgkeepはそのページを一度だけ調べ、クリックした場所にある写真を最大サイズで見つけて、保存できる状態で開きます。オンにするまで動作せず、ページを書き換えることもありません。"}},{"@type":"Question","name":"すでにパソコンにある画像を変換できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。imgkeep.app/convert/ の無料画像コンバーターをお使いください。ファイルをドロップして、PNG、JPG、WebP、AVIF、GIF、PDF、ICOから形式を選び、ダウンロードするか、PNGとしてコピーします。ブラウザ上で動くので、アップロードはなく、登録も不要です。スマートフォンでも使えます。"}},{"@type":"Question","name":"どのブラウザで使えますか？","acceptedAnswer":{"@type":"Answer","text":"ImgkeepはGoogle Chrome 116以降、Microsoft Edge、Firefox 140以降で、51言語に対応しています。どのブラウザでも、それぞれのアドオンストアから無料で入手できます。Firefoxでは、あらかじめ選んだフォルダに保存できないため、画像はダウンロードフォルダか、毎回選んだ場所に保存されます。"}},{"@type":"Question","name":"ページ上のすべての画像を一度に保存できますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。Imgkeepは右クリックした1枚の画像を保存します。ページ全体をまとめて保存するには一括ダウンローダーが必要です。"}}]}]}
   </script>
+  <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
 </head>
 <body class="home">
@@ -73,11 +74,9 @@
         <h1 id="hero-title"><span class="eyebrow">画像をPNG、JPG、WebP、GIF、PDFで保存</span> <span class="display">どんな画像も。<span class="accent">好きな形式で。</span></span></h1>
         <p class="lead">Imgkeepは、ウェブ上の画像をPNG、JPG、WebP、GIF、PDFで保存できる無料のChrome・Edge・Firefox拡張機能です。右クリックするだけで、お使いのデバイス上で変換し、ダウンロードフォルダか選んだフォルダに保存します。</p>
         <div class="install">
-          <a class="cta" id="install" data-for="chrome" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chromeに追加 — 無料</a>
-          <a class="cta" data-for="firefox" hidden href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero-firefox">Firefoxに追加 — 無料</a>
+          <a class="cta" id="install" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Chromeに追加 — 無料</a>
           <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge版もあります <span aria-hidden="true">↗</span></a>
-          <a class="cta-alt" data-for="chrome" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Firefox版もあります <span aria-hidden="true">↗</span></a>
-          <a class="cta-alt" data-for="firefox" hidden href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero-firefox">Chrome版もあります <span aria-hidden="true">↗</span></a>
+          <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=hero">Firefox版もあります <span aria-hidden="true">↗</span></a>
         </div>
         <!-- Copied by hand from the store listing (no scripts or third-party requests here): update it if the rating drops below 5.0. Checked 2026-10-12. -->
         <p class="rating"><a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=rating" aria-label="Chrome Web Storeで5点満点中5.0の評価"><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> · Chrome Web Storeでの評価</a></p>
@@ -281,11 +280,9 @@
         <h2 id="final-title">好きな形式で保存しませんか？</h2>
         <div>
           <div class="install">
-            <a class="cta" data-for="chrome" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chromeに追加 — 無料</a>
-            <a class="cta" data-for="firefox" hidden href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final-firefox">Firefoxに追加 — 無料</a>
+            <a class="cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Chromeに追加 — 無料</a>
             <a class="cta-alt" href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd">Edge版もあります <span aria-hidden="true">↗</span></a>
-            <a class="cta-alt" data-for="chrome" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Firefox版もあります <span aria-hidden="true">↗</span></a>
-            <a class="cta-alt" data-for="firefox" hidden href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final-firefox">Chrome版もあります <span aria-hidden="true">↗</span></a>
+            <a class="cta-alt" href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=home&amp;utm_campaign=final">Firefox版もあります <span aria-hidden="true">↗</span></a>
           </div>
           <p class="trust">アカウント不要 <span aria-hidden="true">·</span> アップロードなし <span aria-hidden="true">·</span> オープンソース</p>
         </div>
