@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.13.0 — unreleased
+## 0.13.0 — 2026-11-14
 
 - **Images from sites that refuse hotlinking now save.** Some sites answer 403 (or 401) when Imgkeep asks for an image by itself, because they only hand it to their own pages. When that happens, the site question now also offers to ask the way your browser does: by telling the site which site you were on (the site, not the page), for that one image. It uses one new optional permission, `declarativeNetRequestWithHostAccess`: off until you click Allow, no install warning, a temporary rule that matches only that image request and only requests Imgkeep's own pages make, removed as soon as the request ends (`refererStep` in `background.js`). The first answer is still the one explained if the retry fails too. New string `askHostReferer` in 50 languages (written in-session: the translation API had no credit). Tests: `tests/fixtures.spec.mjs` (a hotlink fixture saves with the permission, asks without it, is tried once, leaves no rule behind). Permission and privacy text updated first: `PERMISSIONS.md`, `extension/PRIVACY.md`, `site/privacy.html`.
 - **Anonymous counts, so the next release can rank the work:** for a failed save with an HTTP answer, `fail_http_403` (refused: 401 or 403), `fail_http_404` (gone: 404 or 410) or `fail_http_other`, next to `fail_http`; and `referer_asked` and `referer_saved` for the retry above. Counts only, listed in the privacy policy.
