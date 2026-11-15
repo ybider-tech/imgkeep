@@ -154,7 +154,8 @@ test.describe("in the extension", () => {
 
   test("the menu is called Imgkeep and has Get colour palette, marked New after an update", async () => {
     expect(await ctx.sw.evaluate(() => chrome.i18n.getMessage("menuParent"))).toBe("Imgkeep");
-    expect(await ctx.sw.evaluate(() => globalThis.imgkeepMenuTitles.get("imgkeep-palette"))).toBe("Get colour palette");
+    // The menus are built when the install event fires, which can come after the worker is ready (often on Windows).
+    await expect.poll(() => ctx.sw.evaluate(() => globalThis.imgkeepMenuTitles.get("imgkeep-palette") ?? null)).toBe("Get colour palette");
     await ctx.sw.evaluate(() => globalThis.imgkeepOnInstalled({ reason: "update", previousVersion: "0.10.2" }));
     expect(await ctx.sw.evaluate(() => globalThis.imgkeepMenuTitles.get("imgkeep-palette"))).toBe("Get colour palette ✨ New");
     await ctx.sw.evaluate(() => chrome.storage.local.remove("menuNew").then(() => globalThis.imgkeepRefreshMenus()));
