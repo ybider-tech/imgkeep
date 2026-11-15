@@ -314,6 +314,43 @@ for (const [browserName, userAgent, host] of [
   });
 }
 
+test("on a phone, no dead-end install links: the converter instead, in the page's language", async ({ browser }) => {
+  const context = await browser.newContext({
+    userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    viewport: { width: 390, height: 844 },
+    hasTouch: true,
+  });
+  const page = await context.newPage();
+  const storeLinks = () =>
+    page.locator('a[href*="chromewebstore.google.com"], a[href*="microsoftedge.microsoft.com"], a[href*="addons.mozilla.org"]')
+      .evaluateAll((as) => as.filter((a) => !a.closest(".rating, .cv-hook")).map((a) => a.textContent.trim()));
+  await page.goto(`${server.url}/index.html`);
+  await expect(page.locator(".install a.cta")).toHaveCount(2);
+  await expect.poll(() => page.locator(".install a.cta").first().textContent()).toBe("Open the free converter");
+  expect(await page.locator(".install a.cta").first().getAttribute("href")).toBe("/convert/");
+  await expect(page.locator(".install .mobile-note").first()).toHaveText(/^Imgkeep is an extension for computers\./);
+  await expect(page.locator("header a.get")).toHaveCount(0);
+  expect(await storeLinks()).toEqual([]); // only the rating line still names the Chrome Web Store
+  // A guide page: its button and the "Works in Chrome" note give way to the converter.
+  await page.goto(`${server.url}/save-image-as-pdf/index.html`);
+  await expect.poll(() => page.locator("main a.cta").textContent()).toBe("Open the free converter");
+  await expect(page.locator("main", { hasText: "Works in Chrome 116" })).toHaveCount(0);
+  // A converter: the tool is right above.
+  await page.goto(`${server.url}/convert/index.html`);
+  await expect(page.locator(".mobile-note")).toHaveText("On a phone? The tool above works right here, with nothing to install.");
+  expect(await storeLinks()).toEqual([]); // the FAQ's "Imgkeep" link goes to the download page instead
+  await expect(page.locator(".cv-hook")).toBeHidden();
+  // In German, to the German converter.
+  await page.goto(`${server.url}/de/index.html`);
+  await expect.poll(() => page.locator(".install a.cta").first().textContent()).toBe("Kostenlosen Konverter öffnen");
+  expect(await page.locator(".install a.cta").first().getAttribute("href")).toBe("/de/convert/");
+  // The download page still lists the stores, with the line above them.
+  await page.goto(`${server.url}/download/`);
+  await expect(page.locator(".mobile-note")).toHaveText(/^Imgkeep is an extension for computers\./);
+  await expect(page.locator(".store a.cta")).toHaveCount(3);
+  await context.close();
+});
+
 test("the download page links all three stores", async ({ page }) => {
   await page.goto(`${server.url}/download/`);
   await expect(page.locator('.store a[href^="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl"]')).toHaveCount(1);
