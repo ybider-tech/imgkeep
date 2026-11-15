@@ -61,8 +61,8 @@ test("in the extension: read from the page and saved, or the ask window asks for
   const tabId = await ctx.sw.evaluate(() => chrome.tabs.query({}).then((t) => t[0].id));
   const result = await ctx.sw.evaluate(([url, pageUrl, tabId]) => globalThis.imgkeepRunJob({ url, pageUrl, tabId, frameId: 0, format: "jpg" }, { interactive: false }), [url, pageUrl, tabId]);
   expect(result, JSON.stringify(result)).toMatchObject({ ok: true });
-  const [d] = await ctx.sw.evaluate((id) => chrome.downloads.search({ id }), result.downloadId);
-  expect(d.filename).toMatch(/\.jpg$/);
+  // The browser fills in the file's name a moment after the download starts.
+  await expect.poll(() => ctx.sw.evaluate((id) => chrome.downloads.search({ id }).then(([d]) => d?.filename ?? ""), result.downloadId)).toMatch(/\.jpg$/);
 
   // Without access to the page: the ask window explains and asks for this one site.
   await ctx.sw.evaluate(() => (globalThis.denyPage = true));
