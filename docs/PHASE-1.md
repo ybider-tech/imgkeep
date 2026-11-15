@@ -35,6 +35,7 @@ Step 0 ranks the work by real failure data (anonymous counts in PostHog) before 
 | 0.14.0 "Original size" | 1.2 resolver and CDN rules with an Options toggle; 1.8 tokens | announce first: "or its full-size version on the same site" |
 | 0.15.0 "Control" | 1.10 Alt+S and toolbar path, 1.3 extension, 1.5 APNG and animation hint, 1.6 AVIF slider | none |
 | Trust track (parallel; CI and docs) | 1.11, 1.13, `VERIFY.md`; 1.12 Options additions ship with a later extension release | Yaron writes or approves the pledge wording |
+| 0.16.0 "Pro" (after Phase 1) | Presets, file-size targets (built, hidden), one-click preset; licence key in Options | announce first: how buying works; Yaron picks provider and price |
 
 ## Task detail
 
@@ -62,6 +63,21 @@ Step 0 ranks the work by real failure data (anonymous counts in PostHog) before 
   (install-time or optional) grew without a CHANGELOG "Permission changes" entry.
 - **Strings.** Every new user-facing string goes into 50 locales in-session; keep new strings few.
 - **Tests.** Unit-level checks run in Playwright like the existing `settings.spec.mjs`; E2E uses the fixture pages.
+
+## 0.16.0 "Pro" (added 2026-11-15)
+
+The first release after Phase 1. Scope (from the vault's `Imgkeep Pro` decision): presets, file-size targets
+(`encodeUnder` in `lib/image.js`, already built and hidden) and the one-click preset. Save all images on a page,
+rules per site and the log come in later Pro releases.
+
+- **Licence:** a signed key checked offline in the extension (no network call from the extension); bought through a
+  merchant of record's hosted checkout linked from `site/pro.html`. Options and fees: vault
+  `Output/Decisions/Imgkeep Pro - Payment Options.md`.
+- **Phase 1 must not give Pro away.** Pro features must never have been free: Alt+S (0.15.0) saves in the last-used
+  format, never a chosen preset; Original size (0.14.0) and the AVIF slider (0.15.0) stay single free settings,
+  not saved combinations.
+- **Before building:** provider and price chosen, store rules on paid features checked, privacy policy "Buying Pro"
+  section announced first, waitlist count checked (if near zero, 0.16.0 becomes another free release and Pro moves).
 
 ## Deferred
 
