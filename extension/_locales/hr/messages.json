@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Tokeni: <code>{name}</code> izvorni naziv, <code>{host}</code> stranica, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> i <code>{h}</code> veličina u pikselima. Postojeće datoteke nikada se ne prepisuju."
   },
+  "optTokensMore": {
+    "message": "Također: <code>{site}</code> stranica na kojoj ste bili, <code>{title}</code> naslov te stranice (na stranicama koje ste dopustili), <code>{original}</code> vlastiti naziv datoteke s nastavkom, <code>{n}</code> broj koji raste sa svakim spremanjem."
+  },
   "optPreviewLabel": {
     "message": "Pretpregled za summer-banner sa shop.example.com, 1600×900, kao PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Neobavezno, u pikselima. Šire slike smanjuju se da stanu, uz zadržavanje omjera; manje se nikad ne povećavaju. Izvorni format uvijek se sprema takav kakav jest."
+  },
+  "optFullSizeLabel": {
+    "message": "Spremi verziju u punoj veličini"
+  },
+  "optFullSizeHint": {
+    "message": "Stranice poput Pinteresta, X-a, Etsyja, Reddita, Wikipedije te mnoge trgovine i blogovi često prikazuju manju kopiju slike. Kad je ovo uključeno, Imgkeep umjesto nje traži datoteku u punoj veličini od iste usluge za slike. Ako je ne može dobiti, sprema sliku na koju ste kliknuli, kao i dosad."
   },
   "optSitesTitle": {
     "message": "Stranice kojima ste dopustili pristup"

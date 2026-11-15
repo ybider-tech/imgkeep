@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Variabler: <code>{name}</code> originalnamn, <code>{host}</code> webbplats, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> och <code>{h}</code> storlek i pixlar. Befintliga filer skrivs aldrig över."
   },
+  "optTokensMore": {
+    "message": "Dessutom: <code>{site}</code> webbplatsen du var på, <code>{title}</code> sidans titel (på webbplatser du har tillåtit), <code>{original}</code> filens eget namn med filändelse, <code>{n}</code> ett tal som ökar för varje sparning."
+  },
   "optPreviewLabel": {
     "message": "Förhandsvisning för summer-banner från shop.example.com, 1600×900, som PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Valfritt, i pixlar. Bredare bilder skalas ned så att de får plats, med bibehållna proportioner; mindre bilder förstoras aldrig. Originalformat sparas alltid som det är."
+  },
+  "optFullSizeLabel": {
+    "message": "Spara versionen i full storlek"
+  },
+  "optFullSizeHint": {
+    "message": "Webbplatser som Pinterest, X, Etsy, Reddit, Wikipedia och många butiker och bloggar visar ofta en mindre kopia av en bild. När detta är på ber Imgkeep i stället samma bildtjänst om filen i full storlek. Får den inte tag på den sparar den bilden du klickade på, som tidigare."
   },
   "optSitesTitle": {
     "message": "Webbplatser du har tillåtit"

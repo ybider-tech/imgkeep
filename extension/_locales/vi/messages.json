@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Token: <code>{name}</code> tên gốc, <code>{host}</code> trang web, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> và <code>{h}</code> kích thước tính bằng pixel. Tệp đã có sẽ không bao giờ bị ghi đè."
   },
+  "optTokensMore": {
+    "message": "Ngoài ra: <code>{site}</code> trang bạn đang xem, <code>{title}</code> tiêu đề của trang đó (trên các trang bạn đã cho phép), <code>{original}</code> tên gốc của tệp kèm phần mở rộng, <code>{n}</code> một số tăng dần sau mỗi lần lưu."
+  },
   "optPreviewLabel": {
     "message": "Xem trước cho summer-banner từ shop.example.com, 1600×900, dạng PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Tùy chọn, tính bằng pixel. Ảnh rộng hơn sẽ được thu nhỏ cho vừa, giữ nguyên tỉ lệ; ảnh nhỏ hơn không bao giờ bị phóng to. Định dạng gốc luôn được lưu nguyên trạng."
+  },
+  "optFullSizeLabel": {
+    "message": "Lưu phiên bản kích thước đầy đủ"
+  },
+  "optFullSizeHint": {
+    "message": "Các trang như Pinterest, X, Etsy, Reddit, Wikipedia và nhiều cửa hàng, blog thường hiển thị bản sao nhỏ hơn của hình ảnh. Khi bật tùy chọn này, Imgkeep sẽ yêu cầu chính dịch vụ hình ảnh đó gửi tệp kích thước đầy đủ thay thế. Nếu không lấy được, Imgkeep sẽ lưu hình ảnh bạn đã nhấp như trước đây."
   },
   "optSitesTitle": {
     "message": "Trang bạn đã cho phép"

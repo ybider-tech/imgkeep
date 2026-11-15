@@ -17,7 +17,7 @@ test("name, host and extension from URLs", () => {
 
 test("tokens and templates", () => {
   const t = tokensFor({ url: "https://www.example.com/cat.png", width: 10, height: 20, now });
-  expect(t).toEqual({ name: "cat", host: "example.com", date: "2026-09-24", time: "090507", w: "10", h: "20" });
+  expect(t).toEqual({ name: "cat", host: "example.com", site: "", title: "", original: "cat.png", n: "", date: "2026-09-24", time: "090507", w: "10", h: "20" });
   expect(fillTemplate("{date}_{name}-{w}x{h}", t)).toBe("2026-09-24_cat-10x20");
   // Unknown size (Original format) drops the size token and its separator.
   expect(fillTemplate("{name}-{w}x{h}", { ...t, w: "", h: "" })).toBe("cat");

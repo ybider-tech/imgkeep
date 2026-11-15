@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Pladsholdere: <code>{name}</code> oprindeligt navn, <code>{host}</code> websted, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> og <code>{h}</code> størrelse i pixels. Eksisterende filer overskrives aldrig."
   },
+  "optTokensMore": {
+    "message": "Desuden: <code>{site}</code> siden, du var på, <code>{title}</code> sidens titel (på sider, du har tilladt), <code>{original}</code> filens eget navn med filtype, <code>{n}</code> et tal, der stiger for hver gemning."
+  },
   "optPreviewLabel": {
     "message": "Eksempel for summer-banner fra shop.example.com, 1600×900, som PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Valgfrit, i pixels. Bredere billeder skaleres ned, så de passer, med samme form; mindre billeder forstørres aldrig. Oprindeligt format gemmes altid, som det er."
+  },
+  "optFullSizeLabel": {
+    "message": "Gem versionen i fuld størrelse"
+  },
+  "optFullSizeHint": {
+    "message": "Sider som Pinterest, X, Etsy, Reddit, Wikipedia og mange butikker og blogs viser ofte en mindre kopi af et billede. Når dette er slået til, beder Imgkeep i stedet den samme billedtjeneste om filen i fuld størrelse. Kan den ikke få den, gemmer den billedet, du klikkede på, som før."
   },
   "optSitesTitle": {
     "message": "Websteder, du har tilladt"

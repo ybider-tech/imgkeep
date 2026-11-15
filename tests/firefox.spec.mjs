@@ -120,6 +120,22 @@ test.describe("in Firefox", () => {
     expect((await saved("photo.pdf")).subarray(0, 5).toString()).toBe("%PDF-");
   });
 
+  test("Save the full-size version: the background page fetches the full-size file, or falls back quietly", async () => {
+    await page.evaluate(() => chrome.storage.sync.set({ originalSize: true, filenameTemplate: "ff-{name}" }));
+    try {
+      const results = {
+        ...(await runAll(`${cors.url}/wp-content/uploads/full/photo-30x20.png`, ["jpg"])),
+        ...(await runAll(`${cors.url}/wp-content/uploads/missing/photo-30x20.png`, ["webp"])),
+      };
+      expect(results.jpg).toMatchObject({ ok: true, fromOriginal: true, width: 300, height: 200 });
+      expect(results.webp).toMatchObject({ ok: true, fromOriginal: false, width: 30, height: 20 });
+      expect((await saved("ff-photo.jpg"))[0]).toBe(0xff);
+      expect((await saved("ff-photo-30x20.webp")).subarray(8, 12).toString()).toBe("WEBP");
+    } finally {
+      await page.evaluate(() => chrome.storage.sync.remove(["originalSize", "filenameTemplate"]));
+    }
+  });
+
   test("More options formats: AVIF (the WebAssembly encoder), ICO and BMP", async () => {
     const results = await runAll(`${cors.url}/photo.png`, ["avif", "ico", "bmp"]);
     for (const [format, result] of Object.entries(results)) expect(result, format).toMatchObject({ ok: true });

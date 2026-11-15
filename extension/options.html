@@ -109,6 +109,7 @@
           Tokens: <code>{name}</code> original name, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>,
           <code>{w}</code> and <code>{h}</code> size in pixels. Existing files are never overwritten.
         </p>
+        <p class="hint" data-i18n-html="optTokensMore">Also: <code>{site}</code> the site you were on, <code>{title}</code> its page title (on sites you've allowed), <code>{original}</code> the file's own name with its extension, <code>{n}</code> a number that counts up with each save.</p>
       </div>
       <p class="field" style="margin-bottom:0"><span class="muted" id="previewLabel" data-i18n="optPreviewLabel">Preview for summer-banner from shop.example.com, 1600×900, as PNG:</span></p>
       <div class="preview mono" id="preview" aria-labelledby="previewLabel"></div>
@@ -142,6 +143,10 @@
         <input type="number" id="maxWidth" name="maxWidth" min="1" step="1" inputmode="numeric" placeholder="Original size" data-i18n-placeholder="optMaxWidthPlaceholder" aria-describedby="maxWidthHint">
         <p class="hint" id="maxWidthHint" data-i18n="optMaxWidthHint">Optional, in pixels. Wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Original format is always saved as it is.</p>
       </div>
+      <label class="choice">
+        <input type="checkbox" id="originalSize" name="originalSize">
+        <span><span data-i18n="optFullSizeLabel">Save the full-size version</span><small data-i18n="optFullSizeHint">Sites like Pinterest, X, Etsy, Reddit, Wikipedia and many shops and blogs often show a smaller copy of an image. With this on, Imgkeep asks the same image service for the full-size file instead. If it can't get it, it saves the image you clicked, as before.</small></span>
+      </label>
     </section>
 
     <section aria-labelledby="h-sites">

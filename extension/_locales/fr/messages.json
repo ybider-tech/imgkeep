@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Balises : <code>{name}</code> nom d'origine, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> et <code>{h}</code> taille en pixels. Les fichiers existants ne sont jamais écrasés."
   },
+  "optTokensMore": {
+    "message": "Aussi : <code>{site}</code> le site où vous étiez, <code>{title}</code> le titre de sa page (sur les sites que vous avez autorisés), <code>{original}</code> le nom propre du fichier avec son extension, <code>{n}</code> un nombre qui augmente à chaque enregistrement."
+  },
   "optPreviewLabel": {
     "message": "Aperçu pour summer-banner depuis shop.example.com, 1600×900, en PNG :"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Facultatif, en pixels. Les images plus larges sont réduites pour tenir, en gardant leurs proportions ; les plus petites ne sont jamais agrandies. Le format d'origine est toujours enregistré tel quel."
+  },
+  "optFullSizeLabel": {
+    "message": "Enregistrer la version en taille réelle"
+  },
+  "optFullSizeHint": {
+    "message": "Des sites comme Pinterest, X, Etsy, Reddit, Wikipédia et de nombreuses boutiques et blogs affichent souvent une copie réduite d'une image. Avec cette option, Imgkeep demande plutôt au même service d'images le fichier en taille réelle. S'il ne peut pas l'obtenir, il enregistre l'image sur laquelle vous avez cliqué, comme avant."
   },
   "optSitesTitle": {
     "message": "Sites autorisés"

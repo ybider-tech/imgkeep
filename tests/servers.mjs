@@ -55,6 +55,13 @@ export function encodePng(width, height, rgba) {
   ]);
 }
 
+// One colour, any size: the full-size and small copies of the "Original size" fixtures.
+const solidPng = (width, height) => {
+  const px = Buffer.alloc(width * height * 4);
+  for (let i = 0; i < px.length; i += 4) px.set([15, 107, 92, 255], i);
+  return encodePng(width, height, px);
+};
+
 let bigPng;
 function big() {
   // Random noise doesn't compress, so the converted PNG is several MB (tests the blob: URL path).
@@ -103,6 +110,17 @@ export function startServer({ cors, root = FIXTURES, port = 0 }) {
         else throw new Error("unknown guarded route");
         res.writeHead(200, jpeg);
         return res.end(body);
+      }
+      // A WordPress-style image service, for "Original size" (lib/cdn-rules.js): photo-30x20.png is the small copy
+      // a page shows; photo.png is the full-size file (300×200) under full/, missing under missing/, and a web
+      // page labelled image/png under html/.
+      const wp = /^\/wp-content\/uploads\/(full|missing|html)\/photo(-30x20)?\.png$/.exec(path);
+      if (wp) {
+        const [, kind, small] = wp;
+        if (!small && kind === "missing") throw new Error("not found");
+        const png = !small && kind === "html" ? Buffer.from("<!doctype html><title>Not here</title>") : solidPng(small ? 30 : 300, small ? 20 : 200);
+        res.writeHead(200, { ...headers, "Content-Type": "image/png", "Cache-Control": "no-store" });
+        return res.end(png);
       }
       if (path === "/big.png") body = big();
       else if (path.includes("..")) throw new Error("bad path");

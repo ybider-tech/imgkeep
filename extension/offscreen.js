@@ -5,7 +5,7 @@ import { getFolder, folderPermission, writeUnique } from "./lib/folder.js";
 import { IS_FIREFOX } from "./lib/browser.js";
 import { JobError } from "./lib/job-error.js";
 import { convert } from "./lib/convert.js";
-import { decode, draw, fitWidth, sniffImageType } from "./lib/image.js";
+import { EXT_BY_TYPE, decode, draw, fitWidth, sniffImageType, typeFromBytes } from "./lib/image.js";
 import { PALETTE_COUNTS, PALETTE_SAMPLE, cleanHexes, extractPalette, toAse, toGpl } from "./lib/palette.js";
 
 // Per job: the fetched source (so More options can preview many times with one download)
@@ -14,7 +14,8 @@ const sources = new Map();
 const pending = new Map();
 const KEEP_MS = 10 * 60 * 1000;
 
-// Only the image the user clicked is ever requested.
+// Only the image the user clicked is ever requested (or, with "Original size" on, its full-size file on the same
+// image service: lib/cdn-rules.js).
 async function fetchImage(url) {
   let res;
   try {
@@ -46,12 +47,29 @@ function forget(map, jobId) {
   map.delete(jobId);
 }
 
-async function sourceFor(jobId, url) {
+// The full-size file, if it can be had without asking anything: fetched, and only kept if it really is an image
+// the browser can open. Anything else (blocked, not found, a web page, a broken file) → null, and the image
+// that was clicked is used as before, with no question and no error.
+async function fetchOriginal(url) {
+  try {
+    const blob = await fetchImage(url);
+    if (!EXT_BY_TYPE[typeFromBytes(new Uint8Array(await blob.slice(0, 16).arrayBuffer()))]) return null;
+    const bitmap = await createImageBitmap(blob);
+    bitmap.close();
+    return blob;
+  } catch {
+    return null;
+  }
+}
+
+// → { blob, fromOriginal }. `original`: the full-size file's address, tried first (see fetchOriginal).
+async function sourceFor(jobId, url, original) {
   const cached = sources.get(jobId);
-  if (cached?.url === url) return cached.blob;
-  const blob = await fetchImage(url);
-  remember(sources, jobId, { url, blob });
-  return blob;
+  if (cached?.url === url && cached.original === (original || null)) return cached;
+  const fromOriginal = original ? await fetchOriginal(original) : null;
+  const entry = { url, original: original || null, blob: fromOriginal || (await fetchImage(url)), fromOriginal: Boolean(fromOriginal) };
+  remember(sources, jobId, entry);
+  return entry;
 }
 
 // The AVIF encoder (vendor/avif), loaded the first time someone saves as AVIF. Its .wasm file is read from
@@ -140,7 +158,7 @@ const handlers = {
   // msg: { jobId, sourceId?, url, mime, quality, background, maxWidth, maxBytes, minQuality, want: "url" | "data" | "none" }
   // sourceId: reuse the image a window already fetched (More options, Copy as PNG).
   async convert(msg) {
-    const input = await sourceFor(msg.sourceId || msg.jobId, msg.url);
+    const { blob: input, fromOriginal } = await sourceFor(msg.sourceId || msg.jobId, msg.url, msg.original);
     const out = await convert(input, { ...msg, avifEncoder: loadAvifEncoder });
     const entry = { blob: out.blob };
     remember(pending, msg.jobId, entry);
@@ -154,6 +172,7 @@ const handlers = {
       ext: out.ext,
       size: out.blob.size,
       sourceType: out.sourceType, // for the anonymous counts: "image/webp" → JPG
+      fromOriginal, // the full-size file was used ("Original size")
     };
     if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
     if (msg.want === "url") result.url = await downloadUrl(entry);
@@ -162,8 +181,8 @@ const handlers = {
 
   // The image's main colours, for 5, 8 and 12 at once (switching in the window needs no new request),
   // and a small preview of the image, so the window never loads it from the web itself.
-  async palette({ jobId, url }) {
-    const input = await sourceFor(jobId, url);
+  async palette({ jobId, url, original }) {
+    const { blob: input } = await sourceFor(jobId, url, original);
     const image = await decode(input);
     let sample;
     let thumb;
@@ -184,6 +203,16 @@ const handlers = {
       for (const c of [sample, thumb]) if (c) c.width = c.height = 0;
       image.done();
     }
+  },
+
+  // "Original format" with "Original size" on: the full-size file, exactly as the site sends it, held like a
+  // converted file until it's saved. → { ext, url } or { found: false } (then the clicked image is saved as before).
+  async originalFile({ jobId, original }) {
+    const blob = await fetchOriginal(original);
+    if (!blob) return { found: false };
+    const entry = { blob };
+    remember(pending, jobId, entry);
+    return { found: true, ext: EXT_BY_TYPE[typeFromBytes(new Uint8Array(await blob.slice(0, 16).arrayBuffer()))], url: await downloadUrl(entry) };
   },
 
   // A palette as a file (PNG swatch strip, .gpl or .ase), held like a converted image until it's saved.

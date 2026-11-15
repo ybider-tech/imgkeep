@@ -1,7 +1,8 @@
 // Service worker: context menu, save jobs, and the extension's small windows
 // (ask: a save needs your OK; copy: Copy as PNG; editor: More options; palette: Get colour palette).
 
-import { FORMATS, GIF_LIMITS, getSettings as storedSettings, buildTarget, targetPath, extFromUrl, clampQuality, cleanColour } from "./lib/settings.js";
+import { FORMATS, GIF_LIMITS, getSettings as storedSettings, buildTarget, targetPath, extFromUrl, clampQuality, cleanColour, usesNumber } from "./lib/settings.js";
+import { originalUrl } from "./lib/cdn-rules.js";
 import { cleanMaxWidth } from "./lib/image.js";
 import { JobError } from "./lib/job-error.js";
 
@@ -291,7 +292,8 @@ async function menuClicked(info, tab) {
     return openRateWindow();
   }
   if (!info.srcUrl) return;
-  let input = { url: info.srcUrl, pageUrl: info.pageUrl, tabId: tab?.id, frameId: info.frameId || 0 };
+  // The tab's title is only there when the browser lets Imgkeep see this page (an allowed site): {title}.
+  let input = { url: info.srcUrl, pageUrl: info.pageUrl, pageTitle: tab?.title || "", tabId: tab?.id, frameId: info.frameId || 0 };
   const action = { "imgkeep-copy": "copy", "imgkeep-palette": "palette", "imgkeep-more": "editor" }[info.menuItemId];
   // A window works on the image's bytes, so a blob: image is read from its page first.
   if (action && input.url.startsWith("blob:")) {
@@ -452,10 +454,33 @@ async function refererStep(job, run) {
   }
 }
 
+// "Original size" (Options, off by default): the full-size file's address, when the image comes from an image
+// service that makes smaller copies (lib/cdn-rules.js). The offscreen document tries it first and quietly uses
+// the clicked image if it can't get it: no new question, no error.
+const originalFor = (job, settings) => (settings.originalSize ? originalUrl(job.url) : null);
+
+// {n}: one number per save that uses it, counting up (kept on this computer). One at a time, so saves
+// finishing together never get the same number.
+let numberQueue = Promise.resolve();
+function nextNumber(settings) {
+  if (!usesNumber(settings)) return Promise.resolve(undefined);
+  const next = numberQueue.then(async () => {
+    const { nameNumber = 0 } = await chrome.storage.local.get("nameNumber");
+    await chrome.storage.local.set({ nameNumber: nameNumber + 1 });
+    return nameNumber + 1;
+  });
+  numberQueue = next.catch(() => {});
+  return next;
+}
+
+// Everything a file name can use, for this job (lib/settings.js buildTarget).
+const nameParts = async (job, settings, url) => ({ settings, url, pageUrl: job.pageUrl, title: job.pageTitle, n: await nextNumber(settings) });
+
 async function convertJob(job, settings, want) {
   const conv = await convertOnce(job, settings, want);
   if (conv.ok || conv.code !== "http" || !["401", "403"].includes(String(conv.detail))) return conv;
-  const step = await refererStep(job, () => convertOnce(job, settings, want)).catch(() => null);
+  // The retry is for the image that was clicked (the full-size file, if any, was already tried).
+  const step = await refererStep(job, () => convertOnce(job, { ...settings, originalSize: false }, want)).catch(() => null);
   if (!step) return conv;
   if (step.ask) return { ok: false, code: "referer", ...step.ask };
   return step.conv.ok ? { ...step.conv, viaReferer: true } : conv; // the first answer is the one to explain
@@ -467,6 +492,7 @@ function convertOnce(job, settings, want) {
     jobId: job.id,
     sourceId: job.sourceId,
     url: job.url,
+    original: originalFor(job, settings),
     mime: FORMATS[job.format].mime,
     ...choicesFor(job, settings),
     want,
@@ -487,11 +513,23 @@ async function failure(job, conv) {
 }
 
 // "Original format" always goes through chrome.downloads, untouched.
+// With "Original size" on, the full-size file instead, when there is one (as the site sends it, also untouched).
 async function saveOriginal(job, settings) {
   if (job.url.startsWith("blob:")) return { ok: false, reason: "error", code: "blob" };
+  const original = originalFor(job, settings);
+  if (original) {
+    const res = await toOffscreen({ type: "originalFile", jobId: job.id, original });
+    if (res.ok && res.found) {
+      const filename = targetPath(buildTarget({ ...(await nameParts(job, settings, original)), ext: res.ext }));
+      const downloadId = await download({ url: res.url, filename, saveAs: settings.saveMode === "ask" });
+      if (res.url.startsWith("blob:")) blobDownloads.set(downloadId, job.id);
+      else releaseIfOpen(job.id);
+      return { ok: true, mode: "downloads", downloadId, filename, fromOriginal: true };
+    }
+  }
   const ext = extFromUrl(job.url);
   // Unknown type: let the browser name the file from the server's answer.
-  const filename = ext ? targetPath(buildTarget({ settings, url: job.url, ext })) : "";
+  const filename = ext ? targetPath(buildTarget({ ...(await nameParts(job, settings, job.url)), ext })) : "";
   const downloadId = await download({ url: job.url, filename, saveAs: settings.saveMode === "ask" });
   return { ok: true, mode: "downloads", downloadId, filename };
 }
@@ -507,7 +545,9 @@ async function attempt(job) {
   if (!conv.ok) return failure(job, conv);
 
   // The extension comes from the checked output bytes, never from the menu item alone.
-  const target = buildTarget({ settings, url: job.url, width: conv.width, height: conv.height, ext: conv.ext, name: job.options?.name });
+  // Named after the file that was saved: the full-size one, when "Original size" found it.
+  const url = conv.fromOriginal ? originalFor(job, settings) : job.url;
+  const target = buildTarget({ ...(await nameParts(job, settings, url)), width: conv.width, height: conv.height, ext: conv.ext, name: job.options?.name });
   const size = {
     width: conv.width,
     height: conv.height,
@@ -516,6 +556,7 @@ async function attempt(job) {
     resized: conv.width < conv.sourceWidth,
     sourceType: conv.sourceType,
     viaReferer: Boolean(conv.viaReferer),
+    fromOriginal: Boolean(conv.fromOriginal),
   };
 
   if (mode === "folder") {
@@ -541,6 +582,7 @@ async function runJob(input, { interactive = true } = {}) {
     url: input.url,
     format: input.format,
     pageUrl: input.pageUrl || "",
+    pageTitle: input.pageTitle || "",
     options: input.options,
     sourceId: input.sourceId,
     origin: input.origin, // "editor" for saves from More options (only for counting)
@@ -650,6 +692,7 @@ function countJob(job, result) {
     const keys = [`save_${job.format}`, `mode_${result.mode}`];
     if (result.resized) keys.push("resized");
     if (result.viaReferer) keys.push("referer_saved");
+    if (result.fromOriginal) keys.push("original_size");
     const conversion = conversionKey(result.sourceType, job.format);
     if (conversion) keys.push(conversion);
     if (job.origin === "editor") keys.push("more_options_save");
@@ -781,13 +824,13 @@ const windowHandlers = {
   async save({ jobId, format, options }) {
     if (!WINDOW_FORMATS.includes(format)) throw new JobError("unknown", `Unknown format ${format}`);
     const job = await loadJob(jobId);
-    return runJob({ url: job.url, pageUrl: job.pageUrl, format, options: cleanOptions(options), sourceId: jobId, origin: "editor" });
+    return runJob({ url: job.url, pageUrl: job.pageUrl, pageTitle: job.pageTitle, format, options: cleanOptions(options), sourceId: jobId, origin: "editor" });
   },
 
   // Copy failed: save the same image as PNG the usual way instead.
   async savePng({ jobId, options }) {
     const job = await loadJob(jobId);
-    return runJob({ url: job.url, pageUrl: job.pageUrl, format: "png", options: cleanOptions(options), sourceId: jobId });
+    return runJob({ url: job.url, pageUrl: job.pageUrl, pageTitle: job.pageTitle, format: "png", options: cleanOptions(options), sourceId: jobId });
   },
 
   // The window's job, for windows that open before anything was converted.
@@ -839,7 +882,7 @@ const windowHandlers = {
   async palette({ jobId }) {
     const job = await loadJob(jobId);
     if (job.url.startsWith("blob:")) return { ok: false, reason: "error", code: "blob" };
-    const res = await toOffscreen({ type: "palette", jobId, url: job.url });
+    const res = await toOffscreen({ type: "palette", jobId, url: job.url, original: originalFor(job, await getSettings()) });
     if (!res.ok) {
       const result = await failure(job, res);
       count(result.reason === "host" ? "site_access_asked" : failureKey(res.code));

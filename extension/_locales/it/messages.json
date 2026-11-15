@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Token: <code>{name}</code> nome originale, <code>{host}</code> sito, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> e <code>{h}</code> dimensioni in pixel. I file esistenti non vengono mai sovrascritti."
   },
+  "optTokensMore": {
+    "message": "Inoltre: <code>{site}</code> il sito in cui ti trovavi, <code>{title}</code> il titolo della sua pagina (sui siti che hai consentito), <code>{original}</code> il nome proprio del file con la sua estensione, <code>{n}</code> un numero che aumenta a ogni salvataggio."
+  },
   "optPreviewLabel": {
     "message": "Anteprima per summer-banner da shop.example.com, 1600×900, in PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Facoltativo, in pixel. Le immagini più larghe vengono ridotte per rientrare, mantenendo le proporzioni; quelle più piccole non vengono mai ingrandite. Il formato originale viene sempre salvato com'è."
+  },
+  "optFullSizeLabel": {
+    "message": "Salva la versione a grandezza piena"
+  },
+  "optFullSizeHint": {
+    "message": "Siti come Pinterest, X, Etsy, Reddit, Wikipedia e molti negozi e blog mostrano spesso una copia più piccola dell'immagine. Con questa opzione attiva, Imgkeep chiede invece allo stesso servizio di immagini il file a grandezza piena. Se non riesce a ottenerlo, salva l'immagine su cui hai fatto clic, come prima."
   },
   "optSitesTitle": {
     "message": "Siti che hai autorizzato"

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "ટોકન: <code>{name}</code> મૂળ નામ, <code>{host}</code> સાઇટ, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> અને <code>{h}</code> પિક્સેલમાં માપ. હાલની ફાઇલો કદી બદલાતી નથી."
   },
+  "optTokensMore": {
+    "message": "વધુમાં: <code>{site}</code> તમે જે સાઇટ પર હતા, <code>{title}</code> તેના પેજનું શીર્ષક (તમે મંજૂરી આપેલી સાઇટ્સ પર), <code>{original}</code> એક્સ્ટેન્શન સાથે ફાઇલનું પોતાનું નામ, <code>{n}</code> દરેક સાચવણી સાથે વધતો નંબર."
+  },
   "optPreviewLabel": {
     "message": "shop.example.com પરથી summer-banner, 1600×900, PNG તરીકે — પૂર્વાવલોકન:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "વૈકલ્પિક, પિક્સેલમાં. વધુ પહોળી છબીઓ આકાર જાળવીને સમાય તેટલી નાની કરાય છે; નાની છબીઓ ક્યારેય મોટી થતી નથી. મૂળ ફોર્મેટ હંમેશાં જેમ છે તેમ જ સચવાય છે."
+  },
+  "optFullSizeLabel": {
+    "message": "પૂર્ણ કદનું સંસ્કરણ સાચવો"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest, X, Etsy, Reddit, Wikipedia અને ઘણી દુકાનો અને બ્લૉગ જેવી સાઇટ્સ ઘણી વાર છબીની નાની નકલ બતાવે છે. આ ચાલુ હોય ત્યારે Imgkeep તેના બદલે એ જ છબી સેવા પાસેથી પૂર્ણ કદની ફાઇલ માંગે છે. જો તે ન મળે, તો પહેલાંની જેમ તમે ક્લિક કરેલી છબી સાચવે છે."
   },
   "optSitesTitle": {
     "message": "તમે મંજૂરી આપી હોય તેવી સાઇટ્સ"

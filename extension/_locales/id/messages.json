@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Token: <code>{name}</code> nama asli, <code>{host}</code> situs, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> dan <code>{h}</code> ukuran dalam piksel. File yang sudah ada tidak pernah ditimpa."
   },
+  "optTokensMore": {
+    "message": "Juga: <code>{site}</code> situs tempat Anda berada, <code>{title}</code> judul halamannya (di situs yang Anda izinkan), <code>{original}</code> nama asli file beserta ekstensinya, <code>{n}</code> angka yang bertambah setiap kali menyimpan."
+  },
   "optPreviewLabel": {
     "message": "Pratinjau untuk summer-banner dari shop.example.com, 1600×900, sebagai PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Opsional, dalam piksel. Gambar yang lebih lebar diperkecil agar pas, proporsinya tetap; yang lebih kecil tidak pernah diperbesar. Format asli selalu disimpan apa adanya."
+  },
+  "optFullSizeLabel": {
+    "message": "Simpan versi ukuran penuh"
+  },
+  "optFullSizeHint": {
+    "message": "Situs seperti Pinterest, X, Etsy, Reddit, Wikipedia, serta banyak toko dan blog sering menampilkan salinan gambar yang lebih kecil. Jika ini aktif, Imgkeep meminta file ukuran penuh dari layanan gambar yang sama sebagai gantinya. Jika tidak bisa mendapatkannya, Imgkeep menyimpan gambar yang Anda klik, seperti sebelumnya."
   },
   "optSitesTitle": {
     "message": "Situs yang Anda izinkan"

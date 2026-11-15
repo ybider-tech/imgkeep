@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "标记：<code>{name}</code> 原始名称、<code>{host}</code> 网站、<code>{date}</code>、<code>{time}</code>、<code>{w}</code> 和 <code>{h}</code> 像素尺寸。已有文件绝不会被覆盖。"
   },
+  "optTokensMore": {
+    "message": "另外：<code>{site}</code> 你所在的网站、<code>{title}</code> 该页面的标题（仅限你允许的网站）、<code>{original}</code> 带扩展名的文件原名、<code>{n}</code> 每次保存递增的编号。"
+  },
   "optPreviewLabel": {
     "message": "预览：来自 shop.example.com 的 summer-banner，1600×900，保存为 PNG："
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "可选，单位为像素。更宽的图片会按比例缩小以适应，形状保持不变；较小的图片不会被放大。保存为原格式时始终保持原样。"
+  },
+  "optFullSizeLabel": {
+    "message": "保存完整尺寸版本"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest、X、Etsy、Reddit、维基百科以及许多商店和博客，常常只显示图片的缩小副本。开启后，Imgkeep 会改为向同一个图片服务请求完整尺寸的文件。如果拿不到，就像以前一样保存你点击的图片。"
   },
   "optSitesTitle": {
     "message": "你已允许的网站"

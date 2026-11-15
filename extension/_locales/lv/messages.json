@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Marķieri: <code>{name}</code> sākotnējais nosaukums, <code>{host}</code> vietne, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> un <code>{h}</code> izmērs pikseļos. Esošie faili nekad netiek pārrakstīti."
   },
+  "optTokensMore": {
+    "message": "Vēl: <code>{site}</code> vietne, kurā bijāt, <code>{title}</code> tās lapas virsraksts (atļautajās vietnēs), <code>{original}</code> faila paša nosaukums ar paplašinājumu, <code>{n}</code> skaitlis, kas pieaug ar katru saglabāšanu."
+  },
   "optPreviewLabel": {
     "message": "Priekšskatījums attēlam summer-banner no shop.example.com, 1600×900, kā PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Neobligāti, pikseļos. Platāki attēli tiek samazināti, lai ietilptu, saglabājot proporcijas; mazāki nekad netiek palielināti. Sākotnējais formāts vienmēr tiek saglabāts tāds, kāds ir."
+  },
+  "optFullSizeLabel": {
+    "message": "Saglabāt pilna izmēra versiju"
+  },
+  "optFullSizeHint": {
+    "message": "Tādas vietnes kā Pinterest, X, Etsy, Reddit, Vikipēdija un daudzi veikali un emuāri bieži rāda attēla mazāku kopiju. Kad šis ir ieslēgts, Imgkeep tās vietā pieprasa pilna izmēra failu no tā paša attēlu pakalpojuma. Ja to nevar iegūt, tas kā līdz šim saglabā attēlu, uz kura noklikšķinājāt."
   },
   "optSitesTitle": {
     "message": "Atļautās vietnes"

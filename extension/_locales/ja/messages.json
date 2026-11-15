@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "タグ: <code>{name}</code> 元の名前、<code>{host}</code> サイト、<code>{date}</code>、<code>{time}</code>、<code>{w}</code> と <code>{h}</code> ピクセル単位のサイズ。既存のファイルが上書きされることはありません。"
   },
+  "optTokensMore": {
+    "message": "その他：<code>{site}</code> 閲覧していたサイト、<code>{title}</code> そのページのタイトル（許可したサイトのみ）、<code>{original}</code> 拡張子付きの元のファイル名、<code>{n}</code> 保存のたびに増える番号。"
+  },
   "optPreviewLabel": {
     "message": "shop.example.com の summer-banner（1600×900）を PNG で保存した場合のプレビュー:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "任意、ピクセル単位。これより幅の広い画像は縦横比を保って縮小され、小さい画像は拡大されません。元の形式はそのまま保存されます。"
+  },
+  "optFullSizeLabel": {
+    "message": "フルサイズ版を保存する"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest、X、Etsy、Reddit、Wikipedia や多くのショップやブログでは、画像の縮小コピーが表示されていることがよくあります。オンにすると、Imgkeep は代わりに同じ画像サービスにフルサイズのファイルを求めます。取得できない場合は、これまでどおりクリックした画像を保存します。"
   },
   "optSitesTitle": {
     "message": "許可したサイト"

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "ቶከኖች፦ <code>{name}</code> ዋናው ስም፣ <code>{host}</code> ጣቢያ፣ <code>{date}</code>፣ <code>{time}</code>፣ <code>{w}</code> እና <code>{h}</code> መጠን በፒክሰል። ነባር ፋይሎች በፍጹም አይተኩም።"
   },
+  "optTokensMore": {
+    "message": "በተጨማሪ፦ <code>{site}</code> የነበሩበት ጣቢያ፣ <code>{title}</code> የገጹ ርዕስ (በፈቀዷቸው ጣቢያዎች ላይ)፣ <code>{original}</code> የፋይሉ የራሱ ስም ከቅጥያው ጋር፣ <code>{n}</code> በእያንዳንዱ ማስቀመጥ የሚጨምር ቁጥር።"
+  },
   "optPreviewLabel": {
     "message": "ከ shop.example.com የመጣ summer-banner፣ 1600×900፣ እንደ PNG ሲቀመጥ ቅድመ እይታ፦"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "በአማራጭ፣ በፒክስል። ሰፋ ያሉ ምስሎች ቅርጻቸውን ሳይለቁ እንዲገጥሙ ይቀንሳሉ፤ ያነሱት ፈጽሞ አይለጠጡም። የመጀመሪያው ቅርጸት ሁልጊዜ እንዳለ ይቀመጣል።"
+  },
+  "optFullSizeLabel": {
+    "message": "ሙሉ መጠን ያለውን ስሪት አስቀምጥ"
+  },
+  "optFullSizeHint": {
+    "message": "እንደ Pinterest፣ X፣ Etsy፣ Reddit፣ Wikipedia እና ብዙ ሱቆችና ብሎጎች ያሉ ጣቢያዎች ብዙ ጊዜ የምስል ትንሽ ቅጂ ያሳያሉ። ይህ ሲበራ Imgkeep በምትኩ ሙሉ መጠን ያለውን ፋይል ከዚያው የምስል አገልግሎት ይጠይቃል። ማግኘት ካልቻለ እንደበፊቱ የጠቅ ያደረጉትን ምስል ያስቀምጣል።"
   },
   "optSitesTitle": {
     "message": "የፈቀድካቸው ድረ-ገጾች"

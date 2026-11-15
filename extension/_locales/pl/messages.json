@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Tokeny: <code>{name}</code> oryginalna nazwa, <code>{host}</code> witryna, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> i <code>{h}</code> rozmiar w pikselach. Istniejące pliki nigdy nie są nadpisywane."
   },
+  "optTokensMore": {
+    "message": "Ponadto: <code>{site}</code> witryna, na której byłeś, <code>{title}</code> tytuł jej strony (w witrynach, na które zezwoliłeś), <code>{original}</code> własna nazwa pliku z rozszerzeniem, <code>{n}</code> liczba, która rośnie z każdym zapisem."
+  },
   "optPreviewLabel": {
     "message": "Podgląd dla summer-banner z shop.example.com, 1600×900, jako PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Opcjonalnie, w pikselach. Szersze obrazy są zmniejszane do tej szerokości z zachowaniem proporcji; mniejsze nigdy nie są powiększane. Format oryginalny zawsze zapisujemy bez zmian."
+  },
+  "optFullSizeLabel": {
+    "message": "Zapisuj wersję w pełnym rozmiarze"
+  },
+  "optFullSizeHint": {
+    "message": "Witryny takie jak Pinterest, X, Etsy, Reddit, Wikipedia oraz wiele sklepów i blogów często pokazują mniejszą kopię obrazu. Gdy ta opcja jest włączona, Imgkeep prosi zamiast tego tę samą usługę obrazów o plik w pełnym rozmiarze. Jeśli nie może go pobrać, zapisuje kliknięty obraz, tak jak dotąd."
   },
   "optSitesTitle": {
     "message": "Strony z przyznanym dostępem"

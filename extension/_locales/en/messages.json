@@ -391,6 +391,10 @@
     "message": "Tokens: <code>{name}</code> original name, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> and <code>{h}</code> size in pixels. Existing files are never overwritten.",
     "description": "Keep the <code>{…}</code> tokens exactly."
   },
+  "optTokensMore": {
+    "message": "Also: <code>{site}</code> the site you were on, <code>{title}</code> its page title (on sites you've allowed), <code>{original}</code> the file's own name with its extension, <code>{n}</code> a number that counts up with each save.",
+    "description": "Keep the <code>{…}</code> tokens exactly. {site} is the page's site, {host} (other hint) is the image's own site."
+  },
   "optPreviewLabel": {
     "message": "Preview for summer-banner from shop.example.com, 1600×900, as PNG:",
     "description": "Keep summer-banner and shop.example.com."
@@ -426,6 +430,14 @@
   "optMaxWidthHint": {
     "message": "Optional, in pixels. Wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Original format is always saved as it is.",
     "description": "Hint under the maximum width setting"
+  },
+  "optFullSizeLabel": {
+    "message": "Save the full-size version",
+    "description": "Checkbox in Options: save the full-size file instead of the smaller copy a site shows"
+  },
+  "optFullSizeHint": {
+    "message": "Sites like Pinterest, X, Etsy, Reddit, Wikipedia and many shops and blogs often show a smaller copy of an image. With this on, Imgkeep asks the same image service for the full-size file instead. If it can't get it, it saves the image you clicked, as before.",
+    "description": "Hint under the full-size checkbox. Keep the site names."
   },
   "optSitesTitle": {
     "message": "Sites you've allowed",

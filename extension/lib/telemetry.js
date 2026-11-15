@@ -35,6 +35,7 @@ export const COUNT_KEYS = [
   "fail_http_other", // … any other answer
   "referer_asked", // Imgkeep asked to send the page's address along, for a site that refused the image (since 0.13.0)
   "referer_saved", // a save that only worked after sending the page's address along (since 0.13.0)
+  "original_size", // a save of the full-size file that "Original size" found, instead of the smaller copy shown (since 0.14.0)
   "resized", // a save made smaller by the maximum width
   "last_used", // a save from the "last used" item at the top of the menu
   "installed", // Imgkeep was installed (counted once, on the day of the install; since 0.10.2)

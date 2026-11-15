@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "토큰: <code>{name}</code> 원본 이름, <code>{host}</code> 사이트, <code>{date}</code>, <code>{time}</code>, <code>{w}</code>와 <code>{h}</code> 픽셀 크기. 기존 파일은 덮어쓰지 않습니다."
   },
+  "optTokensMore": {
+    "message": "그 밖에: <code>{site}</code> 보고 있던 사이트, <code>{title}</code> 그 페이지의 제목(허용한 사이트에서만), <code>{original}</code> 확장자를 포함한 파일 원래 이름, <code>{n}</code> 저장할 때마다 늘어나는 번호."
+  },
   "optPreviewLabel": {
     "message": "shop.example.com의 summer-banner, 1600×900, PNG로 저장할 때 미리보기:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "선택 사항, 단위는 픽셀. 더 넓은 이미지는 비율을 유지한 채 맞게 축소되고, 더 작은 이미지는 확대되지 않습니다. 원본 형식은 언제나 그대로 저장됩니다."
+  },
+  "optFullSizeLabel": {
+    "message": "원본 크기 버전 저장"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest, X, Etsy, Reddit, Wikipedia와 많은 쇼핑몰과 블로그는 이미지를 작게 줄인 사본으로 보여 주는 경우가 많습니다. 이 옵션을 켜면 Imgkeep이 대신 같은 이미지 서비스에 원본 크기 파일을 요청합니다. 받지 못하면 이전처럼 클릭한 이미지를 저장합니다."
   },
   "optSitesTitle": {
     "message": "허용한 사이트"

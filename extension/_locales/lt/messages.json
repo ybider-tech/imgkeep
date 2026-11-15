@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Žymenys: <code>{name}</code> – pradinis vardas, <code>{host}</code> – svetainė, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ir <code>{h}</code> – dydis pikseliais. Esami failai niekada neperrašomi."
   },
+  "optTokensMore": {
+    "message": "Taip pat: <code>{site}</code> svetainė, kurioje buvote, <code>{title}</code> jos puslapio pavadinimas (leistose svetainėse), <code>{original}</code> paties failo pavadinimas su plėtiniu, <code>{n}</code> skaičius, kuris didėja su kiekvienu išsaugojimu."
+  },
   "optPreviewLabel": {
     "message": "Peržiūra: summer-banner iš shop.example.com, 1600×900, PNG formatu:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Nebūtina, pikseliais. Platesni paveikslėliai sumažinami, kad tilptų, išlaikant proporcijas; mažesni niekada nedidinami. Pradinis formatas visada įrašomas toks, koks yra."
+  },
+  "optFullSizeLabel": {
+    "message": "Išsaugoti viso dydžio versiją"
+  },
+  "optFullSizeHint": {
+    "message": "Svetainės, tokios kaip Pinterest, X, Etsy, Reddit, Vikipedija, ir daugelis parduotuvių bei tinklaraščių dažnai rodo mažesnę paveikslėlio kopiją. Kai tai įjungta, Imgkeep vietoj jos paprašo tos pačios paveikslėlių paslaugos viso dydžio failo. Jei jo gauti nepavyksta, kaip ir anksčiau išsaugo paveikslėlį, kurį spustelėjote."
   },
   "optSitesTitle": {
     "message": "Svetainės, kurioms suteikėte leidimą"

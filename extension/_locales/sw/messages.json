@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Vitambulisho: <code>{name}</code> jina asili, <code>{host}</code> tovuti, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> na <code>{h}</code> ukubwa kwa pikseli. Faili zilizopo hazibadilishwi kamwe."
   },
+  "optTokensMore": {
+    "message": "Pia: <code>{site}</code> tovuti uliyokuwa, <code>{title}</code> kichwa cha ukurasa wake (kwenye tovuti ulizoruhusu), <code>{original}</code> jina halisi la faili pamoja na kiendelezi chake, <code>{n}</code> nambari inayoongezeka kwa kila uhifadhi."
+  },
   "optPreviewLabel": {
     "message": "Mfano wa summer-banner kutoka shop.example.com, 1600×900, kama PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Si lazima, kwa pikseli. Picha pana zaidi hupunguzwa ili zitoshe, umbo lake likibaki vilevile; ndogo zaidi hazikuzwi kamwe. Muundo wa asili huhifadhiwa kama ulivyo kila wakati."
+  },
+  "optFullSizeLabel": {
+    "message": "Hifadhi toleo la ukubwa kamili"
+  },
+  "optFullSizeHint": {
+    "message": "Tovuti kama Pinterest, X, Etsy, Reddit, Wikipedia na maduka na blogu nyingi mara nyingi huonyesha nakala ndogo ya picha. Ukiwasha hili, Imgkeep huomba faili la ukubwa kamili kutoka kwa huduma ileile ya picha badala yake. Isipolipata, huhifadhi picha uliyobofya, kama awali."
   },
   "optSitesTitle": {
     "message": "Tovuti ulizoruhusu"

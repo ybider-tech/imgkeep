@@ -19,7 +19,7 @@ async function save(values) {
 }
 
 // Live preview with a sample image.
-const SAMPLE = { name: "summer-banner", host: "shop.example.com" };
+const SAMPLE = { name: "summer-banner", host: "shop.example.com", site: "shop.example.com", title: "Summer sale", original: "summer-banner.webp", n: "1" };
 
 function renderPreview() {
   const settings = { subfolder: $("subfolder").value, filenameTemplate: $("filenameTemplate").value };
@@ -134,6 +134,9 @@ async function init() {
     e.target.value = maxWidth || "";
     save({ maxWidth });
   });
+
+  $("originalSize").checked = s.originalSize === true;
+  $("originalSize").addEventListener("change", (e) => save({ originalSize: e.target.checked }));
 
   $("usageCounts").checked = s.usageCounts !== false && (await countsAllowed());
   $("usageCounts").addEventListener("change", async (e) => {

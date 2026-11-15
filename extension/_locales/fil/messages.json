@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Mga token: <code>{name}</code> orihinal na pangalan, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> at <code>{h}</code> sukat sa pixel. Hindi kailanman pinapatungan ang mga file na nandiyan na."
   },
+  "optTokensMore": {
+    "message": "Gayundin: <code>{site}</code> ang site na pinanggalingan mo, <code>{title}</code> ang pamagat ng page nito (sa mga site na pinayagan mo), <code>{original}</code> ang sariling pangalan ng file kasama ang extension nito, <code>{n}</code> isang numerong tumataas sa bawat pag-save."
+  },
   "optPreviewLabel": {
     "message": "Preview para sa summer-banner mula sa shop.example.com, 1600×900, bilang PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Opsyonal, sa pixel. Ang mas malalapad na larawan ay pinapaliit para kumasya, nananatili ang hugis; ang mas maliliit ay hindi kailanman pinapalaki. Ang Original na format ay lagi nang sine-save kung ano ito."
+  },
+  "optFullSizeLabel": {
+    "message": "I-save ang buong-laking bersyon"
+  },
+  "optFullSizeHint": {
+    "message": "Ang mga site tulad ng Pinterest, X, Etsy, Reddit, Wikipedia at maraming tindahan at blog ay kadalasang nagpapakita ng mas maliit na kopya ng larawan. Kapag naka-on ito, hihingin ng Imgkeep sa parehong serbisyo ng larawan ang buong-laking file sa halip. Kung hindi nito makuha, ise-save nito ang larawang na-click mo, gaya ng dati."
   },
   "optSitesTitle": {
     "message": "Mga site na pinayagan mo"

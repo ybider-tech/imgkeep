@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Tokens: <code>{name}</code> oorspronkelijke naam, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> en <code>{h}</code> grootte in pixels. Bestaande bestanden worden nooit overschreven."
   },
+  "optTokensMore": {
+    "message": "Verder: <code>{site}</code> de site waar je was, <code>{title}</code> de titel van die pagina (op sites die je hebt toegestaan), <code>{original}</code> de eigen naam van het bestand met extensie, <code>{n}</code> een getal dat bij elke opslag oploopt."
+  },
   "optPreviewLabel": {
     "message": "Voorbeeld voor summer-banner van shop.example.com, 1600×900, als PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Optioneel, in pixels. Bredere afbeeldingen worden passend verkleind met behoud van de verhoudingen; kleinere worden nooit vergroot. ‘Origineel’ wordt altijd opgeslagen zoals het is."
+  },
+  "optFullSizeLabel": {
+    "message": "De versie op volledige grootte opslaan"
+  },
+  "optFullSizeHint": {
+    "message": "Sites als Pinterest, X, Etsy, Reddit, Wikipedia en veel winkels en blogs tonen vaak een kleinere kopie van een afbeelding. Met deze optie aan vraagt Imgkeep in plaats daarvan het bestand op volledige grootte op bij dezelfde beeldservice. Lukt dat niet, dan slaat het zoals vroeger de afbeelding op waarop je klikte."
   },
   "optSitesTitle": {
     "message": "Sites die je hebt toegestaan"

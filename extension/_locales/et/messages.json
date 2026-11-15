@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Kohatäited: <code>{name}</code> algne nimi, <code>{host}</code> sait, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ja <code>{h}</code> suurus pikslites. Olemasolevaid faile kunagi üle ei kirjutata."
   },
+  "optTokensMore": {
+    "message": "Lisaks: <code>{site}</code> sait, kus olite, <code>{title}</code> selle lehe pealkiri (lubatud saitidel), <code>{original}</code> faili enda nimi koos laiendiga, <code>{n}</code> number, mis iga salvestusega kasvab."
+  },
   "optPreviewLabel": {
     "message": "Eelvaade: summer-banner saidilt shop.example.com, 1600×900, PNG-na:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Valikuline, pikslites. Laiemad pildid vähendatakse sobivaks, kuju säilib; väiksemaid ei suurendata kunagi. Algses vormingus salvestatakse pilt alati muutmata kujul."
+  },
+  "optFullSizeLabel": {
+    "message": "Salvesta täissuuruses versioon"
+  },
+  "optFullSizeHint": {
+    "message": "Saidid nagu Pinterest, X, Etsy, Reddit, Wikipedia ning paljud poed ja blogid näitavad sageli pildist väiksemat koopiat. Kui see on sees, küsib Imgkeep selle asemel samalt pilditeenuselt täissuuruses faili. Kui ta seda ei saa, salvestab ta nagu varem pildi, millel klõpsasite."
   },
   "optSitesTitle": {
     "message": "Saidid, millele oled loa andnud"

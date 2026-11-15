@@ -12,6 +12,7 @@ export const DEFAULTS = {
   webpQuality: 90,
   jpgBackground: "#ffffff",
   maxWidth: 0, // pixels; 0 keeps every image's own size
+  originalSize: false, // save the full-size file when the site's image service has one (lib/cdn-rules.js)
   usageCounts: true, // the anonymous daily summary (lib/telemetry.js); one click off in Options
 };
 
@@ -103,10 +104,25 @@ export function extFromUrl(url) {
 
 const pad = (n, len = 2) => String(n).padStart(len, "0");
 
-export function tokensFor({ url, width, height, now = new Date() }) {
+// {original}: the file's own name on the site, with its extension ("summer-banner.webp"); empty for data:/blob:.
+export function originalName(url) {
+  const seg = lastSegment(url).trim();
+  return seg.includes(".") ? seg : "";
+}
+
+// Does a template (file name or subfolder) use {n}? Then a number is used up for this save.
+export const usesNumber = (settings) => /\{n\}/.test(`${settings.filenameTemplate || ""}${settings.subfolder || ""}`);
+
+// url: the image's address. pageUrl and title: the page it was on ({site}, {title}; {title} is known only where
+// the browser lets Imgkeep see the page's title, otherwise empty). n: this save's number, when {n} is used.
+export function tokensFor({ url, pageUrl = "", title = "", n, width, height, now = new Date() }) {
   return {
     name: nameFromUrl(url),
     host: hostFromUrl(url),
+    site: /^https?:/i.test(pageUrl) ? hostFromUrl(pageUrl) : "",
+    title: String(title || "").trim(),
+    original: originalName(url),
+    n: n ? String(n) : "",
     date: `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`,
     time: `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`,
     w: width ? String(width) : "",
@@ -119,7 +135,7 @@ export function fillTemplate(template, tokens) {
   // Without known dimensions (Original format), drop "{w}x{h}" as a unit.
   if (!tokens.w || !tokens.h) out = out.replace(/\{w\}x\{h\}/g, "{w}");
   // Empty tokens become a marker, then take their leading separator with them ("photo-{host}" -> "photo").
-  out = out.replace(/\{(name|host|date|time|w|h)\}/g, (_, key) => tokens[key] || "\u0000");
+  out = out.replace(/\{(name|host|site|title|original|n|date|time|w|h)\}/g, (_, key) => tokens[key] || "\u0000");
   return out.replace(/[-_ ]*\u0000/g, "").replace(/^[-_ ]+/, "");
 }
 
@@ -139,8 +155,8 @@ export function sanitizeSegment(text) {
 // Returns { dirs: ["Imgkeep", "example.com"], name: "photo-320x200", ext: "png" }.
 // `sample` overrides tokens (the Options preview uses it instead of a real URL).
 // `name` (typed in More options) replaces the name template; the subfolder still applies.
-export function buildTarget({ settings, url, width, height, ext, now, sample, name: typedName }) {
-  const tokens = { ...tokensFor({ url, width, height, now }), ...sample };
+export function buildTarget({ settings, url, pageUrl, title, n, width, height, ext, now, sample, name: typedName }) {
+  const tokens = { ...tokensFor({ url, pageUrl, title, n, width, height, now }), ...sample };
   const dirs = String(settings.subfolder || "")
     .split("/")
     .map((part) => sanitizeSegment(fillTemplate(part, tokens)))

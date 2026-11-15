@@ -64,6 +64,13 @@ Step 0 ranks the work by real failure data (anonymous counts in PostHog) before 
 - **Strings.** Every new user-facing string goes into 50 locales in-session; keep new strings few.
 - **Tests.** Unit-level checks run in Playwright like the existing `settings.spec.mjs`; E2E uses the fixture pages.
 
+## Update 2026-11-15: 0.14.0 built (branch `release/0.14.0`, not released)
+
+1.2 CDN rules behind "Save the full-size version" (off by default) and 1.8 tokens `{site} {title} {original} {n}`;
+details in `CHANGELOG.md`. Not built: page parsing for 1.2 and `{alt}` (both need page access on every save), and
+"Report site" (waits for `fail_http_403` counts from 0.13.0). Privacy wording is in the branch and must go live on
+the site before the release.
+
 ## 0.16.0 "Pro" (added 2026-11-15)
 
 The first release after Phase 1. Scope (from the vault's `Imgkeep Pro` decision): presets, file-size targets

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Značky: <code>{name}</code> pôvodný názov, <code>{host}</code> stránka, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> a <code>{h}</code> veľkosť v pixeloch. Existujúce súbory sa nikdy neprepíšu."
   },
+  "optTokensMore": {
+    "message": "Ďalej: <code>{site}</code> web, na ktorom ste boli, <code>{title}</code> názov jeho stránky (na weboch, ktoré ste povolili), <code>{original}</code> vlastný názov súboru aj s príponou, <code>{n}</code> číslo, ktoré s každým uložením rastie."
+  },
   "optPreviewLabel": {
     "message": "Ukážka pre summer-banner zo stránky shop.example.com, 1600×900, ako PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Nepovinné, v pixeloch. Širšie obrázky sa zmenšia na túto šírku so zachovaním pomeru strán; menšie sa nikdy nezväčšujú. Pôvodný formát sa vždy uloží tak, ako je."
+  },
+  "optFullSizeLabel": {
+    "message": "Ukladať verziu v plnej veľkosti"
+  },
+  "optFullSizeHint": {
+    "message": "Weby ako Pinterest, X, Etsy, Reddit, Wikipédia a mnohé obchody a blogy často zobrazujú menšiu kópiu obrázka. Keď je táto voľba zapnutá, Imgkeep si namiesto nej vyžiada súbor v plnej veľkosti od tej istej obrázkovej služby. Ak ho nezíska, uloží obrázok, na ktorý ste klikli, ako doteraz."
   },
   "optSitesTitle": {
     "message": "Stránky, ktorým ste povolili prístup"

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Simboluri: <code>{name}</code> numele original, <code>{host}</code> site-ul, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> și <code>{h}</code> dimensiunea în pixeli. Fișierele existente nu sunt niciodată suprascrise."
   },
+  "optTokensMore": {
+    "message": "De asemenea: <code>{site}</code> site-ul pe care erai, <code>{title}</code> titlul paginii (pe site-urile permise), <code>{original}</code> numele propriu al fișierului, cu extensia, <code>{n}</code> un număr care crește la fiecare salvare."
+  },
   "optPreviewLabel": {
     "message": "Previzualizare pentru summer-banner de pe shop.example.com, 1600×900, ca PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Opțional, în pixeli. Imaginile mai late sunt micșorate ca să încapă, păstrându-și proporțiile; cele mai mici nu sunt niciodată mărite. Formatul original se salvează întotdeauna ca atare."
+  },
+  "optFullSizeLabel": {
+    "message": "Salvează versiunea la dimensiune completă"
+  },
+  "optFullSizeHint": {
+    "message": "Site-uri precum Pinterest, X, Etsy, Reddit, Wikipedia și multe magazine și bloguri afișează adesea o copie mai mică a imaginii. Cu această opțiune activă, Imgkeep cere în schimb fișierul la dimensiune completă de la același serviciu de imagini. Dacă nu îl poate obține, salvează imaginea pe care ai făcut clic, ca până acum."
   },
   "optSitesTitle": {
     "message": "Site-uri cărora le-ai dat acces"

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Helyőrzők: <code>{name}</code> eredeti név, <code>{host}</code> webhely, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> és <code>{h}</code> méret képpontban. A meglévő fájlokat soha nem írja felül."
   },
+  "optTokensMore": {
+    "message": "Továbbá: <code>{site}</code> az oldal, ahol voltál, <code>{title}</code> az oldal címe (az engedélyezett oldalakon), <code>{original}</code> a fájl saját neve a kiterjesztésével, <code>{n}</code> egy szám, amely minden mentéssel nő."
+  },
   "optPreviewLabel": {
     "message": "Előnézet a summer-banner képhez a shop.example.com webhelyről, 1600×900, PNG formátumban:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Nem kötelező, képpontban. A szélesebb képek arányosan lekicsinyítve férnek bele; a kisebbeket soha nem nagyítja fel. Az eredeti formátum mindig változatlanul mentődik."
+  },
+  "optFullSizeLabel": {
+    "message": "A teljes méretű változat mentése"
+  },
+  "optFullSizeHint": {
+    "message": "Az olyan oldalak, mint a Pinterest, az X, az Etsy, a Reddit, a Wikipédia, valamint sok webáruház és blog gyakran a kép kisebb másolatát mutatják. Ha ez be van kapcsolva, az Imgkeep ehelyett ugyanattól a képszolgáltatástól kéri le a teljes méretű fájlt. Ha nem kapja meg, a korábbiakhoz hasonlóan a képet menti, amelyre kattintottál."
   },
   "optSitesTitle": {
     "message": "Engedélyezett oldalak"

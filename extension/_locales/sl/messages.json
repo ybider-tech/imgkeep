@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Oznake: <code>{name}</code> izvirno ime, <code>{host}</code> spletno mesto, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> in <code>{h}</code> velikost v slikovnih pikah. Obstoječe datoteke se nikoli ne prepišejo."
   },
+  "optTokensMore": {
+    "message": "Tudi: <code>{site}</code> spletno mesto, na katerem ste bili, <code>{title}</code> naslov njegove strani (na dovoljenih spletnih mestih), <code>{original}</code> lastno ime datoteke s končnico, <code>{n}</code> število, ki se z vsakim shranjevanjem poveča."
+  },
   "optPreviewLabel": {
     "message": "Predogled za summer-banner s spletnega mesta shop.example.com, 1600×900, kot PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Neobvezno, v slikovnih pikah. Širše slike se pomanjšajo, da se prilegajo, razmerje stranic pa ostane enako; manjših nikoli ne poveča. Izvirni format se vedno shrani takšen, kot je."
+  },
+  "optFullSizeLabel": {
+    "message": "Shrani različico v polni velikosti"
+  },
+  "optFullSizeHint": {
+    "message": "Spletna mesta, kot so Pinterest, X, Etsy, Reddit, Wikipedija ter številne trgovine in blogi, pogosto prikazujejo manjšo kopijo slike. Ko je to vklopljeno, Imgkeep namesto nje zahteva datoteko v polni velikosti od iste storitve za slike. Če je ne more dobiti, kot doslej shrani sliko, na katero ste kliknili."
   },
   "optSitesTitle": {
     "message": "Spletna mesta, ki ste jih dovolili"

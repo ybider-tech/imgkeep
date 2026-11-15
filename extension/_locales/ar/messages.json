@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "الرموز: <code>{name}</code> الاسم الأصلي، <code>{host}</code> الموقع، <code>{date}</code>، <code>{time}</code>، <code>{w}</code> و<code>{h}</code> الحجم بالبكسل. لا يُستبدل أي ملف موجود أبدًا."
   },
+  "optTokensMore": {
+    "message": "أيضًا: <code>{site}</code> الموقع الذي كنت فيه، <code>{title}</code> عنوان صفحته (في المواقع التي سمحت بها)، <code>{original}</code> اسم الملف الأصلي مع امتداده، <code>{n}</code> رقم يزيد مع كل حفظ."
+  },
   "optPreviewLabel": {
     "message": "معاينة لـ summer-banner من shop.example.com، بحجم 1600×900، بصيغة PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "اختياري، بالبكسل. تُصغَّر الصور الأعرض لتناسبه مع الحفاظ على نسبها، ولا تُكبَّر الصور الأصغر أبدًا. تُحفظ الصيغة الأصلية دائمًا كما هي."
+  },
+  "optFullSizeLabel": {
+    "message": "حفظ النسخة بالحجم الكامل"
+  },
+  "optFullSizeHint": {
+    "message": "مواقع مثل Pinterest وX وEtsy وReddit وWikipedia والكثير من المتاجر والمدونات تعرض غالبًا نسخة أصغر من الصورة. عند تفعيل هذا الخيار، يطلب Imgkeep الملف بالحجم الكامل من خدمة الصور نفسها بدلًا منها. وإذا تعذّر ذلك، يحفظ الصورة التي نقرت عليها كما كان من قبل."
   },
   "optSitesTitle": {
     "message": "المواقع التي سمحت بها"

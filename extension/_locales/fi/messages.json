@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Muuttujat: <code>{name}</code> alkuperäinen nimi, <code>{host}</code> sivusto, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ja <code>{h}</code> koko pikseleinä. Olemassa olevia tiedostoja ei koskaan korvata."
   },
+  "optTokensMore": {
+    "message": "Lisäksi: <code>{site}</code> sivusto, jolla olit, <code>{title}</code> sen sivun otsikko (sallimillasi sivustoilla), <code>{original}</code> tiedoston oma nimi päätteineen, <code>{n}</code> numero, joka kasvaa jokaisella tallennuksella."
+  },
   "optPreviewLabel": {
     "message": "Esikatselu: summer-banner sivustolta shop.example.com, 1600×900, PNG-muodossa:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Valinnainen, pikseleinä. Leveämmät kuvat pienennetään mahtumaan mittasuhteet säilyttäen; pienempiä ei koskaan suurenneta. Alkuperäinen muoto tallennetaan aina sellaisenaan."
+  },
+  "optFullSizeLabel": {
+    "message": "Tallenna täysikokoinen versio"
+  },
+  "optFullSizeHint": {
+    "message": "Sivustot kuten Pinterest, X, Etsy, Reddit, Wikipedia sekä monet kaupat ja blogit näyttävät usein kuvasta pienemmän kopion. Kun tämä on päällä, Imgkeep pyytää sen sijaan samalta kuvapalvelulta täysikokoisen tiedoston. Jos se ei saa sitä, se tallentaa kuten ennenkin kuvan, jota napsautit."
   },
   "optSitesTitle": {
     "message": "Sivustot, joille olet antanut luvan"

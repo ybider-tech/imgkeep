@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Simgeler: <code>{name}</code> özgün ad, <code>{host}</code> site, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ve <code>{h}</code> piksel cinsinden boyut. Var olan dosyaların üzerine asla yazılmaz."
   },
+  "optTokensMore": {
+    "message": "Ayrıca: <code>{site}</code> bulunduğunuz site, <code>{title}</code> sayfasının başlığı (izin verdiğiniz sitelerde), <code>{original}</code> dosyanın uzantısıyla birlikte kendi adı, <code>{n}</code> her kayıtta artan bir sayı."
+  },
   "optPreviewLabel": {
     "message": "shop.example.com adresindeki summer-banner için önizleme, 1600×900, PNG olarak:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "İsteğe bağlı, piksel cinsinden. Daha geniş görseller oranı korunarak sığacak şekilde küçültülür; küçük olanlar hiçbir zaman büyütülmez. Orijinal format her zaman olduğu gibi kaydedilir."
+  },
+  "optFullSizeLabel": {
+    "message": "Tam boyutlu sürümü kaydet"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest, X, Etsy, Reddit, Wikipedia gibi siteler ve birçok mağaza ile blog, görselin genellikle daha küçük bir kopyasını gösterir. Bu açıkken Imgkeep bunun yerine aynı görsel hizmetinden tam boyutlu dosyayı ister. Alamazsa, eskisi gibi tıkladığınız görseli kaydeder."
   },
   "optSitesTitle": {
     "message": "İzin verdiğiniz siteler"

@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "টোকেন: <code>{name}</code> আসল নাম, <code>{host}</code> সাইট, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ও <code>{h}</code> পিক্সেলে মাপ। আগের ফাইল কখনো মুছে লেখা হয় না।"
   },
+  "optTokensMore": {
+    "message": "এছাড়াও: <code>{site}</code> আপনি যে সাইটে ছিলেন, <code>{title}</code> সেই পৃষ্ঠার শিরোনাম (আপনার অনুমতি দেওয়া সাইটে), <code>{original}</code> এক্সটেনশনসহ ফাইলের নিজস্ব নাম, <code>{n}</code> প্রতিটি সংরক্ষণে বাড়তে থাকা একটি সংখ্যা।"
+  },
   "optPreviewLabel": {
     "message": "shop.example.com-এর summer-banner, ১৬০০×৯০০, PNG হিসেবে দেখতে কেমন হবে:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "ঐচ্ছিক, পিক্সেলে। এর চেয়ে চওড়া ছবি আকৃতি ঠিক রেখে ছোট করা হয়; ছোট ছবি কখনও বড় করা হয় না। আসল ফরম্যাট সবসময় যেমন আছে তেমনই সেভ হয়।"
+  },
+  "optFullSizeLabel": {
+    "message": "পূর্ণ আকারের সংস্করণ সংরক্ষণ করুন"
+  },
+  "optFullSizeHint": {
+    "message": "Pinterest, X, Etsy, Reddit, Wikipedia এবং অনেক দোকান ও ব্লগের মতো সাইটগুলো প্রায়ই ছবির একটি ছোট কপি দেখায়। এটি চালু থাকলে Imgkeep তার বদলে একই ছবি পরিষেবা থেকে পূর্ণ আকারের ফাইলটি চায়। সেটি না পেলে আগের মতোই আপনি যে ছবিতে ক্লিক করেছেন সেটি সংরক্ষণ করে।"
   },
   "optSitesTitle": {
     "message": "আপনি যে সাইটগুলোকে অনুমতি দিয়েছেন"

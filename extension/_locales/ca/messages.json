@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Comodins: <code>{name}</code> nom original, <code>{host}</code> lloc web, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> i <code>{h}</code> mida en píxels. Els fitxers existents mai no se sobreescriuen."
   },
+  "optTokensMore": {
+    "message": "També: <code>{site}</code> el lloc on eres, <code>{title}</code> el títol de la pàgina (als llocs que has permès), <code>{original}</code> el nom propi del fitxer amb la seva extensió, <code>{n}</code> un número que augmenta amb cada desament."
+  },
   "optPreviewLabel": {
     "message": "Vista prèvia de summer-banner de shop.example.com, 1600×900, en PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Opcional, en píxels. Les imatges més amples es redueixen perquè hi càpiguen, mantenint-ne la proporció; les més petites no s'amplien mai. El format original sempre es desa tal com és."
+  },
+  "optFullSizeLabel": {
+    "message": "Desa la versió a mida completa"
+  },
+  "optFullSizeHint": {
+    "message": "Llocs com Pinterest, X, Etsy, Reddit, Wikipedia i moltes botigues i blogs sovint mostren una còpia més petita de la imatge. Amb això activat, Imgkeep demana al mateix servei d'imatges el fitxer a mida completa. Si no el pot obtenir, desa la imatge on has fet clic, com abans."
   },
   "optSitesTitle": {
     "message": "Llocs que has permès"

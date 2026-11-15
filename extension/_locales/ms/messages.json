@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "Token: <code>{name}</code> nama asal, <code>{host}</code> tapak, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> dan <code>{h}</code> saiz dalam piksel. Fail sedia ada tidak sekali-kali ditulis ganti."
   },
+  "optTokensMore": {
+    "message": "Juga: <code>{site}</code> laman yang anda lawati, <code>{title}</code> tajuk halamannya (pada laman yang anda benarkan), <code>{original}</code> nama asal fail bersama sambungannya, <code>{n}</code> nombor yang bertambah setiap kali menyimpan."
+  },
   "optPreviewLabel": {
     "message": "Pratonton untuk summer-banner dari shop.example.com, 1600×900, sebagai PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "Pilihan, dalam piksel. Imej yang lebih lebar dikecilkan supaya muat, nisbahnya dikekalkan; imej yang lebih kecil tidak pernah dibesarkan. Format asal sentiasa disimpan seadanya."
+  },
+  "optFullSizeLabel": {
+    "message": "Simpan versi saiz penuh"
+  },
+  "optFullSizeHint": {
+    "message": "Laman seperti Pinterest, X, Etsy, Reddit, Wikipedia dan banyak kedai serta blog sering memaparkan salinan imej yang lebih kecil. Apabila ini dihidupkan, Imgkeep meminta fail saiz penuh daripada perkhidmatan imej yang sama sebagai gantinya. Jika tidak dapat, ia menyimpan imej yang anda klik, seperti sebelum ini."
   },
   "optSitesTitle": {
     "message": "Tapak yang anda benarkan"

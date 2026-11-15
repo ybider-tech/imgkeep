@@ -314,6 +314,9 @@
   "optTokensHint": {
     "message": "תגים: <code>{name}</code> השם המקורי, <code>{host}</code> האתר, <code>{date}</code>, <code>{time}</code>, <code>{w}</code> ו-<code>{h}</code> הגודל בפיקסלים. קבצים קיימים לעולם לא נדרסים."
   },
+  "optTokensMore": {
+    "message": "בנוסף: <code>{site}</code> האתר שהיית בו, <code>{title}</code> כותרת הדף (באתרים שאישרת), <code>{original}</code> השם של הקובץ עצמו עם הסיומת שלו, <code>{n}</code> מספר שעולה בכל שמירה."
+  },
   "optPreviewLabel": {
     "message": "תצוגה מקדימה עבור summer-banner מ-shop.example.com, ‏1600×900, כ-PNG:"
   },
@@ -340,6 +343,12 @@
   },
   "optMaxWidthHint": {
     "message": "לא חובה, בפיקסלים. תמונות רחבות יותר מוקטנות כדי להתאים, עם אותן פרופורציות; תמונות קטנות יותר אף פעם לא מוגדלות. הפורמט המקורי תמיד נשמר כמו שהוא."
+  },
+  "optFullSizeLabel": {
+    "message": "שמירת הגרסה בגודל המלא"
+  },
+  "optFullSizeHint": {
+    "message": "אתרים כמו Pinterest, ‏X, ‏Etsy, ‏Reddit, ויקיפדיה וחנויות ובלוגים רבים מציגים לעיתים קרובות עותק קטן יותר של התמונה. כשזה מופעל, Imgkeep מבקש במקום זאת את הקובץ בגודל המלא מאותו שירות תמונות. אם הוא לא מצליח לקבל אותו, הוא שומר את התמונה שלחצת עליה, כמו קודם."
   },
   "optSitesTitle": {
     "message": "אתרים שאישרת"
