@@ -26,7 +26,7 @@ Imgkeep asks for as little as it can. This table lists everything in `extension/
 
 Two network requests, and only these:
 
-- `fetch()` of the image you clicked, in `extension/offscreen.js`.
+- `fetch()` of the image you clicked, in `extension/offscreen.js`. Since 0.14.0, with "Save the full-size version" turned on in Options (off by default), that request can be for the full-size file of the same image instead, on the same image service (Pinterest, X, Shopify, WordPress, Etsy, Reddit, imgix/Unsplash, Wikimedia), worked out from the clicked address by the rules in `extension/lib/cdn-rules.js`; a test checks every rule stays on the same site. If that fails, the clicked image is fetched as before. No new permission: a full-size file the browser won't hand over is simply skipped.
 - Since 0.7.0, one anonymous daily summary of feature use, in `extension/lib/telemetry.js`, to exactly `https://eu.i.posthog.com/i/v0/e/` (PostHog, EU cloud; Aptabase until 0.8.1). Sent as an anonymous event (`$process_person_profile: false`) with location lookup off (`$geoip_disable: true`); the project discards client IP addresses. On by default, off in Options. What it contains is listed in the privacy policy, and Options shows it.
 
 Not a request: after an uninstall, the browser opens the optional uninstall form (`chrome.runtime.setUninstallURL`, a Google Form whose address carries only the version). Imgkeep sends nothing there itself.
