@@ -65,13 +65,14 @@ export const CDN_RULES = [
   },
   {
     // WordPress: /wp-content/uploads/2024/05/photo-300x200.jpg → photo.jpg.
-    // Jetpack's image service (i0.wp.com … i3.wp.com): the size settings in the query removed.
+    // Jetpack's image service (i0.wp.com … i3.wp.com), and sites that resize their own uploads the same way
+    // (…/wp-content/uploads/photo.jpg?resize=562,375, as on WordPress VIP): the size settings in the query removed.
     name: "wordpress",
     test: (u) => u.pathname.includes("/wp-content/uploads/") || /^i[0-3]\.wp\.com$/.test(u.hostname),
     original(u) {
       const before = u.href;
       if (u.pathname.includes("/wp-content/uploads/")) u.pathname = u.pathname.replace(/-\d+x\d+(\.(jpe?g|png|gif|webp))$/i, "$1");
-      if (/^i[0-3]\.wp\.com$/.test(u.hostname)) for (const k of ["w", "h", "resize", "fit", "crop", "zoom", "quality"]) u.searchParams.delete(k);
+      for (const k of ["w", "h", "resize", "fit", "crop", "zoom", "quality"]) u.searchParams.delete(k);
       return u.href === before ? null : u;
     },
   },
@@ -110,13 +111,17 @@ export const CDN_RULES = [
   },
   {
     // Wikipedia and Wikimedia Commons thumbnails: upload.wikimedia.org/wikipedia/commons/thumb/a/ab/File.jpg/220px-File.jpg
-    // → upload.wikimedia.org/wikipedia/commons/a/ab/File.jpg. Only for photos and pictures (not SVG, PDF or TIFF files).
+    // → upload.wikimedia.org/wikipedia/commons/a/ab/File.jpg. Wikipedia now shows thumbnails from thumb.wikimedia.org
+    // (with tracking settings in the query); the full-size file is still on upload.wikimedia.org.
+    // Only for photos and pictures (not SVG, PDF or TIFF files).
     name: "wikimedia",
-    test: (u) => u.hostname === "upload.wikimedia.org",
+    test: (u) => u.hostname === "upload.wikimedia.org" || u.hostname === "thumb.wikimedia.org",
     original(u) {
       const m = /^(\/[^/]+\/[^/]+)\/thumb(\/[0-9a-f]\/[0-9a-f]{2}\/[^/]+)\/[^/]+$/.exec(u.pathname);
       if (!m || !RASTER.test(m[2])) return null;
+      u.hostname = "upload.wikimedia.org";
       u.pathname = m[1] + m[2];
+      u.search = "";
       return u;
     },
   },

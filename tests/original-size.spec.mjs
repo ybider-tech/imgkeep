@@ -26,6 +26,7 @@ test.describe("rules (no browser)", () => {
     ["https://shop.example.com/cdn/shop/files/shirt.jpg?v=1&width=533", "https://shop.example.com/cdn/shop/files/shirt.jpg?v=1"],
     ["https://blog.example.com/wp-content/uploads/2024/05/cat-300x200.jpg", "https://blog.example.com/wp-content/uploads/2024/05/cat.jpg"],
     ["https://i0.wp.com/blog.example.com/wp-content/uploads/2024/05/cat.jpg?resize=300%2C200&ssl=1", "https://i0.wp.com/blog.example.com/wp-content/uploads/2024/05/cat.jpg?ssl=1"],
+    ["https://news.example.com/wp-content/uploads/2026/09/cat.jpg?resize=562,375", "https://news.example.com/wp-content/uploads/2026/09/cat.jpg"],
     ["https://i.etsystatic.com/123/r/il/abc123/4567/il_340x270.4567_abcd.jpg", "https://i.etsystatic.com/123/r/il/abc123/4567/il_fullxfull.4567_abcd.jpg"],
     ["https://i.etsystatic.com/123/r/il/abc123/4567/il_794xN.4567_abcd.jpg", "https://i.etsystatic.com/123/r/il/abc123/4567/il_fullxfull.4567_abcd.jpg"],
     ["https://preview.redd.it/abc123xyz.jpg?width=640&crop=smart&auto=webp&s=0123", "https://i.redd.it/abc123xyz.jpg"],
@@ -33,6 +34,7 @@ test.describe("rules (no browser)", () => {
     ["https://assets.imgix.net/hero.png?w=600&dpr=2&auto=format", "https://assets.imgix.net/hero.png"],
     ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Cat_photo.jpg/220px-Cat_photo.jpg", "https://upload.wikimedia.org/wikipedia/commons/a/ab/Cat_photo.jpg"],
     ["https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Poster.png/330px-Poster.png", "https://upload.wikimedia.org/wikipedia/en/0/0f/Poster.png"],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Cat_photo.jpg/330px-Cat_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=parser", "https://upload.wikimedia.org/wikipedia/commons/a/ab/Cat_photo.jpg"],
   ];
 
   test("each image service: the shown copy → its full-size file", () => {
@@ -53,6 +55,8 @@ test.describe("rules (no browser)", () => {
       "https://preview.redd.it/some/deeper/path.jpg?width=640",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Map.svg/220px-Map.svg.png", // an SVG's picture
       "https://upload.wikimedia.org/wikipedia/commons/a/ab/Cat_photo.jpg",
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Map.svg/220px-Map.svg.png?utm_source=x", // an SVG's picture, new host
+      "https://blog.example.com/wp-content/uploads/2024/05/cat.jpg?ver=2", // a full-size upload with an unrelated setting
       "data:image/png;base64,AAAA",
       "blob:https://example.com/1234",
       "not a url",
