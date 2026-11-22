@@ -69,8 +69,9 @@ Other flows: **Copy as PNG** (focused `copy.html` window writes the clipboard, n
 (`read-blob.js` injected once, after the user allows the site).
 
 Animation: GIF sources are kept as they are; animated WebP/AVIF/APNG saved as GIF are re-encoded frame by frame
-(caps in `GIF_LIMITS`). Saving an animated source to a static format gives the first frame. *(Animated WebP/APNG
-output and a "keep motion" hint are not built.)*
+(caps in `GIF_LIMITS`). APNG (More options, since 0.15.0) keeps every frame in full colour (`lib/apng.js`). Saving an
+animated source to a static format gives the first frame; More options says so. *(Animated WebP output and a note
+after quick saves are not built.)*
 
 ## 4. Permissions and network
 
@@ -110,14 +111,14 @@ Legend: DONE · PART (partly) · TODO · SKIP (decided not to do). Decisions are
 | 0.5 | CI | PART | 2026-11-12: `lint-and-build` job (ESLint errors-only config, Edge + Firefox package build, version check). Still missing: release artefact with SHA-256 on tags (1.11) |
 | 1.1 | Fetch ladder | PART | 0.13.0 (branch `release/0.13.0`): step 2 (Referer session rule, optional `declarativeNetRequestWithHostAccess`, asked with the site question) is built and tested (`tests/fixtures.spec.mjs` B and B2). Step 3 (in-page cookie fetch) only if the cookie fixture shows the extension fetch lacks the cookie; step 4 screenshot skipped (docs/PHASE-1.md). Strict validation already existed (empty, HTML-as-image never saved). "Report site" link not built yet. |
 | 1.2 | Largest-source resolver + CDN rules | PART | 0.14.0 (branch `release/0.14.0`): CDN rules (`lib/cdn-rules.js`: X, Pinterest, Shopify, WordPress, Etsy, Reddit, imgix/Unsplash, Wikimedia) behind the "Save the full-size version" Options toggle, off by default; tried first in `offscreen.js`, kept only if it decodes, else the clicked image with no prompt. Privacy text and `PERMISSIONS.md` updated. Page parsing (`srcset`, `<picture>`, lazy attributes) not built: needs page access (decision C) |
-| 1.3 | Targeting CSS backgrounds / overlays | PART | Find image here covers listed sites; wider coverage needs a decision on page access (decision C) |
+| 1.3 | Targeting CSS backgrounds / overlays | PART | Find image here covers listed sites; since 0.15.0 the shortcut and toolbar button run the same finder on any site, when pressed (decision C kept: nothing runs by itself) |
 | 1.4 | Codec layer | PART | outputs PNG JPG WebP GIF PDF ICO BMP AVIF done; JXL and HEIC missing; inputs via browser decoders |
-| 1.5 | Animation preserved | PART | see section 3 |
-| 1.6 | Quality / transparency | PART | JPG and WebP quality, JPG background, AVIF quality default exist; AVIF slider *(unverified)* |
+| 1.5 | Animation preserved | PART | GIF (0.4.0) and APNG (0.15.0, More options, `lib/apng.js`) keep motion; More options notes when a still format drops it. Animated WebP output and a note after quick saves not built |
+| 1.6 | Quality / transparency | DONE | JPG and WebP quality, JPG background; the AVIF quality slider is in More options (since 0.10.0, `tests/tools.spec.mjs`) |
 | 1.7 | Default-format top-level item | SKIP | "last used" at the top of the menu ships (0.7.0) |
 | 1.8 | Save As + naming | PART | 0.14.0 adds `{site} {title} {original} {n}` (`{title}` only when the browser shares the tab title). `{alt}` not built: needs reading the page on every save |
 | 1.9 | Copy as PNG | DONE | no permission needed |
-| 1.10 | Alt+S shortcut | TODO | `commands` needs no permission, but "image under the cursor" needs page access; menu-less alternative needs a decision (decision C) |
+| 1.10 | Alt+S shortcut | DONE | 0.15.0: `commands.save-image` (Alt+S; Alt+Shift+S in Firefox) saves the image under the pointer in the last-used format; `action` button lists the images on screen. Uses Find image here's optional `activeTab` + `scripting` |
 | 1.11 | Reproducible builds | PART | pinned lockfile, `zip -X`; sorted entries/fixed mtimes, release SHA-256 and `docs/VERIFY.md` missing |
 | 1.12 | Trust page | PART | `PERMISSIONS.md`, privacy policy and an Options trust view exist; build hash and release link missing |
 | 1.13 | Permission-change policy | PART | static check pins exact permissions; no CHANGELOG "Permission changes" rule |

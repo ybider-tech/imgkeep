@@ -2,6 +2,12 @@
 
 ## 0.15.0 — unreleased
 
+- **Save with a shortcut:** Alt+S (Alt+Shift+S in Firefox, where Alt+S opens the History menu) saves the image under the pointer in the format used last; Imgkeep's new toolbar button lists the images on screen to pick from (then More options). Both work on any site, including ones that block the right-click, and use Find image here's optional `activeTab` + `scripting` (one setting for all three; no new permission, no install warning). The browser grants `activeTab` for that one key press or click; the finder runs once with `exact` pointer mode (no "other images nearby" guess, since the pointer hasn't moved to a menu). Not turned on yet: a window explains and turns it on. Pages the browser keeps extensions out of get their own explanation. Options shows the shortcut as the browser has it (`commands.getAll`). Manifest: `commands.save-image`, `action` (no popup). Nothing runs on a page by itself.
+- **APNG** (animated PNG) in More options: every frame in full colour with real transparency (GIF has 256 colours and on/off transparency). `lib/apng.js` uses the browser's own PNG encoder per frame and moves the compressed data into `fdAT` chunks (no WebAssembly); same caps as GIF (`GIF_LIMITS`). Saved as `.png`; a still image becomes a plain PNG. Counted as `save_apng` and `…_to_apng` (privacy list updated).
+- **"This image moves" note** in More options when an animated GIF, WebP, PNG or AVIF is about to be saved in a still format, pointing to APNG or the GIF menu item (`isAnimated()` reads the bytes, no decoding).
+- AVIF quality slider (plan 1.6): already in More options since 0.10.0; verified by `tests/tools.spec.mjs`.
+- Privacy policy and `PERMISSIONS.md`: the shortcut and toolbar button, and APNG in the counted formats (announced first).
+- Tests: `tests/shortcut.spec.mjs`, `tests/apng.spec.mjs`, Firefox APNG and Alt+S in `tests/firefox.spec.mjs`.
 - **Fix: Firefox summaries counted as real.** Store installs from addons.mozilla.org have no `update_url` (Mozilla updates them itself), so since Firefox 0.11.0 every Firefox summary was marked `debug` and left out of the dashboards. Firefox now uses its own install type (`management.getSelf()`, no permission needed): `development` for temporary and web-ext copies, `normal` from the store. Chrome and Edge unchanged. The summaries already sent were real installs (seven locales, none from tests); the dashboards now count Firefox summaries from 0.14.0 and earlier as real. Test: `tests/firefox.spec.mjs`.
 
 ## 0.14.0 — 2026-11-16

@@ -71,6 +71,14 @@ details in `CHANGELOG.md`. Not built: page parsing for 1.2 and `{alt}` (both nee
 "Report site" (waits for `fail_http_403` counts from 0.13.0). Privacy wording is in the branch and must go live on
 the site before the release.
 
+## Update 2026-11-22: 0.15.0 built (branch `release/0.15.0`, not released)
+
+1.10 Alt+S and the toolbar button (any site, Find image here's permissions; Firefox gets Alt+Shift+S), 1.3 widened by
+the same path, 1.5 APNG output and a "this image moves" note in More options, 1.6 confirmed already built. Also the
+Firefox debug-flag fix. Alt+S saves in the last-used format only (never a preset), per the Pro rule below. No new
+count keys besides `save_apng`/`…_to_apng`. Privacy wording is in the branch and must go live before the release.
+Not built: animated WebP output, an animation note after quick saves (no notice mechanism exists for menu saves).
+
 ## 0.16.0 "Pro" (added 2026-11-15)
 
 The first release after Phase 1. Scope (from the vault's `Imgkeep Pro` decision): presets, file-size targets
