@@ -12,7 +12,7 @@ import { storeFor } from "./lib/review.js";
 import { uninstallUrl } from "./lib/uninstall.js";
 import { findImageInPage } from "./lib/find-image.js";
 import { readBlobInPage } from "./lib/read-blob.js";
-import { FOLDERS, countsAllowed, isStoreSite } from "./lib/browser.js";
+import { FOLDERS, countsAllowed, isStoreSite, isTestCopy } from "./lib/browser.js";
 import { cleanHexes } from "./lib/palette.js";
 import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
 
@@ -672,9 +672,7 @@ async function sendOutbox() {
   const event = summaryEvent(box.props, {
     appVersion: chrome.runtime.getManifest().version,
     locale: chrome.i18n.getUILanguage(),
-    // Store installs have an update_url; an unpacked copy (development, testing) doesn't, and its
-    // summaries are marked debug so they stay out of the real numbers.
-    isDebug: !("update_url" in chrome.runtime.getManifest()),
+    isDebug: await isTestCopy(), // development and test copies stay out of the real numbers (lib/browser.js)
   });
   if (await sendSummary(event, appKey)) {
     await chrome.storage.local.set({ countsLastSent: { day: box.day, props: box.props, sentAt: Date.now() } });

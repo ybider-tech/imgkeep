@@ -110,6 +110,14 @@ test.describe("in Firefox", () => {
     expect(await page.evaluate(() => chrome.storage.local.get("counts"))).toEqual({});
   });
 
+  test("a store install's summary counts as real; this test copy's is marked debug", async () => {
+    // addons.mozilla.org installs have no update_url, so Firefox's own install type decides (until 0.15.0 every
+    // Firefox summary was marked debug and left out of the numbers).
+    expect(await page.evaluate(() => chrome.runtime.getManifest().update_url)).toBeUndefined();
+    expect(await page.evaluate(() => chrome.management.getSelf().then((s) => s.installType))).toBe("development");
+    expect(await page.evaluate(() => import("./lib/browser.js").then((m) => m.isTestCopy()))).toBe(true);
+  });
+
   test("saves every format from the menu, converted in the background page, into Downloads", async () => {
     const results = await runAll(`${cors.url}/photo.webp`, ["png", "jpg", "webp", "gif", "pdf"]);
     for (const [format, result] of Object.entries(results)) expect(result, format).toMatchObject({ ok: true, mode: "downloads" });

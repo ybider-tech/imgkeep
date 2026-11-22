@@ -17,6 +17,19 @@ export async function countsAllowed() {
   return chrome.permissions.contains(COUNTS_CONSENT).catch(() => false);
 }
 
+// A copy loaded for development or testing, whose summaries are marked debug so they stay out of the real numbers.
+// Chrome and Edge: store installs carry an update_url and an unpacked copy doesn't. Firefox store installs have no
+// update_url either (Mozilla updates them itself), so Firefox says how it was installed: "development" for a
+// temporary or web-ext copy, "normal" from addons.mozilla.org. (Until 0.15.0 every Firefox install was marked debug.)
+export async function isTestCopy() {
+  if (!IS_FIREFOX) return !("update_url" in chrome.runtime.getManifest());
+  try {
+    return (await chrome.management.getSelf()).installType === "development";
+  } catch {
+    return false;
+  }
+}
+
 // The add-on stores' sites (and Mozilla's other protected sites), where a blocked image is the browser's doing.
 const STORE_HOSTS = [
   "chromewebstore.google.com",
