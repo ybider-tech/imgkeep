@@ -23,15 +23,17 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const submit = process.argv.includes("--submit");
 const listingOnly = process.argv.includes("--listing");
 
-// Our language codes (Chrome's) → addons.mozilla.org's. AMO uses region codes where Firefox does (es-ES, gu-IN…),
-// Tagalog (tl) for Filipino and Bokmål (nb-NO) for Norwegian. Every target is in AMO's own list
-// (addons-server src/olympia/core/languages.py, checked 2026-11-22).
+// Our language codes (Chrome's) → addons.mozilla.org's. AMO uses region codes where Firefox does (es-ES…),
+// Bokmål (nb-NO) for Norwegian. Spanish also fills AMO's Latin American Spanish.
 export const AMO_LOCALE = {
-  es: "es-ES", fil: "tl", gu: "gu-IN", hi: "hi-IN", no: "nb-NO", pt_BR: "pt-BR", pt_PT: "pt-PT", sv: "sv-SE",
-  zh_CN: "zh-CN", zh_TW: "zh-TW",
+  es: ["es-ES", "es-MX", "es-AR", "es-CL"], no: ["nb-NO"], pt_BR: ["pt-BR"], pt_PT: ["pt-PT"], sv: ["sv-SE"],
+  zh_CN: ["zh-CN"], zh_TW: ["zh-TW"],
 };
-const AMO_SUPPORTED = new Set(("am ar bg bn ca cs da de el es-ES et fa fi tl fr gu-IN he hi-IN hr hu id it ja kn ko lt lv " +
-  "ml mr ms nl nb-NO pl pt-BR pt-PT ro ru sk sl sr sv-SE sw ta te th tr uk vi zh-CN zh-TW").split(" "));
+// The languages AMO accepts in production (addons-server src/olympia/core/languages.py PROD_LANGUAGES, checked
+// 2026-11-22; its wider ALL_LANGUAGES list is refused). Ours that aren't here (am ar bg bn ca da et fil gu hi id
+// kn lt lv ml mr ms sw ta te th) show the English listing.
+const AMO_SUPPORTED = new Set(("cs de dsb el en-CA en-GB en-US es-AR es-CL es-ES es-MX fa fi fr fur fy-NL he hr hsb hu " +
+  "ia it ja ka kab ko nb-NO nl nn-NO pl pt-BR pt-PT ro ru sk sl sq sr sv-SE tr uk vi zh-CN zh-TW").split(" "));
 
 const block = (text, heading) => {
   const at = text.indexOf(`## ${heading}`);
@@ -48,14 +50,16 @@ export async function amoMetadata() {
   const dir = join(ROOT, "store", "i18n");
   for (const file of (await readdir(dir)).filter((f) => f.endsWith(".json") && f !== "en.json").sort()) {
     const lang = file.replace(/\.json$/, "");
-    const locale = AMO_LOCALE[lang] || lang;
+    const locales = (AMO_LOCALE[lang] || [lang]).filter((l) => AMO_SUPPORTED.has(l));
     const t = JSON.parse(await readFile(join(dir, file), "utf8"));
-    if (!AMO_SUPPORTED.has(locale) || !t.amoSummary?.trim() || !t.amoDescription?.trim()) {
+    if (!locales.length || !t.amoSummary?.trim() || !t.amoDescription?.trim()) {
       skipped.push(lang);
       continue;
     }
-    summary[locale] = t.amoSummary.trim();
-    description[locale] = t.amoDescription.trim();
+    for (const locale of locales) {
+      summary[locale] = t.amoSummary.trim();
+      description[locale] = t.amoDescription.trim();
+    }
   }
   for (const [locale, s] of Object.entries(summary)) if (s.length > 250) throw new Error(`AMO summary ${locale} is ${s.length} characters (max 250)`);
   return {
@@ -80,7 +84,7 @@ if (!submit && !listingOnly) {
   const locales = Object.keys(metadata.summary);
   console.log(`The listing in ${locales.length} languages (summary characters, start of the summary):`);
   for (const l of locales) console.log(`  ${l.padEnd(6)} ${String(metadata.summary[l].length).padStart(3)}  ${metadata.summary[l].slice(0, 70)}…`);
-  if (skipped.length) console.log(`Skipped (no AMO language, or no text): ${skipped.join(", ")}`);
+  if (skipped.length) console.log(`Not on AMO (these show the English listing): ${skipped.join(", ")}`);
   console.log("Nothing uploaded. --listing updates the live listing's texts; --submit sends a new version with them.");
   process.exit(0);
 }
