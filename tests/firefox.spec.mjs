@@ -38,6 +38,17 @@ test("the Firefox manifest: same extension, Firefox background, no offscreen, da
   expect(chrome.commands["save-image"].suggested_key).toEqual({ default: "Alt+S" });
 });
 
+test("Firefox names fit addons.mozilla.org's 50 characters in every language it lists", async () => {
+  const { firefoxName, AMO_NAME_MAX } = await import("../scripts/build-firefox.mjs");
+  const amo = ["cs", "de", "el", "en", "es", "fa", "fi", "fr", "he", "hr", "hu", "it", "ja", "ko", "nl", "no", "pl", "pt_BR", "pt_PT", "ro", "ru", "sk", "sl", "sr", "sv", "tr", "uk", "vi", "zh_CN", "zh_TW"];
+  for (const lang of amo) {
+    const { extName } = JSON.parse(await readFile(join(ROOT, "extension", "_locales", lang, "messages.json"), "utf8"));
+    const name = firefoxName(lang, extName.message);
+    expect([...name].length, `${lang}: ${name}`).toBeLessThanOrEqual(AMO_NAME_MAX);
+    expect(name, lang).toMatch(/PNG/);
+  }
+});
+
 test.describe("in Firefox", () => {
   test.skip(!FIREFOX && !process.env.CI, "Firefox isn't installed here");
   test.describe.configure({ mode: "serial" });

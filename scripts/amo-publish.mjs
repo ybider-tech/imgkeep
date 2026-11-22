@@ -13,6 +13,7 @@
 // read a folder that never existed (store/amo-translations), so the listing was English only.
 import { execFileSync } from "node:child_process";
 import { createHmac, randomUUID } from "node:crypto";
+import { firefoxName } from "./build-firefox.mjs";
 import { existsSync } from "node:fs";
 import { readFile, readdir, writeFile, mkdtemp } from "node:fs/promises";
 import { homedir, tmpdir } from "node:os";
@@ -46,6 +47,9 @@ export async function amoMetadata() {
   const en = await readFile(join(ROOT, "store", "amo-listing.md"), "utf8");
   const summary = { "en-US": block(en, "Summary") };
   const description = { "en-US": block(en, "Description") };
+  // The names Firefox's build gives each language (at most 50 characters, AMO's limit).
+  const extName = async (lang) => JSON.parse(await readFile(join(ROOT, "extension", "_locales", lang, "messages.json"), "utf8")).extName.message;
+  const name = { "en-US": firefoxName("en", await extName("en")) };
   const skipped = [];
   const dir = join(ROOT, "store", "i18n");
   for (const file of (await readdir(dir)).filter((f) => f.endsWith(".json") && f !== "en.json").sort()) {
@@ -59,11 +63,14 @@ export async function amoMetadata() {
     for (const locale of locales) {
       summary[locale] = t.amoSummary.trim();
       description[locale] = t.amoDescription.trim();
+      name[locale] = firefoxName(lang, await extName(lang));
     }
   }
   for (const [locale, s] of Object.entries(summary)) if (s.length > 250) throw new Error(`AMO summary ${locale} is ${s.length} characters (max 250)`);
+  for (const [locale, n] of Object.entries(name)) if ([...n].length > 50) throw new Error(`AMO name ${locale} is over 50 characters`);
   return {
     skipped,
+    name,
     categories: { firefox: ["photos-music-videos"] },
     summary,
     description,
@@ -82,8 +89,8 @@ if (!process.argv[1] || fileURLToPath(import.meta.url) !== process.argv[1]) {
 const { skipped, ...metadata } = await amoMetadata();
 if (!submit && !listingOnly) {
   const locales = Object.keys(metadata.summary);
-  console.log(`The listing in ${locales.length} languages (summary characters, start of the summary):`);
-  for (const l of locales) console.log(`  ${l.padEnd(6)} ${String(metadata.summary[l].length).padStart(3)}  ${metadata.summary[l].slice(0, 70)}…`);
+  console.log(`The listing in ${locales.length} languages (summary characters, name):`);
+  for (const l of locales) console.log(`  ${l.padEnd(6)} ${String(metadata.summary[l].length).padStart(3)}  ${metadata.name[l]}`);
   if (skipped.length) console.log(`Not on AMO (these show the English listing): ${skipped.join(", ")}`);
   console.log("Nothing uploaded. --listing updates the live listing's texts; --submit sends a new version with them.");
   process.exit(0);
@@ -105,10 +112,10 @@ if (listingOnly) {
   const res = await fetch(`https://addons.mozilla.org/api/v5/addons/addon/${metadata.slug}/`, {
     method: "PATCH",
     headers: { Authorization: `JWT ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ summary: metadata.summary, description: metadata.description }),
+    body: JSON.stringify({ name: metadata.name, summary: metadata.summary, description: metadata.description }),
   });
   if (!res.ok) throw new Error(`AMO answered ${res.status}: ${(await res.text()).slice(0, 500)}`);
-  console.log(`Listing updated: summary and description in ${Object.keys(metadata.summary).length} languages.`);
+  console.log(`Listing updated: name, summary and description in ${Object.keys(metadata.summary).length} languages.`);
   process.exit(0);
 }
 
