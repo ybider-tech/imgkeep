@@ -10,7 +10,11 @@
 // by the time this runs the menu has closed, and the pointer (so :hover) is where the menu item was,
 // often over a different image.
 
-export function findImageInPage(linkUrl) {
+//
+// exact: the pointer is still where the user pointed (Alt+S, pressed over the image), so the hovered image is
+// taken as it is, with no "other images nearby" guess.
+
+export function findImageInPage(linkUrl, exact = false) {
   const MIN = 80; // ignore icons, avatars and tracking pixels (CSS pixels, either side)
 
   // The best address for an <img>: the widest srcset entry, else what the browser loaded.
@@ -96,7 +100,7 @@ export function findImageInPage(linkUrl) {
   // A guess is only opened directly when no other image is within the pointer's reach (one big photo).
   // Otherwise the picker shows, with the guess first: one more click beats the wrong image.
   let guess = null;
-  if (via === "hover" && under.length) {
+  if (via === "hover" && under.length && !exact) {
     const REACH = 480;
     const hr = hovered.getBoundingClientRect();
     const near = (r) =>

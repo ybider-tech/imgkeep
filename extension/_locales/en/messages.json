@@ -766,6 +766,62 @@
     "message": "Reload the page, then right-click the image and choose Find image here again.",
     "description": "What to do then"
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: pick an image on this page to save",
+    "description": "Tooltip of Imgkeep's toolbar button"
+  },
+  "findShortcutName": {
+    "message": "Save the image under the pointer",
+    "description": "Keyboard shortcut's name, shown in the browser's extension shortcuts page"
+  },
+  "findShortcutTitle": {
+    "message": "Save images with a shortcut",
+    "description": "Heading when the shortcut or toolbar button is used before it's turned on"
+  },
+  "findShortcutBody": {
+    "message": "Point at an image and press $KEY$ to save it in the format you used last, or click the Imgkeep button in the toolbar to pick from the images on screen. It works on any site, even ones that block the right-click. This also turns on Find image here.",
+    "description": "Why the shortcut needs turning on. $KEY$ is the shortcut, e.g. Alt+S",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Point at the image and press $KEY$ again, or click the Imgkeep button.",
+    "description": "What to do after turning on the shortcut. $KEY$ is the shortcut, e.g. Alt+S",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep couldn't find an image there. Point right at the photo and press $KEY$ again, or click the Imgkeep button to pick from the images on screen.",
+    "description": "Shortcut found no image. $KEY$ is the shortcut, e.g. Alt+S",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browsers keep extensions out of some pages, like their own settings and add-on stores. Try it on a regular web page. If this page was open before Imgkeep was installed or updated, reload it first.",
+    "description": "Shortcut couldn't look at the page"
+  },
+  "optShortcutHint": {
+    "message": "Shortcut: point at an image and press $KEY$ to save it in the format you used last, or click the Imgkeep button in the toolbar to pick from the images on screen. Both work on any site and use this setting.",
+    "description": "Options, under Find images. $KEY$ is the shortcut, e.g. Alt+S",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Colour palette",
     "description": "Palette window title and heading"

@@ -20,6 +20,8 @@ export function firefoxManifest(chrome) {
   delete m.minimum_chrome_version;
   m.background = { scripts: ["background.js"], type: "module" };
   m.permissions = m.permissions.filter((p) => p !== "offscreen");
+  // Alt+S opens Firefox's History menu on Windows and Linux, so Firefox gets Alt+Shift+S (changeable in about:addons).
+  if (m.commands?.["save-image"]) m.commands["save-image"].suggested_key = { default: "Alt+Shift+S" };
   m.browser_specific_settings = {
     gecko: {
       id: GECKO_ID,

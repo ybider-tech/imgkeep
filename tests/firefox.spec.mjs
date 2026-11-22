@@ -34,6 +34,8 @@ test("the Firefox manifest: same extension, Firefox background, no offscreen, da
     data_collection_permissions: { required: ["none"], optional: ["technicalAndInteraction"] },
   });
   expect(m).not.toHaveProperty("minimum_chrome_version");
+  expect(m.commands["save-image"].suggested_key).toEqual({ default: "Alt+Shift+S" }); // Alt+S is Firefox's History menu
+  expect(chrome.commands["save-image"].suggested_key).toEqual({ default: "Alt+S" });
 });
 
 test.describe("in Firefox", () => {

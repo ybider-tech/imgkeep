@@ -253,6 +253,47 @@ async function findImage(info, tab) {
   return openWindow("find", { mode: "nothing", pageUrl });
 }
 
+// ---- Alt+S and the toolbar button (since 0.15.0) ----
+// The shortcut saves the image under the pointer in the format used last; the toolbar button shows the images on
+// screen to pick from. Both work on any site, including ones that block the right-click, and use the same
+// optional activeTab + scripting as Find image here: the browser grants activeTab for that one press or click,
+// and the finder runs once in that page. Nothing runs on a page by itself.
+
+async function saveFromPage(tab, { pointer }) {
+  const pageUrl = tab?.url || "";
+  const via = pointer ? "shortcut" : "toolbar";
+  if (!(await findTurnedOn())) return openWindow("find", { mode: "enable", pageUrl, via });
+  let result;
+  try {
+    [{ result } = {}] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id, frameIds: [0] },
+      func: findImageInPage,
+      args: [null, pointer],
+    });
+  } catch {
+    // A page the browser keeps extensions out of (its own pages, add-on stores), or one still loading.
+    return openWindow("find", { mode: "error", pageUrl, via });
+  }
+  globalThis.imgkeepLastFind = result; // for automated tests only
+  const isWeb = (u) => typeof u === "string" && /^(https?:|data:image\/)/i.test(u);
+  const onScreen = (result?.onScreen || []).filter((c) => isWeb(c.url)).slice(0, 12);
+  if (pointer && isWeb(result?.found?.url)) {
+    const { lastFormat } = await chrome.storage.local.get("lastFormat");
+    const format = MENU_FORMATS.includes(lastFormat) ? lastFormat : "png";
+    return runJob({ url: result.found.url, pageUrl, pageTitle: tab?.title || "", tabId: tab?.id, frameId: 0, format });
+  }
+  if (onScreen.length) return openWindow("find", { mode: "pick", pageUrl, candidates: onScreen, via });
+  return openWindow("find", { mode: "nothing", pageUrl, via });
+}
+
+chrome.commands?.onCommand.addListener((command, tab) => {
+  if (command === "save-image") void saveFromPage(tab, { pointer: true });
+});
+chrome.action?.onClicked.addListener((tab) => void saveFromPage(tab, { pointer: false }));
+
+// For automated tests only: as if Alt+S was pressed (pointer: true) or the toolbar button clicked, on a tab.
+globalThis.imgkeepSaveFromPage = (tabId, url, pointer) => saveFromPage({ id: tabId, url, title: "" }, { pointer });
+
 // For automated tests only: run the finder on a tab, as if "Find image here" was clicked there.
 globalThis.imgkeepFindImage = (tabId, url) => findImage({ pageUrl: url, frameId: 0 }, { id: tabId, url });
 
@@ -839,8 +880,8 @@ const windowHandlers = {
 
   // Find image: what this window is for (turn on, pick, nothing found, or couldn't look).
   async finderJob({ jobId }) {
-    const { mode, candidates = [], pageUrl } = await loadJob(jobId);
-    return { ok: true, mode, pageUrl, candidates: candidates.map(({ url, width, height }) => ({ url, width, height })) };
+    const { mode, candidates = [], pageUrl, via = "menu" } = await loadJob(jobId);
+    return { ok: true, mode, pageUrl, via, candidates: candidates.map(({ url, width, height }) => ({ url, width, height })) };
   },
 
   // Find image: the user picked one of the images found on screen. Only an index comes from the window;

@@ -98,6 +98,9 @@ async function renderFind() {
 
 async function init() {
   localisePage();
+  // Alt+S as the browser has it now (the user can change it), or Alt+S if none is set.
+  const commands = await chrome.commands?.getAll?.().catch(() => []);
+  $("shortcutHint").textContent = t("optShortcutHint", [commands?.find((c) => c.name === "save-image")?.shortcut || "Alt+S"]);
   const s = await getSettings();
   // Firefox can't write into a chosen folder (lib/browser.js): Downloads or ask every time.
   if (!FOLDERS) {
