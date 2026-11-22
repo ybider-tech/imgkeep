@@ -12,7 +12,7 @@ import { ask, copyPng, dataUrlToBlob, detailText, el, errorText, formatBytes, fo
 const jobId = new URLSearchParams(location.search).get("job");
 const $ = (id) => document.getElementById(id);
 const toBackground = (type, extra) => ask(jobId, type, extra);
-const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", avif: "AVIF", ico: "ICO", bmp: "BMP" };
+const LABEL = { png: "PNG", jpg: "JPG", webp: "WebP", avif: "AVIF", apng: "APNG", ico: "ICO", bmp: "BMP" };
 const LAST = "editorLast"; // the last format and width used here, in chrome.storage.local
 
 let job = null; // { url, pageUrl, settings }
@@ -45,17 +45,27 @@ function setBusy(busy) {
 // Controls that only apply to some formats.
 function syncControls() {
   const f = format();
-  $("qualityField").hidden = f === "png" || f === "ico" || f === "bmp"; // lossless, no quality
+  $("qualityField").hidden = ["png", "apng", "ico", "bmp"].includes(f); // lossless, no quality
   $("pngHint").hidden = f !== "png";
   $("icoHint").hidden = f !== "ico";
   $("bmpHint").hidden = f !== "bmp";
   $("avifHint").hidden = f !== "avif";
+  $("apngHint").hidden = f !== "apng";
+  syncAnimatedHint();
   $("widthField").hidden = f === "ico"; // an icon has fixed sizes
   $("backgroundField").hidden = f !== "jpg" && f !== "bmp";
   const settings = job.settings;
-  if (!["png", "ico", "bmp"].includes(f) && !$("quality").dataset.touched)
+  if (!["png", "apng", "ico", "bmp"].includes(f) && !$("quality").dataset.touched)
     $("quality").value = f === "webp" ? settings.webpQuality : f === "avif" ? AVIF_DEFAULT_QUALITY : settings.jpgQuality;
   $("qualityOut").textContent = $("quality").value;
+}
+
+// An image that moves, about to be saved in a format that keeps only its first frame.
+function syncAnimatedHint() {
+  const f = format();
+  const show = Boolean(result?.animated) && f !== "apng";
+  $("animatedHint").hidden = !show;
+  if (show) $("animatedHint").textContent = t("editAnimatedHint", [LABEL[f] || f.toUpperCase()]);
 }
 
 function showProblem(nodes) {
@@ -119,12 +129,13 @@ async function preview() {
   // Format and extension come from the checked output bytes.
   // An icon holds several sizes: "16, 32, 48, 256 px".
   const dims = res.ext === "ico" ? `${icoSizes(res.sourceWidth, res.sourceHeight).join(", ")} px` : formatSize(res.width, res.height);
-  const parts = [dims, LABEL[res.ext] || res.ext.toUpperCase(), formatBytes(res.size)];
+  const parts = [dims, format() === "apng" ? "APNG" : LABEL[res.ext] || res.ext.toUpperCase(), formatBytes(res.size)];
   $("resultFacts").replaceChildren(...parts.flatMap((p, i) => (i ? [" · ", isolate(p)] : [isolate(p)])));
   $("ext").textContent = `.${res.ext}`;
   if (!nameEdited) {
     $("name").value = buildTarget({ settings: job.settings, url: job.url, width: res.width, height: res.height, ext: res.ext }).name;
   }
+  syncAnimatedHint();
   setBusy(false);
 }
 

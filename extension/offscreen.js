@@ -173,6 +173,7 @@ const handlers = {
       size: out.blob.size,
       sourceType: out.sourceType, // for the anonymous counts: "image/webp" → JPG
       fromOriginal, // the full-size file was used ("Original size")
+      animated: out.animated, // the source moves: a still format keeps only its first frame (More options says so)
     };
     if (msg.want === "data") result.dataUrl = await toDataUrl(out.blob);
     if (msg.want === "url") result.url = await downloadUrl(entry);

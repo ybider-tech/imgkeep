@@ -809,7 +809,7 @@ function cleanOptions(o = {}) {
   return out;
 }
 
-const WINDOW_FORMATS = ["png", "jpg", "webp", "avif", "ico", "bmp"];
+const WINDOW_FORMATS = ["png", "jpg", "webp", "avif", "apng", "ico", "bmp"];
 const PALETTE_KINDS = ["png", "gpl", "ase"];
 
 // Converts a window's image without saving it and returns the file as a data: URL (preview, clipboard).

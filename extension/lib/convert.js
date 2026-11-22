@@ -5,7 +5,8 @@
 
 import { JobError } from "./job-error.js";
 import { GIF_LIMITS, nameFromUrl } from "./settings.js";
-import { decode, draw, encodeCanvas, fitWidth, processImage, sniffImageType, verifyOutput } from "./image.js";
+import { decode, draw, encodeCanvas, fitWidth, isAnimated, processImage, sniffImageType, verifyOutput } from "./image.js";
+import { encodeApng } from "./apng.js";
 import { gifSize, openAnimation, stillFrame, checkLimits, fitGif, encodeGif } from "./gif.js";
 import { buildPdf, splitAlpha, deflate } from "./pdf.js";
 import { buildIco, fitSquare, icoSizes } from "./ico.js";
@@ -49,6 +50,21 @@ async function animate(input, { maxWidth }) {
     return { blob, ...size, sourceWidth: image.width, sourceHeight: image.height };
   } finally {
     image.done();
+  }
+}
+
+// APNG output (since 0.15.0): animations keep every frame in full colour; a still image is a plain PNG.
+async function toApng(input, opts) {
+  const type = await sniffImageType(input);
+  const animation = await openAnimation(input, type);
+  if (!animation) return still(input, { ...opts, mime: "image/png" });
+  try {
+    checkLimits(animation);
+    const size = fitGif(animation.width, animation.height, opts.maxWidth);
+    const blob = await encodeApng(animation.frames(), { ...size, deadline: Date.now() + GIF_LIMITS.timeoutMs });
+    return { blob, ...size, sourceWidth: animation.width, sourceHeight: animation.height };
+  } finally {
+    animation.close();
   }
 }
 
@@ -145,7 +161,7 @@ async function toAvif(input, { maxWidth, quality, avifEncoder }) {
   }
 }
 
-const MAKERS = { "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp, "image/avif": toAvif };
+const MAKERS = { "image/apng": toApng, "image/gif": animate, "application/pdf": toPdf, "image/x-icon": toIco, "image/bmp": toBmp, "image/avif": toAvif };
 
 // input: the image Blob. opts: { mime (the output type), quality, background, maxWidth, maxBytes, minQuality,
 // url or title (PDF title), avifEncoder (async () => encoder, for AVIF) }.
@@ -155,6 +171,6 @@ export async function convert(input, opts) {
   const make = MAKERS[opts.mime] || still;
   const out = await make(input, opts);
   // Whatever made it, the file must really be the type it will be named as.
-  const ext = await verifyOutput(out.blob, opts.mime);
-  return { ...out, ext, quality: out.quality ?? null, sourceType: await sniffImageType(input) };
+  const ext = await verifyOutput(out.blob, opts.mime === "image/apng" ? "image/png" : opts.mime); // an APNG is a PNG
+  return { ...out, ext, quality: out.quality ?? null, sourceType: await sniffImageType(input), animated: await isAnimated(input) };
 }

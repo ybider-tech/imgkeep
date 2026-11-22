@@ -154,6 +154,34 @@ test.describe("in Firefox", () => {
     expect([...(await saved("photo.ico")).subarray(0, 4)]).toEqual([0, 0, 1, 0]);
   });
 
+  test("APNG (0.15.0): an animated WebP keeps every frame, drawn in the background page", async () => {
+    const { apng } = await runAll(`${cors.url}/animated.webp`, ["apng"]);
+    expect(apng).toMatchObject({ ok: true });
+    const bytes = await saved("animated.png");
+    expect(bytes.subarray(1, 4).toString()).toBe("PNG");
+    expect(bytes.includes(Buffer.from("acTL"))).toBe(true);
+    expect(bytes.toString("latin1").split("fcTL").length - 1).toBe(3);
+  });
+
+  test("Alt+S (0.15.0): the image under the pointer is saved in the format used last", async () => {
+    // Only a real key press grants activeTab, so the test stands in for that one call, as for Find image here.
+    await page.evaluate(() => chrome.storage.local.set({ lastFormat: "webp" }));
+    const result = await page.evaluate(async (found) => {
+      const bg = await browser.runtime.getBackgroundPage();
+      const real = { contains: bg.chrome.permissions.contains, scripting: bg.chrome.scripting };
+      bg.chrome.permissions.contains = async () => true;
+      bg.chrome.scripting = { ...(bg.chrome.scripting || {}), executeScript: async () => [{ result: { found: { url: found, kind: "img", width: 300, height: 300 }, onScreen: [] } }] };
+      try {
+        return JSON.parse(JSON.stringify(await bg.imgkeepSaveFromPage(1, "https://example.com/", true)));
+      } finally {
+        bg.chrome.permissions.contains = real.contains;
+        bg.chrome.scripting = real.scripting;
+      }
+    }, `${cors.url}/wide.webp`);
+    expect(result).toMatchObject({ ok: true });
+    expect((await saved("wide.webp")).subarray(8, 12).toString()).toBe("WEBP");
+  });
+
   test("Find image here: in a Firefox page, the finder picks the photo under a cover layer", async () => {
     const tab = await browser.newPage();
     try {

@@ -822,6 +822,20 @@
       }
     }
   },
+  "editApngHint": {
+    "message": "An animated PNG: every frame in full colour, with transparency, unlike GIF. Saved as .png; apps that don't play APNG show the first frame.",
+    "description": "Hint under the format choices when APNG is picked. Keep APNG, GIF and .png"
+  },
+  "editAnimatedHint": {
+    "message": "This image moves. $FORMAT$ keeps only its first frame: choose APNG to keep the motion, or GIF from the right-click menu.",
+    "description": "Shown when an animated image is about to be saved in a still format. $FORMAT$ is PNG, JPG, WebP…",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Colour palette",
     "description": "Palette window title and heading"

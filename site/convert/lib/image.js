@@ -36,6 +36,39 @@ export async function sniffImageType(blob) {
   return typeFromBytes(new Uint8Array(await blob.slice(0, 16).arrayBuffer())) || blob.type || "";
 }
 
+// Does the image move? From its bytes, without decoding it: an animated GIF (more than one frame), PNG (an acTL
+// chunk before the image data), WebP (the animation flag) or AVIF (an image sequence). Used to warn that a still
+// format keeps only the first frame.
+export function isAnimatedBytes(b) {
+  const type = typeFromBytes(b);
+  const text = (from, to) => String.fromCharCode(...b.subarray(from, to));
+  if (type === "image/webp") return text(12, 16) === "VP8X" && (b[20] & 0x02) !== 0;
+  if (type === "image/avif") return text(8, 12) === "avis";
+  const find = (needle, limit = b.length) => {
+    outer: for (let i = 0; i + needle.length <= limit; i++) {
+      for (let j = 0; j < needle.length; j++) if (b[i + j] !== needle[j]) continue outer;
+      return i;
+    }
+    return -1;
+  };
+  const bytes = (str) => [...str].map((c) => c.charCodeAt(0));
+  if (type === "image/png") {
+    const actl = find(bytes("acTL"));
+    return actl > 0 && (find(bytes("IDAT")) < 0 || actl < find(bytes("IDAT")));
+  }
+  if (type === "image/gif") {
+    // Graphic control extensions (21 F9 04) come one per frame in animations.
+    let frames = 0;
+    for (let i = 0; i + 2 < b.length && frames < 2; i++) if (b[i] === 0x21 && b[i + 1] === 0xf9 && b[i + 2] === 0x04) frames++;
+    return frames > 1;
+  }
+  return false;
+}
+
+export async function isAnimated(blob) {
+  return isAnimatedBytes(new Uint8Array(await blob.slice(0, 4 * 1024 * 1024).arrayBuffer()));
+}
+
 // Throws unless the bytes really are `type`. Returns the extension that matches them.
 export async function verifyOutput(blob, type) {
   const actual = typeFromBytes(new Uint8Array(await blob.slice(0, 16).arrayBuffer()));

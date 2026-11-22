@@ -30,6 +30,8 @@ export const FORMATS = {
   bmp: { mime: "image/bmp", ext: "bmp", label: "BMP" },
   // AVIF (More options only): libavif compiled to WebAssembly (vendor/avif). Transparency kept.
   avif: { mime: "image/avif", ext: "avif", label: "AVIF" },
+  // APNG (More options only, since 0.15.0): animated PNG, every frame in full colour with transparency; saved as .png.
+  apng: { mime: "image/apng", ext: "png", label: "APNG", animated: true },
 };
 
 // Caps for making GIFs, so a huge animation can't hang the browser. Over a cap → "too-large".
