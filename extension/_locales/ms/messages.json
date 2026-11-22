@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Muat semula halaman, kemudian klik kanan imej itu dan pilih Cari imej di sini sekali lagi."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: pilih imej pada halaman ini untuk disimpan"
+  },
+  "findShortcutName": {
+    "message": "Simpan imej di bawah penuding"
+  },
+  "findShortcutTitle": {
+    "message": "Simpan imej dengan pintasan"
+  },
+  "findShortcutBody": {
+    "message": "Halakan penuding pada imej dan tekan $KEY$ untuk menyimpannya dalam format yang anda gunakan kali terakhir, atau klik butang Imgkeep pada bar alat untuk memilih daripada imej pada skrin. Ia berfungsi di mana-mana tapak, malah di tapak yang menyekat klik kanan. Ini juga menghidupkan \"Cari imej di sini\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Halakan penuding pada imej dan tekan $KEY$ sekali lagi, atau klik butang Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep tidak menemui imej di situ. Halakan penuding tepat pada foto dan tekan $KEY$ sekali lagi, atau klik butang Imgkeep untuk memilih daripada imej pada skrin.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Pelayar tidak membenarkan sambungan masuk ke sesetengah halaman, seperti tetapan pelayar itu sendiri dan kedai tambahan. Cuba pada halaman web biasa. Jika halaman ini sudah dibuka sebelum Imgkeep dipasang atau dikemas kini, muat semula dahulu."
+  },
+  "optShortcutHint": {
+    "message": "Pintasan: halakan penuding pada imej dan tekan $KEY$ untuk menyimpannya dalam format yang anda gunakan kali terakhir, atau klik butang Imgkeep pada bar alat untuk memilih daripada imej pada skrin. Kedua-duanya berfungsi di mana-mana tapak dan menggunakan tetapan ini.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "PNG beranimasi: setiap bingkai dalam warna penuh, dengan ketelusan, tidak seperti GIF. Disimpan sebagai .png; apl yang tidak memainkan APNG memaparkan bingkai pertama."
+  },
+  "editAnimatedHint": {
+    "message": "Imej ini bergerak. $FORMAT$ hanya menyimpan bingkai pertamanya: pilih APNG untuk mengekalkan gerakan, atau GIF daripada menu klik kanan.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Palet warna"
   },

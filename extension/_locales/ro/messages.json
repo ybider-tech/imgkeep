@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Reîncarcă pagina, apoi dă clic dreapta pe imagine și alege din nou „Găsește imaginea aici”."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: alegeți o imagine de pe această pagină pentru salvare"
+  },
+  "findShortcutName": {
+    "message": "Salvează imaginea de sub cursor"
+  },
+  "findShortcutTitle": {
+    "message": "Salvați imagini cu o comandă rapidă"
+  },
+  "findShortcutBody": {
+    "message": "Indicați o imagine și apăsați $KEY$ pentru a o salva în formatul folosit ultima dată sau faceți clic pe butonul Imgkeep din bara de instrumente pentru a alege dintre imaginile de pe ecran. Funcționează pe orice site, chiar și pe cele care blochează clicul dreapta. Astfel se activează și „Caută imaginea aici”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Indicați imaginea și apăsați din nou $KEY$ sau faceți clic pe butonul Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep nu a găsit nicio imagine acolo. Indicați exact fotografia și apăsați din nou $KEY$ sau faceți clic pe butonul Imgkeep pentru a alege dintre imaginile de pe ecran.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browserele nu lasă extensiile pe unele pagini, cum ar fi propriile setări și magazinele de suplimente. Încercați pe o pagină web obișnuită. Dacă pagina era deschisă înainte de instalarea sau actualizarea Imgkeep, reîncărcați-o mai întâi."
+  },
+  "optShortcutHint": {
+    "message": "Comandă rapidă: indicați o imagine și apăsați $KEY$ pentru a o salva în formatul folosit ultima dată sau faceți clic pe butonul Imgkeep din bara de instrumente pentru a alege dintre imaginile de pe ecran. Ambele funcționează pe orice site și folosesc această setare.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Un PNG animat: fiecare cadru în culori complete, cu transparență, spre deosebire de GIF. Se salvează ca .png; aplicațiile care nu redau APNG afișează primul cadru."
+  },
+  "editAnimatedHint": {
+    "message": "Această imagine se mișcă. $FORMAT$ păstrează doar primul ei cadru: alegeți APNG pentru a păstra mișcarea sau GIF din meniul clicului dreapta.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paletă de culori"
   },

@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Torna a carregar la pàgina i després fes clic dret sobre la imatge i tria «Cerca la imatge aquí» un altre cop."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: tria una imatge d'aquesta pàgina per desar-la"
+  },
+  "findShortcutName": {
+    "message": "Desa la imatge que hi ha sota el punter"
+  },
+  "findShortcutTitle": {
+    "message": "Desa imatges amb una drecera"
+  },
+  "findShortcutBody": {
+    "message": "Apunta a una imatge i prem $KEY$ per desar-la en el format que vas fer servir l'última vegada, o fes clic al botó d'Imgkeep de la barra d'eines per triar entre les imatges de la pantalla. Funciona a qualsevol lloc web, fins i tot als que bloquegen el clic dret. També activa «Cerca la imatge aquí».",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Apunta a la imatge i torna a prémer $KEY$, o fes clic al botó d'Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep no ha trobat cap imatge aquí. Apunta just a la foto i torna a prémer $KEY$, o fes clic al botó d'Imgkeep per triar entre les imatges de la pantalla.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Els navegadors no deixen entrar les extensions a algunes pàgines, com la seva pròpia configuració i les botigues de complements. Prova-ho en una pàgina web normal. Si aquesta pàgina ja era oberta abans d'instal·lar o actualitzar Imgkeep, torna-la a carregar primer."
+  },
+  "optShortcutHint": {
+    "message": "Drecera: apunta a una imatge i prem $KEY$ per desar-la en el format que vas fer servir l'última vegada, o fes clic al botó d'Imgkeep de la barra d'eines per triar entre les imatges de la pantalla. Tots dos funcionen a qualsevol lloc web i fan servir aquesta opció.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Un PNG animat: cada fotograma a tot color, amb transparència, a diferència del GIF. Es desa com a .png; les aplicacions que no reprodueixen APNG mostren el primer fotograma."
+  },
+  "editAnimatedHint": {
+    "message": "Aquesta imatge es mou. $FORMAT$ només en conserva el primer fotograma: tria APNG per conservar el moviment, o GIF des del menú del clic dret.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paleta de colors"
   },

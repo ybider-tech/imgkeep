@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "I-reload ang page, pagkatapos ay i-right-click ang larawan at piliin ulit ang Maghanap ng larawan dito."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: pumili ng larawan sa pahinang ito para i-save"
+  },
+  "findShortcutName": {
+    "message": "I-save ang larawan sa ilalim ng pointer"
+  },
+  "findShortcutTitle": {
+    "message": "Mag-save ng mga larawan gamit ang shortcut"
+  },
+  "findShortcutBody": {
+    "message": "Ituro ang isang larawan at pindutin ang $KEY$ para i-save ito sa format na huli mong ginamit, o i-click ang button ng Imgkeep sa toolbar para pumili mula sa mga larawan sa screen. Gumagana ito sa anumang site, kahit sa mga humaharang sa right-click. Binubuksan din nito ang \"Hanapin ang larawan dito\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Ituro ang larawan at pindutin ulit ang $KEY$, o i-click ang button ng Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Walang nakitang larawan doon ang Imgkeep. Ituro mismo ang litrato at pindutin ulit ang $KEY$, o i-click ang button ng Imgkeep para pumili mula sa mga larawan sa screen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Hindi pinapapasok ng mga browser ang mga extension sa ilang pahina, gaya ng sarili nilang settings at mga add-on store. Subukan ito sa isang karaniwang web page. Kung bukas na ang pahinang ito bago na-install o na-update ang Imgkeep, i-reload muna ito."
+  },
+  "optShortcutHint": {
+    "message": "Shortcut: ituro ang isang larawan at pindutin ang $KEY$ para i-save ito sa format na huli mong ginamit, o i-click ang button ng Imgkeep sa toolbar para pumili mula sa mga larawan sa screen. Parehong gumagana sa anumang site at gumagamit ng setting na ito.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Isang animated na PNG: bawat frame sa buong kulay, may transparency, hindi tulad ng GIF. Sine-save bilang .png; ipinapakita ng mga app na hindi nagpe-play ng APNG ang unang frame."
+  },
+  "editAnimatedHint": {
+    "message": "Gumagalaw ang larawang ito. Unang frame lang ang itinatabi ng $FORMAT$: piliin ang APNG para manatili ang galaw, o ang GIF mula sa right-click menu.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Palette ng kulay"
   },

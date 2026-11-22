@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Lataa sivu uudelleen, napsauta sitten kuvaa oikealla painikkeella ja valitse uudelleen Etsi kuva tästä."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: valitse tältä sivulta tallennettava kuva"
+  },
+  "findShortcutName": {
+    "message": "Tallenna osoittimen alla oleva kuva"
+  },
+  "findShortcutTitle": {
+    "message": "Tallenna kuvia pikanäppäimellä"
+  },
+  "findShortcutBody": {
+    "message": "Osoita kuvaa ja paina $KEY$, niin se tallentuu viimeksi käyttämässäsi muodossa, tai valitse näytöllä olevista kuvista napsauttamalla työkalurivin Imgkeep-painiketta. Toimii kaikilla sivustoilla, myös niillä, jotka estävät hiiren oikean painikkeen. Tämä ottaa käyttöön myös toiminnon ”Etsi kuva täältä”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Osoita kuvaa ja paina $KEY$ uudelleen tai napsauta Imgkeep-painiketta.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep ei löytänyt sieltä kuvaa. Osoita suoraan kuvaa ja paina $KEY$ uudelleen tai valitse näytöllä olevista kuvista napsauttamalla Imgkeep-painiketta.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Selaimet eivät päästä laajennuksia joillekin sivuille, kuten omiin asetuksiinsa ja lisäosakauppoihin. Kokeile tavallisella verkkosivulla. Jos tämä sivu oli auki jo ennen kuin Imgkeep asennettiin tai päivitettiin, lataa se ensin uudelleen."
+  },
+  "optShortcutHint": {
+    "message": "Pikanäppäin: osoita kuvaa ja paina $KEY$, niin se tallentuu viimeksi käyttämässäsi muodossa, tai valitse näytöllä olevista kuvista napsauttamalla työkalurivin Imgkeep-painiketta. Molemmat toimivat kaikilla sivustoilla ja käyttävät tätä asetusta.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animoitu PNG: jokainen ruutu täysin värein ja läpinäkyvyydellä, toisin kuin GIF. Tallennetaan .png-tiedostona; sovellukset, jotka eivät toista APNG:tä, näyttävät ensimmäisen ruudun."
+  },
+  "editAnimatedHint": {
+    "message": "Tämä kuva liikkuu. $FORMAT$ säilyttää vain sen ensimmäisen ruudun: säilytä liike valitsemalla APNG tai oikean painikkeen valikosta GIF.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Väripaletti"
   },

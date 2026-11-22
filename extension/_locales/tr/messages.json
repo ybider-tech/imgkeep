@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Sayfayı yeniden yükleyin, sonra görsele sağ tıklayıp yeniden Buradaki görseli bul seçeneğini seçin."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: bu sayfadan kaydedilecek bir görsel seçin"
+  },
+  "findShortcutName": {
+    "message": "İmlecin altındaki görseli kaydet"
+  },
+  "findShortcutTitle": {
+    "message": "Görselleri kısayolla kaydedin"
+  },
+  "findShortcutBody": {
+    "message": "Bir görselin üzerine gelip $KEY$ tuşuna basın, en son kullandığınız biçimde kaydedilsin; ya da ekrandaki görsellerden seçmek için araç çubuğundaki Imgkeep düğmesine tıklayın. Sağ tıklamayı engelleyenler dahil her sitede çalışır. Bu, \"Buradaki görseli bul\" özelliğini de açar.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Görselin üzerine gelip $KEY$ tuşuna yeniden basın veya Imgkeep düğmesine tıklayın.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep orada bir görsel bulamadı. Tam fotoğrafın üzerine gelip $KEY$ tuşuna yeniden basın veya ekrandaki görsellerden seçmek için Imgkeep düğmesine tıklayın.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Tarayıcılar uzantıları bazı sayfalara sokmaz; örneğin kendi ayar sayfalarına ve eklenti mağazalarına. Normal bir web sayfasında deneyin. Bu sayfa Imgkeep yüklenmeden veya güncellenmeden önce açıksa önce sayfayı yenileyin."
+  },
+  "optShortcutHint": {
+    "message": "Kısayol: bir görselin üzerine gelip $KEY$ tuşuna basın, en son kullandığınız biçimde kaydedilsin; ya da ekrandaki görsellerden seçmek için araç çubuğundaki Imgkeep düğmesine tıklayın. İkisi de her sitede çalışır ve bu ayarı kullanır.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Hareketli PNG: GIF'ten farklı olarak her kare tam renkli ve saydamlıkla. .png olarak kaydedilir; APNG oynatmayan uygulamalar ilk kareyi gösterir."
+  },
+  "editAnimatedHint": {
+    "message": "Bu görsel hareket ediyor. $FORMAT$ yalnızca ilk kareyi saklar: hareketi korumak için APNG'yi ya da sağ tık menüsünden GIF'i seçin.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Renk paleti"
   },

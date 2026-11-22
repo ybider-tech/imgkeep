@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Töltsd újra az oldalt, majd kattints jobb gombbal a képre, és válaszd ismét a Kép keresése itt lehetőséget."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: válasszon képet erről az oldalról a mentéshez"
+  },
+  "findShortcutName": {
+    "message": "A mutató alatti kép mentése"
+  },
+  "findShortcutTitle": {
+    "message": "Képek mentése billentyűparanccsal"
+  },
+  "findShortcutBody": {
+    "message": "Mutasson egy képre, és nyomja meg a $KEY$ billentyűt, hogy a legutóbb használt formátumban mentse, vagy kattintson az eszköztáron az Imgkeep gombra, hogy a képernyőn lévő képek közül válasszon. Bármely webhelyen működik, azokon is, amelyek tiltják a jobb kattintást. Ezzel a „Kép keresése itt” funkció is bekapcsol.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Mutasson a képre, és nyomja meg újra a $KEY$ billentyűt, vagy kattintson az Imgkeep gombra.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Az Imgkeep nem talált ott képet. Mutasson pontosan a fotóra, és nyomja meg újra a $KEY$ billentyűt, vagy kattintson az Imgkeep gombra, hogy a képernyőn lévő képek közül válasszon.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "A böngészők egyes oldalakra nem engedik be a bővítményeket, például a saját beállításaikra és a bővítményboltokba. Próbálja ki egy átlagos weboldalon. Ha ez az oldal már az Imgkeep telepítése vagy frissítése előtt nyitva volt, előbb töltse újra."
+  },
+  "optShortcutHint": {
+    "message": "Billentyűparancs: mutasson egy képre, és nyomja meg a $KEY$ billentyűt, hogy a legutóbb használt formátumban mentse, vagy kattintson az eszköztáron az Imgkeep gombra, hogy a képernyőn lévő képek közül válasszon. Mindkettő bármely webhelyen működik, és ezt a beállítást használja.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animált PNG: minden képkocka teljes színekkel és átlátszósággal, a GIF-fel ellentétben. .png fájlként menti; az APNG-t nem lejátszó alkalmazások az első képkockát mutatják."
+  },
+  "editAnimatedHint": {
+    "message": "Ez a kép mozog. A(z) $FORMAT$ csak az első képkockát tartja meg: a mozgás megtartásához válassza az APNG-t, vagy a jobb kattintásos menüből a GIF-et.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Színpaletta"
   },

@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Muat ulang halaman, lalu klik kanan gambarnya dan pilih Cari gambar di sini lagi."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: pilih gambar di halaman ini untuk disimpan"
+  },
+  "findShortcutName": {
+    "message": "Simpan gambar di bawah penunjuk"
+  },
+  "findShortcutTitle": {
+    "message": "Simpan gambar dengan pintasan"
+  },
+  "findShortcutBody": {
+    "message": "Arahkan penunjuk ke gambar dan tekan $KEY$ untuk menyimpannya dalam format yang terakhir Anda gunakan, atau klik tombol Imgkeep di toolbar untuk memilih dari gambar di layar. Berfungsi di situs mana pun, bahkan yang memblokir klik kanan. Ini juga mengaktifkan \"Cari gambar di sini\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Arahkan penunjuk ke gambar dan tekan $KEY$ lagi, atau klik tombol Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep tidak menemukan gambar di sana. Arahkan penunjuk tepat ke foto dan tekan $KEY$ lagi, atau klik tombol Imgkeep untuk memilih dari gambar di layar.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browser tidak mengizinkan ekstensi masuk ke beberapa halaman, seperti setelan browser itu sendiri dan toko add-on. Coba di halaman web biasa. Jika halaman ini sudah terbuka sebelum Imgkeep dipasang atau diperbarui, muat ulang dulu."
+  },
+  "optShortcutHint": {
+    "message": "Pintasan: arahkan penunjuk ke gambar dan tekan $KEY$ untuk menyimpannya dalam format yang terakhir Anda gunakan, atau klik tombol Imgkeep di toolbar untuk memilih dari gambar di layar. Keduanya berfungsi di situs mana pun dan memakai setelan ini.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "PNG animasi: setiap frame dengan warna penuh dan transparansi, tidak seperti GIF. Disimpan sebagai .png; aplikasi yang tidak memutar APNG menampilkan frame pertama."
+  },
+  "editAnimatedHint": {
+    "message": "Gambar ini bergerak. $FORMAT$ hanya menyimpan frame pertamanya: pilih APNG untuk mempertahankan gerakan, atau GIF dari menu klik kanan.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Palet warna"
   },

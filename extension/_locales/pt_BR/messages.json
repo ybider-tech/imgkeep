@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Recarregue a página, clique com o botão direito na imagem e escolha Encontrar imagem aqui de novo."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: escolha uma imagem desta página para salvar"
+  },
+  "findShortcutName": {
+    "message": "Salvar a imagem sob o ponteiro"
+  },
+  "findShortcutTitle": {
+    "message": "Salve imagens com um atalho"
+  },
+  "findShortcutBody": {
+    "message": "Aponte para uma imagem e pressione $KEY$ para salvá-la no formato que você usou por último, ou clique no botão do Imgkeep na barra de ferramentas para escolher entre as imagens na tela. Funciona em qualquer site, até nos que bloqueiam o clique direito. Isso também ativa \"Encontrar imagem aqui\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Aponte para a imagem e pressione $KEY$ de novo, ou clique no botão do Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "O Imgkeep não encontrou nenhuma imagem ali. Aponte bem em cima da foto e pressione $KEY$ de novo, ou clique no botão do Imgkeep para escolher entre as imagens na tela.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Os navegadores não deixam extensões entrarem em algumas páginas, como as próprias configurações e as lojas de complementos. Tente em uma página da web comum. Se esta página já estava aberta antes de o Imgkeep ser instalado ou atualizado, recarregue-a primeiro."
+  },
+  "optShortcutHint": {
+    "message": "Atalho: aponte para uma imagem e pressione $KEY$ para salvá-la no formato que você usou por último, ou clique no botão do Imgkeep na barra de ferramentas para escolher entre as imagens na tela. Os dois funcionam em qualquer site e usam esta configuração.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Um PNG animado: cada quadro em cores plenas, com transparência, diferente do GIF. Salvo como .png; apps que não reproduzem APNG mostram o primeiro quadro."
+  },
+  "editAnimatedHint": {
+    "message": "Esta imagem se mexe. O $FORMAT$ guarda só o primeiro quadro: escolha APNG para manter o movimento, ou GIF no menu do clique direito.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paleta de cores"
   },

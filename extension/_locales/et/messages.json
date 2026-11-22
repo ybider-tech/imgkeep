@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Laadi leht uuesti, seejärel tee pildil paremklõps ja vali uuesti „Leia pilt siit“."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: vali sellelt lehelt pilt salvestamiseks"
+  },
+  "findShortcutName": {
+    "message": "Salvesta kursori all olev pilt"
+  },
+  "findShortcutTitle": {
+    "message": "Salvesta pilte otseteega"
+  },
+  "findShortcutBody": {
+    "message": "Osuta pildile ja vajuta $KEY$, et salvestada see viimati kasutatud vormingus, või klõpsa tööriistaribal Imgkeepi nupul, et valida ekraanil olevate piltide seast. Töötab igal saidil, ka nendel, mis paremklõpsu blokeerivad. See lülitab sisse ka funktsiooni „leia pilt siit“.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Osuta pildile ja vajuta uuesti $KEY$ või klõpsa Imgkeepi nupul.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep ei leidnud sealt pilti. Osuta täpselt fotole ja vajuta uuesti $KEY$ või klõpsa Imgkeepi nupul, et valida ekraanil olevate piltide seast.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Brauserid ei lase laiendusi mõnele lehele, näiteks oma seadetesse ja lisandipoodidesse. Proovi tavalisel veebilehel. Kui see leht oli avatud juba enne Imgkeepi installimist või uuendamist, laadi see kõigepealt uuesti."
+  },
+  "optShortcutHint": {
+    "message": "Otsetee: osuta pildile ja vajuta $KEY$, et salvestada see viimati kasutatud vormingus, või klõpsa tööriistaribal Imgkeepi nupul, et valida ekraanil olevate piltide seast. Mõlemad töötavad igal saidil ja kasutavad seda seadet.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animeeritud PNG: iga kaader täisvärvis ja läbipaistvusega, erinevalt GIF-ist. Salvestatakse .png-failina; rakendused, mis APNG-d ei esita, näitavad esimest kaadrit."
+  },
+  "editAnimatedHint": {
+    "message": "See pilt liigub. $FORMAT$ säilitab ainult esimese kaadri: liikumise säilitamiseks vali APNG või paremklõpsumenüüst GIF.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Värvipalett"
   },

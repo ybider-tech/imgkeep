@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "ページを再読み込みしてから、画像を右クリックしてもう一度「ここで画像を探す」を選んでください。"
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: このページの画像を選んで保存"
+  },
+  "findShortcutName": {
+    "message": "ポインターの下の画像を保存"
+  },
+  "findShortcutTitle": {
+    "message": "ショートカットで画像を保存"
+  },
+  "findShortcutBody": {
+    "message": "画像にポインターを合わせて $KEY$ を押すと、前回使った形式で保存します。ツールバーの Imgkeep ボタンをクリックすると、画面上の画像から選べます。右クリックを禁止しているサイトを含め、どのサイトでも使えます。オンにすると「ここで画像を探す」もオンになります。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "画像にポインターを合わせてもう一度 $KEY$ を押すか、Imgkeep ボタンをクリックしてください。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "そこには画像が見つかりませんでした。写真の真上にポインターを合わせてもう一度 $KEY$ を押すか、Imgkeep ボタンをクリックして画面上の画像から選んでください。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "ブラウザーは、自身の設定ページやアドオンストアなど、一部のページに拡張機能を入れません。通常のウェブページでお試しください。Imgkeep のインストールや更新より前からこのページを開いていた場合は、先に再読み込みしてください。"
+  },
+  "optShortcutHint": {
+    "message": "ショートカット: 画像にポインターを合わせて $KEY$ を押すと、前回使った形式で保存します。ツールバーの Imgkeep ボタンをクリックすると、画面上の画像から選べます。どちらもすべてのサイトで使え、この設定を使います。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "アニメーション PNG: GIF と違い、すべてのフレームをフルカラー・透過付きで保存します。.png として保存され、APNG を再生できないアプリでは最初のフレームが表示されます。"
+  },
+  "editAnimatedHint": {
+    "message": "この画像は動きます。$FORMAT$ では最初のフレームしか残りません。動きを残すには APNG を選ぶか、右クリックメニューから GIF を選んでください。",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "カラーパレット"
   },

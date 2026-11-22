@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Last siden på nytt, høyreklikk så bildet og velg «Finn bilde her» igjen."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: velg et bilde på denne siden som skal lagres"
+  },
+  "findShortcutName": {
+    "message": "Lagre bildet under pekeren"
+  },
+  "findShortcutTitle": {
+    "message": "Lagre bilder med en snarvei"
+  },
+  "findShortcutBody": {
+    "message": "Pek på et bilde og trykk på $KEY$ for å lagre det i formatet du brukte sist, eller klikk på Imgkeep-knappen i verktøylinjen for å velge blant bildene på skjermen. Det fungerer på alle nettsteder, også de som blokkerer høyreklikk. Dette slår også på «Finn bilde her».",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Pek på bildet og trykk på $KEY$ igjen, eller klikk på Imgkeep-knappen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep fant ikke noe bilde der. Pek rett på bildet og trykk på $KEY$ igjen, eller klikk på Imgkeep-knappen for å velge blant bildene på skjermen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Nettlesere holder utvidelser unna enkelte sider, som sine egne innstillinger og tilleggsbutikker. Prøv på en vanlig nettside. Hvis denne siden var åpen før Imgkeep ble installert eller oppdatert, last den inn på nytt først."
+  },
+  "optShortcutHint": {
+    "message": "Snarvei: Pek på et bilde og trykk på $KEY$ for å lagre det i formatet du brukte sist, eller klikk på Imgkeep-knappen i verktøylinjen for å velge blant bildene på skjermen. Begge fungerer på alle nettsteder og bruker denne innstillingen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "En animert PNG: hvert bilde i full farge, med gjennomsiktighet, i motsetning til GIF. Lagres som .png; apper som ikke spiller av APNG, viser det første bildet."
+  },
+  "editAnimatedHint": {
+    "message": "Dette bildet beveger seg. $FORMAT$ beholder bare det første bildet: Velg APNG for å beholde bevegelsen, eller GIF fra høyreklikkmenyen.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Fargepalett"
   },

@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Obnovte stránku, potom kliknite na obrázok pravým tlačidlom a znova zvoľte Nájsť obrázok tu."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: vyberte obrázok na tejto stránke na uloženie"
+  },
+  "findShortcutName": {
+    "message": "Uložiť obrázok pod ukazovateľom"
+  },
+  "findShortcutTitle": {
+    "message": "Ukladajte obrázky klávesovou skratkou"
+  },
+  "findShortcutBody": {
+    "message": "Ukážte na obrázok a stlačte $KEY$, aby sa uložil vo formáte, ktorý ste použili naposledy, alebo kliknite na tlačidlo Imgkeep na paneli nástrojov a vyberte z obrázkov na obrazovke. Funguje na akejkoľvek stránke, aj na tých, ktoré blokujú pravé tlačidlo. Tým sa zapne aj „Nájsť obrázok tu“.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Ukážte na obrázok a znova stlačte $KEY$ alebo kliknite na tlačidlo Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep tam nenašiel žiadny obrázok. Ukážte priamo na fotku a znova stlačte $KEY$ alebo kliknite na tlačidlo Imgkeep a vyberte z obrázkov na obrazovke.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Prehliadače nepúšťajú rozšírenia na niektoré stránky, napríklad na vlastné nastavenia a obchody s doplnkami. Skúste to na bežnej webovej stránke. Ak bola táto stránka otvorená ešte pred inštaláciou alebo aktualizáciou Imgkeep, najprv ju znova načítajte."
+  },
+  "optShortcutHint": {
+    "message": "Skratka: ukážte na obrázok a stlačte $KEY$, aby sa uložil vo formáte, ktorý ste použili naposledy, alebo kliknite na tlačidlo Imgkeep na paneli nástrojov a vyberte z obrázkov na obrazovke. Oboje funguje na akejkoľvek stránke a používa toto nastavenie.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animovaný PNG: každý snímok v plných farbách a s priehľadnosťou, na rozdiel od GIF. Ukladá sa ako .png; aplikácie, ktoré APNG neprehrávajú, zobrazia prvý snímok."
+  },
+  "editAnimatedHint": {
+    "message": "Tento obrázok sa hýbe. $FORMAT$ zachová len jeho prvý snímok: na zachovanie pohybu vyberte APNG alebo GIF z ponuky pravého tlačidla.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Farebná paleta"
   },

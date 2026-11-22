@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Laad de pagina opnieuw, klik dan met de rechtermuisknop op de afbeelding en kies nogmaals Afbeelding hier zoeken."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: kies een afbeelding op deze pagina om op te slaan"
+  },
+  "findShortcutName": {
+    "message": "Afbeelding onder de aanwijzer opslaan"
+  },
+  "findShortcutTitle": {
+    "message": "Sla afbeeldingen op met een sneltoets"
+  },
+  "findShortcutBody": {
+    "message": "Wijs een afbeelding aan en druk op $KEY$ om die op te slaan in het formaat dat je het laatst gebruikte, of klik op de Imgkeep-knop in de werkbalk om te kiezen uit de afbeeldingen op het scherm. Het werkt op elke site, ook op sites die rechtsklikken blokkeren. Dit zet ook 'afbeelding hier zoeken' aan.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Wijs de afbeelding aan en druk opnieuw op $KEY$, of klik op de Imgkeep-knop.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep heeft daar geen afbeelding gevonden. Wijs precies de foto aan en druk opnieuw op $KEY$, of klik op de Imgkeep-knop om te kiezen uit de afbeeldingen op het scherm.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browsers houden extensies weg van sommige pagina's, zoals hun eigen instellingen en add-onwinkels. Probeer het op een gewone webpagina. Was deze pagina al open voordat Imgkeep werd geïnstalleerd of bijgewerkt, laad hem dan eerst opnieuw."
+  },
+  "optShortcutHint": {
+    "message": "Sneltoets: wijs een afbeelding aan en druk op $KEY$ om die op te slaan in het formaat dat je het laatst gebruikte, of klik op de Imgkeep-knop in de werkbalk om te kiezen uit de afbeeldingen op het scherm. Beide werken op elke site en gebruiken deze instelling.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Een geanimeerde PNG: elk frame in volle kleur, met transparantie, anders dan GIF. Opgeslagen als .png; apps die APNG niet afspelen, tonen het eerste frame."
+  },
+  "editAnimatedHint": {
+    "message": "Deze afbeelding beweegt. $FORMAT$ bewaart alleen het eerste frame: kies APNG om de beweging te houden, of GIF in het rechtsklikmenu.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Kleurenpalet"
   },

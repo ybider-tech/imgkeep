@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "페이지를 새로고침한 다음, 이미지를 오른쪽 버튼으로 클릭하고 ‘여기서 이미지 찾기’를 다시 선택하세요."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: 이 페이지에서 저장할 이미지 고르기"
+  },
+  "findShortcutName": {
+    "message": "포인터 아래 이미지 저장"
+  },
+  "findShortcutTitle": {
+    "message": "단축키로 이미지 저장"
+  },
+  "findShortcutBody": {
+    "message": "이미지를 가리키고 $KEY$ 키를 누르면 마지막으로 사용한 형식으로 저장됩니다. 툴바의 Imgkeep 버튼을 클릭하면 화면에 있는 이미지 중에서 고를 수 있습니다. 오른쪽 클릭을 막는 사이트를 포함해 모든 사이트에서 작동합니다. 이 설정을 켜면 '여기서 이미지 찾기'도 켜집니다.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "이미지를 가리키고 $KEY$ 키를 다시 누르거나 Imgkeep 버튼을 클릭하세요.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "그곳에서 이미지를 찾지 못했습니다. 사진을 정확히 가리키고 $KEY$ 키를 다시 누르거나, Imgkeep 버튼을 클릭해 화면에 있는 이미지 중에서 고르세요.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "브라우저는 자체 설정 페이지나 부가기능 스토어 같은 일부 페이지에 확장 프로그램이 들어가지 못하게 합니다. 일반 웹페이지에서 시도해 보세요. Imgkeep을 설치하거나 업데이트하기 전부터 이 페이지가 열려 있었다면 먼저 새로고침하세요."
+  },
+  "optShortcutHint": {
+    "message": "단축키: 이미지를 가리키고 $KEY$ 키를 누르면 마지막으로 사용한 형식으로 저장됩니다. 툴바의 Imgkeep 버튼을 클릭하면 화면에 있는 이미지 중에서 고를 수 있습니다. 둘 다 모든 사이트에서 작동하며 이 설정을 사용합니다.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "애니메이션 PNG: GIF와 달리 모든 프레임을 투명도를 포함한 풀 컬러로 저장합니다. .png로 저장되며, APNG를 재생하지 못하는 앱에서는 첫 프레임이 표시됩니다."
+  },
+  "editAnimatedHint": {
+    "message": "이 이미지는 움직입니다. $FORMAT$ 형식은 첫 프레임만 남깁니다. 움직임을 유지하려면 APNG를 선택하거나 오른쪽 클릭 메뉴에서 GIF를 선택하세요.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "색상 팔레트"
   },

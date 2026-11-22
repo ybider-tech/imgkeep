@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Ricarica la pagina, poi fai clic destro sull'immagine e scegli di nuovo Trova immagine qui."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: scegli un'immagine di questa pagina da salvare"
+  },
+  "findShortcutName": {
+    "message": "Salva l'immagine sotto il puntatore"
+  },
+  "findShortcutTitle": {
+    "message": "Salva le immagini con una scorciatoia"
+  },
+  "findShortcutBody": {
+    "message": "Punta un'immagine e premi $KEY$ per salvarla nell'ultimo formato usato, oppure fai clic sul pulsante di Imgkeep nella barra degli strumenti per scegliere tra le immagini sullo schermo. Funziona su qualsiasi sito, anche su quelli che bloccano il clic destro. Attiva anche «trova l'immagine qui».",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Punta l'immagine e premi di nuovo $KEY$, oppure fai clic sul pulsante di Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep non ha trovato immagini lì. Punta proprio la foto e premi di nuovo $KEY$, oppure fai clic sul pulsante di Imgkeep per scegliere tra le immagini sullo schermo.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "I browser tengono le estensioni fuori da alcune pagine, come le proprie impostazioni e gli store dei componenti aggiuntivi. Prova su una normale pagina web. Se questa pagina era già aperta prima che Imgkeep fosse installato o aggiornato, ricaricala prima."
+  },
+  "optShortcutHint": {
+    "message": "Scorciatoia: punta un'immagine e premi $KEY$ per salvarla nell'ultimo formato usato, oppure fai clic sul pulsante di Imgkeep nella barra degli strumenti per scegliere tra le immagini sullo schermo. Entrambi funzionano su qualsiasi sito e usano questa impostazione.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Un PNG animato: ogni fotogramma a colori pieni, con trasparenza, a differenza del GIF. Salvato come .png; le app che non riproducono APNG mostrano il primo fotogramma."
+  },
+  "editAnimatedHint": {
+    "message": "Questa immagine si muove. $FORMAT$ ne conserva solo il primo fotogramma: scegli APNG per mantenere il movimento, oppure GIF dal menu del clic destro.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Palette di colori"
   },

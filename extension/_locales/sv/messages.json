@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Ladda om sidan, högerklicka sedan på bilden och välj Hitta bild här igen."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: välj en bild på den här sidan att spara"
+  },
+  "findShortcutName": {
+    "message": "Spara bilden under pekaren"
+  },
+  "findShortcutTitle": {
+    "message": "Spara bilder med ett kortkommando"
+  },
+  "findShortcutBody": {
+    "message": "Peka på en bild och tryck på $KEY$ för att spara den i det format du använde senast, eller klicka på Imgkeep-knappen i verktygsfältet för att välja bland bilderna på skärmen. Det fungerar på alla webbplatser, även de som blockerar högerklick. Det här slår också på ”Hitta bild här”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Peka på bilden och tryck på $KEY$ igen, eller klicka på Imgkeep-knappen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep hittade ingen bild där. Peka rakt på fotot och tryck på $KEY$ igen, eller klicka på Imgkeep-knappen för att välja bland bilderna på skärmen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Webbläsare håller tillägg borta från vissa sidor, som sina egna inställningar och tilläggsbutiker. Prova på en vanlig webbsida. Om sidan var öppen innan Imgkeep installerades eller uppdaterades, läs in den igen först."
+  },
+  "optShortcutHint": {
+    "message": "Kortkommando: peka på en bild och tryck på $KEY$ för att spara den i det format du använde senast, eller klicka på Imgkeep-knappen i verktygsfältet för att välja bland bilderna på skärmen. Båda fungerar på alla webbplatser och använder den här inställningen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "En animerad PNG: varje bildruta i full färg, med genomskinlighet, till skillnad från GIF. Sparas som .png; appar som inte spelar upp APNG visar den första bildrutan."
+  },
+  "editAnimatedHint": {
+    "message": "Den här bilden rör sig. $FORMAT$ behåller bara den första bildrutan: välj APNG för att behålla rörelsen, eller GIF i högerklicksmenyn.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Färgpalett"
   },

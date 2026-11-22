@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Genindlæs siden, højreklik så på billedet og vælg Find billede her igen."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: vælg et billede på denne side, der skal gemmes"
+  },
+  "findShortcutName": {
+    "message": "Gem billedet under markøren"
+  },
+  "findShortcutTitle": {
+    "message": "Gem billeder med en genvej"
+  },
+  "findShortcutBody": {
+    "message": "Peg på et billede, og tryk på $KEY$ for at gemme det i det format, du sidst brugte, eller klik på Imgkeep-knappen på værktøjslinjen for at vælge blandt billederne på skærmen. Det virker på alle websteder, også dem, der blokerer højreklik. Det slår også \"Find billede her\" til.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Peg på billedet, og tryk på $KEY$ igen, eller klik på Imgkeep-knappen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep kunne ikke finde et billede der. Peg lige på fotoet, og tryk på $KEY$ igen, eller klik på Imgkeep-knappen for at vælge blandt billederne på skærmen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browsere holder udvidelser ude fra nogle sider, f.eks. deres egne indstillinger og tilføjelsesbutikker. Prøv det på en almindelig webside. Hvis siden var åben, før Imgkeep blev installeret eller opdateret, skal du genindlæse den først."
+  },
+  "optShortcutHint": {
+    "message": "Genvej: Peg på et billede, og tryk på $KEY$ for at gemme det i det format, du sidst brugte, eller klik på Imgkeep-knappen på værktøjslinjen for at vælge blandt billederne på skærmen. Begge dele virker på alle websteder og bruger denne indstilling.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "En animeret PNG: hver frame i fulde farver og med gennemsigtighed, i modsætning til GIF. Gemmes som .png; apps, der ikke afspiller APNG, viser den første frame."
+  },
+  "editAnimatedHint": {
+    "message": "Dette billede bevæger sig. $FORMAT$ beholder kun den første frame: Vælg APNG for at bevare bevægelsen, eller GIF i højrekliksmenuen.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Farvepalet"
   },

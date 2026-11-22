@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Pārlādējiet lapu, tad noklikšķiniet uz attēla ar labo peles pogu un vēlreiz izvēlieties Atrast attēlu šeit."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: izvēlieties attēlu šajā lapā, ko saglabāt"
+  },
+  "findShortcutName": {
+    "message": "Saglabāt attēlu zem rādītāja"
+  },
+  "findShortcutTitle": {
+    "message": "Saglabājiet attēlus ar īsinājumtaustiņu"
+  },
+  "findShortcutBody": {
+    "message": "Norādiet uz attēlu un nospiediet $KEY$, lai to saglabātu pēdējā izmantotajā formātā, vai noklikšķiniet uz Imgkeep pogas rīkjoslā, lai izvēlētos no ekrānā redzamajiem attēliem. Darbojas jebkurā vietnē, arī tādās, kas bloķē labo klikšķi. Tas ieslēdz arī funkciju “atrast attēlu šeit”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Norādiet uz attēlu un vēlreiz nospiediet $KEY$ vai noklikšķiniet uz Imgkeep pogas.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep tur neatrada attēlu. Norādiet tieši uz fotoattēlu un vēlreiz nospiediet $KEY$ vai noklikšķiniet uz Imgkeep pogas, lai izvēlētos no ekrānā redzamajiem attēliem.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Pārlūki nelaiž paplašinājumus dažās lapās, piemēram, savos iestatījumos un papildinājumu veikalos. Izmēģiniet parastā tīmekļa lapā. Ja šī lapa bija atvērta jau pirms Imgkeep instalēšanas vai atjaunināšanas, vispirms to pārlādējiet."
+  },
+  "optShortcutHint": {
+    "message": "Īsinājumtaustiņš: norādiet uz attēlu un nospiediet $KEY$, lai to saglabātu pēdējā izmantotajā formātā, vai noklikšķiniet uz Imgkeep pogas rīkjoslā, lai izvēlētos no ekrānā redzamajiem attēliem. Abi darbojas jebkurā vietnē un izmanto šo iestatījumu.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animēts PNG: katrs kadrs pilnās krāsās un ar caurspīdīgumu, atšķirībā no GIF. Tiek saglabāts kā .png; lietotnes, kas neatskaņo APNG, rāda pirmo kadru."
+  },
+  "editAnimatedHint": {
+    "message": "Šis attēls kustas. $FORMAT$ saglabā tikai tā pirmo kadru: lai saglabātu kustību, izvēlieties APNG vai GIF labā klikšķa izvēlnē.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Krāsu palete"
   },

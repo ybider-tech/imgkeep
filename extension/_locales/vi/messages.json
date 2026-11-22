@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Hãy tải lại trang, rồi nhấp chuột phải vào ảnh và chọn Tìm ảnh ở đây lần nữa."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: chọn một ảnh trên trang này để lưu"
+  },
+  "findShortcutName": {
+    "message": "Lưu ảnh dưới con trỏ"
+  },
+  "findShortcutTitle": {
+    "message": "Lưu ảnh bằng phím tắt"
+  },
+  "findShortcutBody": {
+    "message": "Trỏ vào một ảnh và nhấn $KEY$ để lưu ảnh ở định dạng bạn dùng lần gần nhất, hoặc bấm nút Imgkeep trên thanh công cụ để chọn trong các ảnh trên màn hình. Dùng được trên mọi trang web, kể cả trang chặn nhấp chuột phải. Thao tác này cũng bật \"Tìm ảnh ở đây\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Trỏ vào ảnh và nhấn lại $KEY$, hoặc bấm nút Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep không tìm thấy ảnh nào ở đó. Trỏ đúng vào bức ảnh và nhấn lại $KEY$, hoặc bấm nút Imgkeep để chọn trong các ảnh trên màn hình.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Trình duyệt không cho tiện ích vào một số trang, như trang cài đặt của chính nó và cửa hàng tiện ích. Hãy thử trên một trang web thông thường. Nếu trang này đã mở trước khi Imgkeep được cài đặt hoặc cập nhật, hãy tải lại trang trước."
+  },
+  "optShortcutHint": {
+    "message": "Phím tắt: trỏ vào một ảnh và nhấn $KEY$ để lưu ảnh ở định dạng bạn dùng lần gần nhất, hoặc bấm nút Imgkeep trên thanh công cụ để chọn trong các ảnh trên màn hình. Cả hai đều dùng được trên mọi trang web và dùng cài đặt này.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "PNG động: mọi khung hình đủ màu, có độ trong suốt, khác với GIF. Lưu dưới dạng .png; ứng dụng không phát APNG sẽ hiện khung hình đầu tiên."
+  },
+  "editAnimatedHint": {
+    "message": "Ảnh này chuyển động. $FORMAT$ chỉ giữ khung hình đầu tiên: chọn APNG để giữ chuyển động, hoặc GIF trong menu nhấp chuột phải.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Bảng màu"
   },

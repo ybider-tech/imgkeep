@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Įkelkite puslapį iš naujo, tada spustelėkite paveikslėlį dešiniuoju pelės mygtuku ir vėl pasirinkite „Rasti paveikslėlį čia“."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: pasirinkite šio puslapio paveikslėlį išsaugoti"
+  },
+  "findShortcutName": {
+    "message": "Išsaugoti paveikslėlį po žymekliu"
+  },
+  "findShortcutTitle": {
+    "message": "Išsaugokite paveikslėlius spartųjį klavišą"
+  },
+  "findShortcutBody": {
+    "message": "Nurodykite paveikslėlį ir paspauskite $KEY$, kad jis būtų išsaugotas paskutinį kartą naudotu formatu, arba spustelėkite Imgkeep mygtuką įrankių juostoje ir pasirinkite iš ekrane matomų paveikslėlių. Veikia bet kurioje svetainėje, net tose, kurios blokuoja dešinįjį spustelėjimą. Taip įjungiama ir funkcija „rasti paveikslėlį čia“.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Nurodykite paveikslėlį ir dar kartą paspauskite $KEY$ arba spustelėkite Imgkeep mygtuką.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep ten nerado paveikslėlio. Nurodykite tiesiai į nuotrauką ir dar kartą paspauskite $KEY$ arba spustelėkite Imgkeep mygtuką ir pasirinkite iš ekrane matomų paveikslėlių.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Naršyklės neįleidžia plėtinių į kai kuriuos puslapius, pavyzdžiui, į savo nustatymus ir priedų parduotuves. Pabandykite įprastame tinklalapyje. Jei šis puslapis buvo atidarytas dar prieš įdiegiant ar atnaujinant Imgkeep, pirmiausia jį įkelkite iš naujo."
+  },
+  "optShortcutHint": {
+    "message": "Spartusis klavišas: nurodykite paveikslėlį ir paspauskite $KEY$, kad jis būtų išsaugotas paskutinį kartą naudotu formatu, arba spustelėkite Imgkeep mygtuką įrankių juostoje ir pasirinkite iš ekrane matomų paveikslėlių. Abu veikia bet kurioje svetainėje ir naudoja šį nustatymą.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animuotas PNG: kiekvienas kadras visomis spalvomis ir su skaidrumu, kitaip nei GIF. Išsaugoma kaip .png; programos, kurios neleidžia APNG, rodo pirmą kadrą."
+  },
+  "editAnimatedHint": {
+    "message": "Šis paveikslėlis juda. $FORMAT$ išsaugo tik pirmą jo kadrą: norėdami išlaikyti judesį, pasirinkite APNG arba GIF dešiniojo spustelėjimo meniu.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Spalvų paletė"
   },

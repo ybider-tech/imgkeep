@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Lade die Seite neu, klicke mit der rechten Maustaste auf das Bild und wähle erneut Bild hier finden."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: Bild auf dieser Seite zum Speichern auswählen"
+  },
+  "findShortcutName": {
+    "message": "Bild unter dem Mauszeiger speichern"
+  },
+  "findShortcutTitle": {
+    "message": "Bilder per Tastenkürzel speichern"
+  },
+  "findShortcutBody": {
+    "message": "Zeige auf ein Bild und drücke $KEY$, um es im zuletzt verwendeten Format zu speichern, oder klicke auf die Imgkeep-Schaltfläche in der Symbolleiste, um aus den Bildern auf dem Bildschirm zu wählen. Das klappt auf jeder Website, auch auf solchen, die den Rechtsklick sperren. Damit wird auch „Bild hier finden“ eingeschaltet.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Zeige auf das Bild und drücke erneut $KEY$, oder klicke auf die Imgkeep-Schaltfläche.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep hat dort kein Bild gefunden. Zeige direkt auf das Foto und drücke erneut $KEY$, oder klicke auf die Imgkeep-Schaltfläche, um aus den Bildern auf dem Bildschirm zu wählen.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Browser lassen Erweiterungen auf manche Seiten nicht zu, etwa ihre eigenen Einstellungen und Add-on-Stores. Versuche es auf einer normalen Webseite. War diese Seite schon geöffnet, bevor Imgkeep installiert oder aktualisiert wurde, lade sie zuerst neu."
+  },
+  "optShortcutHint": {
+    "message": "Tastenkürzel: Zeige auf ein Bild und drücke $KEY$, um es im zuletzt verwendeten Format zu speichern, oder klicke auf die Imgkeep-Schaltfläche in der Symbolleiste, um aus den Bildern auf dem Bildschirm zu wählen. Beides funktioniert auf jeder Website und nutzt diese Einstellung.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Ein animiertes PNG: jedes Einzelbild in voller Farbe, mit Transparenz, anders als GIF. Wird als .png gespeichert; Apps, die APNG nicht abspielen, zeigen das erste Bild."
+  },
+  "editAnimatedHint": {
+    "message": "Dieses Bild bewegt sich. $FORMAT$ behält nur das erste Einzelbild: Wähle APNG, um die Bewegung zu behalten, oder GIF im Rechtsklickmenü.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Farbpalette"
   },

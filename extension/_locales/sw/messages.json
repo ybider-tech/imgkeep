@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Pakia upya ukurasa, kisha bofya kulia picha na uchague Tafuta picha hapa tena."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: chagua picha kwenye ukurasa huu ili uihifadhi"
+  },
+  "findShortcutName": {
+    "message": "Hifadhi picha iliyo chini ya kielekezi"
+  },
+  "findShortcutTitle": {
+    "message": "Hifadhi picha kwa njia ya mkato"
+  },
+  "findShortcutBody": {
+    "message": "Elekeza kwenye picha na ubonyeze $KEY$ ili uihifadhi katika muundo uliotumia mara ya mwisho, au bofya kitufe cha Imgkeep kwenye upau wa zana ili uchague kutoka kwa picha zilizo kwenye skrini. Inafanya kazi kwenye tovuti yoyote, hata zile zinazozuia kubofya kulia. Hii pia inawasha \"Tafuta picha hapa\".",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Elekeza kwenye picha na ubonyeze $KEY$ tena, au bofya kitufe cha Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep haikupata picha hapo. Elekeza moja kwa moja kwenye picha na ubonyeze $KEY$ tena, au bofya kitufe cha Imgkeep ili uchague kutoka kwa picha zilizo kwenye skrini.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Vivinjari huzuia viendelezi kwenye baadhi ya kurasa, kama mipangilio yao wenyewe na maduka ya programu jalizi. Ijaribu kwenye ukurasa wa kawaida wa wavuti. Ikiwa ukurasa huu ulikuwa wazi kabla Imgkeep haijasakinishwa au kusasishwa, upakie upya kwanza."
+  },
+  "optShortcutHint": {
+    "message": "Njia ya mkato: elekeza kwenye picha na ubonyeze $KEY$ ili uihifadhi katika muundo uliotumia mara ya mwisho, au bofya kitufe cha Imgkeep kwenye upau wa zana ili uchague kutoka kwa picha zilizo kwenye skrini. Zote mbili zinafanya kazi kwenye tovuti yoyote na zinatumia mpangilio huu.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "PNG inayosonga: kila fremu kwa rangi kamili, pamoja na uwazi, tofauti na GIF. Huhifadhiwa kama .png; programu zisizocheza APNG huonyesha fremu ya kwanza."
+  },
+  "editAnimatedHint": {
+    "message": "Picha hii inasonga. $FORMAT$ huhifadhi fremu yake ya kwanza tu: chagua APNG ili kuhifadhi msogeo, au GIF kutoka kwenye menyu ya kubofya kulia.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paleti ya rangi"
   },

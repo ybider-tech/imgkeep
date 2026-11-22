@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Znova naložite stran, nato z desno tipko kliknite sliko in spet izberite Najdi sliko tukaj."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: izberite sliko na tej strani za shranjevanje"
+  },
+  "findShortcutName": {
+    "message": "Shrani sliko pod kazalcem"
+  },
+  "findShortcutTitle": {
+    "message": "Shranjujte slike z bližnjico"
+  },
+  "findShortcutBody": {
+    "message": "Pokažite na sliko in pritisnite $KEY$, da jo shranite v obliki, ki ste jo uporabili nazadnje, ali kliknite gumb Imgkeep v orodni vrstici, da izberete med slikami na zaslonu. Deluje na vseh spletnih mestih, tudi na tistih, ki onemogočajo desni klik. S tem vklopite tudi »Najdi sliko tukaj«.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Pokažite na sliko in znova pritisnite $KEY$ ali kliknite gumb Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep tam ni našel slike. Pokažite naravnost na fotografijo in znova pritisnite $KEY$ ali kliknite gumb Imgkeep, da izberete med slikami na zaslonu.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Brskalniki razširitev ne spustijo na nekatere strani, na primer na lastne nastavitve in trgovine z dodatki. Poskusite na običajni spletni strani. Če je bila ta stran odprta že pred namestitvijo ali posodobitvijo Imgkeepa, jo najprej znova naložite."
+  },
+  "optShortcutHint": {
+    "message": "Bližnjica: pokažite na sliko in pritisnite $KEY$, da jo shranite v obliki, ki ste jo uporabili nazadnje, ali kliknite gumb Imgkeep v orodni vrstici, da izberete med slikami na zaslonu. Oboje deluje na vseh spletnih mestih in uporablja to nastavitev.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animiran PNG: vsaka sličica v polnih barvah in s prosojnostjo, za razliko od GIF. Shrani se kot .png; aplikacije, ki APNG ne predvajajo, pokažejo prvo sličico."
+  },
+  "editAnimatedHint": {
+    "message": "Ta slika se premika. $FORMAT$ ohrani samo njeno prvo sličico: za ohranitev gibanja izberite APNG ali GIF v meniju desnega klika.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Barvna paleta"
   },

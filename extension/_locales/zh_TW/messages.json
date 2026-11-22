@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "請重新整理頁面，然後對圖片按右鍵，再選一次「在這裡尋找圖片」。"
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep：在此頁面選擇要儲存的圖片"
+  },
+  "findShortcutName": {
+    "message": "儲存指標下方的圖片"
+  },
+  "findShortcutTitle": {
+    "message": "用快速鍵儲存圖片"
+  },
+  "findShortcutBody": {
+    "message": "將指標指向圖片並按 $KEY$，即可用你上次使用的格式儲存；也可以點按工具列中的 Imgkeep 按鈕，從畫面上的圖片中選擇。適用於任何網站，包括禁止右鍵的網站。這也會開啟「在這裡尋找圖片」。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "將指標指向圖片，再按一次 $KEY$，或點按 Imgkeep 按鈕。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep 在那裡找不到圖片。請將指標正對照片再按一次 $KEY$，或點按 Imgkeep 按鈕從畫面上的圖片中選擇。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "瀏覽器不允許擴充功能進入某些頁面，例如瀏覽器本身的設定頁面和擴充功能商店。請在一般網頁上試試。如果此頁面在安裝或更新 Imgkeep 之前就已開啟，請先重新載入。"
+  },
+  "optShortcutHint": {
+    "message": "快速鍵：將指標指向圖片並按 $KEY$，即可用你上次使用的格式儲存；也可以點按工具列中的 Imgkeep 按鈕，從畫面上的圖片中選擇。兩者都適用於任何網站，並使用此設定。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "動態 PNG：與 GIF 不同，每一格都是全彩並保留透明度。儲存為 .png；不支援播放 APNG 的應用程式會顯示第一格。"
+  },
+  "editAnimatedHint": {
+    "message": "這張圖片是動態的。$FORMAT$ 只保留第一格：若要保留動畫，請選擇 APNG，或在右鍵選單中選擇 GIF。",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "色彩調色盤"
   },

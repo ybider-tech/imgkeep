@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Odśwież stronę, potem kliknij obraz prawym przyciskiem i znów wybierz Znajdź tu obraz."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: wybierz obraz z tej strony do zapisania"
+  },
+  "findShortcutName": {
+    "message": "Zapisz obraz pod wskaźnikiem"
+  },
+  "findShortcutTitle": {
+    "message": "Zapisuj obrazy skrótem klawiszowym"
+  },
+  "findShortcutBody": {
+    "message": "Wskaż obraz i naciśnij $KEY$, aby zapisać go w ostatnio użytym formacie, albo kliknij przycisk Imgkeep na pasku narzędzi, aby wybrać spośród obrazów na ekranie. Działa na każdej stronie, nawet na takich, które blokują prawy przycisk. To włącza też „znajdź tu obraz”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Wskaż obraz i ponownie naciśnij $KEY$ albo kliknij przycisk Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep nie znalazł tam obrazu. Wskaż dokładnie zdjęcie i ponownie naciśnij $KEY$ albo kliknij przycisk Imgkeep, aby wybrać spośród obrazów na ekranie.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Przeglądarki nie wpuszczają rozszerzeń na niektóre strony, np. własne ustawienia i sklepy z dodatkami. Spróbuj na zwykłej stronie internetowej. Jeśli ta strona była otwarta przed zainstalowaniem lub aktualizacją Imgkeep, najpierw ją odśwież."
+  },
+  "optShortcutHint": {
+    "message": "Skrót: wskaż obraz i naciśnij $KEY$, aby zapisać go w ostatnio użytym formacie, albo kliknij przycisk Imgkeep na pasku narzędzi, aby wybrać spośród obrazów na ekranie. Oba działają na każdej stronie i korzystają z tego ustawienia.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animowany PNG: każda klatka w pełnych kolorach, z przezroczystością, w przeciwieństwie do GIF. Zapisywany jako .png; aplikacje, które nie odtwarzają APNG, pokazują pierwszą klatkę."
+  },
+  "editAnimatedHint": {
+    "message": "Ten obraz się rusza. $FORMAT$ zachowuje tylko jego pierwszą klatkę: wybierz APNG, aby zachować ruch, albo GIF z menu prawego przycisku.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paleta kolorów"
   },

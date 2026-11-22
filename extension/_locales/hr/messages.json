@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Ponovno učitajte stranicu, zatim kliknite sliku desnom tipkom i opet odaberite Pronađi sliku ovdje."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep: odaberite sliku s ove stranice za spremanje"
+  },
+  "findShortcutName": {
+    "message": "Spremi sliku ispod pokazivača"
+  },
+  "findShortcutTitle": {
+    "message": "Spremajte slike prečacem"
+  },
+  "findShortcutBody": {
+    "message": "Pokažite na sliku i pritisnite $KEY$ da je spremite u formatu koji ste zadnji koristili ili kliknite gumb Imgkeep na alatnoj traci da odaberete među slikama na zaslonu. Radi na svakoj web-stranici, čak i na onima koje blokiraju desni klik. Time se uključuje i „Pronađi sliku ovdje”.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Pokažite na sliku i ponovno pritisnite $KEY$ ili kliknite gumb Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep ondje nije pronašao sliku. Pokažite točno na fotografiju i ponovno pritisnite $KEY$ ili kliknite gumb Imgkeep da odaberete među slikama na zaslonu.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Preglednici ne puštaju proširenja na neke stranice, poput vlastitih postavki i trgovina dodataka. Pokušajte na običnoj web-stranici. Ako je ova stranica bila otvorena prije instalacije ili ažuriranja Imgkeepa, najprije je ponovno učitajte."
+  },
+  "optShortcutHint": {
+    "message": "Prečac: pokažite na sliku i pritisnite $KEY$ da je spremite u formatu koji ste zadnji koristili ili kliknite gumb Imgkeep na alatnoj traci da odaberete među slikama na zaslonu. Oboje radi na svakoj web-stranici i koristi ovu postavku.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Animirani PNG: svaki kadar u punim bojama, s prozirnošću, za razliku od GIF-a. Sprema se kao .png; aplikacije koje ne reproduciraju APNG prikazuju prvi kadar."
+  },
+  "editAnimatedHint": {
+    "message": "Ova se slika miče. $FORMAT$ zadržava samo njezin prvi kadar: za zadržavanje pokreta odaberite APNG ili GIF iz izbornika desnog klika.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Paleta boja"
   },

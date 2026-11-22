@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "Rechargez la page, faites un clic droit sur l'image et choisissez de nouveau Trouver l'image ici."
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep : choisir une image de cette page à enregistrer"
+  },
+  "findShortcutName": {
+    "message": "Enregistrer l'image sous le pointeur"
+  },
+  "findShortcutTitle": {
+    "message": "Enregistrez des images avec un raccourci"
+  },
+  "findShortcutBody": {
+    "message": "Pointez une image et appuyez sur $KEY$ pour l'enregistrer dans le dernier format utilisé, ou cliquez sur le bouton Imgkeep de la barre d'outils pour choisir parmi les images à l'écran. Cela fonctionne sur tous les sites, même ceux qui bloquent le clic droit. Cela active aussi « Trouver l'image ici ».",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "Pointez l'image et appuyez de nouveau sur $KEY$, ou cliquez sur le bouton Imgkeep.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep n'a trouvé aucune image à cet endroit. Pointez directement la photo et appuyez de nouveau sur $KEY$, ou cliquez sur le bouton Imgkeep pour choisir parmi les images à l'écran.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "Les navigateurs tiennent les extensions à l'écart de certaines pages, comme leurs propres paramètres et les boutiques de modules. Essayez sur une page web ordinaire. Si cette page était ouverte avant l'installation ou la mise à jour d'Imgkeep, rechargez-la d'abord."
+  },
+  "optShortcutHint": {
+    "message": "Raccourci : pointez une image et appuyez sur $KEY$ pour l'enregistrer dans le dernier format utilisé, ou cliquez sur le bouton Imgkeep de la barre d'outils pour choisir parmi les images à l'écran. Les deux fonctionnent sur tous les sites et utilisent ce réglage.",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "Un PNG animé : chaque image en couleurs complètes, avec transparence, contrairement au GIF. Enregistré en .png ; les applications qui ne lisent pas l'APNG affichent la première image."
+  },
+  "editAnimatedHint": {
+    "message": "Cette image bouge. Le format $FORMAT$ n'en garde que la première image : choisissez APNG pour garder le mouvement, ou GIF dans le menu du clic droit.",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "Palette de couleurs"
   },

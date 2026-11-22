@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "请重新加载页面，然后右键点击图片，再次选择“在此查找图片”。"
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep：在此页面选择要保存的图片"
+  },
+  "findShortcutName": {
+    "message": "保存指针下方的图片"
+  },
+  "findShortcutTitle": {
+    "message": "用快捷键保存图片"
+  },
+  "findShortcutBody": {
+    "message": "将指针指向图片并按 $KEY$，即可按你上次使用的格式保存；也可以点击工具栏中的 Imgkeep 按钮，从屏幕上的图片中选择。适用于任何网站，包括禁止右键的网站。这也会开启“在此处查找图片”。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "将指针指向图片，再按一次 $KEY$，或点击 Imgkeep 按钮。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep 在那里没有找到图片。请将指针正对照片再按一次 $KEY$，或点击 Imgkeep 按钮从屏幕上的图片中选择。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "浏览器不允许扩展进入某些页面，例如浏览器自己的设置页面和扩展商店。请在普通网页上试试。如果此页面在安装或更新 Imgkeep 之前就已打开，请先重新加载。"
+  },
+  "optShortcutHint": {
+    "message": "快捷键：将指针指向图片并按 $KEY$，即可按你上次使用的格式保存；也可以点击工具栏中的 Imgkeep 按钮，从屏幕上的图片中选择。两者都适用于任何网站，并使用此设置。",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "动态 PNG：与 GIF 不同，每一帧都是全彩并保留透明度。保存为 .png；不支持播放 APNG 的应用会显示第一帧。"
+  },
+  "editAnimatedHint": {
+    "message": "这张图片是动态的。$FORMAT$ 只保留第一帧：要保留动画，请选择 APNG，或在右键菜单中选择 GIF。",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "调色板"
   },

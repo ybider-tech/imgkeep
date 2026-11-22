@@ -602,6 +602,66 @@
   "findErrorBody": {
     "message": "ገጹን እንደገና ይጫኑ፣ ከዚያም ምስሉን በቀኝ ጠቅ አድርገው «ምስል እዚህ ፈልግ» እንደገና ይምረጡ።"
   },
+  "findToolbarTitle": {
+    "message": "Imgkeep፦ ለማስቀመጥ በዚህ ገጽ ላይ ምስል ይምረጡ"
+  },
+  "findShortcutName": {
+    "message": "ከጠቋሚው ስር ያለውን ምስል ያስቀምጡ"
+  },
+  "findShortcutTitle": {
+    "message": "ምስሎችን በአቋራጭ ያስቀምጡ"
+  },
+  "findShortcutBody": {
+    "message": "ወደ ምስል ያመልክቱና በመጨረሻ በተጠቀሙበት ቅርጸት ለማስቀመጥ $KEY$ን ይጫኑ፣ ወይም በስክሪኑ ላይ ካሉት ምስሎች ለመምረጥ በመሳሪያ አሞሌው ውስጥ ያለውን የImgkeep አዝራር ጠቅ ያድርጉ። የቀኝ ጠቅታን በሚያግዱ ጣቢያዎች ላይ እንኳን በማንኛውም ጣቢያ ይሰራል። ይህ «እዚህ ምስል ያግኙ»ንም ያበራል።",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutOn": {
+    "message": "ወደ ምስሉ ያመልክቱና $KEY$ን እንደገና ይጫኑ፣ ወይም የImgkeep አዝራርን ጠቅ ያድርጉ።",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutNothing": {
+    "message": "Imgkeep እዚያ ምስል ማግኘት አልቻለም። በቀጥታ ወደ ፎቶው ያመልክቱና $KEY$ን እንደገና ይጫኑ፣ ወይም በስክሪኑ ላይ ካሉት ምስሎች ለመምረጥ የImgkeep አዝራርን ጠቅ ያድርጉ።",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "findShortcutError": {
+    "message": "አሳሾች ቅጥያዎችን ከአንዳንድ ገጾች ያርቃሉ፣ ለምሳሌ ከራሳቸው ቅንብሮችና የተጨማሪ መደብሮች። በተለመደ ድረ-ገጽ ላይ ይሞክሩት። ይህ ገጽ Imgkeep ከመጫኑ ወይም ከመዘመኑ በፊት ክፍት ከነበረ፣ መጀመሪያ እንደገና ይጫኑት።"
+  },
+  "optShortcutHint": {
+    "message": "አቋራጭ፦ ወደ ምስል ያመልክቱና በመጨረሻ በተጠቀሙበት ቅርጸት ለማስቀመጥ $KEY$ን ይጫኑ፣ ወይም በስክሪኑ ላይ ካሉት ምስሎች ለመምረጥ በመሳሪያ አሞሌው ውስጥ ያለውን የImgkeep አዝራር ጠቅ ያድርጉ። ሁለቱም በማንኛውም ጣቢያ ይሰራሉ፣ ይህንንም ቅንብር ይጠቀማሉ።",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "Alt+S"
+      }
+    }
+  },
+  "editApngHint": {
+    "message": "ተንቀሳቃሽ PNG፦ እያንዳንዱ ፍሬም በሙሉ ቀለምና ግልጽነት፣ ከGIF በተለየ። እንደ .png ይቀመጣል፤ APNG የማያጫውቱ መተግበሪያዎች የመጀመሪያውን ፍሬም ያሳያሉ።"
+  },
+  "editAnimatedHint": {
+    "message": "ይህ ምስል ይንቀሳቀሳል። $FORMAT$ የመጀመሪያውን ፍሬም ብቻ ያስቀምጣል፦ እንቅስቃሴውን ለማቆየት APNGን ይምረጡ፣ ወይም ከቀኝ ጠቅታ ምናሌው GIFን።",
+    "placeholders": {
+      "format": {
+        "content": "$1",
+        "example": "JPG"
+      }
+    }
+  },
   "paletteTitle": {
     "message": "የቀለም ስብስብ"
   },
