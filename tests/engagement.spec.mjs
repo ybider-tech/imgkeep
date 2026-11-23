@@ -1,4 +1,4 @@
-// 0.6.1: "New" labels in the right-click menu after an update, and the one rating ask.
+// 0.6.1: "New" labels in the right-click menu after an update, and the rating ask (once until 0.15.1, at most three times since).
 // Pure rules first (Node), then the real extension in Chromium.
 import { test, expect } from "@playwright/test";
 import { rm } from "node:fs/promises";
@@ -19,7 +19,7 @@ test.describe("rules", () => {
     expect(newItemsSince("0.11.0")).toEqual([]);
   });
 
-  test("the rating ask: after real use, never during failures, once", async () => {
+  test("the rating ask: after real use, never during failures, once a round", async () => {
     const r = await import("../extension/lib/review.js");
     const now = 100 * DAY;
     let u = r.newUsage(now - 3 * DAY);
@@ -30,16 +30,41 @@ test.describe("rules", () => {
     expect(r.readyToAsk({ ...u, firstSeen: now - 1 * DAY }, now)).toBe(false); // too soon
     expect(r.readyToAsk(r.recordUse(u, false), now)).toBe(false); // a failure among the last 3
     expect(r.recordUse(r.recordUse(r.recordUse(r.recordUse(u, false), true), true), true).recent).toEqual([true, true, true]);
-    // One window ask, ever; the menu item for 14 days at most.
+    // One window ask a round; the menu item for 14 days at most.
     expect(r.windowCanAsk(u, now)).toBe(true);
     const asked = r.markWindowAsked(u, now);
     expect(r.windowCanAsk(asked, now)).toBe(false);
     expect(r.menuAskVisible(asked, now + 13 * DAY)).toBe(true);
     expect(r.menuAskVisible(asked, now + 14 * DAY)).toBe(false);
     expect(r.askExpired(asked, now + 14 * DAY)).toBe(true);
-    // Answered: never again.
-    const done = r.finishAsk(asked);
-    expect([r.readyToAsk(done, now), r.menuAskVisible(done, now), r.windowCanAsk(done, now)]).toEqual([false, false, false]);
+    // Rated, or Don't ask again: never again.
+    for (const answer of ["rate", "no"]) {
+      const done = r.finishAsk(asked, answer);
+      expect(done).toMatchObject({ ask: "done", answer });
+      expect([r.readyToAsk(done, now), r.menuAskVisible(done, now), r.windowCanAsk(done, now)]).toEqual([false, false, false]);
+    }
+  });
+
+  test("Later (or no answer): asked again after 20 more saves and 7 days, three asks in all (0.15.1)", async () => {
+    const r = await import("../extension/lib/review.js");
+    const now = 100 * DAY;
+    const use = (u, n) => Array.from({ length: n }).reduce((x) => r.recordUse(x, true), u);
+    let u = r.markWindowAsked(use(r.newUsage(now - 3 * DAY), 5), now);
+    u = r.laterAsk(u, now);
+    expect(u).toMatchObject({ ask: "waiting", round: 2, laterAt: now, laterUses: 5 });
+    expect(u).not.toHaveProperty("windowAsked"); // a new round may ask in a window again
+    expect(r.readyToAsk(use(u, 19), now + 8 * DAY)).toBe(false); // 19 more saves
+    expect(r.readyToAsk(use(u, 20), now + 6 * DAY)).toBe(false); // only 6 days
+    u = use(u, 20);
+    expect(r.readyToAsk(u, now + 7 * DAY)).toBe(true);
+    expect(r.windowCanAsk(u, now + 7 * DAY)).toBe(true);
+    // The third round is the last: Later (or no answer) then ends it.
+    u = r.laterAsk(r.markWindowAsked(u, now + 7 * DAY), now + 7 * DAY);
+    expect(u.round).toBe(3);
+    u = r.laterAsk(r.markWindowAsked(use(u, 20), now + 14 * DAY), now + 14 * DAY);
+    expect(u).toMatchObject({ ask: "done", answer: "rounds" });
+    // Copies from before 0.15.1 that had finished stay finished.
+    expect(r.readyToAsk(use({ firstSeen: 0, uses: 30, recent: [], ask: "done" }, 50), now)).toBe(false);
   });
 
   test("the review page matches the browser", async () => {
@@ -159,17 +184,18 @@ test.describe("in the extension", () => {
     expect(await usage()).toMatchObject({ uses: 0, recent: [false] });
   });
 
-  test("when due: the menu offers it, one window asks once, and No thanks ends it", async () => {
+  test("when due: the menu offers it, one window asks once, and Don't ask again ends it", async () => {
     await setUsage(ready());
     expect(await titles()).toHaveProperty("imgkeep-rate", "Enjoying Imgkeep? Rate it…");
     const win = await copyWindow();
     await expect(win.getByRole("group", { name: "Enjoying Imgkeep?" })).toBeVisible();
     await expect(win.getByText("Imgkeep has handled 21 images for you.")).toBeVisible(); // the local count, shown (20, plus this copy)
-    await expect(win.getByText("One sentence about what you use it for is plenty. It only asks once.", { exact: false })).toBeVisible();
-    await win.getByRole("button", { name: "No thanks" }).click();
+    await expect(win.getByText("reviews are how new people find it. It only takes a moment.", { exact: false })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Later" })).toBeVisible();
+    await win.getByRole("button", { name: "Don't ask again" }).click();
     await expect(win.getByText("Got it. We won't ask again.")).toBeVisible();
     await win.waitForEvent("close", { timeout: 5000 });
-    expect((await usage()).ask).toBe("done");
+    expect(await usage()).toMatchObject({ ask: "done", answer: "no" });
     expect(await titles()).not.toHaveProperty("imgkeep-rate");
     // The next copy doesn't ask.
     const again = await copyWindow();
@@ -182,7 +208,7 @@ test.describe("in the extension", () => {
     await ctx.sw.evaluate(() => globalThis.imgkeepRefreshMenus()); // shown again: still counted once
     expect(await counts()).toEqual({ rating_asked: 1, rating_menu_shown: 1 });
     const win = await copyWindow();
-    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
     await win.close();
     expect(await counts()).toMatchObject({ rating_asked: 1, rating_menu_shown: 1, rating_window_shown: 1 });
     const rate = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("/rate.html") });
@@ -191,17 +217,39 @@ test.describe("in the extension", () => {
     expect(await counts()).toMatchObject({ rating_asked: 1, rating_menu_clicked: 1 });
   });
 
-  test("a window asks only once, even if it was closed without an answer", async () => {
+  test("a window asks only once a round, even if it was closed without an answer", async () => {
     await setUsage(ready());
     const first = await copyWindow();
-    await expect(first.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    await expect(first.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
     await first.close();
     const second = await copyWindow();
     await second.waitForEvent("close", { timeout: 5000 }); // no ask this time
     expect(await titles()).toHaveProperty("imgkeep-rate"); // the menu item still offers it, for up to 14 days
     await setUsage({ ...(await usage()), askedAt: Date.now() - 15 * DAY });
     expect(await titles()).not.toHaveProperty("imgkeep-rate");
-    expect((await usage()).ask).toBe("done");
+    expect(await usage()).toMatchObject({ ask: "waiting", round: 2 }); // unanswered: the next round, after more use
+  });
+
+  test("Later: closes the ask, and the next round asks again after more use (0.15.1)", async () => {
+    const counts = () => ctx.sw.evaluate(() => globalThis.imgkeepCount().then(() => chrome.storage.local.get("counts")).then((s) => s.counts?.c || {}));
+    await setUsage(ready());
+    const win = await copyWindow();
+    await win.getByRole("button", { name: "Later" }).click();
+    await expect(win.getByText("OK, maybe another time.")).toBeVisible();
+    await win.waitForEvent("close", { timeout: 5000 });
+    expect(await usage()).toMatchObject({ ask: "waiting", round: 2, laterUses: 21 });
+    expect(await titles()).not.toHaveProperty("imgkeep-rate");
+    expect(await counts()).toMatchObject({ rating_asked: 1, rating_later: 1 });
+    // Not yet due: the next copy doesn't ask.
+    const quiet = await copyWindow();
+    await quiet.waitForEvent("close", { timeout: 5000 });
+    // 20 more saves and a week later, it asks again, counted as a later round.
+    await setUsage({ ...(await usage()), uses: 41, laterAt: Date.now() - 8 * DAY });
+    expect(await titles()).toHaveProperty("imgkeep-rate");
+    const again = await copyWindow();
+    await expect(again.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
+    await again.close();
+    expect(await counts()).toMatchObject({ rating_asked: 1, rating_again: 1, rating_window_shown: 2 }); // once in each round
   });
 
   test("after a worker restart, an answered ask still removes its menu item", async () => {
@@ -222,10 +270,10 @@ test.describe("in the extension", () => {
     await ctx.sw.evaluate(() => globalThis.imgkeepOpenRateWindow());
     const win = await opened;
     const store = ctx.context.waitForEvent("page", { predicate: (p) => p.url().includes("chromewebstore.google.com") });
-    await win.getByRole("button", { name: "Leave a review" }).click();
+    await win.getByRole("button", { name: "Rate Imgkeep" }).click();
     // The store may redirect to a URL with the listing's name in it; it's still Imgkeep's reviews.
     expect((await store).url()).toMatch(/^https:\/\/chromewebstore\.google\.com\/detail\/(.+\/)?fkclfgbmjaafglfifenonfcahfdmajbl\/reviews$/);
-    expect((await usage()).ask).toBe("done");
+    expect(await usage()).toMatchObject({ ask: "done", answer: "rate" });
     await (await store).close();
     if (!win.isClosed()) await win.waitForEvent("close", { timeout: 5000 }); // it closes itself after the answer
   });
@@ -247,7 +295,7 @@ test.describe("in the extension", () => {
     expect(await quickSave()).toMatchObject({ ok: true });
     const win = await opened;
     await expect(win.getByText("Imgkeep has handled 5 images for you.")).toBeVisible();
-    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
     expect(await counts()).toMatchObject({ rating_asked: 1, rating_popup_shown: 1 });
     expect(await usage()).toMatchObject({ ask: "asking", windowAsked: true });
     await win.close();
@@ -269,7 +317,7 @@ test.describe("in the extension", () => {
     await expect(win.locator("#review")).toBeEmpty();
     await win.getByRole("button", { name: "Save" }).click();
     await expect(win.locator("#status")).toContainText("Saved as");
-    await expect(win.getByRole("button", { name: "Leave a review" })).toBeVisible();
+    await expect(win.getByRole("button", { name: "Rate Imgkeep" })).toBeVisible();
     expect(ctx.context.pages().some((p) => p.url().includes("/rate.html"))).toBe(false); // no second ask window
     await win.close();
   });
@@ -289,7 +337,7 @@ test.describe("in the extension", () => {
       "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews",
     );
     await expect(page.getByRole("link", { name: "What's new" })).toHaveAttribute("href", "https://imgkeep.app/whats-new.html");
-    await expect(page.getByText("Imgkeep asks for a rating once", { exact: false })).toBeVisible();
+    await expect(page.getByText("Imgkeep asks for a rating after you've used it for a while, at most three times", { exact: false })).toBeVisible();
     await page.close();
   });
 });

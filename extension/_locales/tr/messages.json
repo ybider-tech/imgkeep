@@ -435,7 +435,7 @@
     "message": "Görseller kendi bilgisayarınızda dönüştürülür, hiçbir yere yüklenmez. Imgkeep'in gönderdiği tek şey yukarıdaki anonim günlük özettir, onu da kapatabilirsiniz."
   },
   "optTrust2": {
-    "message": "Reklam yok, karşılama sekmesi yok. Küçük pencereler yalnızca siz istediğinizde ya da bir kayıt onayınızı gerektirdiğinde açılır. Imgkeep bir süre kullandıktan sonra bir kez puan vermenizi ister."
+    "message": "Reklam yok, karşılama sekmesi yok. Küçük pencereler yalnızca siz istediğinizde ya da bir kayıt onayınızı gerektirdiğinde açılır. Imgkeep bir süre kullandıktan sonra puan vermenizi ister; en fazla üç kez sorar ve puan verdiğiniz ya da hayır dediğiniz anda bırakır."
   },
   "optTrust4": {
     "message": "Imgkeep bir sayfaya yalnızca orada bir görsel bulmasını istediğinizde bakar; yalnızca o sayfaya, yalnızca o an. Sayfayı asla değiştirmez."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Bu, gitmek zorunda kalmadığınız pek çok dönüştürme sitesi demek. Imgkeep'i tek bir kişi geliştiriyor ve yeni kullanıcılar onu yorumlar sayesinde buluyor. Ne için kullandığınıza dair tek bir cümle yeterli. Bunu yalnızca bir kez soruyor."
+    "message": "Bu, gitmek zorunda kalmadığınız pek çok dönüştürme sitesi demek. Imgkeep'i tek bir kişi geliştiriyor ve yeni kullanıcılar onu yorumlar sayesinde buluyor. Yalnızca bir anınızı alır."
   },
   "reviewRate": {
     "message": "Imgkeep'e puan ver"
   },
-  "reviewWrite": {
-    "message": "Yorum yaz"
-  },
   "reviewNo": {
-    "message": "Hayır, teşekkürler"
+    "message": "Bir daha sorma"
+  },
+  "reviewLater": {
+    "message": "Sonra"
+  },
+  "reviewLaterOk": {
+    "message": "Tamam, belki başka zaman."
   },
   "reviewThanks": {
     "message": "Teşekkürler!"

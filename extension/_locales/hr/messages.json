@@ -435,7 +435,7 @@
     "message": "Slike se pretvaraju na vašem računalu i nikad se nikamo ne šalju. Jedino što Imgkeep još šalje jest gornji anonimni dnevni sažetak, koji možete isključiti."
   },
   "optTrust2": {
-    "message": "Bez oglasa i bez kartica dobrodošlice. Mali prozori otvaraju se samo kad ih zatražite ili kad je za spremanje potrebna vaša potvrda. Imgkeep jednom zatraži ocjenu, nakon što ga neko vrijeme koristite."
+    "message": "Bez oglasa i bez kartica dobrodošlice. Mali prozori otvaraju se samo kad ih zatražite ili kad je za spremanje potrebna vaša potvrda. Imgkeep zatraži ocjenu nakon što ga neko vrijeme koristite, najviše tri puta, i prestaje čim ga ocijenite ili odbijete."
   },
   "optTrust4": {
     "message": "Imgkeep pregledava stranicu samo kad od njega zatražite da ondje pronađe sliku — samo tu stranicu i samo tada. Nikad ne mijenja stranicu."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "To je puno odlazaka na stranice za pretvaranje koje niste morali obaviti. Imgkeep radi jedna osoba, a recenzije su način na koji ga novi ljudi pronalaze. Dovoljna je jedna rečenica o tome za što ga koristite. Pita samo jednom."
+    "message": "To je puno odlazaka na stranice za pretvaranje koje niste morali obaviti. Imgkeep radi jedna osoba, a recenzije su način na koji ga novi ljudi pronalaze. Treba samo trenutak."
   },
   "reviewRate": {
     "message": "Ocijeni Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Napiši recenziju"
-  },
   "reviewNo": {
-    "message": "Ne, hvala"
+    "message": "Ne pitaj više"
+  },
+  "reviewLater": {
+    "message": "Kasnije"
+  },
+  "reviewLaterOk": {
+    "message": "U redu, možda drugi put."
   },
   "reviewThanks": {
     "message": "Hvala!"

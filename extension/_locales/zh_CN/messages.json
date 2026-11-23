@@ -435,7 +435,7 @@
     "message": "图片在你的电脑上转换，绝不上传。Imgkeep 发送的唯一其他内容就是上面那份匿名每日汇总，你可以随时关闭。"
   },
   "optTrust2": {
-    "message": "没有广告，也没有欢迎页。只有当你需要，或者保存需要你确认时，才会弹出小窗口。在你使用一段时间后，Imgkeep 只会请你评分一次。"
+    "message": "没有广告，也没有欢迎页。只有当你需要，或者保存需要你确认时，才会弹出小窗口。在你使用一段时间后，Imgkeep 会请你评分，最多三次；你一评分或拒绝就不再询问。"
   },
   "optTrust4": {
     "message": "只有当你让 Imgkeep 在某个页面查找图片时，它才会读取那个页面，仅限当时那一次。它从不改动页面。"
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "也就是说，你少跑了很多趟格式转换网站。Imgkeep 由一个人独立开发，新用户主要是通过评价找到它的。用一句话说说你用它做什么就够了。这个请求只会出现一次。"
+    "message": "也就是说，你少跑了很多趟格式转换网站。Imgkeep 由一个人独立开发，新用户主要是通过评价找到它的。只需片刻。"
   },
   "reviewRate": {
     "message": "给 Imgkeep 评分"
   },
-  "reviewWrite": {
-    "message": "写评价"
-  },
   "reviewNo": {
-    "message": "不用了"
+    "message": "不再询问"
+  },
+  "reviewLater": {
+    "message": "以后再说"
+  },
+  "reviewLaterOk": {
+    "message": "好的，下次再说。"
   },
   "reviewThanks": {
     "message": "谢谢你！"

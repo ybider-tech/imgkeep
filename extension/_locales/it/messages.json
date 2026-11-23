@@ -435,7 +435,7 @@
     "message": "Le immagini vengono convertite sul tuo computer e non vengono mai caricate online. L'unica altra cosa che Imgkeep invia è il riepilogo anonimo giornaliero qui sopra, che puoi disattivare."
   },
   "optTrust2": {
-    "message": "Niente pubblicità né schede di benvenuto. Le finestrelle si aprono solo quando le chiedi tu o quando un salvataggio ha bisogno del tuo OK. Imgkeep chiede una valutazione una volta sola, dopo che lo usi da un po'."
+    "message": "Niente pubblicità né schede di benvenuto. Le finestrelle si aprono solo quando le chiedi tu o quando un salvataggio ha bisogno del tuo OK. Imgkeep chiede una valutazione dopo che lo usi da un po', al massimo tre volte, e smette appena lo valuti o dici di no."
   },
   "optTrust4": {
     "message": "Imgkeep guarda una pagina solo quando gli chiedi di trovarci un'immagine: solo quella pagina, solo in quel momento. Non modifica mai una pagina."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Sono tanti passaggi su siti di conversione che hai evitato. Imgkeep è fatto da una sola persona, e le recensioni sono il modo in cui lo trovano nuovi utenti. Basta una frase su come lo usi. Lo chiede una sola volta."
+    "message": "Sono tanti passaggi su siti di conversione che hai evitato. Imgkeep è fatto da una sola persona, e le recensioni sono il modo in cui lo trovano nuovi utenti. Ci vuole solo un attimo."
   },
   "reviewRate": {
     "message": "Valuta Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Scrivi una recensione"
-  },
   "reviewNo": {
-    "message": "No, grazie"
+    "message": "Non chiedere più"
+  },
+  "reviewLater": {
+    "message": "Più tardi"
+  },
+  "reviewLaterOk": {
+    "message": "Va bene, magari un'altra volta."
   },
   "reviewThanks": {
     "message": "Grazie!"

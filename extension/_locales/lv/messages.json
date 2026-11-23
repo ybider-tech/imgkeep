@@ -435,7 +435,7 @@
     "message": "Attēli tiek pārveidoti jūsu datorā un nekad netiek augšupielādēti. Vienīgais, ko Imgkeep vēl nosūta, ir iepriekš minētais anonīmais dienas kopsavilkums, un to varat izslēgt."
   },
   "optTrust2": {
-    "message": "Nav reklāmu un sveiciena ciļņu. Nelieli logi atveras tikai tad, kad tos lūdzat vai kad saglabāšanai vajadzīgs jūsu apstiprinājums. Novērtējumu Imgkeep palūdz vienu reizi — pēc tam, kad būsiet to kādu laiku lietojuši."
+    "message": "Nav reklāmu un sveiciena ciļņu. Nelieli logi atveras tikai tad, kad tos lūdzat vai kad saglabāšanai vajadzīgs jūsu apstiprinājums. Imgkeep palūdz novērtējumu pēc tam, kad būsiet to kādu laiku lietojuši, ne vairāk kā trīs reizes, un pārstāj, tiklīdz to novērtējat vai atsakāt."
   },
   "optTrust4": {
     "message": "Imgkeep aplūko lapu tikai tad, kad lūdzat tajā atrast attēlu — tikai to lapu un tikai tobrīd. Tas nekad nemaina lapu."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Tas ir daudz apmeklējumu konvertēšanas vietnēs, kas jums nebija vajadzīgi. Imgkeep veido viens cilvēks, un atsauksmes ir veids, kā to atrod jauni cilvēki. Pietiek ar vienu teikumu par to, kam jūs to izmantojat. Tas jautā tikai vienreiz."
+    "message": "Tas ir daudz apmeklējumu konvertēšanas vietnēs, kas jums nebija vajadzīgi. Imgkeep veido viens cilvēks, un atsauksmes ir veids, kā to atrod jauni cilvēki. Tas aizņem tikai mirkli."
   },
   "reviewRate": {
     "message": "Novērtēt Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Uzrakstīt atsauksmi"
-  },
   "reviewNo": {
-    "message": "Nē, paldies"
+    "message": "Vairs nejautāt"
+  },
+  "reviewLater": {
+    "message": "Vēlāk"
+  },
+  "reviewLaterOk": {
+    "message": "Labi, varbūt citreiz."
   },
   "reviewThanks": {
     "message": "Paldies!"

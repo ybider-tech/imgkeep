@@ -435,7 +435,7 @@
     "message": "Picha hubadilishwa kwenye kompyuta yako na hazipakiwi mtandaoni kamwe. Kitu pekee kingine ambacho Imgkeep hutuma ni muhtasari wa kila siku bila utambulisho ulio hapo juu, ambao unaweza kuuzima."
   },
   "optTrust2": {
-    "message": "Hakuna matangazo wala vichupo vya kukukaribisha. Madirisha madogo hufunguka pale tu unapoomba au kuhifadhi kunapohitaji idhini yako. Imgkeep huomba ukadiriaji mara moja tu, baada ya kuitumia kwa muda."
+    "message": "Hakuna matangazo wala vichupo vya kukukaribisha. Madirisha madogo hufunguka pale tu unapoomba au kuhifadhi kunapohitaji idhini yako. Imgkeep huomba ukadiriaji baada ya kuitumia kwa muda, si zaidi ya mara tatu, na huacha mara tu unapoikadiria au kukataa."
   },
   "optTrust4": {
     "message": "Imgkeep huangalia ukurasa pale tu unapoiomba kutafuta picha hapo — ukurasa huo tu, wakati huo tu. Haiwahi kubadilisha ukurasa."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Hiyo ni safari nyingi kwenye tovuti za kubadilisha ambazo hukuhitaji kufanya. Imgkeep imetengenezwa na mtu mmoja, na maoni ndiyo njia ambayo watu wapya huipata. Sentensi moja kuhusu unachoitumia inatosha. Inauliza mara moja tu."
+    "message": "Hiyo ni safari nyingi kwenye tovuti za kubadilisha ambazo hukuhitaji kufanya. Imgkeep imetengenezwa na mtu mmoja, na maoni ndiyo njia ambayo watu wapya huipata. Inachukua muda mfupi tu."
   },
   "reviewRate": {
     "message": "Kadiria Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Andika maoni"
-  },
   "reviewNo": {
-    "message": "Hapana, asante"
+    "message": "Usiulize tena"
+  },
+  "reviewLater": {
+    "message": "Baadaye"
+  },
+  "reviewLaterOk": {
+    "message": "Sawa, labda wakati mwingine."
   },
   "reviewThanks": {
     "message": "Asante!"

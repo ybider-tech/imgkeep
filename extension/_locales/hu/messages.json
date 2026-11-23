@@ -435,7 +435,7 @@
     "message": "A képek a te számítógépeden alakulnak át, és soha nem töltődnek fel. Az Imgkeep ezen kívül csak a fenti névtelen napi összesítőt küldi el, és azt is kikapcsolhatod."
   },
   "optTrust2": {
-    "message": "Nincsenek hirdetések és üdvözlő lapok. Kis ablakok csak akkor nyílnak meg, ha te kérsz egyet, vagy ha egy mentéshez a jóváhagyásod kell. Az Imgkeep egyszer kér értékelést, miután már egy ideje használod."
+    "message": "Nincsenek hirdetések és üdvözlő lapok. Kis ablakok csak akkor nyílnak meg, ha te kérsz egyet, vagy ha egy mentéshez a jóváhagyásod kell. Az Imgkeep azután kér értékelést, hogy már egy ideje használod, legfeljebb háromszor, és abbahagyja, amint értékeled vagy nemet mondasz."
   },
   "optTrust4": {
     "message": "Az Imgkeep csak akkor néz bele egy oldalba, amikor megkéred, hogy keressen ott képet – csak abba az oldalba, csak akkor. Az oldalt soha nem módosítja."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Ez rengeteg kitérő konvertáló oldalakra, amit nem kellett megtenned. Az Imgkeepet egyetlen ember készíti, és az értékelésekből találnak rá új emberek. Egy mondat arról, mire használod, bőven elég. Csak egyszer kérdez."
+    "message": "Ez rengeteg kitérő konvertáló oldalakra, amit nem kellett megtenned. Az Imgkeepet egyetlen ember készíti, és az értékelésekből találnak rá új emberek. Csak egy pillanat."
   },
   "reviewRate": {
     "message": "Imgkeep értékelése"
   },
-  "reviewWrite": {
-    "message": "Értékelés írása"
-  },
   "reviewNo": {
-    "message": "Köszönöm, nem"
+    "message": "Ne kérdezze többé"
+  },
+  "reviewLater": {
+    "message": "Később"
+  },
+  "reviewLaterOk": {
+    "message": "Rendben, talán máskor."
   },
   "reviewThanks": {
     "message": "Köszönjük!"

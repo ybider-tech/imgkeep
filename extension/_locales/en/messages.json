@@ -550,7 +550,7 @@
     "description": "Bullet"
   },
   "optTrust2": {
-    "message": "No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating once, after you've used it for a while.",
+    "message": "No ads and no welcome tabs. Small windows open only when you ask for one or a save needs your OK. Imgkeep asks for a rating after you've used it for a while, at most three times, and stops as soon as you rate it or say no.",
     "description": "Bullet"
   },
   "optTrust4": {
@@ -677,20 +677,24 @@
     }
   },
   "reviewBody": {
-    "message": "That's a lot of trips to converter sites you didn't need to make. Imgkeep is made by one person, and reviews are how new people find it. One sentence about what you use it for is plenty. It only asks once.",
-    "description": "Text of the one rating ask, after the first line"
+    "message": "That's a lot of trips to converter sites you didn't need to make. Imgkeep is made by one person, and reviews are how new people find it. It only takes a moment.",
+    "description": "Text of the rating ask, after the first line"
   },
   "reviewRate": {
     "message": "Rate Imgkeep",
     "description": "Button and Options link: opens the store's review page"
   },
-  "reviewWrite": {
-    "message": "Leave a review",
-    "description": "Button in the one rating ask: opens the store page where people write a review"
-  },
   "reviewNo": {
-    "message": "No thanks",
-    "description": "Button: decline the rating ask (it won't be asked again)"
+    "message": "Don't ask again",
+    "description": "Button: decline the rating ask for good (it won't be asked again)"
+  },
+  "reviewLater": {
+    "message": "Later",
+    "description": "Button: close the rating ask for now; it asks again after more use, at most three asks in all"
+  },
+  "reviewLaterOk": {
+    "message": "OK, maybe another time.",
+    "description": "Shown after choosing Later"
   },
   "reviewThanks": {
     "message": "Thank you!",
@@ -698,7 +702,7 @@
   },
   "reviewOk": {
     "message": "Got it. We won't ask again.",
-    "description": "Shown after choosing No thanks"
+    "description": "Shown after choosing Don't ask again"
   },
   "findWindowTitle": {
     "message": "Find image",

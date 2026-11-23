@@ -435,7 +435,7 @@
     "message": "Bilder werden auf deinem Computer umgewandelt und nie hochgeladen. Das Einzige, was Imgkeep sonst sendet, ist die anonyme tägliche Zusammenfassung oben, die du ausschalten kannst."
   },
   "optTrust2": {
-    "message": "Keine Werbung und keine Willkommens-Tabs. Kleine Fenster öffnen sich nur, wenn du sie aufrufst oder ein Speichervorgang deine Zustimmung braucht. Imgkeep bittet einmal um eine Bewertung, nachdem du es eine Weile genutzt hast."
+    "message": "Keine Werbung und keine Willkommens-Tabs. Kleine Fenster öffnen sich nur, wenn du sie aufrufst oder ein Speichervorgang deine Zustimmung braucht. Imgkeep bittet um eine Bewertung, nachdem du es eine Weile genutzt hast, höchstens dreimal, und hört auf, sobald du bewertest oder ablehnst."
   },
   "optTrust4": {
     "message": "Imgkeep sieht sich eine Seite nur an, wenn du es bittest, dort ein Bild zu finden – nur diese Seite, nur in diesem Moment. Es verändert nie eine Seite."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Das sind viele Umwege über Konverter-Websites, die du dir gespart hast. Imgkeep wird von einer einzigen Person gemacht, und über Bewertungen finden neue Leute es. Ein Satz dazu, wofür du es nutzt, reicht völlig. Es fragt nur ein einziges Mal."
+    "message": "Das sind viele Umwege über Konverter-Websites, die du dir gespart hast. Imgkeep wird von einer einzigen Person gemacht, und über Bewertungen finden neue Leute es. Es dauert nur einen Moment."
   },
   "reviewRate": {
     "message": "Imgkeep bewerten"
   },
-  "reviewWrite": {
-    "message": "Bewertung schreiben"
-  },
   "reviewNo": {
-    "message": "Nein, danke"
+    "message": "Nicht mehr fragen"
+  },
+  "reviewLater": {
+    "message": "Später"
+  },
+  "reviewLaterOk": {
+    "message": "Okay, vielleicht ein andermal."
   },
   "reviewThanks": {
     "message": "Danke!"

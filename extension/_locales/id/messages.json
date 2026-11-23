@@ -435,7 +435,7 @@
     "message": "Gambar dikonversi di komputer Anda dan tidak pernah diunggah. Satu-satunya hal lain yang dikirim Imgkeep adalah ringkasan harian anonim di atas, yang bisa Anda matikan."
   },
   "optTrust2": {
-    "message": "Tanpa iklan dan tanpa tab sambutan. Jendela kecil hanya terbuka saat Anda memintanya atau saat penyimpanan perlu persetujuan Anda. Imgkeep meminta penilaian satu kali, setelah Anda memakainya beberapa lama."
+    "message": "Tanpa iklan dan tanpa tab sambutan. Jendela kecil hanya terbuka saat Anda memintanya atau saat penyimpanan perlu persetujuan Anda. Imgkeep meminta penilaian setelah Anda memakainya beberapa lama, paling banyak tiga kali, dan berhenti begitu Anda menilainya atau menolak."
   },
   "optTrust4": {
     "message": "Imgkeep hanya melihat suatu halaman saat Anda memintanya mencari gambar di sana, hanya halaman itu, hanya saat itu. Imgkeep tidak pernah mengubah halaman."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Artinya banyak kunjungan ke situs konverter yang tidak perlu Anda lakukan. Imgkeep dibuat oleh satu orang, dan ulasan adalah cara orang baru menemukannya. Satu kalimat tentang kegunaannya bagi Anda sudah cukup. Ini hanya ditanyakan sekali."
+    "message": "Artinya banyak kunjungan ke situs konverter yang tidak perlu Anda lakukan. Imgkeep dibuat oleh satu orang, dan ulasan adalah cara orang baru menemukannya. Hanya butuh sebentar."
   },
   "reviewRate": {
     "message": "Beri rating Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Tulis ulasan"
-  },
   "reviewNo": {
-    "message": "Tidak, terima kasih"
+    "message": "Jangan tanya lagi"
+  },
+  "reviewLater": {
+    "message": "Nanti"
+  },
+  "reviewLaterOk": {
+    "message": "Baik, lain kali saja."
   },
   "reviewThanks": {
     "message": "Terima kasih!"

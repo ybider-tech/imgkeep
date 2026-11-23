@@ -435,7 +435,7 @@
     "message": "Kuvat muunnetaan omalla koneellasi, eikä niitä koskaan lähetetä verkkoon. Ainoa muu asia, jonka Imgkeep lähettää, on yllä kuvattu nimetön päivittäinen yhteenveto, jonka voit kytkeä pois."
   },
   "optTrust2": {
-    "message": "Ei mainoksia eikä tervetulovälilehtiä. Pieniä ikkunoita avautuu vain, kun pyydät sellaista tai kun tallennus tarvitsee hyväksyntäsi. Imgkeep pyytää arviota kerran, kun olet käyttänyt sitä jonkin aikaa."
+    "message": "Ei mainoksia eikä tervetulovälilehtiä. Pieniä ikkunoita avautuu vain, kun pyydät sellaista tai kun tallennus tarvitsee hyväksyntäsi. Imgkeep pyytää arviota, kun olet käyttänyt sitä jonkin aikaa, enintään kolme kertaa, ja lopettaa heti, kun arvioit sen tai kieltäydyt."
   },
   "optTrust4": {
     "message": "Imgkeep katsoo sivua vain silloin, kun pyydät sitä etsimään kuvan – vain sitä sivua, vain silloin. Se ei koskaan muuta sivua."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Se on monta käyntiä muunnossivustoilla, joita sinun ei tarvinnut tehdä. Imgkeepiä tekee yksi ihminen, ja arvostelujen kautta uudet käyttäjät löytävät sen. Yksi lause siitä, mihin käytät sitä, riittää hyvin. Se kysyy vain kerran."
+    "message": "Se on monta käyntiä muunnossivustoilla, joita sinun ei tarvinnut tehdä. Imgkeepiä tekee yksi ihminen, ja arvostelujen kautta uudet käyttäjät löytävät sen. Se vie vain hetken."
   },
   "reviewRate": {
     "message": "Arvioi Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Kirjoita arvostelu"
-  },
   "reviewNo": {
-    "message": "Ei kiitos"
+    "message": "Älä kysy enää"
+  },
+  "reviewLater": {
+    "message": "Myöhemmin"
+  },
+  "reviewLaterOk": {
+    "message": "Selvä, ehkä toiste."
   },
   "reviewThanks": {
     "message": "Kiitos!"

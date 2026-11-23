@@ -435,7 +435,7 @@
     "message": "Obrazy są konwertowane na Twoim komputerze i nigdy nigdzie nie trafiają. Jedyne, co Imgkeep wysyła, to powyższe anonimowe dzienne podsumowanie, które możesz wyłączyć."
   },
   "optTrust2": {
-    "message": "Żadnych reklam ani kart powitalnych. Małe okna otwierają się tylko wtedy, gdy o nie poprosisz albo gdy zapis wymaga Twojej zgody. O ocenę Imgkeep prosi raz, po pewnym czasie używania."
+    "message": "Żadnych reklam ani kart powitalnych. Małe okna otwierają się tylko wtedy, gdy o nie poprosisz albo gdy zapis wymaga Twojej zgody. O ocenę Imgkeep prosi po pewnym czasie używania, najwyżej trzy razy, i przestaje, gdy tylko go ocenisz lub odmówisz."
   },
   "optTrust4": {
     "message": "Imgkeep zagląda na stronę tylko wtedy, gdy poprosisz o znalezienie na niej obrazu — tylko na tę stronę i tylko wtedy. Nigdy jej nie zmienia."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "To wiele wizyt na stronach do konwersji, których udało się uniknąć. Imgkeep tworzy jedna osoba, a recenzje to sposób, w jaki znajdują go nowi użytkownicy. Wystarczy jedno zdanie o tym, do czego go używasz. Pyta tylko raz."
+    "message": "To wiele wizyt na stronach do konwersji, których udało się uniknąć. Imgkeep tworzy jedna osoba, a recenzje to sposób, w jaki znajdują go nowi użytkownicy. To zajmie tylko chwilę."
   },
   "reviewRate": {
     "message": "Oceń Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Napisz recenzję"
-  },
   "reviewNo": {
-    "message": "Nie, dziękuję"
+    "message": "Nie pytaj więcej"
+  },
+  "reviewLater": {
+    "message": "Później"
+  },
+  "reviewLaterOk": {
+    "message": "Dobrze, może innym razem."
   },
   "reviewThanks": {
     "message": "Dziękujemy!"

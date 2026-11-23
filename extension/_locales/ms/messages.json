@@ -435,7 +435,7 @@
     "message": "Imej ditukar pada komputer anda dan tidak pernah dimuat naik. Satu-satunya perkara lain yang Imgkeep hantar ialah ringkasan harian tanpa nama di atas, yang boleh anda matikan."
   },
   "optTrust2": {
-    "message": "Tiada iklan dan tiada tab alu-aluan. Tetingkap kecil hanya terbuka apabila anda memintanya atau apabila sesuatu simpanan perlukan kebenaran anda. Imgkeep meminta penilaian sekali sahaja, selepas anda menggunakannya seketika."
+    "message": "Tiada iklan dan tiada tab alu-aluan. Tetingkap kecil hanya terbuka apabila anda memintanya atau apabila sesuatu simpanan perlukan kebenaran anda. Imgkeep meminta penilaian selepas anda menggunakannya seketika, paling banyak tiga kali, dan berhenti sebaik sahaja anda menilainya atau menolak."
   },
   "optTrust4": {
     "message": "Imgkeep hanya melihat sesuatu halaman apabila anda memintanya mencari imej di situ, halaman itu sahaja, ketika itu sahaja. Ia tidak pernah mengubah halaman."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Itu bermakna banyak kali anda tidak perlu ke laman penukar. Imgkeep dibuat oleh seorang sahaja, dan ulasan ialah cara orang baharu menemuinya. Satu ayat tentang kegunaannya bagi anda sudah memadai. Ia hanya bertanya sekali."
+    "message": "Itu bermakna banyak kali anda tidak perlu ke laman penukar. Imgkeep dibuat oleh seorang sahaja, dan ulasan ialah cara orang baharu menemuinya. Ia hanya mengambil masa sekejap."
   },
   "reviewRate": {
     "message": "Nilai Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Tulis ulasan"
-  },
   "reviewNo": {
-    "message": "Tak perlu, terima kasih"
+    "message": "Jangan tanya lagi"
+  },
+  "reviewLater": {
+    "message": "Nanti"
+  },
+  "reviewLaterOk": {
+    "message": "Baik, lain kali."
   },
   "reviewThanks": {
     "message": "Terima kasih!"

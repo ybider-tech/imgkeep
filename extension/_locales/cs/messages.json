@@ -435,7 +435,7 @@
     "message": "Obrázky se převádějí ve vašem počítači a nikdy se nikam nenahrávají. Jediné další, co Imgkeep odesílá, je anonymní denní souhrn výše, který můžete vypnout."
   },
   "optTrust2": {
-    "message": "Žádné reklamy ani uvítací panely. Malá okna se otevřou, jen když si o ně řeknete nebo když ukládání potřebuje vaše svolení. O hodnocení Imgkeep požádá jednou, až ho chvíli používáte."
+    "message": "Žádné reklamy ani uvítací panely. Malá okna se otevřou, jen když si o ně řeknete nebo když ukládání potřebuje vaše svolení. Imgkeep požádá o hodnocení, až ho chvíli používáte, nejvýše třikrát, a přestane, jakmile ho ohodnotíte nebo odmítnete."
   },
   "optTrust4": {
     "message": "Imgkeep se na stránku podívá jen tehdy, když ho požádáte, aby na ní našel obrázek – jen na tu stránku a jen tehdy. Stránku nikdy nemění."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "To je spousta cest na převodní weby, které jste nemuseli podniknout. Imgkeep dělá jeden člověk a recenze jsou způsob, jak ho najdou noví lidé. Stačí jedna věta o tom, k čemu ho používáte. Ptá se jen jednou."
+    "message": "To je spousta cest na převodní weby, které jste nemuseli podniknout. Imgkeep dělá jeden člověk a recenze jsou způsob, jak ho najdou noví lidé. Zabere to jen chvilku."
   },
   "reviewRate": {
     "message": "Ohodnotit Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Napsat recenzi"
-  },
   "reviewNo": {
-    "message": "Ne, děkuji"
+    "message": "Už se neptat"
+  },
+  "reviewLater": {
+    "message": "Později"
+  },
+  "reviewLaterOk": {
+    "message": "Dobře, třeba jindy."
   },
   "reviewThanks": {
     "message": "Děkujeme!"

@@ -77,25 +77,31 @@ export async function copyPng(blobOrPromise) {
   await navigator.clipboard.write([new ClipboardItem({ "image/png": blobOrPromise })]);
 }
 
-// The one rating ask: what Imgkeep has done for this person (uses: saves and copies, counted on this computer),
-// a short note, then "Leave a review" and "No thanks". Either answer ends it for good.
+// The rating ask: what Imgkeep has done for this person (uses: saves and copies, counted on this computer),
+// a short note, then "Rate Imgkeep", "Later" and "Don't ask again". Rating or declining ends it for good;
+// "Later" asks again after more use, at most three asks in all (lib/review.js).
 // onAnswer(action) runs after the answer is recorded ("rate" also opened the store's review page).
 export function reviewAsk(onAnswer, uses = 0) {
   const box = el("div", { className: "review" });
   box.setAttribute("role", "group");
   box.setAttribute("aria-label", t("reviewTitle"));
+  const reply = { rate: "reviewThanks", later: "reviewLaterOk", no: "reviewOk" };
   const answer = (action) => async () => {
     for (const b of box.querySelectorAll("button")) b.disabled = true;
     await chrome.runtime.sendMessage({ target: "background", type: "review", action });
-    box.replaceChildren(el("p", { textContent: action === "rate" ? t("reviewThanks") : t("reviewOk") }));
+    box.replaceChildren(el("p", { textContent: t(reply[action]) }));
     onAnswer?.(action);
   };
-  const rate = el("button", { type: "button", className: "primary", textContent: t("reviewWrite") });
-  const no = el("button", { type: "button", textContent: t("reviewNo") });
-  rate.addEventListener("click", answer("rate"));
-  no.addEventListener("click", answer("no"));
+  const button = (action, key, className = "") => {
+    const b = el("button", { type: "button", className, textContent: t(key) });
+    b.addEventListener("click", answer(action));
+    return b;
+  };
   const lead = uses > 0 ? t("reviewCount", [String(uses)]) : t("reviewTitle");
-  box.append(el("p", {}, el("strong", { textContent: lead }), " ", t("reviewBody")), el("div", { className: "actions" }, rate, no));
+  box.append(
+    el("p", {}, el("strong", { textContent: lead }), " ", t("reviewBody")),
+    el("div", { className: "actions" }, button("rate", "reviewRate", "primary"), button("later", "reviewLater"), button("no", "reviewNo")),
+  );
   return box;
 }
 

@@ -435,7 +435,7 @@
     "message": "Les imatges es converteixen al teu ordinador i no es pugen mai enlloc. L'única altra cosa que Imgkeep envia és el resum diari anònim de més amunt, que pots desactivar."
   },
   "optTrust2": {
-    "message": "Sense anuncis ni pestanyes de benvinguda. Les finestretes només s'obren quan en demanes una o quan una desada necessita el teu vistiplau. Imgkeep demana una valoració un sol cop, després d'un temps d'ús."
+    "message": "Sense anuncis ni pestanyes de benvinguda. Les finestretes només s'obren quan en demanes una o quan una desada necessita el teu vistiplau. Imgkeep demana una valoració després d'un temps d'ús, com a màxim tres vegades, i s'atura tan bon punt el valores o dius que no."
   },
   "optTrust4": {
     "message": "Imgkeep només mira una pàgina quan li demanes que hi cerqui una imatge: només aquella pàgina, només en aquell moment. Mai no modifica cap pàgina."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Són moltes visites a webs de conversió que t'has estalviat. L'Imgkeep el fa una sola persona, i les ressenyes són la manera com la gent nova el troba. N'hi ha prou amb una frase sobre per a què el fas servir. Només ho demana una vegada."
+    "message": "Són moltes visites a webs de conversió que t'has estalviat. L'Imgkeep el fa una sola persona, i les ressenyes són la manera com la gent nova el troba. Només és un moment."
   },
   "reviewRate": {
     "message": "Valora l'Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Escriu una ressenya"
-  },
   "reviewNo": {
-    "message": "No, gràcies"
+    "message": "No m'ho tornis a demanar"
+  },
+  "reviewLater": {
+    "message": "Més tard"
+  },
+  "reviewLaterOk": {
+    "message": "D'acord, una altra vegada."
   },
   "reviewThanks": {
     "message": "Gràcies!"

@@ -435,7 +435,7 @@
     "message": "Ảnh được chuyển đổi ngay trên máy bạn và không bao giờ được tải lên. Thứ duy nhất Imgkeep gửi đi là bản tóm tắt ẩn danh mỗi ngày ở trên, và bạn có thể tắt nó."
   },
   "optTrust2": {
-    "message": "Không quảng cáo, không tab chào mừng. Cửa sổ nhỏ chỉ mở khi bạn yêu cầu hoặc khi một lần lưu cần bạn đồng ý. Imgkeep xin đánh giá một lần duy nhất, sau khi bạn đã dùng một thời gian."
+    "message": "Không quảng cáo, không tab chào mừng. Cửa sổ nhỏ chỉ mở khi bạn yêu cầu hoặc khi một lần lưu cần bạn đồng ý. Imgkeep xin đánh giá sau khi bạn đã dùng một thời gian, tối đa ba lần, và dừng ngay khi bạn đánh giá hoặc từ chối."
   },
   "optTrust4": {
     "message": "Imgkeep chỉ xem một trang khi bạn yêu cầu nó tìm ảnh ở đó, đúng trang đó, đúng lúc đó. Nó không bao giờ thay đổi trang."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Tức là bạn đã đỡ được rất nhiều lần phải vào trang chuyển đổi. Imgkeep do một người làm, và đánh giá là cách người mới tìm thấy nó. Chỉ cần một câu về việc bạn dùng nó để làm gì là đủ. Lời nhờ này chỉ xuất hiện một lần."
+    "message": "Tức là bạn đã đỡ được rất nhiều lần phải vào trang chuyển đổi. Imgkeep do một người làm, và đánh giá là cách người mới tìm thấy nó. Chỉ mất một chút thôi."
   },
   "reviewRate": {
     "message": "Đánh giá Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Viết đánh giá"
-  },
   "reviewNo": {
-    "message": "Không, cảm ơn"
+    "message": "Đừng hỏi lại"
+  },
+  "reviewLater": {
+    "message": "Để sau"
+  },
+  "reviewLaterOk": {
+    "message": "Được, để lần khác nhé."
   },
   "reviewThanks": {
     "message": "Cảm ơn bạn!"

@@ -14,7 +14,7 @@ import { findImageInPage } from "./lib/find-image.js";
 import { readBlobInPage } from "./lib/read-blob.js";
 import { FOLDERS, countsAllowed, isStoreSite, isTestCopy } from "./lib/browser.js";
 import { cleanHexes } from "./lib/palette.js";
-import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, reviewUrl } from "./lib/review.js";
+import { DAY, NEW_DAYS, MENU_SINCE, newItemsSince, newUsage, recordUse, markAsked, menuAskVisible, windowCanAsk, markWindowAsked, askExpired, finishAsk, laterAsk, roundOf, reviewUrl } from "./lib/review.js";
 
 const msg = (key, subs) => chrome.i18n.getMessage(key, subs);
 
@@ -118,16 +118,16 @@ async function refreshMenus() {
 
   let usage = await getUsage();
   if (askExpired(usage, now)) {
-    usage = finishAsk(usage); // left unanswered: it was the one ask
+    usage = laterAsk(usage, now); // left unanswered: that round is over, like "Later"
     await chrome.storage.local.set({ usage });
   }
   const showRate = menuAskVisible(usage, now);
   if (showRate && !usage.menuShown) {
     // The first time the "Rate it" item appears. Counted apart from the window note, to see which one people see.
-    const wasWaiting = usage.ask === "waiting";
+    const keys = askKeys(usage, "rating_menu_shown");
     usage = { ...markAsked(usage, now), menuShown: true };
     await chrome.storage.local.set({ usage });
-    count(...(wasWaiting ? ["rating_asked", "rating_menu_shown"] : ["rating_menu_shown"]));
+    count(...keys);
   }
   // Decided from storage every time, not from menuTitles: the worker may have restarted since the menu was built.
   // Creating an item that exists, or removing one that doesn't, is a harmless error.
@@ -658,13 +658,17 @@ async function runJob(input, { interactive = true } = {}) {
   return result;
 }
 
-// The one rating ask after a quick save: once, ever (the same "once" as the note in Imgkeep's windows).
+// What a rating ask counts as it appears: where it appeared, and, if this starts a round, which round
+// (rating_asked for the first, rating_again for a later one, since 0.15.1).
+const askKeys = (usage, shown) => (usage.ask === "waiting" ? [roundOf(usage) === 1 ? "rating_asked" : "rating_again", shown] : [shown]);
+
+// The rating ask after a quick save: once a round (the same "once" as the note in Imgkeep's windows).
 async function askAfterQuickSave() {
   await usageQueue;
   const now = Date.now();
   const usage = await getUsage();
   if (!windowCanAsk(usage, now)) return;
-  count(...(usage.ask === "waiting" ? ["rating_asked", "rating_popup_shown"] : ["rating_popup_shown"]));
+  count(...askKeys(usage, "rating_popup_shown"));
   await chrome.storage.local.set({ usage: markWindowAsked(usage, now) });
   await refreshMenus();
   await openRateWindow();
@@ -987,12 +991,12 @@ const fromOwnPage = (sender) => sender.id === chrome.runtime.id && sender.url?.s
 
 // The rating ask, from any of the extension's windows (no job needed).
 const reviewHandlers = {
-  // Show the ask in this window? Only once, the first time it's ready.
+  // Show the ask in this window? Once a round, the first time it's ready.
   async shouldAskRating() {
     await usageQueue; // a use counted just now may be what makes it due
     const usage = await getUsage();
     if (!windowCanAsk(usage, Date.now())) return { ok: true, show: false };
-    count(...(usage.ask === "waiting" ? ["rating_asked", "rating_window_shown"] : ["rating_window_shown"]));
+    count(...askKeys(usage, "rating_window_shown"));
     await chrome.storage.local.set({ usage: markWindowAsked(usage, Date.now()) });
     await refreshMenus();
     return { ok: true, show: true, uses: usage.uses };
@@ -1004,11 +1008,14 @@ const reviewHandlers = {
     return { ok: true, uses: (await getUsage()).uses || 0 };
   },
 
-  // "rate" opens the store's review page for this browser; "no" just closes the ask. Either way it's done.
+  // "rate" opens the store's review page for this browser and "no" (Don't ask again) closes the ask: either way
+  // it's done. "later" closes it until the next round, or for good after the last one.
   async review({ action }) {
-    await chrome.storage.local.set({ usage: finishAsk(await getUsage()) });
+    const usage = await getUsage();
+    const answer = ["rate", "no", "later"].includes(action) ? action : "no";
+    await chrome.storage.local.set({ usage: answer === "later" ? laterAsk(usage, Date.now()) : finishAsk(usage, answer) });
     await refreshMenus();
-    count(action === "rate" ? "rating_rate" : "rating_no");
+    count(`rating_${answer}`);
     if (action === "rate") await chrome.tabs.create({ url: reviewUrl(navigator.userAgent) });
     return { ok: true };
   },

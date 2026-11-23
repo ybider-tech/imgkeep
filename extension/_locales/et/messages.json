@@ -435,7 +435,7 @@
     "message": "Pildid teisendatakse sinu arvutis ja neid ei laadita kunagi üles. Ainus muu asi, mida Imgkeep saadab, on ülalolev anonüümne päevakokkuvõte, mille saad välja lülitada."
   },
   "optTrust2": {
-    "message": "Ei mingeid reklaame ega tervitusvahelehti. Väikesed aknad avanevad ainult siis, kui ise palud või kui salvestamine vajab sinu nõusolekut. Hinnangut küsib Imgkeep ühe korra, kui oled seda mõnda aega kasutanud."
+    "message": "Ei mingeid reklaame ega tervitusvahelehti. Väikesed aknad avanevad ainult siis, kui ise palud või kui salvestamine vajab sinu nõusolekut. Imgkeep küsib hinnangut, kui oled seda mõnda aega kasutanud, kõige rohkem kolm korda, ja lõpetab kohe, kui hindad või ütled ei."
   },
   "optTrust4": {
     "message": "Imgkeep vaatab lehte ainult siis, kui palud sealt pildi leida – ainult seda lehte ja ainult siis. Lehte ta kunagi ei muuda."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "See on palju käike teisendussaitidele, mida sa ei pidanud tegema. Imgkeepi teeb üks inimene ja arvustuste kaudu leiavad selle uued kasutajad. Piisab ühest lausest selle kohta, milleks sa seda kasutad. See küsib ainult korra."
+    "message": "See on palju käike teisendussaitidele, mida sa ei pidanud tegema. Imgkeepi teeb üks inimene ja arvustuste kaudu leiavad selle uued kasutajad. See võtab vaid hetke."
   },
   "reviewRate": {
     "message": "Hinda Imgkeepi"
   },
-  "reviewWrite": {
-    "message": "Kirjuta arvustus"
-  },
   "reviewNo": {
-    "message": "Tänan, ei"
+    "message": "Ära enam küsi"
+  },
+  "reviewLater": {
+    "message": "Hiljem"
+  },
+  "reviewLaterOk": {
+    "message": "Olgu, mõni teine kord."
   },
   "reviewThanks": {
     "message": "Aitäh!"

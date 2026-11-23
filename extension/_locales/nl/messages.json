@@ -435,7 +435,7 @@
     "message": "Afbeeldingen worden op je eigen computer omgezet en nooit geüpload. Het enige andere wat Imgkeep verstuurt, is de anonieme dagelijkse samenvatting hierboven, die je kunt uitschakelen."
   },
   "optTrust2": {
-    "message": "Geen advertenties en geen welkomsttabbladen. Kleine vensters gaan alleen open als je erom vraagt of als een opslagactie je goedkeuring nodig heeft. Imgkeep vraagt één keer om een beoordeling, nadat je het een tijdje hebt gebruikt."
+    "message": "Geen advertenties en geen welkomsttabbladen. Kleine vensters gaan alleen open als je erom vraagt of als een opslagactie je goedkeuring nodig heeft. Imgkeep vraagt om een beoordeling nadat je het een tijdje hebt gebruikt, hooguit drie keer, en stopt zodra je het beoordeelt of nee zegt."
   },
   "optTrust4": {
     "message": "Imgkeep kijkt alleen naar een pagina als je het vraagt om daar een afbeelding te vinden, alleen die pagina, alleen op dat moment. Het verandert nooit iets aan een pagina."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Dat zijn heel wat omwegen via conversiesites die je niet hoefde te maken. Imgkeep wordt door één persoon gemaakt, en via reviews vinden nieuwe mensen het. Eén zin over waarvoor je het gebruikt is genoeg. Het vraagt dit maar één keer."
+    "message": "Dat zijn heel wat omwegen via conversiesites die je niet hoefde te maken. Imgkeep wordt door één persoon gemaakt, en via reviews vinden nieuwe mensen het. Het kost maar een moment."
   },
   "reviewRate": {
     "message": "Imgkeep beoordelen"
   },
-  "reviewWrite": {
-    "message": "Review schrijven"
-  },
   "reviewNo": {
-    "message": "Nee, bedankt"
+    "message": "Niet meer vragen"
+  },
+  "reviewLater": {
+    "message": "Later"
+  },
+  "reviewLaterOk": {
+    "message": "Oké, een andere keer."
   },
   "reviewThanks": {
     "message": "Bedankt!"

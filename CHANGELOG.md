@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.1 — 2026-11-23
+
+- **The rating ask: Later, and up to three asks.** It was asked once, ever: since 4 November 57 asks started, 3 people rated (all on Edge), 11 declined, and the store listing had 5 ratings. Now it has three answers: **Rate Imgkeep** (opens the store's review page) and **Don't ask again** end it for good; **Later**, or a round left unanswered for 14 days, asks again after 20 more successful saves and 7 days, at most three rounds (`REVIEW.maxRounds`, `againUses`, `againDays` in `lib/review.js`). Each round shows the menu item and one window ask, as before. Copies whose one-time ask already ended stay done.
+- Lower-effort wording: the button says "Rate Imgkeep" (was "Leave a review", key `reviewWrite` removed) and the ask no longer asks for "one sentence about what you use it for", just "It only takes a moment". `reviewBody`, `reviewNo` ("Don't ask again"), `optTrust2` changed; `reviewLater`, `reviewLaterOk` new; all 50 languages translated in-session and recorded in the lock.
+- Counts: `rating_again` (a later round started; `rating_asked` stays the first), `rating_later`. `usage.answer` records rate, no or rounds locally. Privacy policy names them (announced first).
+- The public promise "asks for a rating once" changed to "at most three times, and stops as soon as you rate it or say no": Options, README, support, ideas and the save-image-as-type-alternative guide.
+- Tests: `tests/engagement.spec.mjs` (rounds in `lib/review.js`; Later in a window, the next round counted as `rating_again`; an unanswered round becomes round 2).
+
 ## 0.15.0 — 2026-11-23
 
 - **Save with a shortcut:** Alt+S (Alt+Shift+S in Firefox, where Alt+S opens the History menu) saves the image under the pointer in the format used last; Imgkeep's new toolbar button lists the images on screen to pick from (then More options). Both work on any site, including ones that block the right-click, and use Find image here's optional `activeTab` + `scripting` (one setting for all three; no new permission, no install warning). The browser grants `activeTab` for that one key press or click; the finder runs once with `exact` pointer mode (no "other images nearby" guess, since the pointer hasn't moved to a menu). Not turned on yet: a window explains and turns it on. Pages the browser keeps extensions out of get their own explanation. Options shows the shortcut as the browser has it (`commands.getAll`). Manifest: `commands.save-image`, `action` (no popup). Nothing runs on a page by itself.

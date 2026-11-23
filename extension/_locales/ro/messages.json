@@ -435,7 +435,7 @@
     "message": "Imaginile sunt convertite pe calculatorul tău și nu sunt încărcate nicăieri. Singurul lucru pe care Imgkeep îl mai trimite este rezumatul zilnic anonim de mai sus, pe care îl poți dezactiva."
   },
   "optTrust2": {
-    "message": "Fără reclame și fără file de bun venit. Ferestrele mici se deschid doar când ceri tu una sau când o salvare are nevoie de acordul tău. Imgkeep cere o evaluare o singură dată, după ce l-ai folosit o vreme."
+    "message": "Fără reclame și fără file de bun venit. Ferestrele mici se deschid doar când ceri tu una sau când o salvare are nevoie de acordul tău. Imgkeep cere o evaluare după ce l-ai folosit o vreme, de cel mult trei ori, și se oprește imediat ce îl evaluezi sau refuzi."
   },
   "optTrust4": {
     "message": "Imgkeep se uită la o pagină doar când îi ceri să găsească o imagine acolo, doar la acea pagină, doar atunci. Nu modifică niciodată o pagină."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Înseamnă multe drumuri pe site-uri de conversie pe care nu a mai trebuit să le faci. Imgkeep este făcut de o singură persoană, iar recenziile sunt felul în care îl găsesc oameni noi. Ajunge o propoziție despre la ce îl folosești. Întreabă o singură dată."
+    "message": "Înseamnă multe drumuri pe site-uri de conversie pe care nu a mai trebuit să le faci. Imgkeep este făcut de o singură persoană, iar recenziile sunt felul în care îl găsesc oameni noi. Durează doar o clipă."
   },
   "reviewRate": {
     "message": "Evaluează Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Scrie o recenzie"
-  },
   "reviewNo": {
-    "message": "Nu, mulțumesc"
+    "message": "Nu mă mai întreba"
+  },
+  "reviewLater": {
+    "message": "Mai târziu"
+  },
+  "reviewLaterOk": {
+    "message": "Bine, poate altă dată."
   },
   "reviewThanks": {
     "message": "Mulțumim!"

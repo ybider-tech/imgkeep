@@ -435,7 +435,7 @@
     "message": "Paveikslėliai konvertuojami jūsų kompiuteryje ir niekur neįkeliami. Vienintelis kitas dalykas, kurį Imgkeep siunčia, – aukščiau aprašyta anoniminė dienos suvestinė, kurią galite išjungti."
   },
   "optTrust2": {
-    "message": "Jokių reklamų ir jokių pasisveikinimo skirtukų. Maži langai atsidaro tik tada, kai jų paprašote arba kai įrašymui reikia jūsų sutikimo. Įvertinti Imgkeep paprašo vieną kartą, kurį laiką juo pasinaudojus."
+    "message": "Jokių reklamų ir jokių pasisveikinimo skirtukų. Maži langai atsidaro tik tada, kai jų paprašote arba kai įrašymui reikia jūsų sutikimo. Įvertinti Imgkeep paprašo kurį laiką juo pasinaudojus, ne daugiau kaip tris kartus, ir liaujasi, kai tik įvertinate arba atsisakote."
   },
   "optTrust4": {
     "message": "Imgkeep peržiūri puslapį tik tada, kai paprašote jame rasti paveikslėlį – tik tą puslapį ir tik tuo metu. Puslapio jis niekada nekeičia."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Tai daug apsilankymų konvertavimo svetainėse, kurių jums neprireikė. Imgkeep kuria vienas žmogus, o atsiliepimai yra būdas naujiems žmonėms jį rasti. Užtenka vieno sakinio apie tai, kam jį naudojate. Klausiama tik vieną kartą."
+    "message": "Tai daug apsilankymų konvertavimo svetainėse, kurių jums neprireikė. Imgkeep kuria vienas žmogus, o atsiliepimai yra būdas naujiems žmonėms jį rasti. Tai užtruks tik akimirką."
   },
   "reviewRate": {
     "message": "Įvertinti Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Parašyti atsiliepimą"
-  },
   "reviewNo": {
-    "message": "Ne, ačiū"
+    "message": "Daugiau neklausti"
+  },
+  "reviewLater": {
+    "message": "Vėliau"
+  },
+  "reviewLaterOk": {
+    "message": "Gerai, gal kitą kartą."
   },
   "reviewThanks": {
     "message": "Ačiū!"

@@ -56,13 +56,15 @@ export const COUNT_KEYS = [
   "site_access_asked",
   "site_access_allowed",
   "folder_asked",
-  "rating_asked", // the one rating ask started (counted once, wherever it first appeared)
+  "rating_asked", // the first rating ask started (counted once, wherever it first appeared)
+  "rating_again", // a later round of the rating ask started (since 0.15.1: at most three asks in all)
   "rating_menu_shown", // … as the "Rate it" item in the right-click menu (since 0.11.0)
   "rating_window_shown", // … as the note in one of Imgkeep's windows (since 0.11.0)
   "rating_menu_clicked", // the "Rate it" menu item was clicked (since 0.11.0)
   "rating_popup_shown", // … in its own small window, after a quick save from the menu (since 0.12.1)
   "rating_rate",
-  "rating_no",
+  "rating_no", // "No thanks" until 0.15.1, "Don't ask again" since
+  "rating_later", // "Later" (since 0.15.1)
 ];
 
 // "image/webp" → "webp"; anything not listed → "other".

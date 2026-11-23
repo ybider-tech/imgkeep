@@ -35,7 +35,7 @@ extension/
     settings.js            defaults, formats, file-name templates ({name} {host} {date} {time} {w} {h})
     folder.js              File System Access folder saving (not on Firefox)
     find-image.js read-blob.js   the two scripts injected on demand with scripting
-    review.js              the one rating ask (local counts only)
+    review.js              the rating ask, at most three times (local counts only)
     telemetry.js           the one anonymous daily summary (PostHog EU)
     browser.js i18n.js ui.js uninstall.js job-error.js
   vendor/avif/             libavif + libaom compiled to WASM (jSquash 2.1.1), pinned by SHA-256

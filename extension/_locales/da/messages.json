@@ -435,7 +435,7 @@
     "message": "Billeder konverteres på din computer og uploades aldrig. Det eneste andet, Imgkeep sender, er det anonyme daglige sammendrag ovenfor, som du kan slå fra."
   },
   "optTrust2": {
-    "message": "Ingen reklamer og ingen velkomstfaner. Små vinduer åbner kun, når du beder om et, eller når det kræver dit OK at gemme. Imgkeep beder om en bedømmelse én gang, efter du har brugt den et stykke tid."
+    "message": "Ingen reklamer og ingen velkomstfaner. Små vinduer åbner kun, når du beder om et, eller når det kræver dit OK at gemme. Imgkeep beder om en bedømmelse, efter du har brugt den et stykke tid, højst tre gange, og stopper, så snart du bedømmer den eller siger nej."
   },
   "optTrust4": {
     "message": "Imgkeep kigger kun på en side, når du beder den finde et billede der – kun den side, kun da. Den ændrer aldrig en side."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Det er mange ture til konverteringssider, du ikke behøvede at tage. Imgkeep er lavet af én person, og anmeldelser er sådan, nye folk finder den. Én sætning om, hvad du bruger den til, er rigeligt. Den spørger kun én gang."
+    "message": "Det er mange ture til konverteringssider, du ikke behøvede at tage. Imgkeep er lavet af én person, og anmeldelser er sådan, nye folk finder den. Det tager kun et øjeblik."
   },
   "reviewRate": {
     "message": "Bedøm Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Skriv en anmeldelse"
-  },
   "reviewNo": {
-    "message": "Nej tak"
+    "message": "Spørg ikke igen"
+  },
+  "reviewLater": {
+    "message": "Senere"
+  },
+  "reviewLaterOk": {
+    "message": "OK, en anden gang."
   },
   "reviewThanks": {
     "message": "Tak!"

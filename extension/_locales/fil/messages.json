@@ -435,7 +435,7 @@
     "message": "Ang mga larawan ay kino-convert sa iyong computer at hindi kailanman ina-upload. Ang tanging iba pang ipinapadala ng Imgkeep ay ang anonimong pang-araw-araw na buod sa itaas, na puwede mong i-off."
   },
   "optTrust2": {
-    "message": "Walang ad at walang welcome tab. May bumubukas na maliliit na window lang kapag humingi ka o kapag kailangan ng save ang pahintulot mo. Minsan lang humihingi ng rating ang Imgkeep, pagkatapos mong gamitin ito nang ilang panahon."
+    "message": "Walang ad at walang welcome tab. May bumubukas na maliliit na window lang kapag humingi ka o kapag kailangan ng save ang pahintulot mo. Humihingi ng rating ang Imgkeep pagkatapos mong gamitin ito nang ilang panahon, hanggang tatlong beses lang, at titigil ito kapag nag-rate ka o tumanggi."
   },
   "optTrust4": {
     "message": "Tinitingnan lang ng Imgkeep ang isang pahina kapag hiniling mong maghanap ng larawan doon, ang pahinang iyon lang, sa sandaling iyon lang. Hindi nito kailanman binabago ang pahina."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Ibig sabihin, maraming beses kang hindi na kinailangang pumunta sa mga converter site. Iisang tao lang ang gumagawa ng Imgkeep, at sa mga review ito natutuklasan ng mga bagong user. Sapat na ang isang pangungusap kung saan mo ito ginagamit. Isang beses lang itong magtatanong."
+    "message": "Ibig sabihin, maraming beses kang hindi na kinailangang pumunta sa mga converter site. Iisang tao lang ang gumagawa ng Imgkeep, at sa mga review ito natutuklasan ng mga bagong user. Sandali lang ito."
   },
   "reviewRate": {
     "message": "I-rate ang Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Mag-iwan ng review"
-  },
   "reviewNo": {
-    "message": "Huwag na lang"
+    "message": "Huwag nang itanong ulit"
+  },
+  "reviewLater": {
+    "message": "Mamaya"
+  },
+  "reviewLaterOk": {
+    "message": "Sige, sa ibang pagkakataon."
   },
   "reviewThanks": {
     "message": "Salamat!"

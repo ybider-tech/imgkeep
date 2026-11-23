@@ -435,7 +435,7 @@
     "message": "Las imágenes se convierten en tu equipo y nunca se suben. Lo único más que envía Imgkeep es el resumen diario anónimo de arriba, que puedes desactivar."
   },
   "optTrust2": {
-    "message": "Sin anuncios ni pestañas de bienvenida. Las ventanas pequeñas solo se abren cuando tú las pides o cuando un guardado necesita tu aprobación. Imgkeep pide una valoración una sola vez, después de que lo hayas usado un tiempo."
+    "message": "Sin anuncios ni pestañas de bienvenida. Las ventanas pequeñas solo se abren cuando tú las pides o cuando un guardado necesita tu aprobación. Imgkeep pide una valoración después de que lo hayas usado un tiempo, como máximo tres veces, y deja de pedirla en cuanto lo valoras o dices que no."
   },
   "optTrust4": {
     "message": "Imgkeep solo mira una página cuando le pides que busque una imagen en ella, solo esa página y solo en ese momento. Nunca cambia una página."
@@ -534,16 +534,19 @@
     }
   },
   "reviewBody": {
-    "message": "Son muchas visitas a webs de conversión que te has ahorrado. Imgkeep lo hace una sola persona, y las reseñas son la forma en que lo descubre gente nueva. Basta con una frase sobre para qué lo usas. Solo lo pregunta una vez."
+    "message": "Son muchas visitas a webs de conversión que te has ahorrado. Imgkeep lo hace una sola persona, y las reseñas son la forma en que lo descubre gente nueva. Solo te llevará un momento."
   },
   "reviewRate": {
     "message": "Valorar Imgkeep"
   },
-  "reviewWrite": {
-    "message": "Escribir una reseña"
-  },
   "reviewNo": {
-    "message": "No, gracias"
+    "message": "No volver a preguntar"
+  },
+  "reviewLater": {
+    "message": "Más tarde"
+  },
+  "reviewLaterOk": {
+    "message": "Vale, en otro momento."
   },
   "reviewThanks": {
     "message": "¡Gracias!"
