@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.15.1 — 2026-11-23
+## 0.15.1 — 2026-11-24
 
 - **The rating ask: Later, and up to three asks.** It was asked once, ever: since 4 November 57 asks started, 3 people rated (all on Edge), 11 declined, and the store listing had 5 ratings. Now it has three answers: **Rate Imgkeep** (opens the store's review page) and **Don't ask again** end it for good; **Later**, or a round left unanswered for 14 days, asks again after 20 more successful saves and 7 days, at most three rounds (`REVIEW.maxRounds`, `againUses`, `againDays` in `lib/review.js`). Each round shows the menu item and one window ask, as before. Copies whose one-time ask already ended stay done.
 - Lower-effort wording: the button says "Rate Imgkeep" (was "Leave a review", key `reviewWrite` removed) and the ask no longer asks for "one sentence about what you use it for", just "It only takes a moment". `reviewBody`, `reviewNo` ("Don't ask again"), `optTrust2` changed; `reviewLater`, `reviewLaterOk` new; all 50 languages translated in-session and recorded in the lock.
