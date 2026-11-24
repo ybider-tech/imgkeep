@@ -1,0 +1,23 @@
+HEIC/HEIF decoder for the Free Image Converter on imgkeep.app (website only; the extension doesn't use it).
+Loaded only when someone adds a HEIC or HEIF photo, and only where the browser can't open HEIC itself
+(Safari can; Chrome, Edge and Firefox can't). It runs in a Web Worker (../../heic-worker.js), on this
+device: nothing is uploaded and it makes no network requests of its own.
+
+Files, unchanged from the npm package libheif-js version 1.23.5 (folder libheif-wasm):
+  libheif.js     Emscripten loader (generic: it also mentions fetch, XMLHttpRequest and Node's fs for other
+                 environments; on imgkeep.app the worker hands it the .wasm bytes)
+  libheif.wasm   libheif 1.23.5 with the libde265 1.0.15 HEVC decoder (and dav1d for AV1-based HEIF),
+                 compiled to WebAssembly
+
+sha256:
+  376c0bb483c23ac458cd22d718074693748ea75eddc3e4929353d4153e365a2e  libheif.js
+  184d3d20f8323877f13e9f5254f9c6a0ce272c9a3a2f823b0b2bcd2ee9f73f80  libheif.wasm
+
+Check it yourself:  npm pack libheif-js@1.23.5, unpack it, and compare package/libheif-wasm/ with these files
+(shasum -a 256). tests/converter.spec.mjs fails if either file changes.
+
+Licences: libheif and libde265 are under the GNU Lesser General Public License version 3 (LICENSE-libheif,
+the licence file shipped with libheif-js); dav1d is under the BSD 2-clause licence. They are used unmodified,
+as separate files, and you can replace them with your own build of the same versions.
+Source code: https://github.com/strukturag/libheif (v1.23.5), https://github.com/strukturag/libde265 (v1.0.15),
+https://github.com/catdad-experiments/libheif-js (v1.23.5, the build scripts), https://code.videolan.org/videolan/dav1d

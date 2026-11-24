@@ -22,7 +22,7 @@ const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclp
 // The home H1: what Imgkeep does (for search), then the tagline.
 const HOME_H1 = "Save image as PNG, JPG, WebP, GIF or PDF Any image. Your format.";
 // The Free Image Converter and its pair pages (tests/converter.spec.mjs tests the tool itself).
-const CONVERTERS = ["convert", "webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico"];
+const CONVERTERS = ["convert", "webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico", "heic-to-jpg", "heic-to-png"];
 // Every page as [URL path, file under site/].
 const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),

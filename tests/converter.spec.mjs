@@ -2,7 +2,8 @@
 // code as the extension (site/convert/lib is a checked copy of extension/lib). Layout "Format First":
 // 01 choose the output, 02 add images, results below.
 import { test, expect } from "@playwright/test";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { startServer, encodePng } from "./servers.mjs";
@@ -19,6 +20,20 @@ test("the site's conversion code is an exact copy of the extension's (npm run si
     const a = await readFile(join(ROOT, "extension", file));
     const b = await readFile(join(ROOT, "site", "convert", file));
     expect(b.equals(a), `site/convert/${file} differs from extension/${file}: run npm run site-lib`).toBe(true);
+  }
+});
+
+// The HEIC decoder (website only) is pinned to the bytes of libheif-js 1.23.5, like the extension's AVIF encoder
+// (site/convert/vendor/heic/README says how to check them).
+const HEIC_VENDOR = {
+  "libheif.js": "376c0bb483c23ac458cd22d718074693748ea75eddc3e4929353d4153e365a2e",
+  "libheif.wasm": "184d3d20f8323877f13e9f5254f9c6a0ce272c9a3a2f823b0b2bcd2ee9f73f80",
+};
+test("the HEIC decoder is the pinned libheif build, with its licence and notes", async () => {
+  const dir = join(ROOT, "site", "convert", "vendor", "heic");
+  expect((await readdir(dir)).sort()).toEqual(["LICENSE-libheif", "README", "libheif.js", "libheif.wasm"]);
+  for (const [file, sha] of Object.entries(HEIC_VENDOR)) {
+    expect(createHash("sha256").update(await readFile(join(dir, file))).digest("hex"), file).toBe(sha);
   }
 });
 
@@ -138,19 +153,64 @@ test("changing the format converts again, and never shows an old file under the 
   expect(file.head.slice(0, 3)).toEqual([0xff, 0xd8, 0xff]);
 });
 
-test("several files at once: a broken one and a HEIC explain themselves, the rest stay usable", async ({ page }) => {
+test("several files at once: a broken one explains itself, the rest stay usable", async ({ page }) => {
   await open(page);
   await drop(page, [
     await fixture("photo.webp", "image/webp"),
     { name: "broken.png", type: "image/png", b64: Buffer.from("not an image").toString("base64") },
-    { name: "portrait.heic", type: "image/heic", b64: Buffer.from("x").toString("base64") },
     await fixture("photo.avif", "image/avif"),
   ]);
   await ready(page, 2);
-  await expect(page.locator("#summary")).toHaveText("2 ready · 1 couldn't be converted · 1 file not added");
+  await expect(page.locator("#summary")).toHaveText("2 ready · 1 couldn't be converted");
   await expect(page.locator(".cv-row.failed .cv-error").first()).toContainText("We couldn't convert broken.png");
-  await expect(page.locator(".cv-row.failed").filter({ hasText: "portrait.heic" })).toContainText("HEIC photos can't be opened");
   await expect(page.locator("#downloadAll")).toBeVisible();
+});
+
+// HEIC (iPhone photos, since 24 November 2026). Chrome, Edge and Firefox can't open HEIC, so heic.js hands it to
+// heic-worker.js and libheif (WebAssembly, site/convert/vendor/heic). quadrants-p3.heic: 96 × 64, made with
+// macOS sips from four sRGB colours and saved in Display P3, like an iPhone photo; the worker turns it back to sRGB.
+const QUADRANTS = [[200, 40, 40], [40, 160, 60], [40, 70, 200], [230, 200, 40]]; // top-left, top-right, bottom-left, bottom-right
+test("HEIC: decoded on this device into sRGB the right way round, the decoder from this site and only when a HEIC is added", async ({ page }) => {
+  const { requests, errors } = await open(page);
+  const decoder = () => requests.filter((u) => /heic-worker|libheif|heic\.js/.test(u));
+  await drop(page, [await fixture("photo.png", "image/png")]);
+  await ready(page, 1);
+  expect(decoder(), "nothing HEIC loads for other images").toEqual([]);
+  // Windows gives HEIC files no type, and some have no extension: the bytes decide.
+  await drop(page, [{ ...(await fixture("quadrants-p3.heic", "")), name: "IMG_0001" }]);
+  await ready(page, 2);
+  expect(decoder().length).toBeGreaterThan(0);
+  expect(decoder().every((u) => u.startsWith(server.url))).toBe(true);
+  const row = page.locator(".cv-row").filter({ hasText: "IMG_0001" });
+  await expect(row.locator(".cv-meta")).toContainText("96 × 64 · PNG");
+  const corners = await row.locator("a[download]").evaluate(async (a) => {
+    const bmp = await createImageBitmap(await (await fetch(a.href)).blob());
+    const ctx = new OffscreenCanvas(bmp.width, bmp.height).getContext("2d");
+    ctx.drawImage(bmp, 0, 0);
+    return [[24, 16], [72, 16], [24, 48], [72, 48]].map(([x, y]) => [...ctx.getImageData(x, y, 1, 1).data.slice(0, 3)]);
+  });
+  corners.forEach((rgb, i) => rgb.forEach((v, c) => expect(Math.abs(v - QUADRANTS[i][c]), `quadrant ${i} channel ${c}: ${rgb}`).toBeLessThanOrEqual(8)));
+  expect(errors).toEqual([]);
+});
+
+test("HEIC: a damaged photo says so, and a JPG named .heic is converted as the JPG it is", async ({ page }) => {
+  await open(page, "/heic-to-jpg/");
+  const heic = await readFile(join(FIX, "quadrants-p3.heic"));
+  await drop(page, [
+    { name: "cut.heic", type: "image/heic", b64: heic.subarray(0, heic.length - 200).toString("base64") },
+    { ...(await fixture("photo.jpg", "image/heic")), name: "really-a.heic" },
+  ]);
+  await ready(page, 1);
+  await expect(page.locator(".cv-row.failed")).toContainText("This HEIC photo couldn't be opened");
+  const [file] = await downloaded(page);
+  expect(file.name).toBe("really-a.jpg");
+});
+
+test("HEIC brands: HEIC and HEIF files are recognised, AVIF (same container) is not", async () => {
+  const { isHeicBytes } = await import("../site/convert/heic.js");
+  expect(isHeicBytes(await readFile(join(FIX, "quadrants-p3.heic")))).toBe(true);
+  expect(isHeicBytes(await readFile(join(FIX, "photo.avif")))).toBe(false);
+  expect(isHeicBytes(await readFile(join(FIX, "photo.png")))).toBe(false);
 });
 
 test("up to 20 files: the 21st is refused with a reason, never silently dropped", async ({ page }) => {
@@ -243,7 +303,7 @@ test("AVIF: the encoder comes from this site only, and only once AVIF is chosen"
 });
 
 test("pair pages start on their format, with every format still on offer", async ({ page }) => {
-  for (const [path, to] of [["/convert/", "png"], ["/webp-to-jpg/", "jpg"], ["/webp-to-png/", "png"], ["/avif-to-jpg/", "jpg"], ["/png-to-jpg/", "jpg"], ["/png-to-ico/", "ico"]]) {
+  for (const [path, to] of [["/convert/", "png"], ["/webp-to-jpg/", "jpg"], ["/webp-to-png/", "png"], ["/avif-to-jpg/", "jpg"], ["/png-to-jpg/", "jpg"], ["/heic-to-jpg/", "jpg"], ["/heic-to-png/", "png"], ["/png-to-ico/", "ico"]]) {
     await open(page, path);
     await expect(page.locator(`[data-format="${to}"]`), path).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator("[data-format]"), path).toHaveCount(8);

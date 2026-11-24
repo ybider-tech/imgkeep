@@ -60,6 +60,8 @@ export const SITE_PAGES = [
   "avif-to-jpg/index.html",
   "png-to-jpg/index.html",
   "png-to-ico/index.html",
+  "heic-to-jpg/index.html",
+  "heic-to-png/index.html",
   "color-palette-from-image/index.html",
   "download/index.html",
   "save-webp-as-jpg-png/index.html",
@@ -69,7 +71,7 @@ export const SITE_PAGES = [
 ];
 const APP_SCRIPTS = { "convert/": "convert/app.js", "color-palette-from-image/": "color-palette-from-image/app.js" };
 const appFor = (urlPath) => appForFile(urlPath.replace(/^\//, ""));
-const appForFile = (path) => APP_SCRIPTS[path] || (["webp-to-jpg/", "webp-to-png/", "avif-to-jpg/", "png-to-jpg/", "png-to-ico/"].includes(path) ? "convert/app.js" : null);
+const appForFile = (path) => APP_SCRIPTS[path] || (["webp-to-jpg/", "webp-to-png/", "avif-to-jpg/", "png-to-jpg/", "png-to-ico/", "heic-to-jpg/", "heic-to-png/"].includes(path) ? "convert/app.js" : null);
 
 export const urlPath = (file) => "/" + file.replace(/index\.html$/, "");
 const hash = (s) => createHash("sha256").update(s).digest("hex").slice(0, 16);

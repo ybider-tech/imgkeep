@@ -1,7 +1,8 @@
 // Free Image Converter on imgkeep.app: converts images in this page, on this device. Nothing is uploaded:
 // the files are read here, converted with the same code as the Imgkeep extension (./lib, a checked copy of
 // extension/lib), and handed back as downloads or a PNG on the clipboard. The only requests are this page's
-// own files (and the AVIF encoder, from this site, only when AVIF is chosen).
+// own files (the AVIF encoder only when AVIF is chosen, and the HEIC decoder only when a HEIC photo is added
+// to a browser that can't open it: both from this site; heic.js).
 //
 // Layout "Format First" (design handoff 2026-10-17): 01 choose the output, 02 add images; results follow.
 // Changing the format or a setting converts the images again; a result is only ever shown under the
@@ -253,8 +254,7 @@ function add(files) {
   for (const file of files) {
     const name = file.name || t("Pasted image");
     let problem = null;
-    if (/\.(heic|heif)$/i.test(name) || /hei[cf]/i.test(file.type)) problem = t("{name} isn't supported in this browser: HEIC photos can't be opened in Chrome, Edge or Firefox.", { name });
-    else if (file.type && !file.type.startsWith("image/")) problem = t("{name} isn't an image this converter can open.", { name });
+    if (file.type && !file.type.startsWith("image/")) problem = t("{name} isn't an image this converter can open.", { name });
     else if (file.size > MAX_BYTES) problem = t("{name} exceeds the 50 MB limit.", { name });
     else if (accepted >= room) problem = t("You can add up to {max} files. Remove an image to add {name}.", { max: MAX_FILES, name });
     if (problem) {
@@ -289,7 +289,7 @@ function row(it) {
   return el(
     "li",
     { className: "cv-row" },
-    el("div", { className: "cv-thumb fallback", textContent: short(it.file.type || "") || "img" }),
+    el("div", { className: "cv-thumb fallback", textContent: looksHeic(it.file) ? "heic" : short(it.file.type || "") || "img" }),
     el(
       "div",
       { className: "cv-info" },
@@ -332,18 +332,43 @@ function schedule(it) {
   queue = queue.then(() => run(it, version, key, opts)).catch(() => {});
 }
 
+// HEIC photos by name or type (Windows often gives them no type; heic.js also checks the bytes).
+const looksHeic = (file) => /\.(heic|heif)$/i.test(file?.name || "") || /^image\/hei[cf]/i.test(file?.type || "");
+
+// What gets converted: the file itself, or for a HEIC photo the browser can't open, its decoded PNG.
+// heic.js loads only for a file that may be HEIC: named so, or an ISO media file (ftyp, as HEIC and AVIF are).
+// Opened once per file; a failure is tried again with the next setting.
+async function open(file) {
+  const head = new Uint8Array(await file.slice(0, 12).arrayBuffer());
+  const isoMedia = String.fromCharCode(...head.subarray(4, 8)) === "ftyp";
+  if (!looksHeic(file) && !isoMedia) return { blob: file, heic: false };
+  const { openImage } = await import("./heic.js");
+  return openImage(file);
+}
+function source(it) {
+  it.source ??= open(it.file).catch((e) => {
+    it.source = null;
+    throw e;
+  });
+  return it.source;
+}
+
 async function run(it, version, key, opts) {
   if (it.removed || version !== it.version) return; // a newer setting or a removal won
-  setState(it, t("Converting…"));
+  if (!it.source && looksHeic(it.file)) setState(it, t("Opening the HEIC photo…"));
   try {
-    const out = await convert(it.file, { ...opts, title: baseName(it.name) });
+    const { blob: input, heic } = await source(it);
+    it.heic = heic;
+    if (it.removed || version !== it.version) return;
+    setState(it, t("Converting…"));
+    const out = await convert(input, { ...opts, title: baseName(it.name) });
     if (it.removed || version !== it.version) return; // stale: never shown under the new settings
     if (it.url) URL.revokeObjectURL(it.url);
     it.out = out;
     it.url = URL.createObjectURL(out.blob);
     it.status = "ready";
     showReady(it, key, opts);
-    const pair = `${short(out.sourceType || it.file.type || "")}>${key}`;
+    const pair = `${from(it)}>${key}`;
     if (!it.counted.has(pair)) {
       it.counted.add(pair);
       counts.set(pair, (counts.get(pair) || 0) + 1);
@@ -356,6 +381,9 @@ async function run(it, version, key, opts) {
   refresh();
   flushCounts();
 }
+
+// The source format, for the anonymous counts: a HEIC photo counts as heic, not as the PNG it was decoded to.
+const from = (it) => (it.heic ? "heic" : short(it.out?.sourceType || it.file.type || ""));
 
 function setState(it, text) {
   const s = it.row.querySelector(".cv-state");
@@ -371,7 +399,7 @@ function showReady(it, key, opts) {
   const thumb = out.ext === "pdf" ? el("div", { className: "cv-thumb fallback", textContent: "PDF" }) : el("img", { className: "cv-thumb", src: it.url, alt: "" });
   it.row.querySelector(".cv-thumb").replaceWith(thumb);
   it.row.querySelector(".cv-name").textContent = name;
-  it.row.querySelector(".cv-meta").textContent = `${out.width} × ${out.height} · ${label(key)} · ${size(out.blob.size)} (original ${size(it.file.size)})`;
+  it.row.querySelector(".cv-meta").textContent = `${out.width} × ${out.height} · ${label(key)} · ${size(out.blob.size)} ${t("(original {size})", { size: size(it.file.size) })}`;
   setState(it, `✓ ${t("Ready")}`);
   const download = el("a", { className: "cv-download", href: it.url, download: name, textContent: t("Download {format}", { format: label(key) }) });
   download.addEventListener("click", () => say(t("Download started: {name}", { name })));
@@ -388,6 +416,8 @@ function showFailed(it, e) {
     unsupported: t("This browser can't make that format."),
     "too-large": t("It's too large to convert here."),
     timeout: t("It took too long and was stopped."),
+    heic: t("This HEIC photo couldn't be opened: it may be damaged, or a kind of HEIC this converter can't read."),
+    "heic-load": t("The HEIC decoder couldn't load. Check your connection and try again."),
   }[e?.code];
   setState(it, `${t("We couldn't convert {name}. Try another image or format.", { name: it.name })}${why ? ` ${why}` : ""}`);
   it.row.querySelector(".cv-state").className = "cv-state cv-error";
@@ -399,13 +429,13 @@ const canCopy = Boolean(navigator.clipboard?.write && window.ClipboardItem);
 function copyButton(it, opts) {
   const b = el("button", { type: "button", className: "cv-copy", textContent: t("Copy as PNG") });
   b.addEventListener("click", async () => {
-    const png = it.out.blob.type === "image/png" ? Promise.resolve(it.out.blob) : convert(it.file, { ...opts, mime: "image/png", title: undefined }).then((r) => r.blob);
+    const png = it.out.blob.type === "image/png" ? Promise.resolve(it.out.blob) : source(it).then(({ blob }) => convert(blob, { ...opts, mime: "image/png", title: undefined })).then((r) => r.blob);
     try {
       // Handed over as a promise so the copy stays tied to this click while the PNG is made.
       await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
       b.textContent = t("Copied as PNG");
       say(t("Copied {name} as PNG", { name: it.name }));
-      window.imgkeepCountConversion?.(short(it.out.sourceType || it.file.type || ""), "clipboard", 1);
+      window.imgkeepCountConversion?.(from(it), "clipboard", 1);
     } catch {
       b.textContent = t("Couldn't copy: download it instead");
     }
