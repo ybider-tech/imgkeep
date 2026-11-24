@@ -22,7 +22,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { MODEL, EFFORT, tally, estimate } from "./claude-cost.mjs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join, dirname } from "node:path";
@@ -76,10 +76,24 @@ export const SITE_PAGES = [
   "save-images-from-x-twitter/index.html",
   "save-images-from-reddit/index.html",
   "save-images-from-facebook/index.html",
+  "jpg-to-png/index.html",
+  "png-to-webp/index.html",
+  "avif-to-png/index.html",
+  "webp-to-gif/index.html",
+  "avif-to-gif/index.html",
+  "jfif-to-jpg/index.html",
+  "jfif-to-png/index.html",
+  "jpg-to-pdf/index.html",
+  "png-to-pdf/index.html",
+  "heic-to-pdf/index.html",
+  "svg-to-png/index.html",
+  "jpg-to-ico/index.html",
+  "svg-to-ico/index.html",
+  "convert/formats/index.html",
 ];
 const APP_SCRIPTS = { "convert/": "convert/app.js", "color-palette-from-image/": "color-palette-from-image/app.js" };
 const appFor = (urlPath) => appForFile(urlPath.replace(/^\//, ""));
-const appForFile = (path) => APP_SCRIPTS[path] || (["webp-to-jpg/", "webp-to-png/", "avif-to-jpg/", "png-to-jpg/", "png-to-ico/", "heic-to-jpg/", "heic-to-png/"].includes(path) ? "convert/app.js" : null);
+const appForFile = (path) => APP_SCRIPTS[path] || (["webp-to-jpg/", "webp-to-png/", "avif-to-jpg/", "png-to-jpg/", "png-to-ico/", "heic-to-jpg/", "heic-to-png/", "jpg-to-png/", "png-to-webp/", "avif-to-png/", "webp-to-gif/", "avif-to-gif/", "jfif-to-jpg/", "jfif-to-png/", "jpg-to-pdf/", "png-to-pdf/", "heic-to-pdf/", "svg-to-png/", "jpg-to-ico/", "svg-to-ico/"].includes(path) ? "convert/app.js" : null);
 
 export const urlPath = (file) => "/" + file.replace(/index\.html$/, "");
 const hash = (s) => createHash("sha256").update(s).digest("hex").slice(0, 16);
@@ -244,11 +258,20 @@ const answer = (message) => {
 // ---- Building the pages ----
 
 const LANG_LIST = Object.keys(SITE_LANGS);
+// Pages translated language by language (the converter's newer pair pages): data/pairs.json gives each one its
+// "langs", and the index of all pairs is in the languages every such page has. Every other page is in all of them.
+const PAIR_DATA = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "data", "pairs.json"), "utf8"));
+const PARTIAL = Object.fromEntries(PAIR_DATA.pairs.filter((p) => p.langs).map((p) => [`${p.slug}/index.html`, p.langs]));
+const partialLists = Object.values(PARTIAL);
+if (partialLists.length) PARTIAL["convert/formats/index.html"] = LANG_LIST.filter((l) => partialLists.every((ls) => ls.includes(l)));
+export const langsFor = (file) => PARTIAL[file] ?? LANG_LIST;
+const pagesIn = (lang) => new Set(SITE_PAGES.filter((f) => langsFor(f).includes(lang)).map(urlPath));
+const fileFor = (path) => SITE_PAGES.find((f) => urlPath(f) === path);
 const toUrl = (lang, path) => (lang === "en" ? path : `/${lang}${path}`);
 
 // href/src/poster values: to the translated page if this language has it, else to the English file.
 function relink(html, enPath, lang) {
-  const pages = new Set(SITE_PAGES.map(urlPath));
+  const pages = pagesIn(lang);
   return html.replace(/\b(href|src|poster)="([^"]*)"/g, (m, attr, value) => {
     if (/^(https?:|mailto:|data:|#|\/\/|javascript:)/i.test(value)) return m;
     const u = new URL(value, ORIGIN + enPath);
@@ -265,7 +288,7 @@ function setLd(obj, path, value) {
 }
 
 function relinkLd(obj, lang) {
-  const pages = new Set(SITE_PAGES.map(urlPath));
+  const pages = pagesIn(lang);
   const walk = (o, key) => {
     if (Array.isArray(o)) return o.map((v) => walk(v, key));
     if (o && typeof o === "object") return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v, k)]));
@@ -284,12 +307,12 @@ const HREFLANG = /\n?\s*<!-- hreflang -->[\s\S]*?<!-- \/hreflang -->/;
 const MENU = /\n?\s*<!-- lang-menu -->[\s\S]*?<!-- \/lang-menu -->/;
 
 function alternates(path) {
-  const links = [`<link rel="alternate" hreflang="en" href="${ORIGIN}${path}">`, ...LANG_LIST.map((l) => `<link rel="alternate" hreflang="${SITE_LANGS[l].hreflang}" href="${ORIGIN}${toUrl(l, path)}">`), `<link rel="alternate" hreflang="x-default" href="${ORIGIN}${path}">`];
+  const links = [`<link rel="alternate" hreflang="en" href="${ORIGIN}${path}">`, ...langsFor(fileFor(path)).map((l) => `<link rel="alternate" hreflang="${SITE_LANGS[l].hreflang}" href="${ORIGIN}${toUrl(l, path)}">`), `<link rel="alternate" hreflang="x-default" href="${ORIGIN}${path}">`];
   return `\n  <!-- hreflang -->\n  ${links.join("\n  ")}\n  <script src="/lang.js" defer></script>\n  <!-- /hreflang -->`;
 }
 
 function menu(path, current) {
-  const items = [["en", "English"], ...LANG_LIST.map((l) => [l, SITE_LANGS[l].name])]
+  const items = [["en", "English"], ...langsFor(fileFor(path)).map((l) => [l, SITE_LANGS[l].name])]
     .map(([l, name]) => `<li><a href="${toUrl(l, path)}" hreflang="${l === "en" ? "en" : SITE_LANGS[l].hreflang}" lang="${l === "en" ? "en" : SITE_LANGS[l].hreflang}"${l === current ? ' aria-current="true"' : ""}>${name}</a></li>`)
     .join("");
   const label = current === "en" ? "EN" : current.toUpperCase().replace("PT-BR", "PT");
@@ -346,7 +369,7 @@ async function sitemap() {
   const file = join(SITE, "sitemap.xml");
   let xml = (await readFile(file, "utf8")).replace(/\n  <!-- translated -->[\s\S]*?<!-- \/translated -->/, "");
   const today = new Date().toISOString().slice(0, 10);
-  const entries = LANG_LIST.flatMap((l) => SITE_PAGES.map((f) => `  <url>\n    <loc>${ORIGIN}${toUrl(l, urlPath(f))}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`));
+  const entries = LANG_LIST.flatMap((l) => SITE_PAGES.filter((f) => langsFor(f).includes(l)).map((f) => `  <url>\n    <loc>${ORIGIN}${toUrl(l, urlPath(f))}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`));
   xml = xml.replace("</urlset>", `  <!-- translated -->\n${entries.join("\n")}\n  <!-- /translated -->\n</urlset>`);
   await writeFile(file, xml);
 }
@@ -482,13 +505,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
 
   if (run || buildOnly) {
-    for (const l of WORK_LANGS) for (const f of SITE_PAGES) await buildPage(f, l, caches[l], strings);
+    for (const l of WORK_LANGS) for (const f of SITE_PAGES) if (langsFor(f).includes(l)) await buildPage(f, l, caches[l], strings);
     // English pages list their translations too.
     for (const f of SITE_PAGES) {
       const p = join(SITE, f);
       await writeFile(p, withLanguageParts(await readFile(p, "utf8"), urlPath(f), "en"));
     }
     await sitemap();
-    console.log(`Built ${WORK_LANGS.length * SITE_PAGES.length} translated pages. Run npm test.`);
+    console.log(`Built ${WORK_LANGS.reduce((n, l) => n + SITE_PAGES.filter((f) => langsFor(f).includes(l)).length, 0)} translated pages. Run npm test.`);
   } else console.log("Nothing sent. Add --run to translate, or --build to rebuild from saved translations.");
 }

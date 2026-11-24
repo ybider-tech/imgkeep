@@ -38,7 +38,13 @@ position 11), plus three by reasoning: PNG to WebP, SVG to PNG, HEIC to PDF.
 - `/svg-to-ico/`
 - `/convert/formats/`: the index of every pair page
 
-Translations of wave 1 into the 12 site languages: next, after the English is approved.
+Translations of wave 1, one language at a time, in the order of the languages' average Search Console position
+(best first). `langs` in `data/pairs.json` lists the languages each page is published in; the language menus,
+hreflang, links and sitemap follow it.
+
+| Language | Live | Pages |
+|---|---|---|
+| Ukrainian (`uk`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 

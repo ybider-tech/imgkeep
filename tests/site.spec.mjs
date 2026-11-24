@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { startServer } from "./servers.mjs";
-import { SITE_LANGS, SITE_PAGES, urlPath } from "../scripts/translate-site.mjs";
+import { SITE_LANGS, SITE_PAGES, urlPath, langsFor } from "../scripts/translate-site.mjs";
 import { existsSync } from "node:fs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -148,7 +148,7 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
   expect(titles.size).toBe(Object.keys(pages).length);
   expect(descriptions.size).toBe(Object.keys(pages).length);
   // English pages, plus every translated page (checked below).
-  expect(sitemap.match(/<loc>/g).length).toBe(Object.keys(pages).length + Object.keys(SITE_LANGS).length * SITE_PAGES.length);
+  expect(sitemap.match(/<loc>/g).length).toBe(Object.keys(pages).length + SITE_PAGES.reduce((n, f) => n + langsFor(f).length, 0));
   expect(await readFile(join(ROOT, "site", "404.html"), "utf8")).toContain('<meta name="robots" content="noindex">');
 });
 
@@ -268,7 +268,8 @@ test("per-site guides: one tagged store link, a checked date, the rights note, a
 // Structured data on a translated page describes that page: its language and its own address.
 test("translated pages' structured data names their language and address", async () => {
   for (const file of SITE_PAGES) {
-    for (const [lang, info] of Object.entries(SITE_LANGS)) {
+    for (const lang of langsFor(file)) {
+      const info = SITE_LANGS[lang];
       const html = await readFile(join(ROOT, "site", lang, file), "utf8");
       const url = `https://imgkeep.app/${lang}${urlPath(file)}`;
       for (const [, json] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
@@ -677,10 +678,15 @@ test("count.js sends nothing when the browser asks sites not to track (Global Pr
 
 // The translated pages (scripts/translate-site.mjs): one per language and key page, each one complete.
 test("translated pages: language, canonical, hreflang, links and scripts", async () => {
-  const langs = Object.keys(SITE_LANGS);
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   for (const file of SITE_PAGES) {
+    // Most pages are in every language; the newer converter pairs only in the languages done so far (data/pairs.json).
+    const langs = langsFor(file);
     const path = urlPath(file);
+    for (const l of Object.keys(SITE_LANGS).filter((x) => !langs.includes(x))) {
+      expect(await readFile(join(ROOT, "site", file), "utf8"), `${file} doesn't list ${l} yet`).not.toContain(`href="https://imgkeep.app/${l}${path}"`);
+      expect(existsSync(join(ROOT, "site", l, file)), `${l}/${file} not published yet`).toBe(false);
+    }
     const en = await readFile(join(ROOT, "site", file), "utf8");
     for (const l of langs) expect(en, `${file} lists ${l}`).toContain(`hreflang="${SITE_LANGS[l].hreflang}" href="https://imgkeep.app/${l}${path}"`);
     for (const l of langs) {

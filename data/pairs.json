@@ -595,6 +595,9 @@
      "q": "Can I convert several JPGs at once?",
      "a": "Yes, up to 20 at a time, each up to 50 MB. Download them one by one or all together."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -667,6 +670,9 @@
      "q": "Should I use WebP or AVIF?",
      "a": "AVIF is often smaller still, but takes longer to make and fewer apps open it. WebP is the safer choice for most websites today."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -735,6 +741,9 @@
      "q": "What about animated AVIF?",
      "a": "PNG here keeps only the first frame. Choose GIF to keep the animation; see <a href=\"../avif-to-gif/\">AVIF to GIF</a>."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -803,6 +812,9 @@
      "q": "Can I convert a still WebP to GIF?",
      "a": "Yes, you get a one-frame GIF. For still images, PNG or JPG are usually better: see <a href=\"../webp-to-png/\">WebP to PNG</a>."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -871,6 +883,9 @@
      "q": "Does it work in Safari?",
      "a": "Safari makes a still GIF of the first frame. Use Chrome, Edge or Firefox to keep the animation."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -939,6 +954,9 @@
      "q": "Can I convert JFIF to PNG?",
      "a": "Yes: see <a href=\"../jfif-to-png/\">JFIF to PNG</a>. PNG files are larger but keep every pixel."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1007,6 +1025,9 @@
      "q": "Can I convert many .jfif files at once?",
      "a": "Yes, up to 20 at a time, each up to 50 MB."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1075,6 +1096,9 @@
      "q": "Can I make a PDF from a PNG?",
      "a": "Yes, see <a href=\"../png-to-pdf/\">PNG to PDF</a>: transparency is kept there."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1143,6 +1167,9 @@
      "q": "Is anything uploaded?",
      "a": "No. The PDF is made on your device, in your browser."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1211,6 +1238,9 @@
      "q": "What about a JPG instead?",
      "a": "For a photo to share rather than a document, <a href=\"../heic-to-jpg/\">HEIC to JPG</a> gives a smaller file every app opens."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1279,6 +1309,9 @@
      "q": "Is my file uploaded?",
      "a": "No. Your browser draws the SVG and the page saves the PNG, on your device."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1345,6 +1378,9 @@
      "q": "Why is my icon blurry at 16 px?",
      "a": "16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   },
   {
@@ -1411,6 +1447,9 @@
      "q": "Can I get a PNG favicon instead?",
      "a": "Yes, see <a href=\"../svg-to-png/\">SVG to PNG</a>, then set the size with Maximum width."
     }
+   ],
+   "langs": [
+    "uk"
    ]
   }
  ],
