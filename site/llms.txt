@@ -49,6 +49,12 @@ Key facts:
 - [The best Save Image As extensions, compared](https://imgkeep.app/best-save-image-as-extensions/): 13 extensions for Chrome, Edge and Firefox and Imgkeep on the same features, every fact sourced and dated.
 - [Imgkeep vs Save webP as PNG or JPEG](https://imgkeep.app/imgkeep-vs-save-webp-as-png-or-jpeg/): the open-source Firefox add-on and Imgkeep side by side, with who should pick which.
 - [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/): why some sites cover their photos so the right-click can't reach them, the workarounds (developer tools, a screenshot), and Imgkeep's opt-in Find image here.
+- [How to save images from Pinterest](https://imgkeep.app/save-images-from-pinterest/): why right-click fails and how to get the original size.
+- [How to save images from Instagram](https://imgkeep.app/save-images-from-instagram/): saving a photo you can see, and downloading your own.
+- [How to save images from Google Images](https://imgkeep.app/save-images-from-google-images/): getting the full image, not the thumbnail.
+- [How to save images from X (Twitter)](https://imgkeep.app/save-images-from-x-twitter/): the link layer over photos and name=orig for full size.
+- [How to save images from Reddit](https://imgkeep.app/save-images-from-reddit/): WebP previews and the full-size i.redd.it file.
+- [How to save images from Facebook](https://imgkeep.app/save-images-from-facebook/): covered photos, the photo viewer and your own photos.
 - [How to get an image from the web into Canva, Figma or Google Slides](https://imgkeep.app/web-image-into-canva-figma-google-slides/): copy it as a PNG and paste it, or save WebP or AVIF as PNG or JPG when a tool says the file type isn't supported; which formats each tool's help lists.
 
 ## More

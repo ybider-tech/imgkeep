@@ -17,6 +17,8 @@ test.afterAll(() => server?.close());
 
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
 const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "chrome-saves-images-as-jfif", "save-animated-webp-as-gif", "save-image-as-pdf", "save-image-as-type-alternative", "save-image-right-click-not-working", "web-image-into-canva-figma-google-slides", "best-save-image-as-extensions", "imgkeep-vs-save-webp-as-png-or-jpeg"];
+// Per-site how-to guides: linked from home, each other, the right-click guide and every footer.
+const SITE_GUIDES = ["save-images-from-pinterest", "save-images-from-instagram", "save-images-from-google-images", "save-images-from-x-twitter", "save-images-from-reddit", "save-images-from-facebook"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
 // The home H1: what Imgkeep does (for search), then the tagline.
@@ -27,6 +29,7 @@ const CONVERTERS = ["convert", "webp-to-jpg", "webp-to-png", "avif-to-jpg", "png
 const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),
   ...GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
+  ...SITE_GUIDES.map((g) => [`${g}/`, `${g}/index.html`]),
   ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
   ["download/", "download/index.html"],
   ["color-palette-from-image/", "color-palette-from-image/index.html"],
@@ -114,7 +117,7 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
   const pages = { "index.html": "https://imgkeep.app/", "privacy.html": "https://imgkeep.app/privacy.html",
     "support.html": "https://imgkeep.app/support.html", "ideas.html": "https://imgkeep.app/ideas.html",
     "pro.html": "https://imgkeep.app/pro.html", "whats-new.html": "https://imgkeep.app/whats-new.html",
-    ...Object.fromEntries(GUIDES.map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
+    ...Object.fromEntries([...GUIDES, ...SITE_GUIDES].map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
     ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])),
     "download/index.html": "https://imgkeep.app/download/",
     "color-palette-from-image/index.html": "https://imgkeep.app/color-palette-from-image/" };
@@ -228,6 +231,28 @@ test("comparison pages match the facts file, with sources and a last-checked dat
       for (const s of f.sources) expect(e.sources[s]?.url, `${e.id}.${k}: source ${s}`).toMatch(/^https:\/\//);
     }
   }
+});
+
+test("per-site guides: one tagged store link, a checked date, the rights note, and linked from home and each other", async ({ page }) => {
+  for (const guide of SITE_GUIDES) {
+    await page.goto(`${server.url}/${guide}/`);
+    const store = page.locator(`a[href^="${STORE}"]`);
+    await expect(store, `${guide}: one store link`).toHaveCount(1);
+    await expect(store).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=landing&utm_campaign=${guide}`);
+    await expect(page.locator("main .checked time"), `${guide}: checked date`).toHaveCount(1);
+    await expect(page.locator("main h2", { hasText: "Can I use the images I save?" }), `${guide}: rights note`).toHaveCount(1);
+    await expect(page.locator('main a[href="../save-image-right-click-not-working/"]')).toHaveCount(1);
+    for (const other of SITE_GUIDES.filter((g) => g !== guide)) await expect(page.locator(`main a[href="../${other}/"]`), `${guide} links to ${other}`).toHaveCount(1);
+    // No platform logos: the only images are Imgkeep's icon and its own screenshots.
+    const srcs = await page.$$eval("img", (imgs) => imgs.map((i) => i.getAttribute("src")));
+    expect(srcs.filter((src) => !/icon128\.png|media\/guides\//.test(src)), guide).toEqual([]);
+    const hrefs = await page.$$eval("a[href]", (as) => as.map((a) => a.href).filter((h) => h.startsWith(location.origin)));
+    for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
+  }
+  await page.goto(`${server.url}/index.html`);
+  for (const guide of SITE_GUIDES) await expect(page.locator(`#image-guides a[href="${guide}/"]`), `home links to ${guide}`).toHaveCount(1);
+  const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
+  for (const guide of SITE_GUIDES) expect(sitemap, `sitemap lists ${guide}`).toContain(`<loc>https://imgkeep.app/${guide}/</loc>`);
 });
 
 test("guides have a visible way back to the home page", async ({ page }) => {
@@ -448,7 +473,7 @@ test("robots.txt lets search and AI crawlers in, and llms.txt describes the site
 // Answer engines quote the first thing a page says: every guide opens with a short, direct answer,
 // has a visible date that matches its structured data, and real screenshots that load.
 test("guides open with a short answer, a date and screenshots", async ({ page }) => {
-  for (const guide of GUIDES) {
+  for (const guide of [...GUIDES, ...SITE_GUIDES]) {
     await page.goto(`${server.url}/${guide}/`, { waitUntil: "networkidle" });
     const first = page.locator("main > *").nth(1);
     await expect(first, `${guide}: answer right after the H1`).toHaveClass("answer");
