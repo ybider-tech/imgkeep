@@ -1145,7 +1145,7 @@
      "checked": "2026-11-24"
     }
    ],
-   "summary": "On all three stores. Beyond saving one image, its listing describes bulk saving to a ZIP, page captures, a drop-files converter and keyboard shortcuts, none of which Imgkeep has. Its listing says it isn't connected to the Save Image As Type that was removed in March 2026."
+   "summary": "On all three stores. Beyond saving one image, its listing describes bulk saving to a ZIP, page captures, a drop-files converter and a keyboard shortcut. Imgkeep doesn't capture pages, and its bulk saving is still to come. Its listing says it isn't connected to the Save Image As Type that was removed in March 2026."
   },
   {
    "id": "saveasfile-save-image-as-png",
@@ -1575,14 +1575,14 @@
      "checked": "2026-11-24"
     },
     {
-     "text": "No keyboard shortcuts",
+     "text": "Keyboard shortcut: Alt+S (Option+S on a Mac, Alt+Shift+S in Firefox) saves the image under the pointer, and the toolbar button picks from the images on screen (Chrome and Firefox, from 0.15)",
      "sources": [
-      "chrome"
+      "manifest"
      ],
      "checked": "2026-11-24"
     }
    ],
-   "summary": "We make Imgkeep, so weigh this row accordingly. It saves the one image you right-click, in nine formats, copies it as PNG, takes its colour palette and can find photos that sites hide from the right-click. It doesn't capture pages or offer keyboard shortcuts, and saving every image on a page at once is coming soon."
+   "summary": "We make Imgkeep, so weigh this row accordingly. It saves the one image you right-click, in nine formats, copies it as PNG, takes its colour palette and can find photos that sites hide from the right-click. Alt+S saves the image under the pointer. It doesn't capture pages, and saving every image on a page at once is coming soon."
   }
  ],
  "tableRows": [

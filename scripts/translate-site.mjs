@@ -68,6 +68,8 @@ export const SITE_PAGES = [
   "chrome-saves-images-as-webp/index.html",
   "save-avif-as-jpg-png/index.html",
   "save-image-right-click-not-working/index.html",
+  "best-save-image-as-extensions/index.html",
+  "imgkeep-vs-save-webp-as-png-or-jpeg/index.html",
 ];
 const APP_SCRIPTS = { "convert/": "convert/app.js", "color-palette-from-image/": "color-palette-from-image/app.js" };
 const appFor = (urlPath) => appForFile(urlPath.replace(/^\//, ""));
@@ -115,6 +117,8 @@ export function segmentsOf(html) {
       return;
     }
     if (SKIP.has(node.tagName)) return;
+    // Marked to stay in English everywhere (the comparison pages' sourced fact lists, which quote English listings).
+    if (node.attrs?.some((a) => a.name === "data-keep-english")) return;
     if (node.tagName) attrs(node);
     if (inSegment) {
       for (const c of node.childNodes || []) walk(c, true);

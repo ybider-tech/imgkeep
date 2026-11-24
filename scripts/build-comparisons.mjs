@@ -138,7 +138,8 @@ function pair(data) {
 function entry(data, e) {
   const stores = e.stores.map((s) => STORE[s.store]).join(", ");
   const lines = [
-    `<details class="entry" id="${e.id}">`,
+    // Kept in English on translated pages: these lines quote English store listings, and stay in step with the facts.
+    `<details class="entry" id="${e.id}" lang="en" data-keep-english>`,
     `  <summary><strong>${esc(e.name)}</strong> <span class="by">${esc(e.publisher)} · ${stores}</span></summary>`,
     `  <p>${esc(e.summary)}</p>`,
     '  <ul class="facts">',
