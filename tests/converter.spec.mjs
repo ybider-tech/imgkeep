@@ -303,12 +303,32 @@ test("AVIF: the encoder comes from this site only, and only once AVIF is chosen"
 });
 
 test("pair pages start on their format, with every format still on offer", async ({ page }) => {
-  for (const [path, to] of [["/convert/", "png"], ["/webp-to-jpg/", "jpg"], ["/webp-to-png/", "png"], ["/avif-to-jpg/", "jpg"], ["/png-to-jpg/", "jpg"], ["/heic-to-jpg/", "jpg"], ["/heic-to-png/", "png"], ["/png-to-ico/", "ico"]]) {
+  const PAIRS = JSON.parse(await readFile(join(FIX, "..", "..", "data", "pairs.json"), "utf8")).pairs;
+  for (const [path, to] of [["/convert/", "png"], ...PAIRS.filter((p) => p.slug !== "png-to-ico").map((p) => [`/${p.slug}/`, p.to]), ["/png-to-ico/", "ico"]]) {
     await open(page, path);
     await expect(page.locator(`[data-format="${to}"]`), path).toHaveAttribute("aria-pressed", "true");
     await expect(page.locator("[data-format]"), path).toHaveCount(8);
   }
   await expect(page.locator("#moreName")).toHaveText("ICO");
+});
+
+// Every pair page (data/pairs.json) converts its own pair on the page, with no format picked by hand.
+test("every pair page converts its pair: the right file type comes out", async ({ page }) => {
+  test.setTimeout(240_000);
+  const PAIRS = JSON.parse(await readFile(join(FIX, "..", "..", "data", "pairs.json"), "utf8")).pairs;
+  const INPUT = { png: ["photo.png", "image/png"], jpg: ["photo.jpg", "image/jpeg"], jfif: ["photo.jpg", "image/jpeg", "photo.jfif"], webp: ["animated.webp", "image/webp"],
+    avif: ["photo.avif", "image/avif"], svg: ["photo.svg", "image/svg+xml"], heic: ["quadrants-p3.heic", "image/heic"] };
+  const MAGIC = { png: [0x89, 0x50, 0x4e, 0x47], jpg: [0xff, 0xd8, 0xff], gif: [0x47, 0x49, 0x46, 0x38], pdf: [0x25, 0x50, 0x44, 0x46], ico: [0, 0, 1, 0], webp: [0x52, 0x49, 0x46, 0x46] };
+  for (const p of PAIRS) {
+    const [file, type, name = file] = INPUT[p.from];
+    const { errors } = await open(page, `/${p.slug}/`);
+    await drop(page, [{ ...(await fixture(file, type)), name }]);
+    await ready(page, 1);
+    const [out] = await downloaded(page);
+    expect(out.name, p.slug).toBe(`${name.replace(/\.[^.]+$/, "")}.${p.to}`);
+    expect(out.head.slice(0, MAGIC[p.to].length), `${p.slug}: a real ${p.to}`).toEqual(MAGIC[p.to]);
+    expect(errors, p.slug).toEqual([]);
+  }
 });
 
 test("a pair page converts like the main page, with its own store-link campaign", async ({ page }) => {

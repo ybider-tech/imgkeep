@@ -1,0 +1,1446 @@
+{
+ "note": "Converter landing pages. wave 0 = the seven pages that existed before the template (their text is kept as it was), wave 1 = 2026-11-25. Rendered by scripts/build-pair-pages.mjs; formats.json supplies the comparison tables. 'card' is this pair's blurb on other pages' 'Quick format guides'.",
+ "skipped": {
+  "heic-to-gif": "A photo as a 256-colour GIF gives a worse, bigger file",
+  "heic-to-ico": "Icons aren't made from phone photos",
+  "heic-to-bmp": "Huge files with no benefit over JPG or PNG",
+  "webp-to-bmp": "No practical use beyond PNG",
+  "avif-to-ico": "Icons come from PNG or SVG sources",
+  "avif-to-bmp": "No practical use beyond PNG",
+  "jfif-to-webp": "A .jfif is a JPG: the JPG pages cover it, and this pair has no search of its own",
+  "jfif-to-avif": "Same as JPG to AVIF; no JFIF-specific need",
+  "jfif-to-gif": "A photo as a 256-colour GIF gives a worse, bigger file",
+  "jfif-to-ico": "Same as JPG to ICO",
+  "jfif-to-bmp": "Same as JPG to BMP; rare",
+  "svg-to-avif": "Nobody needs a vector logo as AVIF",
+  "svg-to-gif": "PNG does the same with better colour",
+  "svg-to-bmp": "No practical use beyond PNG",
+  "gif-to-avif": "Rare; animated AVIF is barely supported outside browsers",
+  "gif-to-pdf": "Only the first frame; no practical use",
+  "gif-to-ico": "Animated icons aren't supported in .ico",
+  "gif-to-bmp": "Loses the animation for a bigger file",
+  "bmp-to-avif": "Rare",
+  "bmp-to-gif": "No practical use",
+  "bmp-to-ico": "Rare; PNG to ICO covers it",
+  "ico-to-webp": "No practical use",
+  "ico-to-avif": "No practical use",
+  "ico-to-gif": "No practical use",
+  "ico-to-pdf": "No practical use",
+  "ico-to-bmp": "No practical use"
+ },
+ "pairs": [
+  {
+   "slug": "webp-to-jpg",
+   "from": "webp",
+   "to": "jpg",
+   "wave": 0,
+   "title": "WebP to JPG Converter: No Uploads, No Sign-Up",
+   "description": "Convert WebP to JPG without uploading: it runs in your browser, so your images never leave your device. No sign-up, no ads. Download or copy the result.",
+   "app": {
+    "name": "WebP to JPG Converter",
+    "description": "Convert WebP images to JPG in your browser, with no uploads and no sign-up. Transparent areas get a background colour, white by default; quality 92 by default.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Choose JPG quality and background colour",
+     "Download each JPG, or copy it as a PNG",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "WebP to JPG",
+   "h1": "WebP to JPG Converter",
+   "lead": "Convert WebP to JPG without uploading: your images stay on your device, and there's no account.",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "related": [
+    "webp-to-png",
+    "avif-to-jpg",
+    "png-to-jpg"
+   ],
+   "more": [
+    "png-to-ico"
+   ],
+   "answer": "Drop your WebP files above, keep JPG selected, then download the JPGs. The conversion runs in your browser, so nothing is uploaded and there's no sign-up. JPG has no transparency, so see-through areas get a background colour, white unless you pick another. Quality is 92 by default; lower it for smaller files. An animated WebP becomes one still frame.",
+   "updated": "2026-10-17",
+   "sections": [
+    {
+     "h2": "How do I convert WebP to JPG without uploading?",
+     "html": "<p>Drop the files on this page: it reads and converts them in your browser, on your device. Nothing is sent anywhere, so it works with private photos, and offline once the page has loaded. Download each JPG, or use <strong>Download all</strong>.</p>"
+    },
+    {
+     "h2": "Should I pick JPG or PNG?",
+     "html": "<p>JPG for photos: small files that every app and upload form takes. PNG for logos, screenshots and anything with a transparent background, since JPG has no transparency. For those, use <a href=\"../webp-to-png/\">WebP to PNG</a>.</p>"
+    },
+    {
+     "h2": "Why do I have WebP files at all?",
+     "html": "<p>Because the site sent WebP, and your browser saved exactly that, even when the address ended in .jpg. See <a href=\"../chrome-saves-images-as-webp/\">why Chrome saves images as WebP</a>.</p>"
+    },
+    {
+     "h2": "What happens to animated WebP?",
+     "html": "<p>JPG holds one picture, so an animated WebP becomes its first frame. To keep it moving, pick GIF in the menu above (in Chrome, Edge and Firefox), or see <a href=\"../save-animated-webp-as-gif/\">how to save an animated WebP as a GIF</a>.</p>"
+    },
+    {
+     "h2": "Can I skip the WebP file next time?",
+     "html": "<p>Yes. With the <a href=\"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=webp-to-jpg\">Imgkeep</a> extension, right-click the image on the web page and choose <strong>Imgkeep › JPG</strong>: you get the JPG straight away. More in <a href=\"../save-webp-as-jpg-png/\">how to save WebP as JPG or PNG</a>.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does converting WebP to JPG lose quality?",
+     "a": "A little, as with any JPG: it compresses again. At the default quality of 92 the difference is usually invisible. For an exact copy of every pixel, convert to PNG instead."
+    },
+    {
+     "q": "Can I just rename .webp to .jpg?",
+     "a": "No. Renaming changes the name, not the file: it's still WebP inside, and apps that refuse WebP will still refuse it. Convert it instead."
+    },
+    {
+     "q": "How many files can I convert at once?",
+     "a": "Up to 20 at a time, each up to 50 MB. Drop more and the first 20 are converted."
+    }
+   ],
+   "card": "Need a JPG for an upload form or a photo workflow? Choose JPG, add your WebP image and download the result. Transparent areas get a background colour; pick PNG when you need to keep transparency."
+  },
+  {
+   "slug": "webp-to-png",
+   "from": "webp",
+   "to": "png",
+   "wave": 0,
+   "title": "WebP to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert WebP to PNG without uploading and keep the transparent background. Runs in your browser, no sign-up, no ads. Download it or copy it to paste.",
+   "app": {
+    "name": "WebP to PNG Converter",
+    "description": "Convert WebP images to PNG in your browser, with no uploads and no sign-up. Transparency is kept; each result can be downloaded or copied as a PNG.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Keeps transparency",
+     "Download each PNG, or copy it to paste",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "WebP to PNG",
+   "h1": "WebP to PNG Converter",
+   "lead": "Convert WebP to PNG without uploading, transparency kept. Your images stay on your device.",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "related": [
+    "webp-to-jpg",
+    "avif-to-jpg",
+    "png-to-jpg"
+   ],
+   "more": [
+    "png-to-ico"
+   ],
+   "answer": "Drop your WebP files above, keep PNG selected, then download them, or copy one as a PNG to paste straight into a design. PNG keeps every pixel and any transparent background: right for logos, stickers and screenshots. Files are bigger than JPG. Nothing is uploaded and there's no sign-up. Animated WebP becomes one frame; choose GIF to keep it moving.",
+   "updated": "2026-10-17",
+   "sections": [
+    {
+     "h2": "Why is the PNG bigger than the WebP?",
+     "html": "<p>PNG is lossless: it stores every pixel exactly, while WebP usually compresses with small, invisible losses. The converter shows the real size before and after. To make the PNG smaller, set a maximum width, or choose JPG if there's no transparency to keep.</p>"
+    },
+    {
+     "h2": "When is JPG better?",
+     "html": "<p>For photos without transparency: JPG files are much smaller and every app opens them. Use <a href=\"../webp-to-jpg/\">WebP to JPG</a>.</p>"
+    },
+    {
+     "h2": "Is the transparency really kept?",
+     "html": "<p>Yes. PNG keeps transparent and partly transparent areas exactly. The preview shows them over a checkerboard, so you can see what's see-through before you download.</p>"
+    },
+    {
+     "h2": "How do I keep an animation?",
+     "html": "<p>PNG holds one picture, so an animated WebP becomes its first frame. Pick GIF in the menu above to keep the motion (in Chrome, Edge and Firefox; GIFs are at most 800 px wide and 600 frames), or see <a href=\"../save-animated-webp-as-gif/\">how to save an animated WebP as a GIF</a>.</p>"
+    },
+    {
+     "h2": "Can I paste it into Canva, Figma or Google Slides?",
+     "html": "<p>Yes: use <strong>Copy as PNG</strong> on the result and paste it. Google Slides and Docs don't list WebP among the formats they take, and PNG works everywhere. More in <a href=\"../web-image-into-canva-figma-google-slides/\">getting an image into Canva, Figma or Google Slides</a>.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does WebP to PNG lose quality?",
+     "a": "No. PNG is lossless, so the PNG shows exactly what the WebP showed."
+    },
+    {
+     "q": "Why won&#x27;t Google Slides take my WebP?",
+     "a": "Google's help lists PNG, JPG and GIF for images, not WebP. Convert to PNG, or copy the result as PNG and paste it."
+    },
+    {
+     "q": "Can I make the PNG smaller?",
+     "a": "Yes: set a maximum width before converting, or convert to JPG if the image has no transparency."
+    }
+   ],
+   "card": "PNG is right for screenshots, graphics and images that need transparency. Convert a WebP to PNG when your next app needs it. Changing formats doesn't bring back detail the original already lost."
+  },
+  {
+   "slug": "avif-to-jpg",
+   "from": "avif",
+   "to": "jpg",
+   "wave": 0,
+   "title": "AVIF to JPG Converter: No Uploads, No Sign-Up",
+   "description": "Convert AVIF to JPG without uploading, for apps and forms that won&#x27;t open AVIF. Runs in your browser: your files never leave your device. No sign-up. Free.",
+   "app": {
+    "name": "AVIF to JPG Converter",
+    "description": "Convert AVIF images to JPG in your browser, with no uploads and no sign-up, for apps and upload forms that can't open AVIF.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Choose JPG quality and background colour",
+     "Download each JPG, or copy it as a PNG",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "AVIF to JPG",
+   "h1": "AVIF to JPG Converter",
+   "lead": "Convert AVIF to JPG without uploading, for apps and forms that won't open AVIF.",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "related": [
+    "webp-to-jpg",
+    "webp-to-png",
+    "png-to-jpg"
+   ],
+   "more": [
+    "png-to-ico"
+   ],
+   "answer": "Drop your AVIF files above, keep JPG selected and download a JPG that every app and upload form opens. The conversion runs in your browser, so nothing is uploaded and there's no sign-up. JPG has no transparency, so see-through areas get a background colour, white by default; pick PNG to keep transparency. Works in current Chrome, Edge, Firefox and Safari.",
+   "updated": "2026-10-17",
+   "sections": [
+    {
+     "h2": "How do I convert AVIF without uploading?",
+     "html": "<p>Drop the files on this page. Your browser opens the AVIF and the page writes a JPG, on your device: no server sees your images, and it works offline once the page has loaded.</p>"
+    },
+    {
+     "h2": "Why can&#x27;t my apps open AVIF?",
+     "html": "<p>AVIF is newer than most apps and upload forms. Browsers show it, but many editors, older systems and websites still refuse it. See <a href=\"../save-avif-as-jpg-png/\">how to save AVIF as JPG or PNG</a>.</p>"
+    },
+    {
+     "h2": "JPG or PNG for AVIF?",
+     "html": "<p>JPG for photos and the smallest files that open everywhere. PNG when the image has a transparent background you want to keep, or when you'll edit it again: pick PNG in the menu above.</p>"
+    },
+    {
+     "h2": "Which browsers can convert AVIF?",
+     "html": "<p>Any browser that can show AVIF: Chrome and Edge, Firefox, and Safari on recent versions of macOS and iOS. If yours can't open the file, the converter says so.</p>"
+    },
+    {
+     "h2": "Can I skip the AVIF file next time?",
+     "html": "<p>Yes. With the <a href=\"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=avif-to-jpg\">Imgkeep</a> extension, right-click the image on the web page and choose <strong>Imgkeep › JPG</strong>, and you never have the AVIF at all.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Why is my JPG bigger than the AVIF?",
+     "a": "AVIF compresses much better than JPG, so the same picture usually takes more space as a JPG. Lower the quality or set a maximum width for a smaller file."
+    },
+    {
+     "q": "Does it handle animated AVIF?",
+     "a": "JPG keeps one frame. To keep the motion, pick GIF in the menu above (in Chrome, Edge and Firefox)."
+    },
+    {
+     "q": "Can I convert AVIF to PNG?",
+     "a": "Yes: pick PNG in the menu above. PNG keeps transparency and every pixel."
+    }
+   ],
+   "card": "Have an AVIF image another app won't open? Convert it to JPG in your browser and download the result. For transparent artwork, pick PNG so the background can stay transparent."
+  },
+  {
+   "slug": "png-to-jpg",
+   "from": "png",
+   "to": "jpg",
+   "wave": 0,
+   "title": "PNG to JPG Converter: No Uploads, No Sign-Up",
+   "description": "Convert PNG to JPG without uploading, for smaller files. Pick the quality and the colour for transparent areas. Runs in your browser, no sign-up. Free.",
+   "app": {
+    "name": "PNG to JPG Converter",
+    "description": "Convert PNG images to JPG in your browser, with no uploads and no sign-up. Choose the JPG quality and the colour for transparent areas.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Choose JPG quality and background colour",
+     "Optional maximum width",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "PNG to JPG",
+   "h1": "PNG to JPG Converter",
+   "lead": "Convert PNG to JPG without uploading, for smaller files. Your images stay on your device.",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "related": [
+    "webp-to-jpg",
+    "webp-to-png",
+    "avif-to-jpg"
+   ],
+   "more": [
+    "png-to-ico"
+   ],
+   "answer": "Drop your PNG files above, keep JPG selected and download. JPG files are usually much smaller than PNG for photos. JPG has no transparency, so see-through areas get a background colour, white unless you pick another. Quality is 92 by default. Nothing is uploaded and there's no sign-up: everything runs in your browser.",
+   "updated": "2026-10-17",
+   "sections": [
+    {
+     "h2": "How much smaller will it be?",
+     "html": "<p>It depends on the image. Photos usually shrink a lot; flat graphics with few colours can even grow. The converter shows the real size before and after for every file, so you can see which one you're getting.</p>"
+    },
+    {
+     "h2": "When should I keep PNG?",
+     "html": "<p>For text, logos, screenshots and anything with sharp edges or a transparent background. JPG blurs sharp edges slightly and can't be see-through.</p>"
+    },
+    {
+     "h2": "What happens to a transparent background?",
+     "html": "<p>JPG can't store transparency, so transparent areas get the background colour you pick above. White by default, but any colour works, for example to match the page you'll put the image on.</p>"
+    },
+    {
+     "h2": "Can I resize at the same time?",
+     "html": "<p>Yes: set a maximum width before converting. Wider images are scaled down, keeping their shape; smaller ones are never enlarged.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does PNG to JPG lose quality?",
+     "a": "A little: JPG compresses, PNG doesn't. At the default quality of 92 it's usually invisible in photos, but sharp text and lines can look slightly soft."
+    },
+    {
+     "q": "Can I convert JPG back to PNG?",
+     "a": "Yes, pick PNG in the menu above. It won't bring back detail the JPG already lost, but nothing more is lost."
+    },
+    {
+     "q": "How many files can I convert at once?",
+     "a": "Up to 20 at a time, each up to 50 MB."
+    }
+   ],
+   "card": "Photos saved as PNG are often far bigger than they need to be. Convert them to JPG for smaller files, with the quality and the colour for transparent areas you choose."
+  },
+  {
+   "slug": "png-to-ico",
+   "from": "png",
+   "to": "ico",
+   "wave": 0,
+   "title": "PNG to ICO Converter: No Uploads, No Sign-Up",
+   "description": "Turn a PNG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, transparency kept. Made in your browser without uploading. No sign-up. Free.",
+   "app": {
+    "name": "PNG to ICO Converter",
+    "description": "Turn a PNG or JPG into an .ico icon with 16, 32 and 48 px sizes, plus 256 px for large images, in your browser, with no uploads and no sign-up.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "One .ico with 16, 32 and 48 px icons, plus 256 px for large images",
+     "Transparency kept",
+     "Non-square images centred on a transparent square"
+    ]
+   },
+   "crumb": "PNG to ICO",
+   "h1": "PNG to ICO Converter",
+   "lead": "Make a favicon or Windows icon without uploading: one .ico with all the common sizes.",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "related": [
+    "webp-to-jpg",
+    "webp-to-png",
+    "avif-to-jpg"
+   ],
+   "more": [
+    "png-to-jpg"
+   ],
+   "answer": "Drop a PNG (or JPG) above, keep ICO selected and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. Each size is stored as a PNG inside, so transparency is kept. Images that aren't square are centred on a transparent square. Nothing is uploaded.",
+   "updated": "2026-10-17",
+   "sections": [
+    {
+     "h2": "What size should my image be?",
+     "html": "<p>Square and at least 256 × 256 pixels gives the sharpest result, and adds the 256 px size used by Windows for large icons. Smaller images still work: they get the 16, 32 and 48 px sizes.</p>"
+    },
+    {
+     "h2": "Is this the right file for a website favicon?",
+     "html": "<p>Yes. Put it at the root of your site as <code>favicon.ico</code>, and browsers find it on their own. Current browsers also accept a PNG favicon through a <code>&lt;link rel=\"icon\"&gt;</code> tag, but the .ico with several sizes is the most widely recognised.</p>"
+    },
+    {
+     "h2": "Will it work as a Windows icon?",
+     "html": "<p>Yes. Each size inside is stored as a PNG, which Windows reads in icon files, so desktop shortcuts get a sharp icon with a transparent background.</p>"
+    },
+    {
+     "h2": "What about JPG to ICO?",
+     "html": "<p>It works the same way: drop a JPG instead. JPG has no transparency, so the icon keeps the JPG's background.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Why is my icon blurry at 16 px?",
+     "a": "16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best; very detailed images become a blur at that size."
+    },
+    {
+     "q": "Can I choose the sizes?",
+     "a": "Not yet. Every .ico holds 16, 32 and 48 px, plus 256 px when the image is at least 256 px."
+    },
+    {
+     "q": "Does it keep transparency?",
+     "a": "Yes. Each size is stored as a PNG inside the .ico, transparency included."
+    }
+   ],
+   "card": "Make a favicon or Windows icon from a PNG: one .ico file with all the common sizes, transparency kept, made in your browser."
+  },
+  {
+   "slug": "heic-to-jpg",
+   "from": "heic",
+   "to": "jpg",
+   "wave": 0,
+   "title": "HEIC to JPG Converter: No Uploads, No Sign-Up",
+   "description": "Convert iPhone HEIC photos to JPG on your device: nothing is uploaded. JPGs open on Windows and in any upload form. Free, no sign-up, works on phones.",
+   "app": {
+    "name": "HEIC to JPG Converter",
+    "description": "Convert iPhone HEIC and HEIF photos to JPG in your browser, with no uploads and no sign-up. The JPGs open on Windows, in upload forms and in any app.",
+    "featureList": [
+     "Converts in the browser: photos are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Opens HEIC and HEIF photos from iPhones and iPads",
+     "Keeps the photo the right way up",
+     "Quality and maximum width you choose",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "HEIC to JPG",
+   "h1": "HEIC to JPG Converter",
+   "lead": "Turn iPhone photos into JPGs that open on Windows and in any upload form. They're converted on your device: nothing is uploaded.",
+   "accept": "image/*,.heic,.heif,.webp,.avif,.svg,.ico,.bmp",
+   "offline": "Load this page and add a photo, then turn off your Wi-Fi: converting still works. (In Chrome, Edge and Firefox the HEIC decoder loads with your first photo; Safari doesn't need it.)",
+   "related": [
+    "heic-to-png",
+    "webp-to-jpg",
+    "avif-to-jpg"
+   ],
+   "more": [
+    "png-to-jpg"
+   ],
+   "answer": "Drop your HEIC photos above, keep JPG selected, then download the JPGs. JPG opens everywhere: Windows, upload forms, email and older apps. Quality is 92 by default, which looks the same as the original; lower it for smaller files. Nothing is uploaded, there's no sign-up, and it works on phones.",
+   "updated": "2026-11-24",
+   "sections": [
+    {
+     "h2": "Why won't my iPhone photos open on Windows?",
+     "html": "<p>iPhones save photos as HEIC (the camera's High Efficiency setting), which takes about half the space of a JPG. Windows needs extra codecs from the Microsoft Store to show HEIC, and many upload forms, web apps and older programs refuse it outright. Converting gives you a file that opens everywhere.</p>"
+    },
+    {
+     "h2": "Are my photos uploaded?",
+     "html": "<p>No. This page opens the HEIC file on your device, with an open-source HEIC decoder (libheif) running in your browser, then converts it with the same code as the Imgkeep extension. Nothing is sent anywhere. The JPG doesn't keep the photo's EXIF details, such as where it was taken, so it's also safer to share.</p>"
+    },
+    {
+     "h2": "Can my iPhone save JPG instead?",
+     "html": "<p>Yes: in <strong>Settings › Camera › Formats</strong>, choose <strong>Most Compatible</strong>, and new photos are saved as JPG (they take more space). Photos you've already taken stay HEIC; convert those here.</p>"
+    },
+    {
+     "h2": "What about Live Photos and portrait mode?",
+     "html": "<p>You get the photo itself. A Live Photo's few seconds of video and a portrait photo's depth data stay in the original file. The photo comes out the right way up, as your iPhone shows it.</p>"
+    },
+    {
+     "h2": "Does it work on my iPhone?",
+     "html": "<p>Yes. Open this page in Safari, choose your photos and download the results. Safari opens HEIC itself, so nothing extra loads. In Chrome, Edge and Firefox the page loads a HEIC decoder (about 0.5 MB) the first time you add a photo.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does converting HEIC to JPG lose quality?",
+     "a": "A little, as any JPG does, but at the default quality of 92 you won't see it. Set Quality to 100 in Advanced options for the most detail, or choose PNG to keep every pixel."
+    },
+    {
+     "q": "Can I make the JPGs smaller?",
+     "a": "Yes: lower the quality or set a maximum width in Advanced options. The converter shows each file's size before and after."
+    },
+    {
+     "q": "Can I convert HEIF files too?",
+     "a": "Yes. HEIF is the same format family: .heif files open just like .heic ones."
+    }
+   ],
+   "card": "For uploads, email and Windows: smaller files that open everywhere. Choose JPG, add your iPhone photos and download the results."
+  },
+  {
+   "slug": "heic-to-png",
+   "from": "heic",
+   "to": "png",
+   "wave": 0,
+   "title": "HEIC to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert iPhone HEIC photos to PNG on your device: nothing is uploaded. Works in Chrome, Edge, Firefox and Safari, on phones too. No sign-up, no ads.",
+   "app": {
+    "name": "HEIC to PNG Converter",
+    "description": "Convert iPhone HEIC and HEIF photos to PNG in your browser, with no uploads and no sign-up. Each result can be downloaded or copied as a PNG.",
+    "featureList": [
+     "Converts in the browser: photos are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Opens HEIC and HEIF photos from iPhones and iPads",
+     "Keeps the photo the right way up",
+     "Download each PNG, or copy it to paste"
+    ]
+   },
+   "crumb": "HEIC to PNG",
+   "h1": "HEIC to PNG Converter",
+   "lead": "Turn iPhone photos into PNG files that open anywhere. They're converted on your device: nothing is uploaded.",
+   "accept": "image/*,.heic,.heif,.webp,.avif,.svg,.ico,.bmp",
+   "offline": "Load this page and add a photo, then turn off your Wi-Fi: converting still works. (In Chrome, Edge and Firefox the HEIC decoder loads with your first photo; Safari doesn't need it.)",
+   "related": [
+    "heic-to-jpg",
+    "webp-to-png",
+    "png-to-jpg"
+   ],
+   "more": [
+    "webp-to-jpg"
+   ],
+   "answer": "Drop your HEIC photos above, keep PNG selected, then download them, or copy one as a PNG to paste into a document or design. PNG is lossless and every app opens it, but photos as PNG are big files: for uploads and email, JPG is usually better. Nothing is uploaded, there's no sign-up, and it works on phones.",
+   "updated": "2026-11-24",
+   "sections": [
+    {
+     "h2": "Why won't my iPhone photos open on Windows?",
+     "html": "<p>iPhones save photos as HEIC (the camera's High Efficiency setting), which takes about half the space of a JPG. Windows needs extra codecs from the Microsoft Store to show HEIC, and many upload forms, web apps and older programs refuse it outright. Converting gives you a file that opens everywhere.</p>"
+    },
+    {
+     "h2": "PNG or JPG for a photo?",
+     "html": "<p>JPG, usually. PNG keeps every pixel, so a photo as PNG is several times bigger than as JPG, and some upload forms limit file size. Pick PNG when you'll edit the photo again or need it lossless; otherwise use <a href=\"../heic-to-jpg/\">HEIC to JPG</a>.</p>"
+    },
+    {
+     "h2": "Are my photos uploaded?",
+     "html": "<p>No. This page opens the HEIC file on your device, with an open-source HEIC decoder (libheif) running in your browser, then converts it with the same code as the Imgkeep extension. Nothing is sent anywhere. The PNG doesn't keep the photo's EXIF details, such as where it was taken, so it's also safer to share.</p>"
+    },
+    {
+     "h2": "What about Live Photos and portrait mode?",
+     "html": "<p>You get the photo itself. A Live Photo's few seconds of video and a portrait photo's depth data stay in the original file. The photo comes out the right way up, as your iPhone shows it.</p>"
+    },
+    {
+     "h2": "Does it work on my iPhone?",
+     "html": "<p>Yes. Open this page in Safari, choose your photos and download the results. Safari opens HEIC itself, so nothing extra loads. In Chrome, Edge and Firefox the page loads a HEIC decoder (about 0.5 MB) the first time you add a photo.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does HEIC to PNG lose quality?",
+     "a": "No. PNG is lossless, so it keeps everything the photo shows. Colours are converted from the iPhone's wider Display P3 range to standard sRGB, which nearly every screen and app uses."
+    },
+    {
+     "q": "Can I make the PNG smaller?",
+     "a": "Yes: set a maximum width in Advanced options before converting, or convert to JPG."
+    },
+    {
+     "q": "Can I convert HEIF files too?",
+     "a": "Yes. HEIF is the same format family: .heif files open just like .heic ones."
+    }
+   ],
+   "card": "Need a lossless copy to edit or to paste into a design? Choose PNG, add your iPhone photos and download them, or copy one as a PNG."
+  },
+  {
+   "slug": "jpg-to-png",
+   "from": "jpg",
+   "to": "png",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "JPG to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert JPG to PNG in your browser: nothing is uploaded and there's no sign-up. Get a PNG that apps and editors accept, with no further quality loss.",
+   "app": {
+    "name": "JPG to PNG Converter",
+    "description": "Convert JPG photos to PNG in your browser, with no uploads and no sign-up. The PNG keeps every pixel of the JPG.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Lossless PNG output",
+     "Optional maximum width",
+     "Download each PNG, or copy it to paste anywhere"
+    ]
+   },
+   "crumb": "JPG to PNG",
+   "h1": "JPG to PNG Converter",
+   "lead": "Turn a JPG into a PNG for an app or form that wants PNG, without uploading it.",
+   "card": "Need a PNG for an app, an upload form or editing? Convert a JPG to PNG: it keeps every pixel from here on, though it can't undo the JPG's earlier compression.",
+   "related": [
+    "png-to-jpg",
+    "webp-to-png",
+    "jpg-to-ico"
+   ],
+   "more": [
+    "jpg-to-pdf"
+   ],
+   "answer": "Drop your JPGs above, keep PNG selected and download the PNGs. It runs in your browser, so nothing is uploaded. The PNG keeps every pixel of the JPG exactly, so editing it later loses nothing more; it can't bring back detail the JPG already lost, and the file is usually larger. A JPG has no transparency, so the PNG has none either.",
+   "sections": [
+    {
+     "h2": "Why convert JPG to PNG?",
+     "html": "<p>Some apps, upload forms and print services ask for PNG. PNG is also the better working copy if you'll edit the image several times: each time you save a JPG it compresses again, while a PNG saves exactly what you see.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Will the PNG be better quality?",
+     "html": "<p>No better than the JPG, and no worse. The PNG stores the JPG's pixels exactly, including any blur or blockiness from its compression. If you have the original photo, convert that instead.</p>"
+    },
+    {
+     "h2": "Why is the PNG so much bigger?",
+     "html": "<p>PNG compresses without throwing anything away, which suits graphics and screenshots but not photos. A photo as PNG is often three to five times the size of the JPG. To make it smaller, set a <strong>Maximum width</strong> in Advanced options; to keep files small, stay with JPG.</p>"
+    },
+    {
+     "h2": "Can I make the background transparent?",
+     "html": "<p>Not with a converter: a JPG has no transparent areas, so there's nothing to keep. Removing a background needs an image editor. For a logo that already has transparency, start from its PNG, SVG or WebP version.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Is converting JPG to PNG lossless?",
+     "a": "The conversion itself is: the PNG holds exactly the JPG's pixels. It can't restore what the JPG lost when it was first saved."
+    },
+    {
+     "q": "Can I convert a PNG back to JPG?",
+     "a": "Yes, with <a href=\"../png-to-jpg/\">PNG to JPG</a>, for a smaller file to share."
+    },
+    {
+     "q": "Can I convert several JPGs at once?",
+     "a": "Yes, up to 20 at a time, each up to 50 MB. Download them one by one or all together."
+    }
+   ]
+  },
+  {
+   "slug": "png-to-webp",
+   "from": "png",
+   "to": "webp",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "PNG to WebP Converter: No Uploads, No Sign-Up",
+   "description": "Convert PNG to WebP in your browser for much smaller web images, with transparency kept. No uploads, no sign-up. Choose the quality yourself.",
+   "app": {
+    "name": "PNG to WebP Converter",
+    "description": "Convert PNG images to WebP in your browser, with no uploads and no sign-up. Transparency is kept; quality 90 by default.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Transparency kept",
+     "WebP quality you choose",
+     "Shows the file size before and after"
+    ]
+   },
+   "crumb": "PNG to WebP",
+   "h1": "PNG to WebP Converter",
+   "lead": "Make PNG images smaller for your website, transparency kept, without uploading them.",
+   "card": "Building a website? WebP files are often far smaller than the same PNG, and keep transparency. Convert in your browser and compare the sizes.",
+   "related": [
+    "webp-to-png",
+    "png-to-jpg",
+    "png-to-ico"
+   ],
+   "more": [
+    "jpg-to-png"
+   ],
+   "answer": "Drop your PNGs above, choose WebP and download the WebP files. It runs in your browser, so nothing is uploaded. WebP is usually much smaller than PNG and keeps transparency; quality is 90 by default, and the page shows each file's size before and after so you can judge. Safari can't make WebP files, so use Chrome, Edge or Firefox.",
+   "sections": [
+    {
+     "h2": "Why convert PNG to WebP?",
+     "html": "<p>Smaller images make web pages load faster. A PNG photo or screenshot often shrinks to a fraction of its size as WebP, and every current browser shows WebP. It keeps transparency, so logos and cut-out images still sit cleanly on any background.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Which quality should I pick?",
+     "html": "<p>Start at the default, 90, and compare the sizes shown under each file. Around 75 to 85 is usually still hard to tell from the original for photos. For sharp text, diagrams and pixel art, keep the quality high or stay with PNG.</p>"
+    },
+    {
+     "h2": "Where shouldn't I use WebP?",
+     "html": "<p>Some email programs, older apps and upload forms still refuse WebP. Keep the PNG for those, or send a JPG. If you receive a WebP and need it back, use <a href=\"../webp-to-png/\">WebP to PNG</a>.</p>"
+    },
+    {
+     "h2": "Why can't I choose WebP in Safari?",
+     "html": "<p>Safari can show WebP but can't create it in a web page, so the converter only offers formats your browser can really make. Use Chrome, Edge or Firefox, or choose AVIF instead.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does WebP keep transparency?",
+     "a": "Yes. Transparent and semi-transparent areas of the PNG stay transparent in the WebP."
+    },
+    {
+     "q": "Is WebP smaller than PNG?",
+     "a": "Usually much smaller, especially for photos. Simple graphics with few colours sometimes save less; the page shows both sizes so you can check."
+    },
+    {
+     "q": "Should I use WebP or AVIF?",
+     "a": "AVIF is often smaller still, but takes longer to make and fewer apps open it. WebP is the safer choice for most websites today."
+    }
+   ]
+  },
+  {
+   "slug": "avif-to-png",
+   "from": "avif",
+   "to": "png",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "AVIF to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert AVIF to PNG in your browser, transparency kept. Nothing is uploaded and there's no sign-up. Open AVIF images in any app.",
+   "app": {
+    "name": "AVIF to PNG Converter",
+    "description": "Convert AVIF images to PNG in your browser, with no uploads and no sign-up. Transparency is kept.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Transparency kept",
+     "Lossless PNG output",
+     "Download each PNG, or copy it to paste anywhere"
+    ]
+   },
+   "crumb": "AVIF to PNG",
+   "h1": "AVIF to PNG Converter",
+   "lead": "Open AVIF images in any app: convert them to PNG, transparency kept, without uploading.",
+   "card": "Got an AVIF that your editor or upload form rejects? Convert it to PNG, which every app opens, with transparent areas kept.",
+   "related": [
+    "avif-to-jpg",
+    "webp-to-png",
+    "avif-to-gif"
+   ],
+   "more": [
+    "jpg-to-png"
+   ],
+   "answer": "Drop your AVIF files above, keep PNG selected and download the PNGs. It runs in your browser, so nothing is uploaded and there's no sign-up. PNG keeps every pixel and any transparency, and opens in every app; the file is larger than the AVIF. An animated AVIF becomes its first frame: choose GIF to keep it moving.",
+   "sections": [
+    {
+     "h2": "Why do I have AVIF files?",
+     "html": "<p>Many sites now send images as AVIF because the files are very small, and your browser saves exactly what it was sent. See <a href=\"../save-avif-as-jpg-png/\">how to save AVIF as JPG or PNG</a> to get the right format straight away.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Should I pick PNG or JPG?",
+     "html": "<p>PNG for graphics, screenshots and anything with a transparent background: it keeps every pixel. JPG for photos you want to share or upload, since the file is much smaller: use <a href=\"../avif-to-jpg/\">AVIF to JPG</a>.</p>"
+    },
+    {
+     "h2": "Why is the PNG so much bigger than the AVIF?",
+     "html": "<p>AVIF is one of the most efficient image formats; PNG saves every pixel without discarding anything. The picture looks the same, but the PNG can be many times the size. Set a <strong>Maximum width</strong> in Advanced options if it's too big.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does converting AVIF to PNG lose quality?",
+     "a": "No. The PNG holds exactly the pixels the AVIF shows. It can't add detail the AVIF's compression removed."
+    },
+    {
+     "q": "Does it keep transparency?",
+     "a": "Yes. Transparent areas in the AVIF stay transparent in the PNG."
+    },
+    {
+     "q": "What about animated AVIF?",
+     "a": "PNG here keeps only the first frame. Choose GIF to keep the animation; see <a href=\"../avif-to-gif/\">AVIF to GIF</a>."
+    }
+   ]
+  },
+  {
+   "slug": "webp-to-gif",
+   "from": "webp",
+   "to": "gif",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "WebP to GIF Converter: No Uploads, No Sign-Up",
+   "description": "Convert animated WebP to GIF in your browser, with every frame and its timing kept. No uploads, no sign-up. For chats and apps that only play GIF.",
+   "app": {
+    "name": "WebP to GIF Converter",
+    "description": "Convert animated WebP images to animated GIF in your browser, with no uploads and no sign-up. Frames, timing and transparency are kept.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Keeps every frame and its timing",
+     "Transparency kept (on or off)",
+     "GIFs up to 800 px wide and 600 frames"
+    ]
+   },
+   "crumb": "WebP to GIF",
+   "h1": "WebP to GIF Converter",
+   "lead": "Turn animated WebP into a GIF that keeps moving, for chats and apps that only play GIF.",
+   "card": "Animated WebP that won't play in your chat or app? Convert it to a GIF that keeps every frame and its timing, in your browser.",
+   "related": [
+    "avif-to-gif",
+    "webp-to-png",
+    "webp-to-jpg"
+   ],
+   "more": [
+    "avif-to-png"
+   ],
+   "answer": "Drop your animated WebP files above, keep GIF selected and download a GIF that keeps every frame and its timing. It runs in your browser, so nothing is uploaded and there's no sign-up. Animation is kept in Chrome, Edge and Firefox; Safari makes a still GIF. GIFs are at most 800 px wide and 600 frames long.",
+   "sections": [
+    {
+     "h2": "What does GIF keep, and what does it lose?",
+     "html": "<p>Every frame, the timing between frames and transparent areas are kept. GIF has at most 256 colours per frame, so photos and smooth gradients can look grainy, and soft see-through edges become hard edges. The GIF is usually bigger than the WebP.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Why do I have animated WebP files?",
+     "html": "<p>Many sites now send animations as WebP instead of GIF because the files are smaller, but plenty of apps and chats still play only GIF. See <a href=\"../save-animated-webp-as-gif/\">how to save an animated WebP as a GIF</a>.</p>"
+    },
+    {
+     "h2": "Can I skip the WebP file next time?",
+     "html": "<p>Yes. With the <a href=\"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=webp-to-gif\">Imgkeep</a> extension, right-click the image on the web page and choose <strong>Imgkeep › GIF (keeps animation)</strong>: it saves a GIF that keeps moving.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Why is my GIF still?",
+     "a": "Either the WebP has only one frame, or your browser can't read animation frames. Use current Chrome, Edge or Firefox to keep the motion."
+    },
+    {
+     "q": "Why is the GIF bigger than the WebP?",
+     "a": "GIF is a much older format and compresses less well, so the same animation usually takes more space. Set a smaller maximum width for a smaller file."
+    },
+    {
+     "q": "Can I convert a still WebP to GIF?",
+     "a": "Yes, you get a one-frame GIF. For still images, PNG or JPG are usually better: see <a href=\"../webp-to-png/\">WebP to PNG</a>."
+    }
+   ]
+  },
+  {
+   "slug": "avif-to-gif",
+   "from": "avif",
+   "to": "gif",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "AVIF to GIF Converter: No Uploads, No Sign-Up",
+   "description": "Convert animated AVIF to GIF in your browser, frames and timing kept. No uploads, no sign-up. A GIF plays in every chat and app.",
+   "app": {
+    "name": "AVIF to GIF Converter",
+    "description": "Convert animated AVIF images to animated GIF in your browser, with no uploads and no sign-up. Frames and timing are kept.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Keeps every frame and its timing",
+     "Transparency kept (on or off)",
+     "GIFs up to 800 px wide and 600 frames"
+    ]
+   },
+   "crumb": "AVIF to GIF",
+   "h1": "AVIF to GIF Converter",
+   "lead": "Turn animated AVIF into a GIF that plays everywhere, without uploading it.",
+   "card": "Animated AVIF that only plays in a browser? Convert it to a GIF with its frames and timing, for chats, slides and apps.",
+   "related": [
+    "webp-to-gif",
+    "avif-to-png",
+    "avif-to-jpg"
+   ],
+   "more": [
+    "webp-to-png"
+   ],
+   "answer": "Drop your animated AVIF files above, choose GIF and download a GIF that keeps every frame and its timing. It runs in your browser, so nothing is uploaded and there's no sign-up. Animation is kept in Chrome, Edge and Firefox. GIF has 256 colours per frame, so photo-like animations look grainier, and GIFs are at most 800 px wide and 600 frames long.",
+   "sections": [
+    {
+     "h2": "Why convert AVIF to GIF?",
+     "html": "<p>AVIF animations are tiny and look good, but outside browsers almost nothing plays them: chat apps, presentation software and many social sites expect GIF. Converting gives you a file that plays everywhere, at the cost of a bigger file and fewer colours.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "How do I keep the GIF small?",
+     "html": "<p>Set a <strong>Maximum width</strong> in Advanced options: halving the width makes the GIF roughly four times smaller. Short loops with few colours stay smallest. Very long or large animations stop at 600 frames or about 150 million pixels in total.</p>"
+    },
+    {
+     "h2": "What about a still AVIF?",
+     "html": "<p>It becomes a one-frame GIF. For still images PNG or JPG are better: see <a href=\"../avif-to-png/\">AVIF to PNG</a> or <a href=\"../avif-to-jpg/\">AVIF to JPG</a>.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does the GIF keep the AVIF's timing?",
+     "a": "Yes. Each frame keeps its own delay, so the animation plays at the same speed."
+    },
+    {
+     "q": "Why does the GIF look grainier?",
+     "a": "GIF can show only 256 colours per frame, while AVIF has millions. Gradients and photos show it most."
+    },
+    {
+     "q": "Does it work in Safari?",
+     "a": "Safari makes a still GIF of the first frame. Use Chrome, Edge or Firefox to keep the animation."
+    }
+   ]
+  },
+  {
+   "slug": "jfif-to-jpg",
+   "from": "jfif",
+   "to": "jpg",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.jfif,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "JFIF to JPG Converter: No Uploads, No Sign-Up",
+   "description": "Convert .jfif files to standard .jpg in your browser. No uploads, no sign-up. For upload forms and apps that reject the .jfif ending.",
+   "app": {
+    "name": "JFIF to JPG Converter",
+    "description": "Convert .jfif files to standard .jpg files in your browser, with no uploads and no sign-up.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Saves standard .jpg files",
+     "JPG quality you choose",
+     "Optional maximum width"
+    ]
+   },
+   "crumb": "JFIF to JPG",
+   "h1": "JFIF to JPG Converter",
+   "lead": "Turn .jfif files into standard .jpg files that every app and upload form accepts, without uploading.",
+   "card": "An upload form rejects your .jfif? It's a JPEG with another ending: convert it to a standard .jpg in your browser, or rename it.",
+   "related": [
+    "jfif-to-png",
+    "webp-to-jpg",
+    "png-to-jpg"
+   ],
+   "more": [
+    "jpg-to-pdf"
+   ],
+   "answer": "Drop your .jfif files above, keep JPG selected and download standard .jpg files. A JFIF file is already a JPEG with a different ending, so apps that reject .jfif accept the result. The conversion runs in your browser, so nothing is uploaded and there's no sign-up. Works in current Chrome, Edge, Firefox and Safari.",
+   "sections": [
+    {
+     "h2": "Can't I just rename .jfif to .jpg?",
+     "html": "<p>Yes, for one or two files that's the quickest fix, and it loses nothing: the picture inside is already a JPEG. This page helps when you have many files, when you can't see file endings, or when you also want to resize or shrink them. It saves a fresh JPG at the quality you choose.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Why do I get JFIF files?",
+     "html": "<p>On some Windows computers, a registry setting tells browsers to name downloaded JPEGs with the .jfif ending. See <a href=\"../chrome-saves-images-as-jfif/\">why Chrome saves images as JFIF</a> for the permanent fix.</p>"
+    },
+    {
+     "h2": "Can I stop getting JFIF files?",
+     "html": "<p>Yes. With the <a href=\"https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jfif-to-jpg\">Imgkeep</a> extension, right-click the image on the web page and choose <strong>Imgkeep › JPG</strong>. It always saves a .jpg file, whatever the Windows setting says.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Is JFIF the same as JPG?",
+     "a": "Yes. JFIF is one of the standard ways JPEG images are stored, so a .jfif file is a JPEG with a different ending."
+    },
+    {
+     "q": "Does converting lower the quality?",
+     "a": "Slightly, because the image is saved again as a JPG, at quality 92 unless you change it. Renaming the file instead loses nothing."
+    },
+    {
+     "q": "Can I convert JFIF to PNG?",
+     "a": "Yes: see <a href=\"../jfif-to-png/\">JFIF to PNG</a>. PNG files are larger but keep every pixel."
+    }
+   ]
+  },
+  {
+   "slug": "jfif-to-png",
+   "from": "jfif",
+   "to": "png",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.jfif,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "JFIF to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert .jfif images to PNG in your browser, every pixel kept. No uploads, no sign-up. For apps and editors that want PNG.",
+   "app": {
+    "name": "JFIF to PNG Converter",
+    "description": "Convert .jfif images to PNG in your browser, with no uploads and no sign-up. The PNG keeps every pixel.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Lossless PNG output",
+     "Optional maximum width",
+     "Download each PNG, or copy it to paste anywhere"
+    ]
+   },
+   "crumb": "JFIF to PNG",
+   "h1": "JFIF to PNG Converter",
+   "lead": "Turn .jfif images into PNG files for editors and apps that want PNG, without uploading.",
+   "card": "Need a PNG from a .jfif image? Convert it in your browser: the PNG keeps every pixel, ready for editing without further loss.",
+   "related": [
+    "jfif-to-jpg",
+    "jpg-to-png",
+    "webp-to-png"
+   ],
+   "more": [
+    "png-to-ico"
+   ],
+   "answer": "Drop your .jfif files above, keep PNG selected and download the PNGs. It runs in your browser, so nothing is uploaded. A .jfif is a JPEG, so the PNG keeps exactly its pixels and loses nothing further when you edit it, though the file is larger. If you only need the file to be accepted somewhere, JPG is smaller: use JFIF to JPG.",
+   "sections": [
+    {
+     "h2": "When is PNG the right choice?",
+     "html": "<p>When an app or print service asks for PNG, or when you'll edit the image several times: each save as JPG compresses again, while PNG keeps what you see. For uploading or sharing a photo, a JPG is smaller: see <a href=\"../jfif-to-jpg/\">JFIF to JPG</a>.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Will the PNG have a transparent background?",
+     "html": "<p>No. A .jfif (like any JPEG) has no transparency, so the PNG has the same background. Removing a background needs an image editor.</p>"
+    },
+    {
+     "h2": "Why do I have .jfif files?",
+     "html": "<p>A Windows setting can make browsers name JPEG downloads .jfif. <a href=\"../chrome-saves-images-as-jfif/\">Why Chrome saves images as JFIF</a> explains the one-time fix.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Is JFIF to PNG lossless?",
+     "a": "The conversion is: the PNG holds exactly the JFIF's pixels. It can't undo the JPEG compression the image already had."
+    },
+    {
+     "q": "Why is the PNG so big?",
+     "a": "PNG keeps every pixel without compressing them away, which makes photos several times larger than the JPEG. Set a maximum width to shrink it."
+    },
+    {
+     "q": "Can I convert many .jfif files at once?",
+     "a": "Yes, up to 20 at a time, each up to 50 MB."
+    }
+   ]
+  },
+  {
+   "slug": "jpg-to-pdf",
+   "from": "jpg",
+   "to": "pdf",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "JPG to PDF Converter: No Uploads, No Sign-Up",
+   "description": "Turn a JPG into a one-page PDF exactly the size of the image, in your browser. No uploads, no sign-up. For forms that ask for a PDF.",
+   "app": {
+    "name": "JPG to PDF Converter",
+    "description": "Turn JPG images into one-page PDFs, each exactly the size of its image, in your browser, with no uploads and no sign-up.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "One PDF page exactly the image's size",
+     "Photos stored as JPEG inside the PDF",
+     "One PDF for each image"
+    ]
+   },
+   "crumb": "JPG to PDF",
+   "h1": "JPG to PDF Converter",
+   "lead": "Make a PDF from a photo or scan for a form or an email, without uploading it.",
+   "card": "A form wants a PDF, but you have a photo? Turn a JPG into a one-page PDF exactly the size of the image, in your browser.",
+   "related": [
+    "png-to-pdf",
+    "heic-to-pdf",
+    "jpg-to-png"
+   ],
+   "more": [
+    "jfif-to-jpg"
+   ],
+   "answer": "Drop your JPGs above, choose PDF and download one PDF for each image. Each PDF is a single page exactly the size of the photo, with no margins, and the photo is stored as a JPEG inside, at your JPG quality. It runs in your browser, so nothing is uploaded and there's no sign-up. Several images give several PDFs; they aren't combined into one.",
+   "sections": [
+    {
+     "h2": "When do I need a PDF instead of a JPG?",
+     "html": "<p>Many application forms, government sites and document systems accept only PDF, even for a scan of an ID card or a receipt. A PDF also prints at a fixed size and opens the same way on every computer and phone.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "How big is the PDF page?",
+     "html": "<p>Exactly the size of the image, one point per pixel, with no white border. A 2400 × 1600 photo becomes a page 2400 × 1600 points. To print on A4 or Letter, choose \"Fit to page\" in your print dialog. To make the file smaller, set a <strong>Maximum width</strong> or lower the quality in Advanced options.</p>"
+    },
+    {
+     "h2": "Can I combine several images into one PDF?",
+     "html": "<p>Not here: each image becomes its own one-page PDF. To combine them, open the PDFs in a PDF reader or editor that can merge files. See also <a href=\"../save-image-as-pdf/\">how to save an image as a PDF in Chrome</a>.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does the PDF lower the photo's quality?",
+     "a": "The photo is saved inside the PDF as a JPEG at quality 92 unless you change it, so the difference is usually invisible."
+    },
+    {
+     "q": "Is my document uploaded anywhere?",
+     "a": "No. The PDF is made in your browser, on your device, so it's fine for IDs, receipts and other private documents."
+    },
+    {
+     "q": "Can I make a PDF from a PNG?",
+     "a": "Yes, see <a href=\"../png-to-pdf/\">PNG to PDF</a>: transparency is kept there."
+    }
+   ]
+  },
+  {
+   "slug": "png-to-pdf",
+   "from": "png",
+   "to": "pdf",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "PNG to PDF Converter: No Uploads, No Sign-Up",
+   "description": "Turn a PNG into a one-page PDF exactly its size, transparency kept, in your browser. No uploads, no sign-up. For forms, printing and sharing.",
+   "app": {
+    "name": "PNG to PDF Converter",
+    "description": "Turn PNG images into one-page PDFs exactly the size of the image, in your browser, with no uploads and no sign-up. Transparency is kept.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "One PDF page exactly the image's size",
+     "Transparency kept",
+     "One PDF for each image"
+    ]
+   },
+   "crumb": "PNG to PDF",
+   "h1": "PNG to PDF Converter",
+   "lead": "Turn screenshots, diagrams and graphics into a PDF, transparency kept, without uploading.",
+   "card": "Turn a screenshot or diagram into a one-page PDF, sharp and with transparency kept, made in your browser without uploading.",
+   "related": [
+    "jpg-to-pdf",
+    "heic-to-pdf",
+    "png-to-jpg"
+   ],
+   "more": [
+    "png-to-webp"
+   ],
+   "answer": "Drop your PNGs above, choose PDF and download one PDF for each image. Each PDF is a single page exactly the size of the image. PNGs with transparency are stored without loss and stay transparent; photos without transparency are stored as JPEG to keep the PDF small. It runs in your browser, so nothing is uploaded and there's no sign-up.",
+   "sections": [
+    {
+     "h2": "Why turn a PNG into a PDF?",
+     "html": "<p>To attach a screenshot, chart or scanned page where only PDF is accepted, or to send something that prints at a fixed size. Text in screenshots stays sharp because graphics with transparency are stored without loss.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "What happens to transparency?",
+     "html": "<p>It's kept: transparent areas stay see-through in the PDF, so a logo placed on a coloured page shows the page's colour behind it. Most PDF viewers show those areas as white.</p>"
+    },
+    {
+     "h2": "Why is my PDF smaller than the PNG?",
+     "html": "<p>For a PNG without transparency, such as a photo saved as PNG, the image is stored as a JPEG inside the PDF, which is much smaller. Use a high <strong>Quality</strong> in Advanced options for text-heavy screenshots, or stay with PNG.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Can I put several PNGs into one PDF?",
+     "a": "Not here: each image becomes its own one-page PDF. A PDF reader or editor that merges files can combine them."
+    },
+    {
+     "q": "What size is the PDF page?",
+     "a": "Exactly the image's size, one point per pixel, with no margins. Use \"Fit to page\" when printing on paper."
+    },
+    {
+     "q": "Is anything uploaded?",
+     "a": "No. The PDF is made on your device, in your browser."
+    }
+   ]
+  },
+  {
+   "slug": "heic-to-pdf",
+   "from": "heic",
+   "to": "pdf",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.heic,.heif,.webp,.avif,.svg,.ico,.bmp",
+   "offline": "Load this page and add a photo, then turn off your Wi-Fi: converting still works. (In Chrome, Edge and Firefox the HEIC decoder loads with your first photo; Safari doesn't need it.)",
+   "table": true,
+   "title": "HEIC to PDF Converter: No Uploads, No Sign-Up",
+   "description": "Turn iPhone HEIC photos into one-page PDFs in your browser, the right way up. No uploads, no sign-up. For forms and documents that need PDF.",
+   "app": {
+    "name": "HEIC to PDF Converter",
+    "description": "Turn iPhone HEIC and HEIF photos into one-page PDFs in your browser, with no uploads and no sign-up.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Opens HEIC and HEIF photos from iPhones and iPads",
+     "Keeps the photo the right way up",
+     "One PDF page exactly the photo's size"
+    ]
+   },
+   "crumb": "HEIC to PDF",
+   "h1": "HEIC to PDF Converter",
+   "lead": "Turn iPhone photos of documents, receipts and IDs into PDFs, without uploading them.",
+   "card": "Photographed a document on your iPhone? Turn the HEIC photo into a one-page PDF on your device, ready for a form or an email.",
+   "related": [
+    "heic-to-jpg",
+    "jpg-to-pdf",
+    "heic-to-png"
+   ],
+   "more": [
+    "png-to-pdf"
+   ],
+   "answer": "Drop your HEIC photos above, choose PDF and download one PDF for each photo, exactly the photo's size and the right way up. In Chrome, Edge and Firefox the page first loads a HEIC decoder (about 0.5 MB); Safari opens HEIC itself. Everything happens in your browser, so nothing is uploaded, which matters for IDs and receipts.",
+   "sections": [
+    {
+     "h2": "Why turn an iPhone photo into a PDF?",
+     "html": "<p>Forms and offices often want documents as PDF, and many can't open HEIC at all. Photographing a receipt or an ID with your iPhone gives a HEIC file; this turns it into a PDF that opens anywhere.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Is it private enough for an ID or a bank document?",
+     "html": "<p>The photo never leaves your device: the page reads and converts it in your browser, and it keeps working offline once the decoder has loaded. Nothing is sent to a server. Only the main photo is converted, not Live Photo video or depth data.</p>"
+    },
+    {
+     "h2": "How do I keep the PDF small?",
+     "html": "<p>iPhone photos are large, often 4000 pixels wide. Set a <strong>Maximum width</strong> of about 2000 in Advanced options: documents stay readable and the PDF is far smaller. To print, choose \"Fit to page\" in the print dialog.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Can I combine several photos into one PDF?",
+     "a": "Not here: each photo becomes its own PDF. A PDF reader or editor that merges files can combine them."
+    },
+    {
+     "q": "Does it work on iPhone?",
+     "a": "Yes, in Safari on iPhone and iPad, where HEIC opens without the extra decoder."
+    },
+    {
+     "q": "What about a JPG instead?",
+     "a": "For a photo to share rather than a document, <a href=\"../heic-to-jpg/\">HEIC to JPG</a> gives a smaller file every app opens."
+    }
+   ]
+  },
+  {
+   "slug": "svg-to-png",
+   "from": "svg",
+   "to": "png",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "SVG to PNG Converter: No Uploads, No Sign-Up",
+   "description": "Convert SVG to PNG in your browser, transparency kept. No uploads, no sign-up. For apps, slides and sites that can't open SVG.",
+   "app": {
+    "name": "SVG to PNG Converter",
+    "description": "Convert SVG files to PNG images in your browser, with no uploads and no sign-up. Transparency is kept.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "Up to 20 files at once",
+     "Transparency kept",
+     "Made at the SVG's own size (1024 px wide if it has none)",
+     "Optional maximum width"
+    ]
+   },
+   "crumb": "SVG to PNG",
+   "h1": "SVG to PNG Converter",
+   "lead": "Turn an SVG logo or icon into a PNG for apps and sites that can't open SVG, without uploading.",
+   "card": "An app or site won't take your SVG logo? Convert it to a PNG with a transparent background, made in your browser.",
+   "related": [
+    "svg-to-ico",
+    "png-to-ico",
+    "png-to-webp"
+   ],
+   "more": [
+    "jpg-to-png"
+   ],
+   "answer": "Drop your SVG files above, keep PNG selected and download the PNGs, with transparent backgrounds kept. It runs in your browser, so nothing is uploaded. The PNG is made at the size the SVG declares; an SVG without a size comes out 1024 pixels wide, in its own shape. Use Maximum width in Advanced options for a smaller PNG.",
+   "sections": [
+    {
+     "h2": "Why convert SVG to PNG?",
+     "html": "<p>SVG is perfect for logos and icons on websites, but many apps, slide decks, social sites and upload forms can't open it. A PNG works everywhere and keeps the transparent background.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "How big will the PNG be?",
+     "html": "<p>As big as the SVG says it is: an SVG with <code>width=\"512\"</code> gives a 512-pixel PNG. If the SVG has no size, only a shape (a <code>viewBox</code>), the PNG is 1024 pixels wide. The converter makes images smaller, never larger, so for a bigger PNG, set a larger width in the SVG first.</p>"
+    },
+    {
+     "h2": "Will text and fonts look right?",
+     "html": "<p>The PNG shows what your browser shows. If the SVG uses a font that isn't installed or embedded, the browser substitutes another. Design tools can turn text into outlines before you export, which avoids that.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does SVG to PNG keep transparency?",
+     "a": "Yes. Areas the SVG leaves empty stay transparent in the PNG."
+    },
+    {
+     "q": "Can I make an icon from the SVG?",
+     "a": "Yes, see <a href=\"../svg-to-ico/\">SVG to ICO</a> for a favicon or Windows icon."
+    },
+    {
+     "q": "Is my file uploaded?",
+     "a": "No. Your browser draws the SVG and the page saves the PNG, on your device."
+    }
+   ]
+  },
+  {
+   "slug": "jpg-to-ico",
+   "from": "jpg",
+   "to": "ico",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "JPG to ICO Converter: No Uploads, No Sign-Up",
+   "description": "Turn a JPG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, in your browser. No uploads, no sign-up. Free.",
+   "app": {
+    "name": "JPG to ICO Converter",
+    "description": "Turn a JPG into an .ico icon with 16, 32 and 48 px sizes, plus 256 px for large images, in your browser, with no uploads.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "One .ico with 16, 32 and 48 px icons, plus 256 px for large images",
+     "Non-square images centred on a transparent square"
+    ]
+   },
+   "crumb": "JPG to ICO",
+   "h1": "JPG to ICO Converter",
+   "lead": "Make a favicon or Windows icon from a photo or logo JPG, without uploading.",
+   "card": "Make a favicon or desktop icon from a JPG: one .ico file with all the common sizes, made in your browser.",
+   "related": [
+    "png-to-ico",
+    "svg-to-ico",
+    "jpg-to-png"
+   ],
+   "more": [
+    "png-to-webp"
+   ],
+   "answer": "Drop a JPG above, choose ICO and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. It runs in your browser, so nothing is uploaded. A JPG has no transparency, so the icon keeps the JPG's background; a non-square image is centred on a transparent square.",
+   "sections": [
+    {
+     "h2": "Will a JPG make a good icon?",
+     "html": "<p>It works, with one catch: JPG has no transparency, so a logo on a white JPG background becomes a white square icon. If you have the logo as a PNG or SVG with a transparent background, use <a href=\"../png-to-ico/\">PNG to ICO</a> or <a href=\"../svg-to-ico/\">SVG to ICO</a> instead.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "What size should the JPG be?",
+     "html": "<p>Square and at least 256 × 256 pixels gives the sharpest result and adds the 256 px size Windows uses for large icons. Crop photos to a square around the subject first: at 16 px only bold shapes stay recognisable.</p>"
+    },
+    {
+     "h2": "How do I use it as a favicon?",
+     "html": "<p>Upload it to the root of your website as <code>favicon.ico</code>, and browsers find it on their own. For a desktop shortcut on Windows, open the shortcut's Properties, choose Change Icon and pick the file.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Which sizes are inside the .ico?",
+     "a": "16, 32 and 48 px, plus 256 px when the JPG is at least 256 px. Each is stored as a PNG inside the icon."
+    },
+    {
+     "q": "Can I choose the sizes?",
+     "a": "Not yet. Every .ico holds the standard sizes above."
+    },
+    {
+     "q": "Why is my icon blurry at 16 px?",
+     "a": "16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best."
+    }
+   ]
+  },
+  {
+   "slug": "svg-to-ico",
+   "from": "svg",
+   "to": "ico",
+   "wave": 1,
+   "updated": "2026-11-25",
+   "accept": "image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif",
+   "offline": "Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.",
+   "table": true,
+   "title": "SVG to ICO Converter: No Uploads, No Sign-Up",
+   "description": "Turn an SVG logo into a favicon .ico with 16, 32 and 48 px icons, plus 256 px for large SVGs, transparency kept. In your browser, no uploads.",
+   "app": {
+    "name": "SVG to ICO Converter",
+    "description": "Turn an SVG into an .ico icon with 16, 32 and 48 px sizes, plus 256 px for large SVGs, transparency kept, in your browser, with no uploads.",
+    "featureList": [
+     "Converts in the browser: images are never uploaded",
+     "No account or sign-up",
+     "One .ico with 16, 32 and 48 px icons, plus 256 px for large SVGs",
+     "Transparency kept"
+    ]
+   },
+   "crumb": "SVG to ICO",
+   "h1": "SVG to ICO Converter",
+   "lead": "Make a sharp favicon or Windows icon from your SVG logo, transparency kept, without uploading.",
+   "card": "Have your logo as SVG? Make a favicon .ico from it with every common size and a transparent background, in your browser.",
+   "related": [
+    "png-to-ico",
+    "jpg-to-ico",
+    "svg-to-png"
+   ],
+   "more": [
+    "png-to-webp"
+   ],
+   "answer": "Drop your SVG above, choose ICO and download one .ico with the logo at 16, 32 and 48 pixels, transparency kept. It runs in your browser, so nothing is uploaded. You also get a 256 px size when the SVG is at least 256 px wide, or has no size of its own (it is then drawn 1024 px wide). A non-square logo is centred on a transparent square.",
+   "sections": [
+    {
+     "h2": "Why start from an SVG?",
+     "html": "<p>An SVG is drawn fresh at every size, so each icon size starts from a crisp image instead of a scaled-down photo. Logos made in a design tool are often already SVG, with a transparent background, which is exactly what an icon needs.</p>"
+    },
+    {
+     "table": true
+    },
+    {
+     "h2": "Do I still need an .ico if browsers accept SVG favicons?",
+     "html": "<p>Current browsers accept an SVG favicon through a <code>&lt;link rel=\"icon\"&gt;</code> tag, but a <code>favicon.ico</code> at your site's root is still what many browsers, bookmarks and tools look for first. Many sites provide both.</p>"
+    },
+    {
+     "h2": "My logo looks too thin at 16 px",
+     "html": "<p>Fine lines and small text vanish at icon sizes. A simplified version of the logo, such as just the symbol or the first letter, with thicker strokes, reads far better in a browser tab.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Does SVG to ICO keep transparency?",
+     "a": "Yes. Areas the SVG leaves empty stay transparent in every size of the icon."
+    },
+    {
+     "q": "Which sizes are in the file?",
+     "a": "16, 32 and 48 px, plus 256 px when the SVG is at least that wide or has no size of its own. Each is stored as a PNG inside the .ico."
+    },
+    {
+     "q": "Can I get a PNG favicon instead?",
+     "a": "Yes, see <a href=\"../svg-to-png/\">SVG to PNG</a>, then set the size with Maximum width."
+    }
+   ]
+  }
+ ],
+ "later": [
+  "heic-to-webp",
+  "heic-to-avif",
+  "webp-to-avif",
+  "webp-to-pdf",
+  "webp-to-ico",
+  "avif-to-webp",
+  "avif-to-pdf",
+  "jfif-to-pdf",
+  "png-to-avif",
+  "png-to-gif",
+  "png-to-bmp",
+  "jpg-to-webp",
+  "jpg-to-avif",
+  "jpg-to-gif",
+  "jpg-to-bmp",
+  "svg-to-jpg",
+  "svg-to-webp",
+  "svg-to-pdf",
+  "gif-to-jpg",
+  "gif-to-png",
+  "gif-to-webp",
+  "bmp-to-jpg",
+  "bmp-to-png",
+  "bmp-to-webp",
+  "bmp-to-pdf",
+  "ico-to-jpg",
+  "ico-to-png"
+ ]
+}

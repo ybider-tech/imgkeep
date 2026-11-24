@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JFIF to PNG Converter: No Uploads, No Sign-Up — Imgkeep</title>
+  <meta name="description" content="Convert .jfif images to PNG in your browser, every pixel kept. No uploads, no sign-up. For apps and editors that want PNG.">
+  <link rel="canonical" href="https://imgkeep.app/jfif-to-png/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="JFIF to PNG Converter: No Uploads, No Sign-Up — Imgkeep">
+  <meta property="og:description" content="Convert .jfif images to PNG in your browser, every pixel kept. No uploads, no sign-up. For apps and editors that want PNG.">
+  <meta property="og:url" content="https://imgkeep.app/jfif-to-png/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=brand20261110">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "@id": "https://imgkeep.app/jfif-to-png/#app", "name": "JFIF to PNG Converter", "url": "https://imgkeep.app/jfif-to-png/", "description": "Convert .jfif images to PNG in your browser, with no uploads and no sign-up. The PNG keeps every pixel.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (runs in a web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Converts in the browser: images are never uploaded", "No account or sign-up", "Up to 20 files at once", "Lossless PNG output", "Optional maximum width", "Download each PNG, or copy it to paste anywhere"], "isPartOf": {"@id": "https://imgkeep.app/#site"}, "publisher": {"@id": "https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Free Image Converter", "item": "https://imgkeep.app/convert/"}, {"@type": "ListItem", "position": 3, "name": "JFIF to PNG", "item": "https://imgkeep.app/jfif-to-png/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is JFIF to PNG lossless?", "acceptedAnswer": {"@type": "Answer", "text": "The conversion is: the PNG holds exactly the JFIF's pixels. It can't undo the JPEG compression the image already had."}}, {"@type": "Question", "name": "Why is the PNG so big?", "acceptedAnswer": {"@type": "Answer", "text": "PNG keeps every pixel without compressing them away, which makes photos several times larger than the JPEG. Set a maximum width to shrink it."}}, {"@type": "Question", "name": "Can I convert many .jfif files at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, up to 20 at a time, each up to 50 MB."}}, {"@type": "Question", "name": "How do I convert JFIF to PNG?", "acceptedAnswer": {"@type": "Answer", "text": "Drop your .jfif files above, keep PNG selected and download the PNGs. It runs in your browser, so nothing is uploaded. A .jfif is a JPEG, so the PNG keeps exactly its pixels and loses nothing further when you edit it, though the file is larger. If you only need the file to be accepted somewhere, JPG is smaller: use JFIF to JPG."}}]}
+  </script>
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=f31b8d9ec9">
+  <link rel="icon" href="../favicon.png?v=brand20261110" type="image/png">
+  <script src="/stores.js" defer></script>
+  <script src="/count.js" defer></script>
+  <script type="module" src="../convert/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#converter">Skip to the converter</a>
+  <div class="page">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png?v=brand20261110" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="cv-nav" aria-label="Main"><a href="../convert/" aria-current="page">Converter</a><a href="../color-palette-from-image/">Color palette</a><a href="#guides">Guides</a><a href="../privacy.html">Privacy</a></nav>
+    </header>
+    <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../convert/">← Converter</a> › JFIF to PNG</nav>
+      <h1>JFIF to PNG Converter</h1>
+      <p class="lead">Turn .jfif images into PNG files for editors and apps that want PNG, without uploading.</p>
+
+      <section id="converter" class="cv" data-to="png" aria-label="Converter">
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">01</span> Choose your output</h2>
+          <div class="cv-formats" role="group" aria-label="Output format">
+            <button type="button" class="cv-fmt" data-format="png" aria-pressed="false"><span class="cv-fmt-name">PNG</span><span class="cv-fmt-cap">Transparency</span></button>
+            <button type="button" class="cv-fmt" data-format="jpg" aria-pressed="false"><span class="cv-fmt-name">JPG</span><span class="cv-fmt-cap">Photos</span></button>
+            <button type="button" class="cv-fmt" data-format="webp" aria-pressed="false"><span class="cv-fmt-name">WebP</span><span class="cv-fmt-cap">Web images</span></button>
+            <div class="cv-more">
+              <button type="button" class="cv-fmt cv-more-btn" id="moreBtn" aria-expanded="false" aria-haspopup="true" aria-controls="moreMenu"><span class="cv-fmt-name"><span id="moreName">More formats</span> <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cv-fmt-cap" id="moreCap" data-all="AVIF, GIF, PDF, ICO, BMP">AVIF, GIF, PDF, ICO, BMP</span></button>
+              <div class="cv-menu" id="moreMenu" role="group" aria-label="More formats" hidden>
+                <button type="button" class="cv-menu-item" data-format="avif" aria-pressed="false"><strong>AVIF</strong><span>Very small web images</span></button>
+                <button type="button" class="cv-menu-item" data-format="gif" aria-pressed="false"><strong>GIF</strong><span>Animations</span></button>
+                <button type="button" class="cv-menu-item" data-format="pdf" aria-pressed="false"><strong>PDF</strong><span>One page per image</span></button>
+                <button type="button" class="cv-menu-item" data-format="ico" aria-pressed="false"><strong>ICO</strong><span>Favicons and Windows icons</span></button>
+                <button type="button" class="cv-menu-item" data-format="bmp" aria-pressed="false"><strong>BMP</strong><span>For software that needs bitmaps</span></button>
+              </div>
+            </div>
+          </div>
+          <p class="sr-only">Selected output: <span id="currentFormat">PNG</span></p>
+          <div class="cv-helper-row">
+            <p class="cv-helper" id="formatHelper">PNG keeps transparency.</p>
+            <button type="button" class="cv-adv-toggle" id="advToggle" aria-expanded="false" aria-controls="advanced">Advanced options <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="cv-advanced" id="advanced" hidden>
+            <div class="cv-field" id="widthField">
+              <label for="maxWidth">Maximum width (px)</label>
+              <input type="text" id="maxWidth" inputmode="numeric" placeholder="Keep size" aria-describedby="maxWidthHelp widthError">
+              <p class="cv-help" id="maxWidthHelp">Leave blank to keep the original size. Smaller images are never enlarged.</p>
+              <p class="cv-field-error" id="widthError" hidden>Enter a whole number of pixels, like 1600.</p>
+            </div>
+            <div class="cv-field" id="qualityField">
+              <div class="cv-label-row"><label for="quality">Quality</label><output id="qualityOut" for="quality">92</output></div>
+              <input type="range" id="quality" min="1" max="100" value="92" aria-describedby="qualityHelp">
+              <p class="cv-help" id="qualityHelp">Lower makes smaller files.</p>
+            </div>
+            <div class="cv-field" id="backgroundField">
+              <label for="backgroundHex">Background for transparent areas</label>
+              <div class="cv-color"><input type="color" id="background" value="#ffffff" aria-label="Pick the background colour"><input type="text" id="backgroundHex" value="#FFFFFF" aria-describedby="bgHelp bgError" spellcheck="false"></div>
+              <p class="cv-help" id="bgHelp">Used where an image is transparent.</p>
+              <p class="cv-field-error" id="bgError" hidden>Enter a colour like #FFFFFF.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">02</span> Add your images</h2>
+          <div class="cv-drop" id="drop">
+            <p class="cv-drop-title" id="dropTitle">Drop images to convert to <span class="cv-target">PNG</span></p>
+            <button type="button" class="cv-choose" id="choose">Choose images</button>
+            <input type="file" id="files" multiple accept="image/*,.jfif,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
+            <p class="cv-paste">or paste an image <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
+            <p class="cv-limits">Up to 20 files · 50 MB each</p>
+          </div>
+        </div>
+
+        <div class="cv-results" id="resultsArea" hidden>
+          <div class="cv-results-head">
+            <h2>Your images</h2>
+            <p class="cv-summary" id="summary"></p>
+            <button type="button" class="cv-secondary" id="downloadAll" hidden>Download all</button>
+          </div>
+          <ul class="cv-list" id="results"></ul>
+          <p class="cv-hook" id="install" hidden>Saving images from web pages? <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jfif-to-png">Get the free extension</a> and do it in one right-click.</p>
+        </div>
+        <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <p class="cv-privacy">Anonymous page views and conversion counts. No images, file names or sizes sent. <a href="../privacy.html#website">Privacy <span aria-hidden="true">↗</span></a></p>
+      <details class="cv-how">
+        <summary>How local conversion works</summary>
+        <p>Your images are converted by this page, on your device, with the same code as the Imgkeep extension. Nothing is uploaded. The site counts page views, and which formats were converted with how many files (for example "webp → jpg, 3 files"); it never sends image contents, file names or file sizes.</p>
+        <ul>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.</li>
+          <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
+          <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
+        </ul>
+      </details>
+
+      <section class="cv-guides" id="guides" aria-labelledby="guidesTitle">
+        <h2 id="guidesTitle">Quick format guides</h2>
+        <div class="cv-guide-grid">
+          <article class="cv-guide">
+            <h3><a href="../jfif-to-jpg/">JFIF to JPG</a></h3>
+            <p>An upload form rejects your .jfif? It's a JPEG with another ending: convert it to a standard .jpg in your browser, or rename it.</p>
+            <a class="cv-guide-link" href="../jfif-to-jpg/">Read the JFIF to JPG guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="../jpg-to-png/">JPG to PNG</a></h3>
+            <p>Need a PNG for an app, an upload form or editing? Convert a JPG to PNG: it keeps every pixel from here on, though it can't undo the JPG's earlier compression.</p>
+            <a class="cv-guide-link" href="../jpg-to-png/">Read the JPG to PNG guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="../webp-to-png/">WebP to PNG</a></h3>
+            <p>PNG is right for screenshots, graphics and images that need transparency. Convert a WebP to PNG when your next app needs it. Changing formats doesn't bring back detail the original already lost.</p>
+            <a class="cv-guide-link" href="../webp-to-png/">Read the WebP to PNG guide <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="cv-more-guides">More: <a href="../convert/">All formats</a> · <a href="../png-to-ico/">PNG to ICO</a></p>
+      </section>
+
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Drop your .jfif files above, keep PNG selected and download the PNGs. It runs in your browser, so nothing is uploaded. A .jfif is a JPEG, so the PNG keeps exactly its pixels and loses nothing further when you edit it, though the file is larger. If you only need the file to be accepted somewhere, JPG is smaller: use JFIF to JPG.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-11-25">25 November 2026</time></p>
+
+      <h2>When is PNG the right choice?</h2>
+      <p>When an app or print service asks for PNG, or when you'll edit the image several times: each save as JPG compresses again, while PNG keeps what you see. For uploading or sharing a photo, a JPG is smaller: see <a href="../jfif-to-jpg/">JFIF to JPG</a>.</p>
+
+      <h2>JFIF and PNG compared</h2>
+      <div class="table-wrap">
+        <table class="fmt-table">
+          <thead><tr><th scope="col"><span class="sr-only">Format</span></th><th scope="col">JFIF</th><th scope="col">PNG</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Compression</th><td>Lossy: a JPEG with another ending</td><td>Lossless: every pixel kept</td></tr>
+            <tr><th scope="row">Transparency</th><td>No</td><td>Yes, with soft edges</td></tr>
+            <tr><th scope="row">Animation</th><td>No</td><td>Not in a plain PNG</td></tr>
+            <tr><th scope="row">Opens in</th><td>Most viewers, but many upload forms reject the .jfif ending</td><td>Every app and browser</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Will the PNG have a transparent background?</h2>
+      <p>No. A .jfif (like any JPEG) has no transparency, so the PNG has the same background. Removing a background needs an image editor.</p>
+
+      <h2>Why do I have .jfif files?</h2>
+      <p>A Windows setting can make browsers name JPEG downloads .jfif. <a href="../chrome-saves-images-as-jfif/">Why Chrome saves images as JFIF</a> explains the one-time fix.</p>
+
+
+      <h2>Questions</h2>
+      <h3>Is JFIF to PNG lossless?</h3>
+      <p>The conversion is: the PNG holds exactly the JFIF's pixels. It can't undo the JPEG compression the image already had.</p>
+      <h3>Why is the PNG so big?</h3>
+      <p>PNG keeps every pixel without compressing them away, which makes photos several times larger than the JPEG. Set a maximum width to shrink it.</p>
+      <h3>Can I convert many .jfif files at once?</h3>
+      <p>Yes, up to 20 at a time, each up to 50 MB.</p>
+      <section class="cv-ext" aria-labelledby="extTitle">
+        <h2 id="extTitle">Save images straight from the web.</h2>
+        <p>Use Imgkeep for Chrome, Edge or Firefox to choose a format when you right-click an image: no file to convert afterwards.</p>
+        <p class="cv-ext-links"><a class="cv-ext-cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jfif-to-png">Get the free extension</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jfif-to-png">Also for Edge</a> <a href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jfif-to-png">Also for Firefox</a></p>
+      </section>
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="../convert/">Converter</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../download/">Download</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+        <a href="../web-image-into-canva-figma-google-slides/">Web images into Canva, Figma or Slides</a>
+        <a href="../best-save-image-as-extensions/">Best Save Image As extensions</a>
+        <a href="../imgkeep-vs-save-webp-as-png-or-jpeg/">Imgkeep vs Save webP as PNG or JPEG</a>
+        <a href="../save-images-from-pinterest/">Save from Pinterest</a>
+        <a href="../save-images-from-instagram/">Save from Instagram</a>
+        <a href="../save-images-from-google-images/">Save from Google Images</a>
+        <a href="../save-images-from-x-twitter/">Save from X</a>
+        <a href="../save-images-from-reddit/">Save from Reddit</a>
+        <a href="../save-images-from-facebook/">Save from Facebook</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

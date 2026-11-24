@@ -237,6 +237,10 @@ footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
 .doc th { font-weight: 700; }
 .doc td small { color: var(--muted); }
+/* Converter pair pages: the two-format comparison fits a phone; the index of every conversion. */
+.doc .fmt-table { min-width: 0; }
+.fmt-index { padding-left: 1.2em; }
+.fmt-index li { margin-bottom: 0.4em; }
 /* Comparison pages (rendered from data/competitor-facts.json by scripts/build-comparisons.mjs). */
 .needs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 1em 0 1.6em; }
 .need { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }

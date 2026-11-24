@@ -24,6 +24,20 @@ Key facts:
 - [PNG to JPG](https://imgkeep.app/png-to-jpg/): smaller files for photos; choose quality and background colour.
 - [HEIC to JPG](https://imgkeep.app/heic-to-jpg/): iPhone photos as JPGs that open on Windows and in upload forms; decoded on the device, nothing uploaded.
 - [HEIC to PNG](https://imgkeep.app/heic-to-png/): iPhone photos as lossless PNGs; the HEIC decoder loads only when a photo is added (Safari opens HEIC itself).
+- [JPG to PNG converter](https://imgkeep.app/jpg-to-png/): Turn a JPG into a PNG for an app or form that wants PNG, without uploading it.
+- [PNG to WebP converter](https://imgkeep.app/png-to-webp/): Make PNG images smaller for your website, transparency kept, without uploading them.
+- [AVIF to PNG converter](https://imgkeep.app/avif-to-png/): Open AVIF images in any app: convert them to PNG, transparency kept, without uploading.
+- [WebP to GIF converter](https://imgkeep.app/webp-to-gif/): Turn animated WebP into a GIF that keeps moving, for chats and apps that only play GIF.
+- [AVIF to GIF converter](https://imgkeep.app/avif-to-gif/): Turn animated AVIF into a GIF that plays everywhere, without uploading it.
+- [JFIF to JPG converter](https://imgkeep.app/jfif-to-jpg/): Turn .jfif files into standard .jpg files that every app and upload form accepts, without uploading.
+- [JFIF to PNG converter](https://imgkeep.app/jfif-to-png/): Turn .jfif images into PNG files for editors and apps that want PNG, without uploading.
+- [JPG to PDF converter](https://imgkeep.app/jpg-to-pdf/): Make a PDF from a photo or scan for a form or an email, without uploading it.
+- [PNG to PDF converter](https://imgkeep.app/png-to-pdf/): Turn screenshots, diagrams and graphics into a PDF, transparency kept, without uploading.
+- [HEIC to PDF converter](https://imgkeep.app/heic-to-pdf/): Turn iPhone photos of documents, receipts and IDs into PDFs, without uploading them.
+- [SVG to PNG converter](https://imgkeep.app/svg-to-png/): Turn an SVG logo or icon into a PNG for apps and sites that can't open SVG, without uploading.
+- [JPG to ICO converter](https://imgkeep.app/jpg-to-ico/): Make a favicon or Windows icon from a photo or logo JPG, without uploading.
+- [SVG to ICO converter](https://imgkeep.app/svg-to-ico/): Make a sharp favicon or Windows icon from your SVG logo, transparency kept, without uploading.
+- [Every conversion](https://imgkeep.app/convert/formats/): the converter's pages, one per format pair.
 - [PNG to ICO](https://imgkeep.app/png-to-ico/): one .ico with 16, 32 and 48 px icons, plus 256 px for large images.
 
 ## Color palette from image

@@ -24,7 +24,9 @@ const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclp
 // The home H1: what Imgkeep does (for search), then the tagline.
 const HOME_H1 = "Save image as PNG, JPG, WebP, GIF or PDF Any image. Your format.";
 // The Free Image Converter and its pair pages (tests/converter.spec.mjs tests the tool itself).
-const CONVERTERS = ["convert", "webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico", "heic-to-jpg", "heic-to-png"];
+// Every converter pair page comes from data/pairs.json (scripts/build-pair-pages.mjs).
+const PAIR_DATA = JSON.parse(await readFile(join(dirname(fileURLToPath(import.meta.url)), "..", "data", "pairs.json"), "utf8"));
+const CONVERTERS = ["convert", ...PAIR_DATA.pairs.map((p) => p.slug)];
 // Every page as [URL path, file under site/].
 const PAGES = [
   ...["index.html", "privacy.html", "support.html", "ideas.html", "pro.html", "whats-new.html", "404.html"].map((f) => [f, f]),
@@ -33,6 +35,7 @@ const PAGES = [
   ...CONVERTERS.map((c) => [`${c}/`, `${c}/index.html`]),
   ["download/", "download/index.html"],
   ["color-palette-from-image/", "color-palette-from-image/index.html"],
+  ["convert/formats/", "convert/formats/index.html"],
 ];
 
 for (const [page] of PAGES) {
@@ -120,7 +123,8 @@ test("SEO tags, sitemap and robots.txt are consistent", async () => {
     ...Object.fromEntries([...GUIDES, ...SITE_GUIDES].map((g) => [`${g}/index.html`, `https://imgkeep.app/${g}/`])),
     ...Object.fromEntries(CONVERTERS.map((c) => [`${c}/index.html`, `https://imgkeep.app/${c}/`])),
     "download/index.html": "https://imgkeep.app/download/",
-    "color-palette-from-image/index.html": "https://imgkeep.app/color-palette-from-image/" };
+    "color-palette-from-image/index.html": "https://imgkeep.app/color-palette-from-image/",
+    "convert/formats/index.html": "https://imgkeep.app/convert/formats/" };
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   const robots = await readFile(join(ROOT, "site", "robots.txt"), "utf8");
   expect(robots).toContain("Sitemap: https://imgkeep.app/sitemap.xml");
@@ -275,6 +279,21 @@ test("translated pages' structured data names their language and address", async
       }
     }
   }
+});
+
+// The pair pages and their index are rendered from data/: they must match it, keep the pages that existed before the
+// template at their addresses, list every pair on the index, and stay distinct from each other.
+test("converter pair pages match data/pairs.json, are all on the index, and aren't near-duplicates", async ({ page }) => {
+  const { renderAll, similarity, MAX_SHARED, INDEX_FILE } = await import("../scripts/build-pair-pages.mjs");
+  const out = await renderAll();
+  for (const [file, html] of Object.entries(out)) expect(await readFile(join(ROOT, "site", file), "utf8"), `${file}: run node scripts/build-pair-pages.mjs`).toBe(html);
+  for (const slug of ["webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico", "heic-to-jpg", "heic-to-png"]) expect(PAIR_DATA.pairs.some((p) => p.slug === slug), `${slug} keeps its address`).toBe(true);
+  await page.goto(`${server.url}/convert/formats/`);
+  for (const p of PAIR_DATA.pairs) await expect(page.locator(`main a[href="../../${p.slug}/"]`), `index lists ${p.slug}`).toHaveCount(1);
+  await expect(page.locator('main a[href="../"]').first()).toBeVisible();
+  const wave = Object.fromEntries(PAIR_DATA.pairs.map((p) => [`${p.slug}/index.html`, p.wave]));
+  const pages = Object.fromEntries(Object.entries(out).filter(([f]) => f !== INDEX_FILE));
+  for (const s of similarity(pages)) if (wave[s.a] || wave[s.b]) expect(s.shared, `${s.a} and ${s.b} share too much text`).toBeLessThanOrEqual(MAX_SHARED);
 });
 
 test("guides have a visible way back to the home page", async ({ page }) => {

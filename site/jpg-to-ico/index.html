@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JPG to ICO Converter: No Uploads, No Sign-Up — Imgkeep</title>
+  <meta name="description" content="Turn a JPG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, in your browser. No uploads, no sign-up. Free.">
+  <link rel="canonical" href="https://imgkeep.app/jpg-to-ico/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="JPG to ICO Converter: No Uploads, No Sign-Up — Imgkeep">
+  <meta property="og:description" content="Turn a JPG into an .ico with 16, 32 and 48 px icons, plus 256 px for big images, in your browser. No uploads, no sign-up. Free.">
+  <meta property="og:url" content="https://imgkeep.app/jpg-to-ico/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=brand20261110">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Any image. Your format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebApplication", "@id": "https://imgkeep.app/jpg-to-ico/#app", "name": "JPG to ICO Converter", "url": "https://imgkeep.app/jpg-to-ico/", "description": "Turn a JPG into an .ico icon with 16, 32 and 48 px sizes, plus 256 px for large images, in your browser, with no uploads.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any (runs in a web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Converts in the browser: images are never uploaded", "No account or sign-up", "One .ico with 16, 32 and 48 px icons, plus 256 px for large images", "Non-square images centred on a transparent square"], "isPartOf": {"@id": "https://imgkeep.app/#site"}, "publisher": {"@id": "https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Imgkeep", "item": "https://imgkeep.app/"}, {"@type": "ListItem", "position": 2, "name": "Free Image Converter", "item": "https://imgkeep.app/convert/"}, {"@type": "ListItem", "position": 3, "name": "JPG to ICO", "item": "https://imgkeep.app/jpg-to-ico/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which sizes are inside the .ico?", "acceptedAnswer": {"@type": "Answer", "text": "16, 32 and 48 px, plus 256 px when the JPG is at least 256 px. Each is stored as a PNG inside the icon."}}, {"@type": "Question", "name": "Can I choose the sizes?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. Every .ico holds the standard sizes above."}}, {"@type": "Question", "name": "Why is my icon blurry at 16 px?", "acceptedAnswer": {"@type": "Answer", "text": "16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best."}}, {"@type": "Question", "name": "How do I convert JPG to ICO?", "acceptedAnswer": {"@type": "Answer", "text": "Drop a JPG above, choose ICO and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. It runs in your browser, so nothing is uploaded. A JPG has no transparency, so the icon keeps the JPG's background; a non-square image is centred on a transparent square."}}]}
+  </script>
+  <link rel="preload" href="../fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=f31b8d9ec9">
+  <link rel="icon" href="../favicon.png?v=brand20261110" type="image/png">
+  <script src="/stores.js" defer></script>
+  <script src="/count.js" defer></script>
+  <script type="module" src="../convert/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#converter">Skip to the converter</a>
+  <div class="page">
+    <header>
+      <a class="brand" href="../"><img src="../icon128.png?v=brand20261110" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="cv-nav" aria-label="Main"><a href="../convert/" aria-current="page">Converter</a><a href="../color-palette-from-image/">Color palette</a><a href="#guides">Guides</a><a href="../privacy.html">Privacy</a></nav>
+    </header>
+    <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../convert/">← Converter</a> › JPG to ICO</nav>
+      <h1>JPG to ICO Converter</h1>
+      <p class="lead">Make a favicon or Windows icon from a photo or logo JPG, without uploading.</p>
+
+      <section id="converter" class="cv" data-to="ico" aria-label="Converter">
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">01</span> Choose your output</h2>
+          <div class="cv-formats" role="group" aria-label="Output format">
+            <button type="button" class="cv-fmt" data-format="png" aria-pressed="false"><span class="cv-fmt-name">PNG</span><span class="cv-fmt-cap">Transparency</span></button>
+            <button type="button" class="cv-fmt" data-format="jpg" aria-pressed="false"><span class="cv-fmt-name">JPG</span><span class="cv-fmt-cap">Photos</span></button>
+            <button type="button" class="cv-fmt" data-format="webp" aria-pressed="false"><span class="cv-fmt-name">WebP</span><span class="cv-fmt-cap">Web images</span></button>
+            <div class="cv-more">
+              <button type="button" class="cv-fmt cv-more-btn" id="moreBtn" aria-expanded="false" aria-haspopup="true" aria-controls="moreMenu"><span class="cv-fmt-name"><span id="moreName">More formats</span> <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cv-fmt-cap" id="moreCap" data-all="AVIF, GIF, PDF, ICO, BMP">AVIF, GIF, PDF, ICO, BMP</span></button>
+              <div class="cv-menu" id="moreMenu" role="group" aria-label="More formats" hidden>
+                <button type="button" class="cv-menu-item" data-format="avif" aria-pressed="false"><strong>AVIF</strong><span>Very small web images</span></button>
+                <button type="button" class="cv-menu-item" data-format="gif" aria-pressed="false"><strong>GIF</strong><span>Animations</span></button>
+                <button type="button" class="cv-menu-item" data-format="pdf" aria-pressed="false"><strong>PDF</strong><span>One page per image</span></button>
+                <button type="button" class="cv-menu-item" data-format="ico" aria-pressed="false"><strong>ICO</strong><span>Favicons and Windows icons</span></button>
+                <button type="button" class="cv-menu-item" data-format="bmp" aria-pressed="false"><strong>BMP</strong><span>For software that needs bitmaps</span></button>
+              </div>
+            </div>
+          </div>
+          <p class="sr-only">Selected output: <span id="currentFormat">PNG</span></p>
+          <div class="cv-helper-row">
+            <p class="cv-helper" id="formatHelper">PNG keeps transparency.</p>
+            <button type="button" class="cv-adv-toggle" id="advToggle" aria-expanded="false" aria-controls="advanced">Advanced options <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="cv-advanced" id="advanced" hidden>
+            <div class="cv-field" id="widthField">
+              <label for="maxWidth">Maximum width (px)</label>
+              <input type="text" id="maxWidth" inputmode="numeric" placeholder="Keep size" aria-describedby="maxWidthHelp widthError">
+              <p class="cv-help" id="maxWidthHelp">Leave blank to keep the original size. Smaller images are never enlarged.</p>
+              <p class="cv-field-error" id="widthError" hidden>Enter a whole number of pixels, like 1600.</p>
+            </div>
+            <div class="cv-field" id="qualityField">
+              <div class="cv-label-row"><label for="quality">Quality</label><output id="qualityOut" for="quality">92</output></div>
+              <input type="range" id="quality" min="1" max="100" value="92" aria-describedby="qualityHelp">
+              <p class="cv-help" id="qualityHelp">Lower makes smaller files.</p>
+            </div>
+            <div class="cv-field" id="backgroundField">
+              <label for="backgroundHex">Background for transparent areas</label>
+              <div class="cv-color"><input type="color" id="background" value="#ffffff" aria-label="Pick the background colour"><input type="text" id="backgroundHex" value="#FFFFFF" aria-describedby="bgHelp bgError" spellcheck="false"></div>
+              <p class="cv-help" id="bgHelp">Used where an image is transparent.</p>
+              <p class="cv-field-error" id="bgError" hidden>Enter a colour like #FFFFFF.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">02</span> Add your images</h2>
+          <div class="cv-drop" id="drop">
+            <p class="cv-drop-title" id="dropTitle">Drop images to convert to <span class="cv-target">PNG</span></p>
+            <button type="button" class="cv-choose" id="choose">Choose images</button>
+            <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
+            <p class="cv-paste">or paste an image <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
+            <p class="cv-limits">Up to 20 files · 50 MB each</p>
+          </div>
+        </div>
+
+        <div class="cv-results" id="resultsArea" hidden>
+          <div class="cv-results-head">
+            <h2>Your images</h2>
+            <p class="cv-summary" id="summary"></p>
+            <button type="button" class="cv-secondary" id="downloadAll" hidden>Download all</button>
+          </div>
+          <ul class="cv-list" id="results"></ul>
+          <p class="cv-hook" id="install" hidden>Saving images from web pages? <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jpg-to-ico">Get the free extension</a> and do it in one right-click.</p>
+        </div>
+        <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <p class="cv-privacy">Anonymous page views and conversion counts. No images, file names or sizes sent. <a href="../privacy.html#website">Privacy <span aria-hidden="true">↗</span></a></p>
+      <details class="cv-how">
+        <summary>How local conversion works</summary>
+        <p>Your images are converted by this page, on your device, with the same code as the Imgkeep extension. Nothing is uploaded. The site counts page views, and which formats were converted with how many files (for example "webp → jpg, 3 files"); it never sends image contents, file names or file sizes.</p>
+        <ul>
+          <li>Load this page, then turn off your Wi-Fi: converting still works, for every format except AVIF, whose encoder loads the first time you choose it.</li>
+          <li>Open your browser's developer tools, choose the Network tab and convert a file: no request carries your image.</li>
+          <li>The code is public: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert on GitHub</a>, with <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">a test</a> that checks converting makes no network request and works offline.</li>
+        </ul>
+      </details>
+
+      <section class="cv-guides" id="guides" aria-labelledby="guidesTitle">
+        <h2 id="guidesTitle">Quick format guides</h2>
+        <div class="cv-guide-grid">
+          <article class="cv-guide">
+            <h3><a href="../png-to-ico/">PNG to ICO</a></h3>
+            <p>Make a favicon or Windows icon from a PNG: one .ico file with all the common sizes, transparency kept, made in your browser.</p>
+            <a class="cv-guide-link" href="../png-to-ico/">Read the PNG to ICO guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="../svg-to-ico/">SVG to ICO</a></h3>
+            <p>Have your logo as SVG? Make a favicon .ico from it with every common size and a transparent background, in your browser.</p>
+            <a class="cv-guide-link" href="../svg-to-ico/">Read the SVG to ICO guide <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="../jpg-to-png/">JPG to PNG</a></h3>
+            <p>Need a PNG for an app, an upload form or editing? Convert a JPG to PNG: it keeps every pixel from here on, though it can't undo the JPG's earlier compression.</p>
+            <a class="cv-guide-link" href="../jpg-to-png/">Read the JPG to PNG guide <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="cv-more-guides">More: <a href="../convert/">All formats</a> · <a href="../png-to-webp/">PNG to WebP</a></p>
+      </section>
+
+      <div class="answer">
+        <p class="label">Short answer</p>
+        <p>Drop a JPG above, choose ICO and download one .ico file that holds the image at 16, 32 and 48 pixels, plus 256 pixels when your image is at least that big. It runs in your browser, so nothing is uploaded. A JPG has no transparency, so the icon keeps the JPG's background; a non-square image is centred on a transparent square.</p>
+      </div>
+      <p class="updated">Updated <time datetime="2026-11-25">25 November 2026</time></p>
+
+      <h2>Will a JPG make a good icon?</h2>
+      <p>It works, with one catch: JPG has no transparency, so a logo on a white JPG background becomes a white square icon. If you have the logo as a PNG or SVG with a transparent background, use <a href="../png-to-ico/">PNG to ICO</a> or <a href="../svg-to-ico/">SVG to ICO</a> instead.</p>
+
+      <h2>JPG and ICO compared</h2>
+      <div class="table-wrap">
+        <table class="fmt-table">
+          <thead><tr><th scope="col"><span class="sr-only">Format</span></th><th scope="col">JPG</th><th scope="col">ICO</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Compression</th><td>Lossy: small photo files</td><td>Several small PNG icons in one file</td></tr>
+            <tr><th scope="row">Transparency</th><td>No (filled with a colour)</td><td>Yes</td></tr>
+            <tr><th scope="row">Animation</th><td>No</td><td>No</td></tr>
+            <tr><th scope="row">Opens in</th><td>Every app, browser and upload form</td><td>Windows, and browsers as a favicon</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What size should the JPG be?</h2>
+      <p>Square and at least 256 × 256 pixels gives the sharpest result and adds the 256 px size Windows uses for large icons. Crop photos to a square around the subject first: at 16 px only bold shapes stay recognisable.</p>
+
+      <h2>How do I use it as a favicon?</h2>
+      <p>Upload it to the root of your website as <code>favicon.ico</code>, and browsers find it on their own. For a desktop shortcut on Windows, open the shortcut's Properties, choose Change Icon and pick the file.</p>
+
+
+      <h2>Questions</h2>
+      <h3>Which sizes are inside the .ico?</h3>
+      <p>16, 32 and 48 px, plus 256 px when the JPG is at least 256 px. Each is stored as a PNG inside the icon.</p>
+      <h3>Can I choose the sizes?</h3>
+      <p>Not yet. Every .ico holds the standard sizes above.</p>
+      <h3>Why is my icon blurry at 16 px?</h3>
+      <p>16 pixels is tiny, so detail disappears. Simple shapes and strong contrast work best.</p>
+      <section class="cv-ext" aria-labelledby="extTitle">
+        <h2 id="extTitle">Save images straight from the web.</h2>
+        <p>Use Imgkeep for Chrome, Edge or Firefox to choose a format when you right-click an image: no file to convert afterwards.</p>
+        <p class="cv-ext-links"><a class="cv-ext-cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jpg-to-ico">Get the free extension</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jpg-to-ico">Also for Edge</a> <a href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=jpg-to-ico">Also for Firefox</a></p>
+      </section>
+    </main>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="../convert/">Converter</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Source code</a>
+        <a href="../download/">Download</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../support.html">Support</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Guides">
+        <a href="../chrome-saves-images-as-webp/">Why Chrome saves WebP</a>
+        <a href="../save-webp-as-jpg-png/">Save WebP as JPG or PNG</a>
+        <a href="../save-avif-as-jpg-png/">Save AVIF as JPG or PNG</a>
+        <a href="../chrome-saves-images-as-jfif/">Chrome saves JFIF</a>
+        <a href="../save-animated-webp-as-gif/">Animated WebP as GIF</a>
+        <a href="../save-image-as-pdf/">Save image as PDF</a>
+        <a href="../save-image-as-type-alternative/">Safe alternative to Save image as Type</a>
+        <a href="../save-image-right-click-not-working/">When right-click won't save an image</a>
+        <a href="../web-image-into-canva-figma-google-slides/">Web images into Canva, Figma or Slides</a>
+        <a href="../best-save-image-as-extensions/">Best Save Image As extensions</a>
+        <a href="../imgkeep-vs-save-webp-as-png-or-jpeg/">Imgkeep vs Save webP as PNG or JPEG</a>
+        <a href="../save-images-from-pinterest/">Save from Pinterest</a>
+        <a href="../save-images-from-instagram/">Save from Instagram</a>
+        <a href="../save-images-from-google-images/">Save from Google Images</a>
+        <a href="../save-images-from-x-twitter/">Save from X</a>
+        <a href="../save-images-from-reddit/">Save from Reddit</a>
+        <a href="../save-images-from-facebook/">Save from Facebook</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

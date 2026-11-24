@@ -1,0 +1,17 @@
+{
+ "note": "Facts about each image format, written once. scripts/build-pair-pages.mjs combines two of them into the comparison table on each converter page. Keep every value true for the Free Image Converter as it is today.",
+ "rows": [["compression", "Compression"], ["transparency", "Transparency"], ["animation", "Animation"], ["opens", "Opens in"]],
+ "formats": {
+  "png": {"label": "PNG", "compression": "Lossless: every pixel kept", "transparency": "Yes, with soft edges", "animation": "Not in a plain PNG", "opens": "Every app and browser"},
+  "jpg": {"label": "JPG", "compression": "Lossy: small photo files", "transparency": "No (filled with a colour)", "animation": "No", "opens": "Every app, browser and upload form"},
+  "jfif": {"label": "JFIF", "compression": "Lossy: a JPEG with another ending", "transparency": "No", "animation": "No", "opens": "Most viewers, but many upload forms reject the .jfif ending"},
+  "webp": {"label": "WebP", "compression": "Lossy or lossless: small web files", "transparency": "Yes", "animation": "Yes", "opens": "Browsers; many older apps and forms can't"},
+  "avif": {"label": "AVIF", "compression": "Lossy: very small files", "transparency": "Yes", "animation": "Yes", "opens": "Current browsers; many apps can't"},
+  "gif": {"label": "GIF", "compression": "Lossless, but 256 colours per frame", "transparency": "On or off, no soft edges", "animation": "Yes", "opens": "Every app, chat and browser"},
+  "bmp": {"label": "BMP", "compression": "None: large files", "transparency": "No", "animation": "No", "opens": "Windows apps and older software"},
+  "svg": {"label": "SVG", "compression": "Vector: shapes, not pixels", "transparency": "Yes", "animation": "Sometimes, with code", "opens": "Browsers and design tools; many apps and forms can't"},
+  "ico": {"label": "ICO", "compression": "Several small PNG icons in one file", "transparency": "Yes", "animation": "No", "opens": "Windows, and browsers as a favicon"},
+  "heic": {"label": "HEIC", "compression": "Lossy: small iPhone photos", "transparency": "No", "animation": "Live Photos keep video separately", "opens": "Apple devices; Windows and many sites can't"},
+  "pdf": {"label": "PDF", "compression": "A document page holding the image", "transparency": "Kept", "animation": "No", "opens": "Every computer and phone, and document forms"}
+ }
+}
