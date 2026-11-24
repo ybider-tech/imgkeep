@@ -1,6 +1,6 @@
 # Imgkeep privacy policy
 
-Last updated: 22 November 2026
+Last updated: 24 November 2026
 
 Imgkeep is a browser extension for Chrome, Microsoft Edge and Firefox that saves the image you right-click as PNG, JPG, WebP, GIF or PDF, or copies it as PNG.
 
@@ -25,7 +25,7 @@ A summary contains only:
 - since 0.14.0, how many saves used the full-size file of an image ("Save the full-size version");
 - how many images were copied, how often More options was opened and used to save;
 - how often a colour palette was opened (and whether for an image Find image here found), and how often one colour or all of them were copied or saved as a PNG, GIMP or Adobe file (since 0.11.0), never the colours themselves;
-- how often a site-access or folder question was shown and a site was allowed, whether the one rating question was shown in the right-click menu, in one of Imgkeep's windows or in its own small window after a save (since 0.12.1), whether its menu item was clicked (since 0.11.0) and how it was answered, and how often Find image here was turned on and found an image, showed a list or found nothing;
+- how often a site-access or folder question was shown and a site was allowed, whether the rating question was shown in the right-click menu, in one of Imgkeep's windows or in its own small window after a save (since 0.12.1), whether it was a first or a later ask (since 0.15.1), whether its menu item was clicked (since 0.11.0) and how it was answered (rate, later or don't ask again), and how often Find image here was turned on and found an image, showed a list or found nothing;
 - whether Imgkeep was installed that day (a count of 1, since 0.10.2), so we know how many people install it;
 - the extension's version, the browser (Chrome, Edge or Firefox) and its language.
 
