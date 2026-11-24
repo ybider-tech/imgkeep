@@ -250,7 +250,12 @@ test("per-site guides: one tagged store link, a checked date, the rights note, a
     for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
   }
   await page.goto(`${server.url}/index.html`);
-  for (const guide of SITE_GUIDES) await expect(page.locator(`#image-guides a[href="${guide}/"]`), `home links to ${guide}`).toHaveCount(1);
+  // Each has its own card in the home page's "Site by site" section: title and "Read" link both go to it.
+  for (const guide of SITE_GUIDES) {
+    const article = page.locator("#site-guides article", { has: page.locator(`h3 a[href="${guide}/"]`) });
+    await expect(article, `home has a card for ${guide}`).toHaveCount(1);
+    await expect(article.locator(`a.more[href="${guide}/"]`)).toHaveCount(1);
+  }
   const sitemap = await readFile(join(ROOT, "site", "sitemap.xml"), "utf8");
   for (const guide of SITE_GUIDES) expect(sitemap, `sitemap lists ${guide}`).toContain(`<loc>https://imgkeep.app/${guide}/</loc>`);
 });

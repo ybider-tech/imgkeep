@@ -587,9 +587,6 @@ header:has(.mini-nav) { display: flex; align-items: center; gap: 12px; }
 .converter-page .popular { margin: 4px 0 28px; color: var(--muted); }
 .converter-page .popular span { font-weight: 600; margin-right: 4px; }
 .converter-page .popular a[aria-current="page"] { font-weight: 700; color: var(--text, inherit); text-decoration: none; }
-/* Home Guides section: the per-site guides as one line of links. */
-.guides .site-guides { margin: 20px 0 0; color: var(--muted); }
-.guides .site-guides span { font-weight: 600; margin-right: 4px; }
 .converter-page .sends { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
 .converter-page details.check { border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin: 12px 0 20px; }
 .converter-page details.check summary { font-weight: 700; cursor: pointer; }
