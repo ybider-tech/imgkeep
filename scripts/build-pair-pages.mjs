@@ -186,10 +186,10 @@ export async function renderAll() {
   const out = {};
   for (const p of site.data.pairs) {
     const file = `${p.slug}/index.html`;
-    const current = existsSync(join(SITE, file)) ? await readFile(join(SITE, file), "utf8") : "";
+    const current = existsSync(join(SITE, file)) ? (await readFile(join(SITE, file), "utf8")).replace(/\r\n/g, "\n") : "";
     out[file] = renderPair(p, site, current);
   }
-  const current = existsSync(join(SITE, INDEX_FILE)) ? await readFile(join(SITE, INDEX_FILE), "utf8") : "";
+  const current = existsSync(join(SITE, INDEX_FILE)) ? (await readFile(join(SITE, INDEX_FILE), "utf8")).replace(/\r\n/g, "\n") : "";
   out[INDEX_FILE] = renderIndex(site, current);
   return out;
 }
@@ -212,7 +212,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let stale = 0;
   for (const [file, html] of Object.entries(out)) {
     const path = join(SITE, file);
-    const now = existsSync(path) ? await readFile(path, "utf8") : null;
+    const now = existsSync(path) ? (await readFile(path, "utf8")).replace(/\r\n/g, "\n") : null;
     if (now === html) continue;
     if (process.argv.includes("--check")) {
       console.log(`${file} doesn't match data/pairs.json. Run node scripts/build-pair-pages.mjs`);

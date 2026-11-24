@@ -211,7 +211,8 @@ test("comparison pages match the facts file, with sources and a last-checked dat
   const { render, PAGES: FILES, FACTS_FILE } = await import("../scripts/build-comparisons.mjs");
   const data = JSON.parse(await readFile(FACTS_FILE, "utf8"));
   for (const [key, file] of Object.entries(FILES)) {
-    const html = await readFile(join(ROOT, file), "utf8");
+    // Line endings don't count: a Windows checkout has CRLF, the generator writes LF.
+    const html = (await readFile(join(ROOT, file), "utf8")).replace(/\r\n/g, "\n");
     expect(await render(key, html, data), `${file} is out of date: run node scripts/build-comparisons.mjs`).toBe(html);
     const imgs = [...html.matchAll(/<img [^>]*src="([^"]+)"/g)].map((m) => m[1]);
     expect(imgs.filter((src) => !/icon128\.png|media\/guides\//.test(src)), `${file}: only Imgkeep's own icon and screenshots`).toEqual([]);
@@ -286,7 +287,8 @@ test("translated pages' structured data names their language and address", async
 test("converter pair pages match data/pairs.json, are all on the index, and aren't near-duplicates", async ({ page }) => {
   const { renderAll, similarity, MAX_SHARED, INDEX_FILE } = await import("../scripts/build-pair-pages.mjs");
   const out = await renderAll();
-  for (const [file, html] of Object.entries(out)) expect(await readFile(join(ROOT, "site", file), "utf8"), `${file}: run node scripts/build-pair-pages.mjs`).toBe(html);
+  // Line endings don't count: a Windows checkout has CRLF, the generator writes LF.
+  for (const [file, html] of Object.entries(out)) expect((await readFile(join(ROOT, "site", file), "utf8")).replace(/\r\n/g, "\n"), `${file}: run node scripts/build-pair-pages.mjs`).toBe(html);
   for (const slug of ["webp-to-jpg", "webp-to-png", "avif-to-jpg", "png-to-jpg", "png-to-ico", "heic-to-jpg", "heic-to-png"]) expect(PAIR_DATA.pairs.some((p) => p.slug === slug), `${slug} keeps its address`).toBe(true);
   await page.goto(`${server.url}/convert/formats/`);
   for (const p of PAIR_DATA.pairs) await expect(page.locator(`main a[href="../../${p.slug}/"]`), `index lists ${p.slug}`).toHaveCount(1);
