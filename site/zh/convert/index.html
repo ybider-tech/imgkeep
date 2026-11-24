@@ -44,7 +44,7 @@
   </script>
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=f8b1dadee5">
+  <link rel="stylesheet" href="/style.css?v=72398ebfc6">
   <link rel="icon" href="/favicon.png?v=brand20261110" type="image/png">
   <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
@@ -116,6 +116,7 @@
             <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
             <p class="cv-paste">或粘贴图片 <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
             <p class="cv-limits">最多 20 个文件 · 每个 50 MB</p>
+            <p class="cv-inputs">支持 <a href="/zh/heic-to-jpg/">iPhone HEIC 照片</a>，以及 WebP、AVIF、PNG、JPG 等格式</p>
           </div>
         </div>
 
@@ -146,6 +147,11 @@
         <h2 id="guidesTitle">快速格式指南</h2>
         <div class="cv-guide-grid">
           <article class="cv-guide">
+            <h3><a href="/zh/heic-to-jpg/">HEIC 转 JPG</a></h3>
+            <p>iPhone 照片是 HEIC 格式，Windows 和很多上传表单都打不开。选择 JPG，添加照片，下载到处都能打开的 JPG。照片在你的设备上转换，不会上传。</p>
+            <a class="cv-guide-link" href="/zh/heic-to-jpg/">阅读 HEIC 转 JPG 指南 <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
             <h3><a href="/zh/webp-to-jpg/">WebP 转 JPG</a></h3>
             <p>上传表单或照片工作流需要 JPG？选择 JPG，添加你的 WebP 图片，然后下载结果。透明区域会填上背景色；需要保留透明时请选择 PNG。</p>
             <a class="cv-guide-link" href="/zh/webp-to-jpg/">阅读 WebP 转 JPG 指南 <span aria-hidden="true">→</span></a>
@@ -155,13 +161,8 @@
             <p>PNG 适合截图、图形和需要透明背景的图片。如果下一个要用的应用只认 PNG，就把 WebP 转成 PNG。换格式并不能找回原图已经丢失的细节。</p>
             <a class="cv-guide-link" href="/zh/webp-to-png/">阅读 WebP 转 PNG 指南 <span aria-hidden="true">→</span></a>
           </article>
-          <article class="cv-guide">
-            <h3><a href="/zh/avif-to-jpg/">AVIF 转 JPG</a></h3>
-            <p>有的 AVIF 图片别的应用打不开？在浏览器里把它转成 JPG，再下载结果。如果是带透明背景的图，选 PNG，这样背景才能保持透明。</p>
-            <a class="cv-guide-link" href="/zh/avif-to-jpg/">阅读 AVIF 转 JPG 指南 <span aria-hidden="true">→</span></a>
-          </article>
         </div>
-        <p class="cv-more-guides">更多：<a href="/zh/heic-to-jpg/">HEIC 转 JPG</a> · <a href="/zh/heic-to-png/">HEIC 转 PNG</a> · <a href="/zh/png-to-jpg/">PNG 转 JPG</a> · <a href="/zh/png-to-ico/">PNG 转 ICO</a></p>
+        <p class="cv-more-guides">更多：<a href="/zh/heic-to-png/">HEIC 转 PNG</a> · <a href="/zh/avif-to-jpg/">AVIF 转 JPG</a> · <a href="/zh/png-to-jpg/">PNG 转 JPG</a> · <a href="/zh/png-to-ico/">PNG 转 ICO</a></p>
       </section>
 
       <div class="answer">

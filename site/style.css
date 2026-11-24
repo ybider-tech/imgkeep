@@ -617,11 +617,13 @@ header:has(.mini-nav) { display: flex; align-items: center; gap: 12px; }
 .cv-paste { margin: 0; font-size: 18px; }
 .cv-keys, .cv-limits { color: var(--muted); }
 .cv-limits { margin: 0; font-size: 16px; }
+.cv-inputs { margin: 0; color: var(--muted); font-size: 16px; }
+.cv-inputs a { font-weight: 600; }
 .cv-drop.compact { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title button" "limits button"; text-align: left; gap: 4px 24px; padding: 20px 24px; }
 .cv-drop.compact .cv-drop-title { grid-area: title; font-size: 22px; }
 .cv-drop.compact .cv-limits { grid-area: limits; }
 .cv-drop.compact .cv-choose { grid-area: button; min-height: 52px; width: auto; font-size: 18px; padding: 0 28px; }
-.cv-drop.compact .cv-paste { display: none; }
+.cv-drop.compact .cv-paste, .cv-drop.compact .cv-inputs { display: none; }
 .cv-results { margin-top: 32px; }
 .cv-results-head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 12px; }
 .cv-results-head h2 { margin: 0; font-size: 24px; }

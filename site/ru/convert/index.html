@@ -44,7 +44,7 @@
   </script>
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=f8b1dadee5">
+  <link rel="stylesheet" href="/style.css?v=72398ebfc6">
   <link rel="icon" href="/favicon.png?v=brand20261110" type="image/png">
   <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
@@ -116,6 +116,7 @@
             <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
             <p class="cv-paste">или вставьте изображение <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
             <p class="cv-limits">До 20 файлов · по 50 МБ</p>
+            <p class="cv-inputs">Открывает <a href="/ru/heic-to-jpg/">фото HEIC с iPhone</a>, а также WebP, AVIF, PNG, JPG и другие</p>
           </div>
         </div>
 
@@ -146,6 +147,11 @@
         <h2 id="guidesTitle">Краткие руководства по форматам</h2>
         <div class="cv-guide-grid">
           <article class="cv-guide">
+            <h3><a href="/ru/heic-to-jpg/">HEIC в JPG</a></h3>
+            <p>Фото с iPhone сохраняются в HEIC, а Windows и многие формы загрузки его не открывают. Выберите JPG, добавьте фото и скачайте JPG, которые открываются везде. Они конвертируются на вашем устройстве и никуда не загружаются.</p>
+            <a class="cv-guide-link" href="/ru/heic-to-jpg/">Читать руководство «HEIC в JPG» <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
             <h3><a href="/ru/webp-to-jpg/">WebP в JPG</a></h3>
             <p>Нужен JPG для формы загрузки или работы с фотографиями? Выберите JPG, добавьте изображение WebP и скачайте результат. Прозрачные области заливаются цветом фона; если прозрачность нужно сохранить, выбирайте PNG.</p>
             <a class="cv-guide-link" href="/ru/webp-to-jpg/">Читать руководство «WebP в JPG» <span aria-hidden="true">→</span></a>
@@ -155,13 +161,8 @@
             <p>PNG подходит для скриншотов, графики и изображений с прозрачностью. Переводите WebP в PNG, когда это нужно следующей программе. Смена формата не вернёт детали, которые уже потерял оригинал.</p>
             <a class="cv-guide-link" href="/ru/webp-to-png/">Читать руководство «WebP в PNG» <span aria-hidden="true">→</span></a>
           </article>
-          <article class="cv-guide">
-            <h3><a href="/ru/avif-to-jpg/">AVIF в JPG</a></h3>
-            <p>Есть изображение AVIF, которое не открывается в другой программе? Переведите его в JPG прямо в браузере и скачайте результат. Для изображений с прозрачностью выбирайте PNG, чтобы фон остался прозрачным.</p>
-            <a class="cv-guide-link" href="/ru/avif-to-jpg/">Читать руководство «AVIF в JPG» <span aria-hidden="true">→</span></a>
-          </article>
         </div>
-        <p class="cv-more-guides">Ещё: <a href="/ru/heic-to-jpg/">HEIC в JPG</a> · <a href="/ru/heic-to-png/">HEIC в PNG</a> · <a href="/ru/png-to-jpg/">PNG в JPG</a> · <a href="/ru/png-to-ico/">PNG в ICO</a></p>
+        <p class="cv-more-guides">Ещё: <a href="/ru/heic-to-png/">HEIC в PNG</a> · <a href="/ru/avif-to-jpg/">AVIF в JPG</a> · <a href="/ru/png-to-jpg/">PNG в JPG</a> · <a href="/ru/png-to-ico/">PNG в ICO</a></p>
       </section>
 
       <div class="answer">

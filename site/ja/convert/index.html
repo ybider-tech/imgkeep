@@ -44,7 +44,7 @@
   </script>
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=f8b1dadee5">
+  <link rel="stylesheet" href="/style.css?v=72398ebfc6">
   <link rel="icon" href="/favicon.png?v=brand20261110" type="image/png">
   <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
@@ -116,6 +116,7 @@
             <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
             <p class="cv-paste">または画像を貼り付け <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
             <p class="cv-limits">最大20ファイル・1ファイル50 MBまで</p>
+            <p class="cv-inputs"><a href="/ja/heic-to-jpg/">iPhoneのHEIC写真</a>のほか、WebP、AVIF、PNG、JPGなども開けます</p>
           </div>
         </div>
 
@@ -146,6 +147,11 @@
         <h2 id="guidesTitle">形式別のかんたんガイド</h2>
         <div class="cv-guide-grid">
           <article class="cv-guide">
+            <h3><a href="/ja/heic-to-jpg/">HEICをJPGに変換</a></h3>
+            <p>iPhoneの写真はHEIC形式で、Windowsや多くのアップロードフォームでは開けません。JPGを選んで写真を追加すれば、どこでも開けるJPGをダウンロードできます。変換はお使いの端末で行われ、アップロードはされません。</p>
+            <a class="cv-guide-link" href="/ja/heic-to-jpg/">HEICをJPGに変換するガイドを読む <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
             <h3><a href="/ja/webp-to-jpg/">WebPをJPGに</a></h3>
             <p>アップロードフォームや写真の作業にJPGが必要なときは、JPGを選んでWebP画像を追加し、結果をダウンロードしてください。透過部分には背景色が付きます。透過を残したいときはPNGを選んでください。</p>
             <a class="cv-guide-link" href="/ja/webp-to-jpg/">WebPからJPGへのガイドを読む <span aria-hidden="true">→</span></a>
@@ -155,13 +161,8 @@
             <p>PNGは、スクリーンショットや図版、透明部分が必要な画像に向いています。次に使うアプリがPNGを求めるなら、WebPから変換しましょう。形式を変えても、元の画像ですでに失われたディテールは戻りません。</p>
             <a class="cv-guide-link" href="/ja/webp-to-png/">WebPをPNGに変換するガイドを読む <span aria-hidden="true">→</span></a>
           </article>
-          <article class="cv-guide">
-            <h3><a href="/ja/avif-to-jpg/">AVIFをJPGに変換</a></h3>
-            <p>AVIFの画像が他のアプリで開けませんか。ブラウザ内でJPGに変換して、結果をダウンロードできます。透明部分のある画像なら、背景を透明のまま保てるPNGを選んでください。</p>
-            <a class="cv-guide-link" href="/ja/avif-to-jpg/">AVIFをJPGに変換するガイドを読む <span aria-hidden="true">→</span></a>
-          </article>
         </div>
-        <p class="cv-more-guides">その他: <a href="/ja/heic-to-jpg/">HEICをJPGに変換</a> · <a href="/ja/heic-to-png/">HEICをPNGに変換</a> · <a href="/ja/png-to-jpg/">PNGをJPGに変換</a> · <a href="/ja/png-to-ico/">PNGをICOに変換</a></p>
+        <p class="cv-more-guides">その他: <a href="/ja/heic-to-png/">HEICをPNGに変換</a> · <a href="/ja/avif-to-jpg/">AVIFをJPGに変換</a> · <a href="/ja/png-to-jpg/">PNGをJPGに変換</a> · <a href="/ja/png-to-ico/">PNGをICOに変換</a></p>
       </section>
 
       <div class="answer">

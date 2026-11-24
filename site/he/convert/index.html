@@ -44,7 +44,7 @@
   </script>
   <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css?v=f8b1dadee5">
+  <link rel="stylesheet" href="/style.css?v=72398ebfc6">
   <link rel="icon" href="/favicon.png?v=brand20261110" type="image/png">
   <script src="/stores.js" defer></script>
   <script src="/count.js" defer></script>
@@ -116,6 +116,7 @@
             <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
             <p class="cv-paste">או מדביקים תמונה <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
             <p class="cv-limits">עד 20 קבצים · 50 MB לכל אחד</p>
+            <p class="cv-inputs">פותח <a href="/he/heic-to-jpg/">תמונות HEIC מאייפון</a>, וגם WebP, AVIF, PNG, JPG ועוד</p>
           </div>
         </div>
 
@@ -146,6 +147,11 @@
         <h2 id="guidesTitle">מדריכים קצרים לפורמטים</h2>
         <div class="cv-guide-grid">
           <article class="cv-guide">
+            <h3><a href="/he/heic-to-jpg/">HEIC ל-JPG</a></h3>
+            <p>תמונות מאייפון נשמרות כ-HEIC, ו-Windows וטפסי העלאה רבים לא פותחים אותן. בוחרים JPG, מוסיפים את התמונות ומורידים קובצי JPG שנפתחים בכל מקום. ההמרה נעשית במכשיר שלך, בלי להעלות שום דבר.</p>
+            <a class="cv-guide-link" href="/he/heic-to-jpg/">קריאת המדריך: HEIC ל-JPG <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
             <h3><a href="/he/webp-to-jpg/">מ-WebP ל-JPG</a></h3>
             <p>צריך JPG לטופס העלאה או לתהליך עבודה עם תצלומים? בוחרים JPG, מוסיפים את תמונת ה-WebP ומורידים את התוצאה. אזורים שקופים מקבלים צבע רקע; כדאי לבחור PNG כשצריך לשמור על השקיפות.</p>
             <a class="cv-guide-link" href="/he/webp-to-jpg/">למדריך מ-WebP ל-JPG <span aria-hidden="true">→</span></a>
@@ -155,13 +161,8 @@
             <p>PNG מתאים לצילומי מסך, לגרפיקה ולתמונות שצריכות שקיפות. המירו WebP ל-PNG כשהאפליקציה הבאה שלכם צריכה את זה. שינוי פורמט לא מחזיר פרטים שכבר אבדו בתמונה המקורית.</p>
             <a class="cv-guide-link" href="/he/webp-to-png/">קריאת המדריך: WebP ל-PNG <span aria-hidden="true">→</span></a>
           </article>
-          <article class="cv-guide">
-            <h3><a href="/he/avif-to-jpg/">AVIF ל-JPG</a></h3>
-            <p>יש לכם תמונת AVIF שאפליקציה אחרת לא פותחת? המירו אותה ל-JPG בדפדפן והורידו את התוצאה. לאיורים עם שקיפות בחרו PNG, כדי שהרקע יישאר שקוף.</p>
-            <a class="cv-guide-link" href="/he/avif-to-jpg/">קריאת המדריך: AVIF ל-JPG <span aria-hidden="true">→</span></a>
-          </article>
         </div>
-        <p class="cv-more-guides">עוד: <a href="/he/heic-to-jpg/">HEIC ל-JPG</a> · <a href="/he/heic-to-png/">HEIC ל-PNG</a> · <a href="/he/png-to-jpg/">PNG ל-JPG</a> · <a href="/he/png-to-ico/">PNG ל-ICO</a></p>
+        <p class="cv-more-guides">עוד: <a href="/he/heic-to-png/">HEIC ל-PNG</a> · <a href="/he/avif-to-jpg/">AVIF ל-JPG</a> · <a href="/he/png-to-jpg/">PNG ל-JPG</a> · <a href="/he/png-to-ico/">PNG ל-ICO</a></p>
       </section>
 
       <div class="answer">
