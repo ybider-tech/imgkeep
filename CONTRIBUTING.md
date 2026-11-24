@@ -5,7 +5,7 @@ Thanks for helping. Ideas and votes go in [GitHub Discussions](https://github.co
 ## Principles
 
 - **The extension has no build step and no npm dependencies.** Plain JavaScript ES modules in `extension/`. The code you read is the code that runs.
-- **Nothing leaves the computer except what the [privacy policy](extension/PRIVACY.md) lists.** Any change to network use, permissions or the daily summary updates `extension/PRIVACY.md`, `PERMISSIONS.md` and `site/privacy.html` first (a test checks the last two match).
+- **Nothing leaves the computer except what the [privacy policy](extension/PRIVACY.md) lists.** Any change to network use, permissions or the daily summary updates `extension/PRIVACY.md`, `PERMISSIONS.md` and `site/privacy.html` first (a test checks that `site/privacy.html` matches `extension/PRIVACY.md`).
 - **`tests/static-check.mjs` guards that:** it fails if the permissions change, if `fetch(` appears outside `offscreen.js` and `lib/telemetry.js` (plus one in-page read for `blob:` images in `lib/read-blob.js`), if any extension file references an outside URL, or if the vendored AVIF encoder's bytes change.
 
 ## How it works
