@@ -38,7 +38,7 @@ export function pyJson(v) {
 
 export async function load() {
   const [template, formats, data] = await Promise.all([
-    readFile(join(ROOT, "data", "templates", "pair.html"), "utf8"),
+    readFile(join(ROOT, "data", "templates", "pair.html"), "utf8").then((t) => t.replace(/\r\n/g, "\n")), // LF even on a Windows checkout
     readFile(join(ROOT, "data", "formats.json"), "utf8").then(JSON.parse),
     readFile(join(ROOT, "data", "pairs.json"), "utf8").then(JSON.parse),
   ]);
