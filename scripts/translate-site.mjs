@@ -70,6 +70,12 @@ export const SITE_PAGES = [
   "save-image-right-click-not-working/index.html",
   "best-save-image-as-extensions/index.html",
   "imgkeep-vs-save-webp-as-png-or-jpeg/index.html",
+  "save-images-from-pinterest/index.html",
+  "save-images-from-instagram/index.html",
+  "save-images-from-google-images/index.html",
+  "save-images-from-x-twitter/index.html",
+  "save-images-from-reddit/index.html",
+  "save-images-from-facebook/index.html",
 ];
 const APP_SCRIPTS = { "convert/": "convert/app.js", "color-palette-from-image/": "color-palette-from-image/app.js" };
 const appFor = (urlPath) => appForFile(urlPath.replace(/^\//, ""));
