@@ -1,0 +1,1636 @@
+{
+ "checked": "2026-11-24",
+ "contact": "helloimgkeep@gmail.com",
+ "note": "Facts about other extensions, each with the public source it comes from and the date it was checked. Rendered into site/best-save-image-as-extensions/ and site/imgkeep-vs-save-webp-as-png-or-jpeg/ by scripts/build-comparisons.mjs. 'not-stated' means the publisher doesn't say either way. 'soon' marks Imgkeep's own plans, which have no public source yet.",
+ "columns": [
+  [
+   "browsers",
+   "Browsers"
+  ],
+  [
+   "formats",
+   "Formats saved"
+  ],
+  [
+   "animated",
+   "Keeps animation"
+  ],
+  [
+   "bulk",
+   "Bulk save"
+  ],
+  [
+   "copyPng",
+   "Copy as PNG"
+  ],
+  [
+   "palette",
+   "Colour palette"
+  ],
+  [
+   "blockedRightClick",
+   "Saves where right-click is blocked"
+  ],
+  [
+   "folderNaming",
+   "Choose folder / file names"
+  ],
+  [
+   "local",
+   "Converts locally (no uploads)"
+  ],
+  [
+   "openSource",
+   "Open source"
+  ],
+  [
+   "siteAccess",
+   "Site access"
+  ],
+  [
+   "permissions",
+   "Permissions requested"
+  ],
+  [
+   "updated",
+   "Last updated"
+  ]
+ ],
+ "extensions": [
+  {
+   "id": "robw-save-image-as-png",
+   "name": "Save Image As PNG",
+   "publisher": "Rob W",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2024-06-03",
+     "version": "1.0.3",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-png/nkokmeaibnajheohncaamjggkanfbphi",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Dnkokmeaibnajheohncaamjggkanfbphi%26uc",
+     "label": "manifest.json in the Chrome package, version 1.0.3"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Save As dialog",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "activeTab, contextMenus, downloads, offscreen, scripting; all sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [],
+   "summary": "Adds one item to the right-click menu: Save Image As PNG, which converts the image and then opens the Save As dialog. Its listing dates the first release to 2013, with a Manifest V3 update in June 2024."
+  },
+  {
+   "id": "searche-save-image-as-type",
+   "name": "Save image as Type",
+   "publisher": "searche",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-07-10",
+     "version": "1.1.3",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-type/agddafeppiiohhalnjfhcfjemjjcgmcb",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Dagddafeppiiohhalnjfhcfjemjjcgmcb%26uc",
+     "label": "manifest.json in the Chrome package, version 1.1.3"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "JPG, PNG, PDF, WebP, GIF",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "yes",
+     "text": "Animated GIFs saved without re-encoding",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Optional filename prompt",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "yes",
+     "text": "“No uploads to external servers”",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "downloads, contextMenus, offscreen, scripting, storage; all sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Saves CSS background images",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "52 interface languages",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "A right-click submenu with five formats, including PDF and GIF, and an optional prompt for the file name. Its listing says conversion happens in the browser with no uploads, and that animated GIFs keep their animation."
+  },
+  {
+   "id": "musicfind-save-image-as-png",
+   "name": "Save Image As PNG",
+   "publisher": "Music Find",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-07-29",
+     "version": "1.2.0",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-png/piigjafeabajlmjkcmcemimcoaekbjmh",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Dpiigjafeabajlmjkcmcemimcoaekbjmh%26uc",
+     "label": "manifest.json in the Chrome package, version 1.2.0"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Save As dialog or straight to Downloads; filename templates ({name}, {domain}, {date})",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "activeTab, contextMenus, downloads, offscreen, scripting, storage; all sites; scripts on every site",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "yes",
+     "text": "Every image on a page as one ZIP",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Keyboard shortcuts (Alt+Shift+S, Alt+Shift+B)",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Saves images as PNG, and its latest version adds bulk saving: every image on a page in one ZIP, with keyboard shortcuts and filename templates. If you need to grab a whole page of images, that's something Imgkeep doesn't do."
+  },
+  {
+   "id": "saveimageastype-app",
+   "name": "Save Image As Type",
+   "publisher": "saveimageastype.app (website shown on the listing)",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-11-01",
+     "version": "1.9.7",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-type/cplihnkpoocgdmdaghiinodbdcdepeoi",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Dcplihnkpoocgdmdaghiinodbdcdepeoi%26uc",
+     "label": "manifest.json in the Chrome package, version 1.9.7"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG, WebP, PDF",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "contextMenus, scripting, activeTab, downloads, storage; no access to all sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "asked",
+     "text": "When asked",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [],
+   "summary": "Adds PNG, JPG, WebP and PDF to the right-click menu. Its package asks for activeTab rather than access to all sites."
+  },
+  {
+   "id": "saveimageastype-quality",
+   "name": "Save Image As Type",
+   "publisher": "saveimageastype",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-09-11",
+     "version": "1.5.9",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-type/aninmieokgdbdcgoiglchhhhbpnpolja",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Daninmieokgdbdcgoiglchhhhbpnpolja%26uc",
+     "label": "manifest.json in the Chrome package, version 1.5.9"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "JPG, PNG, WebP",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "File names taken from the source image",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "yes",
+     "text": "“All image processing done locally”",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "contextMenus, downloads, storage, offscreen; all sites; a script on every site",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Quality slider for JPG and WebP",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Saves JPG, PNG or WebP with a quality slider for JPG and WebP. Its listing says images are processed locally."
+  },
+  {
+   "id": "image-formatter",
+   "name": "Image Formatter: Save Image As Type",
+   "publisher": "Save Image As PNG JPG Formats",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2025-02-23",
+     "version": "1.0.5",
+     "source": "chrome"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/image-formatter-save-imag/kapklhhpcnelfhlendhjfhddcddfabap",
+     "label": "Chrome Web Store listing"
+    },
+    "manifest": {
+     "url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=131.0&acceptformat=crx2,crx3&x=id%3Dkapklhhpcnelfhlendhjfhddcddfabap%26uc",
+     "label": "manifest.json in the Chrome package, version 1.0.5"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG, WebP",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "scripting, storage, contextMenus, downloads, alarms, notifications; all sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [],
+   "summary": "Adds PNG, JPG and WebP to the right-click menu, converting modern formats such as WebP as it saves."
+  },
+  {
+   "id": "save-webp-as-png-or-jpeg",
+   "name": "Save webP as PNG or JPEG (Converter)",
+   "publisher": "jscher2000",
+   "stores": [
+    {
+     "store": "firefox",
+     "updated": "2026-01-30",
+     "version": "1.5.5",
+     "source": "firefox"
+    }
+   ],
+   "sources": {
+    "firefox": {
+     "url": "https://addons.mozilla.org/firefox/addon/save-webp-as-png-or-jpeg/",
+     "label": "Firefox Add-ons listing"
+    },
+    "repo": {
+     "url": "https://github.com/jscher2000/Save-webP-as-extension",
+     "label": "Source code on GitHub"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPEG (quality choice)",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "partial",
+     "text": "Not in the add-on: a button sends animated WebP to ezgif.com to make a GIF",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24",
+     "short": "Via ezgif.com"
+    },
+    "copyPng": {
+     "value": "yes",
+     "text": "Yes (optional clipboard permission)",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Date or site subfolders inside Downloads",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "yes",
+     "text": "Yes, MPL 2.0",
+     "sources": [
+      "firefox",
+      "repo"
+     ],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "all sites, downloads, menus, storage, webRequest, webRequestBlocking; optional clipboardWrite, notifications",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Converts any image, including AVIF, to PNG or JPEG",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "Shift+click saves PNG, Ctrl+click saves JPEG",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "Re-requests an image as Internet Explorer 11 to get a JPEG or PNG",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Open source under MPL 2.0, it converts any image, WebP and AVIF included, to PNG or JPEG, with format and quality buttons over the image you right-clicked."
+  },
+  {
+   "id": "d7om-save-image-as-type",
+   "name": "Save image as Type",
+   "publisher": "D7OM",
+   "stores": [
+    {
+     "store": "firefox",
+     "updated": "2026-11-16",
+     "version": "20.3.2",
+     "source": "firefox"
+    }
+   ],
+   "sources": {
+    "firefox": {
+     "url": "https://addons.mozilla.org/firefox/addon/siat/",
+     "label": "Firefox Add-ons listing"
+    },
+    "repo": {
+     "url": "https://github.com/d7omdev/Save-Image-as-Type",
+     "label": "Source code on GitHub"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG, WebP",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "yes",
+     "text": "Yes: GPL-2.0-only on Firefox Add-ons, MIT on GitHub",
+     "sources": [
+      "firefox",
+      "repo"
+     ],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "downloads, notifications, contextMenus, activeTab, scripting, storage; all sites",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Default format: skip the submenu",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Saves PNG, JPG or WebP from the right-click menu, with an option to set a default format. The source is public on GitHub."
+  },
+  {
+   "id": "nullbrains-webp-avif",
+   "name": "WebP / Avif image converter",
+   "publisher": "Nullbrains",
+   "stores": [
+    {
+     "store": "firefox",
+     "updated": "2024-06-20",
+     "version": "1.3.1",
+     "source": "firefox"
+    }
+   ],
+   "sources": {
+    "firefox": {
+     "url": "https://addons.mozilla.org/firefox/addon/webp-image-converter/",
+     "label": "Firefox Add-ons listing"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "JPG, PNG",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Download location and filename patterns (date, origin, format), inside Downloads",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "partial",
+     "text": "MPL 2.0 licence on Firefox Add-ons; no source link",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24",
+     "short": "Licence only"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "storage, downloads, contextMenus, all sites, file:///*; optional webRequest",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Per-format rules: choose what each input format becomes",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Converts WebP and AVIF to JPG or PNG as you save, with rules per input format and file-name patterns to keep downloads sorted."
+  },
+  {
+   "id": "yuke-save-image-as-type",
+   "name": "Save Image As Type - WebP to JPG, PNG, PDF",
+   "publisher": "Yuke LLC (Mooniedove on Edge, selim on Firefox)",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-11-21",
+     "version": "3.7.27",
+     "source": "chrome"
+    },
+    {
+     "store": "edge",
+     "updated": "2026-11-20",
+     "version": "3.7.27",
+     "source": "edge"
+    },
+    {
+     "store": "firefox",
+     "updated": "2026-11-20",
+     "version": "3.7.27",
+     "source": "firefox"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/save-image-as-type-webp-t/cdbiiebbmakabndhlnmafglhljenfood",
+     "label": "Chrome Web Store listing"
+    },
+    "edge": {
+     "url": "https://microsoftedge.microsoft.com/addons/detail/aimjfikbljkilfbogncobdkmmnbkldok",
+     "label": "Edge Add-ons listing"
+    },
+    "firefox": {
+     "url": "https://addons.mozilla.org/firefox/addon/save-image-as-type-instant/",
+     "label": "Firefox Add-ons listing"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "JPG, PNG, WebP, AVIF, PDF, or the original file",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24",
+     "short": "JPG, PNG, WebP, AVIF, PDF, original"
+    },
+    "animated": {
+     "value": "yes",
+     "text": "Via “Save original file”: an animated GIF stays animated",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "yes",
+     "text": "Yes",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Pick a folder once; filename placeholders (name, site, date, counter, alt text)",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "yes",
+     "text": "“Nothing is uploaded”",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "no",
+     "text": "No: “All Rights Reserved” on Firefox Add-ons",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "contextMenus, scripting, downloads, activeTab, storage, notifications, clipboardWrite; all sites (Edge adds offscreen)",
+     "sources": [
+      "firefox",
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "firefox",
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "yes",
+     "text": "Every image on a page as one ZIP, filtered by format or size",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Saves the visible page, a region, or the whole page as an image or PDF",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "Converts files you drop on its converter page",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "Keyboard shortcut and optional save buttons on hover",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "Quality sliders and a maximum size",
+     "sources": [
+      "firefox"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "On all three stores. Beyond saving one image, its listing describes bulk saving to a ZIP, page captures, a drop-files converter and keyboard shortcuts, none of which Imgkeep has. Its listing says it isn't connected to the Save Image As Type that was removed in March 2026."
+  },
+  {
+   "id": "saveasfile-save-image-as-png",
+   "name": "Save Image As PNG",
+   "publisher": "Save as file",
+   "stores": [
+    {
+     "store": "edge",
+     "updated": "2024-10-09",
+     "version": "1.0.0",
+     "source": "edge"
+    }
+   ],
+   "sources": {
+    "edge": {
+     "url": "https://microsoftedge.microsoft.com/addons/detail/pdbfilfafnooponneigfhkonpdlomgmo",
+     "label": "Edge Add-ons listing (incl. its published manifest)"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Save As dialog",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "activeTab, contextMenus, downloads, offscreen, scripting, storage; all sites; a script on every site",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [],
+   "summary": "Adds Save Image As PNG to the right-click menu in Edge, converting the image before the Save As dialog opens."
+  },
+  {
+   "id": "yaagame-save-image-as-type",
+   "name": "Save image as Type",
+   "publisher": "yaagame",
+   "stores": [
+    {
+     "store": "edge",
+     "updated": "2025-09-02",
+     "version": "1.0",
+     "source": "edge"
+    }
+   ],
+   "sources": {
+    "edge": {
+     "url": "https://microsoftedge.microsoft.com/addons/detail/colccedogjmcpmejgnljbkkgohngadnb",
+     "label": "Edge Add-ons listing (incl. its published manifest)"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG, WebP (quality for JPG and WebP)",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "yes",
+     "text": "“no images are sent to servers”",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "downloads, contextMenus, offscreen, scripting; all sites",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Toolbar button to save the current image or a snapshot of the tab",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Saves PNG, JPG or WebP from the right-click menu or a toolbar button, with a quality setting. Its listing says processing stays in the browser."
+  },
+  {
+   "id": "pixatab-save-image-as-type",
+   "name": "Save image as Type",
+   "publisher": "Pixatab.com",
+   "stores": [
+    {
+     "store": "edge",
+     "updated": "2024-02-08",
+     "version": "0.1",
+     "source": "edge"
+    }
+   ],
+   "sources": {
+    "edge": {
+     "url": "https://microsoftedge.microsoft.com/addons/detail/jjbakajkdhdhbgjekkjgepkfekdphclf",
+     "label": "Edge Add-ons listing (incl. its published manifest)"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "animated": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "downloads, contextMenus; all sites",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "all",
+     "text": "All sites",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "not-stated",
+     "sources": [],
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "Converts web page elements (charts, infographics) to PNG or JPG",
+     "sources": [
+      "edge"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "Its listing describes turning any element of a web page into a PNG or JPG image with a right-click, rather than saving one image file."
+  },
+  {
+   "id": "imgkeep",
+   "name": "Imgkeep",
+   "publisher": "Imgkeep (us)",
+   "stores": [
+    {
+     "store": "chrome",
+     "updated": "2026-11-23",
+     "version": "0.15.0",
+     "source": "chrome"
+    },
+    {
+     "store": "edge",
+     "updated": "2026-11-14",
+     "version": "0.12.1",
+     "source": "edge"
+    },
+    {
+     "store": "firefox",
+     "updated": "2026-11-24",
+     "version": "0.15.1",
+     "source": "firefox"
+    }
+   ],
+   "sources": {
+    "chrome": {
+     "url": "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl",
+     "label": "Chrome Web Store listing"
+    },
+    "edge": {
+     "url": "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd",
+     "label": "Edge Add-ons listing"
+    },
+    "firefox": {
+     "url": "https://addons.mozilla.org/firefox/addon/imgkeep/",
+     "label": "Firefox Add-ons listing"
+    },
+    "repo": {
+     "url": "https://github.com/ybider-tech/imgkeep",
+     "label": "Source code on GitHub"
+    },
+    "manifest": {
+     "url": "https://github.com/ybider-tech/imgkeep/blob/main/extension/manifest.json",
+     "label": "manifest.json on GitHub"
+    }
+   },
+   "facts": {
+    "formats": {
+     "value": "text",
+     "text": "PNG, JPG, WebP, GIF, PDF; AVIF, ICO, BMP or the original in More options",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24",
+     "short": "PNG, JPG, WebP, GIF, PDF + 4 more"
+    },
+    "animated": {
+     "value": "yes",
+     "text": "GIFs saved unchanged; animated WebP, AVIF and APNG become an animated GIF",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "copyPng": {
+     "value": "yes",
+     "text": "Yes",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "palette": {
+     "value": "yes",
+     "text": "Yes",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "blockedRightClick": {
+     "value": "yes",
+     "text": "“Find image here” (off until you turn it on)",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "folderNaming": {
+     "value": "yes",
+     "text": "Your folder, Downloads, or ask each time; subfolders and file names",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "local": {
+     "value": "yes",
+     "text": "Yes",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    "openSource": {
+     "value": "yes",
+     "text": "Yes, MIT",
+     "sources": [
+      "repo"
+     ],
+     "checked": "2026-11-24"
+    },
+    "permissions": {
+     "value": "text",
+     "text": "contextMenus, downloads, storage, offscreen; optional activeTab, scripting, declarativeNetRequestWithHostAccess",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "siteAccess": {
+     "value": "asked",
+     "text": "When asked",
+     "sources": [
+      "manifest"
+     ],
+     "checked": "2026-11-24"
+    },
+    "bulk": {
+     "value": "soon",
+     "text": "Coming soon",
+     "sources": [],
+     "note": "Imgkeep's own plan; no public page yet.",
+     "checked": "2026-11-24"
+    }
+   },
+   "alsoStated": [
+    {
+     "text": "No page screenshots",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    },
+    {
+     "text": "No keyboard shortcuts",
+     "sources": [
+      "chrome"
+     ],
+     "checked": "2026-11-24"
+    }
+   ],
+   "summary": "We make Imgkeep, so weigh this row accordingly. It saves the one image you right-click, in nine formats, copies it as PNG, takes its colour palette and can find photos that sites hide from the right-click. It doesn't capture pages or offer keyboard shortcuts, and saving every image on a page at once is coming soon."
+  }
+ ],
+ "tableRows": [
+  [
+   "formats",
+   "Formats"
+  ],
+  [
+   "animated",
+   "Keeps animation"
+  ],
+  [
+   "bulk",
+   "Bulk save"
+  ],
+  [
+   "openSource",
+   "Open source"
+  ],
+  [
+   "siteAccess",
+   "Site access"
+  ]
+ ],
+ "needs": [
+  [
+   "bulk",
+   "Save every image on a page"
+  ],
+  [
+   "animated",
+   "Keep animations"
+  ],
+  [
+   "pdf",
+   "Save as PDF"
+  ],
+  [
+   "openSource",
+   "Open source"
+  ],
+  [
+   "siteAccess",
+   "No access to every site"
+  ],
+  [
+   "blockedRightClick",
+   "Photos that block right-click"
+  ]
+ ]
+}

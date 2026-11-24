@@ -16,7 +16,7 @@ test.beforeAll(async () => {
 test.afterAll(() => server?.close());
 
 // Guide pages live in folders and are served (and canonical) at their folder URL, with a trailing slash.
-const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "chrome-saves-images-as-jfif", "save-animated-webp-as-gif", "save-image-as-pdf", "save-image-as-type-alternative", "save-image-right-click-not-working", "web-image-into-canva-figma-google-slides"];
+const GUIDES = ["chrome-saves-images-as-webp", "save-webp-as-jpg-png", "save-avif-as-jpg-png", "chrome-saves-images-as-jfif", "save-animated-webp-as-gif", "save-image-as-pdf", "save-image-as-type-alternative", "save-image-right-click-not-working", "web-image-into-canva-figma-google-slides", "best-save-image-as-extensions", "imgkeep-vs-save-webp-as-png-or-jpeg"];
 const STORE = "https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl";
 const EDGE = "https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd";
 // The home H1: what Imgkeep does (for search), then the tagline.
@@ -172,7 +172,8 @@ test("Add to Chrome points to the live store listing", async ({ page }) => {
 test("guide pages: one tagged store link each, linked to each other, from home and from support", async ({ page }) => {
   for (const guide of GUIDES) {
     await page.goto(`${server.url}/${guide}/`);
-    const store = page.locator(`a[href^="${STORE}"]`);
+    // Fact entries on the comparison pages cite Imgkeep's own listing as a source; those aren't calls to install.
+    const store = page.locator(`a[href^="${STORE}"]:not(.entry a)`);
     await expect(store, `${guide}: one store link`).toHaveCount(1);
     await expect(store).toHaveAttribute("href", `${STORE}?utm_source=imgkeep.app&utm_medium=landing&utm_campaign=${guide}`);
     await expect(page.locator('main a[href="../"], header a[href="../"]').first()).toBeVisible();
@@ -194,6 +195,38 @@ test("guide pages: one tagged store link each, linked to each other, from home a
     const article = page.locator("#image-guides article", { has: page.locator(`h3 a[href="${guide}/"]`) });
     await expect(article, `home previews ${guide}`).toHaveCount(1);
     await expect(article.locator(`a.more[href="${guide}/"]`)).toHaveCount(1);
+  }
+});
+
+// The comparison pages are rendered from data/competitor-facts.json: they must match it, show when the facts
+// were checked and how to send a correction, and use no competitor logos or icons (names in plain text only).
+test("comparison pages match the facts file, with sources and a last-checked date", async ({ page }) => {
+  const { render, PAGES: FILES, FACTS_FILE } = await import("../scripts/build-comparisons.mjs");
+  const data = JSON.parse(await readFile(FACTS_FILE, "utf8"));
+  for (const [key, file] of Object.entries(FILES)) {
+    const html = await readFile(join(ROOT, file), "utf8");
+    expect(await render(key, html, data), `${file} is out of date: run node scripts/build-comparisons.mjs`).toBe(html);
+    const imgs = [...html.matchAll(/<img [^>]*src="([^"]+)"/g)].map((m) => m[1]);
+    expect(imgs.filter((src) => !/icon128\.png|media\/guides\//.test(src)), `${file}: only Imgkeep's own icon and screenshots`).toEqual([]);
+    await page.goto(`${server.url}/${file.replace(/^site\//, "").replace(/index\.html$/, "")}`);
+    await expect(page.locator("main .checked time").first()).toHaveAttribute("datetime", data.checked);
+    await expect(page.locator(`main a[href="mailto:${data.contact}"]`).first()).toBeVisible();
+  }
+  // On a phone the tables scroll inside their own boxes; the page itself never scrolls sideways.
+  await page.setViewportSize({ width: 375, height: 800 });
+  for (const file of Object.values(FILES)) {
+    await page.goto(`${server.url}/${file.replace(/^site\//, "").replace(/index\.html$/, "")}`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), `${file} fits a phone`).toBe(375);
+  }
+  // Every fact that isn't "Not stated" names at least one source the extension's entry defines.
+  for (const e of data.extensions) {
+    for (const [k, f] of Object.entries(e.facts)) {
+      expect(f.checked, `${e.id}.${k} has a checked date`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      // "soon" is only for Imgkeep's own plans, which have no public source yet.
+      if (f.value === "soon") expect(e.id, `${e.id}.${k}: only Imgkeep can say "soon"`).toBe("imgkeep");
+      else if (f.value !== "not-stated") expect(f.sources.length, `${e.id}.${k} has a source`).toBeGreaterThan(0);
+      for (const s of f.sources) expect(e.sources[s]?.url, `${e.id}.${k}: source ${s}`).toMatch(/^https:\/\//);
+    }
   }
 });
 
@@ -433,7 +466,8 @@ test("guides open with a short answer, a date and screenshots", async ({ page })
     for (const img of await shots.all()) {
       expect(await img.getAttribute("alt")).toBeTruthy();
       await img.scrollIntoViewIfNeeded();
-      expect(await img.evaluate((i) => i.complete && i.naturalWidth > 0), await img.getAttribute("src")).toBe(true);
+      // Lazy images start loading on the scroll, so wait for this one rather than check at once.
+      await expect.poll(() => img.evaluate((i) => i.complete && i.naturalWidth > 0), { message: await img.getAttribute("src") }).toBe(true);
     }
     expect((await page.request.get(article.image.replace("https://imgkeep.app", server.url))).status()).toBe(200);
   }
