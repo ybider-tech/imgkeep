@@ -269,7 +269,9 @@ function relinkLd(obj, lang) {
   const walk = (o, key) => {
     if (Array.isArray(o)) return o.map((v) => walk(v, key));
     if (o && typeof o === "object") return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, walk(v, k)]));
-    if (typeof o === "string" && ["url", "item"].includes(key) && o.startsWith(ORIGIN)) {
+    // The page's language: "inLanguage" names the translation, not English.
+    if (key === "inLanguage" && o === "en") return SITE_LANGS[lang].hreflang;
+    if (typeof o === "string" && ["url", "item", "mainEntityOfPage"].includes(key) && o.startsWith(ORIGIN)) {
       const u = new URL(o);
       if (pages.has(u.pathname)) return ORIGIN + toUrl(lang, u.pathname) + u.hash;
     }

@@ -255,6 +255,23 @@ test("per-site guides: one tagged store link, a checked date, the rights note, a
   for (const guide of SITE_GUIDES) expect(sitemap, `sitemap lists ${guide}`).toContain(`<loc>https://imgkeep.app/${guide}/</loc>`);
 });
 
+// Structured data on a translated page describes that page: its language and its own address.
+test("translated pages' structured data names their language and address", async () => {
+  for (const file of SITE_PAGES) {
+    for (const [lang, info] of Object.entries(SITE_LANGS)) {
+      const html = await readFile(join(ROOT, "site", lang, file), "utf8");
+      const url = `https://imgkeep.app/${lang}${urlPath(file)}`;
+      for (const [, json] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+        const nodes = [JSON.parse(json)].flatMap((d) => d["@graph"] || [d]);
+        for (const n of nodes) {
+          if (n.inLanguage) expect(n.inLanguage, `${lang}/${file} ${n["@type"]} inLanguage`).toBe(info.hreflang);
+          if (typeof n.mainEntityOfPage === "string") expect(n.mainEntityOfPage, `${lang}/${file} mainEntityOfPage`).toBe(url);
+        }
+      }
+    }
+  }
+});
+
 test("guides have a visible way back to the home page", async ({ page }) => {
   for (const slug of GUIDES) {
     await page.goto(`${server.url}/${slug}/`);
