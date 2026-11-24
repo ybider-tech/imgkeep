@@ -1,112 +1,95 @@
 # Imgkeep
 
-Right-click any image and save it as PNG, JPG, WebP, GIF (animation included) or PDF. Imgkeep converts it on your computer and saves it where you want.
+**Save image as PNG, JPG, WebP, GIF or PDF — free, open-source browser extension** for Chrome, Edge and Firefox. Right-click any image, pick a format, and Imgkeep converts it on your computer and saves it where you want. WebP and AVIF become files every app opens.
+
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fkclfgbmjaafglfifenonfcahfdmajbl?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl)
+[![Firefox Add-ons](https://img.shields.io/amo/v/imgkeep?label=Firefox%20Add-ons)](https://addons.mozilla.org/firefox/addon/imgkeep/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+**Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd) · [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/imgkeep/) · **Website:** [imgkeep.app](https://imgkeep.app) · **No extension needed:** [free online image converter](https://imgkeep.app/convert/)
 
 ![The Imgkeep right-click menu: PNG, JPG, WebP, GIF, PDF, Original format, Copy as PNG, Get colour palette and More options](store/screenshot-1-menu.png)
 
-**Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) · [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd) · **Website:** [imgkeep.app](https://imgkeep.app) · Free, [MIT licensed](LICENSE)
-
 ▶ [Watch the 30-second tour](https://youtu.be/A0kO0Whgqhs)
 
-## Why
+## Features
 
-Chrome now often saves images as WebP or AVIF, which many apps still can't open. The most popular fix, "Save image as Type" (1M+ users), was sold in late 2025 and removed from the Chrome Web Store as malware in March 2026 after it started injecting affiliate links ([9to5Google](https://9to5google.com/2026/03/16/image-saving-chrome-extension-removed-as-malware/)). Imgkeep does the same everyday job, built so it can't do that.
+- **Save as PNG, JPG, WebP, GIF or PDF** from the right-click menu, or keep the **original format** untouched.
+- **More formats in More options:** AVIF (often half the size of a JPG), ICO (16 to 256 px in one file, for favicons and shortcuts), BMP, and APNG (animated PNG in full colour).
+- **Animation kept:** animated GIFs are saved as they are; animated WebP, AVIF and APNG become an animated GIF with their timing and transparency.
+- **PDF:** one page, exactly the image's size; transparency kept.
+- **Copy as PNG:** puts the image on your clipboard as a real PNG, ready to paste into a chat, document or design tool.
+- **Get colour palette:** the image's 5, 8 or 12 main colours. Copy one as HEX, RGB or HSL, copy all as CSS variables, Tailwind, JSON or a list, or save a PNG swatch strip, a GIMP `.gpl` or an Adobe `.ase` file.
+- **Find image here:** on sites that cover their photos with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads), finds the image under your click at its largest size. Off until you turn it on.
+- **Keyboard shortcut and toolbar button** (0.15): point at an image and press **Alt+S** (Option+S on a Mac, Alt+Shift+S in Firefox) to save it in the format you used last; the toolbar button lists the images on screen to pick from. Uses the same setting as Find image here.
+- **Save the full-size version** (Options, off by default): when a site shows a smaller copy made by its image service (Pinterest, X, Reddit, Etsy, Shopify, WordPress, Unsplash, Wikipedia), Imgkeep asks that service for the full-size file, and saves the image you clicked if it can't get it.
+- **More options:** a live preview with the result's real size in pixels and kilobytes; choose format, maximum width, quality, the background colour for JPG and the file name.
+- **Resize:** an optional maximum width scales larger images down, keeping their shape; smaller ones are never enlarged.
+- **Your folder and file names:** save to Downloads, a folder you choose (Chrome and Edge) or ask every time, with an optional subfolder. Names from a template with `{name}`, `{host}`, `{site}`, `{title}`, `{date}`, `{time}`, `{w}`, `{h}`, `{original}` and `{n}`. Never overwrites a file.
+- **"Last used" first:** your last format is offered again at the top of the menu.
+- **Checked output:** each file's first bytes must match the format you chose, so you never get a mislabelled file.
+- **51 languages,** following your browser's language; Arabic, Hebrew and Persian right to left.
 
-## Built to be trusted
+## Install
 
-- Four permissions: `contextMenus`, `downloads`, `storage`, `offscreen`, plus two optional ones (`activeTab`, `scripting`) that stay off until you turn on **Find image here**. Imgkeep only looks at a page when you ask it to find an image there, just that page, just then. It never changes a page. See [PERMISSIONS.md](PERMISSIONS.md).
-- No remote code. Network use: fetching the image you clicked, and (since 0.7.0) one anonymous daily summary of feature use to PostHog (EU; Aptabase until 0.8.1), on by default and off in Options. Never images, addresses, file names or identifiers.
-- No welcome tabs, badges or upsells. Imgkeep asks for a rating after real use, at most three times, and stops as soon as you rate it or say no. Otherwise a small window opens only when a save needs your decision.
-- Plain JavaScript ES modules, no build step, no npm dependencies. One small library is vendored as a single readable file: [gifenc](https://github.com/mattdesl/gifenc) (MIT) in `extension/lib/gifenc.js`, for making GIFs. Since 0.10.0 there is one compiled part: the AVIF encoder in `extension/vendor/avif` ([libavif](https://github.com/AOMediaCodec/libavif) 1.0.1 with libaom, via [@jsquash/avif](https://github.com/jamsinclair/jSquash) 2.1.1, unchanged). The static check pins its exact bytes (SHA-256), and `extension/vendor/avif/README` says how to compare them with the published package. It's loaded only when you save as AVIF.
+- **Chrome:** [Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl) (Chrome 116 or newer)
+- **Microsoft Edge:** [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd)
+- **Firefox:** [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/imgkeep/) (Firefox 140 or newer)
 
-Privacy policy: [extension/PRIVACY.md](extension/PRIVACY.md) · Feature ideas and votes: [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas)
+Store versions can lag a few days behind this repository while a release is in review.
 
-If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews) helps others find it. (The extension asks after you've used it for a while, at most three times, and stops as soon as you rate it or say no.)
+## How to use
 
-## How it works
+1. Right-click any image and choose **Imgkeep**.
+2. Pick **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF** or **Original format**; or **Copy as PNG**, **Get colour palette** or **More options…**.
+3. The file is saved to your Downloads folder, the folder you chose, or wherever you pick each time.
 
-- **One network request:** the image you right-clicked, fetched in an offscreen document ([`extension/offscreen.js`](extension/offscreen.js)). Nothing else is ever requested.
-- **Local conversion:** PNG, JPG and WebP are drawn on a canvas at the image's natural size. For GIF, `ImageDecoder` reads animated WebP, AVIF and APNG frame by frame and gifenc encodes them ([`extension/lib/gif.js`](extension/lib/gif.js)); animated GIFs are saved byte for byte.
-- **No host permissions at install:** if a site blocks cross-origin reads, a small window asks whether to allow that one site (`https://that-site/*`). It asks only after you click, and you can remove the site in Options.
-- **Enforced by tests:** [`tests/static-check.mjs`](tests/static-check.mjs) fails the build if the permissions change, if `fetch(` appears in any file other than `offscreen.js`, or if any extension file references an outside URL.
+If the right-click doesn't reach a photo, choose **Imgkeep: Find image here…** or press **Alt+S** over it. If a site refuses to hand over its image, a small window asks whether to allow that one site; you can remove sites later in Options. Settings are in the extension's **Options**.
 
-## What it does
+Step-by-step guides on imgkeep.app:
 
-Right-click an image → **Imgkeep** → **PNG**, **JPG**, **WebP**, **GIF (keeps animation)**, **PDF**, **Original format**, **Copy as PNG**, **Get colour palette** or **More options…**.
+- [Why Chrome saves images as WebP](https://imgkeep.app/chrome-saves-images-as-webp/) · [Save WebP as JPG or PNG](https://imgkeep.app/save-webp-as-jpg-png/) · [Save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/) · [Chrome saves JFIF](https://imgkeep.app/chrome-saves-images-as-jfif/)
+- [Save an animated WebP as a GIF](https://imgkeep.app/save-animated-webp-as-gif/) · [Save an image as PDF](https://imgkeep.app/save-image-as-pdf/) · [Web images into Canva, Figma or Google Slides](https://imgkeep.app/web-image-into-canva-figma-google-slides/)
+- [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/) · Save images from [Pinterest](https://imgkeep.app/save-images-from-pinterest/), [Instagram](https://imgkeep.app/save-images-from-instagram/), [Google Images](https://imgkeep.app/save-images-from-google-images/), [X (Twitter)](https://imgkeep.app/save-images-from-x-twitter/), [Reddit](https://imgkeep.app/save-images-from-reddit/) or [Facebook](https://imgkeep.app/save-images-from-facebook/)
+- [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/) · [The best Save Image As extensions, compared](https://imgkeep.app/best-save-image-as-extensions/) · [Imgkeep vs Save webP as PNG or JPEG](https://imgkeep.app/imgkeep-vs-save-webp-as-png-or-jpeg/)
 
-- **Get colour palette** (0.11.0): the image's 5, 8 or 12 main colours, largest first, with how much of the image each one covers. Click one to copy it as HEX, RGB or HSL; copy them all as CSS variables, a Tailwind snippet, JSON or a list; or save them as a PNG swatch strip, a `.gpl` palette (GIMP, Inkscape, Krita) or an `.ase` file (Adobe Illustrator, Photoshop, InDesign). Worked out on your computer (`extension/lib/palette.js`: k-means in Lab colour space with a fixed seed, so the same image always gives the same palette). Also in More options, so it works for images found by Find image here.
+### Known limits
 
-- Reads WebP, AVIF, SVG, PNG, JPG, GIF and `data:` images.
-- **GIF keeps animation:** an animated GIF is saved exactly as it is; animated WebP, AVIF and APNG are converted frame by frame, keeping each frame's timing and transparency. A still image saved as GIF becomes a one-frame GIF. GIFs are made at most 800px wide (larger ones are scaled down, keeping their shape).
-- **PDF:** one page, exactly the image's size (1 pixel = 1 point). Photos are stored as JPEG at your JPG quality; images with transparency are stored losslessly and keep their transparency. Very large images keep every pixel, but their page is scaled to PDF's 14,400-point limit.
-- JPG gets your background colour behind transparent areas (default white).
-- Quality: JPG 92 and WebP 90 by default, adjustable from 50 to 100.
-- File names from a template, default `{name}`. Tokens: `{name}` (file name from the URL, `image` for `data:` URLs), `{host}` (without `www.`), `{date}` (YYYY-MM-DD), `{time}` (HHMMSS), `{w}`, `{h}`. The subfolder setting takes the same tokens, e.g. `Imgkeep/{host}`. Characters that are illegal on Windows or macOS are removed.
-- Never overwrites a file.
-- **Maximum width** (Options → Quality and size, off by default): wider images are scaled down to fit, keeping their shape; smaller ones are never enlarged. Applies to every format except Original format. GIFs also stay within their own 800px limit; a GIF that is already a GIF is saved as it is.
-- **Checked output:** each converted file's first bytes must match the chosen format, and the file extension comes from them. A mismatch is an error, never a mislabelled file.
-- **Copy as PNG:** puts a PNG (transparency kept) on the clipboard. It runs in a small Imgkeep window, because the browser only lets a focused page write images to the clipboard; that's why no clipboard permission is needed. The window closes itself after "Copied". If the clipboard refuses, nothing on it changes and you can save the PNG instead.
-- **Find image here (opt-in):** on sites that cover their photos with another layer (Instagram, Pinterest, Facebook, X, Tumblr, Flickr, Threads), right-click → **Imgkeep: Find image here…**. Imgkeep runs `extension/lib/find-image.js` once in that tab: it takes the layer under the pointer, picks the image that overlaps it most (its largest `srcset` version), and opens it in More options; if the layer covers the whole screen (a sign-in wall) or nothing matches, a picker shows the images on screen. Uses the optional `activeTab` and `scripting` permissions, off until turned on in Options or on first use.
-- **Uninstall form:** after an uninstall, the browser opens a short, optional Google Form asking why (`extension/lib/uninstall.js`, `store/uninstall-form/`). Only the version is in its address; it collects no emails.
-- **"Last used" first:** the format of your last save from the menu is offered again as the top item ("JPG (last used)"), above a separator, so it's always in the same spot. Stored in local storage.
-- **"New" labels and the rating ask:** items added since your previous version say "New" in the menu for 30 days after an update. After real use (5 successful saves or copies, 2 days, last 3 saves worked) Imgkeep asks for a rating, saying how many images it has handled for you: after a copy or a save in More options, or in a small window of its own after a quick save from the menu (whichever comes first), and as a menu item for up to 14 days. "Rate Imgkeep" or "Don't ask again" ends it for good. "Later", or no answer, asks again after 20 more saves and a week, at most three asks in all (once until 0.15.1). Counted in local storage only (`extension/lib/review.js`). Options always has a quiet "Rate Imgkeep" link.
-- **More options…:** a window with a live preview and the result's real dimensions and file size (1 kB = 1,000 bytes), plus format (PNG, JPG, WebP), maximum width, quality (JPG and WebP), JPG background and file name. **Save** uses your save mode and folder like any other save; **Copy as PNG** copies at the chosen width.
-- **51 languages:** every language the Chrome Web Store offers, from Amharic to Vietnamese, following the browser's language. Arabic, Hebrew and Persian are laid out right to left.
+- Very large images may exceed the browser's canvas limit ("too large to convert").
+- GIF has 256 colours per frame and on/off transparency, and is limited to 600 frames, about 150 million source pixels in total and 90 seconds of work. Videos can't be saved as GIF.
+- CSS background images and `<canvas>` drawings aren't offered as images by the right-click menu, and formats the browser can't decode (such as HEIC and TIFF) can't be converted.
+- In Firefox there's no "A folder you choose" (Firefox has no folder access API): use Downloads or ask every time.
+- After a browser restart, Chrome and Edge may ask you to reconnect your chosen folder with one click.
+- Images on the browser's own add-on stores can't be saved: browsers keep extensions out of them.
 
-## Save modes
+## Privacy
 
-| Mode | What happens |
-|---|---|
-| **Downloads folder** (default) | `chrome.downloads` into your downloads folder (plus subfolder). The browser adds " (1)" if the name exists. |
-| **A folder you choose** | Pick a folder once in Options. The offscreen document writes the file straight into it, creating subfolders and adding " (2)", " (3)"… instead of overwriting. If the browser needs your OK again, a small window asks you to reconnect and then writes the file. |
-| **Ask every time** | The browser's Save As dialog for each image. |
+From the [privacy policy](extension/PRIVACY.md) (also at [imgkeep.app/privacy.html](https://imgkeep.app/privacy.html)):
 
-If a site blocks cross-site image reads, **Allow and save** requests access to that one site and retries, and **Save original format instead** downloads the file untouched. You can remove sites in Options → **Sites you've allowed**.
+- **Your images never leave your computer.** Imgkeep reads only the image you choose, converts it on your computer and uploads nothing.
+- **One anonymous daily summary of feature use** (counts like "12 saves as JPG, 1 failed", plus version, browser and language) is sent to PostHog's EU cloud. Never images, addresses, file names or identifiers. It's **on by default in Chrome and Edge and off in Firefox unless you allow it** at install, and you can turn it off in Options under "Anonymous usage counts", which also deletes anything not yet sent. Options shows exactly what's counted.
+- **It doesn't read the sites you visit,** with exceptions you control: Find image here, Alt+S and the toolbar button look at that one page, at that moment, only when you use them; and a `blob:` image that only exists inside its page is read only after you allow the site. It never changes a page.
+- **Network use:** the image you chose (or, with "Save the full-size version" on, its full-size file from the same image service), and the daily summary. If a site refuses an image and you allow it, Imgkeep repeats that one request with the site you were on as its Referer.
+- **Permissions:** `contextMenus`, `downloads`, `storage` and `offscreen` at install; optional `activeTab`, `scripting` and `declarativeNetRequestWithHostAccess`, plus access to a site only when you allow it. Each is explained in [PERMISSIONS.md](PERMISSIONS.md).
+- **No ads, no welcome tabs, no upsells.** Imgkeep asks for a rating after real use, at most three times, and stops as soon as you rate it or say no.
+- **No remote code.** Plain JavaScript modules with no build step. The one compiled part, the AVIF encoder ([libavif](https://github.com/AOMediaCodec/libavif) via [@jsquash/avif](https://github.com/jamsinclair/jSquash), unchanged), is pinned by its SHA-256 and loads only when you save as AVIF. `tests/static-check.mjs` fails the build if permissions change, if network code appears outside `offscreen.js` and `lib/telemetry.js` (plus one in-page read for `blob:` images in `lib/read-blob.js`), or if extension files reference outside URLs.
 
-## Load it unpacked
+## Build from source
 
-1. Open `chrome://extensions` and turn on **Developer mode**.
-2. Click **Load unpacked** and pick the `extension/` folder.
-3. Right-click any image. Settings: the extension's **Details → Extension options**, or the Extensions (puzzle) menu → ⋮ → **Options**.
+The extension has no build step and no dependencies: the `extension/` folder is the extension.
 
-Needs Chrome 116 or newer, or Microsoft Edge. Tested automatically on the current Chromium (macOS locally, Linux and Windows in CI); 116 is the declared minimum (offscreen documents and the APIs used all exist there) but isn't tested automatically.
+**Chrome or Edge:** open `chrome://extensions` (or `edge://extensions`), turn on **Developer mode**, click **Load unpacked** and pick the `extension/` folder.
 
-## Known limits
+**Firefox:** Firefox needs a slightly different manifest (a background page instead of a service worker). Build it and load it temporarily:
 
-- **Folder reconnect after a restart.** The browser forgets folder access when it restarts unless you chose **Allow on every visit**. Then the first save asks you to reconnect (one click). This can't be done silently: the browser requires a click to grant folder access.
-- **Page `blob:` images can't be saved yet.** Some sites draw images from `blob:` URLs that only exist inside the page. Find image here doesn't offer them either (it only returns web addresses). A screenshot works.
-- **Original format and Ask always use Downloads.** In folder mode, **Original format** still saves through the browser's downloads (with your subfolder and name template). **Ask every time** uses the Save As dialog.
-- **Original format without a file extension** in the URL is named by the browser from the server's answer, without your subfolder or template.
-- Very large images may exceed the browser's canvas limit; you'll see "too large to convert".
-- PNG, JPG, WebP and PDF output is always a still image: animated images are saved as their first frame. Choose **GIF** to keep the animation.
-- GIF output is limited to 600 frames and about 150 million source pixels in total (width × height × frames), and stops after 90 seconds. Bigger animations show a "too large" or "took too long" message.
-- GIF has 256 colours per frame and on/off transparency, so photos and soft edges look coarser than in the original. Converting to GIF is a trade-off for compatibility.
-- Videos can't be saved as GIF yet.
-- **Unsupported sources:** `blob:` images that only exist inside a page, CSS background images and `<canvas>` drawings (the right-click menu doesn't offer them as images), and formats Chrome itself can't decode (HEIC, TIFF). Some hotlink-protected sites refuse requests that don't come from their own pages; then **Original format** or **Open image** is the way out.
-- **More options** converts to PNG, JPG and WebP. GIF and PDF are in the right-click menu.
-- Copy as PNG needs its window to keep focus until the copy is done. If you click away while it's converting, it offers **Try again**.
+```bash
+npm install
+npm run build-firefox
+```
 
-## Free Image Converter
+Then open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `dist/firefox/manifest.json`.
 
-[imgkeep.app/convert/](https://imgkeep.app/convert/) converts images in the browser with the same code as the extension (`site/convert/lib` is a checked copy of `extension/lib`, kept identical by `npm run site-lib` and a test). It makes no network request while converting and works offline once loaded: `tests/converter.spec.mjs` checks both. No uploads, no sign-up.
-
-## Guides
-
-Step-by-step help on [imgkeep.app](https://imgkeep.app), with and without an extension:
-
-- [Why Chrome saves images as WebP (and how to get JPG or PNG)](https://imgkeep.app/chrome-saves-images-as-webp/)
-- [How to save WebP as JPG or PNG in Chrome](https://imgkeep.app/save-webp-as-jpg-png/)
-- [How to save AVIF as JPG or PNG](https://imgkeep.app/save-avif-as-jpg-png/)
-- [Chrome saves images as JFIF? How to get JPG](https://imgkeep.app/chrome-saves-images-as-jfif/)
-- [How to save an animated WebP as a GIF](https://imgkeep.app/save-animated-webp-as-gif/)
-- [How to save an image as a PDF in Chrome](https://imgkeep.app/save-image-as-pdf/)
-- [A safe alternative to Save image as Type](https://imgkeep.app/save-image-as-type-alternative/)
-- [When right-click won't save an image](https://imgkeep.app/save-image-right-click-not-working/)
-- [How to get an image from the web into Canva, Figma or Google Slides](https://imgkeep.app/web-image-into-canva-figma-google-slides/)
-
-## Development
-
-Requirements: Node.js 20 or newer. The extension needs nothing; Node is only for tests and store images.
+**Tests** (Node.js 20 or newer):
 
 ```bash
 npm install
@@ -114,62 +97,12 @@ npx playwright install chromium
 npm test
 ```
 
-`npm test` generates fixtures if missing, runs the static trust check (`tests/static-check.mjs`), then Playwright:
+## Contributing
 
-- `tests/extension.spec.mjs`: the real extension in Chromium against two local servers (one with CORS, one without).
-  - Conversions: WebP→PNG, PNG→JPG (white corners), JPG→WebP, AVIF→PNG, SVG→PNG, `data:` input, large files.
-  - GIF: animated GIF kept byte for byte; animated WebP keeps frame count, timing and transparency; still image → one-frame GIF; scaled to 800px; over the frame limit → "too large".
-  - Saving: Original format, subfolder and name template, never overwriting, folder mode.
-  - The ask window (site access, errors, folder), the options page and the context menu.
-  - Outputs are decoded and checked for format, size and pixels.
-- `tests/tools.spec.mjs`: 0.6.0 features. Checked output (MIME, bytes and extension agree), maximum width (2400 × 1200 → 1600 × 800, small images unchanged, PDF and Original format), transparency and JPG background, the size cap (at or under the cap, or a clear failure without a file), missing/corrupt/empty sources, Copy as PNG (read back from the clipboard, no download; a refused clipboard is left unchanged and offers a PNG download), More options (preview size equals the saved file, chosen width and name), concurrent saves, and that nothing is held in memory afterwards.
-- `tests/engagement.spec.mjs`: "New" labels after updates from different versions (and their expiry), the rating ask's rules (thresholds, failures, once per window, 14-day menu item, any answer ends it), the right store per browser, and the Options links.
-- `tests/settings.spec.mjs`: file-name templating, GIF size limits, resizing, output type detection and the size-cap search.
-- `tests/site.spec.mjs`: every website page loads with no console errors and no third-party requests, has a unique title, description and canonical, and is in the sitemap. Also checks that `privacy.html` matches `PRIVACY.md` and that there are no trackers.
+Ideas and votes are welcome in [GitHub Discussions](https://github.com/ybider-tech/imgkeep/discussions/categories/ideas), and bug reports in [Issues](https://github.com/ybider-tech/imgkeep/issues). For code, tests, translations and how releases work, see [CONTRIBUTING.md](CONTRIBUTING.md). Changes by version are in the [CHANGELOG](CHANGELOG.md).
 
-Other scripts:
+If Imgkeep helps you, a [rating on the Chrome Web Store](https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl/reviews) or [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/imgkeep/) helps others find it.
 
-| Command | What it does |
-|---|---|
-| `npm run check` | Static trust check only |
-| `npm run icons` | Redraws `extension/icons/*.png`, the site icons and the Edge store logo (Python 3, standard library) |
-| `npm run fixtures` | Regenerates test images (AVIF needs macOS `sips`; the file is checked in) |
-| `npm run version-css` | After editing `site/style.css`: stamps every page's stylesheet link (`style.css?v=…`) so visitors get the new styles at once. A test fails if you forget. |
-| `npm run store` | Renders `store/*.png` from `store/scenes.html`, with real captures of the options page and ask window |
-| `npm run video` | Renders the earlier 28-second demo video (2026-09; the site and stores now use the 30-second brand tour, `site/media/imgkeep-tour.mp4`) `store/imgkeep-demo.webm` (1280×720) and its poster from `store/video/demo.html`, using the ffmpeg Playwright installs. `--stills` saves a few frames to check first. |
-| `sh scripts/package.sh` | Runs the tests, then builds `dist/imgkeep-<version>.zip` |
+## License
 
-### Translations
-
-All text lives in `extension/_locales/<lang>/messages.json`; English (`en`) is the source and the fallback. Pages mark text with `data-i18n` attributes and scripts call `t(key)` from `extension/lib/i18n.js`. The offscreen document has no `chrome.i18n`, so it sends error details as `"@messageKey"` plus substitutions and the ask window translates them.
-
-To add a language: copy `en/messages.json` to `_locales/<code>/` (Chrome's locale codes, e.g. `it`, `zh_CN`), translate each `message`, and keep `$PLACEHOLDERS$`, `{tokens}`, `<code>`/`<strong>` and the `placeholders` blocks as they are (`tests/i18n/build-locale.py` copies them for you). `npm run check` lists anything missing or broken, and checks the store limits: name ≤ 75 characters, summary ≤ 132. Then add the store description to `store/listing-translations.md`.
-
-`tests/i18n.spec.mjs` opens the extension in Hebrew and Japanese (options, ask window, More options). Chromium follows the `LANGUAGE` variable on Linux and `--lang` on Windows, so these tests run in CI and are skipped on macOS, where the browser takes the system language.
-
-### Imgkeep Pro waitlist link
-
-The Options page shows a **Get notified** link under "Imgkeep Pro — coming soon" only when `PRO_WAITLIST_URL` is set in `extension/lib/settings.js`, for example `export const PRO_WAITLIST_URL = "https://imgkeep.app/pro";`. The static check only allows URLs on imgkeep.app and the Chrome Web Store, so host the waitlist page on imgkeep.app (or add its host to `ALLOWED_URL` in `tests/static-check.mjs` on purpose).
-
-## Repository layout
-
-```
-extension/   the extension (load unpacked; source of the store zip)
-site/        imgkeep.app (GitHub Pages)
-tests/       Playwright tests, fixtures, local servers, static check
-store/       listing copy, scenes and rendered store images
-scripts/     package.sh, make-icons.py, version-css.mjs
-docs/        DEPLOYMENT.md (site, domain and store setup), qa/ (release QA reports)
-```
-
-## Releasing a new version
-
-1. Bump `version` in `extension/manifest.json` (and `package.json`), and move the CHANGELOG's notes under the new version.
-2. `sh scripts/package.sh` runs every test, then builds `dist/imgkeep-<version>.zip`.
-3. Upload and submit, with the store scripts (credentials live outside the repo in `~/.config/imgkeep/`):
-   - `node scripts/cws-publish.mjs` shows Chrome's published and in-review versions (the default; it changes nothing). `--submit` uploads and submits for review, and the store publishes after approval; `--staged` waits for a manual Publish; `--upload-only` stops before submitting.
-   - `sh scripts/edge-publish.sh --submit` uploads to Edge Add-ons and submits for certification, with the notes from `store/edge-listing.md` (or pass them as an argument). `--upload-only` only replaces the draft. With no option it just prints its usage.
-   - The scripts upload the package only. If the store listing changed (descriptions in `store/listing.md`, `store/edge-listing.md`, `store/listing-translations.md`, or the privacy answers), edit it in the dashboards first. Don't submit while the previous version is still in review: a new submission replaces it.
-4. After approval, update the website if the release changes what Imgkeep does.
-
-First-time setup (GitHub Pages, domain, store accounts) is in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+[MIT](LICENSE). Vendored code keeps its own licence: [gifenc](https://github.com/mattdesl/gifenc) (MIT, noted at the top of `extension/lib/gifenc.js`) and the AVIF encoder (licence files in `extension/vendor/avif/`).
