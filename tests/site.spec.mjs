@@ -294,9 +294,8 @@ test("converter pair pages match data/pairs.json, are all on the index, and aren
   await page.goto(`${server.url}/convert/formats/`);
   for (const p of PAIR_DATA.pairs) await expect(page.locator(`main a[href="../../${p.slug}/"]`), `index lists ${p.slug}`).toHaveCount(1);
   await expect(page.locator('main a[href="../"]').first()).toBeVisible();
-  const wave = Object.fromEntries(PAIR_DATA.pairs.map((p) => [`${p.slug}/index.html`, p.wave]));
   const pages = Object.fromEntries(Object.entries(out).filter(([f]) => f !== INDEX_FILE));
-  for (const s of similarity(pages)) if (wave[s.a] || wave[s.b]) expect(s.shared, `${s.a} and ${s.b} share too much text`).toBeLessThanOrEqual(MAX_SHARED);
+  for (const s of similarity(pages)) expect(s.shared, `${s.a} and ${s.b} share too much text`).toBeLessThanOrEqual(MAX_SHARED);
 });
 
 test("guides have a visible way back to the home page", async ({ page }) => {

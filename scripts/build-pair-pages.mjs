@@ -6,7 +6,7 @@
 //   node scripts/build-pair-pages.mjs --check       exit 1 if a page doesn't match the data (used by the tests)
 //   node scripts/build-pair-pages.mjs --similarity  how much body text any two pages share (5-word shingles)
 //
-// Pages of wave 0 existed before the template; their text is kept exactly as it was. The language menu and
+// Pages of wave 0 existed before the template and keep their addresses. The language menu and
 // hreflang links are added by scripts/translate-site.mjs for translated pages, so they're kept from the current file.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -202,12 +202,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const avg = sims.reduce((t, s) => t + s.shared, 0) / sims.length;
     console.log(`${Object.keys(pages).length} pages, ${sims.length} pairs of pages. Shared 5-word shingles: highest ${(sims[0].shared * 100).toFixed(1)}%, average ${(avg * 100).toFixed(1)}%, limit ${MAX_SHARED * 100}%.`);
     for (const s of sims.slice(0, 10)) console.log(`  ${(s.shared * 100).toFixed(1).padStart(5)}%  ${s.a.replace("/index.html", "")} · ${s.b.replace("/index.html", "")}`);
-    // Pages from before the template (wave 0) are reported but not held to the limit until they're rewritten.
-    const wave = Object.fromEntries((await load()).data.pairs.map((p) => [`${p.slug}/index.html`, p.wave]));
-    const over = sims.filter((s) => s.shared > MAX_SHARED);
-    const known = over.filter((s) => !wave[s.a] && !wave[s.b]);
-    if (known.length) console.log(`Known, from before the template: ${known.map((s) => `${s.a.replace("/index.html", "")} · ${s.b.replace("/index.html", "")}`).join(", ")}`);
-    process.exit(over.length > known.length ? 1 : 0);
+    process.exit(sims.some((s) => s.shared > MAX_SHARED) ? 1 : 0);
   }
   let stale = 0;
   for (const [file, html] of Object.entries(out)) {

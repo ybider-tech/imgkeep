@@ -459,10 +459,10 @@
    "to": "png",
    "wave": 0,
    "title": "HEIC to PNG Converter: No Uploads, No Sign-Up",
-   "description": "Convert iPhone HEIC photos to PNG on your device: nothing is uploaded. Works in Chrome, Edge, Firefox and Safari, on phones too. No sign-up, no ads.",
+   "description": "Turn iPhone HEIC photos into lossless PNGs for editing, design tools and documents. Converted in your browser, so nothing is uploaded. Free, no sign-up.",
    "app": {
     "name": "HEIC to PNG Converter",
-    "description": "Convert iPhone HEIC and HEIF photos to PNG in your browser, with no uploads and no sign-up. Each result can be downloaded or copied as a PNG.",
+    "description": "Convert iPhone HEIC and HEIF photos to lossless PNG in your browser, for editing, design tools and documents. Nothing is uploaded and there's no sign-up.",
     "featureList": [
      "Converts in the browser: photos are never uploaded",
      "No account or sign-up",
@@ -474,9 +474,9 @@
    },
    "crumb": "HEIC to PNG",
    "h1": "HEIC to PNG Converter",
-   "lead": "Turn iPhone photos into PNG files that open anywhere. They're converted on your device: nothing is uploaded.",
+   "lead": "Get a lossless PNG of any iPhone photo, ready to edit, paste into a design or add to a document. It's made in your browser: nothing is uploaded.",
    "accept": "image/*,.heic,.heif,.webp,.avif,.svg,.ico,.bmp",
-   "offline": "Load this page and add a photo, then turn off your Wi-Fi: converting still works. (In Chrome, Edge and Firefox the HEIC decoder loads with your first photo; Safari doesn't need it.)",
+   "offline": "Once this page has opened one photo, it keeps converting with your Wi-Fi off. Safari reads HEIC by itself; Chrome, Edge and Firefox fetch the decoder with the first photo you add.",
    "related": [
     "heic-to-jpg",
     "webp-to-png",
@@ -485,42 +485,42 @@
    "more": [
     "webp-to-jpg"
    ],
-   "answer": "Drop your HEIC photos above, keep PNG selected, then download them, or copy one as a PNG to paste into a document or design. PNG is lossless and every app opens it, but photos as PNG are big files: for uploads and email, JPG is usually better. Nothing is uploaded, there's no sign-up, and it works on phones.",
-   "updated": "2026-11-24",
+   "answer": "Add your HEIC photos above, keep PNG selected, then download each PNG or copy it to paste into a document or design. A PNG keeps every pixel and loses nothing when you edit and save it again, but it's a large file: to upload or email a photo, JPG fits better. It runs in your browser, with nothing uploaded and no sign-up.",
+   "updated": "2026-11-25",
    "sections": [
     {
-     "h2": "Why won't my iPhone photos open on Windows?",
-     "html": "<p>iPhones save photos as HEIC (the camera's High Efficiency setting), which takes about half the space of a JPG. Windows needs extra codecs from the Microsoft Store to show HEIC, and many upload forms, web apps and older programs refuse it outright. Converting gives you a file that opens everywhere.</p>"
+     "h2": "When is PNG the right choice?",
+     "html": "<p>When you'll edit the photo again. A JPG loses a little detail each time it's saved, while a PNG can be cropped, retouched and saved as often as you like without losing any. Many design tools, slide decks and document editors also handle PNG best. To share or upload a photo as it is, <a href=\"../heic-to-jpg/\">HEIC to JPG</a> gives a far smaller file.</p>"
     },
     {
-     "h2": "PNG or JPG for a photo?",
-     "html": "<p>JPG, usually. PNG keeps every pixel, so a photo as PNG is several times bigger than as JPG, and some upload forms limit file size. Pick PNG when you'll edit the photo again or need it lossless; otherwise use <a href=\"../heic-to-jpg/\">HEIC to JPG</a>.</p>"
+     "h2": "How big will the PNG be?",
+     "html": "<p>Several times bigger than the HEIC. PNG compresses without throwing anything away, and a photo is full of fine detail, so a 12-megapixel iPhone photo of a few megabytes often becomes 15 MB or more. If that's too much, set a maximum width in Advanced options: at 2000 pixels wide the PNG is a fraction of the size and still sharp on screen.</p>"
     },
     {
-     "h2": "Are my photos uploaded?",
-     "html": "<p>No. This page opens the HEIC file on your device, with an open-source HEIC decoder (libheif) running in your browser, then converts it with the same code as the Imgkeep extension. Nothing is sent anywhere. The PNG doesn't keep the photo's EXIF details, such as where it was taken, so it's also safer to share.</p>"
+     "h2": "Paste a photo straight into a document",
+     "html": "<p>Each result has a Copy as PNG button that puts the PNG on your clipboard. Paste it into Google Docs, Slides, Figma, Canva or an email without saving a file first.</p>"
     },
     {
-     "h2": "What about Live Photos and portrait mode?",
-     "html": "<p>You get the photo itself. A Live Photo's few seconds of video and a portrait photo's depth data stay in the original file. The photo comes out the right way up, as your iPhone shows it.</p>"
+     "h2": "What happens to colours and photo details?",
+     "html": "<p>iPhones capture colour in Display P3, a wider range than most screens show. The converter turns it into standard sRGB, so the PNG looks the same in every app. Location and other EXIF details aren't copied into the PNG. A Live Photo's video and a portrait photo's depth data stay in the original HEIC.</p>"
     },
     {
-     "h2": "Does it work on my iPhone?",
-     "html": "<p>Yes. Open this page in Safari, choose your photos and download the results. Safari opens HEIC itself, so nothing extra loads. In Chrome, Edge and Firefox the page loads a HEIC decoder (about 0.5 MB) the first time you add a photo.</p>"
+     "h2": "Is anything uploaded?",
+     "html": "<p>No. Your browser decodes the HEIC with libheif, an open-source decoder, and the PNG is made on your device by the same code as the Imgkeep extension. On an iPhone, Safari reads HEIC itself; Chrome, Edge and Firefox download the decoder (about 0.5 MB) once, when you add your first photo.</p>"
     }
    ],
    "faq": [
     {
-     "q": "Does HEIC to PNG lose quality?",
-     "a": "No. PNG is lossless, so it keeps everything the photo shows. Colours are converted from the iPhone's wider Display P3 range to standard sRGB, which nearly every screen and app uses."
+     "q": "Is HEIC to PNG lossless?",
+     "a": "The PNG keeps every pixel of the decoded photo and loses nothing more when you edit and save it again. The one change is the colour conversion from Display P3 to sRGB."
     },
     {
-     "q": "Can I make the PNG smaller?",
-     "a": "Yes: set a maximum width in Advanced options before converting, or convert to JPG."
+     "q": "Will the PNG have a transparent background?",
+     "a": "No. A camera photo has no transparent areas, so its PNG doesn't either. PNG keeps transparency when an image has it, but converting doesn't remove a background."
     },
     {
-     "q": "Can I convert HEIF files too?",
-     "a": "Yes. HEIF is the same format family: .heif files open just like .heic ones."
+     "q": "Can I convert .heif files?",
+     "a": "Yes. .heif and .heic belong to the same format family and open the same way."
     }
    ],
    "card": "Need a lossless copy to edit or to paste into a design? Choose PNG, add your iPhone photos and download them, or copy one as a PNG."

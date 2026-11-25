@@ -93,22 +93,17 @@ hreflang, links and sitemap follow it.
 ## Similarity at wave 1
 
 Share of each page's own 5-word phrases (short answer to FAQ, without the shared converter and extension box) that
-another page also has. `node scripts/build-pair-pages.mjs --similarity`; the tests hold new pages to 35%.
+another page also has. `node scripts/build-pair-pages.mjs --similarity`; the tests hold every page to 35%.
 
 ```
 20 pages, 190 pairs of pages. Shared 5-word shingles: highest 60.5%, average 3.1%, limit 35%.
    60.5%  heic-to-jpg · heic-to-png
    29.7%  png-to-ico · jpg-to-ico
    22.1%  webp-to-gif · avif-to-gif
-   18.3%  webp-to-jpg · avif-to-jpg
-   17.1%  jpg-to-pdf · png-to-pdf
-   16.1%  webp-to-jpg · png-to-jpg
-   15.1%  jpg-to-png · jfif-to-png
-   12.7%  webp-to-jpg · webp-to-gif
-   10.7%  avif-to-jpg · jfif-to-jpg
-   10.1%  jpg-to-ico · svg-to-ico
-Known, from before the template: heic-to-jpg · heic-to-png
+   ...
 ```
 
-The HEIC to JPG and HEIC to PNG pages (wave 0, 2026-11-24) share most of their text; rewrite one before relying on
-both for search.
+The HEIC to JPG and HEIC to PNG pages (wave 0, 2026-11-24) shared most of their text. HEIC to PNG was rewritten on
+2026-11-25 around what PNG is for (editing without loss, file size, Copy as PNG, colour and photo details) and
+translated into all 12 languages; the two now share 4.1%, the highest pair is png-to-ico · jpg-to-ico at 29.7%, and
+the tests hold every pair page to 35%, wave 0 included.
