@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SVG in ICO umwandeln: ohne Upload, ohne Anmeldung — Imgkeep</title>
+  <meta name="description" content="Mach aus einem SVG-Logo ein Favicon (.ico) mit 16, 32 und 48 px, plus 256 px bei großen SVGs, mit Transparenz. Im Browser, ohne Upload.">
+  <link rel="canonical" href="https://imgkeep.app/de/svg-to-ico/">
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://imgkeep.app/svg-to-ico/">
+  <link rel="alternate" hreflang="uk" href="https://imgkeep.app/uk/svg-to-ico/">
+  <link rel="alternate" hreflang="ar" href="https://imgkeep.app/ar/svg-to-ico/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://imgkeep.app/zh/svg-to-ico/">
+  <link rel="alternate" hreflang="ko" href="https://imgkeep.app/ko/svg-to-ico/">
+  <link rel="alternate" hreflang="ru" href="https://imgkeep.app/ru/svg-to-ico/">
+  <link rel="alternate" hreflang="ja" href="https://imgkeep.app/ja/svg-to-ico/">
+  <link rel="alternate" hreflang="it" href="https://imgkeep.app/it/svg-to-ico/">
+  <link rel="alternate" hreflang="es" href="https://imgkeep.app/es/svg-to-ico/">
+  <link rel="alternate" hreflang="de" href="https://imgkeep.app/de/svg-to-ico/">
+  <link rel="alternate" hreflang="x-default" href="https://imgkeep.app/svg-to-ico/">
+  <script src="/lang.js" defer></script>
+  <!-- /hreflang -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Imgkeep">
+  <meta property="og:title" content="SVG in ICO umwandeln: ohne Upload, ohne Anmeldung — Imgkeep">
+  <meta property="og:description" content="Mach aus einem SVG-Logo ein Favicon (.ico) mit 16, 32 und 48 px, plus 256 px bei großen SVGs, mit Transparenz. Im Browser, ohne Upload.">
+  <meta property="og:url" content="https://imgkeep.app/de/svg-to-ico/">
+  <meta property="og:image" content="https://imgkeep.app/og-image.png?v=brand20261110">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Imgkeep: Jedes Bild. Dein Format.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","@id":"https://imgkeep.app/svg-to-ico/#app","name":"SVG-zu-ICO-Konverter","url":"https://imgkeep.app/de/svg-to-ico/","description":"Mach aus einem SVG ein .ico-Symbol in 16, 32 und 48 px, plus 256 px bei großen SVGs, mit erhaltener Transparenz, in deinem Browser, ohne Upload.","applicationCategory":"MultimediaApplication","operatingSystem":"Any (runs in a web browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Wandelt im Browser um: Bilder werden nie hochgeladen","Kein Konto, keine Anmeldung","Eine .ico mit Symbolen in 16, 32 und 48 px, plus 256 px bei großen SVGs","Transparenz bleibt erhalten"],"isPartOf":{"@id":"https://imgkeep.app/#site"},"publisher":{"@id":"https://imgkeep.app/#org"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Imgkeep","item":"https://imgkeep.app/de/"},{"@type":"ListItem","position":2,"name":"Kostenloser Bildkonverter","item":"https://imgkeep.app/de/convert/"},{"@type":"ListItem","position":3,"name":"SVG in ICO","item":"https://imgkeep.app/de/svg-to-ico/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Behält die Umwandlung von SVG in ICO die Transparenz?","acceptedAnswer":{"@type":"Answer","text":"Ja. Bereiche, die das SVG leer lässt, bleiben in jeder Größe des Symbols transparent."}},{"@type":"Question","name":"Welche Größen sind in der Datei?","acceptedAnswer":{"@type":"Answer","text":"16, 32 und 48 px, plus 256 px, wenn das SVG mindestens so breit ist oder keine eigene Größe hat. Jede Größe ist in der .ico als PNG gespeichert."}},{"@type":"Question","name":"Kann ich stattdessen ein PNG-Favicon bekommen?","acceptedAnswer":{"@type":"Answer","text":"Ja, siehe SVG in PNG, und stell dann die Größe mit „Maximale Breite“ ein."}},{"@type":"Question","name":"Wie wandle ich SVG in ICO um?","acceptedAnswer":{"@type":"Answer","text":"Zieh dein SVG nach oben, wähle ICO und lade eine .ico herunter, die das Logo in 16, 32 und 48 Pixeln enthält, mit erhaltener Transparenz. Alles läuft in deinem Browser, also wird nichts hochgeladen. Eine 256-px-Größe bekommst du außerdem, wenn das SVG mindestens 256 px breit ist oder keine eigene Größe hat (dann wird es 1024 px breit gezeichnet). Ein nicht quadratisches Logo wird auf einem transparenten Quadrat zentriert."}}]}
+  </script>
+  <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/schibsted-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css?v=f31b8d9ec9">
+  <link rel="icon" href="/favicon.png?v=brand20261110" type="image/png">
+  <script src="/stores.js" defer></script>
+  <script src="/count.js" defer></script>
+  <script type="application/json" id="strings">{"…":"…","PNG keeps transparency.":"PNG behält Transparenz.","JPG works well for photos. Transparent areas use your background colour.":"JPG eignet sich gut für Fotos. Transparente Bereiche bekommen deine Hintergrundfarbe.","WebP makes compact web images and can keep transparency.":"WebP erzeugt kompakte Webbilder und kann Transparenz erhalten.","AVIF makes very small files for the web and keeps transparency. Some older apps can't open it.":"AVIF erzeugt sehr kleine Dateien fürs Web und erhält Transparenz. Manche ältere Programme können es nicht öffnen.","For animations: animated WebP, AVIF and APNG keep moving in Chrome, Edge and Firefox. GIFs are at most 800 px wide.":"Für Animationen: animiertes WebP, AVIF und APNG bleiben in Chrome, Edge und Firefox in Bewegung. GIFs sind höchstens 800 px breit.","Creates a one-page PDF for each image.":"Erstellt für jedes Bild ein einseitiges PDF.","Creates one icon file with 16, 32 and 48 px, plus 256 px when the image is at least that big.":"Erstellt eine Icon-Datei mit 16, 32 und 48 px, dazu 256 px, wenn das Bild groß genug ist.","For software that needs BMP. Transparent areas use your background colour.":"Für Software, die BMP braucht. Transparente Bereiche bekommen deine Hintergrundfarbe.","Not in this browser":"In diesem Browser nicht verfügbar","This browser can't create WebP files":"Dieser Browser kann keine WebP-Dateien erzeugen","Drop to add images":"Zum Hinzufügen hier ablegen","Downloads started":"Downloads gestartet","More formats":"Weitere Formate","Other formats":"Andere Formate","Output: {format}":"Ausgabe: {format}","Add more images to convert to {format}":"Weitere Bilder hinzufügen, um sie in {format} umzuwandeln","Add images to convert to {format}":"Bilder hinzufügen, um sie in {format} umzuwandeln","Drop images to convert to {format}":"Bilder hier ablegen, um sie in {format} umzuwandeln","Add more images":"Weitere Bilder hinzufügen","Choose images":"Bilder auswählen","Updating results to {format}…":"Ergebnisse werden auf {format} aktualisiert…","Pasted image":"Eingefügtes Bild","{name} isn't an image this converter can open.":"{name} ist kein Bild, das dieser Konverter öffnen kann.","{name} exceeds the 50 MB limit.":"{name} überschreitet das Limit von 50 MB.","You can add up to {max} files. Remove an image to add {name}.":"Du kannst bis zu {max} Dateien hinzufügen. Entferne ein Bild, um {name} hinzuzufügen.","Waiting: fix the setting above":"Wartet: Einstellung oben korrigieren","Couldn't add {name}":"{name} konnte nicht hinzugefügt werden","From {name}":"Aus {name}","Queued":"In Warteschlange","Remove":"Entfernen","Remove {name}":"{name} entfernen","Removed {name}":"{name} entfernt","Updating results…":"Ergebnisse werden aktualisiert…","Opening the HEIC photo…":"HEIC-Foto wird geöffnet…","Converting…":"Wird konvertiert…","(original {size})":"(Original: {size})","Ready":"Fertig","Download {format}":"{format} herunterladen","Download started: {name}":"Download gestartet: {name}","It may be damaged, or a format this browser can't open.":"Sie ist möglicherweise beschädigt oder hat ein Format, das dieser Browser nicht öffnen kann.","This browser can't make that format.":"Dieser Browser kann dieses Format nicht erzeugen.","It's too large to convert here.":"Sie ist zu groß, um hier konvertiert zu werden.","It took too long and was stopped.":"Es hat zu lange gedauert und wurde abgebrochen.","This HEIC photo couldn't be opened: it may be damaged, or a kind of HEIC this converter can't read.":"Dieses HEIC-Foto ließ sich nicht öffnen: Es ist vielleicht beschädigt oder eine HEIC-Variante, die dieser Konverter nicht lesen kann.","The HEIC decoder couldn't load. Check your connection and try again.":"Der HEIC-Decoder konnte nicht geladen werden. Prüfe deine Verbindung und versuche es noch einmal.","We couldn't convert {name}. Try another image or format.":"Wir konnten {name} nicht konvertieren. Versuche ein anderes Bild oder Format.","Copy as PNG":"Als PNG kopieren","Copied as PNG":"Als PNG kopiert","Copied {name} as PNG":"{name} als PNG kopiert","Couldn't copy: download it instead":"Kopieren nicht möglich – lade es stattdessen herunter","{n} ready":"{n} fertig","{n} converting":"{n} werden konvertiert","{n} couldn't be converted":"{n} konnten nicht konvertiert werden","{n} file not added":"{n} Datei nicht hinzugefügt","{n} files not added":"{n} Dateien nicht hinzugefügt"}</script>
+  <script type="module" src="/convert/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#converter">Direkt zum Konverter</a>
+  <div class="page">
+    <header>
+      <a class="brand" href="/de/"><img src="/icon128.png?v=brand20261110" alt="" width="36" height="36">Imgkeep</a>
+      <nav class="cv-nav" aria-label="Hauptnavigation"><a href="/de/convert/" aria-current="page">Konverter</a><a href="/de/color-palette-from-image/">Farbpalette</a><a href="#guides">Ratgeber</a><a href="/privacy.html">Datenschutz</a></nav>
+      <!-- lang-menu --><details class="lang-menu"><summary aria-label="Language">DE</summary><ul><li><a href="/svg-to-ico/" hreflang="en" lang="en">English</a></li><li><a href="/uk/svg-to-ico/" hreflang="uk" lang="uk">Українська</a></li><li><a href="/ar/svg-to-ico/" hreflang="ar" lang="ar">العربية</a></li><li><a href="/zh/svg-to-ico/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ko/svg-to-ico/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/ru/svg-to-ico/" hreflang="ru" lang="ru">Русский</a></li><li><a href="/ja/svg-to-ico/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/it/svg-to-ico/" hreflang="it" lang="it">Italiano</a></li><li><a href="/es/svg-to-ico/" hreflang="es" lang="es">Español</a></li><li><a href="/de/svg-to-ico/" hreflang="de" lang="de" aria-current="true">Deutsch</a></li></ul></details><!-- /lang-menu -->
+    </header>
+    <main class="doc converter-page">
+      <nav class="crumbs" aria-label="Navigationspfad"><a href="/de/convert/">← Konverter</a> › SVG in ICO</nav>
+      <h1>SVG-zu-ICO-Konverter</h1>
+      <p class="lead">Erstelle aus deinem SVG-Logo ein scharfes Favicon oder Windows-Symbol, mit erhaltener Transparenz, ohne es hochzuladen.</p>
+
+      <section id="converter" class="cv" data-to="ico" aria-label="Konverter">
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">01</span> Ausgabe wählen</h2>
+          <div class="cv-formats" role="group" aria-label="Ausgabeformat">
+            <button type="button" class="cv-fmt" data-format="png" aria-pressed="false"><span class="cv-fmt-name">PNG</span><span class="cv-fmt-cap">Transparenz</span></button>
+            <button type="button" class="cv-fmt" data-format="jpg" aria-pressed="false"><span class="cv-fmt-name">JPG</span><span class="cv-fmt-cap">Fotos</span></button>
+            <button type="button" class="cv-fmt" data-format="webp" aria-pressed="false"><span class="cv-fmt-name">WebP</span><span class="cv-fmt-cap">Webbilder</span></button>
+            <div class="cv-more">
+              <button type="button" class="cv-fmt cv-more-btn" id="moreBtn" aria-expanded="false" aria-haspopup="true" aria-controls="moreMenu"><span class="cv-fmt-name"><span id="moreName">Weitere Formate</span> <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="cv-fmt-cap" id="moreCap" data-all="AVIF, GIF, PDF, ICO, BMP">AVIF, GIF, PDF, ICO, BMP</span></button>
+              <div class="cv-menu" id="moreMenu" role="group" aria-label="Weitere Formate" hidden>
+                <button type="button" class="cv-menu-item" data-format="avif" aria-pressed="false"><strong>AVIF</strong><span>Sehr kleine Webbilder</span></button>
+                <button type="button" class="cv-menu-item" data-format="gif" aria-pressed="false"><strong>GIF</strong><span>Animationen</span></button>
+                <button type="button" class="cv-menu-item" data-format="pdf" aria-pressed="false"><strong>PDF</strong><span>Eine Seite pro Bild</span></button>
+                <button type="button" class="cv-menu-item" data-format="ico" aria-pressed="false"><strong>ICO</strong><span>Favicons und Windows-Symbole</span></button>
+                <button type="button" class="cv-menu-item" data-format="bmp" aria-pressed="false"><strong>BMP</strong><span>Für Software, die Bitmaps braucht</span></button>
+              </div>
+            </div>
+          </div>
+          <p class="sr-only">Gewählte Ausgabe: <span id="currentFormat">PNG</span></p>
+          <div class="cv-helper-row">
+            <p class="cv-helper" id="formatHelper">PNG behält Transparenz.</p>
+            <button type="button" class="cv-adv-toggle" id="advToggle" aria-expanded="false" aria-controls="advanced">Erweiterte Optionen <svg class="cv-chev" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="cv-advanced" id="advanced" hidden>
+            <div class="cv-field" id="widthField">
+              <label for="maxWidth">Maximale Breite (px)</label>
+              <input type="text" id="maxWidth" inputmode="numeric" placeholder="Größe behalten" aria-describedby="maxWidthHelp widthError">
+              <p class="cv-help" id="maxWidthHelp">Leer lassen, um die Originalgröße zu behalten. Kleinere Bilder werden nie vergrößert.</p>
+              <p class="cv-field-error" id="widthError" hidden>Gib eine ganze Zahl in Pixeln ein, zum Beispiel 1600.</p>
+            </div>
+            <div class="cv-field" id="qualityField">
+              <div class="cv-label-row"><label for="quality">Qualität</label><output id="qualityOut" for="quality">92</output></div>
+              <input type="range" id="quality" min="1" max="100" value="92" aria-describedby="qualityHelp">
+              <p class="cv-help" id="qualityHelp">Niedriger ergibt kleinere Dateien.</p>
+            </div>
+            <div class="cv-field" id="backgroundField">
+              <label for="backgroundHex">Hintergrund für transparente Bereiche</label>
+              <div class="cv-color"><input type="color" id="background" value="#ffffff" aria-label="Hintergrundfarbe wählen"><input type="text" id="backgroundHex" value="#FFFFFF" aria-describedby="bgHelp bgError" spellcheck="false"></div>
+              <p class="cv-help" id="bgHelp">Wird dort verwendet, wo ein Bild transparent ist.</p>
+              <p class="cv-field-error" id="bgError" hidden>Gib eine Farbe wie #FFFFFF ein.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-step">
+          <h2 class="cv-title"><span class="cv-num" aria-hidden="true">02</span> Bilder hinzufügen</h2>
+          <div class="cv-drop" id="drop">
+            <p class="cv-drop-title" id="dropTitle">Bilder hier ablegen, um sie in <span class="cv-target">PNG</span> umzuwandeln</p>
+            <button type="button" class="cv-choose" id="choose">Bilder auswählen</button>
+            <input type="file" id="files" multiple accept="image/*,.webp,.avif,.svg,.ico,.bmp,.heic,.heif" hidden>
+            <p class="cv-paste">oder ein Bild einfügen <span class="cv-keys">(⌘V / Ctrl+V)</span></p>
+            <p class="cv-limits">Bis zu 20 Dateien · je 50 MB</p>
+          </div>
+        </div>
+
+        <div class="cv-results" id="resultsArea" hidden>
+          <div class="cv-results-head">
+            <h2>Deine Bilder</h2>
+            <p class="cv-summary" id="summary"></p>
+            <button type="button" class="cv-secondary" id="downloadAll" hidden>Alle herunterladen</button>
+          </div>
+          <ul class="cv-list" id="results"></ul>
+          <p class="cv-hook" id="install" hidden>Du willst Bilder von Webseiten speichern? <a href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=svg-to-ico">Hol dir die kostenlose Erweiterung</a> und erledige das mit einem Rechtsklick.</p>
+        </div>
+        <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <p class="cv-privacy">Anonyme Seitenaufrufe und Konvertierungszahlen. Es werden keine Bilder, Dateinamen oder Größen gesendet. <a href="/privacy.html#website">Datenschutz <span aria-hidden="true">↗</span></a></p>
+      <details class="cv-how">
+        <summary>So funktioniert die lokale Konvertierung</summary>
+        <p>Deine Bilder werden von dieser Seite auf deinem Gerät konvertiert, mit demselben Code wie die Imgkeep-Erweiterung. Es wird nichts hochgeladen. Die Website zählt Seitenaufrufe und welche Formate mit wie vielen Dateien konvertiert wurden (zum Beispiel „webp → jpg, 3 Dateien“); Bildinhalte, Dateinamen oder Dateigrößen werden nie gesendet.</p>
+        <ul>
+          <li>Lade diese Seite und schalte dann dein WLAN aus: Das Konvertieren funktioniert weiter, bei jedem Format außer AVIF, dessen Encoder beim ersten Auswählen geladen wird.</li>
+          <li>Öffne die Entwicklertools deines Browsers, wähle den Tab „Netzwerk“ und konvertiere eine Datei: Keine Anfrage enthält dein Bild.</li>
+          <li>Der Code ist öffentlich: <a href="https://github.com/ybider-tech/imgkeep/tree/main/site/convert">site/convert auf GitHub</a>, mit <a href="https://github.com/ybider-tech/imgkeep/blob/main/tests/converter.spec.mjs">einem Test</a>, der prüft, dass das Konvertieren keine Netzwerkanfrage stellt und offline funktioniert.</li>
+        </ul>
+      </details>
+
+      <section class="cv-guides" id="guides" aria-labelledby="guidesTitle">
+        <h2 id="guidesTitle">Kurze Format-Anleitungen</h2>
+        <div class="cv-guide-grid">
+          <article class="cv-guide">
+            <h3><a href="/de/png-to-ico/">PNG in ICO</a></h3>
+            <p>Erstelle aus einem PNG ein Favicon oder Windows-Symbol: eine .ico-Datei mit allen gängigen Größen, mit Transparenz, erstellt in deinem Browser.</p>
+            <a class="cv-guide-link" href="/de/png-to-ico/">Zur Anleitung PNG zu ICO <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="/de/jpg-to-ico/">JPG in ICO</a></h3>
+            <p>Erstelle aus einem JPG ein Favicon oder Desktop-Symbol: eine .ico-Datei mit allen gängigen Größen, erstellt in deinem Browser.</p>
+            <a class="cv-guide-link" href="/de/jpg-to-ico/">Zur Anleitung JPG zu ICO <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="cv-guide">
+            <h3><a href="/de/svg-to-png/">SVG in PNG</a></h3>
+            <p>Eine App oder Website nimmt dein SVG-Logo nicht an? Wandle es in deinem Browser in ein PNG mit transparentem Hintergrund um.</p>
+            <a class="cv-guide-link" href="/de/svg-to-png/">Zur Anleitung SVG zu PNG <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="cv-more-guides">Mehr: <a href="/de/convert/">Alle Formate</a> · <a href="/de/png-to-webp/">PNG in WebP</a></p>
+      </section>
+
+      <div class="answer">
+        <p class="label">Kurze Antwort</p>
+        <p>Zieh dein SVG nach oben, wähle ICO und lade eine .ico herunter, die das Logo in 16, 32 und 48 Pixeln enthält, mit erhaltener Transparenz. Alles läuft in deinem Browser, also wird nichts hochgeladen. Eine 256-px-Größe bekommst du außerdem, wenn das SVG mindestens 256 px breit ist oder keine eigene Größe hat (dann wird es 1024 px breit gezeichnet). Ein nicht quadratisches Logo wird auf einem transparenten Quadrat zentriert.</p>
+      </div>
+      <p class="updated">Aktualisiert am <time datetime="2026-11-25">25. November 2026</time></p>
+
+      <h2>Warum mit einem SVG anfangen?</h2>
+      <p>Ein SVG wird in jeder Größe neu gezeichnet, daher startet jede Symbolgröße mit einem scharfen Bild statt mit einem verkleinerten Foto. Logos aus Designprogrammen liegen oft schon als SVG mit transparentem Hintergrund vor, und genau das braucht ein Symbol.</p>
+
+      <h2>SVG und ICO im Vergleich</h2>
+      <div class="table-wrap">
+        <table class="fmt-table">
+          <thead><tr><th scope="col"><span class="sr-only">Format</span></th><th scope="col">SVG</th><th scope="col">ICO</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Komprimierung</th><td>Vektor: Formen statt Pixel</td><td>Mehrere kleine PNG-Symbole in einer Datei</td></tr>
+            <tr><th scope="row">Transparenz</th><td>Ja</td><td>Ja</td></tr>
+            <tr><th scope="row">Animation</th><td>Manchmal, per Code</td><td>Nein</td></tr>
+            <tr><th scope="row">Öffnet sich in</th><td>Browser und Designprogramme; viele Apps und Formulare nicht</td><td>Windows, und Browser als Favicon</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Brauche ich noch eine .ico, wenn Browser SVG-Favicons annehmen?</h2>
+      <p>Aktuelle Browser nehmen ein SVG-Favicon über ein <code>&lt;link rel="icon"&gt;</code>-Tag an, aber viele Browser, Lesezeichen und Tools suchen zuerst nach einer <code>favicon.ico</code> im Stammverzeichnis deiner Website. Viele Websites bieten beides an.</p>
+
+      <h2>Mein Logo wirkt bei 16 px zu dünn</h2>
+      <p>Feine Linien und kleiner Text verschwinden in Symbolgrößen. Eine vereinfachte Version des Logos, etwa nur das Zeichen oder der Anfangsbuchstabe, mit dickeren Strichen, ist im Browser-Tab viel besser zu erkennen.</p>
+
+
+      <h2>Fragen</h2>
+      <h3>Behält die Umwandlung von SVG in ICO die Transparenz?</h3>
+      <p>Ja. Bereiche, die das SVG leer lässt, bleiben in jeder Größe des Symbols transparent.</p>
+      <h3>Welche Größen sind in der Datei?</h3>
+      <p>16, 32 und 48 px, plus 256 px, wenn das SVG mindestens so breit ist oder keine eigene Größe hat. Jede Größe ist in der .ico als PNG gespeichert.</p>
+      <h3>Kann ich stattdessen ein PNG-Favicon bekommen?</h3>
+      <p>Ja, siehe <a href="/de/svg-to-png/">SVG in PNG</a>, und stell dann die Größe mit „Maximale Breite“ ein.</p>
+      <section class="cv-ext" aria-labelledby="extTitle">
+        <h2 id="extTitle">Bilder direkt aus dem Web speichern.</h2>
+        <p>Mit Imgkeep für Chrome, Edge oder Firefox wählst du beim Rechtsklick auf ein Bild gleich das Format: keine Datei, die du hinterher noch konvertieren musst.</p>
+        <p class="cv-ext-links"><a class="cv-ext-cta" href="https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=svg-to-ico">Kostenlose Erweiterung holen</a> <a href="https://microsoftedge.microsoft.com/addons/detail/kokbmagcbobpjclpidebikeklmpafhhd?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=svg-to-ico">Auch für Edge</a> <a href="https://addons.mozilla.org/firefox/addon/imgkeep/?utm_source=imgkeep.app&amp;utm_medium=converter&amp;utm_campaign=svg-to-ico">Auch für Firefox</a></p>
+      </section>
+    </main>
+    <footer>
+      <nav aria-label="Fußzeile">
+        <a href="/de/">Start</a>
+        <a href="/de/convert/">Konverter</a>
+        <a href="https://github.com/ybider-tech/imgkeep">Quellcode</a>
+        <a href="/de/download/">Download</a>
+        <a href="/ideas.html">Ideen</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Datenschutz</a>
+        <a href="mailto:helloimgkeep@gmail.com">helloimgkeep@gmail.com</a>
+      </nav>
+      <nav class="guides" aria-label="Ratgeber">
+        <a href="/de/chrome-saves-images-as-webp/">Warum Chrome WebP speichert</a>
+        <a href="/de/save-webp-as-jpg-png/">WebP als JPG oder PNG speichern</a>
+        <a href="/de/save-avif-as-jpg-png/">AVIF als JPG oder PNG speichern</a>
+        <a href="/chrome-saves-images-as-jfif/">Chrome speichert JFIF</a>
+        <a href="/save-animated-webp-as-gif/">Animiertes WebP als GIF</a>
+        <a href="/save-image-as-pdf/">Bild als PDF speichern</a>
+        <a href="/save-image-as-type-alternative/">Sichere Alternative zu „Bild speichern als Typ“</a>
+        <a href="/de/save-image-right-click-not-working/">Wenn der Rechtsklick kein Bild speichert</a>
+        <a href="/web-image-into-canva-figma-google-slides/">Webbilder in Canva, Figma oder Slides</a>
+        <a href="/de/best-save-image-as-extensions/">Die besten Save-Image-As-Erweiterungen</a>
+        <a href="/de/imgkeep-vs-save-webp-as-png-or-jpeg/">Imgkeep vs Save webP as PNG or JPEG</a>
+        <a href="/de/save-images-from-pinterest/">Von Pinterest speichern</a>
+        <a href="/de/save-images-from-instagram/">Von Instagram speichern</a>
+        <a href="/de/save-images-from-google-images/">Von Google Bilder speichern</a>
+        <a href="/de/save-images-from-x-twitter/">Von X speichern</a>
+        <a href="/de/save-images-from-reddit/">Von Reddit speichern</a>
+        <a href="/de/save-images-from-facebook/">Von Facebook speichern</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
