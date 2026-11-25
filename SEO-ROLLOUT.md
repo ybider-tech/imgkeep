@@ -45,6 +45,7 @@ hreflang, links and sitemap follow it.
 | Language | Live | Pages |
 |---|---|---|
 | Ukrainian (`uk`) | 2026-11-25 | 13 pairs + the index |
+| Arabic (`ar`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 
