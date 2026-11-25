@@ -53,6 +53,7 @@ hreflang, links and sitemap follow it.
 | Italian (`it`) | 2026-11-25 | 13 pairs + the index |
 | Spanish (`es`) | 2026-11-25 | 13 pairs + the index |
 | German (`de`) | 2026-11-25 | 13 pairs + the index |
+| French (`fr`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 
