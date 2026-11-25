@@ -55,6 +55,7 @@ hreflang, links and sitemap follow it.
 | German (`de`) | 2026-11-25 | 13 pairs + the index |
 | French (`fr`) | 2026-11-25 | 13 pairs + the index |
 | Portuguese, Brazil (`pt-br`) | 2026-11-25 | 13 pairs + the index |
+| Hebrew (`he`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 
