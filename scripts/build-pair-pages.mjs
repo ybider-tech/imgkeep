@@ -146,7 +146,7 @@ export function renderIndex(site, current = "") {
 <body>
   <div class="page">
     <header>
-      <a class="brand" href="../../"><img src="../../icon128.png?v=brand20261110" alt="" width="36" height="36">Imgkeep</a>
+      <a class="brand" href="../../"><img src="../../icon80.webp?v=brand20261110" alt="" width="36" height="36">Imgkeep</a>
       <nav class="cv-nav" aria-label="Main"><a href="../" aria-current="page">Converter</a><a href="../../color-palette-from-image/">Color palette</a><a href="../../privacy.html">Privacy</a></nav>
 ${keep(/      <!-- lang-menu -->[\s\S]*?<!-- \/lang-menu -->\n/)}    </header>
     <main class="doc">

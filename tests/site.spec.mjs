@@ -215,7 +215,7 @@ test("comparison pages match the facts file, with sources and a last-checked dat
     const html = (await readFile(join(ROOT, file), "utf8")).replace(/\r\n/g, "\n");
     expect(await render(key, html, data), `${file} is out of date: run node scripts/build-comparisons.mjs`).toBe(html);
     const imgs = [...html.matchAll(/<img [^>]*src="([^"]+)"/g)].map((m) => m[1]);
-    expect(imgs.filter((src) => !/icon128\.png|media\/guides\//.test(src)), `${file}: only Imgkeep's own icon and screenshots`).toEqual([]);
+    expect(imgs.filter((src) => !/icon80\.webp|media\/guides\//.test(src)), `${file}: only Imgkeep's own icon and screenshots`).toEqual([]);
     await page.goto(`${server.url}/${file.replace(/^site\//, "").replace(/index\.html$/, "")}`);
     await expect(page.locator("main .checked time").first()).toHaveAttribute("datetime", data.checked);
     await expect(page.locator(`main a[href="mailto:${data.contact}"]`).first()).toBeVisible();
@@ -250,7 +250,7 @@ test("per-site guides: one tagged store link, a checked date, the rights note, a
     for (const other of SITE_GUIDES.filter((g) => g !== guide)) await expect(page.locator(`main a[href="../${other}/"]`), `${guide} links to ${other}`).toHaveCount(1);
     // No platform logos: the only images are Imgkeep's icon and its own screenshots.
     const srcs = await page.$$eval("img", (imgs) => imgs.map((i) => i.getAttribute("src")));
-    expect(srcs.filter((src) => !/icon128\.png|media\/guides\//.test(src)), guide).toEqual([]);
+    expect(srcs.filter((src) => !/icon80\.webp|media\/guides\//.test(src)), guide).toEqual([]);
     const hrefs = await page.$$eval("a[href]", (as) => as.map((a) => a.href).filter((h) => h.startsWith(location.origin)));
     for (const href of new Set(hrefs)) expect((await page.request.get(href)).status(), href).toBe(200);
   }
@@ -339,10 +339,10 @@ test("home page demo video: poster first, loads only on play, with a YouTube fal
   await expect(video).toHaveAttribute("preload", "none");
   expect(await video.getAttribute("autoplay")).toBeNull();
   // The poster is shown (and is the fallback where the video can't play); the video file isn't fetched until play.
-  expect(requests.some((u) => u.endsWith("/media/imgkeep-tour-poster.jpg"))).toBe(true);
+  expect(requests.some((u) => u.endsWith("/media/imgkeep-tour-poster.webp"))).toBe(true);
   expect(requests.some((u) => u.endsWith("/media/imgkeep-tour.mp4"))).toBe(false);
   await expect(page.locator("figure.demo video source")).toHaveAttribute("type", "video/mp4");
-  for (const file of ["media/imgkeep-tour.mp4", "media/imgkeep-tour-poster.jpg"]) {
+  for (const file of ["media/imgkeep-tour.mp4", "media/imgkeep-tour-poster.webp", "media/imgkeep-tour-poster.jpg"]) {
     const res = await page.request.get(`${server.url}/${file}`);
     expect(res.status(), file).toBe(200);
   }
