@@ -714,6 +714,35 @@ test("translated pages: language, canonical, hreflang, links and scripts", async
   }
 });
 
+// A page listed in a language is really in that language. Adding a language to a pair's "langs" in data/pairs.json
+// before its translations are saved builds the page with the English text, and every other check still passes.
+// The title, description, H1 and every block of text must differ from the English page, except the blocks marked
+// data-keep-english (sourced facts quoted from English listings) and names that stay English in any language.
+test("translated pages aren't left in English", async () => {
+  const KEEP = new Set(["Imgkeep vs Save webP as PNG or JPEG"]);
+  const field = (html, re) => (html.match(re)?.[1] ?? "").trim();
+  const parts = (html) => {
+    const text = html.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<details[^>]*data-keep-english>[\s\S]*?<\/details>/g, "");
+    return {
+      title: field(html, /<title>([\s\S]*?)<\/title>/).replace(/ — Imgkeep$/, ""),
+      description: field(html, /<meta name="description" content="([^"]*)"/),
+      h1: field(html, /<h1[^>]*>([\s\S]*?)<\/h1>/).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+      // Paragraphs, list items and headings of six words or more (shorter ones can be names or format lists).
+      blocks: [...text.matchAll(/<(p|li|h2|h3)\b[^>]*>([\s\S]*?)<\/\1>/g)].map((m) => m[2].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()).filter((t) => t.split(" ").length >= 6),
+    };
+  };
+  for (const file of SITE_PAGES) {
+    const en = parts(await readFile(join(ROOT, "site", file), "utf8"));
+    const english = new Set(en.blocks.filter((b) => !KEEP.has(b)));
+    for (const l of langsFor(file)) {
+      const f = `${l}/${file}`;
+      const t = parts(await readFile(join(ROOT, "site", f), "utf8"));
+      for (const k of ["title", "description", "h1"]) if (!KEEP.has(en[k])) expect(t[k], `${f}: ${k} is still English`).not.toBe(en[k]);
+      expect(t.blocks.filter((b) => english.has(b)), `${f}: text still in English (are its translations in i18n/site/${l}.json?)`).toEqual([]);
+    }
+  }
+});
+
 test("a translated converter works in its language, and lang.js offers the visitor's language", async ({ browser }) => {
   const context = await browser.newContext({ locale: "es-ES" });
   const page = await context.newPage();
