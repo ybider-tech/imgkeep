@@ -49,6 +49,7 @@ hreflang, links and sitemap follow it.
 | Chinese (`zh`) | 2026-11-25 | 13 pairs + the index |
 | Korean (`ko`) | 2026-11-25 | 13 pairs + the index |
 | Russian (`ru`) | 2026-11-25 | 13 pairs + the index |
+| Japanese (`ja`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 
