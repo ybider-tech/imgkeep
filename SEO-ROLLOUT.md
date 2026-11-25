@@ -51,6 +51,7 @@ hreflang, links and sitemap follow it.
 | Russian (`ru`) | 2026-11-25 | 13 pairs + the index |
 | Japanese (`ja`) | 2026-11-25 | 13 pairs + the index |
 | Italian (`it`) | 2026-11-25 | 13 pairs + the index |
+| Spanish (`es`) | 2026-11-25 | 13 pairs + the index |
 
 ## Later waves (supported, not built yet)
 
