@@ -57,7 +57,7 @@ Right-click an image → Imgkeep → Get colour palette. See its main colours, l
 
 RESIZE IMAGES AND CONTROL QUALITY
 
-• Save the full-size version: many sites show a smaller copy of an image. Turn this on in Options and Imgkeep saves the full-size file instead, on sites like Pinterest, X, Etsy, Reddit, Unsplash, Wikipedia and shops or blogs on Shopify or WordPress. If it can't get it, you get the image you clicked. Off unless you turn it on.
+• Save the full-size version: many sites show a smaller copy of an image. Turn this on in Options and Imgkeep saves the full-size file instead, on many popular sites, shops and blogs. If it can't get it, you get the image you clicked. Off unless you turn it on.
 • Resize automatically: set a maximum width in Options. Larger images scale down proportionally; smaller ones are never enlarged.
 • Preview before saving: More options shows the result's size in pixels and kilobytes. Choose format, width, quality, background and file name for that image.
 • Adjust quality: JPG, WebP and AVIF quality sliders, and a background colour for transparent images saved as JPG.
