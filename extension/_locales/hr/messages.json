@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Spremi sliku kao PNG, JPG, WebP, GIF ili PDF — Imgkeep"
+    "message": "Spremi sliku kao PNG, JPG ili PDF, pretvori WebP u JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Desnim klikom spremite bilo koju sliku kao PNG, JPG, WebP, GIF ili PDF, ili paletu boja. Na vašem uređaju. Bez osobnih podataka."
+    "message": "Pretvorite WebP i AVIF u JPG ili PNG desnim klikom, ili spremite bilo koju sliku kao PDF ili GIF. Na vašem uređaju, bez prijenosa."
   },
   "menuParent": {
     "message": "Imgkeep"

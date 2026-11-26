@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Afbeelding opslaan als PNG, JPG, WebP, GIF of PDF — Imgkeep"
+    "message": "Afbeelding opslaan als PNG, JPG of PDF, WebP naar JPG omzetten — Imgkeep"
   },
   "extDescription": {
-    "message": "Rechtsklik: sla elke afbeelding op als PNG, JPG, WebP, GIF of PDF, of haal het kleurenpalet op. Lokaal, geen persoonsgegevens."
+    "message": "Zet WebP en AVIF met een rechtsklik om naar JPG of PNG, of sla elke afbeelding op als PDF of GIF. Lokaal, geen uploads."
   },
   "menuParent": {
     "message": "Imgkeep"

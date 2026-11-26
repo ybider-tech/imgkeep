@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Tallenna kuva: PNG, JPG, WebP, GIF tai PDF — Imgkeep"
+    "message": "Tallenna kuva: PNG, JPG tai PDF, muunna WebP JPG:ksi — Imgkeep"
   },
   "extDescription": {
-    "message": "Tallenna kuva hiiren oikealla PNG-, JPG-, WebP-, GIF- tai PDF-muodossa tai hae väripaletti. Omalla laitteella, ei henkilötietoja."
+    "message": "Muunna WebP ja AVIF JPG- tai PNG-muotoon hiiren oikealla, tai tallenna kuva PDF- tai GIF-muodossa. Omalla laitteella, ei lähetyksiä."
   },
   "menuParent": {
     "message": "Imgkeep"

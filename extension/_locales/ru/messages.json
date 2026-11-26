@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Сохранить изображение как PNG, JPG, WebP, GIF или PDF — Imgkeep"
+    "message": "Сохранить изображение как PNG, JPG или PDF, WebP в JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Правый клик — и изображение сохранено как PNG, JPG, WebP, GIF или PDF. Или палитра цветов. Всё на устройстве, без личных данных."
+    "message": "Конвертируйте WebP и AVIF в JPG или PNG правым кликом или сохраните изображение как PDF или GIF. На устройстве, без загрузки."
   },
   "menuParent": {
     "message": "Imgkeep"

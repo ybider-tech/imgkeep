@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Зберегти зображення як PNG, JPG, WebP, GIF чи PDF — Imgkeep"
+    "message": "Зберегти зображення як PNG, JPG чи PDF, WebP у JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Клацніть правою кнопкою: зберігайте зображення як PNG, JPG, WebP, GIF чи PDF або беріть палітру. Локально. Без особистих даних."
+    "message": "Конвертуйте WebP і AVIF у JPG чи PNG правою кнопкою або збережіть зображення як PDF чи GIF. Локально, без завантажень."
   },
   "menuParent": {
     "message": "Imgkeep"

@@ -12,8 +12,7 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
 - **Mature content:** No
 
 ## Store listing (English)
-- **Display name:** comes from the Edge package (`scripts/build-edge.mjs`): Save image as PNG, JPG or WebP - Imgkeep. Since 0.12.0: Edge rejected 0.11.0 on 2026-11-03 under policy 1.1.2, "The title contains excessive search terms", for the five-format name Chrome and Firefox keep. If this one is rejected too, the fallback is "Save and convert images - Imgkeep".
-- **Short description** (if asked): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.
+- **Display name:** comes from the Edge package (`scripts/build-edge.mjs`, `store/edge-names.json` since 0.15.2): Save image as PNG, JPG or WebP - Imgkeep. Since 0.12.0: Edge rejected 0.11.0 on 2026-11-03 under policy 1.1.2, "The title contains excessive search terms", for the five-format name Chrome and Firefox keep. If this one is rejected too, the fallback is "Save and convert images - Imgkeep".
 - **Store logo (300×300):** `store/edge-logo-300.png`
 - **Small promotional tile (440×280):** `store/promo-tile-440x280.png`
 - **Screenshots (1280×800):** `store/screenshot-1-menu.png`, `store/screenshot-2-options.png`, `store/screenshot-3-trust.png`, `store/screenshot-4-site-access.png`, `store/screenshot-6-find.png`, `store/screenshot-7-palette.png` (0.11.0: add 6 and 7; Edge allows 10)
@@ -23,9 +22,13 @@ Same package as the Chrome Web Store (`dist/imgkeep-0.4.0.zip`). Submit through 
   2. save image as jpg
   3. webp to jpg
   4. webp to png
-  5. image color palette
+  5. image converter
   6. avif to jpg
-  7. converter
+  7. webp converter
+
+  Proposed 2026-11-26 (store/listing-keywords-report.md), a Partner Center edit you make: "image color palette" → "image converter" (Edge's own suggestion for "image conv"), "converter" → "webp converter" (Trends; Brazil). Before: 5. image color palette, 7. converter.
+- **Short description** (0.15.2, from the manifest): Convert WebP and AVIF to JPG or PNG from the right-click menu, or save any image as PDF or GIF. On your device, no uploads.
+- **Description:** v11 is `storeDescription` in store/i18n/<lang>.json (browser-neutral); the block below is the old v10 English.
 
 ### Description
 ```text

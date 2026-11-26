@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें — Imgkeep"
+    "message": "इमेज को PNG, JPG या PDF में सेव करें, WebP से JPG बनाएँ — Imgkeep"
   },
   "extDescription": {
-    "message": "राइट-क्लिक करके किसी भी इमेज को PNG, JPG, WebP, GIF या PDF में सेव करें या उसका कलर पैलेट पाएं। आपके डिवाइस पर। कोई निजी डेटा नहीं।"
+    "message": "राइट-क्लिक से WebP और AVIF को JPG या PNG में बदलें, या किसी भी इमेज को PDF या GIF में सेव करें। आपके डिवाइस पर, कोई अपलोड नहीं।"
   },
   "menuParent": {
     "message": "Imgkeep"

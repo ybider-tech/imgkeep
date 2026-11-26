@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Сачувај слику као PNG, JPG, WebP, GIF или PDF — Imgkeep"
+    "message": "Сачувај слику као PNG, JPG или PDF, претвори WebP у JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Десни клик и сачувајте слику као PNG, JPG, WebP, GIF или PDF, или узмите њену палету боја. На вашем уређају. Без личних података."
+    "message": "Претворите WebP и AVIF у JPG или PNG десним кликом, или сачувајте слику као PDF или GIF. На вашем уређају, без отпремања."
   },
   "menuParent": {
     "message": "Imgkeep"

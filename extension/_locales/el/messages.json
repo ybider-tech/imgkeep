@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Αποθήκευση εικόνας ως PNG, JPG, WebP, GIF ή PDF — Imgkeep"
+    "message": "Αποθήκευση εικόνας ως PNG, JPG ή PDF, μετατροπή WebP σε JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Δεξί κλικ για αποθήκευση εικόνας ως PNG, JPG, WebP, GIF ή PDF ή για την παλέτα χρωμάτων της. Τοπικά, χωρίς προσωπικά δεδομένα."
+    "message": "Μετατρέψτε WebP και AVIF σε JPG ή PNG με δεξί κλικ ή αποθηκεύστε εικόνες ως PDF ή GIF. Στη συσκευή σας, χωρίς μεταφόρτωση."
   },
   "menuParent": {
     "message": "Imgkeep"

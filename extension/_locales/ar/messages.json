@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "حفظ الصورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF — Imgkeep"
+    "message": "حفظ الصورة بصيغة PNG أو JPG أو PDF، وتحويل WebP إلى JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "انقر بالزر الأيمن لحفظ أي صورة بصيغة PNG أو JPG أو WebP أو GIF أو PDF، أو أخذ لوحة ألوانها. على جهازك. بلا بيانات شخصية."
+    "message": "حوّل WebP وAVIF إلى JPG أو PNG بالزر الأيمن، أو احفظ أي صورة بصيغة PDF أو GIF. على جهازك، بلا رفع."
   },
   "menuParent": {
     "message": "Imgkeep"

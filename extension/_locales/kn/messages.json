@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "ಚಿತ್ರವನ್ನು PNG, JPG, WebP, GIF ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ — Imgkeep"
+    "message": "ಚಿತ್ರವನ್ನು PNG, JPG ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ, WebP ಅನ್ನು JPG ಗೆ — Imgkeep"
   },
   "extDescription": {
-    "message": "ಚಿತ್ರವನ್ನು ಬಲ-ಕ್ಲಿಕ್ ಮಾಡಿ PNG, JPG, WebP, GIF ಅಥವಾ PDF ಆಗಿ ಉಳಿಸಿ, ಅಥವಾ ಬಣ್ಣದ ಪ್ಯಾಲೆಟ್ ಪಡೆಯಿರಿ. ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ. ವೈಯಕ್ತಿಕ ಡೇಟಾ ಇಲ್ಲ."
+    "message": "ಬಲ-ಕ್ಲಿಕ್‌ನಿಂದ WebP ಮತ್ತು AVIF ಅನ್ನು JPG ಅಥವಾ PNG ಗೆ ಬದಲಿಸಿ, ಅಥವಾ ಯಾವುದೇ ಚಿತ್ರವನ್ನು PDF ಅಥವಾ GIF ಆಗಿ ಉಳಿಸಿ. ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ."
   },
   "menuParent": {
     "message": "Imgkeep"

@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "ምስልን እንደ PNG, JPG, WebP, GIF ወይም PDF ያስቀምጡ — Imgkeep"
+    "message": "ምስልን እንደ PNG, JPG ወይም PDF ያስቀምጡ፣ WebPን ወደ JPG ይቀይሩ — Imgkeep"
   },
   "extDescription": {
-    "message": "ማንኛውንም ምስል በቀኝ ጠቅ አድርገው እንደ PNG, JPG, WebP, GIF ወይም PDF ያስቀምጡ፤ ወይም የቀለም ስብስቡን ያግኙ። በመሣሪያዎ ላይ። የግል መረጃ የለም።"
+    "message": "WebP እና AVIFን በቀኝ ጠቅታ ወደ JPG ወይም PNG ይቀይሩ፤ ወይም ማንኛውንም ምስል እንደ PDF ወይም GIF ያስቀምጡ። በመሣሪያዎ ላይ፣ ያለ መስቀል።"
   },
   "menuParent": {
     "message": "Imgkeep"

@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Desa imatges com a PNG, JPG, WebP, GIF o PDF — Imgkeep"
+    "message": "Desa imatges com a PNG, JPG o PDF, converteix WebP a JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic dret per desar imatges com a PNG, JPG, WebP, GIF o PDF, o obtenir-ne la paleta. Al teu dispositiu, sense dades personals."
+    "message": "Converteix WebP i AVIF a JPG o PNG amb el clic dret, o desa qualsevol imatge com a PDF o GIF. Al teu dispositiu, sense pujades."
   },
   "menuParent": {
     "message": "Imgkeep"

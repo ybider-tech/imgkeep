@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Bild speichern als PNG, JPG, WebP, GIF oder PDF — Imgkeep"
+    "message": "Bild speichern als PNG, JPG oder PDF, WebP in JPG umwandeln — Imgkeep"
   },
   "extDescription": {
-    "message": "Rechtsklick: jedes Bild als PNG, JPG, WebP, GIF oder PDF speichern oder seine Farbpalette holen. Lokal. Keine persönlichen Daten."
+    "message": "WebP und AVIF per Rechtsklick in JPG oder PNG umwandeln oder jedes Bild als PDF oder GIF speichern. Lokal, ohne Upload."
   },
   "menuParent": {
     "message": "Imgkeep"

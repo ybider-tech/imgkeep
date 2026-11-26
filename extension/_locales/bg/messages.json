@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Запазване на изображение като PNG, JPG, WebP, GIF или PDF — Imgkeep"
+    "message": "Запазване на изображение като PNG, JPG или PDF, WebP в JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "С десен бутон запазете всяко изображение като PNG, JPG, WebP, GIF, PDF или вземете цветовата му палитра. Локално, без лични данни."
+    "message": "Преобразувайте WebP и AVIF в JPG или PNG с десен бутон или запазете всяко изображение като PDF или GIF. Локално, без качване."
   },
   "menuParent": {
     "message": "Imgkeep"

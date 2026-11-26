@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Kép mentése PNG, JPG, WebP, GIF vagy PDF formátumban — Imgkeep"
+    "message": "Kép mentése PNG, JPG vagy PDF formátumban, WebP-ből JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Jobb kattintás: kép mentése PNG, JPG, WebP, GIF vagy PDF formátumban, vagy a színpalettája. A gépeden, személyes adatok nélkül."
+    "message": "WebP és AVIF átalakítása JPG-be vagy PNG-be jobb kattintással, vagy kép mentése PDF-ként, GIF-ként. A gépeden, feltöltés nélkül."
   },
   "menuParent": {
     "message": "Imgkeep"

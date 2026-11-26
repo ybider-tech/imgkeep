@@ -5,6 +5,7 @@
 // offscreen.js itself (see extension/lib/browser.js). Everything else is the same code.
 import { cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
+import { existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -36,18 +37,18 @@ export function firefoxManifest(chrome) {
 }
 
 // addons.mozilla.org takes the add-on's name from each language's extName and cuts it at 50 characters (German
-// showed "…oder PDF —"). So Firefox gets names that fit: the name as it is when short enough, else without
-// " — Imgkeep" (AMO shows "by Imgkeep" under it), else a shorter wording written for AMO.
+// showed "…oder PDF —"). Since 0.15.2 Firefox has its own, shorter name in every language: amoName in
+// store/i18n/<lang>.json ("Save image as JPG or PNG, WebP converter"; AMO shows "by Imgkeep" under it), translated
+// by scripts/translate.mjs with the other store texts. A language without one falls back to Chrome's name, cut
+// to fit: without " — Imgkeep" when that's enough.
 export const AMO_NAME_MAX = 50;
-const SHORTER_NAMES = {
-  hu: "Kép mentése PNG, JPG, WebP, GIF, PDF formátumban",
-  ru: "Сохранить картинку как PNG, JPG, WebP, GIF или PDF",
-};
 export function firefoxName(lang, name) {
+  const file = join(ROOT, "store", "i18n", `${lang}.json`);
+  const own = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")).amoName?.trim() : "";
+  if (own) return own;
   if ([...name].length <= AMO_NAME_MAX) return name;
   const bare = name.replace(/\s*[—–-]\s*Imgkeep\s*$/, "");
-  if ([...bare].length <= AMO_NAME_MAX) return bare;
-  return SHORTER_NAMES[lang] || name; // a language AMO doesn't list keeps its name (Firefox itself allows 75)
+  return [...bare].length <= AMO_NAME_MAX ? bare : name; // a language AMO doesn't list keeps its name (Firefox allows 75)
 }
 
 // Run as a script (not when a test imports firefoxManifest).

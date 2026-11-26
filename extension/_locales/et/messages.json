@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Salvesta pilt PNG, JPG, WebP, GIF või PDF-vormingus — Imgkeep"
+    "message": "Salvesta pilt PNG, JPG või PDF-ina, teisenda WebP JPG-ks — Imgkeep"
   },
   "extDescription": {
-    "message": "Paremklõps salvestab iga pildi PNG, JPG, WebP, GIF või PDF-ina või annab värvipaleti. Sinu seadmes. Ilma isikuandmeteta."
+    "message": "Teisenda WebP ja AVIF paremklõpsuga JPG- või PNG-ks või salvesta pilt PDF- või GIF-ina. Sinu seadmes, üleslaadimiseta."
   },
   "menuParent": {
     "message": "Imgkeep"

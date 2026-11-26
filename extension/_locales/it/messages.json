@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Salva immagini come PNG, JPG, WebP, GIF o PDF — Imgkeep"
+    "message": "Salva immagini come PNG, JPG o PDF, converti WebP in JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic destro: salva ogni immagine come PNG, JPG, WebP, GIF o PDF o ricavarne la palette. Sul tuo dispositivo, senza dati personali."
+    "message": "Converti WebP e AVIF in JPG o PNG col tasto destro, o salva ogni immagine come PDF o GIF. Sul tuo dispositivo, senza upload."
   },
   "menuParent": {
     "message": "Imgkeep"

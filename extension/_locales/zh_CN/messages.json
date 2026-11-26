@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "图片另存为 PNG、JPG、WebP、GIF 或 PDF — Imgkeep"
+    "message": "图片另存为 PNG、JPG 或 PDF，WebP 转 JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "右键把任意图片保存为 PNG、JPG、WebP、GIF 或 PDF，也能提取配色。全程在本机完成，不收集个人数据。"
+    "message": "右键把 WebP 和 AVIF 转成 JPG 或 PNG，或把任意图片保存为 PDF 或 GIF。在本机完成，不上传。"
   },
   "menuParent": {
     "message": "Imgkeep"

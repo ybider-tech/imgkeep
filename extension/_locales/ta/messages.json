@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "படத்தை PNG, JPG, WebP, GIF அல்லது PDF ஆகச் சேமிக்க — Imgkeep"
+    "message": "படத்தை PNG, JPG அல்லது PDF ஆகச் சேமிக்க, WebP ஐ JPG ஆக்க — Imgkeep"
   },
   "extDescription": {
-    "message": "வலது-கிளிக்கில் படத்தை PNG, JPG, WebP, GIF, PDF ஆகச் சேமிக்கலாம், வண்ணத் தட்டைப் பெறலாம். உங்கள் சாதனத்தில்; தனிப்பட்ட தரவு இல்லை."
+    "message": "வலது கிளிக்கில் WebP, AVIF ஐ JPG அல்லது PNG ஆக மாற்றுங்கள், அல்லது எந்தப் படத்தையும் PDF, GIF ஆகச் சேமியுங்கள். பதிவேற்றம் இல்லை."
   },
   "menuParent": {
     "message": "Imgkeep"

@@ -1,24 +1,25 @@
 // Builds the Edge package from the Chrome one: the same files, only the name differs.
 //   dist/imgkeep-edge-<version>.zip   for Edge Add-ons (scripts/edge-publish.sh)
 // Edge rejected 0.11.0 (review of 2026-11-03, policy 1.1.2: "The title contains excessive search terms"), so
-// on Edge the name lists three formats instead of five, in every language, with a hyphen before the brand:
-//   "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"  →  "Save image as PNG, JPG or WebP - Imgkeep"
-// Edge's own search terms (Partner Center) still carry GIF, PDF and the rest.
+// on Edge the name lists three formats, in every language, with a hyphen before the brand:
+//   "Save image as PNG, JPG or WebP - Imgkeep"
+// Until 0.15.1 it was worked out from Chrome's name. Since 0.15.2 Chrome's name says "convert WebP to JPG"
+// (store/listing-keywords-report.md), so Edge keeps its approved names, one per language, in store/edge-names.json.
+// Edge's own search terms (Partner Center) carry GIF, PDF, AVIF and the rest.
 import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// Every language writes the list as PNG <sep> JPG <sep> WebP <sep> GIF <or> PDF: keep the first three,
-// with that language's "or" before WebP, and keep whatever follows PDF ("-vormingus", "గా", "로"…).
-export function edgeName(name) {
-  const short = name.replace(/JPG(.{1,8}?)WebP(.{1,8}?)GIF(.{1,12}?)PDF/u, "JPG$3WebP").replace(/\s*—\s*Imgkeep$/u, " - Imgkeep");
-  if (short === name || /GIF|PDF|—/.test(short) || !short.endsWith(" - Imgkeep")) throw new Error(`Can't shorten the name "${name}"`);
-  return short;
+export const EDGE_NAMES = JSON.parse(readFileSync(join(ROOT, "store", "edge-names.json"), "utf8"));
+export function edgeName(lang) {
+  const name = EDGE_NAMES[lang];
+  if (!name) throw new Error(`No Edge name for "${lang}" in store/edge-names.json`);
+  return name;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
@@ -33,7 +34,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       const file = join(dir, "_locales", lang, "messages.json");
       const raw = await readFile(file, "utf8");
       const messages = JSON.parse(raw);
-      messages.extName.message = edgeName(messages.extName.message);
+      messages.extName.message = edgeName(lang);
       const indent = raw.match(/\n(\s+)"/)?.[1].length ?? 2;
       await writeFile(file, JSON.stringify(messages, null, indent) + (raw.endsWith("\n") ? "\n" : ""));
     }

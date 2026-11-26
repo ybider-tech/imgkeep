@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Gem billede som PNG, JPG, WebP, GIF eller PDF — Imgkeep"
+    "message": "Gem billede som PNG, JPG eller PDF, konvertér WebP til JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Højreklik for at gemme ethvert billede som PNG, JPG, WebP, GIF eller PDF, eller få dets farvepalet. På din enhed. Ingen persondata."
+    "message": "Konvertér WebP og AVIF til JPG eller PNG med højreklik, eller gem ethvert billede som PDF eller GIF. På din enhed, ingen uploads."
   },
   "menuParent": {
     "message": "Imgkeep"

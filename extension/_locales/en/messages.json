@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep",
-    "description": "Store name and extension name. Max 75 characters. Keep 'Imgkeep' and the format names."
+    "message": "Save image as PNG, JPG or PDF, convert WebP to JPG — Imgkeep",
+    "description": "Store name and extension name (Chrome; Edge keeps store/edge-names.json, Firefox amoName). Max 75 characters. Keep 'Imgkeep', the formats and \"WebP to JPG\"."
   },
   "extDescription": {
-    "message": "Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.",
+    "message": "Convert WebP and AVIF to JPG or PNG from the right-click menu, or save any image as PDF or GIF. On your device, no uploads.",
     "description": "Store summary. Max 132 characters."
   },
   "menuParent": {

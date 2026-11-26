@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Uložit obrázek jako PNG, JPG, WebP, GIF či PDF — Imgkeep"
+    "message": "Uložit obrázek jako PNG, JPG či PDF, převést WebP na JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Pravým tlačítkem uložíte obrázek jako PNG, JPG, WebP, GIF nebo PDF či získáte barevnou paletu. Ve vašem zařízení. Bez osobních dat."
+    "message": "Převeďte WebP a AVIF na JPG nebo PNG pravým tlačítkem, nebo uložte obrázek jako PDF či GIF. Ve vašem zařízení, bez nahrávání."
   },
   "menuParent": {
     "message": "Imgkeep"

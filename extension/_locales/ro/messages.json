@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Salvează imagini ca PNG, JPG, WebP, GIF sau PDF — Imgkeep"
+    "message": "Salvează imagini ca PNG, JPG sau PDF, convertește WebP în JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Click dreapta: salvezi orice imagine ca PNG, JPG, WebP, GIF sau PDF ori îi afli paleta de culori. Totul local. Fără date personale."
+    "message": "Convertește WebP și AVIF în JPG sau PNG cu clic dreapta ori salvează orice imagine ca PDF sau GIF. Local, fără încărcări."
   },
   "menuParent": {
     "message": "Imgkeep"

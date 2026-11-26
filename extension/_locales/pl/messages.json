@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Zapisz obraz jako PNG, JPG, WebP, GIF lub PDF — Imgkeep"
+    "message": "Zapisz obraz jako PNG, JPG lub PDF, konwertuj WebP do JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Kliknij prawym, by zapisać obraz jako PNG, JPG, WebP, GIF lub PDF albo poznać jego paletę barw. Lokalnie, bez danych osobowych."
+    "message": "Konwertuj WebP i AVIF do JPG lub PNG prawym przyciskiem albo zapisz dowolny obraz jako PDF lub GIF. Lokalnie, bez przesyłania."
   },
   "menuParent": {
     "message": "Imgkeep"

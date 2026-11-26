@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "చిత్రాన్ని PNG, JPG, WebP, GIF లేదా PDFగా సేవ్ చేయండి — Imgkeep"
+    "message": "చిత్రాన్ని PNG, JPG లేదా PDFగా సేవ్ చేయండి, WebPని JPGగా — Imgkeep"
   },
   "extDescription": {
-    "message": "కుడి-క్లిక్‌తో చిత్రాలను PNG, JPG, WebP, GIF లేదా PDFగా సేవ్ చేయండి, లేదా రంగుల ప్యాలెట్ పొందండి. మీ పరికరంలోనే. డేటా సేకరణ లేదు."
+    "message": "కుడి-క్లిక్‌తో WebP, AVIFలను JPG లేదా PNGగా మార్చండి, లేదా ఏ చిత్రాన్నైనా PDF లేదా GIFగా సేవ్ చేయండి. మీ పరికరంలోనే, అప్‌లోడ్ లేదు."
   },
   "menuParent": {
     "message": "Imgkeep"

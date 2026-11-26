@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.15.2 — unreleased
+
+Store listing only: no change to what the extension does. Chosen from Search Console, Google Trends and the three stores' search results and suggestions (`store/listing-keywords-report.md`, 2026-11-26).
+
+- **Chrome name:** "Save image as PNG, JPG or PDF, convert WebP to JPG — Imgkeep" (was "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep"). It keeps "save image as", the stores' own phrase, and adds "WebP to JPG", the most-searched thing Imgkeep does (Trends; Chrome's and Edge's search suggestions). **Summary:** "Convert WebP and AVIF to JPG or PNG from the right-click menu, or save any image as PDF or GIF. On your device, no uploads." (AVIF was in neither). Both in all 50 languages (`extName`, `extDescription`), translated in-session and recorded in the lock.
+- **Edge keeps its approved name** ("Save image as PNG, JPG or WebP - Imgkeep", rejected once for search terms in 0.11.0): it now comes from `store/edge-names.json`, one per language, instead of being worked out from Chrome's name (`scripts/build-edge.mjs`). Its short description follows the new summary.
+- **Firefox name:** "Save image as JPG or PNG, WebP converter" (≤45 characters; AMO shows "by Imgkeep" under it), a new `amoName` in `store/i18n/<lang>.json`, translated with the other store texts (`scripts/build-firefox.mjs`, `scripts/amo-publish.mjs`). **Summary:** "Convert WebP and AVIF images to JPG or PNG from the right-click menu, or save any image as PDF, GIF or a colour palette. Works on sites that block saving. No uploads, no account."
+- **Description v11** (Chrome, Edge, Firefox, all languages): new SAVE WITH ONE KEY section (Alt+S, Alt+Shift+S in Firefox, and the toolbar button), Save the full-size version, APNG, the `{site}`, `{title}` and `{n}` tokens, the Referer retry. Two claims that had gone stale are fixed: the rating ask ("at most three times", since 0.15.1) and the permissions line (the shortcut, access to one site). Only the changed lines were translated; the rest of each translation is unchanged.
+- Tests: the Edge name test reads `store/edge-names.json`; the Firefox name test holds every AMO language to 45 characters with JPG, PNG and WebP in it.
+
 ## 0.15.1 — 2026-11-24
 
 - **The rating ask: Later, and up to three asks.** It was asked once, ever: since 4 November 57 asks started, 3 people rated (all on Edge), 11 declined, and the store listing had 5 ratings. Now it has three answers: **Rate Imgkeep** (opens the store's review page) and **Don't ask again** end it for good; **Later**, or a round left unanswered for 14 days, asks again after 20 more successful saves and 7 days, at most three rounds (`REVIEW.maxRounds`, `againUses`, `againDays` in `lib/review.js`). Each round shows the menu item and one window ask, as before. Copies whose one-time ask already ended stay done.

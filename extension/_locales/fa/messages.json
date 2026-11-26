@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "ذخیرهٔ تصویر به‌صورت PNG، JPG، WebP، GIF یا PDF — Imgkeep"
+    "message": "ذخیرهٔ تصویر به‌صورت PNG، JPG یا PDF، تبدیل WebP به JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "با راست‌کلیک، هر تصویر را با فرمت PNG، JPG، WebP، GIF یا PDF ذخیره کنید یا پالت رنگش را بگیرید. روی دستگاه خودتان. بدون داده شخصی."
+    "message": "با راست‌کلیک WebP و AVIF را به JPG یا PNG تبدیل کنید، یا هر تصویری را PDF یا GIF ذخیره کنید. روی دستگاه خودتان، بدون آپلود."
   },
   "menuParent": {
     "message": "Imgkeep"

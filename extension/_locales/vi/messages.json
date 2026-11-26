@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Lưu ảnh dạng PNG, JPG, WebP, GIF hoặc PDF — Imgkeep"
+    "message": "Lưu ảnh dạng PNG, JPG hoặc PDF, chuyển WebP sang JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Nhấp chuột phải để lưu ảnh bất kỳ dạng PNG, JPG, WebP, GIF hay PDF, hoặc lấy bảng màu. Ngay trên máy bạn. Không dữ liệu cá nhân."
+    "message": "Chuyển WebP và AVIF sang JPG hoặc PNG bằng chuột phải, hoặc lưu ảnh bất kỳ thành PDF hay GIF. Ngay trên máy bạn, không tải lên."
   },
   "menuParent": {
     "message": "Imgkeep"

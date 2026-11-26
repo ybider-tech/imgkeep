@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "画像をPNG・JPG・WebP・GIF・PDFで保存 — Imgkeep"
+    "message": "画像をPNG・JPG・PDFで保存、WebPをJPGに変換 — Imgkeep"
   },
   "extDescription": {
-    "message": "右クリックで画像をPNG・JPG・WebP・GIF・PDFとして保存、またはカラーパレットを取得。処理はパソコン上で。個人データの収集なし。"
+    "message": "右クリックでWebPやAVIFをJPG・PNGに変換、どんな画像もPDFやGIFで保存。処理はパソコン上で、アップロードなし。"
   },
   "menuParent": {
     "message": "Imgkeep"

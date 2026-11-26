@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "บันทึกรูปเป็น PNG, JPG, WebP, GIF หรือ PDF — Imgkeep"
+    "message": "บันทึกรูปเป็น PNG, JPG หรือ PDF แปลง WebP เป็น JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "คลิกขวาเพื่อบันทึกรูปใดก็ได้เป็น PNG, JPG, WebP, GIF หรือ PDF หรือดึงชุดสีของรูป ทำงานบนเครื่องคุณ ไม่เก็บข้อมูลส่วนตัว"
+    "message": "คลิกขวาเพื่อแปลง WebP และ AVIF เป็น JPG หรือ PNG หรือบันทึกรูปใดก็ได้เป็น PDF หรือ GIF ทำบนเครื่องคุณ ไม่อัปโหลด"
   },
   "menuParent": {
     "message": "Imgkeep"

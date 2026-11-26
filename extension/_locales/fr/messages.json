@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Enregistrer l'image en PNG, JPG, WebP, GIF ou PDF — Imgkeep"
+    "message": "Enregistrer l'image en PNG, JPG ou PDF, convertir WebP en JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Clic droit : enregistrez toute image en PNG, JPG, WebP, GIF ou PDF, ou prenez sa palette. En local. Aucune donnée personnelle."
+    "message": "Convertissez WebP et AVIF en JPG ou PNG d'un clic droit, ou enregistrez toute image en PDF ou GIF. Sur votre appareil, sans envoi."
   },
   "menuParent": {
     "message": "Imgkeep"

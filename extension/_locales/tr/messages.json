@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Görseli PNG, JPG, WebP, GIF veya PDF olarak kaydet — Imgkeep"
+    "message": "Görseli PNG, JPG veya PDF olarak kaydet, WebP'yi JPG'ye çevir — Imgkeep"
   },
   "extDescription": {
-    "message": "Sağ tıklayın; görseli PNG, JPG, WebP, GIF veya PDF olarak kaydedin ya da renk paletini alın. Cihazınızda. Kişisel veri yok."
+    "message": "WebP ve AVIF'i sağ tıkla JPG ya da PNG'ye çevirin veya görseli PDF ya da GIF olarak kaydedin. Cihazınızda, yükleme yok."
   },
   "menuParent": {
     "message": "Imgkeep"

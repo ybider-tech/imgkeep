@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Išsaugoti paveikslėlį kaip PNG, JPG, WebP, GIF ar PDF — Imgkeep"
+    "message": "Išsaugoti paveikslėlį kaip PNG, JPG ar PDF, WebP į JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Dešiniuoju mygtuku išsaugokite paveikslėlį kaip PNG, JPG, WebP, GIF ar PDF arba gaukite jo spalvų paletę. Jūsų įrenginyje."
+    "message": "Konvertuokite WebP ir AVIF į JPG ar PNG dešiniuoju mygtuku arba išsaugokite paveikslėlį kaip PDF ar GIF. Įrenginyje, be įkėlimų."
   },
   "menuParent": {
     "message": "Imgkeep"

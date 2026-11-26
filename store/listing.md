@@ -1,12 +1,12 @@
-# Chrome Web Store listing: Imgkeep 0.11.0
+# Chrome Web Store listing: Imgkeep 0.15.2
 
 Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Basics
 
-- **Name** (from the manifest): Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep
+- **Name** (from the manifest): Save image as PNG, JPG or PDF, convert WebP to JPG — Imgkeep (0.15.2; was "Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep". Why: store/listing-keywords-report.md)
 - **Tagline:** Right format. Right folder. Nothing else.
-- **Summary** (≤132 chars, from the manifest): Right-click to save any image as PNG, JPG, WebP, GIF or PDF, or get its colour palette. On your device. No personal data.
+- **Summary** (≤132 chars, from the manifest): Convert WebP and AVIF to JPG or PNG from the right-click menu, or save any image as PDF or GIF. On your device, no uploads.
 - **Category:** Tools
 - **Language:** English (default), plus he, es, pt_BR, de, fr, ja, hi, ar: name and summary come from the package; descriptions are in [listing-translations.md](listing-translations.md)
 - **Homepage:** https://imgkeep.app
@@ -15,7 +15,7 @@ Live: https://chromewebstore.google.com/detail/fkclfgbmjaafglfifenonfcahfdmajbl
 
 ## Description
 
-v10 (for 0.11.0): adds TAKE THE COLOURS FROM ANY IMAGE after the WebP/AVIF section, the palette in the first paragraph, "Imgkeep →" instead of "Imgkeep: Save image as →", and "including colour palettes" in the free line. v9 (for 0.8.0, approved 2026-10-12): search-friendly headings (Works where right-click doesn't, Convert WebP and AVIF…), sites named only as examples ("on sites like Instagram and Pinterest", never "downloader"), Keep the original bullet, four permissions and one rating request kept. Edge: the same with "your browser's Downloads folder" (see edge-listing.md). Translations: listing-translations.md (browser-neutral, for both stores).
+v11 (for 0.15.2): adds SAVE WITH ONE KEY (Alt+S and the toolbar button), Save the full-size version, APNG, the {site}/{title}/{n} tokens, the Referer retry in WHEN A SITE BLOCKS AN IMAGE; fixes the rating line (at most three times) and the permissions line (the shortcut, access to one site). v10 (for 0.11.0) added the colour palette. The browser-neutral version for Edge and the translations: store/i18n/<lang>.json (storeDescription).
 
 ```text
 Imgkeep is a free image converter for your right-click menu. Save any image as PNG, JPG, WebP, GIF or PDF, take its colour palette, convert WebP and AVIF, and save photos even on sites that hide them from the right-click.
@@ -28,6 +28,12 @@ On sites like Instagram and Pinterest, a layer over the photo stops the browser'
 
 Find image here is off until you turn it on, in Options or the first time you use it. It looks at the current page only when you ask, and never changes it.
 
+SAVE WITH ONE KEY
+
+• Press Alt+S to save the image under your pointer in the format you used last. No menu, and it works on sites that block the right-click.
+• Or click Imgkeep's toolbar button to see the images on screen and pick the one to save.
+• Both use the same setting as Find image here, and look at the page only at the moment you press or click. You can change the shortcut in Chrome's extension shortcuts.
+
 CONVERT WEBP AND AVIF TO PNG OR JPG
 
 Many sites now use WebP and AVIF images, which other apps often can't open. Imgkeep saves them in a format that works wherever you need it.
@@ -36,7 +42,7 @@ Many sites now use WebP and AVIF images, which other apps often can't open. Imgk
 • Keep animations moving: animated WebP, AVIF and APNG become a GIF that keeps its timing and transparency. Animated GIFs are saved unchanged.
 • Save as PDF: a one-page PDF sized to the image, transparency kept. Useful for receipts, documents and sharing.
 • Copy as PNG: put the image on your clipboard as a real PNG, transparency kept, and paste it straight into a design or slide tool like Canva or Google Slides.
-• Save as AVIF: in More options, files often half the size of a JPG that looks the same, transparency kept.
+• Save as AVIF or APNG: in More options. AVIF files are often half the size of a JPG that looks the same; APNG keeps an animation in full colour with real transparency.
 • Icons and bitmaps: in More options, save as ICO (16 to 256 px in one file, for desktop shortcuts and favicons) or BMP.
 • Keep the original: save the image in its original format when you don't need a conversion.
 
@@ -51,28 +57,29 @@ Right-click an image → Imgkeep → Get colour palette. See its main colours, l
 
 RESIZE IMAGES AND CONTROL QUALITY
 
+• Save the full-size version: many sites show a smaller copy of an image. Turn this on in Options and Imgkeep saves the full-size file instead, on sites like Pinterest, X, Etsy, Reddit, Unsplash, Wikipedia and shops or blogs on Shopify or WordPress. If it can't get it, you get the image you clicked. Off unless you turn it on.
 • Resize automatically: set a maximum width in Options. Larger images scale down proportionally; smaller ones are never enlarged.
 • Preview before saving: More options shows the result's size in pixels and kilobytes. Choose format, width, quality, background and file name for that image.
-• Adjust quality: JPG and WebP quality sliders, and a background colour for transparent images saved as JPG.
+• Adjust quality: JPG, WebP and AVIF quality sliders, and a background colour for transparent images saved as JPG.
 
 CHOOSE YOUR FOLDERS AND FILE NAMES
 
-• Save to your folder: choose a folder once, use Chrome's Downloads folder, or ask every time. Organise images into subfolders like Imgkeep/{host}.
-• Custom file names: build names from {name}, {host}, {date}, {time}, {w} and {h}, e.g. {name}-{w}x{h}.
+• Save to your folder: choose a folder once, use Chrome's Downloads folder, or ask every time. Organise images into subfolders like Imgkeep/{site}.
+• Custom file names: build names from {name}, {site}, {title}, {date}, {time}, {w}, {h} and a counting {n}, e.g. {name}-{w}x{h}.
 • Never overwrites: if a file with the same name exists, the new one gets a number like " (1)".
 
 LOCAL CONVERSION AND ACCESS YOU CONTROL
 
 • No uploads: images are converted on your computer. No account.
-• No background page reading: Imgkeep looks at a page only when you ask it to find an image there, and never changes a page.
-• Four permissions only: contextMenus, downloads, storage, offscreen. Two more, activeTab and scripting, only if you turn on Find image here.
+• No background page reading: Imgkeep looks at a page only when you ask (Find image here, Alt+S or the toolbar button), and never changes a page.
+• Four permissions only: contextMenus, downloads, storage, offscreen. Others are optional and asked only when needed: activeTab and scripting if you turn on Find image here and the shortcut, and access to one site, if that site blocks an image and you allow it.
 • One anonymous daily summary: usage counts and failures, like "12 saves as JPG, 1 failed", so we know what to improve. Never images, website addresses or file names. One click in Options turns it off.
 • Open source under the MIT licence, with no build step: the code you read is the code that runs. The one compiled part, the AVIF encoder, is the open-source libavif, unchanged and checked by its fingerprint.
-• Free, with no limits: no ads, no welcome tabs, and one request for a rating, ever. Every feature available today stays free, including colour palettes.
+• Free, with no limits: no ads and no welcome tabs. It asks for a rating at most three times, and stops as soon as you rate it or say no. Every feature available today stays free, including colour palettes.
 
 WHEN A SITE BLOCKS AN IMAGE
 
-A few sites stop other sites from reading their images. Only then, and only after you click to allow it, Imgkeep asks your browser for access to that one site. You can remove it any time in Options. Or choose "Save original format instead".
+A few sites stop other sites from reading their images. Only then, and only after you click to allow it, Imgkeep asks your browser for access to that one site. If the site still refuses, Imgkeep can ask for the image the way your browser does, by telling the site which site you were on (never the page). You can remove access any time in Options. Or choose "Save original format instead".
 
 Suggest features and vote on ideas: https://imgkeep.app/ideas.html
 ```

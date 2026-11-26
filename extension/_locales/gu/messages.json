@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "છબી PNG, JPG, WebP, GIF કે PDF તરીકે સાચવો — Imgkeep"
+    "message": "છબી PNG, JPG કે PDF તરીકે સાચવો, WebP ને JPG માં ફેરવો — Imgkeep"
   },
   "extDescription": {
-    "message": "જમણું-ક્લિક કરી કોઈ પણ છબી PNG, JPG, WebP, GIF કે PDF તરીકે સાચવો, કે તેની રંગ પૅલેટ મેળવો. તમારા ઉપકરણ પર. અંગત માહિતી નહીં."
+    "message": "જમણા-ક્લિકથી WebP અને AVIF ને JPG કે PNG માં ફેરવો, અથવા કોઈ પણ છબી PDF કે GIF તરીકે સાચવો. તમારા ઉપકરણ પર, અપલોડ વિના."
   },
   "menuParent": {
     "message": "Imgkeep"

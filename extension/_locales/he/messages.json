@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "שמירת תמונה כ-PNG, JPG, WebP, GIF או PDF — Imgkeep"
+    "message": "שמירת תמונה כ-PNG, JPG או PDF, המרת WebP ל-JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "לחיצה ימנית לשמירת כל תמונה כ-PNG, JPG, WebP, GIF או PDF, או לקבלת פלטת הצבעים שלה. במחשב שלך. בלי מידע אישי."
+    "message": "המרת WebP ו-AVIF ל-JPG או PNG בלחיצה ימנית, או שמירת כל תמונה כ-PDF או GIF. במחשב שלך, בלי העלאות."
   },
   "menuParent": {
     "message": "Imgkeep"

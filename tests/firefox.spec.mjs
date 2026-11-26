@@ -44,8 +44,9 @@ test("Firefox names fit addons.mozilla.org's 50 characters in every language it 
   for (const lang of amo) {
     const { extName } = JSON.parse(await readFile(join(ROOT, "extension", "_locales", lang, "messages.json"), "utf8"));
     const name = firefoxName(lang, extName.message);
-    expect([...name].length, `${lang}: ${name}`).toBeLessThanOrEqual(AMO_NAME_MAX);
-    expect(name, lang).toMatch(/PNG/);
+    expect([...name].length, `${lang}: ${name}`).toBeLessThanOrEqual(45); // MDN's AMO limit; AMO cuts at AMO_NAME_MAX
+    expect([...name].length).toBeLessThanOrEqual(AMO_NAME_MAX);
+    expect(name, lang).toMatch(/JPG.*PNG.*WebP/u);
   }
 });
 

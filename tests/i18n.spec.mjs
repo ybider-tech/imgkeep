@@ -65,16 +65,17 @@ for (const [lang, dir] of [["he", "rtl"], ["ja", "ltr"]]) {
   });
 }
 
-// Edge's name (scripts/build-edge.mjs): three formats instead of five, a hyphen before the brand, every language.
+// Edge's name (scripts/build-edge.mjs, store/edge-names.json): three formats, a hyphen before the brand, every language.
 test("the Edge name in every language: PNG, JPG and WebP, no GIF or PDF, ends with - Imgkeep", async () => {
-  const { edgeName } = await import("../scripts/build-edge.mjs");
-  for (const lang of await readdir(LOCALES)) {
-    const { extName } = JSON.parse(await readFile(join(LOCALES, lang, "messages.json"), "utf8"));
-    const name = edgeName(extName.message);
+  const { edgeName, EDGE_NAMES } = await import("../scripts/build-edge.mjs");
+  const langs = await readdir(LOCALES);
+  expect(Object.keys(EDGE_NAMES).sort()).toEqual([...langs].sort());
+  for (const lang of langs) {
+    const name = edgeName(lang);
     expect(name, lang).toMatch(/PNG.*JPG.*WebP/u);
     expect(name, lang).not.toMatch(/GIF|PDF|—/u);
     expect(name.endsWith(" - Imgkeep"), lang).toBe(true);
     expect(name.length, lang).toBeLessThanOrEqual(75);
   }
-  expect(edgeName("Save image as PNG, JPG, WebP, GIF or PDF — Imgkeep")).toBe("Save image as PNG, JPG or WebP - Imgkeep");
+  expect(edgeName("en")).toBe("Save image as PNG, JPG or WebP - Imgkeep");
 });

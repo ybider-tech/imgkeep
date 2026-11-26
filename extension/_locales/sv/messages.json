@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Spara bild som PNG, JPG, WebP, GIF eller PDF — Imgkeep"
+    "message": "Spara bild som PNG, JPG eller PDF, konvertera WebP till JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Högerklicka och spara bilder som PNG, JPG, WebP, GIF eller PDF, eller hämta färgpaletten. På din enhet. Inga personuppgifter."
+    "message": "Konvertera WebP och AVIF till JPG eller PNG med högerklick, eller spara bilder som PDF eller GIF. På din enhet, inga uppladdningar."
   },
   "menuParent": {
     "message": "Imgkeep"

@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Hifadhi picha kama PNG, JPG, WebP, GIF au PDF — Imgkeep"
+    "message": "Hifadhi picha kama PNG, JPG au PDF, badilisha WebP kuwa JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Bofya kulia uhifadhi picha yoyote kama PNG, JPG, WebP, GIF au PDF, au upate paleti ya rangi. Kwenye kifaa chako. Bila data binafsi."
+    "message": "Badilisha WebP na AVIF kuwa JPG au PNG kwa kubofya kulia, au hifadhi picha yoyote kama PDF au GIF. Kwenye kifaa chako, bila kupakia."
   },
   "menuParent": {
     "message": "Imgkeep"

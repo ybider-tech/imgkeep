@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Saglabāt attēlu kā PNG, JPG, WebP, GIF vai PDF — Imgkeep"
+    "message": "Saglabāt attēlu kā PNG, JPG vai PDF, pārveidot WebP uz JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Ar peles labo pogu saglabā attēlu kā PNG, JPG, WebP, GIF vai PDF vai iegūsti krāsu paleti. Tavā ierīcē. Bez personas datiem."
+    "message": "Pārveido WebP un AVIF uz JPG vai PNG ar labo klikšķi vai saglabā attēlu kā PDF vai GIF. Tavā ierīcē, bez augšupielādes."
   },
   "menuParent": {
     "message": "Imgkeep"

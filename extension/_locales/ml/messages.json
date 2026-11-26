@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "PNG, JPG, WebP, GIF അല്ലെങ്കിൽ PDF ആയി ചിത്രം സേവ് ചെയ്യുക — Imgkeep"
+    "message": "PNG, JPG അല്ലെങ്കിൽ PDF ആയി ചിത്രം സേവ് ചെയ്യുക, WebP JPG ആക്കുക — Imgkeep"
   },
   "extDescription": {
-    "message": "റൈറ്റ്-ക്ലിക്കിൽ ചിത്രം PNG, JPG, WebP, GIF, PDF ആയി സേവ് ചെയ്യാം, കളർ പാലറ്റും എടുക്കാം. ഉപകരണത്തിൽ തന്നെ. വ്യക്തിഗത ഡാറ്റയില്ല."
+    "message": "വലത്-ക്ലിക്കിലൂടെ WebP, AVIF എന്നിവ JPG അല്ലെങ്കിൽ PNG ആക്കുക, അല്ലെങ്കിൽ ഏത് ചിത്രവും PDF, GIF ആയി സേവ് ചെയ്യുക. അപ്‌ലോഡ് ഇല്ല."
   },
   "menuParent": {
     "message": "Imgkeep"

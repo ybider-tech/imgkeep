@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "ছবি PNG, JPG, WebP, GIF বা PDF হিসেবে সেভ করুন — Imgkeep"
+    "message": "ছবি PNG, JPG বা PDF হিসেবে সেভ করুন, WebP থেকে JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "যেকোনো ছবিতে রাইট-ক্লিক করে PNG, JPG, WebP, GIF বা PDF হিসেবে সেভ করুন, বা রঙের প্যালেট নিন। আপনার ডিভাইসেই। ব্যক্তিগত তথ্য নয়।"
+    "message": "রাইট-ক্লিকে WebP আর AVIF-কে JPG বা PNG-তে কনভার্ট করুন, বা যেকোনো ছবি PDF বা GIF হিসেবে সেভ করুন। আপনার ডিভাইসেই, আপলোড নেই।"
   },
   "menuParent": {
     "message": "Imgkeep"

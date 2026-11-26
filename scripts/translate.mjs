@@ -48,7 +48,7 @@ export const LANGUAGES = {
 export const RTL = ["ar", "fa", "he"];
 
 // Store limits (characters).
-const LIMITS = { extName: 75, extDescription: 132, amoSummary: 250 };
+const LIMITS = { extName: 75, extDescription: 132, amoName: 45, amoSummary: 250 };
 
 // ---- Checks (the same rules tests/static-check.mjs applies to every language) ----
 
@@ -84,6 +84,7 @@ async function sources() {
 
 const STORE_NOTES = {
   storeDescription: "The extension's description on the Chrome Web Store and Edge Add-ons. Plain text. Keep the paragraph breaks, the CAPITALISED section headings (translate them; uppercase only where the language has case), the • bullets and the → arrows. Quote menu items exactly as the extension's own translation names them (glossary below).",
+  amoName: "The add-on's name on addons.mozilla.org (Firefox). At most 45 characters. Keep the format names (JPG, PNG, WebP) as written.",
   amoSummary: "The one-paragraph summary on addons.mozilla.org (Firefox). At most 250 characters.",
   amoDescription: "The description on addons.mozilla.org (Firefox). Same rules as the store description.",
 };

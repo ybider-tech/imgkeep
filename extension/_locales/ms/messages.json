@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "Simpan imej sebagai PNG, JPG, WebP, GIF atau PDF — Imgkeep"
+    "message": "Simpan imej sebagai PNG, JPG atau PDF, tukar WebP ke JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "Klik kanan untuk simpan imej sebagai PNG, JPG, WebP, GIF atau PDF, atau dapatkan palet warna. Di peranti anda, tanpa data peribadi."
+    "message": "Tukar WebP dan AVIF ke JPG atau PNG dengan klik kanan, atau simpan imej sebagai PDF atau GIF. Pada peranti anda, tiada muat naik."
   },
   "menuParent": {
     "message": "Imgkeep"

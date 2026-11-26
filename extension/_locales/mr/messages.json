@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "प्रतिमा PNG, JPG, WebP, GIF किंवा PDF म्हणून सेव्ह करा — Imgkeep"
+    "message": "प्रतिमा PNG, JPG किंवा PDF म्हणून सेव्ह करा, WebP चे JPG करा — Imgkeep"
   },
   "extDescription": {
-    "message": "उजवी-क्लिक करून कोणतीही प्रतिमा PNG, JPG, WebP, GIF किंवा PDF म्हणून सेव्ह करा किंवा रंगपटल मिळवा. डिव्हाइसवरच. वैयक्तिक डेटा नाही."
+    "message": "उजव्या क्लिकने WebP आणि AVIF चे JPG किंवा PNG करा, किंवा कोणतीही प्रतिमा PDF किंवा GIF म्हणून सेव्ह करा. डिव्हाइसवरच, अपलोड नाही."
   },
   "menuParent": {
     "message": "Imgkeep"

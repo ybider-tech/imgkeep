@@ -1,9 +1,9 @@
 {
   "extName": {
-    "message": "I-save ang larawan bilang PNG, JPG, WebP, GIF o PDF — Imgkeep"
+    "message": "I-save ang larawan bilang PNG, JPG o PDF, WebP sa JPG — Imgkeep"
   },
   "extDescription": {
-    "message": "I-right-click para i-save ang larawan bilang PNG, JPG, WebP, GIF o PDF, o kunin ang palette ng kulay. Walang personal na data."
+    "message": "I-convert ang WebP at AVIF sa JPG o PNG sa right-click, o i-save ang larawan bilang PDF o GIF. Sa device mo, walang upload."
   },
   "menuParent": {
     "message": "Imgkeep"
