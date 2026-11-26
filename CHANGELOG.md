@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.15.2 — unreleased
+## 0.15.2 — 2026-11-26
 
 Store listing only: no change to what the extension does. Chosen from Search Console, Google Trends and the three stores' search results and suggestions (`store/listing-keywords-report.md`, 2026-11-26).
 
